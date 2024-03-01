@@ -127,3 +127,16 @@
 - 🧑🏻‍💻 [DeepLearning.AI] [Prompt Engineering with Llama 2](https://www.deeplearning.ai/short-courses/prompt-engineering-with-llama-2/)
     - Meta의 Llama 2를 활용하여 few-shot prompting과 같은 prompt engineering에 대해 학습
 </details>
+
+
+## 🌱 March
+<details>
+  <summary>1st ~ 2nd week</summary>
+  
+- 🧑🏻‍💻 OpenAI API’s change on log probabilities from 5 to 20 return
+- 🗞️ **[Robotics startup Figure raises $675 mln from Microsoft, Nvidia, OpenAI](https://www.reuters.com/technology/robotics-startup-figure-raises-675-mln-microsoft-nvidia-other-big-techs-2024-02-29/)**
+    - IT 공룡 기업들이 로봇 분야에도 적극적으로 투자하고 있다는 소식
+- 📜 [IIT] **[How to think step-by-step: A mechanistic understanding of chain-of-thought reasoning](https://arxiv.org/abs/2402.18312)**
+    - CoT에 대해 layer별로 분석. token representation을 확인한 결과 중간 이전의 layer에서는 사전 학습데이터에 대해 편향되어 있으나 중간 이후부터는 급격히 in-context에 집중
+
+</details>
