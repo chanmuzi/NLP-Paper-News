@@ -189,3 +189,8 @@
 - 📜 [Learning to Generate Instruction Tuning Datasets for Zero-Shot Task Adaptation](https://arxiv.org/abs/2402.18334)
     - 1.65M 개의 examples로 학습된 오픈소스 모델 for conditional task generation. unannotated text를 instruction tuning을 위한 task-specific training datasets으로 변환
 </details>
+
+<details>
+  <summary>3rd week</summary>
+
+</details>
