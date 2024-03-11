@@ -195,7 +195,7 @@
   
 - 🧑🏻‍💻 [Gen AI Korea 2024] [생성형 AI 레드팀 챌린지](https://www.aiignite.org/)
     - 4월 11일 (목) ~ 4월 12일 (금), 코엑스에서 진행되는 챌린지 및 컨퍼런스. Cohere 대표, Kakao 이사, 네이버 AI 수장 등 유명 인사들이 참여
-- 📜 [Anthropic] [The Claude 3 Model Family: Opus, Sonnet, Haiku](https://www-cdn.anthropic.com/de8ba9b01c9ab7cbabf5c33b80b7bbc618857627/Model_Card_Claude_3.pdf?utm_source=substack&utm_medium=email)
+- 📜 [Anthropic] [The Claude 3 Model Family: Opus, Sonnet, Haiku](https://www-cdn.anthropic.com/de8ba9b01c9ab7cbabf5c33b80b7bbc618857627/Model_Card_Claude_3.pdf)
     - Anthropic에서 최근 출시한 Claude 3 모델 패밀리에 대한 model card. 주로 벤치마크 성능 평가 결과가 제시되어 있는 듯함
 - 📜 [Microsoft] [Sora: A Review on Background, Technology, Limitations, and Opportunities of Large Vision Models](https://arxiv.org/abs/2402.17177v2)
     - OpenAI에서 출시한 text-to-video 생성 AI 모델, Sora에 대한 comprehensive review paper
