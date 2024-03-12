@@ -199,4 +199,14 @@
     - Anthropic에서 최근 출시한 Claude 3 모델 패밀리에 대한 model card. 주로 벤치마크 성능 평가 결과가 제시되어 있는 듯함
 - 📜 [Microsoft] [Sora: A Review on Background, Technology, Limitations, and Opportunities of Large Vision Models](https://arxiv.org/abs/2402.17177v2)
     - OpenAI에서 출시한 text-to-video 생성 AI 모델, Sora에 대한 comprehensive review paper
+- 📜 [Google Research] [Beyond Sparse Rewards: Enhancing Reinforcement Learning with Language Model Critique in Text Generation](https://arxiv.org/abs/2401.07382)
+    - 기존에는 전체 output에 대한 single reward를 반환했기 때문에 reward signal 자체가 spare하다는 문제가 있었음 → LLM의 비판(critique) 능력을 활용하여 RL 학습 과정에서 사용될 수 있는 intermediate-step rewards를 생성
+- 📜 [Birbal: An efficient 7B instruct-model fine-tuned with curated datasets](https://arxiv.org/abs/2403.02247)
+    - NeurIPS workshop으로 진행된 LLM Efficiency Challenge. RTX 4090 또는 A00 with 40GB 한 대로 24시간 내에 학습하는 것을 목표로 함. 본 모델은 Mistral-7B를 베이스로 삼고 있으며 RTX 4090으로 16시간 동안 학습함. 이는 다양한 태스크를 아우르는 고품질 instruction dataset에서 기인함
+- 📜 [Google DeepMind] [Gemini 1.5: Unlocking multimodal understanding across millions of tokens of context](https://arxiv.org/abs/2403.05530)
+    - context의 길이가 긴 상황에서, Gemini 1.5 모델 패밀리가 어떤 성능을 보여주는지 비교 분석한 구글의 technical report. MMLU에서 사람의 최고 점수를 넘은 최초의 모델이라고 주장하지만 대중의 평가는 상이함.
+- 📜 [MuseGraph: Graph-oriented Instruction Tuning of Large Language Models for Generic Graph Mining](https://arxiv.org/abs/2403.04780)
+    - task-specific Chain-of-Thought-based insturction generation mechanism
+- 📜 [Harnessing Multi-Role Capabilities of Large Language Models for Open-Domain Question Answering](https://arxiv.org/abs/2403.05217)
+    - ODQA 태스크에서 ‘retrieve-then-read’와 ‘generate-then-read’ 패러다임을 합친 방식. query expansion, document selection, answer generation의 세 가지 스텝으로 구성됨.
 </details>
