@@ -217,4 +217,6 @@
     - Small Language Models의 특정 행동을 조사하기 위한 목적으로 제작된 디버깅 툴 (깃허브 레포 링크)
 - 📜 [Google DeepMind, OpenAI] [Stealing Part of a Production Language Model](https://arxiv.org/abs/2403.06634)
     - proprietary 모델의 embedding projector layer를 hacking으로 얻을 수 있다는 화제의 논문
+- 📜 [Meta] [Branch-Train-MiX: Mixing Expert LLMs into a Mixture-of-Experts LLM](https://arxiv.org/abs/2403.07816)
+    - seed 모델로부터 각 데이터에 따라 다른 expert LLM을 학습시키고, router를 통해 추가적인 FeedForward layer를 학습시키는 방식인 Branch-Train-Mix를 제안. MoE finetuning이 필요하지 않은 Branch-Train-Merge 방식에도 적용 가능.
 </details>
