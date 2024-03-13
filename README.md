@@ -209,4 +209,12 @@
     - task-specific Chain-of-Thought-based insturction generation mechanism
 - 📜 [Harnessing Multi-Role Capabilities of Large Language Models for Open-Domain Question Answering](https://arxiv.org/abs/2403.05217)
     - ODQA 태스크에서 ‘retrieve-then-read’와 ‘generate-then-read’ 패러다임을 합친 방식. query expansion, document selection, answer generation의 세 가지 스텝으로 구성됨.
+- 🧑🏻‍💻 [Cohere] [Command-R: Retrieval Augmented Generation at Production Scale](https://txt.cohere.com/command-r/)
+    - long context를 활용하는 RAG나 외부 API, 또는 tool 사용에 적합한 생성형 모델 Command-R을 공개. Embed & Rerank 모델과 함께 사용할 수 있도록 설계됨. Cohere API를 통해 이용 가능.
+- 📜 [MIT] [RA-ISF: Learning to Answer and Understand from Retrieval Augmentation via Iterative Self-Feedback](https://arxiv.org/abs/2403.06840)
+    - query와 무관한 문서가 retrieve 되는 것을 방지하기 위해 Iterative Self-Feedback 방식을 제안
+- 🧑🏻‍💻 [OpenAI] [transfromer-debugger (TBD)](https://github.com/openai/transformer-debugger)
+    - Small Language Models의 특정 행동을 조사하기 위한 목적으로 제작된 디버깅 툴 (깃허브 레포 링크)
+- 📜 [Google DeepMind, OpenAI] [Stealing Part of a Production Language Model](https://arxiv.org/abs/2403.06634)
+    - proprietary 모델의 embedding projector layer를 hacking으로 얻을 수 있다는 화제의 논문
 </details>
