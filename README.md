@@ -219,4 +219,10 @@
     - proprietary 모델의 embedding projector layer를 hacking으로 얻을 수 있다는 화제의 논문
 - 📜 [Meta] [Branch-Train-MiX: Mixing Expert LLMs into a Mixture-of-Experts LLM](https://arxiv.org/abs/2403.07816)
     - seed 모델로부터 각 데이터에 따라 다른 expert LLM을 학습시키고, router를 통해 추가적인 FeedForward layer를 학습시키는 방식인 Branch-Train-Mix를 제안. MoE finetuning이 필요하지 않은 Branch-Train-Merge 방식에도 적용 가능.
+- 🧑🏻‍💻 [DeepLearning.AI] [Knowledge Graph for RAG](https://learn.deeplearning.ai/courses/knowledge-graphs-rag/lesson/1/introduction)
+    - Neo4j와의 collaboration. RAG 내에서 knowledge graph를 사용하는 방법을 배우는 과정 (graph store)
+- 🧑🏻‍💻 [Google DeepMind] [A generalist AI agent for 3D virtual environments](https://deepmind.google/discover/blog/sima-generalist-ai-agent-for-3d-virtual-environments/)
+    - 다양한 video-game 환경에서 natural language instruction을 따를 수 있는 Multiworld Agent를 개발
+- 🧑🏻‍💻 [Microsoft Research] [Rethinking Generative Large Language Model Evaluation for Semantic Comprehension](https://arxiv.org/abs/2403.07872)
+    - 여러 선택지 중에서 하나를 고르는 Multiple Choice Question Answering (MCQA) 대신 24개의 모델이 참여하는 RWQ-Elo ranking system을 제안
 </details>
