@@ -225,4 +225,8 @@
     - 다양한 video-game 환경에서 natural language instruction을 따를 수 있는 Multiworld Agent를 개발
 - 🧑🏻‍💻 [Microsoft Research] [Rethinking Generative Large Language Model Evaluation for Semantic Comprehension](https://arxiv.org/abs/2403.07872)
     - 여러 선택지 중에서 하나를 고르는 Multiple Choice Question Answering (MCQA) 대신 24개의 모델이 참여하는 RWQ-Elo ranking system을 제안
+- 🧑🏻‍💻 [OpenAI] [Figure Status Update - OpenAI Speech-to-Speech Reasoning](https://www.youtube.com/watch?v=Sq1QZB5baNw)
+    - OpenAI에서 Figure라는 로봇 회사와 제품을 결합하여 인지 및 추론 능력이 아주 뛰어난 로봇을 개발
+- 📜 [Tancent] [Large Language Models are Contrastive Reasoners](https://arxiv.org/abs/2403.08211)
+    - “Let’s give a correct and a wrong answer”, prompt를 앞에 붙여줌. 이로써 LLM이 훌륭한 contrastive reasoner라는 것을 입증한 연구.
 </details>
