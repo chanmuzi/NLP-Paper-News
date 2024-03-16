@@ -229,4 +229,8 @@
     - OpenAI에서 Figure라는 로봇 회사와 제품을 결합하여 인지 및 추론 능력이 아주 뛰어난 로봇을 개발
 - 📜 [Tancent] [Large Language Models are Contrastive Reasoners](https://arxiv.org/abs/2403.08211)
     - “Let’s give a correct and a wrong answer”, prompt를 앞에 붙여줌. 이로써 LLM이 훌륭한 contrastive reasoner라는 것을 입증한 연구.
+- 📜 [Logits of API-Protected LLMs Leak Proprietary Information](https://arxiv.org/abs/2403.09539)
+    - proprietary 모델들의 hidden size, full-vocabulary output 등에 관한 정보를 적은 API 비용으로 hacking할 수 있다는 논문. gpt-3.5-turbo의 경우 $1000 이하가 필요하다고 주장.
+- 📜 [Apple] [MM1: Methods, Analysis & Insights from Multimodal LLM Pre-training](https://arxiv.org/abs/2403.09611)
+    - Multimodal Large Language Models에 관한 사전학습용 데이터 선정, 학습 기법, 이미지 인코더 등에 대한 연구. dense 모델과 mixture-of-experts (MoE) 방식을 결합한 MM1 모델 패밀리를 개발
 </details>
