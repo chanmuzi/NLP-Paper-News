@@ -1,4 +1,4 @@
-📜: Paper link
+<img width="388" alt="image" src="https://github.com/chanmuzi/NLP-Paper-News/assets/101971295/7fd363ff-0c03-4428-9d3e-40257f4a1449">📜: Paper link
 🧑🏻‍💻: Developer blog & Github link
 🗞️: News
 
@@ -235,4 +235,12 @@
     - Multimodal Large Language Models에 관한 사전학습용 데이터 선정, 학습 기법, 이미지 인코더 등에 대한 연구. dense 모델과 mixture-of-experts (MoE) 방식을 결합한 MM1 모델 패밀리를 개발
 - 🗞️ [Ex-Activision CEO Bobby Kotick pitched buying TikTok to potential partners, including Sam Altman: report](https://www.businessinsider.in/tech/news/ex-activision-ceo-bobby-kotick-pitched-buying-tiktok-to-potential-partners-including-sam-altman-report/articleshow/108409188.cms)
     - 미국에서는 틱톡을 규제하는 와중에 Activision의 전 CEO가 틱톡을 인수하고 OpenAI와 협력할 계획을 갖고 있음에 관한 보도
+- 🧑🏻‍💻 [xAI] [Open Release of Grok-1](https://x.ai/blog/grok-os)
+    - 일론 머스크의 AI 회사 xAI에서 LLM Grok-1 (314B)을 오픈 소스로 공개. 약속을 지키는 상남자.. OpenAI와의 관계에 기인한 현상같기도 하고.. ([깃허브 링크](https://github.com/xai-org/grok-1))
+- 🧑🏻‍💻 [Cohere] [C4AI Command-R (HuggingFace)](https://huggingface.co/CohereForAI/c4ai-command-r-v01)
+    - Cohere에서 공개한 RAG에 특화된 LLM. 지난 번 API로 공개한 이후 모델도 허깅페이스에 공개.
+- 📜 [Stanford University] [Quiet-STaR: Language Models Can Teach Themselves to Think Before Speaking](https://arxiv.org/abs/2403.09629)
+    - 언어 모델이 reasoning을 수행하는 과정에서, 매 스텝마다 ‘thought’를 병렬적으로 생성하여 더 좋은 추론이 가능하도록 유도하는 방법론을 제안
+- 📜 [Peking University] [RAT: Retrieval Augmented Thoughts Elicit Context-Aware Reasoning in Long-Horizon Generation](https://arxiv.org/abs/2403.05313)
+    - CoT 문장의 각 요소와 관련된 content를 찾아서 이를 바탕으로 필요한 경우 revise. revised 문장들로 CoT를 재구성
 </details>
