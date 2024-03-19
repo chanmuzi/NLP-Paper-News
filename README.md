@@ -244,3 +244,17 @@
 - 📜 [Peking University] [RAT: Retrieval Augmented Thoughts Elicit Context-Aware Reasoning in Long-Horizon Generation](https://arxiv.org/abs/2403.05313)
     - CoT 문장의 각 요소와 관련된 content를 찾아서 이를 바탕으로 필요한 경우 revise. revised 문장들로 CoT를 재구성
 </details>
+
+<details>
+  <summary>4th week</summary>
+  
+- 🗞️ [Nvidia] [Nvidia reveals Blackwell B200 GPU, the ‘world’s most powerful chip’ for AI](https://www.theverge.com/2024/3/18/24105157/nvidia-blackwell-gpu-b200-ai)
+    - H100의 뒤를 있는 플래그십 GPU, B200 공개
+- 🧑🏻‍💻 [Open-Sora](https://github.com/hpcaitech/Open-Sora)
+    - OpenAI의 Sora에 영감을 받아 만든 고품질 video 생성 모델. 오픈소스로 공개.
+- 📜 [CMU-LTI] [Enhancing LLM Factual Accuracy with RAG to Counter Hallucinations: A Case Study on Domain-Specific Queries in Private Knowledge-Bases](https://arxiv.org/abs/2403.10446)
+    - upstream datasets processing과 downstrea performance evaluation을 통합한 시스템을 구축. 데이터 크롤링부터 QA 시스템 전반에 대한 내용을 다루고 있음
+- 📜 [UC Berkeley] [RAFT: Adapting Language Model to Domain Specific RAG](https://arxiv.org/abs/2403.10131)
+    - Test 단계에서 모델이 외부 문서를 활용하는 방식에 대해 학습하도록 함. 이때 golden only 방식이 아닌 sampled negative documents도 활용.
+
+</details>
