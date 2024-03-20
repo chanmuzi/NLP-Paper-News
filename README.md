@@ -256,5 +256,8 @@
     - upstream datasets processing과 downstrea performance evaluation을 통합한 시스템을 구축. 데이터 크롤링부터 QA 시스템 전반에 대한 내용을 다루고 있음
 - 📜 [UC Berkeley] [RAFT: Adapting Language Model to Domain Specific RAG](https://arxiv.org/abs/2403.10131)
     - Test 단계에서 모델이 외부 문서를 활용하는 방식에 대해 학습하도록 함. 이때 golden only 방식이 아닌 sampled negative documents도 활용.
-
+- 📜 [Google Research] [PERL: Parameter Efficient Reinforcement Learning from Human Feedback](https://arxiv.org/abs/2403.10704)
+    - RLHF에 LoRA를 활용하는 방법론을 제안. 정확히는 reward model 학습에 LoRA가 활용됨
+- 📜 [EACL 2024] [Aligning Large and Small Language Models via Chain-of-Thought Reasoning](https://aclanthology.org/2024.eacl-long.109/)
+    - SLM이 특정 양식을 잘 따를 수 있도록 Instruction-tuning-CoT Method를 제안
 </details>
