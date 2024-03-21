@@ -260,4 +260,12 @@
     - RLHF에 LoRA를 활용하는 방법론을 제안. 정확히는 reward model 학습에 LoRA가 활용됨
 - 📜 [EACL 2024] [Aligning Large and Small Language Models via Chain-of-Thought Reasoning](https://aclanthology.org/2024.eacl-long.109/)
     - SLM이 특정 양식을 잘 따를 수 있도록 Instruction-tuning-CoT Method를 제안
+- 📜 [RankPrompt: Step-by-Step Comparisons Make Language Models Better Reasoners](https://arxiv.org/abs/2403.12373)
+    - LLM이 reasoning 과정 중에 만드는 실수를 줄이기 위한 방식으로 LLM이 스스로 자신의 response에 대해 ranking 하는 방식을 제안. 추가적인 리소스 사용이 발생하지 않는다는 점이 특징.
+- 📜 [KAIST] [SuRe: Summarizing Retrievals using Answer Candidates for Open-domain QA of LLMs](https://openreview.net/pdf?id=w4DW6qkRmt)
+    - ODQA 태스크에서 retrieved passage를 바탕으로 ‘답변 후보 생성 - 조건부 요약 - 검증’ 과증을 거쳐 벤치마크 성능을 크게 끌어올린 LK Lab의 연구
+- 📜 [Microsoft Corporation] [LLMLingua-2: Data Distillation for Efficient and Faithful Task-Agnostic Prompt Compression](https://arxiv.org/abs/2403.12968)
+    - LLM으로부터 data distillation를 통해 압축된 텍스트를 획득하고 이에 대해 annotation을 수행한 뒤 필터링을 거쳐 나온 결과를 압축하여 모델에 프롬프트를 전달
+- 🧑🏻‍💻 [Google DeepMind] [TacticAI: an AI assistant for football tactics](https://deepmind.google/discover/blog/tacticai-ai-assistant-for-football-tactics/)
+    - 리버풀의 데이터를 활용해서 코너킥 결과를 예측하는 AI 모델을 개발. 이전에도 리버풀 데이터를 활용한 결과가 있었는데 후속작으로 나온 듯함.
 </details>
