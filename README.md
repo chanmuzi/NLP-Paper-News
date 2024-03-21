@@ -1,4 +1,4 @@
-<img width="388" alt="image" src="https://github.com/chanmuzi/NLP-Paper-News/assets/101971295/7fd363ff-0c03-4428-9d3e-40257f4a1449">📜: Paper link
+📜: Paper link
 🧑🏻‍💻: Developer blog & Github link
 🗞️: News
 
