@@ -274,4 +274,8 @@
     - RLHF에 가장 중요한 요소 중 하나인 Reward Model이 reward를 제대로 반환하고 있는지 확인할 수 있는 벤치마크를 개발하여 공개. prompt-win-lose trios 데이터셋.
 - 📜 [LlamaFactory: Unified Efficient Fine-Tuning of 100+ Language Models](https://arxiv.org/abs/2403.13372)
     - 다양한 Efficient fine-tuning 기법들을 내장 web UI LlamaBoard를 통해 코딩할 필요 없이 간단하고 편리하게 적용할 수 있는 프레임워크를 소개
+- 📜 [MathVerse: Does Your Multi-modal LLM Truly See the Diagrams in Visual Math Problems?](https://arxiv.org/abs/2403.14624)
+    - 멀티모달 모델이 그림을 정확히 이해하고 문제를 푸는지 확인하기 위해 사람이 직접 annotation한 테스트 데이터 15K 개를 포함하는 MathVerse 벤치마크를 공개
+- 📜 [KAIST] [Adaptive-RAG: Learning to Adapt Retrieval-Augmented Large Language Models through Question Complexity](https://arxiv.org/abs/2403.14403)
+    - classifier (사이즈가 작은 LM)을 통해 query를 straightforward/simple/complex query로 구분하고 각각 다른 방식으로 retrieval을 수행
 </details>
