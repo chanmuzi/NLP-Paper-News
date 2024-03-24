@@ -281,3 +281,10 @@
 - 📜 [Sakana AI] [Evolutionary Optimization of Model Merging Recipes](https://arxiv.org/abs/2403.13187)
     - 모델 merge와 관련하여 선택된 모델들의 layer를 자동적으로 병합하는 방법을 제시함.
 </details>
+
+<details>
+  <summary>5th week</summary>
+
+
+
+</details>
