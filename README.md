@@ -284,7 +284,17 @@
 
 <details>
   <summary>5th week</summary>
-
+  
+- 📜 [Instructing Large Language Models to Identify and Ignore Irrelevant Conditions](https://arxiv.org/abs/2403.12744)
+    - Math Word Problem (MWP)를 풀 때 자주 사용되는 CoT prompting에 대한 연구. I3C라는 방법론을 제시했는데, LLM으로 하여금 irrelevant conditions를 무시하도록 instruct하는 방식임. 이것이 RAG에도 적용될 수 있지 않을까 하는 생각이 듦.
+- 📜 [Microsoft Research, CMU] [Can large language models explore in-context?](https://arxiv.org/abs/2403.15371)
+    - GPT-3.5, GPT-4, Llama2를 대상으로 다양한 프롬프트를 디자인해서 실험을 수행. 결국 지금까지의 언어 모델들은 상당한 interventions(예를 들어 fine-tuning) 없이는 robust한 행동 양상을 보일 수 없다는 결론을 내림
+- 🧑🏻‍💻 [Lightning AI] [lightning-thunder](https://github.com/Lightning-AI/lightning-thunder?tab=readme-ov-file)
+    - 파이토치를 활용한 LLM 학습 속도를 40% 가량 향상시켜주는 compiler를 공개. single accelerator & multi-GPU 환경에서 모두 활용 가능.
+- 📜 [Johns Hopkins, Yale, AI2] [FOLLOWIR: Evaluating and Teaching Information Retrieval Models to Follow Instructions](https://arxiv.org/abs/2403.15246)
+    - Information Retrieval (IR) 에 LLM을 사용하더라도 지금까지는 단순히 query를 입력으로 받을 뿐이었음 → instruction following retrieval model, FollowIR을 제안
+- 📜 [UC Berkeley] [LLM2LLM: Boosting LLMs with Novel Iterative Data Enhancement](https://arxiv.org/abs/2403.15042)
+    - baseline student LLM을 초기 데이터셋에 대해 학습 → 학습 결과를 평가하여 잘못된 케이스들을 모음 → teacher LLM이 이를 바탕으로 합성 데이터를 생성하여 학습 데이터에 추가
 
 
 </details>
