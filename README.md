@@ -299,5 +299,6 @@
     - LLM agent를 operating system에 집어 넣어 OS의 뇌 역할을 수행하도록 함
 - 📜 [MIT, Berkeley, Chicago, Texas] [Decoding Compressed Trust: Scrutinizing the Trustworthiness of Efficient LLMs Under Compression](https://arxiv.org/abs/2403.15447)
     - 3개의 LLM에 4개의 compression technique을 적용해 8개 차원으로 평가. 3-bit와 같은 low bit 수준의 quantization은 trustworthiness를 크게 하락시킴
-
+- 🧑🏻‍💻 [OpenAI] [Sora: first impressions](https://openai.com/blog/sora-first-impressions)
+    - 여러 아티스트들이 Sora을 이용해서 만든 동영상 결과물들을 OpenAI 블로그에 공개. 자연스러운 내용 전개같은 건 없지만 신비스러운 느낌을 주는 초고퀄리티의 영상들임.
 </details>
