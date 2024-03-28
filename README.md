@@ -301,4 +301,15 @@
     - 3개의 LLM에 4개의 compression technique을 적용해 8개 차원으로 평가. 3-bit와 같은 low bit 수준의 quantization은 trustworthiness를 크게 하락시킴
 - 🧑🏻‍💻 [OpenAI] [Sora: first impressions](https://openai.com/blog/sora-first-impressions)
     - 여러 아티스트들이 Sora을 이용해서 만든 동영상 결과물들을 OpenAI 블로그에 공개. 자연스러운 내용 전개같은 건 없지만 신비스러운 느낌을 주는 초고퀄리티의 영상들임.
+- 🧑🏻‍💻 [Databricks] [Introducing DBRX: A New State-of-the-Art Open LLM](https://www.databricks.com/blog/introducing-dbrx-new-state-art-open-llm)
+    - Grok-1의 40% 사이즈밖에 되지 않으면서도 LLaMA2-70B보다 추론도 두 배나 빠르고 GPT-3.5-turbo를 능가하며 Gemini Pro 1.0에 준하는 성능의 LLM, DBRX을 [허깅페이스에 공개](https://huggingface.co/spaces/databricks/dbrx-instruct)
+    - MoE를 활용하여 132B/32B 전체/활성 파라미터 사이즈를 가짐. 32K context length 지원
+- 🧑🏻‍💻 [Anthropic] [Claude-3-Opus vs GPT-4](https://huggingface.co/spaces/lmsys/chatbot-arena-leaderboard)
+    - Chatbot Arena에서 GPT-4의 왕좌를 Claude가 탈환..!
+- 📜 [Meta, MIT] [The Unreasonable Ineffectiveness of the Deeper Layers](https://arxiv.org/abs/2403.17887)
+    - layer pruning이 다른 PEFT 전략을 보완/대체할 수 있는 방법론임을 확인함과 동시에, 현재의 사전학습 방식들은 deep layers에 속한 파라미터들을 온전히 활용하고 있지 못함을 입증한 연구
+- 📜 [Univ. of Hong Kong] [Mini-Gemini: Mining the Potential of Multi-modality Vision Language Models](https://arxiv.org/abs/2403.18814)
+    - visual token을 강화하기 위해 additional visual encoder를 사용. MoE를 활용하여 2B-34B 사이즈의 모델들을 지원
+- 📜 [Meta, Mila, McGil, Montreal] [Improving Text-to-Image Consistency via Automatic Prompt Optimization](https://arxiv.org/abs/2403.17804)
+    - text-to-image (T2I)에서의 성능을 향상시키기 위한 프레임워크로 T2I optimization-by-prompting (OPT2I)을 제시.
 </details>
