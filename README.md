@@ -312,4 +312,8 @@
     - visual token을 강화하기 위해 additional visual encoder를 사용. MoE를 활용하여 2B-34B 사이즈의 모델들을 지원
 - 📜 [Meta, Mila, McGil, Montreal] [Improving Text-to-Image Consistency via Automatic Prompt Optimization](https://arxiv.org/abs/2403.17804)
     - text-to-image (T2I)에서의 성능을 향상시키기 위한 프레임워크로 T2I optimization-by-prompting (OPT2I)을 제시.
+- 📜 [MIT, Microsoft] [Supervisory Prompt Training](https://arxiv.org/abs/2403.18051)
+    - dual LLM system을 이용하여 prompt를 자동적으로 생성. 문장 수준에서의 효용성을 확인하기 위한 impact score 개념을 고안.
+- 📜 [Upstage] [sDPO: Don't Use Your Data All at Once](https://arxiv.org/abs/2403.19270)
+    - alignment tuning 단계에서 사용될 수 있는 stepwise DPO (sDPO)를 제안. 이용 가능한 선호 데이터셋을 분할하여 stepwise 방식으로 사용 (한꺼번에 사용하는 대신에)
 </details>
