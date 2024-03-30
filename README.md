@@ -316,4 +316,12 @@
     - dual LLM system을 이용하여 prompt를 자동적으로 생성. 문장 수준에서의 효용성을 확인하기 위한 impact score 개념을 고안.
 - 📜 [Upstage] [sDPO: Don't Use Your Data All at Once](https://arxiv.org/abs/2403.19270)
     - alignment tuning 단계에서 사용될 수 있는 stepwise DPO (sDPO)를 제안. 이용 가능한 선호 데이터셋을 분할하여 stepwise 방식으로 사용 (한꺼번에 사용하는 대신에)
+- 🧑🏻‍💻 [HuggingFace] [A little guide to building Large Language Models in 2024](https://www.youtube.com/watch?v=2-SPH9hIKT8)
+    - 허깅페이스 cofounder 중 한명이 직접 촬영하여 업로드한 LLM 기초 강의 (1시간 15분)
+- 🧑🏻‍💻 [AI21labs] [Introducing Jamba: AI21's Groundbreaking SSM-Transformer Model](https://www.ai21.com/blog/announcing-jamba)
+    - transformer 아키텍쳐와 structured State Space Model (SSM) 기술을 결합하여 더 높은 throughput을 가지면서도 좋은 성능을 가진 모델 (256K 윈도우 사이즈)
+- 📜 [Can multiple-choice questions really be useful in detecting the abilities of LLMs?](https://arxiv.org/abs/2403.17752)
+    - Multiple-choice question(MQA)가 LLM을 평가하는 데 적합하지 않은 방식임을 설명. 결과가 질문이 제시되는 순서에 큰 영향을 받는다는 점과 long-form generation(LFG)로 평가했을 때 결과와의 낮은 상관관계를 그 근거로 듦
+- 📜 [Understanding Emergent Abilities of Language Models from the Loss Perspective](https://arxiv.org/abs/2403.15796)
+    - LLM에서의 emergent ability를 모델 사이즈 대신 로스 기준으로 분석. 동일한 사전 학습 loss를 갖는 경우, 모델의 사이즈가 크더라도 동일한 퍼포먼스를 낸다는 결과를 제시
 </details>
