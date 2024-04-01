@@ -325,3 +325,17 @@
 - 📜 [Understanding Emergent Abilities of Language Models from the Loss Perspective](https://arxiv.org/abs/2403.15796)
     - LLM에서의 emergent ability를 모델 사이즈 대신 로스 기준으로 분석. 동일한 사전 학습 loss를 갖는 경우, 모델의 사이즈가 크더라도 동일한 퍼포먼스를 낸다는 결과를 제시
 </details>
+
+
+## 🌸 April
+<details>
+  <summary>1st week</summary>
+
+- 🧑🏻‍💻 [Anthropic] [Prompt library](https://docs.anthropic.com/claude/prompt-library)
+    - 각종 상황에 적합한 프롬프트들을 검색할 수 있는 프롬프트 라이브러리
+- 🧑🏻‍💻 [xAI] [Announcing Grok-1.5](https://x.ai/blog/grok-1.5)
+    - 128K 토큰을 컨텍스트로 갖는 신모델. X에서 일부 유저들에게 선공개될 예정
+- 📜 [Can LLMs Learn from Previous Mistakes? Investigating LLMs' Errors to Boost for Reasoning](https://arxiv.org/abs/2403.20046)
+    - LLM이 잘못된 내용들로부터 얻는 이득이 있는지를 확인하기 위해 관련 데이터셋을 직접 제작하여 실험한 결과를 제시
+
+</details>
