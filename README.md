@@ -337,5 +337,12 @@
     - 128K 토큰을 컨텍스트로 갖는 신모델. X에서 일부 유저들에게 선공개될 예정
 - 📜 [Can LLMs Learn from Previous Mistakes? Investigating LLMs' Errors to Boost for Reasoning](https://arxiv.org/abs/2403.20046)
     - LLM이 잘못된 내용들로부터 얻는 이득이 있는지를 확인하기 위해 관련 데이터셋을 직접 제작하여 실험한 결과를 제시
-
+- 📜 [Meta] [The Unreasonable Ineffectiveness of the Deeper Layers](https://arxiv.org/abs/2403.17887v1)
+    - single A100 gpu에서 돌릴 수 있도록 PEFT를 이용하여 QA 벤치마크 검증. LLaMA 패밀리의 경우 40%의 레이어를 삭제해도 기존의 accuracy를 유지할 수 있다는 결과.
+- 🧑🏻‍💻 [OpenAI] [Navigating the Challenges and Opportunities of Synthetic Voices](https://openai.com/blog/navigating-the-challenges-and-opportunities-of-synthetic-voices)
+    - 15초짜리 reference만 있으면 동일한 목소리로 다른 문장을 읽는 보이스를 생성할 수 있는 모델. 악용 가능성 때문에 공개하지는 않음
+- 📜 [AI21labs] [Jamba: A Hybrid Transformer-Mamba Language Model](https://arxiv.org/abs/2403.19887)
+    - transformer 아키텍쳐와 structured State Space Model (SSM) 기술을 결합하여 더 높은 throughput을 가지면서도 좋은 성능을 가진 모델 (256K 윈도우 사이즈)
+- 📜 [Google DeepMind] [Gecko: Versatile Text Embeddings Distilled from Large Language Models](https://arxiv.org/abs/2403.20327)
+    - LLM의 지식을 retriever 모델에 distill 했다는 컨셉을 지닌 embedding 모델. MTEB 벤치마크에서 256 임베딩 차원으로 768 차원의 모델 성능을 넘어섰음
 </details>
