@@ -351,4 +351,6 @@
     - MS와 OpenAI가 슈퍼컴퓨터와 데이터센터 구축에 2028년까지 1000억 달러(130조 원)을 들일 예정
 - 📜 [Microsoft] [Injecting New Knowledge into Large Language Models via Supervised Fine-Tuning](https://arxiv.org/abs/2404.00213)
     - GPT-4를 대상으로 직접 구축한 데이터셋에 대해 SFT를 수행한 결과, LLM response의 factuality를 높일 수 있다는 것을 입증. 이때 사용된 ‘dataset generation strategies’가 핵심.
+- 📜 [Naver Cloud] [HyperCLOVA X Technical Report](https://arxiv.org/abs/2404.01954)
+    - 한국어, 영어, 코드 데이터를 적절히 혼합하여 학습한 HyperCLOVA X 모델의 technical report를 공개. 한국어와 한국의 문화적 뉘앙스에 대한 이해도가 높은 것으로 확인됨
 </details>
