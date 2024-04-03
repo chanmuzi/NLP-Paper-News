@@ -345,4 +345,10 @@
     - transformer 아키텍쳐와 structured State Space Model (SSM) 기술을 결합하여 더 높은 throughput을 가지면서도 좋은 성능을 가진 모델 (256K 윈도우 사이즈)
 - 📜 [Google DeepMind] [Gecko: Versatile Text Embeddings Distilled from Large Language Models](https://arxiv.org/abs/2403.20327)
     - LLM의 지식을 retriever 모델에 distill 했다는 컨셉을 지닌 embedding 모델. MTEB 벤치마크에서 256 임베딩 차원으로 768 차원의 모델 성능을 넘어섰음
+- 📜 [Apple] [ReALM: Reference Resolution As Language Modeling](https://arxiv.org/abs/2403.20329)
+    - LLM을 다양한 종류의 reference를 resolve 하는 데 사용 → 시리가 이제 유저의 화면을 인식하고 질의에 응답 가능
+- 🗞️ [Microsoft and OpenAI pledge $100 billion for ‘Stargate’ supercomputer facility](https://interestingengineering.com/culture/microsoft-and-openai-want-to-build-a-100-billion-datacenter)
+    - MS와 OpenAI가 슈퍼컴퓨터와 데이터센터 구축에 2028년까지 1000억 달러(130조 원)을 들일 예정
+- 📜 [Microsoft] [Injecting New Knowledge into Large Language Models via Supervised Fine-Tuning](https://arxiv.org/abs/2404.00213)
+    - GPT-4를 대상으로 직접 구축한 데이터셋에 대해 SFT를 수행한 결과, LLM response의 factuality를 높일 수 있다는 것을 입증. 이때 사용된 ‘dataset generation strategies’가 핵심.
 </details>
