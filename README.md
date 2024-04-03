@@ -353,4 +353,14 @@
     - GPT-4를 대상으로 직접 구축한 데이터셋에 대해 SFT를 수행한 결과, LLM response의 factuality를 높일 수 있다는 것을 입증. 이때 사용된 ‘dataset generation strategies’가 핵심.
 - 📜 [Naver Cloud] [HyperCLOVA X Technical Report](https://arxiv.org/abs/2404.01954)
     - 한국어, 영어, 코드 데이터를 적절히 혼합하여 학습한 HyperCLOVA X 모델의 technical report를 공개. 한국어와 한국의 문화적 뉘앙스에 대한 이해도가 높은 것으로 확인됨
+- 📜 [Anthropic] [Many-shot jailbreaking](https://www.anthropic.com/research/many-shot-jailbreaking)
+    - Anthropic 뿐만 아니라 타사의 LLM에도 적용 가능한 jailbreaking을 연구한 결과를 공개. 간단하면서도 효과적인 attack에 대해 연구.
+- 📜 [Efficient Prompting Methods for Large Language Models: A Survey](https://arxiv.org/abs/2404.01077)
+    - 프롬프트를 압축하는 등의 computation 관련 연구와 최적의 프롬프트를 찾는 optimization 관련 연구를 중심으로 한 짧은 서베이 페이퍼
+- 📜 [Beyond Accuracy: Evaluating the Reasoning Behavior of Large Language Models -- A Survey](https://arxiv.org/abs/2404.01869)
+    - 표면적인 정확도를 기준으로 LLM의 추론 능력을 평가가 이뤄졌었던 것을 문제점으로 지적. 사람과 LLM의 추론 방식 간의 차이를 설명한 짧은 서베이 페이퍼.
+- 📜 [University of Waterloo, CMU] [Long-context LLMs Struggle with Long In-context Learning](https://arxiv.org/abs/2404.02060)
+    - perplexity나 합성 태스크 정도로는 long sequence를 다루는 LLM의 능력을 제대로 평가할 수 없음. 이러한 문제를 해결하기 위해 LongICLBench를 제시. 모든 모델들이 ‘엄청 긴’ 텍스트는 전혀 다루지 못한다는 것을 확인.
+- 📜 [Tsinghua University, UIUC] [Advancing LLM Reasoning Generalists with Preference Trees](https://arxiv.org/abs/2404.02078)
+    - Mistral-7B와 CodeLlama-70B에 fine-tuning된 reasoning 최적화 LLM, EURUS를 공개. 이는 large-scale & high quality의 alignment 데이터셋 UltraInteract를 구축함에 기인.
 </details>
