@@ -363,4 +363,12 @@
     - perplexity나 합성 태스크 정도로는 long sequence를 다루는 LLM의 능력을 제대로 평가할 수 없음. 이러한 문제를 해결하기 위해 LongICLBench를 제시. 모든 모델들이 ‘엄청 긴’ 텍스트는 전혀 다루지 못한다는 것을 확인.
 - 📜 [Tsinghua University, UIUC] [Advancing LLM Reasoning Generalists with Preference Trees](https://arxiv.org/abs/2404.02078)
     - Mistral-7B와 CodeLlama-70B에 fine-tuning된 reasoning 최적화 LLM, EURUS를 공개. 이는 large-scale & high quality의 alignment 데이터셋 UltraInteract를 구축함에 기인.
+- 📜 [Google DeepMind] [Mixture-of-Depths: Dynamically allocating compute in transformer-based language models](https://arxiv.org/abs/2404.02258)
+    - transformer 기반의 모델들은 기존에 입력 시퀀스 전체에 걸쳐 FLOPs을 균등하게 분배 → 이를 모델 depth에 따라 dynamic하게 할당함으로써 최적화. top-k routing 메커니즘을 이용.
+- 🗞️ [DALL-E now lets you edit images in ChatGPT](https://www.theverge.com/2024/4/3/24120181/openai-dall-e-chat-gpt-image-edit)
+    - ChatGPT에서 DALLE로 생성한 이미지의 영역을 지정하여 부분 수정이 가능해짐 (GPTs 사용)
+- 🧑🏻‍💻 [Anthropic] [Claude can now use tools](https://docs.anthropic.com/claude/docs/tool-use)
+    - Claude에서 tool use 기능을 beta로 공개. 자세한 내용은 API doucment를 참고.
+- 📜 [Google DeepMind, Anthropic] [Training LLMs over Neurally Compressed Text](https://arxiv.org/abs/2404.03626)
+    - LLM이 학습할 text를 압축할 때, 텍스트를 여러 segment로 쪼개고 동일한 길이의 bit로 만드는 방식인 Equal-Info Windows를 제안
 </details>
