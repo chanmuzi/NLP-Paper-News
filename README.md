@@ -372,3 +372,11 @@
 - 📜 [Google DeepMind, Anthropic] [Training LLMs over Neurally Compressed Text](https://arxiv.org/abs/2404.03626)
     - LLM이 학습할 text를 압축할 때, 텍스트를 여러 segment로 쪼개고 동일한 길이의 bit로 만드는 방식인 Equal-Info Windows를 제안
 </details>
+
+<details>
+  <summary>2nd week</summary>
+
+- 🧑🏻‍💻 [Stability AI] [Introducing Stable Audio 2.0](https://stability.ai/news/stable-audio-2-0)
+    - text-to-audio 뿐만 아니라 audio-to-audio 도 가능. 즉, audio로 새로운 audio를 생성하는 기능을 지원. 이 모델은 Diffusion Transformer (DiT) 아키텍쳐를 따르고 있음
+
+</details>
