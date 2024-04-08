@@ -378,5 +378,6 @@
 
 - 🧑🏻‍💻 [Stability AI] [Introducing Stable Audio 2.0](https://stability.ai/news/stable-audio-2-0)
     - text-to-audio 뿐만 아니라 audio-to-audio 도 가능. 즉, audio로 새로운 audio를 생성하는 기능을 지원. 이 모델은 Diffusion Transformer (DiT) 아키텍쳐를 따르고 있음
-
+- 🧑🏻‍💻 [MyShell, MIT-IBM, Princeton, Lepton AI] [JetMoE: Reaching LLaMA2 Performance with 0.1M Dollars](https://research.myshell.ai/jetmoe)
+    - 약 1억 3천 만원 정도의 비용으로 LLaMA2를 상회하는 능력의 모델 JetMoE를 학습했다고 밝힘. publicly 이용 가능한 데이터만으로 학습된 모델이라는 점을 강조. 향후 technical report 공개 예정 (아직 x)
 </details>
