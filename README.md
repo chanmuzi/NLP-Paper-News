@@ -380,4 +380,12 @@
     - text-to-audio 뿐만 아니라 audio-to-audio 도 가능. 즉, audio로 새로운 audio를 생성하는 기능을 지원. 이 모델은 Diffusion Transformer (DiT) 아키텍쳐를 따르고 있음
 - 🧑🏻‍💻 [MyShell, MIT-IBM, Princeton, Lepton AI] [JetMoE: Reaching LLaMA2 Performance with 0.1M Dollars](https://research.myshell.ai/jetmoe)
     - 약 1억 3천 만원 정도의 비용으로 LLaMA2를 상회하는 능력의 모델 JetMoE를 학습했다고 밝힘. publicly 이용 가능한 데이터만으로 학습된 모델이라는 점을 강조. 향후 technical report 공개 예정 (아직 x)
+- 📜 [University of Copenhagen, Google DeepMind] [MuLan: A Study of Fact Mutability in Language Models](https://arxiv.org/abs/2404.03036)
+    - 시간과 같은 contingency에 따라 정보가 mutable(변경될수도) 있다. mutable facts는 그렇지 않은 것과 다른 방식으로 인코딩되어 업데이트하기 더 쉬울 것이라는 가설 → 1:1, 1:N 관계에 대한 분석
+- 📜 [Stanford, MIT] [Stream of Search (SoS): Learning to Search in Language](https://arxiv.org/abs/2404.03683)
+    - 문제를 풀기 위해 search가 필요한 데이터셋에 대해 transformer 기반의 모델을 from scratch 학습한 모델
+- 📜 [Stanford, Georgia] [Social Skill Training with Large Language Models](https://arxiv.org/abs/2404.04204)
+    - 사람이 social skills에 의존하는 것처럼 LLM도 이러한 메커니즘을 활용할 수 있도록 하는 프레임워크, APAM(AI Partner, AI Mentor)를 제시
+- 📜 [Microsoft Research] [Models to Self-Improve with General Preferences](https://arxiv.org/abs/2404.03715)
+    - Preference를 최적화하기 위해 contrastive learning의 단순함과 안전성을 theoretical generality와 결합한 Direct Nash Optimization(DNO)를 제시. 작은 사이즈(Orca-2 7B) 모델을 GPT-4와 AlpacaEval로 테스트했을 때 큰 성과 향상이 있었음
 </details>
