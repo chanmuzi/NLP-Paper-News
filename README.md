@@ -392,7 +392,7 @@
     - W&B의 document가 한글판으로 공식 배포됨
 - 🧑🏻‍💻 [Tesla] [Robotaxi](https://twitter.com/elonmusk/status/1776351450542768368)
     - 일론 머스크가 X에 Tesla의 Robotaxi가 8월 8일 출시될 예정임을 알림
-- 🧑🏻‍💻 [Andrej Karpathy] llm.c
+- 🧑🏻‍💻 [Andrej Karpathy] [llm.c](https://github.com/karpathy/llm.c)
     - GPT-2 모델 학습 코드 작성에 pytorch를 사용하지 않고 오직 c만 사용함. 1,000여 줄의 코드로 GPT-2의 학습 과정을 파악할 수 있음.
 - 🧑🏻‍💻 [3Blue1Brown] [Attention in transformers, visually explained](https://www.youtube.com/watch?v=eMlx5fFNoYc&t=27s)
     - 지난 번 Transformer 시각화 영상 이후 후속 영상 업로드
