@@ -388,4 +388,14 @@
     - 사람이 social skills에 의존하는 것처럼 LLM도 이러한 메커니즘을 활용할 수 있도록 하는 프레임워크, APAM(AI Partner, AI Mentor)를 제시
 - 📜 [Microsoft Research] [Models to Self-Improve with General Preferences](https://arxiv.org/abs/2404.03715)
     - Preference를 최적화하기 위해 contrastive learning의 단순함과 안전성을 theoretical generality와 결합한 Direct Nash Optimization(DNO)를 제시. 작은 사이즈(Orca-2 7B) 모델을 GPT-4와 AlpacaEval로 테스트했을 때 큰 성과 향상이 있었음
+- 🧑🏻‍💻 [W&B] [Weight & Biases Docs](https://docs.wandb.ai/ko/?mkt_tok=MjYxLVFIUC04MjIAAAGSX8W79t-qKeYqkWAB6xTAK2R-027DfjjyAUi4hj32ywDET-u3DS8zoc8EGTXUmD6FeRTJjKotiQYg8qjBWT3683U-z133NpaQSmQJ8gRp)
+    - W&B의 document가 한글판으로 공식 배포됨
+- 🧑🏻‍💻 [Tesla] [Robotaxi](https://twitter.com/elonmusk/status/1776351450542768368)
+    - 일론 머스크가 X에 Tesla의 Robotaxi가 8월 8일 출시될 예정임을 알림
+- 🧑🏻‍💻 [Andrej Karpathy] llm.c
+    - GPT-2 모델 학습 코드 작성에 pytorch를 사용하지 않고 오직 c만 사용함. 1,000여 줄의 코드로 GPT-2의 학습 과정을 파악할 수 있음.
+- 🧑🏻‍💻 [3Blue1Brown] [Attention in transformers, visually explained](https://www.youtube.com/watch?v=eMlx5fFNoYc&t=27s)
+    - 지난 번 Transformer 시각화 영상 이후 후속 영상 업로드
+- 📜 [Mila, McGil] [LLM2Vec: Large Language Models Are Secretly Powerful Text Encoders](https://arxiv.org/abs/2404.05961)
+    - decoder-only LLM에 1) bidiriectional attention, 2) masked token next prediction, 3) unsupervised contrastive learning을 적용하여 기존의 encoder 모델들보다 훨씬 뛰어난 MTEB 벤치마크 결과를 달성함 
 </details>
