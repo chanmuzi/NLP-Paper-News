@@ -397,5 +397,9 @@
 - 🧑🏻‍💻 [3Blue1Brown] [Attention in transformers, visually explained](https://www.youtube.com/watch?v=eMlx5fFNoYc&t=27s)
     - 지난 번 Transformer 시각화 영상 이후 후속 영상 업로드
 - 📜 [Mila, McGil] [LLM2Vec: Large Language Models Are Secretly Powerful Text Encoders](https://arxiv.org/abs/2404.05961)
-    - decoder-only LLM에 1) bidiriectional attention, 2) masked token next prediction, 3) unsupervised contrastive learning을 적용하여 기존의 encoder 모델들보다 훨씬 뛰어난 MTEB 벤치마크 결과를 달성함 
+    - decoder-only LLM에 1) bidiriectional attention, 2) masked token next prediction, 3) unsupervised contrastive learning을 적용하여 기존의 encoder 모델들보다 훨씬 뛰어난 MTEB 벤치마크 결과를 달성함
+- 📜 [Google] [Leave No Context Behind: Efficient Infinite Context Transformers with Infini-attention](https://arxiv.org/abs/2404.07143)
+    - 압축적인 정보를 vanilla attention mechanism에 넣고, single Transformer 블록 내에서 masked local attention과 long-term linear attention 메커니즘을 구현하는 방식, Infini-attention을 제안. 이를 통해 LLM이 long context 태스크를 잘 수행할 수 있게 됨
+- 📜 [NVIDIA] [RULER: What's the Real Context Size of Your Long-Context Language Models?](https://arxiv.org/abs/2404.06654)
+    - Needle-In-A-Haystack (NIAH) 태스크에 multi-hop tracing과 aggregation 카테고리를 새로이 추가한 synthetic benchmark, Ruler를 공개
 </details>
