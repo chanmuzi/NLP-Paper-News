@@ -402,4 +402,10 @@
     - 압축적인 정보를 vanilla attention mechanism에 넣고, single Transformer 블록 내에서 masked local attention과 long-term linear attention 메커니즘을 구현하는 방식, Infini-attention을 제안. 이를 통해 LLM이 long context 태스크를 잘 수행할 수 있게 됨
 - 📜 [NVIDIA] [RULER: What's the Real Context Size of Your Long-Context Language Models?](https://arxiv.org/abs/2404.06654)
     - Needle-In-A-Haystack (NIAH) 태스크에 multi-hop tracing과 aggregation 카테고리를 새로이 추가한 synthetic benchmark, Ruler를 공개
+- 📜 [UIUC] [Graph Chain-of-Thought: Augmenting Large Language Models by Reasoning on Graphs](https://arxiv.org/abs/2404.07103)
+    - 대부분의 도메인에서 텍스트는 상호 관계를 갖는다는 점에 근거하여 Graph Reasoning Benchmark (GRBench)를 직접 제작. 10개의 도메인에서 1,740개 QA를 다룸.
+- 📜 [Apple] [Superposition Prompting: Improving and Accelerating Retrieval-Augmented Generation](https://arxiv.org/abs/2404.06910)
+    - 사전학습된 트랜스포머 기반의 모델에 fine-tuning 없이 바로 적용 가능한 RAG prompting methodology, superposition prompting을 제안. 입력 문서를 parallel한 방식으로 처리하며 불필요한 것을 버리도록 함.
+- 📜 [Tsinghua, Microsoft] [Rho-1: Not All Tokens Are What You Need](https://arxiv.org/abs/2404.07965)
+    - 모든 토큰이 동일한 중요도를 갖지 않으므로, 사전학습 단계에서 reference 모델을 사용하여 중요도가 높은 토큰에 대해 focused loss를 적용하는 방식인 Selective Language Modeling (SLM)을 제안. 이 방식으로 학습된 LLM이 Rho-1 모델.
 </details>
