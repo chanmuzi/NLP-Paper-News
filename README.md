@@ -408,4 +408,6 @@
     - 사전학습된 트랜스포머 기반의 모델에 fine-tuning 없이 바로 적용 가능한 RAG prompting methodology, superposition prompting을 제안. 입력 문서를 parallel한 방식으로 처리하며 불필요한 것을 버리도록 함.
 - 📜 [Tsinghua, Microsoft] [Rho-1: Not All Tokens Are What You Need](https://arxiv.org/abs/2404.07965)
     - 모든 토큰이 동일한 중요도를 갖지 않으므로, 사전학습 단계에서 reference 모델을 사용하여 중요도가 높은 토큰에 대해 focused loss를 적용하는 방식인 Selective Language Modeling (SLM)을 제안. 이 방식으로 학습된 LLM이 Rho-1 모델.
+- 📜 [Google DeepMind] [RecurrentGemma: Moving Past Transformers for Efficient Open Language Models](https://arxiv.org/abs/2404.07839)
+    - Griffin 모델의 아키텍쳐를 기반으로 linear recurrence에 local attention을 결합하여 학습한 모델 RecurrentGemma를 공개. 2B non-embedding parameters 버전의 모델과 instruction tuned 버전을 제공
 </details>
