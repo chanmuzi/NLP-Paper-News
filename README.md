@@ -413,3 +413,15 @@
 - 🧑🏻‍💻 [IBM] [IBM watsonx chat](https://dataplatform.cloud.ibm.com/chat/login?redirect_url=%2Fchat%2F)
     - IBM [watsonx.ai](http://watsonx.ai) studio에서 사용 가능한 LLM 챗 모델을 공개. granite-13b-chat-v2, llama-2-13-chat, llama-2-70b-chat, 세 종류의 버전을 공개함.
 </details>
+
+<details>
+  <summary>3rd week</summary>
+  
+- 🧑🏻‍💻 [Mistral] [Mixtral-8x22B-v0.1-4bit](https://huggingface.co/mistral-community/Mixtral-8x22B-v0.1-4bit)
+    - 176B 파라미터, 44B active 파라미터 (추론 시), 65K context window, 8 experts & 2 per token, 32K vocab
+- 🧑🏻‍💻 [xAI] [Grok-1.5 Vision Preview](https://x.ai/blog/grok-1.5v)
+    - xAI에서 공개한 첫 번째 멀티모달 모델. zero-shot 기준으로 GPT-4V에 필적하거나 그 이상의 성능을 보여주는 벤치마크 결과도 존재.
+- 📜 [Google] [CodeGemma: Open Code Models Based on Gemma](https://storage.googleapis.com/deepmind-media/gemma/codegemma_report.pdf)
+    - RecurrentGemma와 함께 공개한 코드 데이터를 학습한 Gemma 모델. 7B pretrained (PT) 버전과 instruction-tuned (IT) 버전 두 개를 공개.
+
+</details>
