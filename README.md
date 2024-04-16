@@ -423,5 +423,16 @@
     - xAI에서 공개한 첫 번째 멀티모달 모델. zero-shot 기준으로 GPT-4V에 필적하거나 그 이상의 성능을 보여주는 벤치마크 결과도 존재.
 - 📜 [Google] [CodeGemma: Open Code Models Based on Gemma](https://storage.googleapis.com/deepmind-media/gemma/codegemma_report.pdf)
     - RecurrentGemma와 함께 공개한 코드 데이터를 학습한 Gemma 모델. 7B pretrained (PT) 버전과 instruction-tuned (IT) 버전 두 개를 공개.
-
+- 🗞️ [Meta is testing an AI-powered search bar in Instagram](https://techcrunch.com/2024/04/12/meta-is-testing-an-ai-powered-search-bar-in-instagram/)
+    - 인스타그램에서 릴스, 포스트를 검색하거나 질문을 할 때 사용할 수 있는 AI 기능 도입을 테스트 중이라고 알려짐
+- 🧑🏻‍💻 [DeepLearning.AI] [Quantization Fundamentals with HuggingFace](https://www.deeplearning.ai/short-courses/quantization-fundamentals-with-hugging-face/)
+    - Quanto 라이브러리를 활용한 linear quantization, linear quantization이 실행되는 전반적인 흐름, Transformer 라이브러리를 활용하여 quantization의 다른 형태인 downcasting 적용해보기
+- 📜 [Sample-Efficient Human Evaluation of Large Language Models via Maximum Discrepancy Competition](https://arxiv.org/abs/2404.08008)
+    - LLM에 대한 사람의 평가가 좀 더 쉽고 간편해질 수 있도록 MAximum Discrepeancy (MAD) competition을 도입. instruction의 subset을 sampling하고 두 개의 LLM에 adapt하여 얻은 결과에 대해 win, tie, lose 셋 중 하나를 고르도록 하는 방식
+- 📜 [Tinkoff] [Learn Your Reference Model for Real Good Alignment](https://arxiv.org/abs/2404.09656)
+    - 학습 중에 reference policy를 업데이트하는 Trust Region DPO (TR-DPO) 방식을 제안
+- 📜 [Google] [TransformerFAM: Feedback attention is working memory](https://arxiv.org/abs/2404.09173)
+    - feedback loop를 이용하여 네트워크가 스스로의 latent representation에 attend 할 수 있도록 만든 Feedback Attention Memory(FAM)를 제안. 이론상 unlimited length의 sequence를 처리할 수 있도록 함
+- 📜 [Meta, CMU] [Megalodon: Efficient LLM Pretraining and Inference with Unlimited Context Length](https://arxiv.org/abs/2404.08801)
+    - exponential moving average with gated attention을 사용하는 Mega 아키텍쳐에, complex exponential moving average (CEMA), timestep normalization layer, normalized attention mechanism, pre-norm with two-hop residual configuration을 더한 모델인 Megalodon 모델을 공개
 </details>
