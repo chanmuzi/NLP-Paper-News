@@ -435,4 +435,10 @@
     - feedback loop를 이용하여 네트워크가 스스로의 latent representation에 attend 할 수 있도록 만든 Feedback Attention Memory(FAM)를 제안. 이론상 unlimited length의 sequence를 처리할 수 있도록 함
 - 📜 [Meta, CMU] [Megalodon: Efficient LLM Pretraining and Inference with Unlimited Context Length](https://arxiv.org/abs/2404.08801)
     - exponential moving average with gated attention을 사용하는 Mega 아키텍쳐에, complex exponential moving average (CEMA), timestep normalization layer, normalized attention mechanism, pre-norm with two-hop residual configuration을 더한 모델인 Megalodon 모델을 공개
+- 🗞️ [Google] [Gemma-1.1 version released](https://huggingface.co/google/gemma-1.1-7b-it)
+    - was trained using a novel RLHF method
+- 📜 [Cambridge, Michigan, Oxford, Stanford, etc] [Foundational Challenges in Assuring Alignment and Safety of Large Language Models](https://arxiv.org/abs/2404.09932)
+    - LLM을 alignment 하거나 safety를 보장함에 있어서 18개의 근본적인 문제점을 다루는 서베이 페이퍼
+- 📜 [UT Austin] [Pre-training Small Base LMs with Fewer Tokens](https://arxiv.org/abs/2404.08634)
+    - 큰 언어 모델에서 transformer 블록을 가져와 raw pretraining data의 일부에 추가 학습하는 방식을 제안. 이를 통해 적은 자원으로 작은 모델을 학습시켜 준수한 성능을 낼 수 있음
 </details>
