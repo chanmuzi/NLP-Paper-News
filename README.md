@@ -441,4 +441,6 @@
     - LLM을 alignment 하거나 safety를 보장함에 있어서 18개의 근본적인 문제점을 다루는 서베이 페이퍼
 - 📜 [UT Austin] [Pre-training Small Base LMs with Fewer Tokens](https://arxiv.org/abs/2404.08634)
     - 큰 언어 모델에서 transformer 블록을 가져와 raw pretraining data의 일부에 추가 학습하는 방식을 제안. 이를 통해 적은 자원으로 작은 모델을 학습시켜 준수한 성능을 낼 수 있음
+- 📜 [KAIST] [Self-Explore to Avoid the Pit: Improving the Reasoning Capabilities of Language Models with Fine-grained Rewards](https://arxiv.org/abs/2404.10346)
+    - LLM이 스스로 reasoning 능력을 향상시킬 수 있도록, LLM에게 잘못된 스텝(first pit)을 제공하고 이를 개선하기 위한 fine-grained rewards를 사용하는 방식인 Self-Explore를 제안
 </details>
