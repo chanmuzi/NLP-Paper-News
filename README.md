@@ -445,4 +445,18 @@
     - LLM이 스스로 reasoning 능력을 향상시킬 수 있도록, LLM에게 잘못된 스텝(first pit)을 제공하고 이를 개선하기 위한 fine-grained rewards를 사용하는 방식인 Self-Explore를 제안
 - 🧑🏻‍💻 [Upstage] [Evalverse: Revolutionizing Large Language Model Evaluation with a Unified, User-Friendly Framework](https://www.upstage.ai/feed/tech/evalverse-llm-evaluation-opensource)
     - 서브모듈을 통한 통합 평가, slack을 통한 코드 없는 평가 요청, LLM 평가 보고서 제작 기능
+- 🧑🏻‍💻 [Microsoft] [VASA-1: Lifelike Audio-Driven Talking FacesGenerated in Real Time](https://www.microsoft.com/en-us/research/project/vasa-1/)
+    - Single image + Audio clip (1분) + (optional) Control signals를 입력으로 받아 1분 길이의 고퀄리티 딥페이크 영상을 생성. 엄청나게 자연스러운 입모양과 표정.. 다양한 데모 영상이 업로드되어 있음
+- 🧑🏻‍💻 [Meta] [Build the future of AI with Meta Llama 3](https://llama.meta.com/llama3/)
+    - 8B, 70B 사이즈의 pretrained & instruction-tuned version의 Llama 3 모델을 공개. 70B 모델의 경우 Gemini Pro 1.5와 Claude 3 Sonnet의 성능을 상회하는 수준이라고 함.
+- 🧑🏻‍💻 [Google] [Tune in for Google I/O](https://io.google/2024/)
+    - 2024년 구글 I/O가 25일 뒤 열릴 예정. 사전 등록을 받고 있음
+- 🧑🏻‍💻 [AI2] [OLMo 1.7–7B: A 24 point improvement on MMLU](https://blog.allenai.org/olmo-1-7-7b-a-24-point-improvement-on-mmlu-92b43f7d269d)
+    - OLMo 1.0의 업그레이드 버전 모델을 공개. MMLU에서는 Llama 2-7B을 넘어서고 Llama 2-13B에 준하는 성능을, GSM8K에서는 Llama 2-13B을 넘어서는 성능을 보였다고 설명함. [허깅페이스 모델 카드](https://huggingface.co/allenai/OLMo-1.7-7B)
+- 🧑🏻‍💻 [PyTorch] [torchtune](https://github.com/pytorch/torchtune)
+    - PyTorch의 native 라이브러리로, LLM fine-tuning 및 실험을 편리하게 도와줌. 현재 Llama3 모델도 지원함.
+- 📜 [Google DeepMind] [Many-Shot In-Context Learning](https://arxiv.org/abs/2404.11018)
+    - human rationale을 model이 생성한 CoT rationale로 대체하는 Reinforced ICL, prompt에서 rationale을 완전히 지우고 domain-specific input만 활용하도록 하는 Unsupervised ICL, 두 방법론을 제안
+- 📜 [Microsoft Research] [Position Engineering: Boosting Large Language Models through Positional Information Manipulation](https://arxiv.org/abs/2404.11216)
+    - prompt engineering과 달리 프롬프트 내 텍스트를 변경하지 않고 순서 정보만 변경하는 방식인 position engineering을 제시
 </details>
