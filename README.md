@@ -459,4 +459,10 @@
     - human rationale을 model이 생성한 CoT rationale로 대체하는 Reinforced ICL, prompt에서 rationale을 완전히 지우고 domain-specific input만 활용하도록 하는 Unsupervised ICL, 두 방법론을 제안
 - 📜 [Microsoft Research] [Position Engineering: Boosting Large Language Models through Positional Information Manipulation](https://arxiv.org/abs/2404.11216)
     - prompt engineering과 달리 프롬프트 내 텍스트를 변경하지 않고 순서 정보만 변경하는 방식인 position engineering을 제시
+- 📜 [Tencent AI] [Toward Self-Improvement of LLMs via Imagination, Searching, and Criticizing](https://arxiv.org/abs/2404.12253)
+    - Monte Carlo Tree Search(MCTS)를 LLM과 결합하여 self-improving loop를 구축한 AlphaLLM을 공개. Imagination, Searching, Criticizing, 세 단계로 loop가 구성됨
+- 🗞️ [Meta adds its AI chatbot, powered by Llama 3, to the search bar across its apps](https://techcrunch.com/2024/04/18/meta-adds-its-ai-chatbot-powered-by-llama-3-to-the-search-bar-across-its-apps/?utm_source=www.theaivalley.com&utm_medium=newsletter&utm_campaign=meta-ai-vs-chatgpt-begins-now)
+    - 메타가 네 개의 주요 앱(Facebook, Messenger, Instagram, WhatsApp)의 검색 창에 Llama 3 기반 챗봇 모델을 탑재함. 이를 OpenAI와의 경쟁 구도로 해석하는 듯함.
+- 📜 [CMU, Meta AI] [TriForce: Lossless Acceleration of Long Sequence Generation with Hierarchical Speculative Decoding](https://arxiv.org/abs/2404.11912)
+    - auto-regressive LLM이 모든 KV cache를 한 번에 load해야 한다는 문제를 해결하기 위해, dynamic sparse KV cache를 retrieve하는 방식을 고안.
 </details>
