@@ -465,4 +465,6 @@
     - 메타가 네 개의 주요 앱(Facebook, Messenger, Instagram, WhatsApp)의 검색 창에 Llama 3 기반 챗봇 모델을 탑재함. 이를 OpenAI와의 경쟁 구도로 해석하는 듯함.
 - 📜 [CMU, Meta AI] [TriForce: Lossless Acceleration of Long Sequence Generation with Hierarchical Speculative Decoding](https://arxiv.org/abs/2404.11912)
     - auto-regressive LLM이 모든 KV cache를 한 번에 load해야 한다는 문제를 해결하기 위해, dynamic sparse KV cache를 retrieve하는 방식을 고안.
+- 🧑🏻‍💻 [OpenAI] [Introducing OpenAI Japan](https://openai.com/blog/introducing-openai-japan)
+    - 일본어에 특화된 GPT-4 커스텀 모델을 공개. 아시아 내 최초 지사로 도쿄 지역을 선택.
 </details>
