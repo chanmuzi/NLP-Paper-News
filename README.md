@@ -468,3 +468,9 @@
 - 🧑🏻‍💻 [OpenAI] [Introducing OpenAI Japan](https://openai.com/blog/introducing-openai-japan)
     - 일본어에 특화된 GPT-4 커스텀 모델을 공개. 아시아 내 최초 지사로 도쿄 지역을 선택.
 </details>
+
+<details>
+  <summary>4th week</summary>
+
+
+</details>
