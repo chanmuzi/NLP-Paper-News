@@ -472,5 +472,14 @@
 <details>
   <summary>4th week</summary>
 
+- 🧑🏻‍💻 [HuggingFace] [FineWeb](https://huggingface.co/datasets/HuggingFaceFW/fineweb)
+    - 허깅페이스에서 오픈소스로 공개한 15T 개 토큰으로 구성된 텍스트 데이터셋. ODC-By 1.0 license의 저작권(상업적으로도 자유롭게 이용 가능). 45TB 의 저장 공간을 필요로 하며 223억행으로 구성됨..
+- 📜 [Epoch AI] [Chinchilla Scaling: A replication attempt](https://arxiv.org/abs/2404.10102)
+    - Chinchilla에서 밝혔던 scaling law가 타당한 것인지 실험을 통해 재현한 논문. 당시 제안되었던 세 개의 방법론 중 두 개는 유효하지 않으며 세 번째 방법론은 타당한 것으로 확인되었다고 주장함
+- 📜 [State Space Model for New-Generation Network Alternative to Transformers: A Survey](https://arxiv.org/abs/2404.09516)
+    - State Space Model (SSM) 서베이 페이퍼
+- 📜 [Stanford] [How faithful are RAG models? Quantifying the tug-of-war between RAG and LLMs' internal prior](https://arxiv.org/abs/2404.10198)
+    - LLM의 internal knowledge와 retrieved information 간의 관계에 대한 연구. LLM이 약한 우선순위를 갖는 internal knowledge에 대해서 retrieved information에 perturbation(modification)을 가하는 경우 더 쉽게 영향을 받음을 확인 (반대는 영향을 덜 받음, robust)
+
 
 </details>
