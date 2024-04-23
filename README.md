@@ -479,7 +479,7 @@
 - 📜 [State Space Model for New-Generation Network Alternative to Transformers: A Survey](https://arxiv.org/abs/2404.09516)
     - State Space Model (SSM) 서베이 페이퍼
 - 📜 [Stanford] [How faithful are RAG models? Quantifying the tug-of-war between RAG and LLMs' internal prior](https://arxiv.org/abs/2404.10198)
-    - LLM의 internal knowledge와 retrieved information 간의 관계에 대한 연구. LLM이 약한 우선순위를 갖는 internal knowledge에 대해서 retrieved information에 perturbation(modification)을 가하는 경우 더 쉽게 영향을 받음을 확인 (반대는 영향을 덜 받음, robust)
+    - LLM의 internal knowledge와 retrieved information 간의 관계에 대한 연구. LLM이 낮은 사전확률을 갖는 internal knowledge에 대해서 retrieved information에 perturbation(modification)을 가하는 경우 더 쉽게 영향을 받음을 확인 (반대는 영향을 덜 받음, robust)
 - 📜 [Stanford] [2024 AI Index Report](https://aiindex.stanford.edu/report/)
     - 500페이지 분량에 달하는 스탠포드 AI 보고서. 스탠포드가 꼽은 주목해야 할 50개 모델 중 한국어 모델은 없다고 한다.
 - 📜 [Fudan University] [AutoCrawler: A Progressive Understanding Web Agent for Web Crawler Generation](https://arxiv.org/abs/2404.12753)
