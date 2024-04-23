@@ -490,4 +490,6 @@
     - LLM에게 analogical reasoning 능력이 존재하는지 확인하는 연구. 무관한 예시로부터 관련 있는 예시를 LLM이 스스로 떠올리고 활용하는 self-generated 방식을 이용하면 실제로 추론 정확도가 향상되는 결과를 얻을 수 있음.
 - 🧑🏻‍💻 [DeepLearning.AI] [Getting Started with Mistral](https://www.deeplearning.ai/short-courses/getting-started-with-mistral/)
     - API를 이용하여 Mistral 모델에 접근하고 프롬프팅 하는 방법, Mistral의 native function calling, RAG 시스템 구축, chat interface 구축 등에 대한 short course
+- 🧑🏻‍💻 <Cookbook> [Efficiently fine-tune Llama 3 with PyTorch FSDP and Q-Lora](https://www.philschmid.de/fsdp-qlora-llama3)
+    - FSDP와 Q-LoRA를 활용하여 Llama 3를 효율적으로 fine-tuning하는 방법을 알려주는 튜토리얼. 짧고 간결하게 작성되어 있음
 </details>
