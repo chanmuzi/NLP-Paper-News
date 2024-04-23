@@ -488,5 +488,6 @@
     - LLM을 facts와 rule 형태의 외부 지식에 consistent할 수 있도록 가르치는 fine-tuning 기법. 저자들이 고안한 loss를 제한된 양의 fact 학습에 사용함으로써 extrapolate 능력을 향상. ICLR 2024 Workshop paper.
 - 📜 [Nanyang Technological University] [Relevant or Random: Can LLMs Truly Perform Analogical Reasoning?](https://arxiv.org/abs/2404.12728)
     - LLM에게 analogical reasoning 능력이 존재하는지 확인하는 연구. 무관한 예시로부터 관련 있는 예시를 LLM이 스스로 떠올리고 활용하는 self-generated 방식을 이용하면 실제로 추론 정확도가 향상되는 결과를 얻을 수 있음.
-
+- 🧑🏻‍💻 [DeepLearning.AI] [Getting Started with Mistral](https://www.deeplearning.ai/short-courses/getting-started-with-mistral/)
+    - API를 이용하여 Mistral 모델에 접근하고 프롬프팅 하는 방법, Mistral의 native function calling, RAG 시스템 구축, chat interface 구축 등에 대한 short course
 </details>
