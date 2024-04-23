@@ -492,4 +492,6 @@
     - API를 이용하여 Mistral 모델에 접근하고 프롬프팅 하는 방법, Mistral의 native function calling, RAG 시스템 구축, chat interface 구축 등에 대한 short course
 - 🧑🏻‍💻 <Cookbook> [Efficiently fine-tune Llama 3 with PyTorch FSDP and Q-Lora](https://www.philschmid.de/fsdp-qlora-llama3)
     - FSDP와 Q-LoRA를 활용하여 Llama 3를 효율적으로 fine-tuning하는 방법을 알려주는 튜토리얼. 짧고 간결하게 작성되어 있음
+- 📜 [Microsoft] [Phi-3 Technical Report: A Highly Capable Language Model Locally on Your Phone](https://arxiv.org/abs/2404.14219)
+    - 3.8B 사이즈의 phi-3-mini 모델을 공개. 작은 사이즈임에도 불구하고 Mixtral 8x7B, GPT-3.5에 준하는 성능을 보임. 이는 phi-2를 학습할 때 사용했던 데이터셋의 scaled-up version을 사용한 덕분임. 또한 phi-3-small (7B), phi-3-medium (14B)를 공개.
 </details>
