@@ -494,4 +494,12 @@
     - FSDP와 Q-LoRA를 활용하여 Llama 3를 효율적으로 fine-tuning하는 방법을 알려주는 튜토리얼. 짧고 간결하게 작성되어 있음
 - 📜 [Microsoft] [Phi-3 Technical Report: A Highly Capable Language Model Locally on Your Phone](https://arxiv.org/abs/2404.14219)
     - 3.8B 사이즈의 phi-3-mini 모델을 공개. 작은 사이즈임에도 불구하고 Mixtral 8x7B, GPT-3.5에 준하는 성능을 보임. 이는 phi-2를 학습할 때 사용했던 데이터셋의 scaled-up version을 사용한 덕분임. 또한 phi-3-small (7B), phi-3-medium (14B)를 공개.
+- 🧑🏻‍💻 [Adobe] [Generative AI in Premiere Pro powered by Adobe Firefly | Adobe Video](https://www.youtube.com/watch?v=6de4akFiNYM)
+    - 프리미어 프로에 사용될 AI 기술을 선보임. 일부 영역을 드래그 한 뒤 자연어로 영상 일부를 편집하는 등의 작업이 가능
+- 📜 [OpenAI] [The Instruction Hierarchy: Training LLMs to Prioritize Privileged Instructions](https://arxiv.org/abs/2404.13208)
+    - instruction hierarchy라는 개념을 도입하여 모델이 instruction 사이에 우선순위를 인식하도록 함. 이를테면 유저의 query보다는 system message를 우선 따르도록 학습시키는 것.
+- 📜 [CMU] [TREACLE: Thrifty Reasoning via Context-Aware LLM and Prompt Selection](https://arxiv.org/abs/2404.13082)
+    - 강화학습에서 유저의 재정적 상황과 latency 제약을 고려하여 모델과 프롬프트를 선정하는 policy를 학습시키는 TREACLE (Thrify Reasoning via Context-Aware LLM and Prompt Selection)을 제안
+- 📜 [Zhejiang University] [Information Re-Organization Improves Reasoning in Large Language Models](https://arxiv.org/abs/2404.13985)
+    - context를 그대로 사용하게 되면 피상적인 이해를 바탕으로 reasoning을 수행하게 됨 → 이를 해결하기 위해 context 정보를 re-organization 하는 InfoRE 메서드를 제안.
 </details>
