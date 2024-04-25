@@ -502,4 +502,12 @@
     - 강화학습에서 유저의 재정적 상황과 latency 제약을 고려하여 모델과 프롬프트를 선정하는 policy를 학습시키는 TREACLE (Thrify Reasoning via Context-Aware LLM and Prompt Selection)을 제안
 - 📜 [Zhejiang University] [Information Re-Organization Improves Reasoning in Large Language Models](https://arxiv.org/abs/2404.13985)
     - context를 그대로 사용하게 되면 피상적인 이해를 바탕으로 reasoning을 수행하게 됨 → 이를 해결하기 위해 context 정보를 re-organization 하는 InfoRE 메서드를 제안.
+- 🧑🏻‍💻 [vals.ai] [Benchmarks for Industry](https://www.vals.ai/)
+    - LegalBench, ContractLaw, TaxEval, CorpFin 벤치마크의 리더보드를 운영. 정확도, cost, latency를 비교
+- 📜 [Achieving >97% on GSM8K: Deeply Understanding the Problems Makes LLMs Perfect Reasoners](https://arxiv.org/abs/2404.14963)
+    - Deeply Understanding the Problems (DUP) prompting을 제안. 핵심 질문을 추출하고, 핵심 질문에 근거한 problem-solving information을 찾아낸 뒤, 이를 바탕으로 답변을 생성하도록 함
+- 📜 [Tsinghua University] [Multi-Head Mixture-of-Experts](https://arxiv.org/pdf/2404.15045)
+    - 각 토큰을 여러 개의 sub-tokens으로 나누는 multi-head 메커니즘을 이용. 이 sub-tokens는 다양한 experts set에 의해 병렬적으로 처리됨
+- 📜 [Apple] [OpenELM: An Efficient Language Model Family with Open-source Training and Inference Framework](https://arxiv.org/pdf/2404.14619)
+    - layer-wise scaling을 적용하여 정확도 향상을 이끌어낸 OpenELM을 공개. training, evaluation 프레임워크, publicly available datasets, pre-training configuration 등을 온전히 공개.
 </details>
