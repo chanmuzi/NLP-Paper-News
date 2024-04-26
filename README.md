@@ -510,4 +510,12 @@
     - 각 토큰을 여러 개의 sub-tokens으로 나누는 multi-head 메커니즘을 이용. 이 sub-tokens는 다양한 experts set에 의해 병렬적으로 처리됨
 - 📜 [Apple] [OpenELM: An Efficient Language Model Family with Open-source Training and Inference Framework](https://arxiv.org/pdf/2404.14619)
     - layer-wise scaling을 적용하여 정확도 향상을 이끌어낸 OpenELM을 공개. training, evaluation 프레임워크, publicly available datasets, pre-training configuration 등을 온전히 공개.
+- 🗞️ [The Ray-Ban Meta Smart Glasses have multimodal AI now](https://www.theverge.com/2024/4/23/24138090/ray-ban-meta-smart-glasses-ai-wearables)
+    - 메타가 Rayban glasses에 언어 번역, 사물 인식, 사진 캡쳐 등의 멀티모탈 AI의 능력을 탑재할 것임을 발표
+- 📜 [Adobe] [Beyond Chain-of-Thought: A Survey of Chain-of-X Paradigms for LLMs](https://arxiv.org/abs/2404.15676)
+    - Chain-of-X(CoX)에 관한 다양한 연구들을 정리한 survey paper. 8 페이지 분량의 짧은 서베이.
+- 📜 [Microsoft] [Towards Systematic Evaluation of Logical Reasoning Ability of Large Language Models](https://arxiv.org/abs/2404.15522)
+    - LLM의 logical reasoning 능력을 평가하는 벤치마크들은 일부 inference rules(긍정 논법, 대우 등)에 집중할 뿐임 → 25개의 reasoning pattern을 아우르는 벤치마크, LogicBench를 공개
+- 📜 [Meta] [LayerSkip: Enabling Early Exit Inference and Self-Speculative Decoding](https://arxiv.org/abs/2404.16710)
+    - 학습 동안 layer dropout을 적용. 이때 earlier layers는 낮은 비율, later layers에 대해 높은 비율을 적용. 또한 early exit loss를 사용. decoding 단계에서는 early layers에서 exit 후 남은 layer를 verify and correct하는 self-speculative decoding을 도입.
 </details>
