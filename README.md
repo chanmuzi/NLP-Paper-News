@@ -518,4 +518,10 @@
     - LLM의 logical reasoning 능력을 평가하는 벤치마크들은 일부 inference rules(긍정 논법, 대우 등)에 집중할 뿐임 → 25개의 reasoning pattern을 아우르는 벤치마크, LogicBench를 공개
 - 📜 [Meta] [LayerSkip: Enabling Early Exit Inference and Self-Speculative Decoding](https://arxiv.org/abs/2404.16710)
     - 학습 동안 layer dropout을 적용. 이때 earlier layers는 낮은 비율, later layers에 대해 높은 비율을 적용. 또한 early exit loss를 사용. decoding 단계에서는 early layers에서 exit 후 남은 layer를 verify and correct하는 self-speculative decoding을 도입.
+- 🧑🏻‍💻 [PyTorch] [PyTorch 2.3 Release Blog](https://pytorch.org/blog/pytorch2-3/)
+    - torch.compile에서 유저가 정의하는 triton kernel을 지원하여 성능을 향상. tensor parallelism을 지원하여 1.6배 빠른 행렬 연산이 가능.
+- 🧑🏻‍💻 [Snowflake] [snowflake-arctic-instruct](https://huggingface.co/Snowflake/snowflake-arctic-instruct)
+    - 128개의 experts를 포함하는 Dense-MoE Hybrid 아키텍쳐를 활용한 480B 사이즈의 LLM을 공개. 17B active parameters가 특징.
+- 📜 [Peking, Microsoft] [Make Your LLM Fully Utilize the Context](https://arxiv.org/abs/2404.16811)
+    - long-context를 잘 처리할 수 있도록 INformation-INtensive (IN2) training을 적용. long context 내의 short segment에 대한 fine-grained information awareness와 여러 segments의 intergration을 요하는 태스크로 학습.
 </details>
