@@ -524,4 +524,6 @@
     - 128개의 experts를 포함하는 Dense-MoE Hybrid 아키텍쳐를 활용한 480B 사이즈의 LLM을 공개. 17B active parameters가 특징.
 - 📜 [Peking, Microsoft] [Make Your LLM Fully Utilize the Context](https://arxiv.org/abs/2404.16811)
     - long-context를 잘 처리할 수 있도록 INformation-INtensive (IN2) training을 적용. long context 내의 short segment에 대한 fine-grained information awareness와 여러 segments의 intergration을 요하는 태스크로 학습.
+- 🗞️ [China Unveils Vidu: A Powerful Text-to-Video Generator](https://www.maginative.com/article/china-unveils-vidu-a-powerful-text-to-video-generator/)
+    - 중국의 Shengshu Technology와 Tsinghua University에서 Sora에 버금가는 text-to-video 모델, Vidu를 공개
 </details>
