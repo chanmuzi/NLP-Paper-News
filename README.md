@@ -527,3 +527,12 @@
 - 🗞️ [China Unveils Vidu: A Powerful Text-to-Video Generator](https://www.maginative.com/article/china-unveils-vidu-a-powerful-text-to-video-generator/)
     - 중국의 Shengshu Technology와 Tsinghua University에서 Sora에 버금가는 text-to-video 모델, Vidu를 공개
 </details>
+
+
+## 🏕️ May
+<details>
+  <summary>1st week</summary>
+
+
+
+</details>
