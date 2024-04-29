@@ -535,6 +535,7 @@
   
 - 📜 [UIUC, Cohere, Princeton] [SnapKV: LLM Knows What You are Looking for Before Generation](https://arxiv.org/abs/2404.14469)
     - input 길이에 비례하여 증가하는 Key-Value (KV) cache 사이즈에 관련된 문제를 해결하기 위해 SnapKV를 제안. 각 attention head에 존재하는 중요한 KV positions를 선별함으로써 KV cache를 자동적으로 compress.
-
+- 📜 [Meta] [AdvPrompter: Fast Adaptive Adversarial Prompting for LLMs](https://arxiv.org/abs/2404.16873)
+    - adversarial prompt를 자동적으로 생성해주는 것은 그 자체로 의미가 없고 학습이 되어야 함. 이를 위한 target llm, AdvPrompter를 제시. AdvPrompter의 예측 결과 최적화 및 low-rank fine-tuning.
 
 </details>
