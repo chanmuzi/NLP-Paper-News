@@ -532,7 +532,9 @@
 ## 🏕️ May
 <details>
   <summary>1st week</summary>
-
+  
+- 📜 [UIUC, Cohere, Princeton] [SnapKV: LLM Knows What You are Looking for Before Generation](https://arxiv.org/abs/2404.14469)
+    - input 길이에 비례하여 증가하는 Key-Value (KV) cache 사이즈에 관련된 문제를 해결하기 위해 SnapKV를 제안. 각 attention head에 존재하는 중요한 KV positions를 선별함으로써 KV cache를 자동적으로 compress.
 
 
 </details>
