@@ -537,5 +537,10 @@
     - input 길이에 비례하여 증가하는 Key-Value (KV) cache 사이즈에 관련된 문제를 해결하기 위해 SnapKV를 제안. 각 attention head에 존재하는 중요한 KV positions를 선별함으로써 KV cache를 자동적으로 compress.
 - 📜 [Meta] [AdvPrompter: Fast Adaptive Adversarial Prompting for LLMs](https://arxiv.org/abs/2404.16873)
     - adversarial prompt를 자동적으로 생성해주는 것은 그 자체로 의미가 없고 학습이 되어야 함. 이를 위한 target llm, AdvPrompter를 제시. AdvPrompter의 예측 결과 최적화 및 low-rank fine-tuning.
-
+- 🧑🏻‍💻 [DeepLearning.AI] [Prompt Engineering for Vision Models](https://www.deeplearning.ai/short-courses/prompt-engineering-for-vision-models/)
+    - text와 좌표, bounding box를 입력으로 받는 모델을 학습하는 방법, diffusion model 등의 이미지 컨트롤 방법 등에 대해 학습하는 1시간 분량의 short course
+- 🧑🏻‍💻 [MIT, MyShell] [OpenVoice](https://github.com/myshell-ai/OpenVoice)
+    - 짧은 오디오 샘플로부터 목소리를 복사하여 아주 현실적인 speech를 생성할 수 있는 OpenVoice V2를 공개
+- 📜 [Cohere] [Replacing Judges with Juries: Evaluating LLM Generations with a Panel of Diverse Models](https://arxiv.org/abs/2404.18796)
+    - GPT-4와 같은 한 개의 LLM을 평가자로 활용하는 것보다 여러 개의 작은 모델들을 사용하는 것이 더 좋은 평가 결과로 이어진다는 것에 관한 연구
 </details>
