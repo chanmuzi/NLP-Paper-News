@@ -543,4 +543,8 @@
     - 짧은 오디오 샘플로부터 목소리를 복사하여 아주 현실적인 speech를 생성할 수 있는 OpenVoice V2를 공개
 - 📜 [Cohere] [Replacing Judges with Juries: Evaluating LLM Generations with a Panel of Diverse Models](https://arxiv.org/abs/2404.18796)
     - GPT-4와 같은 한 개의 LLM을 평가자로 활용하는 것보다 여러 개의 작은 모델들을 사용하는 것이 더 좋은 평가 결과로 이어진다는 것에 관한 연구
+- 🗞️ [Mystery ‘Gpt2-Chatbot’ And Cryptic Sam Altman Tweet Fuel Speculation Over OpenAI’s Next ChatGPT Update](https://www.forbes.com/sites/roberthart/2024/04/30/mystery-gpt2-chatbot-and-cryptic-sam-altman-tweet-fuel-speculation-over-openais-next-chatgpt-update/?sh=19ea4686384d)
+    - LMSYS Chatbot Arena에 등장한 gpt2-chatbot이 OpenAI의 새로운 모델일 것이라는 추측.
+- 📜 [Baidu] [HFT: Half Fine-Tuning for Large Language Models](https://arxiv.org/abs/2404.18466)
+    - catastrophic forgetting 문제를 해결하기 위해 full fine-tuning (FFT) 대신 Half Fine-Tuning (HFT) 를 제안. 파라미터의 절반은 새로운 정보를 학습하고, 나머지 절반은 frozen 하는 방식.
 </details>
