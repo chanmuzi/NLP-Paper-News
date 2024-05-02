@@ -547,4 +547,10 @@
     - LMSYS Chatbot Arena에 등장한 gpt2-chatbot이 OpenAI의 새로운 모델일 것이라는 추측.
 - 📜 [Baidu] [HFT: Half Fine-Tuning for Large Language Models](https://arxiv.org/abs/2404.18466)
     - catastrophic forgetting 문제를 해결하기 위해 full fine-tuning (FFT) 대신 Half Fine-Tuning (HFT) 를 제안. 파라미터의 절반은 새로운 정보를 학습하고, 나머지 절반은 frozen 하는 방식.
+- 🧑🏻‍💻 [Gradient] [LLama-3-8B-Instruct-Gradient-1048K](https://huggingface.co/gradientai/Llama-3-8B-Instruct-Gradient-1048k)
+    - GradientAI에서 처리 가능한 context length가 1M에 달하는 instruct version의 라마 모델을 허깅페이스에 공개. 스펙과 예시 코드가 함께 제시되어 있음
+- 📜 [Bozewn-Bolzano] [When to Retrieve: Teaching LLMs to Utilize Information Retrieval Effectively](https://arxiv.org/abs/2404.19705)
+    - parametric memory로 질문에 답변하기 충분한 경우, Information Retrieval을 하지 않고 special token <RET>를 생성하도록 학습하는 방식을 제안
+- 📜 [UC Berkeley] [Is Bigger Edit Batch Size Always Better? - An Empirical Study on Model Editing with Llama-3](https://arxiv.org/abs/2405.00664)
+    - model editing에 있어서  edit batch-size를 키우는 것이 모델의 성능을 하락시키는 것임을 확인한 실험
 </details>
