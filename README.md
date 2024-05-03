@@ -553,4 +553,10 @@
     - parametric memory로 질문에 답변하기 충분한 경우, Information Retrieval을 하지 않고 special token <RET>를 생성하도록 학습하는 방식을 제안
 - 📜 [UC Berkeley] [Is Bigger Edit Batch Size Always Better? - An Empirical Study on Model Editing with Llama-3](https://arxiv.org/abs/2405.00664)
     - model editing에 있어서  edit batch-size를 키우는 것이 모델의 성능을 하락시키는 것임을 확인한 실험
+- 📜 [Meta] [Better & Faster Large Language Models via Multi-token Prediction](https://arxiv.org/abs/2404.19737)
+    - n개의 독립적인 head를 바탕으로 한 번에 n개의 토큰을 예측하도록 함. 속도 뿐만 아니라 성능적으로도 향상이 있었다는 실험 결과를 공개.
+- 📜 [Hong Kong University] [Mixture of insighTful Experts (MoTE): The Synergy of Thought Chains and Expert Mixtures in Self-Alignment](https://arxiv.org/abs/2405.00557)
+    - Question Analysis, Answer Guidance, Safe Answer production으로 구성된 AlignCoT를 제안. 추가로 Mixture of insighTful Experts(MoTE)를 제안.
+- 📜 [KAIST AI] [Prometheus 2: An Open Source Language Model Specialized in Evaluating Other Language Models](https://arxiv.org/abs/2405.01535)
+    - 4개의 direct assessment와 4개의 pair-wise ranking을 이용하여 LM이 평가한 결과와 사람의 평가 결과를 최대한 align할 수 있도록 함
 </details>
