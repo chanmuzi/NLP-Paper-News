@@ -559,4 +559,6 @@
     - Question Analysis, Answer Guidance, Safe Answer production으로 구성된 AlignCoT를 제안. 추가로 Mixture of insighTful Experts(MoTE)를 제안.
 - 📜 [KAIST AI] [Prometheus 2: An Open Source Language Model Specialized in Evaluating Other Language Models](https://arxiv.org/abs/2405.01535)
     - 4개의 direct assessment와 4개의 pair-wise ranking을 이용하여 LM이 평가한 결과와 사람의 평가 결과를 최대한 align할 수 있도록 함
+- 📜 [Virginia]  [Context-Aware Clustering using Large Language Models](https://arxiv.org/abs/2405.00988)
+    - CACTUS(Context-Aware ClusTering with aUgmented triplet losS)를 제안. supervised clustering을 위한 triplet loss function을 제안. text augmentation 기반의 self-supervised clustering task를 도입
 </details>
