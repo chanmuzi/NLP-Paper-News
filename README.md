@@ -561,4 +561,8 @@
     - 4개의 direct assessment와 4개의 pair-wise ranking을 이용하여 LM이 평가한 결과와 사람의 평가 결과를 최대한 align할 수 있도록 함
 - 📜 [Virginia]  [Context-Aware Clustering using Large Language Models](https://arxiv.org/abs/2405.00988)
     - CACTUS(Context-Aware ClusTering with aUgmented triplet losS)를 제안. supervised clustering을 위한 triplet loss function을 제안. text augmentation 기반의 self-supervised clustering task를 도입
+- 🧑🏻‍💻 [Anthropic] [Introducing the Claude Team plan and iOS app](https://www.anthropic.com/news/team-plan-and-ios)
+    - Claude 3 model family를 팀 요금제로 이용 가능. 웹에서와 똑같이 이용 가능한 서비스를 iOS로 제공.
+- 📜 [Predibase] [LoRA Land: 310 Fine-tuned LLMs that Rival GPT-4, A Technical Report](https://arxiv.org/abs/2405.00732)
+    - 10개 모델을 31개 태스크에 대해 QLoRA로 fine-tuning한 성능을 비교. GPT-4를 능가하는 결과도 있었음. 모델의 학습 결과를 예측할 수 있도록 함(어떤 수준까지 학습이 될지). LoRAX의 latency와 concurrency를 평가.
 </details>
