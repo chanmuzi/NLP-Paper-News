@@ -566,3 +566,13 @@
 - 📜 [Predibase] [LoRA Land: 310 Fine-tuned LLMs that Rival GPT-4, A Technical Report](https://arxiv.org/abs/2405.00732)
     - 10개 모델을 31개 태스크에 대해 QLoRA로 fine-tuning한 성능을 비교. GPT-4를 능가하는 결과도 있었음. 모델의 학습 결과를 예측할 수 있도록 함(어떤 수준까지 학습이 될지). LoRAX의 latency와 concurrency를 평가.
 </details>
+
+<details>
+  <summary>2nd week</summary>
+
+- 📜 [MIT] [KAN: Kolmogorov-Arnold Networks](https://arxiv.org/abs/2404.19756)
+    - Multi-Layer Perceptrons(MLPs)를 대신하는 Kolmogorov-Arnold Networks(KAN)를 제안. linear weight를 전혀 사용하지 않으며 각 weight 파라미터는 univariate function으로 대체됨.
+- 📜 [Imperial College London] [Argumentative Large Language Models for Explainable and Contestable Decision-Making](https://arxiv.org/abs/2405.02079)
+    - reasoning 과정에서 argumentation을 생성하는 프레임워크를 제안. 이를 통해 LLM의 선택과 판단에 대한 근거를 명확하게 파악할 수 있음.
+
+</details>
