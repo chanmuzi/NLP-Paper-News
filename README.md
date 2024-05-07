@@ -574,5 +574,11 @@
     - Multi-Layer Perceptrons(MLPs)를 대신하는 Kolmogorov-Arnold Networks(KAN)를 제안. linear weight를 전혀 사용하지 않으며 각 weight 파라미터는 univariate function으로 대체됨.
 - 📜 [Imperial College London] [Argumentative Large Language Models for Explainable and Contestable Decision-Making](https://arxiv.org/abs/2405.02079)
     - reasoning 과정에서 argumentation을 생성하는 프레임워크를 제안. 이를 통해 LLM의 선택과 판단에 대한 근거를 명확하게 파악할 수 있음.
+- 🗞️ [X] [X launches Stories, delivering news summarized by Grok AI](https://techcrunch.com/2024/05/03/x-launches-stories-on-x-delivering-news-summarized-by-grok-ai/)
+    - 개인 맞춤화된 이야기들을 Grok AI 모델이 요약하여 제시하는 서비스를 도입. [X 링크](https://twitter.com/XEng/status/1786463531505799186?ref_src=twsrc%5Etfw%7Ctwcamp%5Etweetembed%7Ctwterm%5E1786463531505799186%7Ctwgr%5E75c9d4c38ea3f1bfdab9931eb077437796f87eaf%7Ctwcon%5Es1_c10&ref_url=https%3A%2F%2Ftechcrunch.com%2F2024%2F05%2F03%2Fx-launches-stories-on-x-delivering-news-summarized-by-grok-ai%2F). news 산업에 큰 영향을 줄 것으로 예상됨.
+- 🧑🏻‍💻 [DeepLearning.AI & HuggingFace] [Quantization In Depth](https://www.deeplearning.ai/short-courses/quantization-in-depth/)
+    - 다양한 종류의 quantization 기법에 대해 공부하고 weight를 packing 하는 방법을 습득.
+- 🧑🏻‍💻 [Meta-Llama-3-120B-Instruct](https://huggingface.co/mlabonne/Meta-Llama-3-120B-Instruct)
+    - “self-merge”를 이용하여 70B 사이즈의 모델을 120B까지 scaling up하여 공개. 자료형을 float16으로 유지하여 성능을 최적화할 수 있도록 “passthrough” 머지 기법을 이용.
 
 </details>
