@@ -580,5 +580,10 @@
     - 다양한 종류의 quantization 기법에 대해 공부하고 weight를 packing 하는 방법을 습득.
 - 🧑🏻‍💻 [Meta-Llama-3-120B-Instruct](https://huggingface.co/mlabonne/Meta-Llama-3-120B-Instruct)
     - “self-merge”를 이용하여 70B 사이즈의 모델을 120B까지 scaling up하여 공개. 자료형을 float16으로 유지하여 성능을 최적화할 수 있도록 “passthrough” 머지 기법을 이용.
-
+- 🗞️ [Nvidia] [Nvidia Launches ChatRTX Chatbot for RTX GPUs](https://www.extremetech.com/computing/nvidia-launches-chatrtx-chatbot-for-rtx-gpus)
+    - 소비자들에게 ‘AI on your PC’ 경험을 제공하기 위해 RTX GPU를 기반으로 동작하는 ChatRTX 챗봇을 공개. 확실히 on-device, local LLM 등에 대한 관심이 뜨거움.
+- 🧑🏻‍💻 [LMSYS] [gpt2-chatbot is Back Online](https://chat.lmsys.org/)
+    - 챗봇아레나에서 gpt-2-chatbot 모델이 다시 등장. 모델을 선택할 수는 없지만 프롬프트 입력 후 결과를 확인해보면 해당 모델과의 비교가 이뤄지고 있음이 확인됨.
+- 🧑🏻‍💻 [DeepSeek-AI] [DeepSeek-V2: A Strong, Economical, and Efficient Mixture-of-Experts Language Model](https://github.com/deepseek-ai/DeepSeek-V2?tab=readme-ov-file)
+    - 236B 사이즈의 Mixture-of-Experts (MoE) 기반 LLM을 공개. activated parameters는 21B 수준. 학습 및 추론 둘 다 굉장히 효율적임을 강조.
 </details>
