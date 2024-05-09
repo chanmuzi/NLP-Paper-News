@@ -586,4 +586,8 @@
     - 챗봇아레나에서 gpt-2-chatbot 모델이 다시 등장. 모델을 선택할 수는 없지만 프롬프트 입력 후 결과를 확인해보면 해당 모델과의 비교가 이뤄지고 있음이 확인됨.
 - 🧑🏻‍💻 [DeepSeek-AI] [DeepSeek-V2: A Strong, Economical, and Efficient Mixture-of-Experts Language Model](https://github.com/deepseek-ai/DeepSeek-V2?tab=readme-ov-file)
     - 236B 사이즈의 Mixture-of-Experts (MoE) 기반 LLM을 공개. activated parameters는 21B 수준. 학습 및 추론 둘 다 굉장히 효율적임을 강조.
+- 🧑🏻‍💻 [DeepLearning.AI] [Building Agentic RAG with LlamaIndex](https://www.deeplearning.ai/short-courses/building-agentic-rag-with-llamaindex/)
+    - 주어진 문서를 이해하고 복잡한 질문에 답변하도록 하는 방법에 대해 학습. 특히 여러 개의 문서를 다루거나 agent를 debug 하는 방법 등에 대해서도 학습. 강의 분량은 그렇게 많지 않아 보임.
+- 📜 [xLSTM: Extended Long Short-Term Memory](https://arxiv.org/abs/2405.04517)
+    - exponential gating을 도입, LSTM 메모리 구조를 변형한 sLSTM과 mLSTM을 통합. 이 둘을 통해 Transformers와 State Space Models에 준하는 성능과 scaling 가능성을 보여줌.
 </details>
