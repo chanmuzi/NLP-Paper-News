@@ -590,4 +590,6 @@
     - 주어진 문서를 이해하고 복잡한 질문에 답변하도록 하는 방법에 대해 학습. 특히 여러 개의 문서를 다루거나 agent를 debug 하는 방법 등에 대해서도 학습. 강의 분량은 그렇게 많지 않아 보임.
 - 📜 [xLSTM: Extended Long Short-Term Memory](https://arxiv.org/abs/2405.04517)
     - exponential gating을 도입, LSTM 메모리 구조를 변형한 sLSTM과 mLSTM을 통합. 이 둘을 통해 Transformers와 State Space Models에 준하는 성능과 scaling 가능성을 보여줌.
+- 📜 [MIT] [Co-design for Efficient LLM Serving](https://arxiv.org/abs/2405.04532)
+    - 현존하는 INT4 quantization 방법론에 나타나는 overhead 문제를 해결하기 위해 4-bit weight, 8-bit activation, 4-bit KV cache를 사용하는 W4A8KV4, QoQ(quattuor-octo-quattuor)를 도입
 </details>
