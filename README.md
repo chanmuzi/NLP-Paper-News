@@ -592,4 +592,8 @@
     - exponential gating을 도입, LSTM 메모리 구조를 변형한 sLSTM과 mLSTM을 통합. 이 둘을 통해 Transformers와 State Space Models에 준하는 성능과 scaling 가능성을 보여줌.
 - 📜 [MIT] [Co-design for Efficient LLM Serving](https://arxiv.org/abs/2405.04532)
     - 현존하는 INT4 quantization 방법론에 나타나는 overhead 문제를 해결하기 위해 4-bit weight, 8-bit activation, 4-bit KV cache를 사용하는 W4A8KV4, QoQ(quattuor-octo-quattuor)를 도입
+- 🧑🏻‍💻 [Google] [Meet Pixel 8a: The Google AI phone at an unbeatable value](https://blog.google/products/pixel/pixel-8a-launch/)
+    - Gemini를 탑재한 스마트폰 Pixel 8, Pixel 8 Pro를 출시. 카메라의 group shot, magic editor, 음성의 audio magic eraser 등의 기능을 탑재
+- 📜 [University of Texas] [Mitigating Exaggerated Safety in Large Language Models](https://arxiv.org/abs/2405.05418)
+    - LLM이 유저의 질문을 harmful한 것으로 판단하고 거절하는 케이스 중 실제로 harmful 하지 않은 것을 ‘과장된(exaggerated)’ 경우라고 표현. 이러한 현상을 완화하기 위한 프롬프팅 기법을 제시함과 동시에 이러한 형상이 존재함을 확인할 수 있는 데이터셋을 제시.
 </details>
