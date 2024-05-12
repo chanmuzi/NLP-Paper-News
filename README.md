@@ -596,4 +596,6 @@
     - Gemini를 탑재한 스마트폰 Pixel 8, Pixel 8 Pro를 출시. 카메라의 group shot, magic editor, 음성의 audio magic eraser 등의 기능을 탑재
 - 📜 [University of Texas] [Mitigating Exaggerated Safety in Large Language Models](https://arxiv.org/abs/2405.05418)
     - LLM이 유저의 질문을 harmful한 것으로 판단하고 거절하는 케이스 중 실제로 harmful 하지 않은 것을 ‘과장된(exaggerated)’ 경우라고 표현. 이러한 현상을 완화하기 위한 프롬프팅 기법을 제시함과 동시에 이러한 형상이 존재함을 확인할 수 있는 데이터셋을 제시.
+- 📜 [Google Research] [Does Fine-Tuning LLMs on New Knowledge Encourage Hallucinations?](https://arxiv.org/abs/2405.05904)
+    - LLM이 기존 지식과 관련 없는 내용들에 대해 일으키는 hallucination 문제를 해결하기 위해 controlled setup을 설계. closed-book QA 환경에서 실험한 결과, fine-tuning을 통해 새로운 지식을 주입하는 방식의 위험성을 입증.
 </details>
