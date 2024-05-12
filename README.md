@@ -598,9 +598,17 @@
     - LLM이 유저의 질문을 harmful한 것으로 판단하고 거절하는 케이스 중 실제로 harmful 하지 않은 것을 ‘과장된(exaggerated)’ 경우라고 표현. 이러한 현상을 완화하기 위한 프롬프팅 기법을 제시함과 동시에 이러한 형상이 존재함을 확인할 수 있는 데이터셋을 제시.
 - 📜 [Google Research] [Does Fine-Tuning LLMs on New Knowledge Encourage Hallucinations?](https://arxiv.org/abs/2405.05904)
     - LLM이 기존 지식과 관련 없는 내용들에 대해 일으키는 hallucination 문제를 해결하기 위해 controlled setup을 설계. closed-book QA 환경에서 실험한 결과, fine-tuning을 통해 새로운 지식을 주입하는 방식의 위험성을 입증.
+      
+</details>
+
+<details>
+  <summary>3rd week</summary>
+
 - 🧑🏻‍💻 [Anthropic] [Prompt Generator](https://docs.anthropic.com/en/docs/prompt-generator)
     - 태스크에 대한 간단한 설명을 최적화된 프롬프트 템플릿으로 변환해주는 metaprompt를 공개
 - 🧑🏻‍💻 [IBM] [Granite Code Models: A Family of Open Foundation Models for Code Intelligence](https://github.com/ibm-granite/granite-code-models)
     - 116개 프로그래밍 언어로 학습한 3B에서 34B에 이르는 8개의 코드 모델을 공개. 코드 관련 태스크에서 CodeGemma나 Mistral을 능가하는 성능을 보임
     - 논문 링크: https://arxiv.org/abs/2405.04324
+
+
 </details>
