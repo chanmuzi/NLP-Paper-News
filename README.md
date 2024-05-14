@@ -609,6 +609,11 @@
 - 🧑🏻‍💻 [IBM] [Granite Code Models: A Family of Open Foundation Models for Code Intelligence](https://github.com/ibm-granite/granite-code-models)
     - 116개 프로그래밍 언어로 학습한 3B에서 34B에 이르는 8개의 코드 모델을 공개. 코드 관련 태스크에서 CodeGemma나 Mistral을 능가하는 성능을 보임
     - 논문 링크: https://arxiv.org/abs/2405.04324
-
+- 🧑🏻‍💻 [OpenAI] [Hello GPT-4o](https://openai.com/index/hello-gpt-4o/)
+    - audio, vision, text를 real time으로 처리 가능한 플래그십 모델을 공개. ‘o’는 모두를 뜻하는 ‘omni’의 약자. 사람의 감정을 충분히 이해하는 듯한 반응, 다양한 음성 변주, 중간에 말을 끊어도 이해가 가능한 실시간 대화 양상 등 충격적인 데모를 공개.
+    - 개인적인 교육 분야에서 특히 활용 여지가 많이 커진 것 같다고 느낌.
+    - [유튜브에 공개된 데모 링크](https://www.youtube.com/watch?v=DQacCB9tDaw&t=3986s)
+- 📜 [Baidu] [A Survey on RAG Meets LLMs: Towards Retrieval-Augmented Large Language Models](https://arxiv.org/abs/2405.06211)
+    - RAG는 생성형 AI가 지닌 기존 지식에 새로운 지식을 더해줄 수 있는 방식임. Retrieval-Augmented Large Language Models(RA-LLMs)를 architecture, training strategies, applications, 세 관점에서 서베이한 페이퍼.
 
 </details>
