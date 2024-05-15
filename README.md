@@ -615,5 +615,13 @@
     - [유튜브에 공개된 데모 링크](https://www.youtube.com/watch?v=DQacCB9tDaw&t=3986s)
 - 📜 [Baidu] [A Survey on RAG Meets LLMs: Towards Retrieval-Augmented Large Language Models](https://arxiv.org/abs/2405.06211)
     - RAG는 생성형 AI가 지닌 기존 지식에 새로운 지식을 더해줄 수 있는 방식임. Retrieval-Augmented Large Language Models(RA-LLMs)를 architecture, training strategies, applications, 세 관점에서 서베이한 페이퍼.
-
+- 🧑🏻‍💻 [TII] [Falcon 2](https://huggingface.co/tiiuae/falcon-11B)
+    - 5,000B 토큰의 RefinedWeb으로 학습된 11B LLM. fine-tuned 되지 않은 raw 모델을 허깅페이스에 공개.
+- 📜 [Cohere] [Fishing for Magikarp: Automatically Detecting Under-trained Tokens in Large Language Models](https://arxiv.org/abs/2405.05417)
+    - tokenizer에 포함된 토큰 중에서 제대로 학습이 되지 않은 ‘glitch tokens’가 존재함.
+    - ‘tokenizer analysis, model weight-based indicators, prompting techniques’의 조합을 이용하여 위와 같은 problematic tokens를 자동적으로 detect 하는 방법론을 제안.
+- 🧑🏻‍💻 [Google] [Google I/O 2024: An I/O for a new generation](https://blog.google/inside-google/message-ceo/google-io-2024-keynote-sundar-pichai/)
+    - Gemini 1.5 Pro의 context window가 2M까지 증가. 그러나 128K 이하에 대해서는 가격을 50% 낮춤 (GPT-4o 대비 30% 저렴)
+    - Gemini를 구글 제품(포토, 이미지 검색, 워크 스페이스, 이메일 등)에 통합하겠다고 발표. (라이브 데모 x, 여름 또는 올해 말 출시 예정 ????)
+    - GPT-4o와 마찬가지로 multimodality를 강조. 그러나 그만큼의 임팩트가 있지는 않음.
 </details>
