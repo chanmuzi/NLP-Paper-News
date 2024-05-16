@@ -624,4 +624,10 @@
     - Gemini 1.5 Pro의 context window가 2M까지 증가. 그러나 128K 이하에 대해서는 가격을 50% 낮춤 (GPT-4o 대비 30% 저렴)
     - Gemini를 구글 제품(포토, 이미지 검색, 워크 스페이스, 이메일 등)에 통합하겠다고 발표. (라이브 데모 x, 여름 또는 올해 말 출시 예정 ????)
     - GPT-4o와 마찬가지로 multimodality를 강조. 그러나 그만큼의 임팩트가 있지는 않음.
+- 🧑🏻‍💻 [Salesforce] [SFR-Iterative-DPO-LLaMA-8B-R](https://huggingface.co/Salesforce/SFR-Iterative-DPO-LLaMA-3-8B-R)
+    - Alpaca-Eval-V2, MT-Bench, Chat-Arena-Hard, 세 개의 벤치마크에서 작은 사이즈의 모델 중 최고 성능을 달성. human-/GPT4-labeling 없는 open-sourced 데이터셋으로 학습된 모델.
+- 📜 [HuggingFace] [What matters when building vision-language models?](https://arxiv.org/abs/2405.02246)
+    - vision-language models(VLMs)의 학습 방식에 대해서는 아직 자리잡은 것이 없음 → 아키텍쳐, 데이터, 학습 방식 등 다양한 실험을 통해 만든 8B 사이즈의 VLM, Idefics2를 공개. base, instructed, chat, 세 개 버전의 모델을 학습 데이터셋과 함께 공개.
+- 📜 [Salesforce, UIUC] [RLHF Workflow: From Reward Modeling to Online RLHF](https://arxiv.org/abs/2405.07863)
+    - Reinforcement Learning from Human Feedback(RLHF)은 offline learning setting에서만 사용 가능하다는 단점이 존재 → 다양한 오픈 소스 데이터셋과 사전에 구축된 proxy preference model을 사용함으로써 preference model을 구축. 이를 이용하여 Online Iterative RLHF를 수행.
 </details>
