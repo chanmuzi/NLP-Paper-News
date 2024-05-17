@@ -630,4 +630,6 @@
     - vision-language models(VLMs)의 학습 방식에 대해서는 아직 자리잡은 것이 없음 → 아키텍쳐, 데이터, 학습 방식 등 다양한 실험을 통해 만든 8B 사이즈의 VLM, Idefics2를 공개. base, instructed, chat, 세 개 버전의 모델을 학습 데이터셋과 함께 공개.
 - 📜 [Salesforce, UIUC] [RLHF Workflow: From Reward Modeling to Online RLHF](https://arxiv.org/abs/2405.07863)
     - Reinforcement Learning from Human Feedback(RLHF)은 offline learning setting에서만 사용 가능하다는 단점이 존재 → 다양한 오픈 소스 데이터셋과 사전에 구축된 proxy preference model을 사용함으로써 preference model을 구축. 이를 이용하여 Online Iterative RLHF를 수행.
+- 📜 [Hwawei] [Beyond Scaling Laws: Understanding Transformer Performance with Associative Memory](https://arxiv.org/abs/2405.08707)
+    - Transformer 기반의 모델들의 사이즈를 키우면 성능이 증가한다는 scaling law가 반드시 지켜지는 것은 아님 → Hopfield 네트워크를 사용하여 이론적 프레임워크를 제시. attention mechanism에 대한 설명이 가능해짐.
 </details>
