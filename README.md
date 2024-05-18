@@ -632,4 +632,13 @@
     - Reinforcement Learning from Human Feedback(RLHF)은 offline learning setting에서만 사용 가능하다는 단점이 존재 → 다양한 오픈 소스 데이터셋과 사전에 구축된 proxy preference model을 사용함으로써 preference model을 구축. 이를 이용하여 Online Iterative RLHF를 수행.
 - 📜 [Hwawei] [Beyond Scaling Laws: Understanding Transformer Performance with Associative Memory](https://arxiv.org/abs/2405.08707)
     - Transformer 기반의 모델들의 사이즈를 키우면 성능이 증가한다는 scaling law가 반드시 지켜지는 것은 아님 → Hopfield 네트워크를 사용하여 이론적 프레임워크를 제시. attention mechanism에 대한 설명이 가능해짐.
+- 🧑🏻‍💻 [DeepLearning.AI] [Multi AI Agent Systems with crewAI](https://www.deeplearning.ai/short-courses/multi-ai-agent-systems-with-crewai/)
+    - multi agent 관련 강의. 오픈소스 라이브러리 crewAI를 사용하여 비지니스 자동화에 관한 내용을 학습.
+- 🧑🏻‍💻 [OpenAI] [Improvements to data analysis in ChatGPT](https://openai.com/index/improvements-to-data-analysis-in-chatgpt/)
+    - Google Drive와 Microsoft OneDrive로부터 직접 테이블과 차트를 읽고 상호작용할 수 있는 기능을 공개.
+    - 차주부터 ChatGPT Plus, Team, Enterprise 유저들에게 공개.
+- 📜 [University of Waterloo] [UniRAG: Universal Retrieval Augmentation for Multi-Modal Large Language Models](https://arxiv.org/abs/2405.10311)
+    - Multi-Modal(MM) Large Language Models(LLMs)에 필요한 MM understanding을 강화하기 위해 추론 단계에서 few-shot examples를 제공하는 방법론을 제안.
+- 🗞️ [OpenAI & Reddit] [OpenAI strikes Reddit deal to train its AI on your posts](https://www.theverge.com/2024/5/16/24158529/reddit-openai-chatgpt-api-access-advertising)
+    - Reddit의 data API로부터 실시간 컨텐츠를 확인할 수 있는 계약을 체결. 연초 Google이 Reddit과 맺은 계약 규모는 약 $60M(한화 약 8백억)에 이르는 것으로 알려짐.
 </details>
