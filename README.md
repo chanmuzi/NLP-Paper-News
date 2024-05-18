@@ -641,4 +641,6 @@
     - Multi-Modal(MM) Large Language Models(LLMs)에 필요한 MM understanding을 강화하기 위해 추론 단계에서 few-shot examples를 제공하는 방법론을 제안.
 - 🗞️ [OpenAI & Reddit] [OpenAI strikes Reddit deal to train its AI on your posts](https://www.theverge.com/2024/5/16/24158529/reddit-openai-chatgpt-api-access-advertising)
     - Reddit의 data API로부터 실시간 컨텐츠를 확인할 수 있는 계약을 체결. 연초 Google이 Reddit과 맺은 계약 규모는 약 $60M(한화 약 8백억)에 이르는 것으로 알려짐.
+- 📜 [Columbia University] [LoRA Learns Less and Forgets Less](https://arxiv.org/pdf/2405.09673)
+    - programming과 mathematics 도메인에서 LoRA와 full finetuning을 비교. 또한 instruction finetuning과 continued pretraining을 비교 → LoRA는 full finetuning 대비 성능 향상 폭은 작지만, 기존의 지식을 더 잘 보존하는 경향을 보임.
 </details>
