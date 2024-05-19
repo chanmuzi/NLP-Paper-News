@@ -643,4 +643,14 @@
     - Reddit의 data API로부터 실시간 컨텐츠를 확인할 수 있는 계약을 체결. 연초 Google이 Reddit과 맺은 계약 규모는 약 $60M(한화 약 8백억)에 이르는 것으로 알려짐.
 - 📜 [Columbia University] [LoRA Learns Less and Forgets Less](https://arxiv.org/pdf/2405.09673)
     - programming과 mathematics 도메인에서 LoRA와 full finetuning을 비교. 또한 instruction finetuning과 continued pretraining을 비교 → LoRA는 full finetuning 대비 성능 향상 폭은 작지만, 기존의 지식을 더 잘 보존하는 경향을 보임.
+- 🧑🏻‍💻 [HuggingFace] [Hugging Face x LangChain : A new partner package in LangChain](https://huggingface.co/blog/langchain)
+    - 허깅페이스에 업로드된 모델들을 LangChain을 통해 활용 가능하도록 업데이트한 내역을 공개.
+- 🧑🏻‍💻 [TIGER-Lab] [MMLU-Pro](https://huggingface.co/datasets/TIGER-Lab/MMLU-Pro)
+    - 12K 개의 복잡한 질문으로 구성된 MMLU 업그레이드 버전. 선택지를 4개에서 10개로 늘림. 또한 reasoning-focused problems에 집중.
+- 📜 [MIT] [The Platonic Representation Hypothesis](https://arxiv.org/abs/2405.07987)
+    - 여러 모델들의 representation이 수렴한다는 주장. 여러 도메인 및 modalities에 대한 실험 결과를 포함.
+    - 인공지능 모델의 발전 방향은 데이터 타입(언어의 종류, modality)과 무관할 것이라고 주장했던 사람이 생각남.
+- 📜 [Meta] [Chameleon: Mixed-Modal Early-Fusion Foundation Models](https://arxiv.org/abs/2405.09818)
+    - image와 text를 어떤 순서로 제공하더라도 이해하고 이를 바탕으로 생성할 수 있는 foundation model, Chameleon을 공개.
+    - early-fusion, token-based, mixed-modal 세팅을 위해 필요한 inception, alignment, architectural parameterization 등
 </details>
