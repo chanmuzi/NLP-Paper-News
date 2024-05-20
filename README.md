@@ -654,3 +654,10 @@
     - image와 text를 어떤 순서로 제공하더라도 이해하고 이를 바탕으로 생성할 수 있는 foundation model, Chameleon을 공개.
     - early-fusion, token-based, mixed-modal 세팅을 위해 필요한 inception, alignment, architectural parameterization 등
 </details>
+
+<details>
+  <summary>4th week</summary>
+
+
+
+</details>
