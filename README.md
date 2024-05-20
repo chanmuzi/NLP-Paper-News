@@ -658,6 +658,8 @@
 <details>
   <summary>4th week</summary>
 
-
+- 📜 [University of Cambridge] [Zero-Shot Tokenizer Transfer](https://arxiv.org/abs/2405.07883)
+    - 한 언어로 학습된 언어 모델이 다른 언어는 전혀 처리하지 못한다는 한계점이 존재
+    - tokenizer를 입력으로 받고 이에 대응하는 embedding을 예측하도록 학습하는 hypernetwork를 제안 → encoder & decoder 둘 다에 일반화 가능하다는 것을 실험적으로 입증
 
 </details>
