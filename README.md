@@ -669,4 +669,7 @@
     - W&B의 테이블 기능을 활용하여 평가 결과를 쉽게 분석 가능
     - llm-jp-eval을 기반으로 llm-kr-eval을 구축
     - Multi-turn 대화를 통해 생성 능력을 평가하는 MT-Bench를 포함
+- 📜 [Microsoft] [MoRA: High-Rank Updating for Parameter-Efficient Fine-Tuning](https://arxiv.org/abs/2405.12130)
+    - PEFT의 대표 주자인 LoRA는 LLM이 새로운 지식을 습득하고 기억하도록 하는 데 명백한 한계가 존재 → 학습 가능한 파라미터의 숫자는 그대로 유지하면서도 high-rank update가 가능하도록 square matrix를 이용하는 방식, MoRA를 제안
+    - LoRA와 마찬가지로 학습 이후에는 weight matrix에 merge 되는 방식을 취함.
 </details>
