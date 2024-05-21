@@ -661,5 +661,8 @@
 - 📜 [University of Cambridge] [Zero-Shot Tokenizer Transfer](https://arxiv.org/abs/2405.07883)
     - 한 언어로 학습된 언어 모델이 다른 언어는 전혀 처리하지 못한다는 한계점이 존재
     - tokenizer를 입력으로 받고 이에 대응하는 embedding을 예측하도록 학습하는 hypernetwork를 제안 → encoder & decoder 둘 다에 일반화 가능하다는 것을 실험적으로 입증
-
+- 📜 [Alibaba] [Language Models can Evaluate Themselves via Probability Discrepancy](https://arxiv.org/abs/2405.10516)
+    - 기존 답변을 revise → revised 답변에 대한 조건부 확률이 기존 답변에 대한 조건부 확률보다 높다면 좋은 답변, 그렇지 않다면 나쁜 답변으로 self-evaluation하는 방법론을 제안
+- 📜 [Stanford, Toronto] [Observational Scaling Laws and the Predictability of Language Model Performance](https://arxiv.org/abs/2405.10938)
+    - 언어 모델의 성능이 scale에 따라 어떻게 변화할지를 이해하는 것이 중요 → 80개 의 publicly available 모델들을 통해 observational approach를 확인 → 실험을 통해 smooth, sigmoidal, predictable 패턴을 검증
 </details>
