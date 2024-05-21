@@ -665,4 +665,8 @@
     - 기존 답변을 revise → revised 답변에 대한 조건부 확률이 기존 답변에 대한 조건부 확률보다 높다면 좋은 답변, 그렇지 않다면 나쁜 답변으로 self-evaluation하는 방법론을 제안
 - 📜 [Stanford, Toronto] [Observational Scaling Laws and the Predictability of Language Model Performance](https://arxiv.org/abs/2405.10938)
     - 언어 모델의 성능이 scale에 따라 어떻게 변화할지를 이해하는 것이 중요 → 80개 의 publicly available 모델들을 통해 observational approach를 확인 → 실험을 통해 smooth, sigmoidal, predictable 패턴을 검증
+- 🧑🏻‍💻 [Korea Univ.] [Horangi 한국어 LLM 리더보드](https://wandb.ai/wandb-korea/korean-llm-leaderboard/reports/-LLM---Vmlldzo3MzIyNDE2?accessToken=95bffmg3gwblgohulknz7go3h66k11uqn1l3ytjma1uj3w0l0dwh1fywgsgpbdyy)
+    - W&B의 테이블 기능을 활용하여 평가 결과를 쉽게 분석 가능
+    - llm-jp-eval을 기반으로 llm-kr-eval을 구축
+    - Multi-turn 대화를 통해 생성 능력을 평가하는 MT-Bench를 포함
 </details>
