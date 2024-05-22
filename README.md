@@ -680,4 +680,7 @@
 - 📜 [ByteDance, Alibaba] [OpenRLHF: An Easy-to-use, Scalable and High-performance RLHF Framework](https://arxiv.org/abs/2405.11143)
     - LLM에 RLHF를 편하게 scaling 하기 위한 오픈소스 프레임워크. 70B 이상 모델들도 고려.
     - Ray, vLLM, DeepSpeed와 같은 다양한 학습 기법들을 동원하며 Hugging Face와도 통합 가능.
+- 🧑🏻‍💻 [Anthropic] [Scaling Monosemanticity: Extracting Interpretable Features from Claude 3 Sonnet](https://transformer-circuits.pub/2024/scaling-monosemanticity/)
+    - 블로그 글 원본 링크: [Mapping the Mind of a Large Language Model](https://www.anthropic.com/research/mapping-mind-language-model)
+    - Claude 3 Sonnet을 통해 LLM의 interpretability와 관련된 실험을 진행하고 그 결과를 report
 </details>
