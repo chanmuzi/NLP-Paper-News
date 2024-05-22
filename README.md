@@ -672,4 +672,12 @@
 - 📜 [Microsoft] [MoRA: High-Rank Updating for Parameter-Efficient Fine-Tuning](https://arxiv.org/abs/2405.12130)
     - PEFT의 대표 주자인 LoRA는 LLM이 새로운 지식을 습득하고 기억하도록 하는 데 명백한 한계가 존재 → 학습 가능한 파라미터의 숫자는 그대로 유지하면서도 high-rank update가 가능하도록 square matrix를 이용하는 방식, MoRA를 제안
     - LoRA와 마찬가지로 학습 이후에는 weight matrix에 merge 되는 방식을 취함.
+- 🧑🏻‍💻 [DeepLearning.AI & Qualcomm] [Introduction to On-Device AI](https://www.deeplearning.ai/short-courses/introduction-to-on-device-ai/)
+    - 모델을 deploy 할 때 낮은 latency를 유지하면서도 privacy를 지킬 수 있는 방법 등을 학습
+- 🧑🏻‍💻 [llama3-from-scratch](https://github.com/naklecha/llama3-from-scratch)
+    - Karpathy가 칭찬한 repo..?
+    - llama3의 구성 요소를 하나씩 간단히 살펴볼 수 있는 ipynb을 제공. meta로부터 weight를 받을 수 있는 공식 링크도 포함되어 있음.
+- 📜 [ByteDance, Alibaba] [OpenRLHF: An Easy-to-use, Scalable and High-performance RLHF Framework](https://arxiv.org/abs/2405.11143)
+    - LLM에 RLHF를 편하게 scaling 하기 위한 오픈소스 프레임워크. 70B 이상 모델들도 고려.
+    - Ray, vLLM, DeepSpeed와 같은 다양한 학습 기법들을 동원하며 Hugging Face와도 통합 가능.
 </details>
