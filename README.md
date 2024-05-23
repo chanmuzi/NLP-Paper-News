@@ -683,4 +683,18 @@
 - 🧑🏻‍💻 [Anthropic] [Scaling Monosemanticity: Extracting Interpretable Features from Claude 3 Sonnet](https://transformer-circuits.pub/2024/scaling-monosemanticity/)
     - 블로그 글 원본 링크: [Mapping the Mind of a Large Language Model](https://www.anthropic.com/research/mapping-mind-language-model)
     - Claude 3 Sonnet을 통해 LLM의 interpretability와 관련된 실험을 진행하고 그 결과를 report
+- 🗞️ [You can now buy a 4-foot-tall humanoid robot for $16K](https://arstechnica.com/gadgets/2024/05/unitree-starts-selling-16000-humanoid-robot/?utm_source=www.theaivalley.com)
+    - Unitree G1 으로 불리는 휴머노이드 로봇을 16,000 달러에 구매 가능
+    - [데모 영상](https://www.youtube.com/watch?v=GzX1qOIO1bE&t=58s)을 보면 굉장히 자연스럽고 다양한 동작을 지원함 (상당히 유연..;;)
+- 🧑🏻‍💻 [Google] [New AI tools to help merchants market brands and products](https://blog.google/products/shopping/google-generative-ai-marketing-features-may-2024/)
+    - 브랜드 검색 시 브랜드와 관련된 정보를 일목요연하게 정리해주는 기능
+    - Product Studio에서 상품 이미지를 다른 배경이나 상황에 맞게끔 생성하여 다양한 연출이 가능
+- 🧑🏻‍💻 [Microsoft] [What’s next: Microsoft Build continues the evolution and expansion of AI tools for developers](https://blogs.microsoft.com/blog/2024/05/21/whats-next-microsoft-build-continues-the-evolution-and-expansion-of-ai-tools-for-developers/)
+    - Small Language Models: Phi-3-vision, Phi-3-small, New Phi-3 model, Phi-Sliica
+    - Microsoft Copilots and GitHub Copilot
+    - New Copilot + PCs: PyTorch and a new Web Neural Network
+    - Real Time intelligence, partnerships with ADM, Khan Academy, Cognition AI
+- 📜 [Google DeepMind] [Gemini 1.5: Unlocking multimodal understanding across millions of tokens of context](https://storage.googleapis.com/deepmind-media/gemini/gemini_v1_5_report.pdf)
+    - Gemini 1.5 Pro의 technical report. 현존하는 LLM 중 최강이라고 주장
+    - 경량화된 모델, Gemini 1.5 Flash에 대한 실험 결과도 함께 제시
 </details>
