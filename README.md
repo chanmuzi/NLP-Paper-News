@@ -697,4 +697,12 @@
 - 📜 [Google DeepMind] [Gemini 1.5: Unlocking multimodal understanding across millions of tokens of context](https://storage.googleapis.com/deepmind-media/gemini/gemini_v1_5_report.pdf)
     - Gemini 1.5 Pro의 technical report. 현존하는 LLM 중 최강이라고 주장
     - 경량화된 모델, Gemini 1.5 Flash에 대한 실험 결과도 함께 제시
+- 📜 [University of Michigan] [A Turing test of whether AI chatbots are behaviorally similar to humans](https://www.pnas.org/doi/10.1073/pnas.2313925121)
+    - ChatGPT의 인간적 특성을 확인하기 위한 Turing Test 결과
+- 🧑🏻‍💻 [Mistral AI] [Mistral-7B-Instruct-v0.3](https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.3)
+    - 32768 vocab size, v3 Tokenizer 지원, function calling 가능
+- 📜 [AIRI] [Your Transformer is Secretly Linear](https://arxiv.org/abs/2405.12250)
+    - 연속된 layer 사이의 embedding transformation을 분석한 결과 거의 완벽한 선형 관계를 파악할 수 있었음
+    - 이러한 linear block을 제거하더라도 모델의 성능에 거의 영향을 주지 않는다는 것이 관측됨
+    - pretraining 단계에서 linearity를 최소화하기 위해 cosine-similarity-based regularization을 도입
 </details>
