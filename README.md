@@ -705,4 +705,10 @@
     - 연속된 layer 사이의 embedding transformation을 분석한 결과 거의 완벽한 선형 관계를 파악할 수 있었음
     - 이러한 linear block을 제거하더라도 모델의 성능에 거의 영향을 주지 않는다는 것이 관측됨
     - pretraining 단계에서 linearity를 최소화하기 위해 cosine-similarity-based regularization을 도입
+- 📜 [Xi’an Jiaotong University] [Large Language Models Can Self-Correct with Minimal Effort](https://arxiv.org/abs/2405.14092)
+    - 잘못된 response를 스스로 확인하고 고쳐나가는 verify-then-correct 프레임워크를 제안
+- 📜 [MIT] [Not All Language Model Features Are Linear](https://arxiv.org/abs/2405.14860)
+    - 최근 언어 모델이 activation space에서 1차원적인 representation을 갖는다고 주장하는 연구들이 제시됨
+    - 이러한 주장과 달리 일부 언어 모델들은 inherently multi-dimensional representation을 갖는다는 것을 입증
+    → 독립적인 or 동시-발생하지 않는 lower-dimensional features로 decompose 가능
 </details>
