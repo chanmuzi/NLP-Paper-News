@@ -711,4 +711,8 @@
     - 최근 언어 모델이 activation space에서 1차원적인 representation을 갖는다고 주장하는 연구들이 제시됨
     - 이러한 주장과 달리 일부 언어 모델들은 inherently multi-dimensional representation을 갖는다는 것을 입증
     → 독립적인 or 동시-발생하지 않는 lower-dimensional features로 decompose 가능
+- 📜 [Xi’an Jiaotong University] [Quantifying Emergence in Large Language Models](https://arxiv.org/abs/2405.12617v1)
+    - 최근에는 언어 모델의 emergent ability가 잘못된 평가 지표 정의에 의한 것이라는 연구가 많음
+    - → 본 연구에서는 macroscopic(semantic) & microscopic(token) level에서 entropy reduction을 비교하여 strength of emergence를 quantify
+    - metric의 variance와 ICL에서 shot의 개수 등 사이의 상관 계수 등을 바탕으로 novel emergence pattern을 파악하고, 이를 통해 hallucination을 새로운 관점에서 해석
 </details>
