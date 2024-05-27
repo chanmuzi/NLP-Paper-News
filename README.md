@@ -724,7 +724,13 @@
 - 📜 [EluetherAI and others] [Lessons from the Trenches on Reproducible Evaluation of Language Models](https://arxiv.org/abs/2405.14782)
     - 3년 간의 LLM 평가 경험을 바탕으로 researcher들을 위한 guidance와 lesson을 제공
     - 언어 모델 평가의 공통된 한계점, research에서의 어려움을 최소화하는 방법, 이와 같은 이슈를 해소하는 데 적합한 오픈소스 라이브러리 Language Model Evaluation Harness (lm-eval)
+ 
+</details>
+<details>
+  <summary>5th week</summary>
+
 - 📜 [Fudan University] [Aggregation of Reasoning: A Hierarchical Framework for Enhancing Answer Selection in Large Language Models](https://arxiv.org/abs/2405.12939)
     - CoT의 한계를 해결하기 위해 hierarchical reasoning aggregation framework, AoR (Aggregation or Reasoning)을 제시
     - reasoning chain에 대한 평가를 기반으로 정답을 고르는 방식. dynamic sampling 활용.
+
 </details>
