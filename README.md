@@ -715,4 +715,16 @@
     - 최근에는 언어 모델의 emergent ability가 잘못된 평가 지표 정의에 의한 것이라는 연구가 많음
     - → 본 연구에서는 macroscopic(semantic) & microscopic(token) level에서 entropy reduction을 비교하여 strength of emergence를 quantify
     - metric의 variance와 ICL에서 shot의 개수 등 사이의 상관 계수 등을 바탕으로 novel emergence pattern을 파악하고, 이를 통해 hallucination을 새로운 관점에서 해석
+- 🧑🏻‍💻 [phidata](https://github.com/phidatahq/phidata)
+    - Autonomous Assistants를 구축하는 framework
+    - Assistant = LLM + Memory(Chat History, Summaries, ...) + Knowledge(PDF, Docs, … ) + Tools(Search Web, Send Email, …)
+- 🧑🏻‍💻 [Mistral AI] [mistral-finetune](https://github.com/mistralai/mistral-finetune)
+    - 오픈소스 미스트랄의 모델을 LoRA 기반으로 fine-tuning 할 수 있도록 공개한 코드 베이스
+    - 대부분의 파라미터는 frozen & 1-2% 정도의 추가 파라미터로 학습 → A100 or H100 권장
+- 📜 [EluetherAI and others] [Lessons from the Trenches on Reproducible Evaluation of Language Models](https://arxiv.org/abs/2405.14782)
+    - 3년 간의 LLM 평가 경험을 바탕으로 researcher들을 위한 guidance와 lesson을 제공
+    - 언어 모델 평가의 공통된 한계점, research에서의 어려움을 최소화하는 방법, 이와 같은 이슈를 해소하는 데 적합한 오픈소스 라이브러리 Language Model Evaluation Harness (lm-eval)
+- 📜 [Fudan University] [Aggregation of Reasoning: A Hierarchical Framework for Enhancing Answer Selection in Large Language Models](https://arxiv.org/abs/2405.12939)
+    - CoT의 한계를 해결하기 위해 hierarchical reasoning aggregation framework, AoR (Aggregation or Reasoning)을 제시
+    - reasoning chain에 대한 평가를 기반으로 정답을 고르는 방식. dynamic sampling 활용.
 </details>
