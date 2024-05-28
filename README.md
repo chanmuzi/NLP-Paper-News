@@ -732,5 +732,9 @@
 - 📜 [Fudan University] [Aggregation of Reasoning: A Hierarchical Framework for Enhancing Answer Selection in Large Language Models](https://arxiv.org/abs/2405.12939)
     - CoT의 한계를 해결하기 위해 hierarchical reasoning aggregation framework, AoR (Aggregation or Reasoning)을 제시
     - reasoning chain에 대한 평가를 기반으로 정답을 고르는 방식. dynamic sampling 활용.
+- 📜 [Cohere] [Cohere For AI Launches Aya 23, 8 and 35 Billion Parameter Open Weights Release](https://cohere.com/blog/aya23)
+    - 23개 언어를 다룰 수 있는 8B, 35B 사이즈의 생성형 언어 모델 Aya 23를 공개
+    - 대규모 multilingual instruction fine-tuning dataset으로 학습된 Aya 모델을 기반으로 발전
+    - [technical report on Aya 23](https://cohere.com/research/aya/aya-23-technical-report.pdf?ref=cohere-ai.ghost.io)
 
 </details>
