@@ -736,5 +736,14 @@
     - 23개 언어를 다룰 수 있는 8B, 35B 사이즈의 생성형 언어 모델 Aya 23를 공개
     - 대규모 multilingual instruction fine-tuning dataset으로 학습된 Aya 모델을 기반으로 발전
     - [technical report on Aya 23](https://cohere.com/research/aya/aya-23-technical-report.pdf?ref=cohere-ai.ghost.io)
+- 📜 [National University of Singapore, Salesforce] [Decompose and Aggregate: A Step-by-Step Interpretable Evaluation Framework](https://arxiv.org/abs/2405.15329)
+    - LLM의 평가 능력에 대한 interpretability가 부족
+    - → 평가 과정을 여러 개의 단계로 decompose 후 결과를 aggregate 하는 방법론을 제안. 이때 교육학적 관행을 근거로 여러 단계로 구분.
+- 📜 [University of Virginia, Princeton Language and Intelligence] [SimPO: Simple Preference Optimization with a Reference-Free Reward](https://arxiv.org/abs/2405.14734)
+    - sequence의 평균 로그 확률을 implicit reward로 사용하여 reference model을 과정에서 제외
+    - target reward margin을 사용하여 winning & losing response 간의 격차를 벌림
+- 📜 [IEEE] [Wav-KAN: Wavelet Kolmogorov-Arnold Networks](https://arxiv.org/abs/2405.12832)
+    - 기존 MLP나 Spl-KAN은 interpretability, 학습 속도, robustness 등의 이슈가 존재
+    - wavelet function을 KAN 네트워크 구조에 통합함으로써 입력 데이터의 high-/low-frequency 요소들을 효율적으로 capture 할 수 있도록 함
 
 </details>
