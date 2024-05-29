@@ -745,5 +745,17 @@
 - 📜 [IEEE] [Wav-KAN: Wavelet Kolmogorov-Arnold Networks](https://arxiv.org/abs/2405.12832)
     - 기존 MLP나 Spl-KAN은 interpretability, 학습 속도, robustness 등의 이슈가 존재
     - wavelet function을 KAN 네트워크 구조에 통합함으로써 입력 데이터의 high-/low-frequency 요소들을 효율적으로 capture 할 수 있도록 함
-
+- 🗞️ [xAI] [Series B Funding Round](https://x.ai/blog/series-b)
+    - Valor Euquity Partners, Vy Captial 등으로부터 60억 달러 (약 7-8조..)에 해당하는 시리즈 B 펀딩을 확보
+- 📜 [Fudna University] [Tokenization Matters! Degrading Large Language Models through Challenging Their Tokenization](https://arxiv.org/abs/2405.17067)
+    - LLM이 특정 query에 대해 답변을 잘하지 못하는 문제 → tokenization이 원인
+    - 다양한 오픈소스 LLM이 tokenization에서 겪는 어려움을 테스트하기 위한 ADT (Adversarial Dataset for Tokenizer) 구축
+- 📜 [Google] [Can Large Language Models Faithfully Express Their Intrinsic Uncertainty in Words?](https://arxiv.org/abs/2405.16908)
+    - LLM은 답변하기 애매한 것들에 대해 intrinsic uncertainty를 표현해야 한다고 주장
+    - intrinsic uncertainty를 확인하기 위해 모델의 intrinsic confidence와 실제 결정 간의 갭을 측정할 수 있는 faithful response uncertainty를 공식화하여 실험
+- 📜 [Meta] [An Introduction to Vision-Language Modeling](https://arxiv.org/abs/2405.17247)
+    - 메타에서 제시한 Vision-Language Modeling 관련 서베이 페이퍼
+- 📜 [Microsoft] Matryoshka Multimodal Models
+    - Large Multimodal Models(LMMs)이 고해상도 이미지를 처리할 때 너무 많은 visual token을 학습해야 한다는 문제점이 존재
+    - Matryoshka 인형에 착안. visual content를 여러 coarse-to-fine granularities 정보로부터의 nested sets of visual tokens로 표현하는 방법을 학습.
 </details>
