@@ -774,4 +774,13 @@
 - 📜 [The University of Edinburgh] [2BP: 2-Stage Backpropagation](https://arxiv.org/abs/2405.18047)
     - Deep Neural Networks(DNNs)를 학습시키기 위한 기존의 pipeline parallelism은 ML 프레임워크에 내장된 automatic differentiation에 의한 병목이 발생
     - → 2-stage backporpagation(2BP)을 제안. 이를 통해 1.70x 향상된 throughput을 확인
+- 🗞️ [OpenAI] [OpenAI makes ChatGPT-4o's advanced tools available to users in free tier](https://www.business-standard.com/technology/tech-news/openai-makes-chatgpt-4o-s-advanced-tools-available-to-users-in-free-tier-124053000880_1.html)
+    - 이제 구독을 하지 않는 일반 유저들도 GPT-4o 모델을 이용할 수 있음
+    - 또한 browse, vision, data analysis, file uploads, GPTs 등의 기능도 이용 가능
+- 📜 [Meta] [Nearest Neighbor Speculative Decoding for LLM Generation and Attribution](https://arc.net/l/quote/bobbepsa)
+    - LLM의 hallucination 문제를 해결하기 위해 kNN-LM과 같은 semi-parametric LM이 등장하였으나 inference 속도가 느리고 non-fluent texts를 생성한다는 문제점이 존재
+    - 이를 해결하기 위해 임의 길이의 real-world text spans를 LM 생성 과정에 통합하는 Nearest Neighbor Speculative Decoding (NEST)를 제안 → token-level의 retrieval을 매 inference step마다 수행
+- 📜 [Adobe] [Calibrating Reasoning in Language Models with Internal Consistency](https://arc.net/l/quote/tmcvuipx)
+    - CoT reasoning에 대한 모델의 internal representation에 대한 연구
+    - → rationale은 정답 accuracy를 향상시키지만, 중간과 마지막 레이어 internal representation 간의 inconsistency를 야기함
 </details>
