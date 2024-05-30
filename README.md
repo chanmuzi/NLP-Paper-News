@@ -758,4 +758,20 @@
 - 📜 [Microsoft] Matryoshka Multimodal Models
     - Large Multimodal Models(LMMs)이 고해상도 이미지를 처리할 때 너무 많은 visual token을 학습해야 한다는 문제점이 존재
     - Matryoshka 인형에 착안. visual content를 여러 coarse-to-fine granularities 정보로부터의 nested sets of visual tokens로 표현하는 방법을 학습.
+- 🧑🏻‍💻 [DeepLearning.AI] [AI Agentic Design Patterns with AutoGen](https://www.deeplearning.ai/short-courses/ai-agentic-design-patterns-with-autogen/)
+    - AutoGen 프레임워크를 사용하여 다양한 역할을 수행하고 뛰어난 능력을 가진 AI application을 만드는 방법을 학습
+    - Reflection, Tool use, Planning 등 다양한 agentic design pattern에 대해 학습
+- 📜 [National University of Singapore] [Faithful Logical Reasoning via Symbolic Chain-of-Thought](https://arxiv.org/abs/2405.18357)
+    - LLM의 logical reasoning 능력을 강화하기 위해 SymbCoT를 제안
+    - 1) 자연어를 symbolic format으로 변경 2) 문제를 해결하기 위해 step-by-step plan을 구축 3) verifier가 translation & reasoning chain의 결과를 검증
+- 🧑🏻‍💻 [Karpathy] [Reproducing GPT-2 (124M) in llm.c in 90 minutes for $20](https://github.com/karpathy/llm.c/discussions/481)
+    - 124M: 90m, $20 / 350M: 14h, $200 / 1.6B: 1w, $2.5k
+    - 124M 사이즈의 GPT-2를 A100x8를 사용하여 엄청나게 효율적으로 학습하는 방식을 공개
+- 🧑🏻‍💻 [Mistral AI] [Codestral: Hello, World!](https://mistral.ai/news/codestral/)
+    - 80개 이상의 프로그래밍 언어를 다룰 수 있는 코드 특화 언어 모델을 공개
+    - 22B 사이즈의 모델임에도 불구하고 Llama 3 70B, CodeLlama 70B 보다 뛰어난 성능을 보임
+    - [허깅페이스](https://huggingface.co/mistralai/Codestral-22B-v0.1)에서 다운로드 가능
+- 📜 [The University of Edinburgh] [2BP: 2-Stage Backpropagation](https://arxiv.org/abs/2405.18047)
+    - Deep Neural Networks(DNNs)를 학습시키기 위한 기존의 pipeline parallelism은 ML 프레임워크에 내장된 automatic differentiation에 의한 병목이 발생
+    - → 2-stage backporpagation(2BP)을 제안. 이를 통해 1.70x 향상된 throughput을 확인
 </details>
