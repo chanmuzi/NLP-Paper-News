@@ -790,7 +790,12 @@
 <details>
   <summary>1st week</summary>
 
-
+- 📜 [Renmin University] [One Token Can Help! Learning Scalable and Pluggable Virtual Tokens for Retrieval-Augmented Large Language Models](https://arxiv.org/abs/2405.19670)
+    - 기존 LLM은 fine-tuning 할 경우 기존 지식이 손상될 가능성이 높다는 문제점이 존재
+    - RAG를 위한 scalable & pluggable 가상 토큰을 제안. 해당 토큰에 대한 임베딩만 fine-tuning
+- 📜 [Jina AI] [Jina CLIP: Your CLIP Model Is Also Your Text Retriever](https://arxiv.org/abs/2405.20204)
+    - Contrastive Language-Image Pretraining(CLIP)을 text-only task에 적용 가능. 하지만 text-only 또는 multimodal tasks에 따라 독립된 embedding을 유지해야 한다는 문제점 존재.
+    - → 이를 해결하기 위해 multi-task contrastive training method를 제안
 
 
 </details>
