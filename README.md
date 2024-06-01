@@ -784,3 +784,13 @@
     - CoT reasoning에 대한 모델의 internal representation에 대한 연구
     - → rationale은 정답 accuracy를 향상시키지만, 중간과 마지막 레이어 internal representation 간의 inconsistency를 야기함
 </details>
+
+
+## 🌞 June
+<details>
+  <summary>1st week</summary>
+
+
+
+
+</details>
