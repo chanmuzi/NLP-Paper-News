@@ -796,6 +796,10 @@
 - 📜 [Jina AI] [Jina CLIP: Your CLIP Model Is Also Your Text Retriever](https://arxiv.org/abs/2405.20204)
     - Contrastive Language-Image Pretraining(CLIP)을 text-only task에 적용 가능. 하지만 text-only 또는 multimodal tasks에 따라 독립된 embedding을 유지해야 한다는 문제점 존재.
     - → 이를 해결하기 위해 multi-task contrastive training method를 제안
-
+- 🧑🏻‍💻 [Anthropic] [Claude can now use tools](https://www.anthropic.com/news/tool-use-ga)
+    - Claude에도 외부 API나 tool과 연동할 수 있는 기능이 추가됨
+    - 예를 들어 구조화된 데이터 추출, DB 기반 검색 및 답변, API 기능 자동화 등에 활용 가능
+- 🧑🏻‍💻 [Perplexity] [Introducing Perplexity Pages](https://www.perplexity.ai/hub/blog/perplexity-pages)
+    - 프롬프트 기반으로 커스텀 가능한 웹 페이지를 제작하는 기능 Pages를 오픈
 
 </details>
