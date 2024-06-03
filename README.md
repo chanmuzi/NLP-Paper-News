@@ -806,6 +806,9 @@
 
 <details>
   <summary>2nd week</summary>
-
+  
+- [Meta] [Contextual Position Encoding: Learning to Count What’s Important](https://arxiv.org/abs/2405.18719)
+    - 현재의 Position Encoding (PE) 방식은 토큰 개수를 세는 방식으로 일반화가 어렵다는 문제점
+    - → 모델에 의해 결정되는 특정 토큰에 대한 position만 확장함으로써 position이 context에 conditioned 될 수 있도록 하는 Contextual Position Encoding(CoPE)를 제안
 
 </details>
