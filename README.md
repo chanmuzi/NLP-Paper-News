@@ -810,5 +810,15 @@
 - [Meta] [Contextual Position Encoding: Learning to Count What’s Important](https://arxiv.org/abs/2405.18719)
     - 현재의 Position Encoding (PE) 방식은 토큰 개수를 세는 방식으로 일반화가 어렵다는 문제점
     - → 모델에 의해 결정되는 특정 토큰에 대한 position만 확장함으로써 position이 context에 conditioned 될 수 있도록 하는 Contextual Position Encoding(CoPE)를 제안
+- 🗞️ [Samsung] [Samsung’s Galaxy S24 Series Dominates GenAI-capable Smartphone Market in Q1 2024](https://www.counterpointresearch.com/insights/global-top-10-best-selling-genai-smartphones-q1-2024/)
+    - 2024년도 1분기 스마트폰 시장에서 GenAI 스마트폰의 비중은 약 6% 정도. 이에 대한 삼성의 지분은 50% 이상임.
+    - AI 기술 발전을 내세울 것으로 예상되는 애플의 WWDC가 많은 이들의 기대를 받고 있음
+- 📜 [Princeton, CMU] [Transformers are SSMs: Generalized Models and Efficient Algorithms Through Structured State Space Duality](https://arc.net/l/quote/avdoajmy)
+    - Mamba의 저자가 후속 연구로 제시한 Mamba-2
+    - 핵심 레이어의 연산 속도가 Mamba의 selective SSM보다 2-8배 정도 빠르면서, 트랜스포머 기반의 언어 모델과 견줄 수 있는 성능을 내세움
+- 📜 [Perdue] [SaySelf: Teaching LLMs to Express Confidence with Self-Reflective Rationales](https://arxiv.org/abs/2405.20974)
+    - LLM의 confidence와 관련해서 prompt-based 연구와 supervised finetuning 연구가 존재
+    - → fine-grained confidence estimates를 표현하도록 가르치는 SaySelf 방법론을 제안
+    - 추가적으로 LLM은 스스로의 parametric knowledge를 나타내는 self-reflective rationale을 생성하고, 반대로 uncertainty를 표현할 수 있게 됨
 
 </details>
