@@ -803,3 +803,9 @@
     - 프롬프트 기반으로 커스텀 가능한 웹 페이지를 제작하는 기능 Pages를 오픈
 
 </details>
+
+<details>
+  <summary>2nd week</summary>
+
+
+</details>
