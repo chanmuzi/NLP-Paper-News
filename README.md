@@ -820,5 +820,19 @@
     - LLM의 confidence와 관련해서 prompt-based 연구와 supervised finetuning 연구가 존재
     - → fine-grained confidence estimates를 표현하도록 가르치는 SaySelf 방법론을 제안
     - 추가적으로 LLM은 스스로의 parametric knowledge를 나타내는 self-reflective rationale을 생성하고, 반대로 uncertainty를 표현할 수 있게 됨
+- 🧑🏻‍💻 [LlamaIndex] [Introducing the Property Graph Index: A Powerful New Way to Build Knowledge Graphs with LLMs](https://www.llamaindex.ai/blog/introducing-the-property-graph-index-a-powerful-new-way-to-build-knowledge-graphs-with-llms)
+    - 그래프를 구성하는 노드 및 관계를 categorize
+    - 그래프를 hybrid search를 위한 vector database로 사용 가능
+    - Cypher graph query language를 이용한 복잡한 query 표현 가능
+- 🧑🏻‍💻 [DeepLearning.AI] [AI Agents in LangGraph](https://www.deeplearning.ai/short-courses/ai-agents-in-langgraph/)
+    - Python과 LLM을 이용하여 Agent를 구현하는 것을 scratch부터 학습
+    - 추가로, 여러 개의 답변을 agent-friendly 형식으로 반환하는 agent serarch도 다룸
+- 📜 [ByteDance] [Exploring Mathematical Extrapolation of Large Language Models with Synthetic Data](https://arxiv.org/abs/2406.02100)
+    - 새로 제시한 arithmetical puzzle problem을 통해 LLM이 고품질 합성데이터로 학습된 경우 multi-step reasoning 능력을 크게 향상시킬 수 있음을 확인
+    - 또한 추가 실험을 통해 out-of-domain 데이터셋에 대한 성능도 준수하다는 것을 확인
+- 📜 [Google DeepMind] [To Believe or Not to Believe Your LLM](https://arxiv.org/abs/2406.02543)
+    - 언어 모델 답변의 불확실성은 epistemic (지식 부족) & aleatoric (랜덤, 확률) uncertainty로 구분됨
+    - information-theoretic metric을 사용하여 언제 epistemic uncertainty가 높은지를 탐지
+    - 이전의 답변을 기반으로 삼는 iterative prompting을 통해 metric을 계산. 즉, log-likelihood 등을 사용하지 않음.
 
 </details>
