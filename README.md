@@ -834,5 +834,20 @@
     - 언어 모델 답변의 불확실성은 epistemic (지식 부족) & aleatoric (랜덤, 확률) uncertainty로 구분됨
     - information-theoretic metric을 사용하여 언제 epistemic uncertainty가 높은지를 탐지
     - 이전의 답변을 기반으로 삼는 iterative prompting을 통해 metric을 계산. 즉, log-likelihood 등을 사용하지 않음.
+- 🧑🏻‍💻 [Google] [PlaiGemma](https://ai.google.dev/gemma/docs/paligemma)
+    - SigLIP vision model과 Gemma language model을 기반으로 만든 lightweight open vision-language model (VLM), PaliGemma를 공개
+    - 다양한 태스크를 처리할 수 있는 PaliGemma와 특정 research dataset에 fine-tuned PaliGemma-FT를 공개
+    - [캐글](https://www.kaggle.com/models/google/paligemma)에서 다운로드 가능
+- 🧑🏻‍💻 [Mistral AI] [My Tailor is Mistral](https://mistral.ai/news/customization/)
+    - Mistral fine-tuning API & SDK를 이용하여 Mistral 모델을 fine-tuning 하는 기능을 공개
+    - LoRA를 기반으로 하여 memory-efficient 하면서도 performant한 fine-tuning 기법을 도입
+- 📜 [KAIST, LG AI] [Block Transformer: Global-to-Local Language Modeling for Fast Inference](https://arxiv.org/abs/2406.02657)
+    - LLM의 inference에서 KV cache는 심각한 병목의 원인이 됨
+    - → 낮은 layer에 대한 global modeling의 병목을 고립시키고, 상위 layer에 대해 fast local modeling을 적용. 입력 토큰을 특정 사이즈의 블록으로 압축하고 coarse level로 self attention을 적용.
+- 🧑🏻‍💻📜 [OpenAI] [Extracting Concepts from GPT-4](https://openai.com/index/extracting-concepts-from-gpt-4/)
+    - 아카이브 논문 [링크](https://arxiv.org/abs/2406.04093v1) 🔗
+    - GPT-4의 internal representation을 16M 개의 oft-interpretable pattern으로 decompose하기 위해 고안한 scalable method를 공개
+    - k-sparse autoencoders를 제안하여 sparsity를 control 함과 동시에 reconstruction-sparsity frontier를 tuning하고 개선하는 과정을 간소화
+    - autoencoder의 크기와 sparsity 간의 확연한 scaling laws를 관측
 
 </details>
