@@ -849,5 +849,16 @@
     - GPT-4의 internal representation을 16M 개의 oft-interpretable pattern으로 decompose하기 위해 고안한 scalable method를 공개
     - k-sparse autoencoders를 제안하여 sparsity를 control 함과 동시에 reconstruction-sparsity frontier를 tuning하고 개선하는 과정을 간소화
     - autoencoder의 크기와 sparsity 간의 확연한 scaling laws를 관측
+- 🧑🏻‍💻 [Google] [NotebookLM goes global with Slides support and better ways to fact-check](https://blog.google/technology/ai/notebooklm-goes-global-support-for-websites-slides-fact-check/)
+    - 작년 여름에 공개했던 NotebookLM을 Gemini 1.5 Pro 업그레이드
+    - Google Slide, web URL, Google Docs, PDFs, text files를 지원
+    - [NotebookLM 링크](https://notebooklm.google.com/?original_referer=https://blog.google%23&pli=1)🔗에서 가이드 확인 및 노트북 생성 가능
+- 📜 [ELLIS] [Semantically Diverse Language Generation for Uncertainty Estimation in Language Models](https://arxiv.org/abs/2406.04306)
+    - LLM의 예측 불확실성을 정량적으로 측정하기 위해 Semantically Diverse Language Generation (SDLG)를 제안
+    - 이를 통해 initial text가 hallucinated 인지 아닌지 판단할 수 있음
+- 📜 [Peking, Berkeley, Stanford] [Buffer of Thoughts: Thought-Augmented Reasoning with Large Language Models](https://arxiv.org/abs/2406.04271)
+    - thought-augmented reasoning approach, Buffer of Thoughts (BoT)를 제안
+    - meta-buffer: 유익한 high-level thoughts를 저장
+    - buffer-manager: meta-buffer를 동적으로 업데이트하여 meta-buffer의 capacity를 향상
 
 </details>
