@@ -860,5 +860,10 @@
     - thought-augmented reasoning approach, Buffer of Thoughts (BoT)를 제안
     - meta-buffer: 유익한 high-level thoughts를 저장
     - buffer-manager: meta-buffer를 동적으로 업데이트하여 meta-buffer의 capacity를 향상
+- 🗞️ [KLING] [Forget Sora — Kling is a killer new AI video model that just dropped and I’m impressed](https://www.tomsguide.com/ai/ai-image-video/forget-sora-kling-is-a-killer-new-ai-video-model-that-just-dropped-and-im-impressed)
+    - 중국의 비디오 플랫폼 회사 Kuaishou가 longer video generations, improved movement, better prompt following 등을 자랑하는 비디오 모델 Kling을 공개
+- 🧑🏻‍💻 [Alibaba] [Hello Qwen2](https://qwenlm.github.io/blog/qwen2/)
+    - 다섯 종류의 모델 사이즈: 0.5B, 1.5B, 7B, 57B-14B, 72B
+    - coding, mathematics, multilingual understanding, long-context understanding 등에서 Meta의 Llama3나 OpenAI의 GPT-4를 능가하는 수준의 성능을 보임
 
 </details>
