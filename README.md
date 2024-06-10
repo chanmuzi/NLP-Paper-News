@@ -867,3 +867,15 @@
     - coding, mathematics, multilingual understanding, long-context understanding 등에서 Meta의 Llama3나 OpenAI의 GPT-4를 능가하는 수준의 성능을 보임
 
 </details>
+
+<details>
+  <summary>3rd week</summary>
+
+- 📜 [Santa Cruz] [Scalable MatMul-free Language Modeling](https://arxiv.org/abs/2406.02528)
+    - LLM의 주된 계산 비용을 차지하는 행렬곱(MatMul) 연산을 제거
+    - MatMul-free 모델이 transformer 기반의 모델보다 2.7B 사이즈까지 뛰어나도록 학습한 결과를 제시
+- 📜 [University of Chicago] [The Geometry of Categorical and Hierarchical Concepts in Large Language Models](https://arxiv.org/abs/2406.01506)
+    - categorical concepts은 어떻게 represented 되는가? 두 개념 간 계층적 관계는 어떻게 encoded 되는가?
+    - 전자는 simplices, 후자는 orthogonal, 복잡한 개념은 direct sum으로 구성된 polytope로 표현
+
+</details>
