@@ -877,5 +877,17 @@
 - 📜 [University of Chicago] [The Geometry of Categorical and Hierarchical Concepts in Large Language Models](https://arxiv.org/abs/2406.01506)
     - categorical concepts은 어떻게 represented 되는가? 두 개념 간 계층적 관계는 어떻게 encoded 되는가?
     - 전자는 simplices, 후자는 orthogonal, 복잡한 개념은 direct sum으로 구성된 polytope로 표현
+- 🧑🏻‍💻 [Andrej Karpathy] [Let's reproduce GPT-2 (124M)](https://www.youtube.com/watch?v=l8pRSuU81PU)
+    - Model Construction, Speed Optimization, Hyperparameter Setup, Model Evaluation and Training 등을 중심으로 유튜브에 GPT-2 모델 학습 영상을 업로드
+- 🧑🏻‍💻 [OpenAI, Apple] [OpenAI and Apple announce partnership to integrate ChatGPT into Apple experiences](https://arc.net/l/quote/jbenmlas)
+    - WWDC 2024에서 OpenAI의 ChatGPT를 Siri에 탑재하겠다는 계획을 발표.
+    - privacy와 관련해서 애플이 직접 데이터 센터를 구축하고 관리하겠다고 함.
+- 📜 [University of Waterloo] [GenAI Arena: An Open Evaluation Platform for Generative Models](https://arxiv.org/abs/2406.04485)
+    - image, video 생성 모델들을 유저가 평가하는 GenAI Arena에 관한 논문. 4개월 이상 운영하며 6천 개 이상의 투표 정보를 수집.
+    - text-to-image, text-to-video, image editing, 세 영역에 대한 평가가 가능
+- 📜 [AI2] [WildBench: Benchmarking LLMs with Challenging Tasks from Real Users in the Wild](https://arxiv.org/abs/2406.04770)
+    - 백만 개 이상의 human-chatbot 대화 로그에서 엄선한 1,024개의 task
+    - GPT-4 turbo와 같은 LLM을 사용하여 WB-Reward, WB-Score 을 기준으로 평가 자동화
+    - fine-grained pari-wise comparision 방식을 사용했으며, 세 개의 베이스라인을 설정
 
 </details>
