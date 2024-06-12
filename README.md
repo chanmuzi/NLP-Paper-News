@@ -892,4 +892,19 @@
 - 📜 [Together AI] [Mixture-of-Agents Enhances Large Language Model Capabilities](https://arxiv.org/abs/2406.04692)
     - 여러 LLM의 collective strength를 이용하는 Mixture-of-Agents (MoA) 방식을 제안
     - 즉, 여러 개의 LLM agents로 각 layer를 구성하는 방식. 각 agent는 이전 레이어의 결과물을 auxiliary information으로 활용.
+- 🗞️ [LLMs Aren’t Just “Trained On the Internet” Anymore](https://allenpike.com/2024/llms-trained-on-internet)
+    - 기존 데이터들만을 활용해서는 LLM이 기존 데이터와 다른 출력을 만들지 못하게 됨
+    - 맞춤형 학습데이터를 제작하여 활용하는 방식이 대두. Phi-3가 대표적인 모델이며 [Scale.ai](http://Scale.ai) 같은 회사가 크게 주목을 받게 됨.
+- 📜 [University of Washington] [Do LLMs Exhibit Human-Like Reasoning? Evaluating Theory of Mind in LLMs for Open-Ended Responses](https://arxiv.org/abs/2406.05659)
+    - Theory of Mind (ToM) Reasoning은 다른 개인들이 고유한 의도, 감정 등을 소유했다는 것을 전제로 함
+    - Reddit, ChangedMyView에서 수집한 포스트에서 사람과 LLM 응답 간의 의미적 유사성 및 어휘 중복 정도를 비교 → open-ended scenarios에서 명백한 한계를 보임
+    - LLM은 아직까지 social reasoning 성능이 부족함을 입증하고 어떻게 인간 의도와 감정을 통합할 수 있는지에 대한 방법을 제시
+- 📜 [ByteDance] [Autoregressive Model Beats Diffusion: Llama for Scalable Image Generation](https://arxiv.org/abs/2406.06525)
+    - next-token prediction 패러다임을 적용한 이미지 생성 모델, LlamaGen을 제시
+    - (1) image tokenizer (2) class-conditional image generation (3) text-conditional image generation (4) optimizaing the inference speed of image generation
+- 📜 [Washington, Meta, AI2] [Husky: A Unified, Open-Source Language Agent for Multi-Step Reasoning](https://arxiv.org/abs/2406.06469)
+    - 기존 agents는 proprietary models 기반이거나 특정 태스크에 적합하도록 디자인되어 있음
+    - → numerical, tabular, knowledge-based reasoning을 다룰 수 있는, 즉 unified action space에서 학습한 open-source language agent, Husky를 제안
+    - 1) 다음 단계에 수행할 작업을 예측 2) expert 모델이 선택된 작업을 실행하고 상태 업데이트
+    - 7B 모델로도 GPT-4에 준하거나 그 이상의 성능을 보임
 </details>
