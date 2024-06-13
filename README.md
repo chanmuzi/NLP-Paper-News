@@ -907,4 +907,8 @@
     - → numerical, tabular, knowledge-based reasoning을 다룰 수 있는, 즉 unified action space에서 학습한 open-source language agent, Husky를 제안
     - 1) 다음 단계에 수행할 작업을 예측 2) expert 모델이 선택된 작업을 실행하고 상태 업데이트
     - 7B 모델로도 GPT-4에 준하거나 그 이상의 성능을 보임
+- 📜 [OpenAI, Stnaford, Microsoft] [The Prompt Report: A Systematic Survey of Prompting Techniques](https://arxiv.org/abs/2406.06608)
+    - 프롬프트와 관련한 33개 어휘를 정리
+    - 58개의 프롬프팅 테크닉과 다른 modality에 활용 가능한 40개의 테크닉을 정리
+    - 자연어 prefix-prompting에 대한 내용도 다루고 있음
 </details>
