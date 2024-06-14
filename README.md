@@ -911,4 +911,17 @@
     - 프롬프트와 관련한 33개 어휘를 정리
     - 58개의 프롬프팅 테크닉과 다른 modality에 활용 가능한 40개의 테크닉을 정리
     - 자연어 prefix-prompting에 대한 내용도 다루고 있음
+- 🧑🏻‍💻 [Microsoft] [Generative-AI-For-Beginners](https://github.com/microsoft/generative-ai-for-beginners)
+    - Azure OpenAI, OpenAI API를 활용한 코드 샘플
+    - 생성형 AI application을 만드는 데 필요한 18개의 강의를 제공
+    - 데이터 베이스와 관련된 강의를 DeepLearning.AI 에서도 제공
+- 🧑🏻‍💻 [Luma AI] [Dream Machine](https://lumalabs.ai/dream-machine)
+    - OpenAI Sora에 견줄만한 text-to-video 모델을 무료로 공개
+- 📜 [University of Toronto] [Out-Of-Context Prompting Boosts Fairness and Robustness in Large Language Model Predictions](https://arxiv.org/abs/2406.07685)
+    - 기존에는 LLM의 causal reasoning 능력을 바탕으로 fair & robust 한 답변을 할 수 있도록 세팅
+    - → 반대로 out-of-comtext prompting을 제안 (테스트 단계에서)
+- 📜 [New York University] [Large Language Models Must Be Taught to Know What They Don't Know](https://arxiv.org/abs/2406.08391)
+    - 모델 스스로에 대해 prompting 하는 것은 좋은 calibration으로 이어지지 않는다.
+    - → 작은 correct & incorrect answer로 fine-tuning 함으로써 불확실성 추정에 대한 일반화 성능을 끌어올릴 수 있다.
+    - 인간과 AI가 협력하는 환경에서의 불확실성 추정이 어떻게 인간 의사결정에 도움이 되는지 연구
 </details>
