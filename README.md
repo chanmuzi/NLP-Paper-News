@@ -928,4 +928,7 @@
     - MMLU 벤치마크의 정당성 검토 → Virology 파트 분석 결과 57% 문제
     - error taxonomy를 이용하여 데이터셋을 확인하는 프레임워크, MMLU-Redux를 제안
     - 30개의 MMLU subjects에 대해서 3,000개를 reannotate → 벤치마크 성능과 실제 체감 성능 간의 괴리를 줄이고자 함
+- 📜 [NVIDIA] [Nemotron-4 340B](https://research.nvidia.com/publication/2024-06_nemotron-4-340b)
+    - Base, Instruct, Reward, 세 버전의 모델 패밀리를 오픈 소스로 공개
+    - smaller language model 을 학습할 때 사용할 합성데이터를 생성하는 데 활용 가능
 </details>
