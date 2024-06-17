@@ -889,7 +889,7 @@
     - 백만 개 이상의 human-chatbot 대화 로그에서 엄선한 1,024개의 task
     - GPT-4 turbo와 같은 LLM을 사용하여 WB-Reward, WB-Score 을 기준으로 평가 자동화
     - fine-grained pari-wise comparision 방식을 사용했으며, 세 개의 베이스라인을 설정
-- 📜 [Together AI] [Mixture-of-Agents Enhances Large Language Model Capabilities](https://arxiv.org/abs/2406.04692)
+- 📜 [Duke, Stanford, Together AI] [Mixture-of-Agents Enhances Large Language Model Capabilities](https://arxiv.org/abs/2406.04692)
     - 여러 LLM의 collective strength를 이용하는 Mixture-of-Agents (MoA) 방식을 제안
     - 즉, 여러 개의 LLM agents로 각 layer를 구성하는 방식. 각 agent는 이전 레이어의 결과물을 auxiliary information으로 활용.
 - 🗞️ [LLMs Aren’t Just “Trained On the Internet” Anymore](https://allenpike.com/2024/llms-trained-on-internet)
@@ -931,4 +931,10 @@
 - 📜 [NVIDIA] [Nemotron-4 340B](https://research.nvidia.com/publication/2024-06_nemotron-4-340b)
     - Base, Instruct, Reward, 세 버전의 모델 패밀리를 오픈 소스로 공개
     - smaller language model 을 학습할 때 사용할 합성데이터를 생성하는 데 활용 가능
+</details>
+
+<details>
+  <summary>4th week</summary>
+
+
 </details>
