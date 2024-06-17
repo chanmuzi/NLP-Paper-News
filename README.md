@@ -935,6 +935,10 @@
 
 <details>
   <summary>4th week</summary>
-
+  
+- 📜 [Fudan, AI2] [SelfGoal: Your Language Agents Already Know How to Achieve High-level Goals](https://arc.net/l/quote/fcednhje)
+    - 기존 agents는 구체적인 instruction이 없으면 목표를 달성하지 못하거나 피드백이 늦게 제공되는 상황에서는 적응을 어려워한다는 문제점이 존재
+    - → 사람이 제공하는 피드백이 제한되고 느린(delayed) 상황에서도 high-level goal을 달성할 수 있도록 돕는 automatic apporach, SelfGoal을 제안
+    - 핵심: high-level goal을 실용적인 subgoal로 이루어진 tree structure로 쪼개는 것
 
 </details>
