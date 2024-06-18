@@ -950,7 +950,7 @@
     - 모르는 질문을 거절 + causal instruction을 통해 퍼포먼스 회복
 - 📜 [AIRI] [XLand-100B: A Large-Scale Multi-Task Dataset for In-Context Reinforcement Learning](https://arxiv.org/abs/2406.08973)
     - XLand—MiniGrid 환경을 기반으로 삼는 in-context reinforcement learning을 위한 대규모 데이터셋
-- 📜 [Tsinghwa] [Needle In A Multimodal Haystack](https://arxiv.org/abs/2406.07230)
+- 📜 [Fudan, Tsinghua] [Needle In A Multimodal Haystack](https://arxiv.org/abs/2406.07230)
     - MLLMs의 long multimodal documents 이해력을 파악하기 위한 벤치마크, MM-NIAH
     - multimodal retrieval, counting, reasoning, 세 타입의 태스크를 포함
 </details>
