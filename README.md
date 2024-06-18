@@ -940,5 +940,17 @@
     - 기존 agents는 구체적인 instruction이 없으면 목표를 달성하지 못하거나 피드백이 늦게 제공되는 상황에서는 적응을 어려워한다는 문제점이 존재
     - → 사람이 제공하는 피드백이 제한되고 느린(delayed) 상황에서도 high-level goal을 달성할 수 있도록 돕는 automatic apporach, SelfGoal을 제안
     - 핵심: high-level goal을 실용적인 subgoal로 이루어진 tree structure로 쪼개는 것
-
+- 📜 [AIRI] [BABILong: Testing the Limits of LLMs with Long Context Reasoning-in-a-Haystack](https://arxiv.org/abs/2406.10149)
+    - LLM의 long context 이해 능력을 파악하기 위한 벤치마크, BABILong을 소개.
+    - 20여개의 다양한 reasoning tasks를 포함
+    - 아직까지는 유의미한 long context understanding 벤치마크가 없다고 생각하는데, 향후 유의미한 연구들이 등장할 것인지 개인적인 의문
+- 📜 [Hong Kong Science] [Know the Unknown: An Uncertainty-Sensitive Method for LLM Instruction Tuning](https://arxiv.org/abs/2406.10099)
+    - LLM은 질문에 ‘답변’하도록 학습되었기 때문에 ‘모르는 걸 모른다’고 이야기하지 않는 특징이 있음
+    - → uncertainity-sensitive tuning: uncertainty recognition + prompt-sensitive activation
+    - 모르는 질문을 거절 + causal instruction을 통해 퍼포먼스 회복
+- 📜 [AIRI] [XLand-100B: A Large-Scale Multi-Task Dataset for In-Context Reinforcement Learning](https://arxiv.org/abs/2406.08973)
+    - XLand—MiniGrid 환경을 기반으로 삼는 in-context reinforcement learning을 위한 대규모 데이터셋
+- 📜 [Tsinghwa] [Needle In A Multimodal Haystack](https://arxiv.org/abs/2406.07230)
+    - MLLMs의 long multimodal documents 이해력을 파악하기 위한 벤치마크, MM-NIAH
+    - multimodal retrieval, counting, reasoning, 세 타입의 태스크를 포함
 </details>
