@@ -953,4 +953,12 @@
 - 📜 [Fudan, Tsinghua] [Needle In A Multimodal Haystack](https://arxiv.org/abs/2406.07230)
     - MLLMs의 long multimodal documents 이해력을 파악하기 위한 벤치마크, MM-NIAH
     - multimodal retrieval, counting, reasoning, 세 타입의 태스크를 포함
+- 🧑🏻‍💻 [DeepSeek AI] [DeepSeek-Coder-V2: Breaking the Barrier of Closed-Source Models in Code Intelligence](https://github.com/deepseek-ai/DeepSeek-Coder-V2?tab=readme-ov-file)
+    - MoE 아키텍쳐를 사용하여 16/236B 파라미터 사이즈를 가진 오픈소스 코드 LLM
+    - 338개 언어, 128K 컨텍스트 길이 지원
+    - 코딩 벤치마크에서 GPT-4-turbo를 능가하는 퍼포먼스 달성
+- 📜 [Fudan, Shanghai] [Accessing GPT-4 level Mathematical Olympiad Solutions via Monte Carlo Tree Self-refine with LLaMa-3 8B](https://arxiv.org/abs/2406.07394)
+    - MCT Self-refine (MCTSr) 알고리즘을 제안: LLM + MCTS
+    - Selection, self-refine, self-evaluation, Backpropagation 과정을 반복하며 MCTS 수행
+        - 이때 Upper Confidence Bound (UCB) 공식이 활용됨
 </details>
