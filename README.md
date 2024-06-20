@@ -961,4 +961,10 @@
     - MCT Self-refine (MCTSr) 알고리즘을 제안: LLM + MCTS
     - Selection, self-refine, self-evaluation, Backpropagation 과정을 반복하며 MCTS 수행
         - 이때 Upper Confidence Bound (UCB) 공식이 활용됨
+- 🧑🏻‍💻 [Google DeepMind] [Generating audio for video](https://deepmind.google/discover/blog/generating-audio-for-video/)
+    - video 픽셀과 텍스트 프롬프트를 이용하여 풍부한 soundtrack을 생성 (V2A)
+    - positive - negative prompt를 구분할 수 있을 정도로 정교한 컨트롤이 가능해짐
+- 🧑🏻‍💻 [runway] [Introducing Gen-3 Alpha](https://runwayml.com/blog/introducing-gen-3-alpha/)
+    - fidelity, consistency, motion을 크게 개선한 text-to-video 생성 모델
+    - Sora의 등장 이후로 이와 같은 고해상도 비디오 생성 모델들의 발전이 빠르게 이어지고 있는 듯한 느낌이 듦
 </details>
