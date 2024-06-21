@@ -967,4 +967,15 @@
 - 🧑🏻‍💻 [runway] [Introducing Gen-3 Alpha](https://runwayml.com/blog/introducing-gen-3-alpha/)
     - fidelity, consistency, motion을 크게 개선한 text-to-video 생성 모델
     - Sora의 등장 이후로 이와 같은 고해상도 비디오 생성 모델들의 발전이 빠르게 이어지고 있는 듯한 느낌이 듦
+- 📜 [Tisnghua] [Retrieval Meets Reasoning: Dynamic In-Context Editing for Long-Text Understanding](https://arxiv.org/abs/2406.12331)
+    - RAG를 사용하더라도, 참조하는 source가 충분하지 않은 경우 결국 답변하지 못함
+    - → 긴 context를 malleable(벼릴 수 있는) 외부 지식으로 생각하고 이를 dynamic하게 모으거나 통합하는 방법론
+- 📜 [Cohere] [Back to Basics: Revisiting REINFORCE Style Optimization for Learning from Human Feedback in LLMs](https://arxiv.org/abs/2402.14740)
+    - 지금까지 RLHF에 PPO가 정설처럼 여겨져 왔지만, 연산 비용이 많이 발생하고 하이퍼 파라미터에 민감하다는 한계가 존재
+    - → PPO의 많은 요소가 RLHF에 불필요함을 입증 & DPO, RAFT와 같은 RL-free 방식이 PPO보다 뛰어나다는 것을 입증
+    - 🧑🏻‍💻 [RLOO 알고리즘을 설명한 허깅페이스 블로그 링크](https://huggingface.co/blog/putting_rl_back_in_rlhf_with_rloo)
+- 🧑🏻‍💻 [Cohere] [Claude 3.5 Sonnet](https://www.anthropic.com/news/claude-3-5-sonnet)
+    - 전작 Claude 3 Opus에 비해 속도와 성능이 훨씬 뛰어난 모델 Claude 3.5 Sonnet을 공개 (2배 속도, 80% 저렴)
+    - 뛰어난 coding 능력과 visual reasoning 능력을 강조
+    - code snippets & website design과 같이 AI-generated content와 상호작용 가능한 Artifacts 기능을 공개
 </details>
