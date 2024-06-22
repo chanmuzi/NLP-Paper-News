@@ -978,4 +978,12 @@
     - 전작 Claude 3 Opus에 비해 속도와 성능이 훨씬 뛰어난 모델 Claude 3.5 Sonnet을 공개 (2배 속도, 80% 저렴)
     - 뛰어난 coding 능력과 visual reasoning 능력을 강조
     - code snippets & website design과 같이 AI-generated content와 상호작용 가능한 Artifacts 기능을 공개
+- 📜 [University of Maryland] [GenQA: Generating Millions of Instructions from a Handful of Prompts](https://arxiv.org/abs/2406.10323)
+    - public instruction finetuning datasets은 closed source datasets에 비해 훨씬 부족한 상황
+    - → single prompt로 large instruction datasets를 생성하는 방법을 제안
+    - simple completion task부터 complex multi-turn dialogs까지 다양한 태스크에 이르는 데이터셋을 생성 가능
+- 📜 [Georgia, MIT] [Self-MoE: Towards Compositional Large Language Models with Self-Specialized Experts](https://arxiv.org/abs/2406.12034)
+    - 하나로 통합된 LLM을 self-specialized experts로 구성된 module system으로 변환하는 방법론, MiXSE (MiXture of Self-specialized Experts)
+    - self-generated 합성 데이터를 사용하여 expert module을 구축 + self-optimized routing으로 통합
+    - 다른 방법론들에 비해 trade-off (학습하면 기존의 것을 까먹어 버리는 것에 대한)가 적은 편이라고 언급
 </details>
