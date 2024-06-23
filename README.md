@@ -986,4 +986,11 @@
     - 하나로 통합된 LLM을 self-specialized experts로 구성된 module system으로 변환하는 방법론, MiXSE (MiXture of Self-specialized Experts)
     - self-generated 합성 데이터를 사용하여 expert module을 구축 + self-optimized routing으로 통합
     - 다른 방법론들에 비해 trade-off (학습하면 기존의 것을 까먹어 버리는 것에 대한)가 적은 편이라고 언급
+- 🧑🏻‍💻 [Meta] [Sharing new research, models, and datasets from Meta FAIR](https://ai.meta.com/blog/meta-fair-research-new-releases/)
+    - text & image의 어떤 조합이든 input, output으로 처리 가능한 Meta Chameleon ([권한](https://ai.meta.com/resources/models-and-libraries/chameleon-downloads/?gk_enable=chameleon_web_flow_is_live) 🔗)
+    - 한 번에 여러 개의 토큰을 예측하는 Multi-Token Prediction ([HuggingFace](https://huggingface.co/facebook/multi-token-prediction) 🤗)
+    - Meta Joint Audio and Symbolic Conditioning for Temporally Controlled Text-to-Music Generation ([데모](https://pages.cs.huji.ac.il/adiyoss-lab/JASCO/) 🔗)
+    - 최초의 audio 워터마크 기법 (faster & efficient detection), AudioSeal ([Github](https://pages.cs.huji.ac.il/adiyoss-lab/JASCO/) 🧑🏻‍💻)
+    - Partnership supporting the release of the PRISM dataset ([HuggingFace](https://huggingface.co/datasets/HannahRoseKirk/prism-alignment) 🤗, [Report](https://arxiv.org/abs/2404.16019) 📜)
+    - text-to-image 생성 시스템의 geographical 불균형을 측정 및 개선 ([Github](https://github.com/facebookresearch/DIG-In) 🧑🏻‍💻, [Dataset](https://github.com/facebookresearch/DIG-In/blob/main/task2_geode.csv) 🧑🏻‍💻)
 </details>
