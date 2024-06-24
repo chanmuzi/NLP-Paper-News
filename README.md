@@ -994,3 +994,13 @@
     - Partnership supporting the release of the PRISM dataset ([HuggingFace](https://huggingface.co/datasets/HannahRoseKirk/prism-alignment) 🤗, [Report](https://arxiv.org/abs/2404.16019) 📜)
     - text-to-image 생성 시스템의 geographical 불균형을 측정 및 개선 ([Github](https://github.com/facebookresearch/DIG-In) 🧑🏻‍💻, [Dataset](https://github.com/facebookresearch/DIG-In/blob/main/task2_geode.csv) 🧑🏻‍💻)
 </details>
+
+<details>
+  <summary>5th week</summary>
+
+- 📜 [Zou group] [TextGrad: Automatic "Differentiation" via Text](https://arxiv.org/abs/2406.07496v1)
+    - 여러 개의 LLM을 통합한 시스템 대두 → 자동화된 학습 최적화 방식 고안 필요성
+    - compound AI 시스템의 개별 구성 요소를 LLM에 의해 제공되는 피드백으로 개선
+    - LLM은 general & rich 자연어로 피드백을 제공 → out-of-the-box 태스크도 잘 수행
+    - [깃허브 링크](https://github.com/zou-group/textgrad) 🔗
+</details>  
