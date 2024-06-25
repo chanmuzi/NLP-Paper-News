@@ -1003,4 +1003,19 @@
     - compound AI 시스템의 개별 구성 요소를 LLM에 의해 제공되는 피드백으로 개선
     - LLM은 general & rich 자연어로 피드백을 제공 → out-of-the-box 태스크도 잘 수행
     - [깃허브 링크](https://github.com/zou-group/textgrad) 🔗
+- 📜 [Bloomberg] [Generate-then-Ground in Retrieval-Augmented Generation for Multi-hop Question Answering](https://arxiv.org/abs/2406.14891) (ACL 2024 main)
+    - RAG는 retriever 성능에 영향을 크게 받을 뿐만 아니라 retrieved documents에 존재하는 noise 이슈가 있음
+    - → generate-then-ground (GenGround) 프레임워크를 제시: 최종 답변이 도출될 때까지 두 단락을 번갈아보는 방식
+    - Generate: 더 간단한 single-hop question과 이에 대응하는 정답을 생성
+    - Ground: retrieved documnets에서 question-answer pair를 ground
+- 📜 [USTC] [Retrieve-Plan-Generation: An Iterative Planning and Answering Framework for Knowledge-Intensive LLM Generation](https://arxiv.org/abs/2406.14979)
+    - RAG는 LLM generation 자체의 inherent uncertainty & off-topic information 포함 (문서가) 이슈가 있음
+    - → Retrieve-Plan-Generation (RPG) 프레임워크를 제안
+    - Plan stage: subsequent generation을 가이드하는 plan tokens을 생성
+    - Answer stage: plan을 근거로 fine-grained paragraphs를 선택, 이를 바탕으로 futher answer 생성
+    - 위 과정을 completion 될 때까지 반복
+- 📜 [Amherst, Meta] [Judging the Judges: Evaluating Alignment and Vulnerabilities in LLMs-as-Judges](https://arxiv.org/abs/2406.12624)
+    - LLM-as-Judeg 패러다임에는 LLM과 관련된 근본적인 문제들이 존재
+    - 단순 의견 일치 비율 대신 Cohen’s Kappa Metric을 사용하는 것의 중요성을 강조
+    - 여러 언어 모델을 비교(base, instruction-tuned)한 결과를 제시: 작은 모델을 잘 학습하면 큰 모델보다 뛰어남
 </details>  
