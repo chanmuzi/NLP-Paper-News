@@ -1018,4 +1018,12 @@
     - LLM-as-Judeg 패러다임에는 LLM과 관련된 근본적인 문제들이 존재
     - 단순 의견 일치 비율 대신 Cohen’s Kappa Metric을 사용하는 것의 중요성을 강조
     - 여러 언어 모델을 비교(base, instruction-tuned)한 결과를 제시: 작은 모델을 잘 학습하면 큰 모델보다 뛰어남
+- 🧑🏻‍💻 [Andrej Karpathy] https://github.com/karpathy/LLM101n
+    - 스토리텔링 AI LLM 구축 방법을 알려주는 강의를 담은 repo
+    - from scratch in Python, C and CUDA
+- 📜 [ICL, Tisnghua] [Entropy-Based Decoding for Retrieval-Augmented Large Language Models](https://arxiv.org/abs/2406.17519)
+    - retrieval-augmented LLM은 external & internal knowledge source에 존재하는 noise로 인한 한계점이 존재
+    - → training-free decoding method를 제안
+    - entropy-based document-parallel emsemble: retrieved 문서로부터 low-entropy distribution에 우선순위를 높이고자 함
+    - constrastive decoding 메커니즘을 통합
 </details>  
