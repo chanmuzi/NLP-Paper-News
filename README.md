@@ -1026,4 +1026,15 @@
     - → training-free decoding method를 제안
     - entropy-based document-parallel emsemble: retrieved 문서로부터 low-entropy distribution에 우선순위를 높이고자 함
     - constrastive decoding 메커니즘을 통합
+- 🧑🏻‍💻 [HuggingFace] [Open-llm-leaderboard 2](https://huggingface.co/spaces/open-llm-leaderboard/open_llm_leaderboard)
+    - 오픈 llm 리더보드 2
+    - Qwen2 72B instruct > llama 3 70B > CommandR
+    - MMLU-pro, GPQA, BBH 등 어려운 벤치마크 추가
+- 📜 [Peking, HKUST, MIT] [Efficient Continual Pre-training by Mitigating the Stability Gap](https://arxiv.org/abs/2406.14833)
+    - stability gap: 학습 초기에 일시적인 퍼포먼스 drop, 이후 회복 단계를 거치는 현상. 이로 인한 catastrophic forgetting 이슈와 domain adapating이 어렵다는 이슈가 존재.
+    - → 이를 해결하기 위한 세 가지 학습 전략을 제시
+    - 1) 여러 epoch 동안 적당한 사이즈의 subset으로 continual pre-training (single epoch, large corpus 대신)
+    - 2) high-quality의 sub-corpus에 대해서만 pre-training
+    - 3) pre-training data와의 갭을 줄여줄 수 있는 data mixture를 사용
+    - 의료 도메인(Llama-3-Physician) 적용 결과를 제시
 </details>  
