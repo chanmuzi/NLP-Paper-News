@@ -1037,4 +1037,20 @@
     - 2) high-quality의 sub-corpus에 대해서만 pre-training
     - 3) pre-training data와의 갭을 줄여줄 수 있는 data mixture를 사용
     - 의료 도메인(Llama-3-Physician) 적용 결과를 제시
+- 📜 [ByteDance, MIT-IBM] [Selective Prompting Tuning for Personalized Conversations with LLM](https://arxiv.org/abs/2406.18187)s (ACL 2024)
+    - 개인화된 LLM을 만드는 방법론
+    - prompt engineering보다 fine-tuning이 원하는 답변을 생성할 가능성이 더 높더라 → Selective Prompt Tuning (SPT)
+    - soft prompts로 시작하고 학습 가능한 dense retriever를 사용하여 input context 기반 최적의 soft prompt를 dynamic하게 고르는 방식을 제안
+    - Context-Prompt Contrastive Learning & Prompt Fusion Learning
+- 📜 [HuggingFace] [The FineWeb Datasets: Decanting the Web for the Finest Text Data at Scale](https://arxiv.org/abs/2406.17557)
+    - Llama3, Mixtral과 같은 모델들도 사전학습 데이터를 공개하지는 않았음
+    - 96개의 Common Crawl snapshot으로부터 15T token 데이터셋을 구축 for pretraining
+    - 이 FineWeb으로부터 추가 filtering을 한 1.3T token 데이터셋 FineWeb-Edu 또한 공개
+- 📜 [Hong Kong, Tsinghua, NVIDIA, HKUST] [Unlocking Continual Learning Abilities in Language Models](https://arxiv.org/abs/2406.17245)
+    - old task data & task-wise inductive bias를 LLM에 주입하는 것이 현재 continual learning 방식인데, 옛날 데이터들은 접근이 어렵다거나 값이 비싸다는 이슈가 있음
+    - MIGU (MagnItude-based Gradient Updating for continual learning): LM의 linear layer에서 가장 큰 output 크기를 갖는 파라미터 업데이트에 집중하는 방식
+- 🧑🏻‍💻 [Google] [Gemma 2 is now available to researchers and developers](https://blog.google/technology/developers/google-gemma-2/)
+    - 9B/27B 사이즈의 Gemma 2 모델을 오픈소스로 공개. 동일 사이즈 모델들 대비 뛰어난 성능
+    - 27B 모델의 경우 A100/H100 한 대에서 추론 가능
+    - [Kaggle](https://www.kaggle.com/models/google/gemma-2), [HuggingFace](https://huggingface.co/google/gemma-2-9b) 등에서 다운로드 가능
 </details>  
