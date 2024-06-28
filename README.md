@@ -1024,7 +1024,7 @@
 - 📜 [ICL, Tisnghua] [Entropy-Based Decoding for Retrieval-Augmented Large Language Models](https://arxiv.org/abs/2406.17519)
     - retrieval-augmented LLM은 external & internal knowledge source에 존재하는 noise로 인한 한계점이 존재
     - → training-free decoding method를 제안
-    - entropy-based document-parallel emsemble: retrieved 문서로부터 low-entropy distribution에 우선순위를 높이고자 함
+    - entropy-based document-parallel ensemble: retrieved 문서로부터 low-entropy distribution에 우선순위를 높이고자 함
     - constrastive decoding 메커니즘을 통합
 - 🧑🏻‍💻 [HuggingFace] [Open-llm-leaderboard 2](https://huggingface.co/spaces/open-llm-leaderboard/open_llm_leaderboard)
     - 오픈 llm 리더보드 2
@@ -1053,4 +1053,13 @@
     - 9B/27B 사이즈의 Gemma 2 모델을 오픈소스로 공개. 동일 사이즈 모델들 대비 뛰어난 성능
     - 27B 모델의 경우 A100/H100 한 대에서 추론 가능
     - [Kaggle](https://www.kaggle.com/models/google/gemma-2), [HuggingFace](https://huggingface.co/google/gemma-2-9b) 등에서 다운로드 가능
+- 📜 [Tsinghua] [Aligning Teacher with Student Preferences for Tailored Training Data Generation](https://arxiv.org/abs/2406.19227)
+    - teacher가 student의 선호에 의해 기반한 교육 content를 만드는 ‘responsive teaching’에 대한 논의는 부족 → Aligning teacheR with studenT preferencEs (ARTE) 제안 - 너무 억지;;
+    - 학생의 선호를 반영한 학습 예시를 생성 for Knowledge Distillation
+    - 우선 teacher model이 draft question & rationale 생성 → 이에 대한 학생의 in-context learning 능력을 proxy로 사용 → teacher model을 학생의 선호에 DPO
+- 📜 [CMU, KAIST] [Learning to Correct for QA Reasoning with Black-box LLMs](https://arxiv.org/abs/2406.18695)
+    - LLM reasoning 능력을 향상시키고자 하더라도 black box 모델이라 방법들이 많이 제한됨
+    - → CoBB (Correct for improving QA reasoning of Black-Box LLMs)
+    - 불완전한 추론을 올바른 추론으로 Seq2Seq 매핑하는 학습된 adaptation 모델을 사용
+    - dataset과 sampled sub-dataset의 divergence를 최소화하기 위한 유전 알고리즘 적용
 </details>  
