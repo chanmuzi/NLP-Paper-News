@@ -1062,4 +1062,12 @@
     - → CoBB (Correct for improving QA reasoning of Black-Box LLMs)
     - 불완전한 추론을 올바른 추론으로 Seq2Seq 매핑하는 학습된 adaptation 모델을 사용
     - dataset과 sampled sub-dataset의 divergence를 최소화하기 위한 유전 알고리즘 적용
+- 📜 [UC Berkeley, Toronto, Anthropic] [Connecting the Dots: LLMs can Infer and Verbalize Latent Structure from Disparate Training Data](https://arxiv.org/abs/2406.14546)
+    - LLM을 학습할 때 사용되는 데이터에서 safety risk가 있는 데이터들을 제거하더라도 LLM의 추론 능력으로 인해 간접적인 추론이 가능하다는 주장
+    - 이를 inductive out-of-context (OOCR) 으로 표현
+    - 작은 모델은 부족하지만, GPT-3.5, GPT-4 정도의 모델들은 충분 → 명시적으로 학습하지 않은 내용도 유추가 가능함을 입증. LLM 학습의 새로운 위험성을 제시.
+- 📜 [Meta] [Meta Large Language Model Compiler: Foundation Models of Compiler Optimization](https://ai.meta.com/research/publications/meta-large-language-model-compiler-foundation-models-of-compiler-optimization/)
+    - Meta Large Language Model Compiler (LLM Compiler) for code optimization task
+    - 546B 토큰의 LLVM-IR & assembly 코드로 학습 후 compiler behavior를 instruction fine-tuning
+    - 7B & 13B 사이즈의 모델을 공개
 </details>  
