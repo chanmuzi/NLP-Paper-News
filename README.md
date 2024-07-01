@@ -1071,3 +1071,13 @@
     - 546B 토큰의 LLVM-IR & assembly 코드로 학습 후 compiler behavior를 instruction fine-tuning
     - 7B & 13B 사이즈의 모델을 공개
 </details>  
+
+
+## ☔️ July
+<details>
+  <summary>1st week</summary>
+
+- 📜 [Zhejiang University] [On LLMs-Driven Synthetic Data Generation, Curation, and Evaluation: A Survey](https://arxiv.org/abs/2406.15126)
+    - 최근 LLM으로 합성 데이터를 만들어 데이터 부족 문제를 해결하고 데이터 품질을 끌어 올리려는 시도가 활발.
+    - industry & academy 양측을 위한 합성 데이터 생성 관련 연구에 대한 폭 넓은 조사 결과를 공유
+</details>  
