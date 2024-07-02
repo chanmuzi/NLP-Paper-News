@@ -1080,4 +1080,11 @@
 - 📜 [Zhejiang University] [On LLMs-Driven Synthetic Data Generation, Curation, and Evaluation: A Survey](https://arxiv.org/abs/2406.15126)
     - 최근 LLM으로 합성 데이터를 만들어 데이터 부족 문제를 해결하고 데이터 품질을 끌어 올리려는 시도가 활발.
     - industry & academy 양측을 위한 합성 데이터 생성 관련 연구에 대한 폭 넓은 조사 결과를 공유
+- 📜 [Tsinghua, Microsoft] [Direct Preference Knowledge Distillation for Large Language Models](https://arxiv.org/abs/2406.19774)
+    - 기존 Knowledge Distillation은 inefficiency & insufficient measurement, 두 문제점 존재
+    - 선호 차를 바탕으로 implicit reward function을 학습하도록 하는 DPKD 제시
+    - Implicit reward & Reverse KL divergence
+- 📜 [Tencent AI] [Scaling Synthetic Data Creation with 1,000,000,000 Personas](https://arxiv.org/abs/2406.20094)
+    - 웹 데이터로부터 자동적으로 생성된 1B 이상의 다양한 persona를 모아둔 Persona Hub
+    - 다양한 시나리오를 대상으로 삼는 합성 데이터 생성 용이 (persona-driven data synthesis)
 </details>  
