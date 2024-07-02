@@ -1087,4 +1087,7 @@
 - 📜 [Tencent AI] [Scaling Synthetic Data Creation with 1,000,000,000 Personas](https://arxiv.org/abs/2406.20094)
     - 웹 데이터로부터 자동적으로 생성된 1B 이상의 다양한 persona를 모아둔 Persona Hub
     - 다양한 시나리오를 대상으로 삼는 합성 데이터 생성 용이 (persona-driven data synthesis)
+- 📜 [University of Wisoconsin-Madison] [From Artificial Needles to Real Haystacks: Improving Retrieval Capabilities in LLMs by Finetuning on Synthetic Data](https://arxiv.org/abs/2406.19292)
+    - LLM이 long-context input을 잘 처리할 수 있도록 숫자 key-value 쌍으로 구성된 합성 데이터셋을 이용한 fine-tuning 기법을 제시
+    - 일반적인 LLM이 long-context task에서 hallucination을 빈번히 보이는 것과 달리 fine-tuned 모델들은 performance drop을 일으키지 않음
 </details>  
