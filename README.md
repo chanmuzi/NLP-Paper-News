@@ -1090,4 +1090,18 @@
 - 📜 [University of Wisoconsin-Madison] [From Artificial Needles to Real Haystacks: Improving Retrieval Capabilities in LLMs by Finetuning on Synthetic Data](https://arxiv.org/abs/2406.19292)
     - LLM이 long-context input을 잘 처리할 수 있도록 숫자 key-value 쌍으로 구성된 합성 데이터셋을 이용한 fine-tuning 기법을 제시
     - 일반적인 LLM이 long-context task에서 hallucination을 빈번히 보이는 것과 달리 fine-tuned 모델들은 performance drop을 일으키지 않음
+- 🧑🏻‍💻 [infiniflow] [ragflow](https://github.com/infiniflow/ragflow)
+    - GPT-4o, DeepSeek-V2 등의 LLM을 RAG와 통합해주는 오픈소스 엔진
+    - Reranker 모델을 추가함으로써 향상된 retrieval 퍼포먼스를 보여줌
+    - Q&A parsing 방식 중 Markdown & Docx 를 새로 지원
+- 🧑🏻‍💻 [Learn RAG with Langchain](https://www.sakunaharinda.xyz/ragatouille-book/intro.html)
+    - RAG 파이프라인과 GraphRAG 등에 대한 테크닉을 학습할 수 있는 튜토리얼 문서
+- 📜 [Peking, Alibaba] [MMEvalPro: Calibrating Multimodal Benchmarks Towards Trustworthy and Efficient Evaluation](https://arxiv.org/abs/2407.00468)
+    - 기존 벤치마크들은 주로 multiple-choice questions (MCQs) 로 구성되어 systematic biases 문제가 존재
+    - Type-1 에러를 3단 평가 파이프라인과 엄격한 metric으로 최소화하는 벤치마크, MMEvalPro 를 제안
+    - 2,138개의 question triplets, 6,414 distinct questions, 이 중 2/3는 사람이 직접 annotation
+- 📜 [Rice University] [MalAlgoQA: A Pedagogical Approach for Evaluating Counterfactual Reasoning Abilities](https://arxiv.org/abs/2407.00938)
+    - 교육학적 접근법으로 LLM의 counterfactual reasoning 능력을 평가하는 데이터셋, MalAlgoQA 를 제안
+    - incorrect answer rationales, ‘malgorithms’ 을 도입하여 이에 상응하는 오답을 맞히는 (identification) 태스크를 수행
+    - Algorithm Identification Accuracy (AIA), Malgorithm Identification Accuracy (AIA)
 </details>  
