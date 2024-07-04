@@ -1104,4 +1104,9 @@
     - 교육학적 접근법으로 LLM의 counterfactual reasoning 능력을 평가하는 데이터셋, MalAlgoQA 를 제안
     - incorrect answer rationales, ‘malgorithms’ 을 도입하여 이에 상응하는 오답을 맞히는 (identification) 태스크를 수행
     - Algorithm Identification Accuracy (AIA), Malgorithm Identification Accuracy (AIA)
+- 📜 [Google Reserach] [CodecLM: Aligning Language Models with Tailored Synthetic Data](https://arxiv.org/abs/2404.05875) (Findings of NAACL 2024)
+    - LLM이 instruction following 능력을 더 잘 갖추도록 만들기 위한 ‘고품질’ 데이터셋이라는 것은 정의되어 있지 않은 상황
+    - 여러 downstream instructoin distribution에 맞는 고품질 합성 데이터를 생성해주는 프레임워크, CodecLM을 제안
+    - seed instructions을 meta data로 인코딩 한 뒤, tailored instructions을 생성하기 위해 decode
+    - Self-Rubrics & Contrastive Filtering 도입
 </details>  
