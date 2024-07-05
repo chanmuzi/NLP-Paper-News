@@ -1109,4 +1109,14 @@
     - 여러 downstream instructoin distribution에 맞는 고품질 합성 데이터를 생성해주는 프레임워크, CodecLM을 제안
     - seed instructions을 meta data로 인코딩 한 뒤, tailored instructions을 생성하기 위해 decode
     - Self-Rubrics & Contrastive Filtering 도입
+- 🗞️ [OpenAI] [OpenAI will block people in China from using its services](https://sg.news.yahoo.com/openai-will-block-people-in-china-from-using-its-services-200801957.html)
+    - OpenAI에서 중국 지역에 대한 서비스 지원을 중단한다는 소식. 미국과 중국 간의 갈등이 첨예하다는 느낌이 듦.
+- 🧑🏻‍💻 [CVPR 2024: Image and Video Search & Understanding (RAG, Multimodal, Embeddings, and more)](https://medium.com/@tenyks_blogger/cvpr-2024-image-and-video-search-understanding-rag-multimodal-embeddings-and-more-59dad7568b80)
+    - CVPR 2024에서 주목할만한 논문들을 간단히 정리한 medium 블로그 글
+- 🧑🏻‍💻 [French AI Lab Announces an Open-Source GPT-4o Multimodal Alternative: Moshi](https://us.moshi.chat/?queue_id=talktomoshi)
+    - 홈페이지에서 데모를 체험해볼 수 있음
+    - 이전에 4o 데모 영상에 비하면 아쉽다는 평이 많으나 오픈 소스 진영의 약진을 상징하기도 함
+- 📜 [Salesforce AI] [Summary of a Haystack: A Challenge to Long-Context LLMs and RAG Systems](https://arxiv.org/abs/2407.01370)
+    - LLM이 long-context를 처리하는 능력을 평가하는 방식으로 제시된 Needle-in-a-Haystack은 complexity가 부족 → summarization 활용
+    - query가 주어지면 관련된 내용을 source 기반으로 생성하는 태스크, Summary of a Haystack (conversation & news)
 </details>  
