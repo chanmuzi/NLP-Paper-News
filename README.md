@@ -1119,4 +1119,11 @@
 - 📜 [Salesforce AI] [Summary of a Haystack: A Challenge to Long-Context LLMs and RAG Systems](https://arxiv.org/abs/2407.01370)
     - LLM이 long-context를 처리하는 능력을 평가하는 방식으로 제시된 Needle-in-a-Haystack은 complexity가 부족 → summarization 활용
     - query가 주어지면 관련된 내용을 source 기반으로 생성하는 태스크, Summary of a Haystack (conversation & news)
+- 📜 [UKP Lab] [Fine-Tuning with Divergent Chains of Thought Boosts Reasoning Through Self-Correction in Language Models](https://arxiv.org/abs/2407.03181)
+    - Divergent CoT, single inference step 이전에 여러 개의 reasoning step을 비교하는 방법.
+    - 해당 데이터셋으로 학습한 모델들은 상대적으로 작은 사이즈의 LLM임에도 좋은 성능을 발휘
+- 📜 [UIUC, Harvard] [Eliminating Position Bias of Language Models: A Mechanistic Approach](https://arxiv.org/abs/2407.01100)
+    - 현 LLM들은 content가 전체 텍스트에서의 위치에 따라 성능, robustness 등에 영향을 받음
+    - training-free zero-shot 방식, PINE을 제안.
+    - segment 간 causal attention을 bidirectional attention으로 변경. attention value를 활용
 </details>  
