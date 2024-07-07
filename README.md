@@ -1126,4 +1126,8 @@
     - 현 LLM들은 content가 전체 텍스트에서의 위치에 따라 성능, robustness 등에 영향을 받음
     - training-free zero-shot 방식, PINE을 제안.
     - segment 간 causal attention을 bidirectional attention으로 변경. attention value를 활용
+- 📜 [DeepSeek AI] [Let the Expert Stick to His Last: Expert-Specialized Fine-Tuning for Sparse Architectural Large Language Models](https://arxiv.org/abs/2407.01906)
+    - sparse LLM에 대한 PEFT 연구는 아직 이뤄지지 않음
+    - routing distribution of activated experts가 태스크별로 상이하다는 것을 확인
+    - → Expert-Specialized Fine-Tuning, ESFT 제안: downstream task에 가장 적합한 것만 tune 하고 나머지는 freeze
 </details>  
