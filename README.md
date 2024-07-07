@@ -1131,3 +1131,9 @@
     - routing distribution of activated experts가 태스크별로 상이하다는 것을 확인
     - → Expert-Specialized Fine-Tuning, ESFT 제안: downstream task에 가장 적합한 것만 tune 하고 나머지는 freeze
 </details>  
+
+<details>
+  <summary>2nd week</summary>
+
+
+</details>
