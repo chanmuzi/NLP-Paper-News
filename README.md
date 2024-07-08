@@ -1135,5 +1135,9 @@
 <details>
   <summary>2nd week</summary>
 
-
+- 📜 [Salesforce AI] [APIGen: Automated Pipeline for Generating Verifiable and Diverse Function-Calling Datasets](https://arxiv.org/abs/2406.18518)
+    - fuction-calling agent 모델에 필요한 고품질 데이터셋을 자동 생성하는 파이프라인을 제시
+    - 21개 카테고리에 대해 3,673개의 실행 가능한 fuction-calling 데이터를 수집
+    - format checking, actual function execution, semantic verification, 세 단계를 거침
+    - 허깅페이스 데이터셋 링크: https://huggingface.co/datasets/Salesforce/xlam-function-calling-60k
 </details>
