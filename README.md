@@ -1148,4 +1148,20 @@
     - completeness, conciseness,faithfulness 등을 기준으로 삼음
     - open-source vs proprietary LLMs를 비교
     - 깃허브 링크: https://github.com/DISL-Lab/FineSurE-ACL24
+- 📜 [Harvard] [Transcendence: Generative Models Can Outperform The Experts That Train Them](https://arxiv.org/abs/2406.11741v2)
+    - chess 게임을 바탕으로 생성형 모델이 학습한 데이터 이상의 퍼포먼스를 낼 수 있는지 확인하는 실험.
+    - 이를 Transcendence (초월성) 이라고 정의했는데, 과연 다양한 분야에 적용 가능한 것일지 의문
+- 🧑🏻‍💻 [W&B] [Developer's guide to LLM prompting](https://www.wandb.courses/courses/prompting)
+    - system prompt부터 구조적 테크닉을 포함한 다양한 프롬프팅 기법을 소개하는 강의를 공개
+- 🧑🏻‍💻 [Meta] [Multi-token-prediction](https://huggingface.co/facebook/multi-token-prediction)
+    - 7B 파라미터, 3x inference speed
+    - 8-byte prediction 성능 굿. 요약 성능 굿.
+- 🧑🏻‍💻 [Microsoft] [MInference](https://github.com/microsoft/MInference)
+    - 1M context를 기존 대비 10x 빠르게 처리할 수 있는 MInference를 공개
+    - single A100에서 운용
+- 📜 [Auburn University] [Vision language models are blind](https://arxiv.org/abs/2407.06581)
+    - GPT-4o나 Gemini-1.5 pro와 같이 vision 능력을 포함한 LLM들은 여러 태스크에서 뛰어난 것으로 알려짐
+    - → 그러나 일부 (사람에게) 굉장히 쉬운 vision task (원이 중첩되어 있는가, 원 안의 글자는 무엇인가) 들은 오히려 엄청나게 못함.
+    - 세부적인 내용을 거의 파악하지 못하는 것으로 판단
+    - https://vlmsareblind.github.io/
 </details>
