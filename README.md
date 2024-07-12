@@ -1174,4 +1174,8 @@
     - SigLIP-So400m 비전 모델 & Gemma-2B 언어 모델
     - transfer를 잘해서 다양한 open-word task를 수행할 수 있는 능력이 있는 모델
     - 특히 remote-sensing & segmentation에서 강점
+- 🧑🏻‍💻 [together.ai] [FlashAttention-3: Fast and Accurate Attention with Asynchrony and Low-precision](https://www.together.ai/blog/flashattention-3)
+    - 비동기 텐서 코어를 활용한 GPU 활용률 향상
+    - 계산 및 데이터 이동의 중첩을 통해 처리 속도 가속
+    - FP8의 저정밀도 처리를 사용하여 성능을 향상
 </details>
