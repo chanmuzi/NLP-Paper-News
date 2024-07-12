@@ -1164,4 +1164,14 @@
     - → 그러나 일부 (사람에게) 굉장히 쉬운 vision task (원이 중첩되어 있는가, 원 안의 글자는 무엇인가) 들은 오히려 엄청나게 못함.
     - 세부적인 내용을 거의 파악하지 못하는 것으로 판단
     - https://vlmsareblind.github.io/
+- 🧑🏻‍💻 [Anthropic] [Generate better prompts in the developer console](https://www.anthropic.com/news/prompt-generator)
+    - high quality prompt를 자동 생성하도록 돕는 기능을 제공
+    - Claude 3.5 Sonnet 기반
+- 📜 [Tianjin University] [Review-LLM: Harnessing Large Language Models for Personalized Review Generation](https://arxiv.org/abs/2407.07487)
+    - 유저의 이전 구매 이력과 리뷰를 포함한 프롬프트를 구성
+    - rating 정보도 포함하여 유저의 선호를 파악할 수 있도록 함
+- 📜 [Google DeepMind] [PaliGemma: A versatile 3B VLM for transfer](https://arxiv.org/abs/2407.07726)
+    - SigLIP-So400m 비전 모델 & Gemma-2B 언어 모델
+    - transfer를 잘해서 다양한 open-word task를 수행할 수 있는 능력이 있는 모델
+    - 특히 remote-sensing & segmentation에서 강점
 </details>
