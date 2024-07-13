@@ -1178,4 +1178,10 @@
     - 비동기 텐서 코어를 활용한 GPU 활용률 향상
     - 계산 및 데이터 이동의 중첩을 통해 처리 속도 가속
     - FP8의 저정밀도 처리를 사용하여 성능을 향상
+- 🧑🏻‍💻 [Google] [4 Google updates coming to Samsung devices](https://blog.google/products/android/google-updates-samsung-galaxy-unpacked-2024/)
+    - Gemini가 화면에 보이는 것을 바탕으로 추천
+    - 갤럭시 Z 시리즈에서 circle 검색을 지원
+- 📜 [University of Oxford] [A Critical Review of Causal Reasoning Benchmarks for Large Language Models](https://arxiv.org/abs/2407.08029) (AAAI 2024 Workshop)
+    - LLM의 causality 벤치마크에 대한 comprehensive overview
+    - interventional or counterfactual reasoning을 통합함으로써 causal reasoning을 정의
 </details>
