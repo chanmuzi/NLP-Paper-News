@@ -1190,3 +1190,9 @@
     - 이 router를 학습시키기 위해 human preference data & data augmentation 기법을 활용
     - github 링크: https://github.com/lm-sys/RouteLLM?tab=readme-ov-file
 </details>
+
+<details>
+  <summary>3rd week</summary>
+
+
+</details>
