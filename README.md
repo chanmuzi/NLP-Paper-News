@@ -1184,4 +1184,9 @@
 - 📜 [University of Oxford] [A Critical Review of Causal Reasoning Benchmarks for Large Language Models](https://arxiv.org/abs/2407.08029) (AAAI 2024 Workshop)
     - LLM의 causality 벤치마크에 대한 comprehensive overview
     - interventional or counterfactual reasoning을 통합함으로써 causal reasoning을 정의
+- 📜 [lmsys, UC Berkeley] [RouteLLM: Learning to Route LLMs with Preference Data](https://arxiv.org/abs/2406.18665)
+    - 뛰어난 성능을 보이는 LLM은 가격이 너무 비싸다는 문제점..
+    - 추론 단계에서 stronger & weaker LLM을 dynamically 선택할 수 있는 router model을 제안
+    - 이 router를 학습시키기 위해 human preference data & data augmentation 기법을 활용
+    - github 링크: https://github.com/lm-sys/RouteLLM?tab=readme-ov-file
 </details>
