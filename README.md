@@ -1194,5 +1194,12 @@
 <details>
   <summary>3rd week</summary>
 
-
+- 📜 [Georgia Tech, NVIDIA] [RankRAG: Unifying Context Ranking with Retrieval-Augmented Generation in LLMs](https://arxiv.org/abs/2407.02485v1)
+    - instruction fine-tuning framework RankRAG
+    - LLM을 contest ranking & answer generatino, 두 가지에 fine-tuning 하는 방식
+    - 이런식으로 학습된 모델은 ranking 관련 데이터를 조금만 학습하더라도 기존 모델들보다 월등한 성능을 보임
+- 📜 [MIT, University of Washington] [Lookback Lens: Detecting and Mitigating Contextual Hallucinations in Large Language Models Using Only Attention Maps](https://arxiv.org/abs/2407.07071)
+    - contextual hallucination은 기존에 제공되었던 context와 새롭게 생성된 token들에 대한 attention weight에 차이가 있을 것이라는 가정
+    - 따라서 각각에 대한 attention weight의 비율을 입력 feature로 받는 hallucination detection model을 제안
+    - lookback ration-based detector, Lookback Lens
 </details>
