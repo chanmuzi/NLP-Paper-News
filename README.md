@@ -1202,4 +1202,15 @@
     - contextual hallucination은 기존에 제공되었던 context와 새롭게 생성된 token들에 대한 attention weight에 차이가 있을 것이라는 가정
     - 따라서 각각에 대한 attention weight의 비율을 입력 feature로 받는 hallucination detection model을 제안
     - lookback ration-based detector, Lookback Lens
+- 📜 [Microsoft] [SpreadsheetLLM: Encoding Spreadsheets for Large Language Models](https://arxiv.org/abs/2407.09025)
+    - 기존에는 cell 주소, 값, 포맷을 통합하는 vanilla serialization → 입력 토큰수를 크게 차지
+    - structural-anchor-based compression, inverse index translation, data-format-aware aggregation, 세 요소로 구성된 SheetCompressor를 도입
+    - 이를 바탕으로 Chain of Spreadsheet를 제안
+- 🧑🏻‍💻 [DeepLearning.AI, MongoDB] [Prompt Compression and Query Optimization](https://learn.deeplearning.ai/courses/prompt-compression-and-query-optimization/lesson/1/introduction)
+    - large-scale RAG를 위한 수업
+    - Prefiltering and Postfiltering, Projection, Reranking, Prompt Compression
+- 📜 [Qwen, Alibaba] [Qwen2 Technical Report](https://arxiv.org/abs/2407.10671)
+    - 0.5B - 72B(MoE) 모델들을 다양한 벤치마크 테스트한 결과를 공개
+    - multilingual 능력이 뛰어나 30개 언어를 커버할 수 있다고 강조
+    - [허깅페이스](https://huggingface.co/Qwen)와 [ModelScope](https://modelscope.cn/organization/qwen)에서만 이용 가능. [깃허브](https://github.com/QwenLM/Qwen2)에서 예시 코드 참조 가능.
 </details>
