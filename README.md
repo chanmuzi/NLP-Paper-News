@@ -1213,4 +1213,16 @@
     - 0.5B - 72B(MoE) 모델들을 다양한 벤치마크 테스트한 결과를 공개
     - multilingual 능력이 뛰어나 30개 언어를 커버할 수 있다고 강조
     - [허깅페이스](https://huggingface.co/Qwen)와 [ModelScope](https://modelscope.cn/organization/qwen)에서만 이용 가능. [깃허브](https://github.com/QwenLM/Qwen2)에서 예시 코드 참조 가능.
+- 🧑🏻‍💻 [Mistral AI] [MathΣtral](https://mistral.ai/news/mathstral/) & [Codestral Mamba](https://mistral.ai/news/codestral-mamba/)
+    - Mathstral: 수학적 추론 능력이 탁월한 7B 모델. 32K context window. Apache 2.0
+    - Codestral Mamba: 코드 생성에 특화된 Mamba2 language model. Apache 2.0
+- 🧑🏻‍💻 [LlamaIndex] [GraphRAG Implementation with LlamaIndex](https://github.com/run-llama/llama_index/blob/main/docs/docs/examples/cookbooks/GraphRAG_v1.ipynb)
+    - Graphs + RAG, 마이크로소프트의 GraphRAG를 구현한 노트북을 공개
+- 🧑🏻‍💻 [AnthropicAI] [Doubled max output token limit for Claude 3.5 Sonnet](https://x.com/alexalbert__/status/1812921642143900036)
+    - 최대 출력 토큰을 4096에서 8192로 증가
+    - API, console 둘 다 적용 가능
+- 📜 [University of Toronto] [Toward Adaptive Reasoning in Large Language Models with Thought Rollback](https://openreview.net/pdf/3b225c0db299e43d4952d2b73d5576523cde6de2.pdf) (ICML 2024 Poster)
+    - hallucination을 최소화하기 위해 생각을 ‘rolling back’해야 한다고 주장.
+    - LLM이 thought에 대해 error 분석을 수행. trial-and-error를 프롬프트에 포함.
+    - 평소에 내가 고민하던 ‘인간이 사고하는 방식’을 고민한 것처럼 보이는 연구 결과
 </details>
