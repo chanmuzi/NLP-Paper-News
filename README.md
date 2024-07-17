@@ -1225,4 +1225,7 @@
     - hallucination을 최소화하기 위해 생각을 ‘rolling back’해야 한다고 주장.
     - LLM이 thought에 대해 error 분석을 수행. trial-and-error를 프롬프트에 포함.
     - 평소에 내가 고민하던 ‘인간이 사고하는 방식’을 고민한 것처럼 보이는 연구 결과
+- 🧑🏻‍💻 [HuggingFace] [SmolLM - blazingly fast and remarkably powerful](https://huggingface.co/blog/smollm)
+    - sLLM계 SoTA [collection](https://huggingface.co/collections/HuggingFaceTB/smollm-6695016cad7167254ce15966)을 공개. 135M, 360M, 1.7B 파라미터 사이즈.
+    - Cosmopedia v2, FineWeb-Edu, Stack-Edu-Python을 정제한 Smollm-Corpus 데이터셋 ([링크](https://huggingface.co/datasets/HuggingFaceTB/smollm-corpus) 🔗)
 </details>
