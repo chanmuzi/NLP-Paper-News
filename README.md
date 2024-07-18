@@ -1228,4 +1228,22 @@
 - 🧑🏻‍💻 [HuggingFace] [SmolLM - blazingly fast and remarkably powerful](https://huggingface.co/blog/smollm)
     - sLLM계 SoTA [collection](https://huggingface.co/collections/HuggingFaceTB/smollm-6695016cad7167254ce15966)을 공개. 135M, 360M, 1.7B 파라미터 사이즈.
     - Cosmopedia v2, FineWeb-Edu, Stack-Edu-Python을 정제한 Smollm-Corpus 데이터셋 ([링크](https://huggingface.co/datasets/HuggingFaceTB/smollm-corpus) 🔗)
+- 🧑🏻‍💻 [OpenAI] [Prover-Verifier Games improve legibility of language model outputs](https://openai.com/index/prover-verifier-games-improve-legibility/)
+    - [paper link](https://cdn.openai.com/prover-verifier-games-improve-legibility-of-llm-outputs/legibility.pdf) 🔗
+    - 정확도만을 높이기 위해 학습된 모델은 legibility가 떨어진다는 문제가 존재
+    - Prover-Verifier Game 이론을 바탕으로 하는 학습 알고리즘을 제안
+    - small verifier는 solution이 옳았는지를 구분하도록 학습, helpful prover는 verifier에게 인정받을 정확한 답변을 생성하도록 학습, sneaky prover는 verifier를 속일 수 있는 부정확한 solution을 생성하도록 학습.
+- 🧑🏻‍💻 [Upstage, DeepLearning.AI] [Pretraining LLMs](https://www.deeplearning.ai/short-courses/pretraining-llms/)
+    - LLM의 사전학습, 데이터 준비 등과 관련된 수업
+    - Meta의 Llama 모델을 비롯한 다양한 모델들을 원하는대로 학습하는 방식 등
+    - 학습 비용을 크게 줄여주는 Depth Upscaling에 대한 소개
+    - 업스테이지 강의가 여기에 나오다니.. 엄청 신기..
+- 🧑🏻‍💻 [Andrej Karpathy] [new AI Education company called Eureka labs](https://link.alphasignal.ai/9Wanw6)
+    - AI teaching assistants가 특징
+    - LLM101n 라는 첫 번째 컨텐츠 ([링크](https://github.com/karpathy/LLM101n) 🔗)
+    - 홈페이지 [링크](https://eurekalabs.ai/) 🔗, 깃허브 [링크](https://t.co/ubv4xONI57) 🔗
+- 🧑🏻‍💻 [Apple] [DCLM-7B-8k](https://huggingface.co/apple/DCLM-7B-8k)
+    - DCLM Baseline 데이터셋으로 학습된 7B 언어 모델
+    - systematic data curation 관련해서 이점이 있음
+    - Common Crawl로부터 추출한 240T 토큰의 corpus, DCLM (논문 [링크](https://arxiv.org/abs/2406.11794) 🔗)
 </details>
