@@ -1246,4 +1246,16 @@
     - DCLM Baseline 데이터셋으로 학습된 7B 언어 모델
     - systematic data curation 관련해서 이점이 있음
     - Common Crawl로부터 추출한 240T 토큰의 corpus, DCLM (논문 [링크](https://arxiv.org/abs/2406.11794) 🔗)
+- 🧑🏻‍💻 [OpenAI] [GPT-4o mini: advancing cost-efficient intelligence](https://openai.com/index/gpt-4o-mini-advancing-cost-efficient-intelligence/)
+    - GPT-3.5 Turbo의 자리를 대신하는 GPT-4o mini 모델. 가격도 60% 이상 저렴.
+    - reasoning, math & coding, multimodal reasoning 특화되어 있음
+    - LMSYS의 리더보드에서 GPT-4 보다도 선택을 많이 받으며 MMLU도 82점을 기록
+- 🧑🏻‍💻 [Mistral AI] [Mistral NeMo](https://mistral.ai/news/mistral-nemo/)
+    - NVIDIA와 합작하여 만든 12B 모델. Mistral 7B 사용 환경에서 그대로 활용 가능
+    - 128k context window를 지원
+    - sentence 기반의 tokenizer → Tiktoken 기반의 tokenizer, Tekken을 사용
+- 📜 [Tsinghua, CMU] [SELF-GUIDE: Better Task-Specific Instruction Following via Self-Synthetic Finetuning](https://arxiv.org/abs/2407.12874)
+    - LLM을 특정한 태스크에 대해 finetuning 하기 위해서는 task-specific 데이터가 필요
+    - 기존에는 이러한 데이터를 다른 LLM으로 생성하는 방식도 있으나, 법적 문제, 의존성 문제 등이 제기
+    - → task-specific input-output pair를 student LLM으로부터 합성하고, 이것으로 스스로를 학습하는 Self-Guide 메커니즘을 제안
 </details>
