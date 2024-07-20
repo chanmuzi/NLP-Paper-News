@@ -1258,4 +1258,13 @@
     - LLM을 특정한 태스크에 대해 finetuning 하기 위해서는 task-specific 데이터가 필요
     - 기존에는 이러한 데이터를 다른 LLM으로 생성하는 방식도 있으나, 법적 문제, 의존성 문제 등이 제기
     - → task-specific input-output pair를 student LLM으로부터 합성하고, 이것으로 스스로를 학습하는 Self-Guide 메커니즘을 제안
+- 📜 [University of Washington, AI2] [Scaling Retrieval-Based Language Models with a Trillion-Token Datastore](https://arxiv.org/abs/2407.12854)
+    - 학습 데이터의 양을 늘리면 모델의 성능이 증가한다는 scaling law에 착안
+    - → inference 시 사용 가능한 datastore의 사이즈를 키워 retrieval-based LM의 성능을 지속적으로 개선.
+    - 뭔가 당연해 보이는데.. datastore를 키워서 이를 이용하면 사이즈만 큰 모델보다 잘한다는 결과를 제시함
+    - 1.4T 토큰에 해당하는 datastore, MassiveDS 공개. ([링크](https://github.com/RulinShao/retrieval-scaling) 🔗)
+- 📜 [The University of Hong Kong] [Scaling Laws with Vocabulary: Larger Models Deserve Larger Vocabularies](https://arxiv.org/abs/2407.13623)
+    - 33M ~ 3B 사이즈의 모델들을 500B 사이즈의 글자로 학습하며 vocab 사이즈의 영향력을 확인
+    - → 큰 모델일수록 큰 vocab을 사용하는 것이 좋다. 그러나 현재 모델들은 너무 작은 vocab을 쓰고 있다.
+    - 예를 들어 Llama2-70B 모델에는 216K 이상의 vocab이 적절 (현재는 32K)
 </details>
