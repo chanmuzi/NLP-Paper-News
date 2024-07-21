@@ -1267,4 +1267,13 @@
     - 33M ~ 3B 사이즈의 모델들을 500B 사이즈의 글자로 학습하며 vocab 사이즈의 영향력을 확인
     - → 큰 모델일수록 큰 vocab을 사용하는 것이 좋다. 그러나 현재 모델들은 너무 작은 vocab을 쓰고 있다.
     - 예를 들어 Llama2-70B 모델에는 216K 이상의 vocab이 적절 (현재는 32K)
+- 📜 [Meta] [Joint Audio and Symbolic Conditioning for Temporally Controlled Text-to-Music Generation](https://arxiv.org/abs/2406.10970)
+    - symbolic & audio-based conditions을 이용한 text-to-music 생성 모델
+    - global text description을 기반으로 fine-grained local control도 가능
+    - information bottleneck layer를 temporal blurring과 함께 적용하여 디테일한 컨트롤과 관련된 정보를 추출
+    - 이런 모델들은 평가를 어떻게 하는 걸까?
+- 📜 [Moqi, Peking] [Memory3: Language Modeling with Explicit Memory](https://arxiv.org/abs/2407.01178v1)
+    - LLM을 직접 학습하면서 많은 비용을 쓰는 것보다 explicit memory를 만드는 것이 경제적
+    - 2.4B LLM을 scratch 학습한 결과, 더 큰 LLM보다도 뛰어나고 RAG에 비해서 decoding 속도도 빠름
+    - implicit memory (model parameters), working memory (context key-values), 를 넘어선 제 3의 memory, $\text{Memory}^3$
 </details>
