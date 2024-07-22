@@ -1281,6 +1281,12 @@
 <details>
   <summary>4th week</summary>
 
-
+- 📜 [New York University] [A Survey of Prompt Engineering Methods in Large Language Models for Different NLP Tasks](https://arxiv.org/abs/2407.12994)
+    - 44개의 paper에서 다루는 39개의 prompting method, 29개의 NLP task를 다룸
+    - 최근 2년 간의 prompting 연구에 대해 총망라
+- 📜 [Generative AI Research Lab (GAIR), Fudan] [Weak-to-Strong Reasoning](https://arxiv.org/abs/2407.13647)
+    - strong model이 advanced model 또는 human-annotated data 없이 스스로 학습 데이터를 refine 할 수 있도록 하는 learning framerwork를 제시
+    - samll, but high-quality dataset으로 지도 학습을 시작 → 모델 스스로 contrastive sample로 식별한 케이스들에 대해 preference optimization
+    - 세 개의 weak 모델을 이용하여 LLama2-70B 모델의 성능을 향상시킬 수 있었다고 보고
 
 </details>  
