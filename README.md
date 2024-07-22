@@ -1277,3 +1277,10 @@
     - 2.4B LLM을 scratch 학습한 결과, 더 큰 LLM보다도 뛰어나고 RAG에 비해서 decoding 속도도 빠름
     - implicit memory (model parameters), working memory (context key-values), 를 넘어선 제 3의 memory, $\text{Memory}^3$
 </details>
+
+<details>
+  <summary>4th week</summary>
+
+
+
+</details>  
