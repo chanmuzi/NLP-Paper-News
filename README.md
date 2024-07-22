@@ -1288,5 +1288,9 @@
     - strong model이 advanced model 또는 human-annotated data 없이 스스로 학습 데이터를 refine 할 수 있도록 하는 learning framerwork를 제시
     - samll, but high-quality dataset으로 지도 학습을 시작 → 모델 스스로 contrastive sample로 식별한 케이스들에 대해 preference optimization
     - 세 개의 weak 모델을 이용하여 LLama2-70B 모델의 성능을 향상시킬 수 있었다고 보고
-
+- 📜 [Apple, Meta] [LazyLLM: Dynamic Token Pruning for Efficient Long Context LLM Inference](https://arxiv.org/abs/2407.14057)
+    - transformer 기반의 언어 모델 추론 과정은 두 단계를 거침. 1) prefilling 2) decoding
+    - 병목을 해결하기 위해 prefilling과 decoding에 중요한 토큰의 KV만 선별적으로 계산하는 방식 LazyLLM을 제안
+    - 다른 방식들과 달리 매 생성 step에서 ‘dynamically’ 토큰을 고른다는 점이 특징
+    - 기존 모델들에 추가 학습 없이 seamlessly 통합 가능하다는 점이 특징
 </details>  
