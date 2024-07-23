@@ -1293,4 +1293,12 @@
     - 병목을 해결하기 위해 prefilling과 decoding에 중요한 토큰의 KV만 선별적으로 계산하는 방식 LazyLLM을 제안
     - 다른 방식들과 달리 매 생성 step에서 ‘dynamically’ 토큰을 고른다는 점이 특징
     - 기존 모델들에 추가 학습 없이 seamlessly 통합 가능하다는 점이 특징
+- 🧑🏻‍💻 [groq] [Introducing Llama-3-Groq-Tool-Use Models](https://wow.groq.com/introducing-llama-3-groq-tool-use-models/)
+    - tool use를 위해학습된 두 개의 모델을 오픈소스로 공개
+    - [Llama-3-Groq-70B-Tool-Use](https://huggingface.co/Groq/Llama-3-Groq-70B-Tool-Use) & [Llama-3-Groq-8B-Tool-Use](https://huggingface.co/Groq/Llama-3-Groq-8B-Tool-Use)
+    - [GroqCloud Devloper Hub](http://console.groq.com/)에서도 이용 가능
+- 📜 [Google DeepMind]
+    - Sparse autoencoders (SAEs) 는 LM activation을 decompose 할 필요가 있음
+    - Gemma 2 9B activations를 기준으로 reconstruction fidelity에서 SoTA를 달성한 JumReLU SAEs를 제안
+    - activation 관련해서 오랜만에 눈에 띄는 논문..
 </details>  
