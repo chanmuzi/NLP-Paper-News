@@ -1301,4 +1301,20 @@
     - Sparse autoencoders (SAEs) 는 LM activation을 decompose 할 필요가 있음
     - Gemma 2 9B activations를 기준으로 reconstruction fidelity에서 SoTA를 달성한 JumpReLU SAEs를 제안
     - activation 관련해서 오랜만에 눈에 띄는 논문..
+- 🧑🏻‍💻 [Meta] [Introducing Llama 3.1: Our most capable models to date](https://ai.meta.com/blog/meta-llama-3-1/)
+    - 128K context length를 갖는 Llama 3.1 405B 모델 공개
+    - GPT-4 수준을 상회하는 오픈소스 모델은 최초라고 봐도 될 듯
+    - [Meta paper 링크](https://ai.meta.com/research/publications/the-llama-3-herd-of-models/) 🔗
+    - [Hugging Face Model Family 링크](https://huggingface.co/collections/meta-llama/llama-31-669fc079a0c406a149a5738f) 🔗
+- 📜 [NC Research] OffsetBias: Leveraging Debiased Data for Tuning Evaluators
+    - LLM을 evaluator로 사용하고자 하는 케이스가 많은데 bias 이슈가 심각
+    - → judge 모델에 존재하는 6개 종류의 bias에 대한 연구
+    - 각 bias 종류별로 hand-crafted test 케이스를 포함하는 EvalBiasBench 제안
+- 🧑🏻‍💻 [Numina, Hugging Face, MIT, Mistral, Peking] [NuminaMath](https://github.com/project-numina/aimo-progress-prize?tab=readme-ov-file)
+    - Mathematical Olympiad 대회에서 1등을 한 팀이 공개한 데이터셋
+    - 1M 수학 문제 & 정답으로 구성된 high-quality training dataset
+    - [Hugging Face 데이터셋 링크](https://huggingface.co/collections/AI-MO/numinamath-6697df380293bcfdbc1d978c) 🔗
+- 🧑🏻‍💻 [WWDC 24: Running Mistral 7B with Core ML](https://huggingface.co/blog/mistral-coreml)
+    - Mac에서 Mistral 7B 모델을 4GB 이하의 메모리를 사용하여 실행하는 방법을 안내
+    - 간단히 공부하기 좋을 것 같은 허깅페이스 블로그 글
 </details>  
