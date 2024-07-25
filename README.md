@@ -1306,7 +1306,7 @@
     - GPT-4 수준을 상회하는 오픈소스 모델은 최초라고 봐도 될 듯
     - [Meta paper 링크](https://ai.meta.com/research/publications/the-llama-3-herd-of-models/) 🔗
     - [Hugging Face Model Family 링크](https://huggingface.co/collections/meta-llama/llama-31-669fc079a0c406a149a5738f) 🔗
-- 📜 [NC Research] OffsetBias: Leveraging Debiased Data for Tuning Evaluators
+- 📜 [NC Research] [OffsetBias: Leveraging Debiased Data for Tuning Evaluators](https://www.arxiv.org/abs/2407.06551)
     - LLM을 evaluator로 사용하고자 하는 케이스가 많은데 bias 이슈가 심각
     - → judge 모델에 존재하는 6개 종류의 bias에 대한 연구
     - 각 bias 종류별로 hand-crafted test 케이스를 포함하는 EvalBiasBench 제안
