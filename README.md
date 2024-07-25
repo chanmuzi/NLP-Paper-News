@@ -1317,4 +1317,8 @@
 - 🧑🏻‍💻 [WWDC 24: Running Mistral 7B with Core ML](https://huggingface.co/blog/mistral-coreml)
     - Mac에서 Mistral 7B 모델을 4GB 이하의 메모리를 사용하여 실행하는 방법을 안내
     - 간단히 공부하기 좋을 것 같은 허깅페이스 블로그 글
+- 🧑🏻‍💻 [Mistral AI] [Mistral Large 2](https://mistral.ai/news/mistral-large-2407/)
+    - 128k context window를 갖는 123B 사이즈의 모델을 공개, mistral-large-2407
+    - French, German 등 다양한 언어 뿐만 아니라 Python, Java 등 프로그래밍 언어에도 특화
+    - 비상업적, 연구적 목적으로 이용 가능. [weight download](https://models.mistralcdn.com/mistral-large-2407/mistral-large-instruct-2407.tar) 🔗 [HuggingFace](https://huggingface.co/mistralai/Mistral-Large-Instruct-2407) 🔗
 </details>  
