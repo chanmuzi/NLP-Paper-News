@@ -1321,4 +1321,15 @@
     - 128k context window를 갖는 123B 사이즈의 모델을 공개, mistral-large-2407
     - French, German 등 다양한 언어 뿐만 아니라 Python, Java 등 프로그래밍 언어에도 특화
     - 비상업적, 연구적 목적으로 이용 가능. [weight download](https://models.mistralcdn.com/mistral-large-2407/mistral-large-instruct-2407.tar) 🔗 [HuggingFace](https://huggingface.co/mistralai/Mistral-Large-Instruct-2407) 🔗
+- 🧑🏻‍💻 [OpenAI] [SearchGPT Prototype](https://openai.com/index/searchgpt-prototype/)
+    - AI 기반의 검색 엔진 프로토타입을 공개
+    - conversational capability를 향상시킴으로써 real-time 정보를 보다 쉽게 획득할 수 있음
+    - partnering with publisher & creator
+- 🧑🏻‍💻 [Cohere] [Introducing Rerank 3 Nimble: Faster Reranking for Enterprise Search & Retrieval-Augmented Generation (RAG) Systems](https://cohere.com/blog/rerank-3-nimble)
+    - 높은 정확도는 유지하면서도 기존 대비 3배 이상 빠른 Rerank 3 Nimble 모델 시리즈를 공개
+    - 영어 외에도 100개 이상의 언어를 지원
+    - [Amazon Sagemaker](https://aws.amazon.com/marketplace/pp/prodview-rq7ik6yx6jnzc) 🔗
+- 🧑🏻‍💻 [Google] [Gemini’s big upgrade: Faster responses with 1.5 Flash, expanded access and more](https://blog.google/products/gemini/google-gemini-new-features-july-2024/)
+    - 40개 이상의 언어를 지원하는 Gemini 1.5 Flash 모델을 free tier에서도 지원
+    - 현재 트렌드는 조금 덜 뛰어난 성능일지라도 빠른 답변을 할 수 있는 모델을 제공하는 것. 빠른 속도를 한 번 경험하고 나면 느린 모델에 대한 반감이 커질 것 같다는 생각이 듦.
 </details>  
