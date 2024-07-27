@@ -1332,4 +1332,9 @@
 - 🧑🏻‍💻 [Google] [Gemini’s big upgrade: Faster responses with 1.5 Flash, expanded access and more](https://blog.google/products/gemini/google-gemini-new-features-july-2024/)
     - 40개 이상의 언어를 지원하는 Gemini 1.5 Flash 모델을 free tier에서도 지원
     - 현재 트렌드는 조금 덜 뛰어난 성능일지라도 빠른 답변을 할 수 있는 모델을 제공하는 것. 빠른 속도를 한 번 경험하고 나면 느린 모델에 대한 반감이 커질 것 같다는 생각이 듦.
+- 📜 [AI2, University of Washington, Microsoft] [The Art of Saying No: Contextual Noncompliance in Language Models](https://arxiv.org/abs/2407.12043)
+    - 유저의 명령을 따르지 않는 것을 noncompliance라고 말함
+    - 모델이 언제 어떻게 유저의 요청을 따르지 말아야 하는지에 대한 어휘 분류 체계를 도입
+    - 1,000개의 noncompliance prompt를 바탕으로 실험 → 30% 정도는 유저의 요청을 제대로 따르지 못하고 있음
+    - → request & noncompliant response로 구성된 학습용 학습 데이터를 제작 → Fine-tuning은 overfit으로 이어지는 반면 LoRA 같은 기법이 밸런스가 좋음
 </details>  
