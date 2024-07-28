@@ -1337,4 +1337,8 @@
     - 모델이 언제 어떻게 유저의 요청을 따르지 말아야 하는지에 대한 어휘 분류 체계를 도입
     - 1,000개의 noncompliance prompt를 바탕으로 실험 → 30% 정도는 유저의 요청을 제대로 따르지 못하고 있음
     - → request & noncompliant response로 구성된 학습용 학습 데이터를 제작 → Fine-tuning은 overfit으로 이어지는 반면 LoRA 같은 기법이 밸런스가 좋음
+- 📜 [University of Washinton, AI2] [Data Mixture Inference: What do BPE Tokenizers Reveal about their Training Data?](https://arxiv.org/abs/2407.16607)
+    - 학습 데이터의 분포적 특성을 파악하는 data mixture inference를 제안
+    - → GPT-4o의 토크나이저는 39%의 non-English data로 학습되어 전작보다 multilingual 하다고 이야기 할 수 있음
+    - → Llama3 모델은 48%의 non-English data로 학습되었음
 </details>  
