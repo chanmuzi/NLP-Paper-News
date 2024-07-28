@@ -1341,4 +1341,8 @@
     - 학습 데이터의 분포적 특성을 파악하는 data mixture inference를 제안
     - → GPT-4o의 토크나이저는 39%의 non-English data로 학습되어 전작보다 multilingual 하다고 이야기 할 수 있음
     - → Llama3 모델은 48%의 non-English data로 학습되었음
+- 📜 [NVIDIA] [Compact Language Models via Pruning and Knowledge Distillation](https://arxiv.org/abs/2407.14679)
+    - full retraining 대신 pruning 적용 후 기존 학습 데이터의 일부(3% 미만)를 학습하는 방식
+    - 15B 사이즈 모델에서 8B/4B 모델을 만들어 내는 데 40배 적은 양의 데이터를 활용
+    - 그럼에도 불구하고 MMLU 벤치마크에서 16%의 성능 개선을 보임
 </details>  
