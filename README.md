@@ -1346,3 +1346,11 @@
     - 15B 사이즈 모델에서 8B/4B 모델을 만들어 내는 데 40배 적은 양의 데이터를 활용
     - 그럼에도 불구하고 MMLU 벤치마크에서 16%의 성능 개선을 보임
 </details>  
+
+<details>
+  <summary>5th week</summary>
+
+- 📜 [Oxford, Cambridge, Imperial College London, Toronto] [AI models collapse when trained on recursively generated data](https://www.nature.com/articles/s41586-024-07566-y) (nature)
+    - 인공지능 모델이 생성한 데이터를 무분별하게 학습하는 경우 ‘모델 붕괴’ 현상이 나타날 수 있음
+    - LLM 생성 데이터가 점점 늘어나고 있는 상황에서 인간이 직접 만들어낸 데이터의 가치는 점점 높아질 것이라고 예측
+</details>
