@@ -1353,4 +1353,13 @@
 - 📜 [Oxford, Cambridge, Imperial College London, Toronto] [AI models collapse when trained on recursively generated data](https://www.nature.com/articles/s41586-024-07566-y) (nature)
     - 인공지능 모델이 생성한 데이터를 무분별하게 학습하는 경우 ‘모델 붕괴’ 현상이 나타날 수 있음
     - LLM 생성 데이터가 점점 늘어나고 있는 상황에서 인간이 직접 만들어낸 데이터의 가치는 점점 높아질 것이라고 예측
+- 📜 [Washington, AI2] [The Art of Refusal: A Survey of Abstention in Large Language Models](https://arxiv.org/abs/2407.18418)
+    - LLM이 답변을 거부하는 Abstention은 hallucination을 줄이고 안전한 LLM 시스템을 구축하는 데 있어서 아주 중요한 요소
+    - 이를 query, model, human value, 세 개의 관점에서 평가하난 프레임워크를 제시
+- 📜 [Equall] [SaulLM-54B & SaulLM-141B: Scaling Up Domain Adaptation for the Legal Domain](https://arxiv.org/abs/2407.19584)
+    - 법률 특화 LLM SaulLM-54B & 141B 를 공개
+    - domain adaptation 과정은 세 단계로 구성됨. 
+    1) 540B 토큰 이상의 corpus로 continued pretraining 
+    2) 법률 특화 instruction-following protocol 
+    3) human preference와의 alignment
 </details>
