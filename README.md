@@ -1362,4 +1362,16 @@
     1) 540B 토큰 이상의 corpus로 continued pretraining 
     2) 법률 특화 instruction-following protocol 
     3) human preference와의 alignment
+- 🧑🏻‍💻 [Meta] [Introducing SAM 2: The next generation of Meta Segment Anything Model for videos and images](https://ai.meta.com/blog/segment-anything-2/)
+    - zero-shot: custom adaptation 없이도 unseen objects에 대해 뛰어난 segment 퍼포먼스
+    - memory mechanism: 과거 segmentation 정보를 저장 & 불러오기 하여 프레임 간 continuous tracking이 가능
+    - real-time processing이 가능한 빠른 추론 속도
+    - 51K videos & 600K masklets로 구성된 SA-V dataset 공개
+- 🧑🏻‍💻 [OpenAI] [GPT-4o Long Output](https://openai.com/gpt-4o-long-output/)
+    - 일부 사용자(알파) 대상으로 최대 64K output을 갖는 GPT-4o 버전을 제공 중
+    - 요즘 가장 큰 두 개의 트렌드는 context 늘리기와 모델 사이즈 줄이기 (추론 속도 up)
+- 📜 [Meta, Berkeley, NYU] [Meta-Rewarding Language Models: Self-Improving Alignment with LLM-as-a-Meta-Judge](https://arxiv.org/abs/2407.19594)
+    - self-reward 메커니즘은 언어 모델이 본인의 출력을 스스로 평가하여 개선될 여지가 있음을 보여주었음
+    - 그러나 평가를 잘하게 만드는 방법에 대한 고민 없이 모델 성능 개선에만 집중하여 이미 포화된 양상을 보임
+    - → 이를 해결하기 위해 모델이 스스로의 ‘판단’을 ‘판단’하고 이를 바탕으로 ‘판단’ 스킬을 개선하는 방법론 Meta-Rewarding을 제안
 </details>
