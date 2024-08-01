@@ -1375,3 +1375,20 @@
     - 그러나 평가를 잘하게 만드는 방법에 대한 고민 없이 모델 성능 개선에만 집중하여 이미 포화된 양상을 보임
     - → 이를 해결하기 위해 모델이 스스로의 ‘판단’을 ‘판단’하고 이를 바탕으로 ‘판단’ 스킬을 개선하는 방법론 Meta-Rewarding을 제안
 </details>
+
+## 🍉 August
+<details>
+  <summary>1st week</summary>
+
+- 🧑🏻‍💻 [Google] [Smaller, Safer, More Transparent: Advancing Responsible AI with Gemma](https://developers.googleblog.com/en/smaller-safer-more-transparent-advancing-responsible-ai-with-gemma/)
+    - Gemma 2 2B: 챗봇 아레나에서 GPT-3.5를 넘어섬. 구글 코랩의 T4로 돌릴 수 있을 정도로 가벼운 모델.
+    - [Gemma 2 허깅페이스 링크](https://huggingface.co/collections/google/gemma-2-2b-release-66a20f3796a2ff2a7c76f98f) 🔗
+    - 언어 모델의 생성 결과를 필터링 해주는 ShieldGemma를 공개. SoTA급 성능.
+    - 모델의 내부 동작 과정을 살펴볼 수 있는 툴 Gemma scope 🔭 공개.
+- 🧑🏻‍💻 [PyTorch] [Introducing torchchat: Accelerating Local LLM Inference on Laptop, Desktop and Mobile](https://pytorch.org/blog/torchchat-local-llm-inference/)
+    - Llama 3, 3.1과 같은 모델들을 로컬에서 돌릴 수 있도록 지원하는 라이브러리, torchchat 공개
+    - [torchchat GitHub 링크](https://github.com/pytorch/torchchat) 🔗
+- 🧑🏻‍💻 [DeepLearning.AI] [Embedding Models: From Architecture to Implementation](https://www.deeplearning.ai/short-courses/embedding-models-from-architecture-to-implementation/)
+    - embedding 모델의 기본 아키텍쳐와 학습 방식에 대한 강의
+    - Word2Vec과 BERT와 같은 모델을 다양한 semantic search에 어떻게 활용하는지 학습
+</details>
