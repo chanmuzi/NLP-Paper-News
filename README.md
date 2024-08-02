@@ -1391,4 +1391,9 @@
 - 🧑🏻‍💻 [DeepLearning.AI] [Embedding Models: From Architecture to Implementation](https://www.deeplearning.ai/short-courses/embedding-models-from-architecture-to-implementation/)
     - embedding 모델의 기본 아키텍쳐와 학습 방식에 대한 강의
     - Word2Vec과 BERT와 같은 모델을 다양한 semantic search에 어떻게 활용하는지 학습
+- 📜 [Google] ShieldGemma: Generative AI Content Moderation Based on Gemma
+    - Gemma2-2B 모델과 함께 공개한 LLM safety 관련 모델 (2B/9B/27B)
+    - user input & LLM-generated output 둘 다에 대해 뛰어난 safety 능력을 보여줌 (llama guard 이상)
+    - llm 기반의 새로운 data curation 파이프라인을 제안
+    - [허깅페이스 링크](https://huggingface.co/collections/google/shieldgemma-release-66a20efe3c10ef2bd5808c79) 🔗
 </details>
