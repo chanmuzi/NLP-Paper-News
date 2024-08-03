@@ -1396,4 +1396,7 @@
     - user input & LLM-generated output 둘 다에 대해 뛰어난 safety 능력을 보여줌 (llama guard 이상)
     - llm 기반의 새로운 data curation 파이프라인을 제안
     - [허깅페이스 링크](https://huggingface.co/collections/google/shieldgemma-release-66a20efe3c10ef2bd5808c79) 🔗
+- 📜 [Tsinghua] [Improving Text Embeddings for Smaller Language Models Using Contrastive Fine-tuning](https://arxiv.org/abs/2408.00690)
+    - sLLM의 성능을 향상시키기 위해 text embedding을 개선
+    - NLI 데이터셋에 대해 MiniCPM, Phi-2, Gemma 모델을 contrastive fine-tuning
 </details>
