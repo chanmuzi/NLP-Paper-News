@@ -1399,4 +1399,10 @@
 - 📜 [Tsinghua] [Improving Text Embeddings for Smaller Language Models Using Contrastive Fine-tuning](https://arxiv.org/abs/2408.00690)
     - sLLM의 성능을 향상시키기 위해 text embedding을 개선
     - NLI 데이터셋에 대해 MiniCPM, Phi-2, Gemma 모델을 contrastive fine-tuning
+- 🧑🏻‍💻 [Stability.AI] [Introducing Stable Fast 3D: Rapid 3D Asset Generation From Single Images](https://stability.ai/news/introducing-stable-fast-3d)
+    - 0.5초 만에 고품질 3D asset 생성 가능
+    - 게임, 가상현실 개발자들을 위한 어플리케이셔늘 포함
+    - [허깅페이스 링크](https://huggingface.co/stabilityai/stable-fast-3d) 🔗
+- 🗞️ [Figure] [Figure 02](https://x.com/Figure_robot/status/1819388819638309286)
+    - Figure의 2세대 로봇이 8월 6일 공개될 예정. 본 링크는 X에 게시된 데모 영상.
 </details>
