@@ -1409,6 +1409,12 @@
     - 기존의 RAG 벤치마크는 LLM이 일반적인 지식에 대해 답변할 수 있는지만 평가
     - → LLM의 knowledge 활용 능력을 평가하기 위해 평가용 데이터셋을 자동적으로 생성하는 프레임워크 RAGEval을 제시
     - Completeness, Hallucination, Irrelevance 세 개의 metric을 사용
+  
+</details>
+
+<details>
+  <summary>2nd week</summary>
+
 - 📜 [Sheffiled, Liverpool] [Adaptive Retrieval-Augmented Generation for Conversational Systems](https://arxiv.org/abs/2407.21712)
     - 대화 시스템 내에서 retrieval이 항상 필요한 것인지 확인하는 방법을 제안 → 한 turn마다 human judgement
     - 발화할 때 과거의 내용을 돌아보게 만들어야하지 않을까 생각했던 것과 유사한 접근이라고 느껴짐
