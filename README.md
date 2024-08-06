@@ -1418,4 +1418,7 @@
 - 📜 [Sheffiled, Liverpool] [Adaptive Retrieval-Augmented Generation for Conversational Systems](https://arxiv.org/abs/2407.21712)
     - 대화 시스템 내에서 retrieval이 항상 필요한 것인지 확인하는 방법을 제안 → 한 turn마다 human judgement
     - 발화할 때 과거의 내용을 돌아보게 만들어야하지 않을까 생각했던 것과 유사한 접근이라고 느껴짐
+- 📜 [Sapienza NLP Group] [ReLiK: Retrieve and LinK, Fast and Accurate Entity Linking and Relation Extraction on an Academic Budget](https://arxiv.org/abs/2408.00103) (ACL 2024)
+    - Entity Linking (EL) 과 Relation Extraction (RE) 를 위한 Retriever-Reader 아키텍쳐
+    - Retriever 모듈은 entity, relation 후보를 탐색 → Reader 모듈은 실제 관계를 파악
 </details>
