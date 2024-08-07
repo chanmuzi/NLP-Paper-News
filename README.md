@@ -1421,4 +1421,17 @@
 - 📜 [Sapienza NLP Group] [ReLiK: Retrieve and LinK, Fast and Accurate Entity Linking and Relation Extraction on an Academic Budget](https://arxiv.org/abs/2408.00103) (ACL 2024)
     - Entity Linking (EL) 과 Relation Extraction (RE) 를 위한 Retriever-Reader 아키텍쳐
     - Retriever 모듈은 entity, relation 후보를 탐색 → Reader 모듈은 실제 관계를 파악
+- 📜 [Meta] [Self-Taught Evaluators](https://arxiv.org/abs/2408.02666)
+    - human annotation 없이 synthetic 데이터로만 evaluator를 개선하는 방법론을 제안
+    - unlabeled instruction → contrasting model outputs → reasoning traces & final judgements
+    - 최근 가장 주목을 받은 논문이 합성 데이터로 인한 모델 붕괴인데.. 아이러니하다.
+- 📜 [ByteDance] [Language Model Can Listen While Speaking](https://arxiv.org/abs/2408.02622)
+    - real-time interaction을 위한 full duplex modeling (FDM)을 interactive speech language models (iSLM)에 적용
+    - listening-while-speaking language model (LSLM) 이라는 모델 디자인을 공개
+    - early fusion, middle fusion, late fusion 셋 중에서 middel fusion의 balance가 가장 훌륭
+    - OpenAI에서 공개했던 자연스러운 실시간 대화와 관련된 연구로 보임
+- 🧑🏻‍💻 [LG AI Research] EXAONE 3.0 7.8B Instruction Tuned Language Model
+    - [technical report](https://www.lgresearch.ai/data/upload/tech_report/en/EXAONE_3.0_Technical_Report.pdf) 링크 🔗
+    - 영어와 한국어로 학습된 bilingual generative model
+    - 8T curated tokens pre-trained & SFT & DPO
 </details>
