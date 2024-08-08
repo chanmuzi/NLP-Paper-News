@@ -1434,4 +1434,14 @@
     - [technical report](https://www.lgresearch.ai/data/upload/tech_report/en/EXAONE_3.0_Technical_Report.pdf) 링크 🔗
     - 영어와 한국어로 학습된 bilingual generative model
     - 8T curated tokens pre-trained & SFT & DPO
+- 🧑🏻‍💻 [NVIDIA] [Advancing Humanoid Robot Development](https://www.youtube.com/watch?v=Bhg3uOx9ZPw)
+    - 애플 비전프로와 로봇의 상호작용
+    - 사용자의 움직임을 비전프로로 인식하고 로봇이 이를 실시간으로 모방하는 형태
+- 🧑🏻‍💻 [OpenAI] [Introducing Structured Outputs in the API](https://openai.com/index/introducing-structured-outputs-in-the-api/)
+    - API 모델이 JSON 형태의 출력을 보장하도록 하는 기능을 지원
+    - `“strict”: true` 로 설정 시 100% 확률로 structured output 반환
+    - function calling 또는 response_format 파라미터로 기능 지원
+- 📜 [OpenGVLab, Tsinghua] [MMIU: Multimodal Multi-image Understanding for Evaluating Large Vision-Language Models](https://arxiv.org/abs/2408.02718)
+    - Large Vision-Language Models (LVLMs)을 다양한 multi-image task에서 평가하기 위한 벤치마크 MMIU를 공개
+    - 7개 종류의 multi-image 관계, 52개 태스크, 77K 이미지, 11K multiple-choice questions로 구성
 </details>
