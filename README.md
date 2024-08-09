@@ -1444,4 +1444,19 @@
 - 📜 [OpenGVLab, Tsinghua] [MMIU: Multimodal Multi-image Understanding for Evaluating Large Vision-Language Models](https://arxiv.org/abs/2408.02718)
     - Large Vision-Language Models (LVLMs)을 다양한 multi-image task에서 평가하기 위한 벤치마크 MMIU를 공개
     - 7개 종류의 multi-image 관계, 52개 태스크, 77K 이미지, 11K multiple-choice questions로 구성
+- 🧑🏻‍💻 [DeepLearning.AI] [AI Python for Beginners](https://www.deeplearning.ai/short-courses/ai-python-for-beginners/)
+    - 데이터 조작, 분석, 시각화 등에 관한 AI tool 사용 방법을 파이썬으로 학습
+    - 비지니스, 마케팅과 같은 실제 산업 분야에 파이썬을 활용하는 방법 안내
+    - AI 어시스턴트를 이용한 코드 디버깅, 개념 설명 등을 시도
+- 📜 [Google DeepMind] [Achieving Human Level Competitive Robot Table Tennis](https://arxiv.org/abs/2408.03906)
+    - 로봇 연구 분야에서 로봇이 real world task를 인간 수준으로 처리할 수 있게 되는 것은 아주 상징적
+    - 탁구 칠 수 있는 로봇을 개발했는데 특징은 다음과 같음 (아마추어 수준으로 판단)
+        - hierarchical and modular policy architecture
+        - zero-shot sim-to-real을 가능하게 만드는 기술
+        - unseen opponents에 대한 real time adapation (wow)
+    - [데모 영상](https://accounts.google.com/v3/signin/confirmidentifier?authuser=2&continue=https%3A%2F%2Fdocs.google.com%2Fforms%2Fu%2F2%2Fd%2Fe%2F1FAIpQLSeHyoLH65fkRtcskOw1tyQH26m3oSrIzVYB7I_SXtejunl5EQ%2Fviewform%3Fusp%3Dsend_form&followup=https%3A%2F%2Fdocs.google.com%2Fforms%2Fu%2F2%2Fd%2Fe%2F1FAIpQLSeHyoLH65fkRtcskOw1tyQH26m3oSrIzVYB7I_SXtejunl5EQ%2Fviewform%3Fusp%3Dsend_form&ifkv=AdF4I74-85ab20MJwFQtGLxCCSJFfb8P3UEomYdCPMJa5g830SjZqgqBIo2ypFBQmIR_MGNycbB-cw&ltmpl=forms&osid=1&passive=1209600&service=wise&flowName=GlifWebSignIn&flowEntry=ServiceLogin&dsh=S826118426%3A1723163958486536&ddm=0) 링크 🔗
+- 🧑🏻‍💻 [HuggingFaceM4] [Idefics3-8B-Llama3](https://huggingface.co/HuggingFaceM4/Idefics3-8B-Llama3)
+    - 허깅페이스팀에서 만든 image & text 멀티모달 모델
+    - [google/siglip-so400m-patch14-384](https://huggingface.co/google/siglip-so400m-patch14-384) & [meta-llama/Meta-Llama-3.1-8B-Instruct](https://huggingface.co/meta-llama/Meta-Llama-3.1-8B-Instruct)
+    - [v1 paper](https://huggingface.co/papers/2306.16527) 링크 🔗 & [v2 paper](https://huggingface.co/papers/2405.02246) 링크 🔗
 </details>
