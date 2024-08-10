@@ -1459,4 +1459,11 @@
     - 허깅페이스팀에서 만든 image & text 멀티모달 모델
     - [google/siglip-so400m-patch14-384](https://huggingface.co/google/siglip-so400m-patch14-384) & [meta-llama/Meta-Llama-3.1-8B-Instruct](https://huggingface.co/meta-llama/Meta-Llama-3.1-8B-Instruct)
     - [v1 paper](https://huggingface.co/papers/2306.16527) 링크 🔗 & [v2 paper](https://huggingface.co/papers/2405.02246) 링크 🔗
+- 🧑🏻‍💻 [NVIDIA] [Build a Digital Human](https://build.nvidia.com/nvidia/digital-humans-virtual-assistant)
+    - NVIDIA의 제품에 대해 잘 알고 있는 가상 디지털 인간 James
+    - 웹 사이트에서 음성을 통해 실시간 interaction 가능
+- 📜 [Jilin University] [Bias-Aware Low-Rank Adaptation: Mitigating Catastrophic Inheritance of Large Language Models](https://arxiv.org/abs/2408.04556)
+    - PEFT는 사전학습 데이터로부터의 bias propagation 이슈가 존재
+    - → 세 개의 regularization terms: (1) consistency regularizer (2) diversity regularizer (3) singular vector decomposition regularizer
+    - [깃허브 링크](https://github.com/cyp-jlu-ai/BA-LoRA) 🔗
 </details>
