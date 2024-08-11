@@ -1466,4 +1466,7 @@
     - PEFT는 사전학습 데이터로부터의 bias propagation 이슈가 존재
     - → 세 개의 regularization terms: (1) consistency regularizer (2) diversity regularizer (3) singular vector decomposition regularizer
     - [깃허브 링크](https://github.com/cyp-jlu-ai/BA-LoRA) 🔗
+- 📜 [Appier AI Research] [Let Me Speak Freely? A Study on the Impact of Format Restrictions on Performance of Large Language Models](https://arxiv.org/abs/2408.02442)
+    - JSON, XML 등의 표준화된 형식으로 데이터를 뽑아내는 structured generation은 real-world application에서 활발하게 사용중
+    - 특정 포맷을 강제할수록, 그리고 포맷이 엄격할수록 모델의 추론 능력이 하락하는 경향성을 관측
 </details>
