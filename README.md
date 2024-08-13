@@ -1469,4 +1469,24 @@
 - 📜 [Appier AI Research] [Let Me Speak Freely? A Study on the Impact of Format Restrictions on Performance of Large Language Models](https://arxiv.org/abs/2408.02442)
     - JSON, XML 등의 표준화된 형식으로 데이터를 뽑아내는 structured generation은 real-world application에서 활발하게 사용중
     - 특정 포맷을 강제할수록, 그리고 포맷이 엄격할수록 모델의 추론 능력이 하락하는 경향성을 관측
+
+</details>
+
+<details>
+  <summary>3rd week</summary>
+
+- 📜 [Google DeepMind] [Gemma Scope: Open Sparse Autoencoders Everywhere All At Once on Gemma 2](https://arxiv.org/abs/2408.05147)
+    - Sparse autoencoders (SAEs)는 neural network의 latent representation을 interpretable feature로 decomposition 하는 방법을 비지도 학습으로 배움
+    - Gemma 2 2B의 전체 layer, 9B의 일부 layer에서 학습, 27B에서 선택된 JumpReLU SAEs를 공개 → 비교를 위해 instruction-tuned version을 함께 공개
+- 📜 [Liverpool] [Order Matters in Hallucination: Reasoning Order as Benchmark and Reflexive Prompting for Large-Language-Models](https://arxiv.org/abs/2408.05093)
+    - LLM이 답변과 reasoning을 생성하는 순서가 consistency에 영향을 준다는 것을 발견 (answer → reasoning vs. reasoning → answer)
+    - → LLM consistency를 평가하기 위한 새로운 벤치마크 제안, 직관적인 프롬프트 전략 제안
+    - Andrej Karpathy가 언급한 [Jagged Intelligence](https://x.com/karpathy/status/1816531576228053133)와 관련된 문제로 볼 수 있음
+- 📜 [Sakana AI] [The AI Scientist: Towards Fully Automated Open-Ended Scientific Discovery](https://arxiv.org/abs/2408.06292)
+    - automatic scientific discovery를 위한 LLM 기반 프레임워크, The AI Scientist
+    - open-ended 방식으로 아이디어 발전 과정을 반복하며 knowledge archive를 키워 나감
+    - diffusion modeling, transformer-based language modeling, learning dynamics, 세 분야에서 실험하는 동안 15$ 이하의 비용이 발생
+    - [깃허브 링크](https://github.com/SakanaAI/AI-Scientist) 🔗
+    - 반드시 확인해봐야 할 내용인 것 같음. 현재 엄청난 주목을 받고 있는 논문.
+  
 </details>
