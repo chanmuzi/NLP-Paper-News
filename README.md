@@ -1488,5 +1488,10 @@
     - diffusion modeling, transformer-based language modeling, learning dynamics, 세 분야에서 실험하는 동안 15$ 이하의 비용이 발생
     - [깃허브 링크](https://github.com/SakanaAI/AI-Scientist) 🔗
     - 반드시 확인해봐야 할 내용인 것 같음. 현재 엄청난 주목을 받고 있는 논문.
+- 📜 [Microsoft, Harvard] [Mutual Reasoning Makes Smaller LLMs Stronger Problem-Solvers](https://arxiv.org/abs/2408.06195)
+    - small language models (SLMs)의 추론 성능을 크게 향상 시켜주는 self-play mutual reasoning 방법론, rStart 제안
+    - 1) target SLM이 Monte Carlo Tree Search (CMTS)를 human-like reasoning actions로 증강
+    - 2) another SLM이 target SLM이 만들어내는 trajectory를 discriminate
+    - → 양측 동의를 받은 것들은 mutual consistent로 구분
   
 </details>
