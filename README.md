@@ -1493,5 +1493,21 @@
     - 1) target SLM이 Monte Carlo Tree Search (CMTS)를 human-like reasoning actions로 증강
     - 2) another SLM이 target SLM이 만들어내는 trajectory를 discriminate
     - → 양측 동의를 받은 것들은 mutual consistent로 구분
+- 🧑🏻‍💻 [Anthropic] [Prompt caching with Claude](https://www.anthropic.com/news/prompt-caching)
+    - API call 에서 자주 사용되는 컨텍스트를 캐싱하는 기능을 제공
+    - 배경 지식, 예시 등을 설명하는데 사용되었던 컨텍스트가 캐싱됨으로써 비용을 90%까지 줄이고 latency도 85%까지 감소할 수 있음.
+    - 현재 public beta로 Claude 3.5 Sonnet & Haiku 에서 사용 가능
+- 🧑🏻‍💻 [xAI] [Grok-2 Beta Release](https://x.ai/blog/grok-2)
+    - Grok-1.5 대비 대화, 코딩, 추론 능력이 크게 향상된 Grok-2를 공개
+    - (xAI피셜..) Claude 3.5 Sonnet & GPT-4-Turbo 이상의 성능
+    - Grok-2 & Grok-2 mini 를 X로 선공개. 추후 Grok에서 API 지원
+- 📜 [ACL 2024 Best Paper Award]
+    - [Cohere] [Aya Model: An Instruction Finetuned Open-Access Multilingual Language Model](https://arxiv.org/abs/2402.07827)
+        - 101개 언어를 지원하는 multilingual generative language model
+        - instruction datasets을 [링크](https://hf.co/CohereForAI/aya-101)에 공개
+    - [Cambridge, ETH] [Causal Estimation of Memorisation Profiles](https://arxiv.org/abs/2406.04327)
+        - memorisation: 학습했던 instance를 예측할 수 있는 causal effect
+        - 이를 difference-in-differences 방식을 이용하여 효율적으로 측정
+        - (1) 큰 모델일수록 memorisation이 강하게 발생 (2) 데이터 순서와 학습률의 영향 (3) 모델 사이즈에 따른 일반적 경향 (예측 가능)
   
 </details>
