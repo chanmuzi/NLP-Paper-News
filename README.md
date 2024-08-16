@@ -1376,7 +1376,7 @@
     - → 이를 해결하기 위해 모델이 스스로의 ‘판단’을 ‘판단’하고 이를 바탕으로 ‘판단’ 스킬을 개선하는 방법론 Meta-Rewarding을 제안
 </details>
 
-## 🍉 August
+## 🔥 August
 <details>
   <summary>1st week</summary>
 
@@ -1509,5 +1509,17 @@
         - memorisation: 학습했던 instance를 예측할 수 있는 causal effect
         - 이를 difference-in-differences 방식을 이용하여 효율적으로 측정
         - (1) 큰 모델일수록 memorisation이 강하게 발생 (2) 데이터 순서와 학습률의 영향 (3) 모델 사이즈에 따른 일반적 경향 (예측 가능)
+- 🧑🏻‍💻 [Google] [Gemini Live](https://x.com/Google/status/1823409511471690064)
+    - Gemini와 자연스러운 대화 기능을 지원. 중간에 끼어들거나 주제를 바꾸는 것도 가능.
+    - Gemini Advanced 구독자 대상
+- 🧑🏻‍💻 [Qwen] [Introducing Qwen2-Math](https://qwenlm.github.io/blog/qwen2-math/)
+    - Qwen2 베이스의 수학 특화 모델 Qwen2-Math, Qwen2-Math-Instruct-1.5B/7B/72B 공개
+    - closed-source models (gpt-4o) 보다도 뛰어난 수학적, 추론 능력을 지녔다고 주장
+    - [깃허브](https://github.com/QwenLM/Qwen2-Math) 링크 🔗 [허깅페이스](https://huggingface.co/Qwen) 링크 🔗
+- 📜 [Google DeepMind] [Scaling LLM Test-Time Compute Optimally can be More Effective than Scaling Model Parameters](https://arxiv.org/abs/2408.03314)
+    - 기존보다 훨씬 많은 시간을 추론에 할애할 수 있도록 하면 얼마나 잘할까?
+    - (1) dense, process-based verifier reward models에 대한 searching
+    - (2) 추론 시 프롬프트가 주어지면 response에 대해 adaptive 하게 모델 분포를 업데이트
+    - → ‘사전학습 vs 추론’ 시간의 trade-off에 관한 연구: 작은 모델들도 뛰어난 성능 달성
   
 </details>
