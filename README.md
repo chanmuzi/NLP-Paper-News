@@ -1521,5 +1521,11 @@
     - (1) dense, process-based verifier reward models에 대한 searching
     - (2) 추론 시 프롬프트가 주어지면 response에 대해 adaptive 하게 모델 분포를 업데이트
     - → ‘사전학습 vs 추론’ 시간의 trade-off에 관한 연구: 작은 모델들도 뛰어난 성능 달성
+- 🧑🏻‍💻 [DeepLearning.AI] [Improving accuracy of LLM applications](https://www.deeplearning.ai/short-courses/improving-accuracy-of-llm-applications/)
+    - prompting, self-reflection, fine-tuning 등을 통해 모델의 신뢰도와 정확성을 향상
+    - Llama 3-8b 모델을 학습하여 text-to-SQL 어플리케이션을 개발
+- 📜 [Oxford] [Fine-tuning Large Language Models with Human-inspired Learning Strategies in Medical Question Answering](https://arxiv.org/abs/2408.07888)
+    - medical QA 분야에서 커리큘럼 기반의 학습 방식과 그렇지 않은 학습 방식의 결과를 여러 모델에 대해 실험하여 그 효과를 확인
+    - curriculum learning의 난이도를 사람이 정하는 것보다 모델이 정하는 것이 더 효율적이었다는 결과
   
 </details>
