@@ -1527,5 +1527,11 @@
 - 📜 [Oxford] [Fine-tuning Large Language Models with Human-inspired Learning Strategies in Medical Question Answering](https://arxiv.org/abs/2408.07888)
     - medical QA 분야에서 커리큘럼 기반의 학습 방식과 그렇지 않은 학습 방식의 결과를 여러 모델에 대해 실험하여 그 효과를 확인
     - curriculum learning의 난이도를 사람이 정하는 것보다 모델이 정하는 것이 더 효율적이었다는 결과
-  
+- 🧑🏻‍💻 [MetaGPT: The Multi-Agent Framework](https://github.com/geekan/MetaGPT)
+    - one line requirement를 입력으로 받아 user stories, competitive analysis, requirements 등을 output으로 반환
+    - 아주 간단하게 소프트웨어 제작 가능
+- 🧑🏻‍💻 [NVIDIA] [How to Prune and Distill Llama-3.1 8B to an NVIDIA Llama-3.1-Minitron 4B Model](https://developer.nvidia.com/blog/how-to-prune-and-distill-llama-3-1-8b-to-an-nvidia-llama-3-1-minitron-4b-model/)
+    - pruning과 knowledge distillation을 통해 Llama-3.1 8B 모델을 4B으로 줄임
+    - from scratch 학습에 비해 16% 높은 MMLU 스코어 달성. 모델 학습에 들어가는 토큰의 수도 40배 가까이 줄일 수 있었음
+    - [허깅페이스 링크](https://huggingface.co/nvidia/Llama-3.1-Minitron-4B-Width-Base) 🔗  
 </details>
