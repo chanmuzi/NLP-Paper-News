@@ -1535,3 +1535,23 @@
     - from scratch 학습에 비해 16% 높은 MMLU 스코어 달성. 모델 학습에 들어가는 토큰의 수도 40배 가까이 줄일 수 있었음
     - [허깅페이스 링크](https://huggingface.co/nvidia/Llama-3.1-Minitron-4B-Width-Base) 🔗  
 </details>
+
+<details>
+  <summary>4th week</summary>
+
+- 🧑🏻‍💻 [TII] [Welcome FalconMamba: The first strong attention-free 7B model](https://huggingface.co/blog/falconmamba)
+    - 7B 사이즈의 Llama 3, Gemma 등과 비슷한 수준의 퍼포먼스
+    - 최적화 벤치마크에서는 더욱 뛰어난 성능
+    - base/instruct 버전의 모델을 각각 공개 + 4-bit 버전도 공개 ([허깅페이스 링크](https://huggingface.co/tiiuae) 🔗)
+- 📜 [Google DeepMind] [Towards flexible perception with visual memory](https://arxiv.org/abs/2408.08172)
+    - neural network는 학습하며 정보를 가중치에 distribute 하기 때문에 이를 조작하기가 쉽지 않음
+    - → (1) 데이터의 사이즈에 관계 없이 이를 자유롭게 추가할 수 있는 능력 (2) unlearning & pruning을 통해 데이터를 삭제할 수 있는 능력 (3) 해석 가능한 의사 결정 메커니즘
+- 📜 [I-SHEEP: Self-Alignment of LLM from Scratch through an Iterative Self-Enhancement Paradigm](https://arxiv.org/abs/2408.08072)
+    - 기존의 LLM은 수동적인 학습자였거나 자신의 합성데이터를 1회성으로 alignment 학습함
+    - → from scratch에서 계속해서 self-align 하는 학습 방식을 제안
+    - Qwen & Llama 모델의 성능을 크게 개선할 수 있었다고 주장
+- 📜 [DeepSeek] [DeepSeek-Prover-V1.5: Harnessing Proof Assistant Feedback for Reinforcement Learning and Monte-Carlo Tree Search](https://arxiv.org/abs/2408.08152)
+    - single-pass whole-proof가 아닌, 다양한 proof path를 생성하는 전략인 RMaxTS를 제안. 이는 Monte-Carlo tree search의 variant 중 하나
+    - DeepSeek-Prover-V1 모델의 학습 & 추론 과정을 최적화한 DeepSeek-Prover-V1.5 모델 공개
+    - [깃허브 링크](https://github.com/deepseek-ai/DeepSeek-Prover-V1.5) 🔗
+</details>
