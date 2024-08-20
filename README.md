@@ -1554,4 +1554,11 @@
     - single-pass whole-proof가 아닌, 다양한 proof path를 생성하는 전략인 RMaxTS를 제안. 이는 Monte-Carlo tree search의 variant 중 하나
     - DeepSeek-Prover-V1 모델의 학습 & 추론 과정을 최적화한 DeepSeek-Prover-V1.5 모델 공개
     - [깃허브 링크](https://github.com/deepseek-ai/DeepSeek-Prover-V1.5) 🔗
+- 📜 [Salesforce AI, Univ of Washington] [xGen-MM (BLIP-3): A Family of Open Large Multimodal Models](https://arxiv.org/abs/2408.08872)
+    - LLMM 개발을 위한 프레임워크 xGen-MM (BLIP-3)
+    - 엄선된 학습 데이터셋, 학습 레시피, 모델 아키텍쳐, 학습 결과 등을 오픈소스로 공개
+    - DPO를 이용하여 safety tuning을 적용
+- 📜 [Meta] [Imagine yourself: Tuning-Free Personalized Image Generation](https://ai.meta.com/research/publications/imagine-yourself-tuning-free-personalized-image-generation/)
+    - 기존에는 복잡한 프롬프트가 주어지거나 이미지 퀄리티를 살리려는 시도에서 reference 이미지를 그대로 복붙하는 경향이 있음
+    - → 1) 이미지 다양성을 높이기 위한 synthetic paired data 생성 메커니즘, 2) 완전히 병렬적인 세 개의 text encoder와 학습 가능한 visual encoder, 3) visual quality를 점진적으로 향상시키는 coarse-to-fine multi-stage finetuning
 </details>
