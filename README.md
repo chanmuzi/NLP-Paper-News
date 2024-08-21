@@ -1561,4 +1561,17 @@
 - 📜 [Meta] [Imagine yourself: Tuning-Free Personalized Image Generation](https://ai.meta.com/research/publications/imagine-yourself-tuning-free-personalized-image-generation/)
     - 기존에는 복잡한 프롬프트가 주어지거나 이미지 퀄리티를 살리려는 시도에서 reference 이미지를 그대로 복붙하는 경향이 있음
     - → 1) 이미지 다양성을 높이기 위한 synthetic paired data 생성 메커니즘, 2) 완전히 병렬적인 세 개의 text encoder와 학습 가능한 visual encoder, 3) visual quality를 점진적으로 향상시키는 coarse-to-fine multi-stage finetuning
+- 📜 [Vanderbit University] [Reasoning Beyond Bias: A Study on Counterfactual Prompting and Chain of Thought Reasoning](https://arxiv.org/abs/2408.08651)
+    - 언어 모델은 실제 추론 대신 학습 데이터로터의 regularity를 반복할 뿐 (MMLU 등 벤치에서도)
+    - → 이를 해결하기 위해 Counterfactual CoT & Agnostically Primed CoT 를 제안
+    - bias를 줄이는 데 전자로만은 불충분할 수 있긴 하나, 특정 상황에서는 충분
+- 🧑🏻‍💻 [Lambda] [Unveiling Hermes 3: The First Full-Parameter Fine-Tuned Llama 3.1 405B Model is on Lambda’s Cloud](https://lambdalabs.com/blog/unveiling-hermes-3-the-first-fine-tuned-llama-3.1-405b-model-is-on-lambdas-cloud)
+    - Llama 3.1 405B 모델을 fully fine-tuning 하여 성능을 향상시킨 모델
+    - [Lambda Chat Completions API](http://api.lambdalabs.com/docs)와 [Lambda Chat](https://lambda.chat/)에서 사용 가능
+- 📜 [Google Research] [Transformers in music recommendation](https://research.google/blog/transformers-in-music-recommendation/)
+    - 구글에서 유튜브 뮤직의 음악 추천에 트랜스포머 모델을 활용 (기존 ranking 모델과 결합)
+    - Intention of action, Salience metrics, Metadata, Music track identifiers
+- 🧑🏻‍💻 [Luma AI] [Dream Machine 1.5](https://lumalabs.ai/dream-machine)
+    - 더 높은 수준의 text-to-video 모델을 공개
+    - prompts에 대한 이해, 커스텀 text rendering, image-to-video 성능 등을 개선
 </details>
