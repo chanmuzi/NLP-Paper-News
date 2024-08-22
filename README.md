@@ -1574,4 +1574,15 @@
 - 🧑🏻‍💻 [Luma AI] [Dream Machine 1.5](https://lumalabs.ai/dream-machine)
     - 더 높은 수준의 text-to-video 모델을 공개
     - prompts에 대한 이해, 커스텀 text rendering, image-to-video 성능 등을 개선
+- 🧑🏻‍💻 [Microsoft] [Microsoft releases Phi-3.5-mixture-of-experts (MoE)](https://huggingface.co/collections/microsoft/phi-3-6626e15e9585a200d2d761e3)
+    - MoE를 이용하여 Llama3 8B & Gemma2 9B 를 능가, GPT-4o-mini에 준하는 성능
+    - 4.9T 토큰 학습, 그중 10%는 multilingual content, 128k 토큰 길이 지원
+    - SFT, PPO, DPO 등 학습 과정을 거침
+- 🧑🏻‍💻[OpenAI] [Fine-tuning now available for GPT-4o](https://openai.com/index/gpt-4o-fine-tuning/)
+    - 조직당 하루 1M 토큰을 무료로 fine-tuning 가능
+    - [fine-tuning dashboard](https://platform.openai.com/finetune) 에서 사용할 수 있음
+- 📜 [Waterloo, Fudan] [TableBench: A Comprehensive and Complex Benchmark for Table Question Answering](https://arxiv.org/abs/2408.09174)
+    - LLM은 여전히 현실 세계의 tabular data를 잘 처리하지 못한다는 문제점을 안고 있음
+    - industrial scenarios를 반영한 벤치마크, TableBench를 제안
+    - GPT-3.5 수준의 성능을 내는 TabelLLM을 소개 (TableInstruct 데이터셋으로 학습)
 </details>
