@@ -1585,4 +1585,12 @@
     - LLM은 여전히 현실 세계의 tabular data를 잘 처리하지 못한다는 문제점을 안고 있음
     - industrial scenarios를 반영한 벤치마크, TableBench를 제안
     - GPT-3.5 수준의 성능을 내는 TabelLLM을 소개 (TableInstruct 데이터셋으로 학습)
+- 🧑🏻‍💻 [Ideogram] [Introducing Ideogram 2.0](https://x.com/ideogram_ai/status/1826277550798278804)
+    - 아이폰 앱으로 무료 이용 가능
+    - Flux, Midjourney에 도전..! Color Palette Selection, Enhanced Text Rendering, Search Functionality, Improved Image Coherence 가 특징
+- 📜 [NVIDIA] [LLM Pruning and Distillation in Practice: The Minitron Approach](https://arxiv.org/abs/2408.11796)
+    - Llama 3.1 8B & Mistral NeMo 12B를 각각 4B & 8B 로 압축한 모델에 대한 report
+    - depth pruning & joint hidden/attention/MLP (width) pruning 에 대해 탐구
+    - 기존 데이터를 모르는 상황에서 teacher 모델을 distillation dataset에 학습하는 방식이 유익할 수 있다고 주장
+    - 허깅 페이스에 공개: [Mistral-NeMo-Minitron-8B-Base](https://huggingface.co/nvidia/Mistral-NeMo-Minitron-8B-Base) | [Llama-3.1-Minitron-4B-Width-Base](https://huggingface.co/nvidia/Llama-3.1-Minitron-4B-Width-Base) | [Llama-3.1-Minitron-4B-Depth-Base](https://huggingface.co/nvidia/Llama-3.1-Minitron-4B-Depth-Base)
 </details>
