@@ -1593,4 +1593,16 @@
     - depth pruning & joint hidden/attention/MLP (width) pruning 에 대해 탐구
     - 기존 데이터를 모르는 상황에서 teacher 모델을 distillation dataset에 학습하는 방식이 유익할 수 있다고 주장
     - 허깅 페이스에 공개: [Mistral-NeMo-Minitron-8B-Base](https://huggingface.co/nvidia/Mistral-NeMo-Minitron-8B-Base) | [Llama-3.1-Minitron-4B-Width-Base](https://huggingface.co/nvidia/Llama-3.1-Minitron-4B-Width-Base) | [Llama-3.1-Minitron-4B-Depth-Base](https://huggingface.co/nvidia/Llama-3.1-Minitron-4B-Depth-Base)
+- 🧑🏻‍💻 [Adobe Research] [MagicFixup](https://github.com/adobe-research/MagicFixup?tab=readme-ov-file#gradio-demo)
+    - 이미지 내의 영역을 자유롭게 선택해서 원하는대로 수정할 수 있도록 돕는 기능
+    - 기존에는 이런 모델을 학습하기 위해 이미지를 사용하는데, 여기서는 비디오를 사용
+- 🧑🏻‍💻 [Meta] [Sapiens: Foundation for Human Vision Models](https://about.meta.com/realitylabs/codecavatars/sapiens?_bhlid=9ff3b20994dca7d88de03063c5de34f1da2853ed)
+    - 2D pose estimation, body-part segmentation, depth estimation, surface normal prediction
+    - 위 네 개의 핵심 vision tasks를 지원하는 모델 패밀리 Sapiens를 공개
+    - [아카이브 링크](https://about.meta.com/realitylabs/codecavatars/sapiens?_bhlid=9ff3b20994dca7d88de03063c5de34f1da2853ed) 🔗 [깃허브 링크](https://github.com/facebookresearch/sapiens) 🔗
+- 📜 [Singapore] [LLMs are not Zero-Shot Reasoners for Biomedical Information Extraction](https://arxiv.org/abs/2408.12249)
+    - LLM이 healthcare 분야에서 QA나 요약 태스크를 잘함 → 정보 추출도 잘할까?
+    - Medical Classification & NER 벤치마크 점수 비교: BioMistral & Llama-2
+    - standard prompting, CoT, Self-Consistency, RAG 등을 비교 → standard best
+    - knowledge, reasoning 향상을 위한 여러 prompt 테크닉이 biomedical tasks에 쉽게 적용 불가능하다는 것을 시사하는 실험 결과
 </details>
