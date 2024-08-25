@@ -1605,4 +1605,18 @@
     - Medical Classification & NER 벤치마크 점수 비교: BioMistral & Llama-2
     - standard prompting, CoT, Self-Consistency, RAG 등을 비교 → standard best
     - knowledge, reasoning 향상을 위한 여러 prompt 테크닉이 biomedical tasks에 쉽게 적용 불가능하다는 것을 시사하는 실험 결과
+- 🧑🏻‍💻 [AI21 labs] [The Jamba 1.5 Open Model Family: The Most Powerful and Efficient Long Context Models](https://www.ai21.com/blog/announcing-jamba-model-family)
+    - Transformer와 SSM을 합친 Mini (active 12B/52B) & Large (94B/398B) MoE
+    - 비슷한 사이즈의 모델 중에서 Mixtral 8x22B, Command-R+ 보다 뛰어난 성능 (Mini)
+    - 256K context window 사이즈를 가지며 추론 속도도 빠른 것이 특징
+    - [허깅페이스 링크](https://huggingface.co/collections/ai21labs/jamba-15-66c44befa474a917fcf55251) 🔗
+- 📜 [Google] [Speculative RAG: Enhancing Retrieval Augmented Generation through Drafting](https://arxiv.org/abs/2407.08223)
+    - 여러 개의 small, distilled specialist LM들이 생성하는 RAG draft를 효율적으로 검증하는 larger generalist LM을 이용하는 RAG 프레임워크를 제안
+    - 각 draft는 retrieved documents의 subset으로 생성 → draft당 input token count는 줄이면서 다양한 관점을 제공할 수 있다는 장점
+    - 각 subset에 대한 이해도를 높이고 긴 context에 대한 position bias를 줄일 수 있음
+    - [Google Research 블로그 포스팅 링크](https://research.google/blog/speculative-rag-enhancing-retrieval-augmented-generation-through-drafting/) 🔗
+- 🧑🏻‍💻 [Anthropic] [Anthropic added support Latex rendering in Claude Web interface](https://x.com/AnthropicAI/status/1826667671364272301)
+    - 이제 수학 공식을 온전한 LaTeX 형식으로 읽을 수 있는 기능을 지원
+    - [링크](https://t.co/bJ8BjBTEpe) 🔗 에서 설정 가능
+    - 그동안엔 수식이 일반 텍스트처럼 나와서 읽기가 힘들었는데 꼭 필요한 기능이 너무 늦게 지원된 것 같다는 생각이 듦..
 </details>
