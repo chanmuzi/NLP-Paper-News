@@ -1620,3 +1620,22 @@
     - [링크](https://t.co/bJ8BjBTEpe) 🔗 에서 설정 가능
     - 그동안엔 수식이 일반 텍스트처럼 나와서 읽기가 힘들었는데 꼭 필요한 기능이 너무 늦게 지원된 것 같다는 생각이 듦..
 </details>
+
+<details>
+  <summary>5th week</summary>
+
+- 📜 [The Fin AI] [Open-FinLLMs: Open Multimodal Large Language Models for Financial
+Applications](https://arxiv.org/abs/2408.11878)
+    - Financial LLMs, Open-FinLLMs를 공개
+    - 52B 토큰으로 학습된 FinLLaMA 모델에 573K financial instruction으로 fine-tuning 한 FinLLaMA-instruct
+    - financial data 타입을 다루는 1.43M 개의 image-text instruction으로 학습된 FinLLaVA를 공개
+- 📜 [Singapore] [Language Modeling on Tabular Data: A Survey of Foundations, Techniques and Evolution](https://arxiv.org/abs/2408.10548)
+    - (1) 여러 종류의 tabular data structure와 자료형을 categorization
+    - (2) 모델 학습과 평가를 위한 핵심 데이터셋에 대한 리뷰
+    - (3) data processing methods, popular architectures 등 모델링 테크닉 요약
+    - 외에도 잠재적인 어려움이나 미래 발전 방향에 대해 논한 survery 페이퍼
+- 📜 [British Columbia] [Automated Design of Agentic Systems](https://arxiv.org/abs/2408.08435) (ADAS)
+    - 새로운 블록을 만들거나 이를 새로운 방식으로 결합하는 등 강의 개발을 모델이 자동적으로 수행할 수 있도록 하는 agentic system design을 만드는 것을 목표로 삼고 있음
+    - Meta Agent Search: 이전의 발견들을 쌓아두어 점점 커지는 archive를 바탕으로 계속해서 새로운 agent를 프로그래밍 해나갈 수 있다는 아이디어
+    - [깃허브 링크](https://github.com/ShengranHu/ADAS) 🔗
+</details>
