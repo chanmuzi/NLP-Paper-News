@@ -1638,4 +1638,16 @@ Applications](https://arxiv.org/abs/2408.11878)
     - 새로운 블록을 만들거나 이를 새로운 방식으로 결합하는 등 강의 개발을 모델이 자동적으로 수행할 수 있도록 하는 agentic system design을 만드는 것을 목표로 삼고 있음
     - Meta Agent Search: 이전의 발견들을 쌓아두어 점점 커지는 archive를 바탕으로 계속해서 새로운 agent를 프로그래밍 해나갈 수 있다는 아이디어
     - [깃허브 링크](https://github.com/ShengranHu/ADAS) 🔗
+- 📜 [Kyoto University] [Beyond English-Centric LLMs: What Language Do Multilingual Language Models Think in?](https://arxiv.org/abs/2408.10811)
+    - English-centric 모델 Llama2를 대상으로 latent language에 대한 실험을 수행
+    - 일본어로 continued pretraining 한 Swallow, 영어와 일본어를 균형 있게 학습한 LLM-jp
+    - → 영어만이 latent language인 Llama2와 달리, Swallow와 LLM-jp는 영어와 일본어 둘 다 laten language라고 볼 수 있음
+- 📜 [HuggingFace] [Building and better understanding vision-language
+models: insights and future directions](https://arxiv.org/abs/2408.12637)
+    - vision-language models (VLMs)를 만드는 각 방법론들의 장/단점, 그리고 주요 챌린지 등을 보고
+    - 더 직관적인 파이프라인으로 학습하여 전작 Idenfic2-8B를 능가하는 Idefics3-8B를 학습 데이터와 함께 공개
+- 🧑🏻‍💻 [Priceton-NLP] [Llama-3-8B-ProLong](https://huggingface.co/collections/princeton-nlp/prolong-66c72d55d2051a86ac7bd7e4)
+    - 기존 Llama-3의 성능을 저해하지 않으면서도 긴 컨텍스트를 이해할 수 있도록 학습한 모델
+    - Instruct 버전도 존재하며 현재는 64K 버전만 공개되어 있음. 향후 512K 버전도 공개 예정
+    - 1저자가 SimCSE 저자임
 </details>
