@@ -1650,4 +1650,18 @@ models: insights and future directions](https://arxiv.org/abs/2408.12637)
     - 기존 Llama-3의 성능을 저해하지 않으면서도 긴 컨텍스트를 이해할 수 있도록 학습한 모델
     - Instruct 버전도 존재하며 현재는 64K 버전만 공개되어 있음. 향후 512K 버전도 공개 예정
     - 1저자가 SimCSE 저자임
+- 📜 [Institute of Automation] [K-Sort Arena: Efficient and Reliable Benchmarking for Generative Models via K-wise Human Preferences](https://arxiv.org/abs/2408.14468)
+    - 기존의 아레나 방식은 사람들의 선호 파악을 위해 지나치게 많은 투표 결과를 받아야 한다는 문제점 존재
+    - → 이미지와 비디오는 텍스트에 비해 더 인지적 직관성이 높다는 특징을 이용 (이미지 아레나임)
+    - K개의 모델이 한 번에 경쟁에 참여 ⇒ ELO 알고리즘 대비 16.3배 빠른 수렴 속도
+    - [허깅페이스 스페이스 링크](https://huggingface.co/spaces/ksort/K-Sort-Arena) 🔗
+- 📜 [University of Edinburgh]  [Explicit Inductive Inference using Large Language Models](https://arxiv.org/abs/2408.14467)
+    - 언어 모델에게, Premise가 Hypothesis를 entail 하는지를 묻는 것과, 반대로 Hypothesis의 conditional truthfulness를 Premise로 검증하는 것은 다른 문제 ⇒ bias 존재 ⇒ inductive inference에 활용
+    - LLM을 이용하여 premise를 attested alternative 세트로 변경 & 이를 기반으로 hypothesis derive ⇒ 둘을 이용하여 NLI task 성능 향상
+- 🧑🏻‍💻 [Anthropic] [Anthropic publishes Claude’s system prompts](https://x.com/alexalbert__/status/1828107230656471442)
+    - Anthropic의 공식 문서에 새로운 시스템 프롬프트를 추가
+    - 이는 [Claude.ai](http://Claude.ai) 와 모바일 앱에 영향을 주지만 API와는 무관함
+- 🧑🏻‍💻 [Nous Research] [DisTro](https://github.com/NousResearch/DisTrO)
+    - GPT 간 분산처리를 최적화하여 기존 대비 1,000x - 10,000x 속도 향상을 이뤄냈다고 보고
+    - 깃허브에 A Preliminary Report on DisTrO를 공개
 </details>
