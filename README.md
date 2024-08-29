@@ -1664,4 +1664,20 @@ models: insights and future directions](https://arxiv.org/abs/2408.12637)
 - 🧑🏻‍💻 [Nous Research] [DisTro](https://github.com/NousResearch/DisTrO)
     - GPT 간 분산처리를 최적화하여 기존 대비 1,000x - 10,000x 속도 향상을 이뤄냈다고 보고
     - 깃허브에 A Preliminary Report on DisTrO를 공개
+- 🧑🏻‍💻 [DeepLearning.AI] [Large Multimodal Model Prompting with Gemini](https://www.deeplearning.ai/short-courses/large-multimodal-model-prompting-with-gemini/)
+    - 구글의 Gemini를 이용하여 멀티모달 모델 사용 방법을 학습
+    - function calling과 API 통합 관련 내용까지 포함
+- 🧑🏻‍💻 [Google] [Google just released three new experimental Gemini 1.5 models](https://x.com/OfficialLoganK/status/1828480081574142227)
+    - Gemini 1.5 Flash-8B, Gemini 1.5 Pro (better coding & complex prompts), improved Gemini 1.5 Flash model
+    - [Google AI Studio](https://ai.google.dev/aistudio/)에서 사용 가능
+- 📜 [Waseem Inc.] [Writing in the Margins: Better Inference Pattern for
+Long Context Retrieval](https://arxiv.org/abs/2408.14906)
+    - retrieval-oriented task에서 long input sequence 처리를 최적화한 inference pattern, Writing in the Margins (WiM) 공개
+    - key-value cache의 chuncked prefill을 이용하여 segment-wise inference 실시 → 모델을 특정 task로 가이드하는 중간 정보, “margin”을 생성하고 분류하는 데 도움이 됨
+    - [깃허브 링크](https://github.com/writer/writing-in-the-margins) 🔗에 사용 예시를 함께 공개
+    - 허깅페이스 Daily Papers에서 100개 이상의 upvote를 받을 정도로 인기가 많은 연구 결과
+- 📜 [Google Research] [Diffusion Models Are Real-Time Game Engines](https://arxiv.org/abs/2408.14837)
+    - 복잡한 환경과 이동 경로에 대해 실시간 상호작용이 가능한 최초의 neural model 기반의 게임 ㅔㅇ진, GameNGen을 공개
+    - single TPU에서 초당 20 프레임으로 DOOM에서 simualte 가능
+    - (1) RL-agent가 게임 플레이를 학습 (2) diffusion 모델이 이전 프레임과 행동들을 기반으로 다음 프레임을 생성하도록 학습
 </details>
