@@ -1680,4 +1680,5 @@ Long Context Retrieval](https://arxiv.org/abs/2408.14906)
     - 복잡한 환경과 이동 경로에 대해 실시간 상호작용이 가능한 최초의 neural model 기반의 게임 ㅔㅇ진, GameNGen을 공개
     - single TPU에서 초당 20 프레임으로 DOOM에서 simualte 가능
     - (1) RL-agent가 게임 플레이를 학습 (2) diffusion 모델이 이전 프레임과 행동들을 기반으로 다음 프레임을 생성하도록 학습
+    - [깃허브 링크](https://gamengen.github.io) 🔗
 </details>
