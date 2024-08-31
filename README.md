@@ -1681,4 +1681,12 @@ Long Context Retrieval](https://arxiv.org/abs/2408.14906)
     - single TPU에서 초당 20 프레임으로 DOOM에서 simualte 가능
     - (1) RL-agent가 게임 플레이를 학습 (2) diffusion 모델이 이전 프레임과 행동들을 기반으로 다음 프레임을 생성하도록 학습
     - [깃허브 링크](https://gamengen.github.io) 🔗
+- 🧑🏻‍💻 [Qwen] [Qwen2-VL: To See the World More Clearly](https://qwenlm.github.io/blog/qwen2-vl/)
+    - 향상된 video understanding 능력을 갖춘 Apache 2.0 라이센스의 오픈소스 모델
+    - 2B, 7B, 72B 중에서 72B는 API로만 이용 가능
+    - 72B 모델은 GPT-4o나 Claude 3.5-Sonnet을 넘어설 정도의 visual understanding benchmark score를 보여주었음
+- 📜 [Google DeepMind] [Generative Verifiers: Reward Modeling as Next-Token Prediction](https://arxiv.org/abs/2408.15240)
+    - LLM이 생성한 N개의 후보 solution들의 순위를 매겨주는 verifier를 사용하는 방식인 Best-of-N 방식은 LLM의 텍스트 생성 능력을 활용하고 있지는 않음
+    - → next-token prediction objective로 verifier를 학습, 즉 verification과 solution generation을 joint training
+    - 기존 instruction tuning, CoT reasoning 등과 seamlessly 통합 가능
 </details>
