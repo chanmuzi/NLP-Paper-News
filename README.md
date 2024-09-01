@@ -1689,4 +1689,14 @@ Long Context Retrieval](https://arxiv.org/abs/2408.14906)
     - LLM이 생성한 N개의 후보 solution들의 순위를 매겨주는 verifier를 사용하는 방식인 Best-of-N 방식은 LLM의 텍스트 생성 능력을 활용하고 있지는 않음
     - → next-token prediction objective로 verifier를 학습, 즉 verification과 solution generation을 joint training
     - 기존 instruction tuning, CoT reasoning 등과 seamlessly 통합 가능
+- 📜 [Tsinghua] [LongWriter: Unleashing 10,000+ Word Generation from Long Context LLMs](https://arxiv.org/abs/2408.07055)
+    - LLM이 긴 text를 생성하지 못하는 이유는 SFT 단계에서의 학습 데이터 때문
+    - → 엄청나게 긴 생성 태스크를 여러 개의 subtask로 쪼개어 LLM이 20,000 단어 이상의 텍스트를 생성할 수 있도록 만드는 agent-based pipeline 제시
+    - LongWriter-6K: 답변의 길이가 2K - 32K 에 이르는 텍스트로 구성된 데이터셋
+    - 장문의 텍스트 생성 능력이 있는지를 검증하는 벤치마크 LongBench-Write 또한 공개
+    - [깃허브 링크](https://github.com/THUDM/LongWriter) 🔗
+- 📜 [Alibaba, Meta] [WavTokenizer: an Efficient Acoustic Discrete Codec Tokenizer for Audio Language Modeling](https://arxiv.org/abs/2408.16532)
+    - audio 도메인에서 SOTA를 달성한 acoustic codec model, WavTokenizer
+    - extreme compression, improved subjective quality를 특징으로 내세움
+    - [깃허브 링크](https://github.com/jishengpeng/WavTokenizer) 🔗
 </details>
