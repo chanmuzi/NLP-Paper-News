@@ -1717,4 +1717,9 @@ Addressing Underspecification in Alignment](https://arxiv.org/abs/2408.06266v3)
     - → (1) 선호 데이터는 response가 contrastive 할 때 더 나은 learning singnal을 제공
     - → (2) alignment objective는 모델 학습에서 control over를 구체화 할 때 더욱 효과적 (?)
     - Contrastive Learning from AI Revisions (CLAIR): more contrastive preference pairs & Anchored Preference Optimization (APO)
+- 📜 [Google DeepMind, UCLA, Milla] [Smaller, Weaker, Yet Better: Training LLM Reasoners via Compute-Optimal Sampling](https://arxiv.org/abs/2408.16737)
+    - 합성데이터 생성에서 stronger but expensive (SE) vs. weaker but cheaper (WC) 비교
+    - 세 개의 주요 메트릭: coverage, diversity, false positive rate → WC가 더 높은 coverage, diversity, but 더 높은 false positive 비율
+    - weak-to-strong improvement setup: weaker LM이 stronger LM에게 reasoning을 가르침
+    - WC-generated data로 학습한 모델이 SE-generated data로 학습한 모델보다 뛰어난 성능
 </details>
