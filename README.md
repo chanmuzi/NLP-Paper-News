@@ -1700,3 +1700,21 @@ Long Context Retrieval](https://arxiv.org/abs/2408.14906)
     - extreme compression, improved subjective quality를 특징으로 내세움
     - [깃허브 링크](https://github.com/jishengpeng/WavTokenizer) 🔗
 </details>
+
+
+## 🙇🏻 September
+<details>
+  <summary>1st week</summary>
+
+- 📜 [Meta] [Transfusion: Predict the Next Token and Diffuse Images with One Multi-Modal Model](https://www.arxiv.org/abs/2408.11039)
+    - discrete & continuous 데이터에 대한 multi-modal model 학습 레시피를 공개
+    - 언어 모델의 loss function(next token prediction)을 diffusion과 결합하여 mixed-modality sequence에 대해 single transformer를 학습
+    - 7B 사이즈의 모델을 scratch부터 학습하고 2T multi-modal token을 사용, scaling law 확인.
+    - 텍스트로 이뤄진 시퀀스 중간에 이미지 패치의 vector가 <BOI> & <EOI> 태그 사이에 삽입
+- 📜 [Stanford] [Anchored Preference Optimization and Contrastive Revisions:
+Addressing Underspecification in Alignment](https://arxiv.org/abs/2408.06266v3)
+    - LLM이 선호 데이터셋에 align 되는 과정은 꽤나 복잡하고 기대 이하의 결과로 이어지는 경우가 많음
+    - → (1) 선호 데이터는 response가 contrastive 할 때 더 나은 learning singnal을 제공
+    - → (2) alignment objective는 모델 학습에서 control over를 구체화 할 때 더욱 효과적 (?)
+    - Contrastive Learning from AI Revisions (CLAIR): more contrastive preference pairs & Anchored Preference Optimization (APO)
+</details>
