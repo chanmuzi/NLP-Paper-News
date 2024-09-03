@@ -1722,4 +1722,19 @@ Addressing Underspecification in Alignment](https://arxiv.org/abs/2408.06266v3)
     - 세 개의 주요 메트릭: coverage, diversity, false positive rate → WC가 더 높은 coverage, diversity, but 더 높은 false positive 비율
     - weak-to-strong improvement setup: weaker LM이 stronger LM에게 reasoning을 가르침
     - WC-generated data로 학습한 모델이 SE-generated data로 학습한 모델보다 뛰어난 성능
+- 📜 [University of Virginia] [Dynamic Self-Consistency: Leveraging Reasoning Paths for Efficient LLM Sampling](https://arxiv.org/abs/2408.17017)
+    - SC 관련해서 비용을 최소화하고자 하는 연구는 있었으나 reasoning path의 quality에 집중하는 것은 부족했다고 지적
+    - → output answer와 CoT로부터의 reasoning path를 동시에 고려하여 생성되는 sample의 숫자를 dynamic하게 조절하는 early framework, Reasoning-Aware Self-Consistency (RASC)
+    - 생성되는 샘플들에 confidence score를 부여하고 일정 기준이 충족되면 stop → weighted majority voting
+- 🧑🏻‍💻 [LMSYS] [Lmsys launches style control for Chatbot Arena to help separating the impact of style from substance in LLM rankings](https://y1mnw3w8.r.us-east-1.awstrack.me/L0/https:%2F%2Flink.alphasignal.ai%2FNrhrYd/2/01000191b450e825-9493be3f-106c-4bf6-a9c4-4ae7a4e7370e-000000/8U59LlKUzwU7SzqhapRkBOVCPYU=389)
+    - style control: 길이가 긴 or 포맷이 잘 갖춰진 답변을 생성하는 모델은 어떤 것인가?
+- 📜 [DP Technology] [SciLitLLM: How to Adapt LLMs for Scientific Literature Understanding](https://arxiv.org/abs/2408.15545)
+    - LLM 과학 분야에서의 문제점 (1) 과학적 지식 부족 (2) 과학 특화 태스크에 친숙하지 x
+    - continual pre-training (CPT) & supervised fine-tuning (SFT) 통합한 hybrid strategy 제안 → 과학 도메인 지식을 불어넣고 domain specific 태스크에서 instruction following 능력을 향상
+    - 이를 위해 (1) 고품질의 CPT corpora 필요 (2) 다양한 SFT instructions 생성 필요
+    - → PDF text extraction, parsing content error correction, quality filtering, synthetic instruction creation을 아우르는 pipeline으로 해결 시도
+- 📜 [Independent Researcher] [CURLoRA: Stable LLM Continual Fine-Tuning and Catastrophic Forgetting Mitigation](https://arxiv.org/abs/2408.14572)
+    - LoRA에 CUR matrix decomposition을 접목한 CURLoRA 제시
+    - → catastrophic forgetting during continual learning 완화 & trainable parameters 감소
+    - 변형된 CUR decomposition: 1) 열과 행 선택에 역확률 (inverted probability) 2) U 행렬 0으로 초기화 3) U 행렬만 fine-tuning
 </details>
