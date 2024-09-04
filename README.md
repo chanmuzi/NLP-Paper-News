@@ -1737,4 +1737,10 @@ Addressing Underspecification in Alignment](https://arxiv.org/abs/2408.06266v3)
     - LoRA에 CUR matrix decomposition을 접목한 CURLoRA 제시
     - → catastrophic forgetting during continual learning 완화 & trainable parameters 감소
     - 변형된 CUR decomposition: 1) 열과 행 선택에 역확률 (inverted probability) 2) U 행렬 0으로 초기화 3) U 행렬만 fine-tuning
+- 📜 [Tsinghua University] [Mini-Omni: Language Models Can Hear, Talk While Thinking in Streaming](https://arxiv.org/abs/2408.16725)
+    - real-time conversation이 가능하려면 audio modality로 입력을 받는 중에 생성을 할 수 있어야 함
+    - audio-based end-to-end conversational model, Mini-Omni (real-time speech를 위한 최초의 오픈소스 모델)
+    - text-instructed speech generation, batch-parallel strategies 사용
+    - speech output을 만들 수 있도록 학습하는 데 사용 가능한 데이터셋 VoiceAssistant-400K
+    - [깃허브 링크](https://github.com/gpt-omni/mini-omni) 🔗
 </details>
