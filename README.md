@@ -1743,4 +1743,20 @@ Addressing Underspecification in Alignment](https://arxiv.org/abs/2408.06266v3)
     - text-instructed speech generation, batch-parallel strategies 사용
     - speech output을 만들 수 있도록 학습하는 데 사용 가능한 데이터셋 VoiceAssistant-400K
     - [깃허브 링크](https://github.com/gpt-omni/mini-omni) 🔗
+- 📜 [Peking University, ByteDance] [MultiMath: Bridging Visual and Mathematical Reasoning for Large Language Models](https://arxiv.org/abs/2409.00147)
+    - 현재 오픈소스 LLM들이 수학적 추론을 할 때 시각적인 정보(geometric diagrmas, charts, function plots)를 활용하지 않고 있음을 지적
+    - → 네 단계로 학습: 1) vison-language alingment 2) visual instruction-tuning 3) math instruction-tuning 4) process-supervised reinforcement learning → MultiMath-7B
+    - K-12 수준의 image caption과 step-wise solution을 포함하는 MultiMath-300K 데이터셋 공개
+    - [깃허브 링크](https://github.com/pengshuai-rin/MultiMath) 🔗
+- 📜 [NVIDIA] [In Defense of RAG in the Era of Long-Context Language Models](https://arxiv.org/abs/2409.01666)
+    - LLM이 더 긴 입력을 처리할 수 있게 되면서 RAG의 매력도 감소
+    - 그러나 극단적으로 길이가 긴 입력을 처리하는 것은 결국 관련성 높은 정보에 집중하는 것을 방해함으로써 성능 저하로 이어짐
+    - → order-preserve retrieval-augmented generation (OP-RAG) 제안
+    - retrieved chunk가 증가할수록 답변 퀄리티는 초반에 상성하다가 결국 감소하여 U-shaped curve ⇒ OP-RAG가 이득을 볼 수 있는 지점이 분명히 존재한다
+- 📜 [AI2, Washington, Princeton] [OLMoE: Open Mixture-of-Experts Language Models](https://arxiv.org/abs/2409.02060)
+    - 7B의 파라미터를 갖고 있지만 input 토큰 당 1B 파라미터만 사용하는 OLMoE-1B-7B 공개
+    - 5T 토큰으로 사전학습한 모델이며 instruct 버전도 함께 공개
+    - Llama2-13B-Chat, DeepSeekMoE-16B 보다도 뛰어난 성능이라고 주장
+    - 모델 가중치, 학습 데이터, 코드, 로그 등을 오픈소스로 공개. 역시 AI2..
+    - [허깅페이스](https://hf.co/allenai/OLMoE-1B-7B-0924), [깃허브](https://github.com/allenai/OLMoE) 링크 🔗
 </details>
