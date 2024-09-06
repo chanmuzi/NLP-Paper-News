@@ -1769,4 +1769,5 @@ Addressing Underspecification in Alignment](https://arxiv.org/abs/2408.06266v3)
     - MMLU-Pro를 바탕으로 LLM의 shortcut learning과 higher-order reasoning을 평가하기 위한 벤치마크 MMLU-Pro+를 제안
     - 복잡한 추론을 하도록 세팅이 되어 있어서 단순한 problem-solving 전략과 다르다고 주장
     - 모델이 실제 추론을 하지 않고 표면적인 패턴을 학습하여 정답을 맞히는 shortcut learning 현상을 최소화하는 것이 본 연구의 목표. shortcut learning의 정도를 평가할 수 있는 메트릭도 제시.
+    - [깃허브 링크](https://github.com/asgsaeid/mmlu-pro-plus) 🔗
 </details>
