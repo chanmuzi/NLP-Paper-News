@@ -1745,7 +1745,7 @@ Addressing Underspecification in Alignment](https://arxiv.org/abs/2408.06266v3)
     - [깃허브 링크](https://github.com/gpt-omni/mini-omni) 🔗
 - 📜 [Peking University, ByteDance] [MultiMath: Bridging Visual and Mathematical Reasoning for Large Language Models](https://arxiv.org/abs/2409.00147)
     - 현재 오픈소스 LLM들이 수학적 추론을 할 때 시각적인 정보(geometric diagrmas, charts, function plots)를 활용하지 않고 있음을 지적
-    - → 네 단계로 학습: 1) vison-language alingment 2) visual instruction-tuning 3) math instruction-tuning 4) process-supervised reinforcement learning → MultiMath-7B
+    - → 네 단계로 학습: 1) vison-language alignment 2) visual instruction-tuning 3) math instruction-tuning 4) process-supervised reinforcement learning → MultiMath-7B
     - K-12 수준의 image caption과 step-wise solution을 포함하는 MultiMath-300K 데이터셋 공개
     - [깃허브 링크](https://github.com/pengshuai-rin/MultiMath) 🔗
 - 📜 [NVIDIA] [In Defense of RAG in the Era of Long-Context Language Models](https://arxiv.org/abs/2409.01666)
@@ -1759,4 +1759,14 @@ Addressing Underspecification in Alignment](https://arxiv.org/abs/2408.06266v3)
     - Llama2-13B-Chat, DeepSeekMoE-16B 보다도 뛰어난 성능이라고 주장
     - 모델 가중치, 학습 데이터, 코드, 로그 등을 오픈소스로 공개. 역시 AI2..
     - [허깅페이스](https://hf.co/allenai/OLMoE-1B-7B-0924), [깃허브](https://github.com/allenai/OLMoE) 링크 🔗
+- 📜 [Tsinghua] [LongCite: Enabling LLMs to Generate Fine-grained Citations in Long-context QA](https://arxiv.org/abs/2409.02897)
+    - long-context LLM이 sentence-level의 fine-grained citation을 포함한 답변을 생성할 수 있도록 하는 연구, Long-Context Question Answering (LCQA)
+    - LCQA를 평가하기 위한 벤치마크 LongBench-Cite 제안
+    - CoF (Coarse to Fine) 파이프라인 제안
+    - LongCite-45k 데이터셋을 사용하여 LongCite-8B, 9B를 학습
+    - [깃허브 링크](https://github.com/THUDM/LongCite) 🔗
+- 📜 [Autodesk AI Research] [MMLU-Pro+: Evaluating Higher-Order Reasoning and Shortcut Learning in LLMs](https://arxiv.org/abs/2409.02257)
+    - MMLU-Pro를 바탕으로 LLM의 shortcut learning과 higher-order reasoning을 평가하기 위한 벤치마크 MMLU-Pro+를 제안
+    - 복잡한 추론을 하도록 세팅이 되어 있어서 단순한 problem-solving 전략과 다르다고 주장
+    - 모델이 실제 추론을 하지 않고 표면적인 패턴을 학습하여 정답을 맞히는 shortcut learning 현상을 최소화하는 것이 본 연구의 목표. shortcut learning의 정도를 평가할 수 있는 메트릭도 제시.
 </details>
