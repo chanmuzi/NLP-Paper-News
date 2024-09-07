@@ -1770,4 +1770,15 @@ Addressing Underspecification in Alignment](https://arxiv.org/abs/2408.06266v3)
     - 복잡한 추론을 하도록 세팅이 되어 있어서 단순한 problem-solving 전략과 다르다고 주장
     - 모델이 실제 추론을 하지 않고 표면적인 패턴을 학습하여 정답을 맞히는 shortcut learning 현상을 최소화하는 것이 본 연구의 목표. shortcut learning의 정도를 평가할 수 있는 메트릭도 제시.
     - [깃허브 링크](https://github.com/asgsaeid/mmlu-pro-plus) 🔗
+- 🧑🏻‍💻 [SSI] [lya Sutskever’s startup, Safe Superintelligence, *raises $1 BILLION*](https://x.com/ssi/status/1831325643226890379)
+    - OpenAI의 전 공동 창업자 Ilya Sutskever가 창업한 스타트업 Superintelligence가 1조원 규모의 투자를 받음
+- 📜 [Tsinghua University] [Attention Heads of Large Language Models: A Survey](https://arxiv.org/abs/2409.03752)
+    - LLM의 internal reasoning process를 개선할 수 있도록 attention head의 interpretability와 underlying mechanism에 집중
+    - 사람의 생각을 네 단계의 프레임워크로 distill: 1) Knowledge Recalling, 2) In-Context Identification, 3) Latent Reasoning, 4) Expression Preparation
+    - [깃허브 링크](https://github.com/IAAR-Shanghai/Awesome-Attention-Heads) 🔗
+- 📜 [HSE University] [Guide-and-Rescale: Self-Guidance Mechanism for Effective Tuning-Free Real Image Editing](https://arxiv.org/abs/2409.01322)
+    - 입력 이미지의 전체적인 구조와 변경되지 않아야 하는 local region을 잘 보존할 수 있도록 하는 sef-guidance technique를 탐구
+    - source 이미지의 local & global 구조를 저장할 수 있도록 하는 layout-preserving energy function을 도입
+    - → fast & high-quality editing mechanism
+    - [깃허브 링크](https://github.com/FusionBrainLab/Guide-and-Rescale) 🔗
 </details>
