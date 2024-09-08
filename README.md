@@ -1781,4 +1781,8 @@ Addressing Underspecification in Alignment](https://arxiv.org/abs/2408.06266v3)
     - source 이미지의 local & global 구조를 저장할 수 있도록 하는 layout-preserving energy function을 도입
     - → fast & high-quality editing mechanism
     - [깃허브 링크](https://github.com/FusionBrainLab/Guide-and-Rescale) 🔗
+- 📜 [Tsinghua University] [Pandora's Box or Aladdin's Lamp: A Comprehensive Analysis Revealing the Role of RAG Noise in Large Language Models](https://arxiv.org/abs/2408.13533)
+    - Noise RAG Benchmark 구축
+    - 언어학적인 관점에서 7개의 노이즈를 정의
+    - → beneficial noise vs harmful noise로 구분
 </details>
