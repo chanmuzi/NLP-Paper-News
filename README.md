@@ -1786,3 +1786,19 @@ Addressing Underspecification in Alignment](https://arxiv.org/abs/2408.06266v3)
     - 언어학적인 관점에서 7개의 노이즈를 정의
     - → beneficial noise vs harmful noise로 구분
 </details>
+
+<details>
+  <summary>2nd week</summary>
+
+- 🧑🏻‍💻 [HuggingFace, IBM] [Improving Hugging Face Training Efficiency Through Packing with Flash Attention](https://huggingface.co/blog/packing-with-FA2)
+    - Flash Attention 2를 사용하여 instruction tuning을 진행할 때, padding 없이 packing 해주는 방법에 대한 허깅페이스 블로그 글
+    - 최대 2배까지 높은 throughput으로 이어진다고 함
+- 📜 [Google DeepMind] [Building Math Agents with Multi-Turn Iterative Preference Learning](https://arxiv.org/abs/2409.02392)
+    - 현재 direct preference learning 알고리즘은 single-turn chat task에 집중하고 있음. 즉, multi-turn 또는 external tool integration에 관심이 없음
+    - → multi-turn direct preference learning framework를 제안: multi-turn DPO & KPO
+- 📜 [University of Toronto, Vector Institute] [Report Cards: Qualitative Evaluation of Language Models Using Natural Language Summaries](https://arxiv.org/abs/2409.00844)
+    - LLM은 conventional quantitative 벤치마크로 그 능력을 평가하기 어려움
+    - → 특정 스킬이나 토픽에 대한 모델의 behavior를 요약한 natrual language summaries, Report Cards를 제안
+    - specificity, faithfulness, interpretability, 세 기준을 근거로 Report Cards를 평가
+    - human supervision 없이 Report Cards를 생성하는 iterative algorithm 제안
+</details>
