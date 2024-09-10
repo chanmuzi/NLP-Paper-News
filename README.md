@@ -1801,4 +1801,19 @@ Addressing Underspecification in Alignment](https://arxiv.org/abs/2408.06266v3)
     - → 특정 스킬이나 토픽에 대한 모델의 behavior를 요약한 natrual language summaries, Report Cards를 제안
     - specificity, faithfulness, interpretability, 세 기준을 근거로 Report Cards를 평가
     - human supervision 없이 Report Cards를 생성하는 iterative algorithm 제안
+- 🧑🏻‍💻 [Replit] [Replit Agent](https://docs.replit.com/replitai/agent)
+    - 자연어 프롬프트로부터 어플리케이션을 만들어 낼 수 있는 AI agent 기능을 공개
+    - cursor의 composer와 유사한 기능으로 보임
+    - long context, code understanding & generation에 많은 기업들이 집중하는 이유
+- 🧑🏻‍💻 [Google] [Illuminate](https://illuminate.google.com/home)
+    - research paper를 short podcast로 변환해주는 툴을 공개
+    - 현재 waitlist에 등록해야 하는 실험적 기능임
+- 📜 [Beijing University] [How Do Your Code LLMs Perform? Empowering Code Instruction Tuning with High-Quality Data](https://arxiv.org/abs/2409.03810)
+    - 어떤 데이터를 진정한 high-quality code instruction data로 볼 수 있을까?
+    - instruction complexity, response quality, instruction diversity 세 개의 기준으로 데이터를 선별
+    - 선별된 데이터로 Llama-3를 학습하여 XCoder 모델을 공개
+- 📜 [Mila, Princeton, Cambridge, Google DeepMind] [Metacognitive Capabilities of LLMs: An Exploration in Mathematical Problem Solving](https://arxiv.org/abs/2405.12205) (5월 논문)
+    - Meta cognitive knowledge: 자신의 thinking & reasoning process에 대한 직관적인 지식
+    - → 본 연구 결과에 따르면 LLM이 meta cognitive knowledge를 지닌 것으로 판단된다고 함
+    - 수학 문제에 합리적인 skill label을 붙일 수 있다는 것이 확인되었음. 그 결과는 사람도 해석 가능.
 </details>
