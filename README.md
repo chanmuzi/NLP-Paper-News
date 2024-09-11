@@ -1816,4 +1816,22 @@ Addressing Underspecification in Alignment](https://arxiv.org/abs/2408.06266v3)
     - Meta cognitive knowledge: 자신의 thinking & reasoning process에 대한 직관적인 지식
     - → 본 연구 결과에 따르면 LLM이 meta cognitive knowledge를 지닌 것으로 판단된다고 함
     - 수학 문제에 합리적인 skill label을 붙일 수 있다는 것이 확인되었음. 그 결과는 사람도 해석 가능.
+- 🧑🏻‍💻 [Huawei]  [Huawei unveils $2,800 tri-fold phone just hours after iPhone 16 launch.](https://x.com/alvinfoo/status/1833427069470183795)
+    - 화웨이에서 3단으로 접히는 스마트폰을 세계 최초로 출시. 약 377만원부터 시작
+- 📜 [University of Toronto] [Seek and Solve Reasoning for Table Question Answering](https://arxiv.org/abs/2409.05286)
+    - Seek-and-Solve 파이프라인: LLM으로 하여금 관련 있는 정보를 먼저 찾고 답변을 생성하도록 지시
+    - reasoning은 two-stage로 구성, CoT paths는 Seek-and-Solve CoT로 통합 (SS-CoT)
+- 📜 [Stanford University] [Can LLMs Generate Novel Research Ideas? A Large-Scale Human Study with 100+ NLP Researchers](https://www.arxiv.org/abs/2409.04109)
+    - 100명의 expert NLP researcher와 LLM ideation agent 를 비교 → blind review
+    - LLM-generated idea가 사람이 만든 것보다 더 novel 하다는 결과 (p<0.05). 단, feasibility는 조금 더 낮은 것으로 확인됨.
+    - 얼마 전 Sakana에서 공개한 AI Scientist도 그렇고.. 확실히 연구도 AI로 하는 시대가 오게 될 듯
+- 📜 [Apple] [Theory, Analysis, and Best Practices for Sigmoid Self-Attention](https://arxiv.org/abs/2409.04431)
+    - 기존 softmax attention과 비교하여, sigmoid attention이 universal function approximator일 뿐만 아니라 regularity를 개선해줄 수 있다는 측면에서 좋다고 주장
+    - H100에서 FlashAttention2 위에서 돌아가는 Flash-Sigmoid 도입 → 추론 속도 17% 향상
+    - 이런 것들은 실제 사용 경험을 많이 접해보고 적용하면 좋을 것 같음
+- 📜 [UIUC, CMU] [Paper Copilot: A Self-Evolving and Efficient LLM System for Personalized Academic Assistance](https://arxiv.org/abs/2409.04593)
+    - 기존 DocQA는 personalized x, 최신 정보 업데이트 용이성 x 라는 점을 한계로 지적
+    - → thought-retrieval을 기반으로 researcher를 돕는 self-evoling, efficient LLM 시스템 제안
+    - 69.92%의 시간을 절약할 수 있다고 주장
+    - [허깅페이스 스페이스 링크](https://huggingface.co/spaces/ulab-ai/ArxivCopilot) 🔗
 </details>
