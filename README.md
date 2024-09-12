@@ -1816,6 +1816,14 @@ Addressing Underspecification in Alignment](https://arxiv.org/abs/2408.06266v3)
     - Meta cognitive knowledge: 자신의 thinking & reasoning process에 대한 직관적인 지식
     - → 본 연구 결과에 따르면 LLM이 meta cognitive knowledge를 지닌 것으로 판단된다고 함
     - 수학 문제에 합리적인 skill label을 붙일 수 있다는 것이 확인되었음. 그 결과는 사람도 해석 가능.
+- 📜 [Oxford] [Detecting hallucinations in large language models using semantic entropy](https://www.nature.com/articles/s41586-024-07421-0) (Nature)
+    - 인간이 정답을 알지 못하는 unseen questions에 대해도 LLM이 working 해야 함
+    - → entropy-based uncertainty estimator를 도입하여 LLM이 hallucinations-confabulations-를 탐지할 수 있도록 함
+    - 데이터셋이나 task에 대한 사전 지식 없이도 적용 가능한 방법론임을 설명
+- 📜 [Singapore University] [Spinning the Golden Thread: Benchmarking Long-Form Generation in Language Models](https://arxiv.org/abs/2409.02076)
+    - long-context language models(LM)을 Needle-in-a-Haystack (NIAH) 로 평가하는 것은 부적절
+    - → 생성된 long text sequences 내의 특정 사건들을 식별할 수 있는 능력을 평가하는 Spinning the Golden Thread (SGT) 제안
+    - LM이 특정 사건과 constraint를 포함하여 long-form text를 생성하도록 지시
 - 🧑🏻‍💻 [Huawei]  [Huawei unveils $2,800 tri-fold phone just hours after iPhone 16 launch.](https://x.com/alvinfoo/status/1833427069470183795)
     - 화웨이에서 3단으로 접히는 스마트폰을 세계 최초로 출시. 약 377만원부터 시작
 - 📜 [University of Toronto] [Seek and Solve Reasoning for Table Question Answering](https://arxiv.org/abs/2409.05286)
