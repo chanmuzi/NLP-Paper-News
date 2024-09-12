@@ -1842,4 +1842,16 @@ Addressing Underspecification in Alignment](https://arxiv.org/abs/2408.06266v3)
     - → thought-retrieval을 기반으로 researcher를 돕는 self-evoling, efficient LLM 시스템 제안
     - 69.92%의 시간을 절약할 수 있다고 주장
     - [허깅페이스 스페이스 링크](https://huggingface.co/spaces/ulab-ai/ArxivCopilot) 🔗
+- 🧑🏻‍💻 [Mistral] pixtral-12b-240910
+    - text-based Nemo 12B에 400M vision adapter를 합친 모델
+    - 1024 x 1024 이미지까지 처리 가능하며 16 x 16 단위로 쪼갠다고 알려짐
+    - 131,072개의 unique tokens
+    - 업데이트 되지 않는 모델 체크포인트를 허깅페이스에 공개
+    - [허깅페이스 링크](https://huggingface.co/mistral-community/pixtral-12b-240910) 🔗
+- 🧑🏻‍💻 [SambaNova] [SambaNova Launches The World's Fastest AI Platform](https://sambanova.ai/press/worlds-fastest-ai-platform)
+    - Llama 3.1 405B 모델이 full precision으로 초당 132 토큰 출력 가능 / 70B는 570토큰
+    - 오픈소스는 아니고 fine-tuning과 inference 솔루션을 판매하는 기업의 제품으로 보임
+- 📜 [United We Care] [LLMs Will Always Hallucinate, and We Need to Live With This](https://arxiv.org/abs/2409.05746)
+    - hallucination이 LLM의 수학적, 논리적 구조로부터 필연적으로 발생함을 입증
+    - → 따라서 아키텍쳐 개선, 데이터셋 증가, fact-checking 등으로 hallucination을 제거한다는 것은 불가능하다고 주장
 </details>
