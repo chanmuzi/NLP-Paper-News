@@ -1854,4 +1854,27 @@ Addressing Underspecification in Alignment](https://arxiv.org/abs/2408.06266v3)
 - 📜 [United We Care] [LLMs Will Always Hallucinate, and We Need to Live With This](https://arxiv.org/abs/2409.05746)
     - hallucination이 LLM의 수학적, 논리적 구조로부터 필연적으로 발생함을 입증
     - → 따라서 아키텍쳐 개선, 데이터셋 증가, fact-checking 등으로 hallucination을 제거한다는 것은 불가능하다고 주장
+- 📜 [KAIST] [Think Together and Work Better: Combining Humans' and LLMs' Think-Aloud Outcomes for Effective Text Evaluation](https://arxiv.org/abs/2409.07355)
+    - Think-Aloud (TA) 방법을 사용해서 checklist 기반의 텍스트 평가를 생성하도록 하는 human expertise & LLM 통합 프레임워크, InteractEval 제안
+    - 사람은 Coherence & Fluency와 같은 internal quality와 관련된 작업에 능하고, LLM은 Consistency & Relavance와 같은 external alignment에 능하다는 분석 결과
+    - [깃허브 링크](https://github.com/BBeeChu/InteractEval.git) 🔗
+- 🧑🏻‍💻 [Intel, DeepLearning.AI] [Multimodal RAG: Chat with Videos](https://www.deeplearning.ai/short-courses/multimodal-rag-chat-with-videos/)
+    - short course에 Multimodal RAG와 관련된 강의를 인텔에서 제작
+- 🧑🏻‍💻 [Google] [DataGemma: Using real-world data to address AI hallucinations](https://blog.google/technology/ai/google-datagemma-ai-llm/)
+    - Data Commons로부터의 real-world 통계 데이터를 통합함으로써 hallucination을 줄인 DataGemma를 공개
+    - RIG(Retrieval-Interleaved Generation) & RAG 사용
+- 📜 [Tsinghua] [General OCR Theory: Towards OCR-2.0 via a Unified End-to-end Model](https://arxiv.org/abs/2409.01704)
+    - 580M 사이즈의 OCR-2.0 방식의 General OCR Theory (GOT) 모델을 공개
+    - scene, document, whole-page 스타일 등 다양한 이미지 양식을 커버할 수 있고 “글자” 단위로 처리하는 OCR tasks도 다룰 수 있음
+    - 좌표나 색상 등으로 설명되는 region-level recognition도 가능
+- 🧑🏻‍💻 [FutureHouse] [PaperQA2](https://github.com/Future-House/paper-qa)
+    - PDF 또는 텍스트 파일 대상으로 RAG를 수행하여 논문을 쉽게 읽을 수 있도록 도와주는 패키지
+    - QA, 요약, contradiction detection 등 가능
+    - `pip install paper-qa`
+    - [논문 링크](https://storage.googleapis.com/fh-public/paperqa/Language_Agents_Science.pdf) 🔗
+- 🧑🏻‍💻 [OpenAI] [Introducing OpenAI o1-preview](https://openai.com/index/introducing-openai-o1-preview/)
+    - 더 오래 생각하고 복잡한 문제를 해결하는 새로운 AI 모델 시리즈 'OpenAI o1' 출시
+    - 과학, 코딩, 수학 분야에서 뛰어난 성능 보임 (예: IMO 예선 83% 정답률, Codeforces 89번째 백분위)
+    - o1-preview와 o1-mini 두 모델 제공, ChatGPT Plus/Team 사용자와 일부 API 개발자들에게 접근 권한 부여
+    - 향상된 안전 기능 적용 (jailbreaking 테스트에서 GPT-4o 대비 큰 성능 향상)
 </details>
