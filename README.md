@@ -1877,4 +1877,13 @@ Addressing Underspecification in Alignment](https://arxiv.org/abs/2408.06266v3)
     - 과학, 코딩, 수학 분야에서 뛰어난 성능 보임 (예: IMO 예선 83% 정답률, Codeforces 89번째 백분위)
     - o1-preview와 o1-mini 두 모델 제공, ChatGPT Plus/Team 사용자와 일부 API 개발자들에게 접근 권한 부여
     - 향상된 안전 기능 적용 (jailbreaking 테스트에서 GPT-4o 대비 큰 성능 향상)
+- 📜 [University of Mannheim] [Fine-tuning Large Language Models for Entity Matching](https://arxiv.org/abs/2409.08185)
+    - 기존: entity matching을 주로 prompt engineering & in-context learning 으로 해결
+    - → LLM fine-tuning: 1) LLM이 생성한 학습용 설명 데이터셋 2) LLM을 이용한 학습 데이터 선별
+    - sLLM (Llama 3.1 8B) > LLM (GPT-4o Mini), in-domain > cross-domain, structured data 효과적
+- 📜 [Meta, Oxford, UCL] [Source2Synth: Synthetic Data Generation and Curation Grounded in Real Data Sources](https://arxiv.org/abs/2409.08239)
+    - human annotation 없이 LLM에게 새로운 스킬을 가르쳐주는 방법, Source2Synth 제안
+    - custom data source 입력 → real-wrold source에 근거한 intermediate reasoning step을 포함하여 합성 데이터를 생성
+    - answerability에 따라 low-quality generation를 버릴 수 있어 데이터셋 퀄리티가 개선됨
+    - multi-hop question answering (MHQA), tool usage in tabular question answering (TQA) 에 효과적
 </details>
