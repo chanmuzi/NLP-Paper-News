@@ -1886,4 +1886,8 @@ Addressing Underspecification in Alignment](https://arxiv.org/abs/2408.06266v3)
     - custom data source 입력 → real-wrold source에 근거한 intermediate reasoning step을 포함하여 합성 데이터를 생성
     - answerability에 따라 low-quality generation를 버릴 수 있어 데이터셋 퀄리티가 개선됨
     - multi-hop question answering (MHQA), tool usage in tabular question answering (TQA) 에 효과적
+- 📜 [Alibaba] [mPLUG-DocOwl2: High-resolution Compressing for OCR-free Multi-page Document Understanding](https://arxiv.org/abs/2409.03420)
+    - OCR-free Document Understanding을 지원하는 현 MLLMs는 한 개 문서 이미지에 대해 너무 많은 visual tokens를 생성해야 해서 과도한 GPU 사용과 추론 속도 저하라는 문제점이 존재
+    - → low-resolution global visual feature를 근거로 high-resolution document 이미지를 324개 토큰으로 압축하는 모듈, High-resolution DocCompressor 제안
+    - Three-stage training framework: 1) Single-image Pretraining 2) Multi-image Continue-pretraining 3) Multi-task Finetuning
 </details>
