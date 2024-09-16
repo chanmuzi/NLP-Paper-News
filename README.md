@@ -1892,3 +1892,9 @@ Addressing Underspecification in Alignment](https://arxiv.org/abs/2408.06266v3)
     - → low-resolution global visual feature를 근거로 high-resolution document 이미지를 324개 토큰으로 압축하는 모듈, High-resolution DocCompressor 제안
     - Three-stage training framework: 1) Single-image Pretraining 2) Multi-image Continue-pretraining 3) Multi-task Finetuning
 </details>
+
+<details>
+  <summary>3rd week</summary>
+
+
+</details>
