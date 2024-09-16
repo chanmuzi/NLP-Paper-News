@@ -1896,5 +1896,13 @@ Addressing Underspecification in Alignment](https://arxiv.org/abs/2408.06266v3)
 <details>
   <summary>3rd week</summary>
 
+- 🧑🏻‍💻 [Stability.AI] [Stable Diffusion 3 Medium Fine-tuning Tutorial](https://www.notion.so/17f90df74bce4c62a295849f0dc8fb7e?pvs=21)
+    - SD3M 모델의 파인튜닝 튜토리얼을 공개
+    - 기존 SD1.5, SDXL 모델과 SD3M 파인튜닝의 차이점 설명
+- 📜 [CMU, MIT] [Agent Workflow Memory](https://arxiv.org/abs/2409.07429)
+    - 현재 방법론들은 복잡한 action trajectories를 갖는 long-horizon task를 잘 처리하지 못함
+    - Agent Workflow Memory (AWM): 자주 반복되는 routine을 induce 하는 방법론으로, agent에게 workflow를 선택적으로 제공
+    - offline & online 시나리오 둘 다 적용 가능, Mind2Web & WebArena 벤치마크로 실험
+    - [깃허브 링크](https://github.com/zorazrw/agent-workflow-memory) 🔗
 
 </details>
