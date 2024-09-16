@@ -1904,5 +1904,8 @@ Addressing Underspecification in Alignment](https://arxiv.org/abs/2408.06266v3)
     - Agent Workflow Memory (AWM): 자주 반복되는 routine을 induce 하는 방법론으로, agent에게 workflow를 선택적으로 제공
     - offline & online 시나리오 둘 다 적용 가능, Mind2Web & WebArena 벤치마크로 실험
     - [깃허브 링크](https://github.com/zorazrw/agent-workflow-memory) 🔗
-
+- 📜 [KAIST] [Stable Language Model Pre-training by Reducing Embedding Variability](https://arxiv.org/abs/2409.07787)
+    - Token Embedding Variability (TEV) 를 사전 학습 동안의 모델 안정성을 평가하는 proxy로 사용
+    - Multi-head Low-Rank Attention (MLRA), output embedding의 exponential growth를 제안함으로써 instability를 완화
+    - 연구실에서는 아직도 GPT-2, Llama-2 등을 사용할 수밖에 없는 실정..
 </details>
