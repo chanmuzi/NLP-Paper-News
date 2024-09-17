@@ -1908,4 +1908,12 @@ Addressing Underspecification in Alignment](https://arxiv.org/abs/2408.06266v3)
     - Token Embedding Variability (TEV) 를 사전 학습 동안의 모델 안정성을 평가하는 proxy로 사용
     - Multi-head Low-Rank Attention (MLRA), output embedding의 exponential growth를 제안함으로써 instability를 완화
     - 연구실에서는 아직도 GPT-2, Llama-2 등을 사용할 수밖에 없는 실정..
+- 📜 [Peking, Microsoft] [CPL: Critical Planning Step Learning Boosts LLM Generalization in Reasoning Tasks](https://arxiv.org/abs/2409.08642)
+    - 현재 언어 모델들은 task-specific reasoning에만 집중하고 generalization capabilities에는 관심이 없음
+    - → Monte Carlo Tree Search (MCTS)를 이용하여 multi-step reasoning tasks 내의 다양한 planning step을 탐색하는 Critical Planning Step Learning (CPL) 제안
+    - Step-APO (Step-level Adavantage Preference Optimization): MCTS를 통해 획득 가능한 step-level 선호쌍을 DPO와 통합
+- 📜 [Wisconsin-Madison] [Your Weak LLM is Secretly a Strong Teacher for Alignment](https://arxiv.org/abs/2409.08813)
+    - 현존 alignment framework는 human effort 또는 높은 computational cost를 필요로 함
+    - → weak LLM을 이용해서 human feedback만 사용할 때에 준하는, 혹은 그 이상의 효율을 뽑아내고자 함
+    - 본 연구에서는 OPT-125M 모델을 사용 → 굉장히 작은 사이즈의 모델로도 좋은 결과를 얻었다고 볼 수 있음
 </details>
