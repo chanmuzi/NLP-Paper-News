@@ -1924,4 +1924,8 @@ Addressing Underspecification in Alignment](https://arxiv.org/abs/2408.06266v3)
     - 이런 통합 시스템을 구현하겠다고 작년부터 구글과 경쟁하고 있는 것 같은데 실효성은 아직 잘 모르겠음
 - 🧑🏻‍💻 [Waymo] [Waymo’s Self-driving cars beat humans in safety](https://link.mail.beehiiv.com/ss/c/u001.22XVe7hOOQo4HoFgEcBa71etRz_zVbDtBQ3xhBSmS3-n3f-hnoXyvvOxUSLr6qeJjN2gRzsBXkF6QrPYsjDpmxZwZNAKYsVbeUOzsTe6a_ioIFmsIrSF-HGC5aYKMdFl60qp-lMR26Rog3HlP7SWkyVB7rS969GLVp_nHwbyxhVj49y4OmafUcEihqsRFHAfHOiNhhQf-x74RW5v2pZrVumPsWdi3iQ1YD0HoorhANkbGv8gZPD2HcT6bYgL27bo7FOqPcrK3Gu_O7mJwUdrtsAszFpNLNaSiT12CgLdjcM/49u/CsYMakzZSD6FfomXvnqCHg/h24/h001.wdQJP84KSzOLsjJU3kuEDFJFbyKEvKR3ubNxu0y-MT0)
     - 웨이모피셜) AI가 자율주행한 것이 사람보다 사고율이 낮았다. 사고 원인도 AI 시스템보다 외부에 많았다고 X에 공개
+- 🧑🏻‍💻 [Google] [NotebookLM now lets you listen to a conversation about your sources](https://blog.google/technology/ai/notebooklm-audio-overviews/)
+    - 두 명의 AI 호스트가 주제에 대해 이야기를 나누는 형식으로 만들어주는 서비스
+    - 구글 [Illuminate](https://illuminate.google.com/home)에 이것이 사용된 것으로 보이고 Gemini 1.5의 멀티모달 능력을 이용
+    - [NotebookLM 링크](http://notebooklm.google/) 🔗
 </details>
