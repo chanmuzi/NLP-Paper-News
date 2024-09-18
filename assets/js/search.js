@@ -14,27 +14,12 @@
     }
   }
 
-  function getQueryVariable(variable) {
-    var query = window.location.search.substring(1);
-    var vars = query.split('&');
+  var idx;
+  var store = {};
 
-    for (var i = 0; i < vars.length; i++) {
-      var pair = vars[i].split('=');
-
-      if (pair[0] === variable) {
-        return decodeURIComponent(pair[1].replace(/\+/g, '%20'));
-      }
-    }
-  }
-
-  var searchTerm = getQueryVariable('query');
-
-  if (searchTerm) {
-    document.getElementById('search-box').setAttribute("value", searchTerm);
-
-    // Initalize lunr with the fields it will be searching on. I've given title
-    // a boost of 10 to indicate matches on this field are more important.
-    var idx = lunr(function () {
+  // 검색 인덱스 초기화
+  function initIndex() {
+    idx = lunr(function () {
       this.field('id');
       this.field('title', { boost: 10 });
       this.field('author');
@@ -42,17 +27,44 @@
       this.field('content');
     });
 
-    for (var key in window.store) { // Add the data to lunr
-      idx.add({
-        'id': key,
-        'title': window.store[key].title,
-        'author': window.store[key].author,
-        'category': window.store[key].category,
-        'content': window.store[key].content
-      });
+    // 검색 데이터 로드
+    var request = new XMLHttpRequest();
+    request.open('GET', '/NLP-Paper-News/search.json', true);
+    request.onload = function() {
+      if (request.status >= 200 && request.status < 400) {
+        var data = JSON.parse(request.responseText);
+        for (var i = 0; i < data.length; i++) {
+          var item = data[i];
+          idx.add(item);
+          store[item.id] = item;
+        }
+      }
+    };
+    request.send();
+  }
 
-      var results = idx.search(searchTerm); // Get lunr to perform a search
-      displaySearchResults(results, window.store); // We'll write this in the next section
+  // 검색 수행
+  function performSearch(searchTerm) {
+    var results = idx.search(searchTerm);
+    displaySearchResults(results, store);
+  }
+
+  // 이벤트 리스너 설정
+  function setupEventListeners() {
+    var searchInput = document.getElementById('search-input');
+    if (searchInput) {
+      searchInput.addEventListener('input', function() {
+        var searchTerm = this.value;
+        if (searchTerm) {
+          performSearch(searchTerm);
+        } else {
+          document.getElementById('search-results').innerHTML = '';
+        }
+      });
     }
   }
+
+  // 초기화
+  initIndex();
+  setupEventListeners();
 })();
