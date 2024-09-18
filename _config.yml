@@ -4,3 +4,4 @@ description: NLP, LLM
 markdown: kramdown
 kramdown:
   input: GFM
+baseurl: "/NLP-Paper-News"
