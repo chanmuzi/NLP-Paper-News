@@ -1916,4 +1916,12 @@ Addressing Underspecification in Alignment](https://arxiv.org/abs/2408.06266v3)
     - 현존 alignment framework는 human effort 또는 높은 computational cost를 필요로 함
     - → weak LLM을 이용해서 human feedback만 사용할 때에 준하는, 혹은 그 이상의 효율을 뽑아내고자 함
     - 본 연구에서는 OPT-125M 모델을 사용 → 굉장히 작은 사이즈의 모델로도 좋은 결과를 얻었다고 볼 수 있음
+- 📜 [Chinese Academy of Sciecnes] [StruEdit: Structured Outputs Enable the Fast and Accurate Knowledge Editing for Large Language Models](https://arxiv.org/abs/2409.10132)
+    - 최신 정보를 모델에 주입하는 것은 굉장히 어려운 태스크여서 아직 잘 풀리지 않음. 그 원인 중 하나로 unstructured natural language outputs를 들고 있음
+    - → StruEdit 제안: reasoning triplet으로 structured output을 반환하도록 프롬프팅 → outdated knowledge를 제거하고 효율적으로 up-to-date 정보로 채워 넣음
+- 🧑🏻‍💻 [Microsoft] [Microsoft 365 Copilot Wave 2: Pages, Python in Excel, and agents](https://www.microsoft.com/en-us/microsoft-365/blog/2024/09/16/microsoft-365-copilot-wave-2-pages-python-in-excel-and-agents/)
+    - Copilot 페이지 내에서 프롬프트 기반으로 검색 & 결과 정리한 것을 다른 사람들과 쉽게 공유할 수 있음
+    - 이런 통합 시스템을 구현하겠다고 작년부터 구글과 경쟁하고 있는 것 같은데 실효성은 아직 잘 모르겠음
+- 🧑🏻‍💻 [Waymo] [Waymo’s Self-driving cars beat humans in safety](https://link.mail.beehiiv.com/ss/c/u001.22XVe7hOOQo4HoFgEcBa71etRz_zVbDtBQ3xhBSmS3-n3f-hnoXyvvOxUSLr6qeJjN2gRzsBXkF6QrPYsjDpmxZwZNAKYsVbeUOzsTe6a_ioIFmsIrSF-HGC5aYKMdFl60qp-lMR26Rog3HlP7SWkyVB7rS969GLVp_nHwbyxhVj49y4OmafUcEihqsRFHAfHOiNhhQf-x74RW5v2pZrVumPsWdi3iQ1YD0HoorhANkbGv8gZPD2HcT6bYgL27bo7FOqPcrK3Gu_O7mJwUdrtsAszFpNLNaSiT12CgLdjcM/49u/CsYMakzZSD6FfomXvnqCHg/h24/h001.wdQJP84KSzOLsjJU3kuEDFJFbyKEvKR3ubNxu0y-MT0)
+    - 웨이모피셜) AI가 자율주행한 것이 사람보다 사고율이 낮았다. 사고 원인도 AI 시스템보다 외부에 많았다고 X에 공개
 </details>
