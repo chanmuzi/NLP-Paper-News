@@ -9,9 +9,13 @@
 </head>
 <body>
     <div id="app">
-        <input type="text" id="search" placeholder="검색어를 입력하세요">
+        <div id="search-container">
+            <input type="text" id="search" placeholder="검색어를 입력하세요 (Ctrl+F로 포커스)">
+            <div id="search-result-count"></div>
+        </div>
         <div id="content"></div>
     </div>
+    <div id="scroll-to-top">↑</div>
     <script src="script.js"></script>
 </body>
 </html>

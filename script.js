@@ -1,9 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
     const contentDiv = document.getElementById('content');
     const searchInput = document.getElementById('search');
-    const searchResultCount = document.createElement('div');
-    searchResultCount.id = 'search-result-count';
-    document.getElementById('app').insertBefore(searchResultCount, contentDiv);
+    const searchResultCount = document.getElementById('search-result-count');
+    const scrollToTopButton = document.getElementById('scroll-to-top');
 
     // README.md 파일 불러오기
     fetch('README.md')
@@ -17,38 +16,45 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
     function initSearch() {
-        searchInput.addEventListener('input', () => {
-            const searchTerm = searchInput.value.toLowerCase();
-            const elements = contentDiv.getElementsByTagName('*');
-            let matchCount = 0;
+        searchInput.addEventListener('input', performSearch);
+    }
 
-            for (let element of elements) {
-                if (element.childNodes.length === 1 && element.childNodes[0].nodeType === 3) {
-                    const text = element.textContent.toLowerCase();
-                    if (text.includes(searchTerm)) {
-                        highlightText(element, searchTerm);
-                        element.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                        matchCount++;
-                    } else {
-                        element.innerHTML = element.textContent; // 하이라이트 제거
-                    }
-                }
-            }
+    function performSearch() {
+        const searchTerm = searchInput.value.toLowerCase();
+        const elements = contentDiv.getElementsByTagName('*');
+        let matchCount = 0;
 
-            // 토글 내부 검색
-            const details = contentDiv.getElementsByTagName('details');
-            for (let detail of details) {
-                const detailText = detail.textContent.toLowerCase();
-                if (detailText.includes(searchTerm)) {
-                    detail.open = true;
+        for (let element of elements) {
+            if (element.childNodes.length === 1 && element.childNodes[0].nodeType === 3) {
+                const text = element.textContent.toLowerCase();
+                if (text.includes(searchTerm)) {
+                    highlightText(element, searchTerm);
                     matchCount++;
                 } else {
-                    detail.open = false;
+                    element.innerHTML = element.textContent; // 하이라이트 제거
                 }
             }
+        }
 
-            searchResultCount.textContent = `검색 결과: ${matchCount}개`;
-        });
+        // 토글 내부 검색
+        const details = contentDiv.getElementsByTagName('details');
+        for (let detail of details) {
+            const detailText = detail.textContent.toLowerCase();
+            if (detailText.includes(searchTerm)) {
+                detail.open = true;
+                matchCount++;
+            } else {
+                detail.open = false;
+            }
+        }
+
+        searchResultCount.textContent = searchTerm ? `검색 결과: ${matchCount}개` : '';
+
+        // 첫 번째 결과로 스크롤
+        const firstResult = document.querySelector('.highlight');
+        if (firstResult) {
+            firstResult.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
     }
 
     function highlightText(element, searchTerm) {
@@ -62,4 +68,26 @@ document.addEventListener('DOMContentLoaded', () => {
                                 innerHTML.substring(index + searchTerm.length);
         }
     }
+
+    // Ctrl+F 단축키로 검색창 포커스
+    document.addEventListener('keydown', (e) => {
+        if (e.ctrlKey && e.key === 'f') {
+            e.preventDefault();
+            searchInput.focus();
+        }
+    });
+
+    // 스크롤 이벤트 리스너 추가
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 100) {
+            scrollToTopButton.style.display = 'block';
+        } else {
+            scrollToTopButton.style.display = 'none';
+        }
+    });
+
+    // 맨 위로 스크롤 버튼 클릭 이벤트
+    scrollToTopButton.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
 });

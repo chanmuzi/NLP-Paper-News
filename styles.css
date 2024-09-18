@@ -7,11 +7,23 @@ body {
     padding: 20px;
 }
 
+#search-container {
+    position: sticky;
+    top: 0;
+    background-color: white;
+    padding: 10px 0;
+    z-index: 100;
+}
+
 #search {
     width: 100%;
     padding: 10px;
-    margin-bottom: 20px;
     font-size: 16px;
+}
+
+#search-result-count {
+    margin-top: 5px;
+    font-weight: bold;
 }
 
 details summary {
@@ -23,7 +35,17 @@ details summary {
     font-weight: bold;
 }
 
-#search-result-count {
-    margin-bottom: 10px;
-    font-weight: bold;
+#scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #0366d6;
+    color: white;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
 }
