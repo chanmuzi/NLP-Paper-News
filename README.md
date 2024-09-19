@@ -1928,4 +1928,17 @@ Addressing Underspecification in Alignment](https://arxiv.org/abs/2408.06266v3)
     - 두 명의 AI 호스트가 주제에 대해 이야기를 나누는 형식으로 만들어주는 서비스
     - 구글 [Illuminate](https://illuminate.google.com/home)에 이것이 사용된 것으로 보이고 Gemini 1.5의 멀티모달 능력을 이용
     - [NotebookLM 링크](http://notebooklm.google/) 🔗
+- 📜 [Huawei] [Large Language Models are Good Multi-lingual Learners : When LLMs Meet Cross-lingual Prompts](https://arxiv.org/abs/2409.11056)
+    - long & complex contexts를 잘 이해할 수 있도록 Multi-Lingual Prompt, MLPrompt 제안
+    - LLM이 다른 언어로는 따르기 어려워하는 error-prone rule을 자동으로 번역
+    - structured data 생성에 대한 auto-checking 메커니즘을 포함하는 프레임워크를 공개
+        - 이 부분은 확인할 필요가 있을 듯
+- 🧑🏻‍💻 [Mistral AI] [AI in abundance](https://mistral.ai/news/september-24-release/)
+    - 실험과 프로토타입을 위한 무료 티어를 제공
+    - Mistral AI 모델들의 비용을 크게 줄임: Nemo 50%, Small & Codestral 80%, Large 33, …
+    - le Chat에서 사용 가능한 Pixtral 12B 모델을 Apache 2.0 라이센스로 공개
+- 🧑🏻‍💻 [Qwen] [Qwen2.5: A Party of Foundation Models!](https://qwenlm.github.io/blog/qwen2.5/)
+    - Qwen2를 업데이트하여 Qwen2.5, -Coder, -Math를 공개. 사이즈가 굉장히 다양함.
+    - 3B & 72B 를 제외한 모델들은 Apache 2.0 라이센스
+    - 18T 토큰으로 학습하여 coding, mathematics, instruction following, long texts 등 다양한 영역에서 강점을 보임 → 128K 윈도우 사이즈 지원, 8K 토큰까지 생성 가능, 29개 언어 지원
 </details>
