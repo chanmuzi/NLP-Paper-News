@@ -1948,4 +1948,7 @@ Addressing Underspecification in Alignment](https://arxiv.org/abs/2408.06266v3)
     - (2) quantization 방법, 모델 사이즈, bit-width 등에 따라 결과가 천차만별
     - (3) task 난이도가 accuracy degradation에 그렇게 큰 영향을 주지는 않음
     - (4) MT-Bench 평가 방식은 뛰어난 최근 LLM들의 독보적인 능력이 발휘되기에 적합하지는 않음
+- 🧑🏻‍💻 [HuggingFace] [Fine-tuning LLMs to 1.58bit: extreme quantization made easy](https://huggingface.co/blog/1_58_llm_extreme_quantization)
+    - Microsoft Research에서 제안한 [BitNet](https://arxiv.org/abs/2402.17764) 구현체에 대한 설명
+    - 허깅페이스에서 1.58b 로 학습하고 추론하는 방법에 대한 블로그 글을 게시
 </details>
