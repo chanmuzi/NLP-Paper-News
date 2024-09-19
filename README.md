@@ -1941,4 +1941,11 @@ Addressing Underspecification in Alignment](https://arxiv.org/abs/2408.06266v3)
     - Qwen2를 업데이트하여 Qwen2.5, -Coder, -Math를 공개. 사이즈가 굉장히 다양함.
     - 3B & 72B 를 제외한 모델들은 Apache 2.0 라이센스
     - 18T 토큰으로 학습하여 coding, mathematics, instruction following, long texts 등 다양한 영역에서 강점을 보임 → 128K 윈도우 사이즈 지원, 8K 토큰까지 생성 가능, 29개 언어 지원
+- 📜 [ETRI] [A Comprehensive Evaluation of Quantized Instruction-Tuned Large Language Models: An Experimental Analysis up to 405B](https://arxiv.org/abs/2409.11055)
+    - 기존 quantized LLM 평가는 perplexity와 같은 메트릭 또는 구식 데이터셋으로 평가가 이뤄짐
+    - → GPTQ, AWQ, SmoothQuant, FP8 등 다양한 방식, 7B ~ 405B 사이즈 모델. 13개 벤치마크에서 평가
+    - (1) FP 16 LLM은 hallucination detection & instruction following 제외하고 괜찮
+    - (2) quantization 방법, 모델 사이즈, bit-width 등에 따라 결과가 천차만별
+    - (3) task 난이도가 accuracy degradation에 그렇게 큰 영향을 주지는 않음
+    - (4) MT-Bench 평가 방식은 뛰어난 최근 LLM들의 독보적인 능력이 발휘되기에 적합하지는 않음
 </details>
