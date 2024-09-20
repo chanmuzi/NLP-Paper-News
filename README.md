@@ -1966,4 +1966,8 @@ Addressing Underspecification in Alignment](https://arxiv.org/abs/2408.06266v3)
 - 📜 [Texas at San Antonio] [Improving LLM Reasoning with Multi-Agent Tree-of-Thought Validator Agent](https://arxiv.org/abs/2409.11527)
     - 기존 multi-agent reasoning은 추론 경로를 얕게 탐색한다는 문제, ToT는 여전히 잘못된 path가 최종 결론으로 이어질 수 있다는 문제점을 포함하고 있음
     - Thought Validator agent를 동반한 ToT 기반의 Reasoner agent를 제시
+- 📜 [Qwen] Qwen2.5-Coder Technical Report
+    - CodeQwen1.5의 후속작 Qwen2.5-Coder-1.5B, 7B의 테크니컬 리포트
+    - 데이터 정제, 합성 데이터 생성, 데이터 혼합 등. 5.5T 토큰으로 학습. 큰 사이즈 모델보다도 뛰어난 성능을 보고.
+    - [허깅 페이스](https://hf.co/Qwen/Qwen2.5-Coder-7B-Instruct), [깃허브](https://github.com/QwenLM/Qwen2.5-Coder) 링크 🔗
 </details>
