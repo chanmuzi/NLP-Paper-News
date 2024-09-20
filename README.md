@@ -1951,4 +1951,19 @@ Addressing Underspecification in Alignment](https://arxiv.org/abs/2408.06266v3)
 - 🧑🏻‍💻 [HuggingFace] [Fine-tuning LLMs to 1.58bit: extreme quantization made easy](https://huggingface.co/blog/1_58_llm_extreme_quantization)
     - Microsoft Research에서 제안한 [BitNet](https://arxiv.org/abs/2402.17764) 구현체에 대한 설명
     - 허깅페이스에서 1.58b 로 학습하고 추론하는 방법에 대한 블로그 글을 게시
+- 🗞️ [Snap] [Introducing New Spectacles and Snap OS: The Next Frontier of AR Glasses](https://newsroom.snap.com/sps-2024-spectacles-snapos)
+    - Snap에서 5세대 spectacle을 공개. Sanp OS로 동작하는 AR glasses임
+    - OpenAI와의 파트너십을 발표하여 화제
+- 📜 [ETH] [Breaking reCAPTCHAv2](https://arxiv.org/abs/2409.08831)
+    - 구글의 reCAPTCHAv2 시스템을 머신러닝으로 풀기 위한 연구
+    - YOLO 모델을 사용하여 100% 확률로 통과할 수 있었으며, 통과에 필요한 문제 수가 사람과 다르지 않다는 결론
+    - [깃허브 링크](https://github.com/aplesner/Breaking-reCAPTCHAv2) 🔗
+- 📜 [Texas at Austin, Johns Hopkins, Princeton] [To CoT or not to CoT? Chain-of-thought helps mainly on math and symbolic reasoning](https://arxiv.org/abs/2409.12183)
+    - 100개 논문에 대한 메타 데이터 분석, 14개 모델로 20개 데이터셋을 평가
+    - → CoT는 math, logic 과 같이 논리적인 태스크에서는 효과적이지만 그 외에는 그닥 영향이 없음
+    - MMLU에서 질문이나 모델의 답변에 ‘=’ 기호를 포함하는 태스크를 제외하고서는 CoT를 쓰나 안쓰나 비슷
+    - 따라서 CoT는 상황에 맞게 선별적으로 사용하는 것이 좋을 것 같다는 결론
+- 📜 [Texas at San Antonio] [Improving LLM Reasoning with Multi-Agent Tree-of-Thought Validator Agent](https://arxiv.org/abs/2409.11527)
+    - 기존 multi-agent reasoning은 추론 경로를 얕게 탐색한다는 문제, ToT는 여전히 잘못된 path가 최종 결론으로 이어질 수 있다는 문제점을 포함하고 있음
+    - Thought Validator agent를 동반한 ToT 기반의 Reasoner agent를 제시
 </details>
