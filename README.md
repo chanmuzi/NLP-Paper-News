@@ -1970,4 +1970,14 @@ Addressing Underspecification in Alignment](https://arxiv.org/abs/2408.06266v3)
     - CodeQwen1.5의 후속작 Qwen2.5-Coder-1.5B, 7B의 테크니컬 리포트
     - 데이터 정제, 합성 데이터 생성, 데이터 혼합 등. 5.5T 토큰으로 학습. 큰 사이즈 모델보다도 뛰어난 성능을 보고.
     - [허깅 페이스](https://hf.co/Qwen/Qwen2.5-Coder-7B-Instruct), [깃허브](https://github.com/QwenLM/Qwen2.5-Coder) 링크 🔗
+- 🧑🏻‍💻 [GitHub] [Try out OpenAI o1 in GitHub Copilot and Models](https://github.blog/news-insights/product-news/try-out-openai-o1-in-github-copilot-and-models/)
+    - OpenAI의 o1-preview & o1-mini를 GitHub Copilot 으로 사용 가능. [wait list](https://github.com/o1-waitlist-signup)에 등록해야 함.
+    - Copilot Chat 중간에 o1-preview, o1-mini, GPT-4o 모델 간 변경 가능
+- 🧑🏻‍💻 [Open-source FinePersonas datasets dropped in Huggingface with 21 million rows and 142GB size](https://huggingface.co/datasets/argilla/FinePersonas-v0.1)
+    - 21M개의 페르소나 데이터. 특정 페르소나에 대한 설명이 어떻게 라벨링 되어야 하는지 나타나있음.
+    - 어떤 프롬프트를 사용했는지도 함께 공개
+- 📜 [Microsoft] [Re-Reading Improves Reasoning in Large Language Models](https://arxiv.org/abs/2309.06275)
+    - 질문을 input으로 다시 Re-Reading 하는 방법, RE2를 제안
+    - 질문을 두 번 처리함으로써 과정에 대한 이해도를 높인다는 것이 컨셉
+    - 단방향의 decoder-only LLM에서 “bidirectional” encoding을 사용하여 global information 활용
 </details>
