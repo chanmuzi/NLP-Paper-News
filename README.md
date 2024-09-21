@@ -1980,4 +1980,8 @@ Addressing Underspecification in Alignment](https://arxiv.org/abs/2408.06266v3)
     - 질문을 input으로 다시 Re-Reading 하는 방법, RE2를 제안
     - 질문을 두 번 처리함으로써 과정에 대한 이해도를 높인다는 것이 컨셉
     - 단방향의 decoder-only LLM에서 “bidirectional” encoding을 사용하여 global information 활용
+- 📜 [Huawei, McGill, Mila] [Enhancing Logical Reasoning in Large Language Models through Graph-based Synthetic Data](https://arxiv.org/abs/2409.12437)
+    - 그래프 기반의 synthetic reasoning data를 training signal로 사용하여 LLM의 추론 능력을 향상시키고자 시도
+    - 기존의 다른 능력들을 손상시키지 않으면서도 추론 능력을 향상시킬 수 있었다고 주장
+    - [깃허브 링크](https://arxiv.org/abs/2409.12437) 🔗
 </details>
