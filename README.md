@@ -1984,4 +1984,8 @@ Addressing Underspecification in Alignment](https://arxiv.org/abs/2408.06266v3)
     - 그래프 기반의 synthetic reasoning data를 training signal로 사용하여 LLM의 추론 능력을 향상시키고자 시도
     - 기존의 다른 능력들을 손상시키지 않으면서도 추론 능력을 향상시킬 수 있었다고 주장
     - [깃허브 링크](https://arxiv.org/abs/2409.12437) 🔗
+- 📜 [Google DeepMind] [Training Language Models to Self-Correct via Reinforcement Learning](https://arxiv.org/abs/2409.12917)
+    - multi-trun online reinforcement learning (RL) approach, SCoRE 개발
+    - 전적으로 self-generated data를 이용하여 LLM의 self-correction 능력을 발전
+    - offline model-generated correction traces (이를테면 SFT)는 self-correction behavior를 instill 하기엔 부족하다고 주장
 </details>
