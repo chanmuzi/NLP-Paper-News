@@ -1993,13 +1993,15 @@ Addressing Underspecification in Alignment](https://arxiv.org/abs/2408.06266v3)
 <details>
   <summary>4th week</summary>
 
-- 📜 [HKUST, Amazon] [**Constrained Reasoning Chains for Enhancing
-Theory-of-Mind in Large Language Models**](https://arxiv.org/abs/2409.13490)
+- 📜 [HKUST, Amazon] [Constrained Reasoning Chains for Enhancing
+Theory-of-Mind in Large Language Models](https://arxiv.org/abs/2409.13490)
     - Theory-of-Mind (ToM) 방법론은 주로 zero-shot prompting을 사용하기 때문에 복잡한 reasoning task에서 낮은 퍼포먼스를 보임
     - zero-shot prompting method, Constrained Chain-of-ToM (CCoToM) 제안
     - prompts에 대한 constraint를 adaptively 부과함으로써 inductive bias를 유도
-- 📜 [Tsinghua, Berkely, Anthropic, NYU] [**Language Models Learn to Mislead Humans via RLHF**](https://arxiv.org/abs/2409.12822)
+- 📜 [Tsinghua, Berkely, Anthropic, NYU] [Language Models Learn to Mislead Humans via RLHF](https://arxiv.org/abs/2409.12822)
     - RLHF는 LM이 만든 에러를 사람이 알아차리기 더욱 어렵게 만든다고 주장 → “U-Sophistry” (Unintended)
     - 모델의 출력 결과를 사람이 직접 평가 → RLHF는 모델의 성능도 평가하기 어렵게 만든다.
-
+- 📜 [Tsinghua, Shanhai AI Lab] [On the Diagram of Thought](https://arxiv.org/abs/2409.10038)
+    - LLM이 Directed Acyclic Graph (DAG) 으로서 iterative reasoning 할 수 있도록 모델링 하는 Diagram of Thought (DoT) 제안
+    - propositions, critiques, refinements, verifications를 DAG 구조 내에 포함 → logical consistency를 유지하면서도 모델이 복잡한 reasoning pathways를 탐색하도록 함
 </details>
