@@ -1985,7 +1985,21 @@ Addressing Underspecification in Alignment](https://arxiv.org/abs/2408.06266v3)
     - 기존의 다른 능력들을 손상시키지 않으면서도 추론 능력을 향상시킬 수 있었다고 주장
     - [깃허브 링크](https://arxiv.org/abs/2409.12437) 🔗
 - 📜 [Google DeepMind] [Training Language Models to Self-Correct via Reinforcement Learning](https://arxiv.org/abs/2409.12917)
-    - multi-trun online reinforcement learning (RL) approach, SCoRE 개발
+    - multi-turn online reinforcement learning (RL) approach, SCoRE 개발
     - 전적으로 self-generated data를 이용하여 LLM의 self-correction 능력을 발전
     - offline model-generated correction traces (이를테면 SFT)는 self-correction behavior를 instill 하기엔 부족하다고 주장
+</details>
+
+<details>
+  <summary>4th week</summary>
+
+- 📜 [HKUST, Amazon] [**Constrained Reasoning Chains for Enhancing
+Theory-of-Mind in Large Language Models**](https://arxiv.org/abs/2409.13490)
+    - Theory-of-Mind (ToM) 방법론은 주로 zero-shot prompting을 사용하기 때문에 복잡한 reasoning task에서 낮은 퍼포먼스를 보임
+    - zero-shot prompting method, Constrained Chain-of-ToM (CCoToM) 제안
+    - prompts에 대한 constraint를 adaptively 부과함으로써 inductive bias를 유도
+- 📜 [Tsinghua, Berkely, Anthropic, NYU] [**Language Models Learn to Mislead Humans via RLHF**](https://arxiv.org/abs/2409.12822)
+    - RLHF는 LM이 만든 에러를 사람이 알아차리기 더욱 어렵게 만든다고 주장 → “U-Sophistry” (Unintended)
+    - 모델의 출력 결과를 사람이 직접 평가 → RLHF는 모델의 성능도 평가하기 어렵게 만든다.
+
 </details>
