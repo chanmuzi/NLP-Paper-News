@@ -2004,4 +2004,7 @@ Theory-of-Mind in Large Language Models](https://arxiv.org/abs/2409.13490)
 - 📜 [Tsinghua, Shanhai AI Lab] [On the Diagram of Thought](https://arxiv.org/abs/2409.10038)
     - LLM이 Directed Acyclic Graph (DAG) 으로서 iterative reasoning 할 수 있도록 모델링 하는 Diagram of Thought (DoT) 제안
     - propositions, critiques, refinements, verifications를 DAG 구조 내에 포함 → logical consistency를 유지하면서도 모델이 복잡한 reasoning pathways를 탐색하도록 함
+- 📜 [Arizona State University] [LLMs Still Can't Plan; Can LRMs? A Preliminary Evaluation of OpenAI's o1 on PlanBench](https://arxiv.org/abs/2409.13373)
+    - LLM의 빠른 발전에도 PlanBench 정복은 쉽지 않았음
+    - o1과 같은 Large Reasoning Model (LRM) 은 분명 눈에 띄는 성능 향상을 보여주고 있으나 아직까지 planning 능력이 충분하지 않다고 주장
 </details>
