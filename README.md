@@ -2007,4 +2007,18 @@ Theory-of-Mind in Large Language Models](https://arxiv.org/abs/2409.13490)
 - 📜 [Arizona State University] [LLMs Still Can't Plan; Can LRMs? A Preliminary Evaluation of OpenAI's o1 on PlanBench](https://arxiv.org/abs/2409.13373)
     - LLM의 빠른 발전에도 PlanBench 정복은 쉽지 않았음
     - o1과 같은 Large Reasoning Model (LRM) 은 분명 눈에 띄는 성능 향상을 보여주고 있으나 아직까지 planning 능력이 충분하지 않다고 주장
+- 📜 [NYU, Columbia] [Style over Substance: Failure Modes of LLM Judges in Alignment Benchmarking](https://arxiv.org/abs/2409.15268)
+    - LLM-judge 선호를 구체적인 metric으로 전환할 수 있을까? → SOS-BENCH 개발: standardized, reproducible LLM meta-benchmark
+    - LLM-judgement는 safety, world knowledge, instruction following과 관계가 없다고 주장. 대신 style에 대해 더 높은 우선순위를 부여하고 있는 것으로 관측.
+    - [코드 및 결과물 링크](https://anonymous.4open.science/r/mismo-bench-587D/readme.md) 🔗
+- 📜 [NVIDIA] [Advancing the Accuracy-Efficiency Frontier with Llama-3.1-Nemotron-51B](https://developer.nvidia.com/blog/advancing-the-accuracy-efficiency-frontier-with-llama-3-1-nemotron-51b/)
+    - Llama-3.1-70B 대비 220% 빠르고 400% 많은 workload를 처리할 수 있는 51B 모델 공개
+    - 40B tokens from FineWeb, Buzz-V1.2, and Dolma datasets
+    - Packaged as NVIDIA NIM inference microservice for easy deployment
+    - [허깅페이스 링크](https://huggingface.co/nvidia/Llama-3_1-Nemotron-51B-Instruct) 🔗
+- 📜 [Google DeepMind] [Michelangelo: Long Context Evaluations Beyond Haystacks via Latent Structure Queries](https://arxiv.org/abs/2409.12640)
+    - a minimal, synthetic, and unleaked long-context reasoning evaluation for
+    LLM
+    - context 내에서 단순히 정보를 retrieve 하는 것 이상의 long-context 평가를 하기 위한 통합 평가 프레임워크
+    - 코드 및 자연어 도메인에서 3개의 diagnostic long-context evaluations
 </details>
