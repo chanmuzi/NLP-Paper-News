@@ -2038,4 +2038,8 @@ Theory-of-Mind in Large Language Models](https://arxiv.org/abs/2409.13490)
     - summarization, instruction following, rewriting tasks 등을 locally 처리 가능
     - AWS, Databricks, Dell, Fireworks 등 Llama Stack distributions을 위한 노력. Ollama에서 single-node로 지원하기도 함
     - [허깅페이스 링크](https://huggingface.co/collections/meta-llama/llama-32-66f448ffc8c32f949b04c8cf) 🔗
+- 📜 [Beijing Academy of AI] [Making Text Embedders Few-Shot Learners](https://arxiv.org/abs/2409.15700)
+    - LLM의 ICL 능력을 text embedding generation에도 활용하는 아이디어
+    - few-shot exmaples를 이용하여 고퀄리티 text embedding을 생성하는 bge-en-icl 공개
+    - MTEB, AIR-Bench에서 SOTA 달성
 </details>
