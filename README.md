@@ -2021,4 +2021,21 @@ Theory-of-Mind in Large Language Models](https://arxiv.org/abs/2409.13490)
     LLM
     - context 내에서 단순히 정보를 retrieve 하는 것 이상의 long-context 평가를 하기 위한 통합 평가 프레임워크
     - 코드 및 자연어 도메인에서 3개의 diagnostic long-context evaluations
+- 🗞️ [SocialAI: we tried the Twitter clone where no other humans are allowed](https://www.theverge.com/2024/9/17/24247253/social-ai-app-replace-humans-with-bots)
+    - private twitter 서비스. 본인을 제외한 모든 사람들은 AI bot.
+- 🧑🏻‍💻 [OpenAI] [Advanced Voice](https://x.com/OpenAI/status/1838642444365369814?t=LEjyOFoySCjkcAjbXMfEww&s=19)
+    - 이번 주 Plus & Team 유저에게 Advanced Voice 기능을 선공개
+    - Custom Instructions, Memory, five new voices, improved accents 등의 특징
+- 🧑🏻‍💻 [Google] [Updated production-ready Gemini models, reduced 1.5 Pro pricing, increased rate limits, and more](https://developers.googleblog.com/en/updated-production-ready-gemini-models-reduced-15-pro-pricing-increased-rate-limits-and-more/)
+    - Gemini-1.5-Pro-002, Gemini-1.5-Flash-002 공개
+    - 1.5 Pro 비용 50% 감소, 2배 높아진 limit, 2배 빨라진 output
+    - 거대 모델을 이용하는 비용은 확실히 빠른 속도로 줄어들고 있음
+- 📜 [NASA, IBM] [Prithvi WxC: Foundation Model for Weather and Climate](https://arxiv.org/abs/2409.13598)
+    - 날씨를 예측하는 2.3B 사이즈의 foundation model을 오픈소스로 공개
+    - [허깅페이스 링크](https://huggingface.co/Prithvi-WxC) 🔗
+- 🧑🏻‍💻 [Meta] [Llama 3.2: Revolutionizing edge AI and vision with open, customizable models](https://ai.meta.com/blog/llama-3-2-connect-2024-vision-edge-mobile-devices/)
+    - small & medium-sized vision LLMs (11B & 90B) → text-only models (1B & 3B)
+    - summarization, instruction following, rewriting tasks 등을 locally 처리 가능
+    - AWS, Databricks, Dell, Fireworks 등 Llama Stack distributions을 위한 노력. Ollama에서 single-node로 지원하기도 함
+    - [허깅페이스 링크](https://huggingface.co/collections/meta-llama/llama-32-66f448ffc8c32f949b04c8cf) 🔗
 </details>
