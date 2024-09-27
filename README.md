@@ -2042,4 +2042,18 @@ Theory-of-Mind in Large Language Models](https://arxiv.org/abs/2409.13490)
     - LLM의 ICL 능력을 text embedding generation에도 활용하는 아이디어
     - few-shot exmaples를 이용하여 고퀄리티 text embedding을 생성하는 bge-en-icl 공개
     - MTEB, AIR-Bench에서 SOTA 달성
+- 📜 [AI2, Washington] [Molmo and PixMo: Open Weights and Open Data for State-of-the-Art Multimodal Models](https://arxiv.org/abs/2409.17146)
+    - 현존 open-weight multimodal 모델들은 proprietary VLM의 결과물을 distillation 하는 수준으로 foundational knowledge가 부족한 상황
+    - → speech 기반의 description을 사용하여 사람이 직접 highly detailed image caption dataset을 제작. 이것으로 학습한 VLM family, Molmo를 공개
+    - model weights, captioning & fine-tuning data & source code 모두 공개 예정. [링크](https://molmo.allenai.org/) 🔗
+- 📜 [HyperAgent: Generalist Software Engineering Agents to Solve Coding Tasks at Scale](https://arxiv.org/abs/2409.16299)
+    - a novel generalist multi-agent system, 다양한 software engineering tasks를 커버할 수 있는 HyperAgent를 공개
+    - Planner, Navigator, Code Editor, Executor 네 개의 agent로 구성
+    - [깃허브 링크](https://github.com/FSoft-AI4Code/HyperAgent) 🔗
+- 🧑🏻‍💻 [stepfun-ai/GPT-OCR2_0](https://huggingface.co/stepfun-ai/GOT-OCR2_0)
+    - PDF에 나타난 텍스트, 이미지 등을 OCR. 간단히 테스트해보기 좋을 것 같음
+    - [데모 링크](https://huggingface.co/stepfun-ai/GOT-OCR2_0), [깃허브 링크](https://github.com/Ucas-HaoranWei/GOT-OCR2.0/), [논문 링크](https://arxiv.org/abs/2409.01704) 🔗
+- 📜 [York University] [Task-oriented Prompt Enhancement via Script Generation](https://arxiv.org/abs/2409.16418)
+    - universal approach & zero-shot learning을 이용하여 script를 생성함으로써 task-oriented prompts에 대한 LLM의 성능을 향상
+    - (1) task’s input specification을 추출하기 위한 step-back prompting (2) required procedural steps를 identify 하기 위한 CoT prompting
 </details>
