@@ -2056,4 +2056,16 @@ Theory-of-Mind in Large Language Models](https://arxiv.org/abs/2409.13490)
 - 📜 [York University] [Task-oriented Prompt Enhancement via Script Generation](https://arxiv.org/abs/2409.16418)
     - universal approach & zero-shot learning을 이용하여 script를 생성함으로써 task-oriented prompts에 대한 LLM의 성능을 향상
     - (1) task’s input specification을 추출하기 위한 step-back prompting (2) required procedural steps를 identify 하기 위한 CoT prompting
+- 📜 [Logic-of-Thought: Injecting Logic into Contexts for Full Reasoning in Large Language Models](https://arxiv.org/abs/2409.17539)
+    - 입력 context로부터 확장된 logical information를 생성할 수 있도록 propositional logic을 이용 (?), Logical-of-Thought prompting
+    - 생성된 logical information을 augmented input으로 붙여서 모델에게 전달
+- 📜 [Stanford] [Instruction Following without Instruction Tuning](https://arxiv.org/abs/2409.14254)
+    - instruction tuning은 아니지만 instruction following을 가능토록 만드는 implicit instruction tuning 두 종류를 발견
+    - (1) 상응하는 instruction 없이, 오직 response만 학습하더라도 instruction following 가능
+    - (2) 이때 response의 desired distribution으로 학습할 필요는 없음
+    - 일반적인 instruction tuning 대비 갖는 장점이 무엇인지 모르겠음
+- 📜 [NVIDIA, Singapore] [MaskLLM: Learnable Semi-Structured Sparsity for Large Language Models](https://arxiv.org/abs/2409.17481) (NeurIPS 2024 Spotlight)
+    - Gumbel Softmax sampling을 통해 모델의 N:M Semi-structured Sparsity를 establish하는 learnable pruning method, MaskLLM → 추론 시 computational overhead를 줄이는 것이 목표
+    - (1) High-quality Masks (2) Transferability: from 843M to 15B 사이즈 모델까지 working
+    - [깃허브 링크](https://github.com/NVlabs/MaskLLM) 🔗
 </details>
