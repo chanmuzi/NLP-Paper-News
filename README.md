@@ -2068,4 +2068,11 @@ Theory-of-Mind in Large Language Models](https://arxiv.org/abs/2409.13490)
     - Gumbel Softmax sampling을 통해 모델의 N:M Semi-structured Sparsity를 establish하는 learnable pruning method, MaskLLM → 추론 시 computational overhead를 줄이는 것이 목표
     - (1) High-quality Masks (2) Transferability: from 843M to 15B 사이즈 모델까지 working
     - [깃허브 링크](https://github.com/NVlabs/MaskLLM) 🔗
+- 📜 [CMU, Amazon] [Synatra: Turning Indirect Knowledge into Direct Demonstrations for Digital Agents at Scale](https://arxiv.org/abs/2409.15637)
+    - indirect knowledge를 direct demonstrations 구조로 인코딩하여 학습 데이터로 활용하는 방식, Synatra를 제안
+    - 100k 개의 synthetically-created demonstrations 데이터로 7B CodeLlama를 학습
+- 📜 [CMU, AI2, Washington, Stanford] [HAICOSYSTEM: An Ecosystem for Sandboxing Safety Risks in Human-AI Interactions](https://arxiv.org/abs/2409.16427)
+    - operational, content-related, societal, legal risk를 평가할 수 있는 metric을 사용한 mluti-dimensional evaluation framework, HACIOSYSTEM
+    - 현실적인 user-AI interaction과 AI agents의 복잡한 tool use 능력을 평가할 수 있다고 주장
+    - 한 줄 요약하면 AI agents를 평가하기 위한 좋은 프레임워크를 만들어서 공개했음
 </details>
