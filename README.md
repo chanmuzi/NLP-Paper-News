@@ -2072,7 +2072,16 @@ Theory-of-Mind in Large Language Models](https://arxiv.org/abs/2409.13490)
     - indirect knowledge를 direct demonstrations 구조로 인코딩하여 학습 데이터로 활용하는 방식, Synatra를 제안
     - 100k 개의 synthetically-created demonstrations 데이터로 7B CodeLlama를 학습
 - 📜 [CMU, AI2, Washington, Stanford] [HAICOSYSTEM: An Ecosystem for Sandboxing Safety Risks in Human-AI Interactions](https://arxiv.org/abs/2409.16427)
-    - operational, content-related, societal, legal risk를 평가할 수 있는 metric을 사용한 mluti-dimensional evaluation framework, HACIOSYSTEM
+    - operational, content-related, societal, legal risk를 평가할 수 있는 metric을 사용한 multi-dimensional evaluation framework, HACIOSYSTEM
     - 현실적인 user-AI interaction과 AI agents의 복잡한 tool use 능력을 평가할 수 있다고 주장
     - 한 줄 요약하면 AI agents를 평가하기 위한 좋은 프레임워크를 만들어서 공개했음
+- 🧑🏻‍💻 [PyTorch] [PyTorch Native Architecture Optimization: torchao](https://pytorch.org/blog/pytorch-native-architecture-optimization/)
+    - low bit dtypes를 이용하여 모델을 더욱 빠르고 작게 만들어주는 파이토치 native library
+    - 학습 및 추론에 둘 다 활용할 수 있도록 간단한 예시를 제공
+- 📜 [Microsoft] [Retrieval Augmented Generation (RAG) and Beyond: A Comprehensive Survey on How to Make your LLMs use External Data More Wisely](https://arxiv.org/abs/2409.14924)
+    - external data의 타입과 태스크의 초점에 따라 유저 쿼리를 네 단계로 분류
+    - (1) Explicit Facts (2) Implicit Facts (3) Interpretable Rationales (4) Hidden Rationales
+- 📜 [Cambridge] [Small Language Models: Survey, Measurements, and Insights](https://arxiv.org/abs/2409.15790)
+    - 59개의 SOTA급 SLM을 조사. transformer 기반의 100M - 5B 사이즈의 decoder-only 모델
+    - 기업별로 모델 종류들을 굉장히 잘 정리해둔 논문
 </details>
