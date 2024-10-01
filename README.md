@@ -15,6 +15,17 @@
     - RAG에서 각 chunk에 대해 chunk-specific explanatory context를 prepending 함으로써 RAG의 정확도를 높이는 방식
     - Contextual BM25에 사용되는 index를 생성
     - context를 생성할 때는 사람이 직접할 수 없으므로 AI 모델을 사용 (Claude)
+- 📜 [BAAI] [Emu3: Next-Token Prediction is All You Need](https://arxiv.org/abs/2409.18869)
+    - images, text, vidoe를 discrete space로 tokenize하고, 이를 scratch부터 학습
+    - → diffusion 또는 compositional architecture 불필요
+- 📜 [Waterloo, Peking] [MIO: A Foundation Model on Multimodal Tokens](https://arxiv.org/abs/2409.17692)
+    - sppech, text, image, video를 end-to-end로 처리하는데 이것도 역시 multimodal token을 사용 → causal multimodal modeling
+    - four-stage training process
+        - (1) alignment pre-training (2) interleaved pre-training (3) speech-enhanced pre-training (4) comprehensive supervised fine-tuning
+- 📜 [Microsoft] [VPTQ: Extreme Low-bit Vector Post-Training Quantization for Large Language Models](https://arxiv.org/abs/2409.17066)
+    - Second-Order Optimization을 사용하여 LLM VQ (Vector Quantization) 문제를 공식화하고, quantization algorithm을 제시
+    - Channel-Independent Second-Order Optimization을 사용하여 가중치를 refine
+    - [깃허브 링크](https://github.com/microsoft/VPTQ) 🔗 
 </details>
 
 ## 🙇🏻 September
