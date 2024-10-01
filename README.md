@@ -8,6 +8,13 @@
 <details>
   <summary>1st week</summary>
 
+- 🧑🏻‍💻 [Google DeepMind] [How AlphaChip transformed computer chip design](https://deepmind.google/discover/blog/how-alphachip-transformed-computer-chip-design/)
+    - 강화학습을 이용한 컴퓨터 칩 개발 성과를 공개
+    - 실제로 6세대 TPU을 몇 개로 구성할지를 이것으로 찾음 (AI for chip design)
+- 🧑🏻‍💻 [Anthropic] [Introducing Contextual Retrieval](https://www.anthropic.com/news/contextual-retrieval)
+    - RAG에서 각 chunk에 대해 chunk-specific explanatory context를 prepending 함으로써 RAG의 정확도를 높이는 방식
+    - Contextual BM25에 사용되는 index를 생성
+    - context를 생성할 때는 사람이 직접할 수 없으므로 AI 모델을 사용 (Claude)
 </details>
 
 ## 🙇🏻 September
