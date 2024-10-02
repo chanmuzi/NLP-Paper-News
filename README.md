@@ -25,7 +25,23 @@
 - 📜 [Microsoft] [VPTQ: Extreme Low-bit Vector Post-Training Quantization for Large Language Models](https://arxiv.org/abs/2409.17066)
     - Second-Order Optimization을 사용하여 LLM VQ (Vector Quantization) 문제를 공식화하고, quantization algorithm을 제시
     - Channel-Independent Second-Order Optimization을 사용하여 가중치를 refine
-    - [깃허브 링크](https://github.com/microsoft/VPTQ) 🔗 
+    - [깃허브 링크](https://github.com/microsoft/VPTQ) 🔗
+- 📜 [Apple] [MM1.5: Methods, Analysis & Insights from Multimodal LLM Fine-tuning](https://arxiv.org/abs/2409.20566)
+    - text-rich image understanding, visual referring and grounding, multi-image reasoning을 잘 처리하기 위한 multimodal large language models (MLLMs) 공개
+    - high-quality OCR data & synthetic caption 을 continual pre-training에 활용 → optimized visual instruction-tuning data mixture를 supervised fine-tuning에 활용
+    - MoE 아키텍쳐를 포함하여 모델 사이즈는 1B ~ 30B 로 구성
+    - video understanding과 mobile UI understanding에 특화된 MM1.5-Video, UI 버전을 공개.
+    - 개인적으로 Apple Intelligence를 아주 기대하고 있는 입장에서 모델 성능이 뛰어나서 유용히 사용될 수 있길 간절히 바라는 중 🙏🏻
+- 📜 [Meta, UIUC] [Law of the Weakest Link: Cross Capabilities of Large Language Models](https://arxiv.org/abs/2409.19951)
+    - cross capabilities: real-world task를 처리하는데 필요한 다양한 전문 지식의 intersection
+    - 7개의 core individual capabilities를 정의하고 이를 manually 짝지어 taxonomy를 구축
+    - 1,400개의 human-annotated prompts로 구성된 CrossEval 벤치마크를 공개. 각 individual & cross capability 마다 100개 prompt로 구성
+    - 이에 대한 평가를 수행해봤을 때, 현 LLM은 Law of the Weakest Link를 보인다고 주장
+- 🧑🏻‍💻 [Liquid] [Liquid Foundation Models: Our First Series of Generative AI Models](https://www.liquid.ai/liquid-foundation-models)
+    - 각 모델 사이즈에서 SOTA를 달성한 생성형 언어모델 패밀리 (LFM). 1B, 3B, 40B (MoE, 12B activated) 모델로 구성.
+    - 32k token context length, effective across the entire range
+    - 오픈 소스 모델은 아님. Liquid Playground, Lambda, Perplexity Labs 등에서 사용 가능
+    - 최근 sLLM 에 대한 관심이 뜨거운 것 같은데, 이중에서도 오픈소스가 아닌 모델 패밀리를 공개하는 것은 오히려 흔하지 않은 상황으로 이해됨
 </details>
 
 ## 🙇🏻 September
