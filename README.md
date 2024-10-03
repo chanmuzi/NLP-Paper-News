@@ -42,6 +42,10 @@
     - 32k token context length, effective across the entire range
     - 오픈 소스 모델은 아님. Liquid Playground, Lambda, Perplexity Labs 등에서 사용 가능
     - 최근 sLLM 에 대한 관심이 뜨거운 것 같은데, 이중에서도 오픈소스가 아닌 모델 패밀리를 공개하는 것은 오히려 흔하지 않은 상황으로 이해됨
+- 📜 [CMU] [Embodied-RAG: General Non-parametric Embodied Memory for Retrieval and Generation](https://arxiv.org/abs/2409.18313)
+    - 로봇 도메인에서 RAG를 활용
+    - Embodied-RAG: navigation & language generation의 hierarchical knowledge를 자율적으로 구축할 수 있는 non-parametric memory system
+    - 다양한 환경과 query type에 대해 넓은 범위의 spatial & semantic resolution을 처리할 수 있음
 </details>
 
 ## 🙇🏻 September
