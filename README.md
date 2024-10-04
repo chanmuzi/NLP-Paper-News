@@ -46,6 +46,20 @@
     - 로봇 도메인에서 RAG를 활용
     - Embodied-RAG: navigation & language generation의 hierarchical knowledge를 자율적으로 구축할 수 있는 non-parametric memory system
     - 다양한 환경과 query type에 대해 넓은 범위의 spatial & semantic resolution을 처리할 수 있음
+- 📜 [Yale, OpenAI, Princeton] [When a language model is optimized for reasoning, does it still show embers of autoregression? An analysis of OpenAI o1](https://arxiv.org/abs/2410.01792)
+    - 추론에 특화된 모델 OpenAI o1은 분명 눈에 띄는 성능 향상을 보이지만, 여전히 기존 LLM들과 마찬가지로 모델이 확률 분포에 민감하다는 문제를 극복하지는 못했음
+    - embers of augoregression이라는 표현을 사용하고 있는데, 결국 다음 토큰을 반복적으로 예측해나가는 근본적인 특성으로 인해 발생하는 문제점을 지적하고 싶은 것으로 이해함
+- 📜 [Unleashing the Power of Large Language Models in Zero-shot Relation Extraction via Self-Prompting](https://arxiv.org/abs/2410.01154)
+    - LLM에 내재된 Relation Extraction 지식을 이용하는 Self-Prompting 프레임워크를 제안
+    - 세 단계로 구성된 diversity approach를 사용하여 다양한 합성 데이터를 생성 → 이는 in-context learning sample로 사용
+- 📜 [Mila, Google DeepMind, Microsoft] [Not All LLM Reasoners Are Created Equal](https://arxiv.org/abs/2410.01748)
+    - LLM의 grade-school math (GSM) 문제 풀이 능력을 확인. 이때 두 개의 문제를 상으로 묶고, 첫 번째 문제에 대한 답변을 고치는 것이 두 번째 문제를 풀이하는 것에 주는 영향을 확인하는 연구.
+    - compositional pair를 풀어내는 것과 각 문제를 따로 푸는 것의 결과가 독립적이라고 주장
+    - 이러한 결과는 더 작고, cost-efficient하며 수학 특화된 모델에서 두드러진다고 함
+- 📜 [Johns Hopkins] [RATIONALYST: Pre-training Process-Supervision for Improving Reasoning](https://arxiv.org/abs/2410.01044)
+    - LLM이 생성하는 reasoning step은 흉내 수준에 가까운 것이라 불완전하다는 점을 지적
+    - → unlabeled data로부터 추출한 다양한 종류의 rationale annotations에 대한 사전학습을 기반으로 삼는 process-supervision of reasoning 모델, Rationalyst 제안
+    - Pile 데이터셋으로부터 79K 개 rationale을 추출. 여기에 사람 개입은 최소화.
 </details>
 
 ## 🙇🏻 September
