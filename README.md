@@ -60,6 +60,10 @@
     - LLM이 생성하는 reasoning step은 흉내 수준에 가까운 것이라 불완전하다는 점을 지적
     - → unlabeled data로부터 추출한 다양한 종류의 rationale annotations에 대한 사전학습을 기반으로 삼는 process-supervision of reasoning 모델, Rationalyst 제안
     - Pile 데이터셋으로부터 79K 개 rationale을 추출. 여기에 사람 개입은 최소화.
+- 📜 [Apple] [Contrastive Localized Language-Image Pre-Training](https://arxiv.org/abs/2410.02746)
+    - CLIP은 region-level understanding이 요구되는 fine-grained vision representation에 적합하지 않음
+    - CLIP에 region-text contrastive loss & module 을 보충하는 CLOC를 제안
+    - 이미지 embedding을 region representation으로 쉽게 변환할 수 있는 promptable embedding을 공식화
 </details>
 
 ## 🙇🏻 September
