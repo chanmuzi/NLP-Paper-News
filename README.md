@@ -72,6 +72,13 @@
     - 전통적인 모델보다 적은 파라미터를 사용하고, 학습 동안 완전히 parallelizalbe한 버전을 제시
 </details>
 
+
+<details>
+  <summary>2nd week</summary>
+
+</details>
+
+
 ## 🙇🏻 September
 <details>
   <summary>1st week</summary>
