@@ -64,6 +64,12 @@
     - CLIP은 region-level understanding이 요구되는 fine-grained vision representation에 적합하지 않음
     - CLIP에 region-text contrastive loss & module 을 보충하는 CLOC를 제안
     - 이미지 embedding을 region representation으로 쉽게 변환할 수 있는 promptable embedding을 공식화
+- 🧑🏻‍💻 [Google] [Gemini 1.5 Flash-8B is now production ready](https://developers.googleblog.com/en/gemini-15-flash-8b-is-now-generally-available-for-use/)
+    - 1.5 Flash 대비 50% 저렴한 가격, 2배 높은 limit, small prompt에 대한 낮은 latency
+    - 경량화된 모델이라고 하는 것 같은데 실사용 성능이 어떤지는 커뮤니티 반응 조사 필요
+- 📜 [Mila] [Were RNNs All We Needed?](https://arxiv.org/abs/2410.01201)
+    - 기존 RNN은 BPTT 때문에 느렸는데 LSTM & GRU는 필요 없음. 이를 input, forget, update gate에 대한 hidden state dependencies를 제거함으로써 달성.
+    - 전통적인 모델보다 적은 파라미터를 사용하고, 학습 동안 완전히 parallelizalbe한 버전을 제시
 </details>
 
 ## 🙇🏻 September
