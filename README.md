@@ -75,7 +75,21 @@
 
 <details>
   <summary>2nd week</summary>
-
+- 📜 [Salesforce] [**Enhance Reasoning by Learning from Mistakes: Peer-Review Knowledge Distillation from Multiple Large Language Models**](https://arxiv.org/abs/2410.03663)
+    - 현존 KD는 one isingle LLM으로부터의 response를 gold rationale로 사용하는 문제
+    - Mistake-Aware Peer-Review Distillation (MAPD) 방식 제안
+        - teacher 에게 student의 실수를 파악 및 설명하고 customized instruction learning data를 제공하도록 지시
+        - simulated peer-review process를 디자인하여 acceptance threshold를 넘기는 rationale을 사용
+    - 결국 peer-review라는 게 여러 개의 proprietary 모델을 사용한다는 뜻인데 비용을 n배로 증가시키는 방법론이긴 함
+- 🧑🏻‍💻 [**feder-cr/Auto_Jobs_Applier_AIHawk**](https://github.com/feder-cr/Auto_Jobs_Applier_AIHawk)
+    - AI 봇으로 24시간 내에 1,000개 지원서를 제출하고 50개의 인터뷰를 따낸 것으로 화제
+- 🧑🏻‍💻 [**mendableai/firecrawl**](https://github.com/mendableai/firecrawl)
+    - 웹사이트를 LLM이 사용 가능한 마크다운 또는 구조화된 데이터로 변경해주는 API
+- 📜 [Stanford] [**Tutor CoPilot: A Human-AI Approach for Scaling Real-Time Expertise**](https://arxiv.org/abs/2410.03017)
+    - Tutor Copilot, a novel Human-AI approach. 학생들을 가르치는 Tutor를 보조하는 AI 도구임.
+    - under-served communities의 900명 tutor와 1,800명 학생이 참여한 대규모 연구
+    - 수학을 공부하는 학생들이 덕분에 유의미한 점수 향상(4%p)을 얻었다고 함
+    - tutor마다 연간 $20 밖에 들지 않음
 </details>
 
 
