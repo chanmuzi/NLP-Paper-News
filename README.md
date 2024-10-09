@@ -99,7 +99,7 @@
 - 📜 [Hong Kong, Huawei, McGill & MILA] [RevisEval: Improving LLM-as-a-Judge via Response-Adapted References](https://arxiv.org/abs/2410.05193)
     - LLM-as-a-Judge와 인간 평가 사이의 gap은 평가 과정에서 guided oracles의 부재에 기인한다고 주장
     - LLM이 text revision을 잘한다는 점을 이용하여 response를 adaptive하게 revise하고 이를 reference로 삼아 이어지는 평가에 활용하는 방식을 고안
-- 📜 [Microsoft, Tsinghua] Differential Transformer
+- 📜 [Microsoft, Tsinghua] [Differential Transformer](https://arxiv.org/abs/2410.05258)
     - Transformer는 irrelevant context에 attention을 overallocate하는 문제점이 있다고 지적
     - differential attention mechanism은 두 개의 separate softmax attention map의 차이로 attention score를 계산 → sparse attention pattern을 촉진
     - 특히 long-context modeling, key information retrieval, hallucination mitigation, in-context learning, reduction of activation outlier 등에 탁월
