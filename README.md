@@ -103,6 +103,20 @@
     - Transformer는 irrelevant context에 attention을 overallocate하는 문제점이 있다고 지적
     - differential attention mechanism은 두 개의 separate softmax attention map의 차이로 attention score를 계산 → sparse attention pattern을 촉진
     - 특히 long-context modeling, key information retrieval, hallucination mitigation, in-context learning, reduction of activation outlier 등에 탁월
+- 🧑🏻‍💻 [HuggingFace] [gradio-app/openai-gradio](https://github.com/gradio-app/openai-gradio)
+    - AI-powered web app을 아주 간단하고 쉽게 만들 수 있도록 돕는 파이썬 패키지
+    - API 대신 로컬 모델로 구축할 수 있으면 좋을텐데 아쉽
+- 📜 [Tsinghua, Microsoft] [Data Selection via Optimal Control for Language Models](https://arxiv.org/abs/2410.07064)
+    - Pontryagin’s Maximum Principle (PMP) conditions를 해결함으로써 optimal data에 근사하도록 만드는 프레임워크 PMP-based Data Selection (PDS)
+    - CommonCrawl을 대상으로 PDS를 적용했을 때, 사전학습의 효율이 크게 향상된다는 것을 확인
+    - Mistral 아키텍쳐를 기반으로 160M, 470M, 1B, 1.7B 모델로 실험
+    - [깃허브 링크](https://github.com/microsoft/LMOps/tree/main/data_selection) 🔗
+- 📜 [Microsoft] [VPTQ: Extreme Low-bit Vector Post-Training Quantization for Large Language Models](https://arxiv.org/abs/2409.17066)
+    - Second-Order Optimization을 사용하여 LLM VQ 문제를 formulate하고 optimization을 풀어냄으로써 quantization algorithm 디자인을 설계
+    - Channel-Independent Second-Order Optimization을 granular VQ에 적용함으로써 가중치를 refine
+    - optimization problem을 decomposing함으로써 brief & effective codebook initialization algorithm을 제안
+    - residual & outlier quantization을 지원하여 모델 정확도를 향상하고 압축률을 높임
+    - [깃허브 링크](https://github.com/microsoft/VPTQ) 🔗
 </details>
 
 
