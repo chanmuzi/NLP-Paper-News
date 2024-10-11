@@ -117,6 +117,27 @@
     - optimization problem을 decomposing함으로써 brief & effective codebook initialization algorithm을 제안
     - residual & outlier quantization을 지원하여 모델 정확도를 향상하고 압축률을 높임
     - [깃허브 링크](https://github.com/microsoft/VPTQ) 🔗
+- 🧑🏻‍💻 [HuggingFace] [LLM Evaluation Guidebook](https://github.com/huggingface/evaluation-guidebook)
+    - 참고 가능한 이전 [허깅페이스 블로그 글](https://github.com/huggingface/evaluation-guidebook) 🔗
+    - 초보자/상급자를 위한 내용들이 포함되어 있음
+- 📜 [Baidu] [Retrieving, Rethinking and Revising: The Chain-of-Verification Can Improve Retrieval Augmented Generation](https://arxiv.org/abs/2410.05801) (EMNLP 2024)
+    - 기존 RAG의 문제점: 1) original query가 retrieval에 부적합할 수 있음 2) 언어 모델의 지식 한계 때문에 inconsistent answer를 생성할 수 있음
+    - 이를 해결하기 위해 chain-of-verification (CoV-RAG)를 제안
+    - verification module을 RAG에 넣어 scoring, judgement, rewriting에 참여하도록 함
+    - internal generation error를 수정하기 위해 QA와 verification에 CoT reasoning을 포함하여 학습 진행
+    - 예전에도 CoVE 라는 논문이 Meta에서 hallucination mitigate를 위해 제시되었는데 이와 무엇이 다른지 확인할 필요도 있는 듯함
+- 📜 [HKUST, UIUC] [Personalized Visual Instruction Tuning](https://arxiv.org/abs/2410.07113)
+    - 현 MLLM의 face blindness 문제. personalized dialogue를 수행할 수 없음을 뜻함 → mobile device, domestic robot 등에 MLLM을 적용하기 어려움
+    - MLLM이 target individual을 이미지 내에서 식별하고 coherent dialogue를 이어나갈 수 있도록 data curation & training framework를 포함하는 PVIT를 제안 (Personalized Visual Instruction Tuning)
+- 📜 [Microsoft] [Scaling Optimal LR Across Token Horizons](https://arxiv.org/abs/2409.19913)
+    - dataset 사이즈에 따른 하이퍼파라미터 변화에 대한 연구는 아직 없었음
+    - optimal LR은 token horizon에 따라 변화하는데, longer training일수록 smaller LR이 필요
+    - optimal LR도 scaling law를 따르기 때문에, longer horizon에 대한 optimal LR을 shorter horizon으로부터 예측할 수 있다고 주장
+    - 데이터셋, 모델 사이즈를 scale-up 할 때 필수로 참고해야 할 논문이 아닌가..
+- 📜 [KAIST, Washington, LG AI Research] [Knowledge Entropy Decay during Language Model Pretraining Hinders New Knowledge Acquisition](https://arxiv.org/abs/2410.01380)
+    - knowledge acquisition & forgetting 관점에서, 모델의 parametric knowledge가 pretraining 동안에 어떻게 변화하는지에 대해 연구
+    - knowlege entropy 개념을 도입하여 모델이 engage하는 memory의 범위를 정량적으로 나타냄. 이 값이 높으면 모델이 넓은 범위의 memory source를 포함하는 것이고, 낮으면 반대임
+    - pretraining이 진행됨에 따라 knowledge entropy가 낮아지고, 이는 모델의 knowledge acquisition & retain 능력 감소를 의미한다고 주장
 </details>
 
 
