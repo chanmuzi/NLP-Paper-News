@@ -138,6 +138,11 @@
     - knowledge acquisition & forgetting 관점에서, 모델의 parametric knowledge가 pretraining 동안에 어떻게 변화하는지에 대해 연구
     - knowlege entropy 개념을 도입하여 모델이 engage하는 memory의 범위를 정량적으로 나타냄. 이 값이 높으면 모델이 넓은 범위의 memory source를 포함하는 것이고, 낮으면 반대임
     - pretraining이 진행됨에 따라 knowledge entropy가 낮아지고, 이는 모델의 knowledge acquisition & retain 능력 감소를 의미한다고 주장
+- 📜 [OpenAI] [MLE-bench: Evaluating Machine Learning Agents on Machine Learning Engineering](https://arxiv.org/abs/2410.07095)
+    - AI agent가 machine learning engineering을 얼마나 잘하는지를 평가하기 위한 벤치마크를 도입
+    - 캐글의 75개 MLE competition을 curate하여, 모델 학습, 데이터셋 준비, 실험 수행 등 다양한 real-world ML engineering skill을 테스트 할 수 있도록 함
+    - OpenAI의 o1-preview가 최고라는 걸 보여주는 연구 결과..?
+    - [깃허브 링크](https://github.com/openai/mle-bench/) 🔗
 </details>
 
 
