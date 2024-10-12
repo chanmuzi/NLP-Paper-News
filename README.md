@@ -143,6 +143,16 @@
     - 캐글의 75개 MLE competition을 curate하여, 모델 학습, 데이터셋 준비, 실험 수행 등 다양한 real-world ML engineering skill을 테스트 할 수 있도록 함
     - OpenAI의 o1-preview가 최고라는 걸 보여주는 연구 결과..?
     - [깃허브 링크](https://github.com/openai/mle-bench/) 🔗
+- 📜 [Hong Kong] [Teaching-Inspired Integrated Prompting Framework: A Novel Approach for Enhancing Reasoning in Large Language Models](https://arxiv.org/abs/2410.08068)
+    - 학생을 가르치는 선생의 instructional process를 모방하게 하는 Teaching-Inspired Integrated Framework를 제안
+    - reasoning에 필요한 필수적인 개념, 관련 이론, 유사한 문제 등을 LLM이 떠올릴 수 있도록 함
+    - 자체적으로 개발한 두 개의 중국어 벤치마크 MathMC, MathToF 공개
+    - 이런 방식이 정말 모델의 능력을 극대화하는 것이 맞나? 어떤 상황에서도 적용 가능한 방법은 맞나? 또 모델이 학생을 가르치는 내용의 데이터를 학습하지는 않았을 것 같은데 이것이 working 하는 이유는 뭘까?
+- 🧑🏻‍💻 [Tesla] [Robotaxi](https://x.com/Tesla/status/1844577040034562281)
+    - 테슬라에서 Robotaxi & Robvan을 공개
+- 🧑🏻‍💻 [ML Code Challenges](https://www.deep-ml.com/)
+    - 리트코드 스타일의 머신러닝 코드 챌린지 사이트
+    - 행렬곱, 공분산행렬, Decision Tree 등등 다양한 개념들이 있어서 코드 연습해보기 좋은 것 같음. 카테고리는 linear algebra, machine learning, deep learning, nlp 등으로 구분됨
 </details>
 
 
