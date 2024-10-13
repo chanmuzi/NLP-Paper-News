@@ -153,6 +153,17 @@
 - 🧑🏻‍💻 [ML Code Challenges](https://www.deep-ml.com/)
     - 리트코드 스타일의 머신러닝 코드 챌린지 사이트
     - 행렬곱, 공분산행렬, Decision Tree 등등 다양한 개념들이 있어서 코드 연습해보기 좋은 것 같음. 카테고리는 linear algebra, machine learning, deep learning, nlp 등으로 구분됨
+- 📜 [One Initialization to Rule them All: Fine-tuning via Explained Variance Adaptation](https://arxiv.org/abs/2410.07170)
+    - activation vector로 이루어진 mini-batch의 SVD을 계산하여 data-driven 방식으로 LoRA의 가중치를 초기화하는 방식을 제안
+    - 이를 Explained Variance Adaptation (EVA)라고 부르는데, 다양한 태스크에 적용해 보았을 때, convergence 속도가 빠르고 평균적으로 높은 스코어를 달성할 수 있었다고 주장함
+- 📜 [CMU] [Better Instruction-Following Through Minimum Bayes Risk](https://arxiv.org/abs/2410.02902)
+    - LLM judge를 supervision에 활용하는 promising 방식 중 하나로 Minimum Bayes Risk (MBR) decoding을 제안
+    - 이는 reference-based evaluator를 사용하여 여러 후보 output 중에서 가장 high-quality인 것을 고를 수 있도록 돕는 방식임
+- 📜 [Washington, AI2] [Can Language Models Reason about Individualistic Human Values and Preferences?](https://arxiv.org/abs/2410.03868) (Yejin Choi)
+    - 진정한 의미의 다양성을 커버하기 위해서 individualistic alignment를 제안
+    - World Value Survey (WVS)를 변형한 데이터셋 IndieValueCatalog 도입
+    - 이 데이터셋으로 학습한 IndieValueReasoner 모델 시리즈를 공개
+    - [코드 & 데이터 링크](https://github.com/liweijiang/indievalue.git) 🔗
 </details>
 
 
