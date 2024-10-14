@@ -166,6 +166,25 @@
     - [코드 & 데이터 링크](https://github.com/liweijiang/indievalue.git) 🔗
 </details>
 
+<details>
+  <summary>3rd week</summary>
+
+- 📜 [Central Florida] [Parameter-Efficient Fine-Tuning of Large Language Models using Semantic Knowledge Tuning](https://arxiv.org/abs/2410.08598)
+    - random token 대신 meaningful words를 사용하는 prompt & prefix tuning, Semantic Knowledge Tuning (SK-Tuning) 제안
+    - 이를 위해 zero-shot으로  프롬프트의 semantic content를 이해할 수 있는 fixed LLM을 활용
+    - processed prompt를 입력 텍스트와 통합하여 모델이 특정 태스크에서 더 뛰어난 성능을 발휘할 수 있도록 함
+    - text classification & understanding에서 다른 tuning method 대비 더 적은 시간과 비용으로 좋은 성능을 낼 수 있었다고 주장
+- 📜 [Peking, Microsoft] [Self-Boosting Large Language Models with Synthetic Preference Data](https://arxiv.org/abs/2410.06961)
+    - 고품질의 선호 데이터셋을 획득하는 것은 resource-intensive & creativity-demanding process라는 단점이 있음
+    - self-prompt generator가 다양한 프롬프트를 생성 → response improver가 response를 점진적으로 개선
+    - LLM 스스로 자신의 output에 대한 generative reward를 자율적으로 학습하고, 대규모 annotation 작업을 하지 않을 수 있게 됨
+    - AlpacaEval 2.0 & ArenaHard 에 대한 검증을 통해 모델의 instruction following 능력이 크게 향상되었음을 확인
+- 📜 [UNIST] [Response Tuning: Aligning Large Language Models without Instruction](https://arxiv.org/abs/2410.02465)
+    - 적절한 output space를 확립하는 것이 더욱 효과적인 접근 방식이라는 가정 → instruction-conditioning step을 없애고, 오직 response space supervision에만 집중하는 방식
+    - 실험 결과에 따르면 response에 대해서만 학습한 본인들의 모델이 instruction-tuned 모델들보다 더 다양한 범위의 instruction을 따를 수 있거나 성능이 좋았다고 언급함
+    - training response distribution을 조절함으로써 target behavior를 유도할 수 있었다고 함
+</details>
+
 
 ## 🙇🏻 September
 <details>
