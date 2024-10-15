@@ -183,6 +183,13 @@
     - 적절한 output space를 확립하는 것이 더욱 효과적인 접근 방식이라는 가정 → instruction-conditioning step을 없애고, 오직 response space supervision에만 집중하는 방식
     - 실험 결과에 따르면 response에 대해서만 학습한 본인들의 모델이 instruction-tuned 모델들보다 더 다양한 범위의 instruction을 따를 수 있거나 성능이 좋았다고 언급함
     - training response distribution을 조절함으로써 target behavior를 유도할 수 있었다고 함
+- 🧑🏻‍💻 [OpenAI] [openai/swarm](https://github.com/openai/swarm)
+    - 교육적인 목적의 ergonomic & lightweight multi-agent orchestration
+    - [Orchestrating Agents: Handoffs & Routines](https://cookbook.openai.com/examples/orchestrating_agents) cookbook의handoff & routines pattern을 보여주기 위해 제작됨
+- 📜 [Alibaba] [StructRAG: Boosting Knowledge Intensive Reasoning of LLMs via Inference-time Hybrid Information Structurization](https://arxiv.org/abs/2410.08815)
+    - 현재 RAG는 useful infromation이 badly scattered 되어 있어 어려움을 겪는 경우가 많음
+    - 사람이 raw information을 다양한 structured knowledge로 convert한다는 점에 착안하여 StructRAG를 제안
+    - 즉, 태스크에 적합한 structured format으로 문서를 재구성하는 방식
 </details>
 
 
