@@ -190,6 +190,16 @@
     - 현재 RAG는 useful infromation이 badly scattered 되어 있어 어려움을 겪는 경우가 많음
     - 사람이 raw information을 다양한 structured knowledge로 convert한다는 점에 착안하여 StructRAG를 제안
     - 즉, 태스크에 적합한 structured format으로 문서를 재구성하는 방식
+- 🧑🏻‍💻 [Mistral AI] [Un Ministral, des Ministraux](https://mistral.ai/news/ministraux/)
+    - Ministral 3B & 8B 모델 공개
+    - 128k context length (vLLM에선 현재 32k). 8B 모델은 sliding-window attention
+    - Llama-3.1-8B 보다 뛰어난 성능임을 벤치마크 결과를 통해 제시하고 있음
+    - 라이센스는 각각 Mistral Commercial / Commercial & Research License를 따름
+- 📜 [Meta, Berkeley, NYU] [Thinking LLMs: General Instruction Following with Thought Generation](https://arxiv.org/abs/2410.10630)
+    - 추가적인 데이터 없이 LLM이 general instruction following 능력을 갖추는 데 사고하는 능력을 갖추게 해주는 방법론 제시
+    - iterative search & optimiation precedure를 통해 possible thought generation space를 탐색. 여기엔 direct supervision이 필요하지 않음
+    - 각 instruction에 대한 thought candidate는 judge model이 평가하여 preference optimization에 활용 (DPO)
+    - AlpacaEval & Arena-Hard 에서 우수한 성능을 보였음을 강조. 그외의 marketing, health, general knowledge 등의 분야에서도 뛰어나다고 주장.
 </details>
 
 
