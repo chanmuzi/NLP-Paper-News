@@ -200,6 +200,11 @@
     - iterative search & optimiation precedure를 통해 possible thought generation space를 탐색. 여기엔 direct supervision이 필요하지 않음
     - 각 instruction에 대한 thought candidate는 judge model이 평가하여 preference optimization에 활용 (DPO)
     - AlpacaEval & Arena-Hard 에서 우수한 성능을 보였음을 강조. 그외의 marketing, health, general knowledge 등의 분야에서도 뛰어나다고 주장.
+- 🧑🏻‍💻 [Zyphra] [ZAMBA2-7B](https://mail.naver.com/)
+    - Mistral, Gemma, Llama3 시리즈보다 뛰어난 퀄리티와 퍼포먼스를 자랑하는 오픈소스 모델을 공개
+    - single shared attention block → two shared attention block
+    - 토큰 당 추론 속도를 25% 가량 개선한 inference-efficient 모델
+    - 하루 사이에 Mistral 신모델이 출시되었는데 성능 비교가 필요할지도..
 </details>
 
 
