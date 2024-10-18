@@ -205,6 +205,20 @@
     - single shared attention block → two shared attention block
     - 토큰 당 추론 속도를 25% 가량 개선한 inference-efficient 모델
     - 하루 사이에 Mistral 신모델이 출시되었는데 성능 비교가 필요할지도..
+- 🧑🏻‍💻 [NVIDIA] [Llama-3.1-Nemotron-70B](https://huggingface.co/collections/nvidia/llama-31-nemotron-70b-670e93cd366feea16abc13d8)
+    - Llama를 fine-tuning한 NVIDIA의 모델
+    - 2024년 10월 기준, Arena Hard와 RewardBench에서 SoTA 달성
+    - GPT-4o와 Claude 3.5를 넘는 성능을 달성했다고 함
+- 🧑🏻‍💻 [Rhymes AI] [Aria](https://huggingface.co/rhymes-ai/Aria)
+    - Multi-modal 모델 중 SoTA
+    - text, image, video 처리 가능하며 64k 사이즈의 context window 지원
+    - 토큰당 3.9B activated parameters 사용
+- 🧑🏻‍💻 [Perplexity] [Introducing Internal Knowledge Search and Spaces](https://www.perplexity.ai/hub/blog/introducing-internal-knowledge-search-and-spaces)
+    - internal & external data에 동시에 접근 가능한 unified tool (최대 500개 파일)
+    - Perplexity Space에서 team based search 가능
+- 📜 [Fudan, CMU, ByteDance] [Revealing the Barriers of Language Agents in Planning](https://arxiv.org/abs/2410.12409)
+    - language agent가 human-level planning에 실패하는 이유는 뭘까? → limited role constraints & diminishing influence of questions
+    - Language model을 agent로 사용하여 planning에 활용하는 최근 연구가 많은데, 현재 연구들이 보이는 한계의 원인을 파악한 연구라고 볼 수 있음. 이를 Memory Updating과 연관지어 분석하고 설명한 내용들이 기술되어 있음.
 </details>
 
 
