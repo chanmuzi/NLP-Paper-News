@@ -219,6 +219,22 @@
 - 📜 [Fudan, CMU, ByteDance] [Revealing the Barriers of Language Agents in Planning](https://arxiv.org/abs/2410.12409)
     - language agent가 human-level planning에 실패하는 이유는 뭘까? → limited role constraints & diminishing influence of questions
     - Language model을 agent로 사용하여 planning에 활용하는 최근 연구가 많은데, 현재 연구들이 보이는 한계의 원인을 파악한 연구라고 볼 수 있음. 이를 Memory Updating과 연관지어 분석하고 설명한 내용들이 기술되어 있음.
+- 📜 [Tufts University] ["Let's Argue Both Sides": Argument Generation Can Force Small Models to Utilize Previously Inaccessible Reasoning Capabilities](https://arxiv.org/abs/2410.12997)
+    - possible inference result에 대한 arguments를 생성하고, end model이 생성된 argument를 rank하는 방식. Argument Generation.
+    - 추가적인 레이어 없이 zero-shot prompting을 대체할 수 있는 방법론이라고 주장
+    - CoT나 Argument Generation은 추론이 필요한 태스크에서 zero-shot 할 때나 유용한 보조적인 수단이라고 설명
+    - 엄청 단순하고 흔한 방식 같긴 한데, 이런 테크닉이 한정적인 보조수단이라고 설명한 내용이 인상 깊음
+- 📜 [DeepSeek-AI, Hong Kong, Peking] [Janus: Decoupling Visual Encoding for Unified Multimodal Understanding and Generation](https://arxiv.org/abs/2410.13848)
+    - Any to any multimodal autoregressive framework
+    - visual encoding을 여러 pathway로 분해(decouple)하되, 처리하는 transformer architecture는 통합된 것을 사용
+    - decoupling은 visual encoder의 역할 간 충돌을 완화하면서도 framework의 유연성은 증가시켜줌
+    - [깃허브 링크](https://github.com/deepseek-ai/Janus) 🔗
+- 📜 [Meta AI, KAUST] [Agent-as-a-Judge: Evaluate Agents with Agents](https://arxiv.org/abs/2410.10934)
+    - 현재 agentic system을 평가할 때는 최종 결과에만 집중하고 중간 과정은 평가하지 않는다는 문제점이 있음
+    - LLM-as-a-Judge에 agentic feature를 통합하여 Agent-as-a-Judge를 만들고 이를 code generation에 활용
+    - realistic automated AI 개발 태스크로 구성된 새로운 벤치마크 DevAI를 제시
+    - LLM-as-a-Judge와 비교했을 때, human evaluation baseline에 준할 정도로 뛰어난 성능
+    - [깃허브 링크](https://github.com/metauto-ai/agent-as-a-judge) 🔗
 </details>
 
 
