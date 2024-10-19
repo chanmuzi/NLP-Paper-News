@@ -235,6 +235,11 @@
     - realistic automated AI 개발 태스크로 구성된 새로운 벤치마크 DevAI를 제시
     - LLM-as-a-Judge와 비교했을 때, human evaluation baseline에 준할 정도로 뛰어난 성능
     - [깃허브 링크](https://github.com/metauto-ai/agent-as-a-judge) 🔗
+- 📜 [UC Berkeley, Washington Univ] [JudgeBench: A Benchmark for Evaluating LLM-based Judges](https://arxiv.org/abs/2410.12784)
+    - LLM-based judge를 객관적으로 평가할 수 있는 novel evaluation framework를 제안
+    - knowledge, reasoning, math, coding 태스크를 다루는 challenging response pari로 구성
+    - 현존하는 difficult dataset을 challenging response pair with preference label로 convert 해주는 pipeline을 포함하고 있음
+    - response pair 데이터셋이 아닌 것을 convert 해주는 파이프라인은 활용 가치가 높은 것 같은데, 평가 방식 자체에 대단한 건 없는 것 같음
 </details>
 
 
