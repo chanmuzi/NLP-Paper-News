@@ -240,6 +240,17 @@
     - knowledge, reasoning, math, coding 태스크를 다루는 challenging response pari로 구성
     - 현존하는 difficult dataset을 challenging response pair with preference label로 convert 해주는 pipeline을 포함하고 있음
     - response pair 데이터셋이 아닌 것을 convert 해주는 파이프라인은 활용 가치가 높은 것 같은데, 평가 방식 자체에 대단한 건 없는 것 같음
+- 📜 [KAIST, Naver Cloud AI] [How Does Vision-Language Adaptation Impact the Safety of Vision Language Models?](https://arxiv.org/abs/2410.07571) (ICLR 2025)
+    - Vison-Language adaptation (VL adaptation)은 LLM을 LVLM으로 transform 하는데, original LLM의 inherent safety capabilities를 손상시킬 수 있음
+    - training data가 safe 하더라도 VL adaptation 동안 safety degradation이 발생한다고 설명
+    - supervised fine-tuning with safety datasets | reinforcement learning from human feedback 등은 risk를 줄일 수 있지만 온전한 해결책이 아니라고 주장
+    - 해결책으로 weight merging를 제안하여 safety degradation을 줄이면서도 helpfulness를 유지할 수 있도록 함
+    - 요즘 은근 weight merging이 많이 활용되는 것 같은데 이게 퍼포먼스 한계치인가 싶은 생각
+- 📜 [AI2, Washington] [Unpacking DPO and PPO: Disentangling Best Practices for Learning from Preference Feedback](https://arxiv.org/abs/2406.09279)
+    - preference-based learning의 핵심 네 가지 aspects를 identify
+        - preference data, learning algorithm, reward model, policy training prompts
+    - 연구 결과에 따르면 넷 다 중요하지만, preference data > learning algorithm > improves reward models > unlabeld prompts for policy trianing 순서로 영향을 준다고 함
+    - PPO가 수학에서 2.5%, 일반적인 영역에서 1.2% 우위에 있다고 함
 </details>
 
 
