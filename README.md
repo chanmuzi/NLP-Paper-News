@@ -253,6 +253,22 @@
     - PPO가 수학에서 2.5%, 일반적인 영역에서 1.2% 우위에 있다고 함
 </details>
 
+<details>
+  <summary>4th week</summary>
+
+- 📜 [Samsung Research] [Balancing Continuous Pre-Training and Instruction Fine-Tuning: Optimizing Instruction-Following in LLMs](https://arxiv.org/abs/2410.10739)
+    - continuous pre-training & instruction fine-tuning 간 관계를 연구
+    - Instruction 모델에 많은 양의 새로운 토큰을 CPT 하면 Instruction Following 성능 크게 하락
+    - Base 모델은 많은 양의 새로운 토큰을 CPT 해도 안정적인 성능 유지 가능
+- 📜 [OpenAI] [First-Person Fairness in Chatbots](https://cdn.openai.com/papers/first-person-fairness-in-chatbots.pdf)
+    - AI 모델이 사람의 ‘이름’에 대해 편향을 갖고 있는지에 대한 OpenAI 연구
+    - 1% 미만 수준으로 영향을 받는다는 요약글을 본 적이 있는 것 같은데, 사용자수를 고려한다면 훨씬 더 엄밀한 safety 정책이나 방법론이 필요하다는 생각이 듦
+- 📜 [Anthropic, Scale AI, NYU, UC Berkeley] [Looking Inward: Language Models Can Learn About Themselves by Introspection](https://arxiv.org/abs/2410.13787)
+    - introspection이란 학습 데이터에 포함되어 있거나 이로부터 얻지 못하는 지식을 습득하는 것으로 정의
+    - LLM이 가상의 시나리오에 대한 본인의 행동 특성을 예측하도록 fine-tuning
+    - introspect 할 수 있는 모델 M1이 본인의 output 예측을 더 잘할 것이고, 이것이 곧 M2 보다 뛰어난 성능을 지닌다는 방증으로 이해하는 것 같음
+    - 요즘 성찰, self-correct 등 모델의 inherent ability를 최대한 이끌어내고자 하는 연구가 꽤 많은 것 같은데, 약간 결과론적인 해석 위주인 것 같아서 아쉽게 느껴짐
+</details>
 
 ## 🙇🏻 September
 <details>
