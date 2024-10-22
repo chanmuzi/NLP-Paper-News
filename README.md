@@ -268,6 +268,25 @@
     - LLM이 가상의 시나리오에 대한 본인의 행동 특성을 예측하도록 fine-tuning
     - introspect 할 수 있는 모델 M1이 본인의 output 예측을 더 잘할 것이고, 이것이 곧 M2 보다 뛰어난 성능을 지닌다는 방증으로 이해하는 것 같음
     - 요즘 성찰, self-correct 등 모델의 inherent ability를 최대한 이끌어내고자 하는 연구가 꽤 많은 것 같은데, 약간 결과론적인 해석 위주인 것 같아서 아쉽게 느껴짐
+- 📜 [British Columbia] [Supervised Chain of Thought](https://arxiv.org/abs/2410.14198)
+    - solution process를 두 파트로 분할: prompt space & answer space
+    - one-for-all prompting (think step by step) 대신 task-specific supervision이 필요하다고 주장
+    - reasoning path를 학습하는 방식은 이미 제시된 바 있는데 데이터셋을 잘 구축한 건가 싶은 인상
+- 📜 [Hong Kong, Washington, HKUST, Microsoft] [SeerAttention: Learning Intrinsic Sparse Attention in Your LLMs](https://arxiv.org/abs/2410.13276)
+    - attention sparsity는 predefined 되는 것이 아니라 learned 되어야 한다고 주장
+    - learnable gate를 두어 attention map에서 중요한 block를 adaptive 하게 선택하는 mechanism 제안
+    - → accuracy & speed 균형
+    - 이를 위한 customized Flash Attention 구현
+    - [깃허브 링크](https://github.com/microsoft/SeerAttention) 🔗
+- 🧑🏻‍💻 [Microsoft] [Open-sourced BitNet](https://github.com/microsoft/BitNet)
+    - 1-Bit LLM 논문의 코드를 오픈소스로 공개하여 LLM을 local device에서 돌리기 쉬워짐
+- 🧑🏻‍💻 [Meta FAIR] [Sharing new research, models, and datasets from Meta FAIR](https://ai.meta.com/blog/fair-news-segment-anything-2-1-meta-spirit-lm-layer-skip-salsa-lingua/)
+    - SAM 2.1을 공개. image & video 업데이트
+    - Meta Spirit LM: An open source language model for seamless speech and text integration
+        - cross modality generation을 위해 단어 단위의 text & audio 데이터를 interleaving 하는 방식 사용
+    - Layer Skip: Enhancing large language model performance with accelerated generation times
+        - 추론 시 일부 layer만을 사용, 이후 verification & correction layer 통과
+        - Llama 3, Llama 2, Code Llama 등은 early exit이 가능하도록 학습
 </details>
 
 ## 🙇🏻 September
