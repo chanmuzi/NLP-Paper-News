@@ -287,6 +287,17 @@
     - Layer Skip: Enhancing large language model performance with accelerated generation times
         - 추론 시 일부 layer만을 사용, 이후 verification & correction layer 통과
         - Llama 3, Llama 2, Code Llama 등은 early exit이 가능하도록 학습
+- 📜 [Texas, Pittsburgh, Princeton, CMU] [CBT-Bench: Evaluating Large Language Models on Assisting Cognitive Behavior Therapy](https://arxiv.org/abs/2410.13218)
+    - professional psychotherapy를 assist 하는 LLM의 potential에 대한 조사 연구
+    - CBT-Bench를 구성하는 세 단계의 태스크 (Cognitive Behavior Therapy)
+        1. Basic CBT knowledge acquisition
+        2. Cognitive model understanding
+        3. Therapeutic response generation
+- 📜 [Shanghai AI Lab] [CompassJudger-1: All-in-one Judge Model Helps Model Evaluation and Evolution](https://arxiv.org/abs/2410.16256)
+    - 최초의 open-source all-in-one judge LLM, CompassJudger-1
+    - unitary scoring & two-model comparison 가능 / 특정 형식을 따라 평가 가능 / critiques 생성 가능 / 일반적인 LLM 태스크 수행 가능
+    - various subjective evaluation task와 topic을 커버하는 JudgerBench 구축
+    - [모델 및 코드 공개 커뮤니티 링크](https://github.com/open-compass/CompassJudger) 🔗
 </details>
 
 ## 🙇🏻 September
