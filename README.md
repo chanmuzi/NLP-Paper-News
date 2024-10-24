@@ -298,6 +298,20 @@
     - unitary scoring & two-model comparison 가능 / 특정 형식을 따라 평가 가능 / critiques 생성 가능 / 일반적인 LLM 태스크 수행 가능
     - various subjective evaluation task와 topic을 커버하는 JudgerBench 구축
     - [모델 및 코드 공개 커뮤니티 링크](https://github.com/open-compass/CompassJudger) 🔗
+- 📜 [CMU] [Causality for Large Language Models](https://arxiv.org/abs/2410.15319)
+    - correlation-driven paradigm을 넘어서 more reliable & ethically aligned AI system 필요
+    - 어떻게 causality가 언어 모델의 각 학습 단계에서 어떻게 영향을 줄 수 있는지 연구하고 앞으로의 연구 방향성을 제시. 프롬프트 기반의 연구들의 한계를 극복하겠다는 취지.
+    - 말은 거창한데 abstract만 보고서는 무슨 소리인지 모르겠음
+    - [깃허브 링크](https://github.com/causal-machine-learning-lab/Awesome-Causal-LLM) 🔗
+- 🧑🏻‍💻 [Anthropic] [Introducing computer use, a new Claude 3.5 Sonnet, and Claude 3.5 Haiku](https://www.anthropic.com/news/3-5-models-and-computer-use)
+    - Computer use API는 화면을 읽고 커서를 이동 및 클릭, 타이핑을 수행할 수 있음
+    - 자연어를 컴퓨터 명령어로 변환하는 기능을 포함
+    - 기존 대비 훨씬 강력한 성능의 모델 업데이트를 공개함
+- 📜 [Alibaba] [Aligning Large Language Models via Self-Steering Optimization](https://arxiv.org/abs/2410.17131) (ICLR 2025)
+    - iterative training 동안 predefined principle 기반의 고품질 preference signal을 자동적으로 생성하는 알고리즘, Self-Steering Optimization (SSO) 제안
+    - chosen & rejected response 간의 consistent gap을 보장하면서도 현재 policy 모델의 learning capacity에 적합한 학습이 진행될 수 있도록 함
+    - SSO로 생성된 선호 데이터셋은 reward 모델의 성능을 높인다는 결과도 함께 제시
+    - [깃허브 링크](https://github.com/icip-cas/SSO) 🔗
 </details>
 
 ## 🙇🏻 September
