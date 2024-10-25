@@ -312,6 +312,21 @@
     - chosen & rejected response 간의 consistent gap을 보장하면서도 현재 policy 모델의 learning capacity에 적합한 학습이 진행될 수 있도록 함
     - SSO로 생성된 선호 데이터셋은 reward 모델의 성능을 높인다는 결과도 함께 제시
     - [깃허브 링크](https://github.com/icip-cas/SSO) 🔗
+- 📜 [Yonsei, SNU] [Large Language Models Still Exhibit Bias in Long Text](https://arxiv.org/abs/2410.17519)
+    - essay-style prompt LLM의 bias를 평가하는 프레임워크 Long Text Fairness Test (LTF-Test) 제안
+    - 14개 토픽, 10개 demographic axes, 11,948개 샘플로 구성
+    - 연구에 따르면 특정 demographic group이 선호됨 & excessive sensitivity가 확인됨
+    - 이를 완화하기 위해 biased prompt를 neutral response와 짝짓는 fine-tuning approach 제안
+- 🧑🏻‍💻 [IBM] [IBM Introduces Granite 3.0: High Performing AI Models Built for Business](https://newsroom.ibm.com/2024-10-21-ibm-introduces-granite-3-0-high-performing-ai-models-built-for-business)
+    - OpenLLM 리더보드에서 Llama 3.1 8B 모델을 능가
+    - larger 모델 대비 3~23x 저렴한 비용
+    - MoE 아키텍쳐를 이용하여 1B 이하의 사이즈로 enterprise 태스크 수행
+    - 128K 윈도우 사이즈 지원 (예정)
+- 📜 [NVIDIA] [HelpSteer2-Preference: Complementing Ratings with Preferences](https://arxiv.org/abs/2410.01257)
+    - Bradley-Terry training을 위한 preference annotation을 공개하여 현존하는 ratings (designed for Regression style training)을 보완할 수 있도록 함
+    - 두 방식을 head-to-head comparison → Bradley-Terry and Regression reward modeling 제안
+    - Llama-3.1-70B-Instruct 모델을 튜닝한 것이 RewardBench에서 94.1점을 달성
+    - [데이터셋 링크](https://huggingface.co/datasets/nvidia/HelpSteer2) 🔗 [모델 링크](https://huggingface.co/nvidia/Llama-3.1-Nemotron-70B-Reward) 🔗
 </details>
 
 ## 🙇🏻 September
