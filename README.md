@@ -327,6 +327,18 @@
     - 두 방식을 head-to-head comparison → Bradley-Terry and Regression reward modeling 제안
     - Llama-3.1-70B-Instruct 모델을 튜닝한 것이 RewardBench에서 94.1점을 달성
     - [데이터셋 링크](https://huggingface.co/datasets/nvidia/HelpSteer2) 🔗 [모델 링크](https://huggingface.co/nvidia/Llama-3.1-Nemotron-70B-Reward) 🔗
+- 🧑🏻‍💻 [Cohere] [Introducing Multimodal Embed 3: Powering AI Search](https://cohere.com/blog/multimodal-embed-3)
+    - text, image에 대한 통합 embedding space 지원
+    - 나쁘지 않은 수준의 성능으로 100개 이상의 언어를 지원한다고 함 (검증할 길이 없어 아쉽)
+    - text, image가 독립적으로 clustering 되는 문제가 해결되어 mixed-modality search에서 CLIP 대비 뛰어난 성능을 보여줌
+- 📜 [OpenAI] [Simplifying, Stabilizing and Scaling Continuous-Time Consistency Models](https://arxiv.org/abs/2410.11081)
+    - diffusion 모델과 Consistency 모델의 이전 parameterization을 통합하는 프레임워크를 제안하여 instability의 root cause를 식별
+    - only two sampling step만으로도 뛰어난 성능을 거둘 수 있었음
+    - [OpenAI 블로그 & 데모 링크](https://openai.com/index/simplifying-stabilizing-and-scaling-continuous-time-consistency-models/) 🔗
+- 🧑🏻‍💻 [Google DeepMind] [SynthID Identifying AI-generated content with SynthID](https://deepmind.google/technologies/synthid/)
+    - AI가 생성한 content에 watermark를 부여하거나 식별
+    - image, audio, text, video 지원
+    - 이중에서도 특히 audio, text를 어떻게 구분할 수 있다는 건지 전혀 이해가 안됨..
 </details>
 
 ## 🙇🏻 September
