@@ -70,9 +70,6 @@
 - 📜 [Mila] [Were RNNs All We Needed?](https://arxiv.org/abs/2410.01201)
     - 기존 RNN은 BPTT 때문에 느렸는데 LSTM & GRU는 필요 없음. 이를 input, forget, update gate에 대한 hidden state dependencies를 제거함으로써 달성.
     - 전통적인 모델보다 적은 파라미터를 사용하고, 학습 동안 완전히 parallelizalbe한 버전을 제시
-- 🧑🏻‍💻 [Meta] [Introducing quantized Llama models with increased speed and a reduced memory footprint](https://ai.meta.com/blog/meta-llama-quantized-lightweight-models/)
-    - 모바일 기기에서 돌릴 수 있을 정도로 작으면서 뛰어난 first lightweight quantized Llama models 공개
-    - Llama 3.2 모델에 Quantization-Aware Training with LoRA adaptors (accuracy) & SpinQuant (portability), 두 가지 방법론을 적용
 </details>
 
 
@@ -342,6 +339,13 @@
     - AI가 생성한 content에 watermark를 부여하거나 식별
     - image, audio, text, video 지원
     - 이중에서도 특히 audio, text를 어떻게 구분할 수 있다는 건지 전혀 이해가 안됨..
+- 🧑🏻‍💻 [Meta] [Introducing quantized Llama models with increased speed and a reduced memory footprint](https://ai.meta.com/blog/meta-llama-quantized-lightweight-models/)
+    - 모바일 기기에서 돌릴 수 있을 정도로 작으면서 뛰어난 first lightweight quantized Llama models 공개
+    - Llama 3.2 모델에 Quantization-Aware Training with LoRA adaptors (accuracy) & SpinQuant (portability), 두 가지 방법론을 적용
+- 📜 [Washington, Google Cloud, DeepMind] [Model Swarms: Collaborative Search to Adapt LLM Experts via Swarm Intelligence](https://arxiv.org/abs/2410.11163)
+    - LLM experts pool & utility function으로 시작하는 collaborative search algorithm
+    - 모델 간의 best-found checkpoint를 기반으로 다양한 LLM expert가 집단적으로 weight space를 옮기고 최적화를 수행
+    - 이러한 방식인 Model Swarms는 tuning-free model adaptation, 데이터의 수는 200개 미만 필요
 </details>
 
 ## 🙇🏻 September
