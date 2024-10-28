@@ -348,6 +348,24 @@
     - 이러한 방식인 Model Swarms는 tuning-free model adaptation, 데이터의 수는 200개 미만 필요
 </details>
 
+<details>
+  <summary>5th week</summary>
+
+- 🧑🏻‍💻 [Stanford] [Co-STORM Get a Wikipedia-like report on your topic with AI](https://storm.genie.stanford.edu/)
+    - [이 논문](https://arxiv.org/abs/2402.14207)의 preview를 공개. 현재는 무료로 사용 가능 (NAACL 2024 Main)
+    - 위키피디아 형식으로 작성된 내용들은 모두 PDF로 다운로드 가능
+    - 글에 존재하는 모든 인용문에 대한 원본 출처 확인 가능
+- 📜 [Michigan, Amazon] [A Theoretical Understanding of Chain-of-Thought: Coherent Reasoning and Error-Aware Demonstration](https://arxiv.org/abs/2410.16540)
+    - CoT의 earlier step이 integrated 된다면 transformer가 더 나은 error correction 능력과 accurate prediction을 얻게 된다고 주장
+    - 추론 단계에서 demonstration example이 corrupted 될 때, Coherent CoT를 사용하는 transformer의 sensitivity를 조사
+    - → final outcome에 비해 intermediate reasoning step에서 더 sensitive하게 반응
+- 📜 [Shanghai] [Agentic Information Retrieval](https://arxiv.org/abs/2410.09713)
+    - LLM이 기존 Information Retrieval 패러다임을 변화시켰다고 주장
+    - 기존에는 사전에 정의된 candidate item을 filtering 하는 것에 수십년째 의존하고 있던 상황
+    - Agentic IR을 제시하며 세 종류의 application과 현재의 문제점에 대해 논의
+
+</details>
+
 ## 🙇🏻 September
 <details>
   <summary>1st week</summary>
