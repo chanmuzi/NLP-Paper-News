@@ -363,6 +363,14 @@
     - LLM이 기존 Information Retrieval 패러다임을 변화시켰다고 주장
     - 기존에는 사전에 정의된 candidate item을 filtering 하는 것에 수십년째 의존하고 있던 상황
     - Agentic IR을 제시하며 세 종류의 application과 현재의 문제점에 대해 논의
+- 📜 [Michigan, Alibaba] [Make LLMs better zero-shot reasoners: Structure-orientated autonomous reasoning](https://arxiv.org/abs/2410.19000)
+    - LLM이 질문을 더 잘 이해하고 problem-solving process를 가이드 할 수 있는 novel structure-oriented analysis method 도입
+    - 왜 이런 방식이 실제 reasoning에 유용한지를 probabilistic graphical model을 통해 입증
+    - multi-agent reasoning system, Structure-oriented Autonomous Reasoning Agents (SARA) 제안
+- 🧑🏻‍💻 [Stability.AI] [Introducing Stable Diffusion 3.5](https://stability.ai/news/introducing-stable-diffusion-3-5)
+    - 8B 사이즈 모델로 1 메가픽셀 해상도의 이미지를 처리 (prompt adherence 굿)
+    - Stable Diffusion 3.5 수준의 성능을 낼 수 있는 distilled version의 turbo 모델도 공개
+    - transformer block에 Query-Key Normalization 테크닉 적용
 
 </details>
 
