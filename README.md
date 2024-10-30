@@ -371,6 +371,11 @@
     - 8B 사이즈 모델로 1 메가픽셀 해상도의 이미지를 처리 (prompt adherence 굿)
     - Stable Diffusion 3.5 수준의 성능을 낼 수 있는 distilled version의 turbo 모델도 공개
     - transformer block에 Query-Key Normalization 테크닉 적용
+- 📜 [Huawei] [Step Guided Reasoning: Improving Mathematical Reasoning using Guidance Generation and Step Reasoning](https://arxiv.org/abs/2410.19817)
+    - 추가적인 finetuning이 필요하지 않은 방법론, Step Guidance REasoning을 제안
+    - LLM은 small reasoning step을 reflect 하고, 이를 inference stage에 포함시킴으로써 첫 스텝을 다음으로 잘 이어나갈 수 있게 됨
+    - 간단히 살펴봤을 땐 inference를 여러 번 하게 되는 것 같은데.. 근본적인 해결책은 아닌 것 같음
+
 
 </details>
 
