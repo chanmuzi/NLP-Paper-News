@@ -375,6 +375,15 @@
     - 추가적인 finetuning이 필요하지 않은 방법론, Step Guidance REasoning을 제안
     - LLM은 small reasoning step을 reflect 하고, 이를 inference stage에 포함시킴으로써 첫 스텝을 다음으로 잘 이어나갈 수 있게 됨
     - 간단히 살펴봤을 땐 inference를 여러 번 하게 되는 것 같은데.. 근본적인 해결책은 아닌 것 같음
+- 📜 [Google DeepMind, Boston] [Measuring memorization through probabilistic discoverable extraction](https://arxiv.org/abs/2410.19482)
+    - generated sample 내에서 target sequence를 추출할 확률을 정량화할 수 있는 probabilistic relaxation을 도입
+    - 이를 통해 모델이 기억(암기)하고 있는 정보에 대해 파악할 수 있다고 주장
+    - 이러한 연구는 학습에 사용된 민감한 정보 등이 유출되는 것을 방지하기 위함인데, 그럼 외운 것 없이 순수한 추론, 이해, 언어 능력만으로 여러 태스크를 처리하는 것이 궁극적인 goal이 될지 궁금함
+- 🧑🏻‍💻 [GitHub] [Bringing developer choice to Copilot with Anthropic’s Claude 3.5 Sonnet, Google’s Gemini 1.5 Pro, and OpenAI’s o1-preview](https://github.blog/news-insights/product-news/bringing-developer-choice-to-copilot/)
+    - Copilot을 타사의 모델들을 포함한 multi-model AI coding assistant로 전환함
+    - VS Code, GitHub.com, Apple Xcode와의 직접적인 통합
+    - VS Code 내에 GitHub Spark 공개 (Cursor의 Composer와 유사한 기능)
+    - Cursor에 비해 한 발자국씩 대응이 늦는 것 같음. 모델 종류의 다양성이나 Spark 전부 다.
 
 
 </details>
