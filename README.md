@@ -4,6 +4,18 @@
 
 ---
 # 2024
+
+## 🍁 November
+<details>
+  <summary>1st week</summary>
+
+- 📜 [Boston] [Linguistics Theory Meets LLM: Code-Switched Text Generation via Equivalence Constrained Large Language Models](https://arxiv.org/abs/2410.22660)
+    - 하나의 대화 내에서 두 개 이상의 언어를 번갈아 가면서 사용하는 것은 NLP에서 상당히 어려운 문제
+    - EZSwitch: Equivalence Constraint Theory (ECT)를 LLM에 결합하여 언어학적으로 타당하고 유려한 code-switched text를 만들 수 있도록 하는 프레임워크
+    - CSPerf: human preference dataset
+
+</details>
+
 ## 🎃 October
 <details>
   <summary>1st week</summary>
