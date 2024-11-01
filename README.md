@@ -13,6 +13,11 @@
     - 하나의 대화 내에서 두 개 이상의 언어를 번갈아 가면서 사용하는 것은 NLP에서 상당히 어려운 문제
     - EZSwitch: Equivalence Constraint Theory (ECT)를 LLM에 결합하여 언어학적으로 타당하고 유려한 code-switched text를 만들 수 있도록 하는 프레임워크
     - CSPerf: human preference dataset
+- 📜 [Yale, NYU] [Struc-Bench: Are Large Language Models Really Good at Generating Complex Structured Data?](https://arxiv.org/abs/2309.08963) (NAACL 2024 Short)
+    - LLM이 text table, HTML, LaTeX 형식 등을 잘 다룰 수 있는지 평가하는 벤치마크, Struc-Bench
+    - Prompting Score (P-Score) & Heuristical Score (H-Score) 를 제안
+    - structure fine-tuning을 고안하여 Llama에 적용한 결과, 눈에 띄는 성능 향상이 있었다고 보고
+    - [깃허브 링크](https://github.com/gersteinlab/Struc-Bench) 🔗
 
 </details>
 
