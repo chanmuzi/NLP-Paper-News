@@ -18,6 +18,19 @@
     - Prompting Score (P-Score) & Heuristical Score (H-Score) 를 제안
     - structure fine-tuning을 고안하여 Llama에 적용한 결과, 눈에 띄는 성능 향상이 있었다고 보고
     - [깃허브 링크](https://github.com/gersteinlab/Struc-Bench) 🔗
+- 📜 [Apple] [Scaling Smart: Accelerating Large Language Model Pre-training with Small Model Initialization](https://arxiv.org/abs/2409.12903)
+    - HyperCloning, 사전학습된 모델의 파라미터를 더 큰 모델의 증가된 hidden dimension에 맞게 확장하는 방법론
+    - larger model이 smaller model의 functionality를 보유할 수 있도록 도와줌
+    - 학습이 시작되기 전 larger 모델이 smaller 모델의 능력을 탑재하고 있으므로, 무작위로 초기화된 파라미터를 학습하는 것보다 훨씬 효율적이라고 주장
+- 🧑🏻‍💻 [OpenAI] [Introducing ChatGPT search](https://openai.com/index/introducing-chatgpt-search/)
+    - GPT-4o의 언어 처리 능력에 웹 데이터 access를 더한 hybrid system을 제공
+    - 합성데이터로 fine-tuned GPT-4o를 사용
+    - 날씨, 주식, 스포츠 등은 data provider와 파트너십을 통해 real-time data를 특별히 제공한다고 함
+- 📜 [Ghent University] [Large Language Models Reflect the Ideology of their Creators](https://arxiv.org/abs/2410.18417)
+    - 다양한 LLM과 언어에 나타난 ideological stance의 다양성을 조사
+    - LLM에게 최근 세계사의 유명하면서도 논쟁이 많은 인물들을 묘사하도록 프롬프팅 (영어 & 중국어)
+    - 같은 LLM이라도 영어와 중국어 사용에 따라 normative disagreement를 보인다는 것을 확인함
+    - Western 모델에 정치적인 성향이 반영되어 있다고도 주장
 
 </details>
 
