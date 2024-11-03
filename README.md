@@ -31,6 +31,15 @@
     - LLM에게 최근 세계사의 유명하면서도 논쟁이 많은 인물들을 묘사하도록 프롬프팅 (영어 & 중국어)
     - 같은 LLM이라도 영어와 중국어 사용에 따라 normative disagreement를 보인다는 것을 확인함
     - Western 모델에 정치적인 성향이 반영되어 있다고도 주장
+- 📜 [Ohio, Washington, AI2] [ComPO: Community Preferences for Language Model Personalization](https://arxiv.org/abs/2410.16027)
+    - 기존 언어 모델 학습에 반영하는 human feedback은 “average” user의 선호를 가정한 것이기 때문에 다양한 주관적 & finer-grained 특성을 무시하고 있음
+    - ComPO, preference provider와 함께 모델 output의 확률 분포를 contextualize 함으로써 preference optimization를 personalize
+    - 개인 단위가 아닌 그룹 단위의 선호 데이터셋을 수집하여 community-level preferences from Reddit → ComPRed 공개
+- 📜 [NYU, AI2, NVIDIA, Washington] [Diverging Preferences: When do Annotators Disagree and do Models Know?](https://arxiv.org/abs/2410.14632)
+    - human-labeled preference dataset에 존재하는 diverging prefernces를 연구
+    - 4개의 high-level 클래스로 구분되는 10개의 카테고리로 disagreement taxonomy를 구축
+        - task underspecification, response style, refusals, annotation errors
+    - 이것들이 reward modeling & evaluation 에 어떤 영향을 미치는지 조사
 
 </details>
 
