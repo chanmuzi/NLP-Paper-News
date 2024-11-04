@@ -7,7 +7,7 @@
 
 ## 🍁 November
 <details>
-  <summary>1st week</summary>
+  <summary>1st ~ 2nd week</summary>
 
 - 📜 [Boston] [Linguistics Theory Meets LLM: Code-Switched Text Generation via Equivalence Constrained Large Language Models](https://arxiv.org/abs/2410.22660)
     - 하나의 대화 내에서 두 개 이상의 언어를 번갈아 가면서 사용하는 것은 NLP에서 상당히 어려운 문제
@@ -40,6 +40,20 @@
     - 4개의 high-level 클래스로 구분되는 10개의 카테고리로 disagreement taxonomy를 구축
         - task underspecification, response style, refusals, annotation errors
     - 이것들이 reward modeling & evaluation 에 어떤 영향을 미치는지 조사
+- 📜 [VNU Univ.] [MoD: A Distribution-Based Approach for Merging Large Language Models](https://arxiv.org/abs/2411.00406)
+    - Mixture of Distribution (MoD): 모델 weight 대신 출력 확률 분포로 operate
+    - 각 모델들의 specialized 능력을 보존하면서도 task 사이의 효율적인 knowledge sharing 가능
+    - 간단하게 살펴봤을 땐 다른 merge 방식과 뭐가 그렇게 크게 다른지는 잘 모르겠음
+    - [깃허브 링크](https://github.com/knovel-eng/mod) 🔗
+- 🧑🏻‍💻 [Google] [Gemini API and Google AI Studio now offer Grounding with Google Search](https://developers.googleblog.com/en/gemini-api-and-ai-studio-now-offer-grounding-with-google-search/)
+    - Grounding with Google Search 기능을 Google AI Studio, Gemini API 에서 선보임
+    - 검색 결과를 기반으로 답변을 생성하는 방식으로 최근 생성형 검색 엔진에 대한 관심이 뜨거움
+    - 그러나 최근 구글 검색의 결과물이 만족스럽지 않다는 점을 감안하면 그렇게 좋을지는 잘 모르겠음
+- 🧑🏻‍💻 [HuggingFace] [SmolLM2-1.7B-Instruct](https://huggingface.co/HuggingFaceTB/SmolLM2-1.7B-Instruct)
+    - 135M, 360M, 1.7B 사이즈로 구성된 sLLM 패밀리 version 2를 공개
+    - 잘 정제된 데이터셋으로 SFT & DPO 학습한 모델로, 동사이즈 대비 아주 뛰어난 성능 지표를 보임
+    - [이미 ollama에서도 지원](https://ollama.com/library/smollm2) 🔗
+
 
 </details>
 
