@@ -53,7 +53,13 @@
     - 135M, 360M, 1.7B 사이즈로 구성된 sLLM 패밀리 version 2를 공개
     - 잘 정제된 데이터셋으로 SFT & DPO 학습한 모델로, 동사이즈 대비 아주 뛰어난 성능 지표를 보임
     - [이미 ollama에서도 지원](https://ollama.com/library/smollm2) 🔗
-
+- 🧑🏻‍💻 [Anthropic] [PDF support (beta)](https://docs.anthropic.com/en/docs/build-with-claude/pdf-support)
+    - PDF 파일 내에 존재하는 텍스트, 시각 자료, 이미지, 차트 등을 분석할 수 있는 기능을 API로 제공
+    - 최대 32MB, 100 페이지 커버가 가능하며 페이지당 1,500 ~ 3,000 토큰 사용
+- 🧑🏻‍💻 [xAI] [API Public Beta](https://x.ai/blog/api)
+    - 개발 마지막 단계에 있는 Grok 모델을 public beta로 공개
+    - 128K 토큰 길이의 context, function calling, system prompt를 지원
+    - 베타 기간 동안 25$의 API 크레딧을 매달 지급
 
 </details>
 
