@@ -65,6 +65,16 @@
     - 다른 태스크보다 특히 코드 생성에서 좋은 퍼포먼스를 보이는 것 같음
     - 그런데 비용이 많이 올라서 논란이 되는 것으로 보임
     - Sonnet 3.5 (new)의 성능도 함께 화제가 되는 중
+- 📜 [MIT, Cambridge] [The Geometry of Concepts: Sparse Autoencoder Feature Structure](https://arxiv.org/abs/2410.19750)t
+    - Sparse autoencoder는 최근 LLM에 의해 표현되는 세상의 concepts를 high dimensional vectors의 dictionaries로 produce 가능
+    1. “atomic” small scale structure는 “crystal” face를 가진 평행사변형 또는 사다리꼴을 포함한다.
+    2. “brain” intermediate-scael structure는 상당한 spatial modularity를 포함한다.
+    3. “galaxy” scale structure는 isotropic이 아니다. 대신 middle layer에서 가파른 기울기를 갖는 power law of eigen values를 지닌다.
+- 📜 [Google Research] [Distinguishing Ignorance from Error in LLM Hallucinations](https://arxiv.org/abs/2410.22071)
+    - close-book Question Answering (CBQA) 시나리오에서 hallucination에 대해 연구: 모델이 실제로 파라미터 내에 correct knowledge를 보유하지 않은 것인가 or 알고 있는데 답변을 잘못한 것인가
+    - 후자의 경우 중간 연산에 개입함으로써 문제를 해결할 수 있으나, 전자의 경우 외부 지식 source가 필요
+    - 두 경우를 구분하기 위해 Wrong Answer despite having Correct Knowledge (WACK) 라는 model-specific dataset 구축 방식을 제안
+
 
 </details>
 
