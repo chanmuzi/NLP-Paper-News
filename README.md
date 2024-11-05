@@ -60,6 +60,11 @@
     - 개발 마지막 단계에 있는 Grok 모델을 public beta로 공개
     - 128K 토큰 길이의 context, function calling, system prompt를 지원
     - 베타 기간 동안 25$의 API 크레딧을 매달 지급
+- 🧑🏻‍💻 [Anthropic] [Claude 3.5 Haiku](https://www.anthropic.com/claude/haiku)
+    - optimized for rapid, accurate code completions
+    - 다른 태스크보다 특히 코드 생성에서 좋은 퍼포먼스를 보이는 것 같음
+    - 그런데 비용이 많이 올라서 논란이 되는 것으로 보임
+    - Sonnet 3.5 (new)의 성능도 함께 화제가 되는 중
 
 </details>
 
