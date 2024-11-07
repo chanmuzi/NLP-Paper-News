@@ -74,6 +74,26 @@
     - close-book Question Answering (CBQA) 시나리오에서 hallucination에 대해 연구: 모델이 실제로 파라미터 내에 correct knowledge를 보유하지 않은 것인가 or 알고 있는데 답변을 잘못한 것인가
     - 후자의 경우 중간 연산에 개입함으로써 문제를 해결할 수 있으나, 전자의 경우 외부 지식 source가 필요
     - 두 경우를 구분하기 위해 Wrong Answer despite having Correct Knowledge (WACK) 라는 model-specific dataset 구축 방식을 제안
+- 📜 [Duke, Google Research] [SLED: Self Logits Evolution Decoding for Improving Factuality in Large Language Models](https://arxiv.org/abs/2411.02433)
+    - external knowledge base에 의존하거나 추가적인 fine-tuning 없이 LLM의 truthfulness를 향상시킬 수 있는 novel decoding framework
+    - 마지막 layer의 output logits와 초기 layer의 output logits을 contrasting 하여 LLM 내부에 embedded 된 latent knowledge를 이용
+    - latent knowledge가 output에 대해 self-refinement 할 수 있도록 approximate gradient approach 를 사용
+- 🧑🏻‍💻 [HuggingFace] [Smol Tools](https://github.com/huggingface/smollm/tree/main/smol_tools)
+    - LLaMA.cpp로 구현된 가벼운 AI-powered tools, small language models의 collection
+    - SmolSummarizer, SmolRewriter, SmolAgent
+    - 각각이 엄청난 건 아닌데 작은 모델들을 각자의 작업에 특화시켜서 합친 것에 의미가 있는 듯함
+- 📜 [IBM] [Granite 3.0 Language Models](https://github.com/ibm-granite/granite-3.0-language-models?tab=readme-ov-file)
+    - lightweight SoTA 모델 패밀리 공개. 총 12T 토큰으로 학습된 2B & 8B 사이즈의 모델
+    - Sparse 1B & 3B MoE 모델. 400M & 800M activate 파라미터. 총 10T 토큰으로 학습.
+    - 비교군으로는 Llama3.1 8B, Mistral 7B / SmolLM-1.7B 등 모델을 사용
+    - 상업적으로도 사용 가능하도록 Apache 2.0 라이센스로 공개됨
+- 📜 [HtmlRAG: HTML is Better Than Plain Text for Modeling Retrieved Knowledge in RAG Systems](https://arxiv.org/abs/2411.02959)
+    - RAG 시나리오에서 검색된 html을 plain text로 변환하는 과정에서 heading, table structure와 같은 구조적 or semantic 정보가 많이 소실됨
+    - 따라서 plain text 대신 HTML을 사용하는 HtmlRAG를 제안
+    - 그러나 HTML을 바로 사용하기는 어렵기 때문에, HTML cleaning, compression, pruning strategies를 도입하여 정보의 손실을 최소화 하면서도 HTML을 줄이고자 함
+- 📜 [Dartmoouth, Adobe, Stanford, …] [Personalization of Large Language Models: A Survey](https://arxiv.org/abs/2411.00027)
+    - personalized LLM usage에 대한 taxonomy를 정비하고 주요 차이점과 챌린지를 요약하는 서베이
+    - personalization techniques, datasets ,evaluation methods, application 등을 기준으로 구분
 
 
 </details>
