@@ -94,6 +94,18 @@
 - 📜 [Dartmoouth, Adobe, Stanford, …] [Personalization of Large Language Models: A Survey](https://arxiv.org/abs/2411.00027)
     - personalized LLM usage에 대한 taxonomy를 정비하고 주요 차이점과 챌린지를 요약하는 서베이
     - personalization techniques, datasets ,evaluation methods, application 등을 기준으로 구분
+- 📜 [Huawei] [Large Language Models Orchestrating Structured Reasoning Achieve Kaggle Grandmaster Level](https://arxiv.org/abs/2411.03562)
+    - 다양한 science tasks를 자율적로 수행할 수 있는 end-to-end agent, Agent K v1.0 공개
+    - 기존의 rigid & limited 한 CoT & reflection 대신에 아주 유연한 structrued reasoning 프레임워크를 사용했다고 언급
+    - iteration마다 핵심 정보를 탐색 및 저장함으로써 long- & short-term memory를 업데이트함. 이를 통해 fine-tuning이나 backpropagation 없이 성능을 개선할 수 있음
+- 📜 [Tancent] [Hunyuan-Large: An Open-Source MoE Model with 52 Billion Activated Parameters by Tencent](https://arxiv.org/abs/2411.02265)
+    - 52B activation parameter를 갖는 389B 사이즈의 MoE 아키텍쳐 LLM 공개
+    - 256K 길이의 window size를 갖는 모델
+    - 다양한 태스크에서 LLama3.1-70B를 능가하고, 405B 모델에 비견되는 성능을 보임
+    - large-scale synthetic data, mixed expert routing, key-value cache compression, expert-specific learning rate 등이 핵심 특징
+    - MoE 모델의 scaling law와 learning rate schedule에 대해서도 연구
+    - [깃허브 링크](https://github.com/Tencent/Hunyuan-Large) 🔗 [허깅페이스 링크](https://huggingface.co/tencent/Tencent-Hunyuan-Large) 🔗
+
 
 
 </details>
