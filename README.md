@@ -105,7 +105,20 @@
     - large-scale synthetic data, mixed expert routing, key-value cache compression, expert-specific learning rate 등이 핵심 특징
     - MoE 모델의 scaling law와 learning rate schedule에 대해서도 연구
     - [깃허브 링크](https://github.com/Tencent/Hunyuan-Large) 🔗 [허깅페이스 링크](https://huggingface.co/tencent/Tencent-Hunyuan-Large) 🔗
-
+- 🧑🏻‍💻 [Ollama] [Ollama 0.4 Integrates Meta's Llama 3.2 Vision Models (11B and 90B)](https://ollama.com/blog/llama3.2-vision)
+    - Llama 3.2 Vision: OCR, handwriting → machine-readable text, 차트와 표 이해
+    - 터미널에서 사용 가능
+- 📜 [NVIDIA] [MM-Embed: Universal Multimodal Retrieval with Multimodal LLMs](https://arxiv.org/abs/2411.02571)
+    - MLLM을 이용하여 다양한 modality, 다양한 retrieval task를 아우르는 universal multimodal retrieval 시나리오 지원
+    - MLLM을 10개 데이터셋 16개의 태스크에 대해 학습하여 bi-encoder retriever로 사용
+    - MLLM에 존재하는 modality bias를 완화하기 위해 modality-aware hard negative mining을 제안
+    - 여러 modality 중에서도 특히 text retrieval 능력을 향상시키기 위해 continually fine-tuning 할 것을 제안
+    - [허깅페이스 링크](https://huggingface.co/nvidia/MM-Embed) 🔗
+- 📜 [Zhejiang] [Fine-Grained Guidance for Retrievers: Leveraging LLMs' Feedback in Retrieval-Augmented Generation](https://arxiv.org/abs/2411.03957)
+    - Guided Discovery Learning 교육학 이론을 바탕으로 FiGRet (Fine-grained Guidance for Retrievers) 제안
+    - retriever가 잘 못하는 샘플들로부터 easy-to-understand 샘플을 LLM으로 생성하는 방식
+    - 이때 세 가지 learning objective, relevance, comprehensiveness, purity를 고려
+    - LLM과 retriever 간 dual curriculum learning & reciprocal feedback
 
 
 </details>
