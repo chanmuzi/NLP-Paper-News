@@ -119,6 +119,18 @@
     - retriever가 잘 못하는 샘플들로부터 easy-to-understand 샘플을 LLM으로 생성하는 방식
     - 이때 세 가지 learning objective, relevance, comprehensiveness, purity를 고려
     - LLM과 retriever 간 dual curriculum learning & reciprocal feedback
+- 🗞️ [XPENG] [XPENG Unveils Iron Humanoid Robot, Already Operational in EV Factory](https://www.maginative.com/article/xpeng-unveils-iron-humanoid-robot-already-operational-in-ev-factory/)
+    - 중국의 전기차 회사 XPENG에서 인간과 비슷한 사이즈의 휴머노드를 공개 (5’8’’, 154 파운드)
+    - Eagle Vision 시스템과 end-to-end large AI model이 통합된 시스템
+    - PoC 수준을 넘어 실제 공정에서 활용 가능
+- 🧑🏻‍💻 [ByteDance, Tsinghua] [X-Portrait 2: Highly Expressive Portrait Animation](https://byteaigc.github.io/X-Portrait2/)
+    - static portrait 이미지를 reference video를 참고하여 dynamic, expressive animation으로 변경해주는 모델
+    - 현실적인 이미지와 만화 그림체 사이에도 style transfer 가능
+- 📜 [Edinburgh] [Mixtures of In-Context Learners](https://arxiv.org/abs/2411.02830)
+    - demonstrations subset을 expert로 처리하고, 학습 데이터에서 각각에 대한 output distribution을 병합하는 방식, Mixtures of In-Context Learners (MoICL)
+    → 입력에 불필요하게 포함되는 토큰 숫자를 줄여 메모리, 추론 속도 효율을 높일 수 있음
+    - 분류 태스크에서 뛰어난 성능, 더 적은 demonstration으로 기존과 유사한 퍼포먼스를 달성하여 파레토 라인을 push
+
 
 
 </details>
