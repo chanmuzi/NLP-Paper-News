@@ -130,7 +130,11 @@
     - demonstrations subset을 expert로 처리하고, 학습 데이터에서 각각에 대한 output distribution을 병합하는 방식, Mixtures of In-Context Learners (MoICL)
     → 입력에 불필요하게 포함되는 토큰 숫자를 줄여 메모리, 추론 속도 효율을 높일 수 있음
     - 분류 태스크에서 뛰어난 성능, 더 적은 demonstration으로 기존과 유사한 퍼포먼스를 달성하여 파레토 라인을 push
-
+- 📜 [Google, Peking] [TokenFormer: Rethinking Transformer Scaling with Tokenized Model Parameters](https://arxiv.org/abs/2410.23168)
+    - transformer 아키텍쳐로 scale-up 하기 어려운 이유 중 하나는 linear projection에 필요한 파라미터의 숫자가 고정되어 있기 때문
+    - Tokenformer: attention 메커니즘을 input token 사이의 computation 뿐만 아니라 token과 모델 파라미터 간 interaction에도 활용
+    - 모든 linear layer를 token-parameter attention layer로 교체!
+    - [깃허브 링크](https://github.com/Haiyang-W/TokenFormer) 🔗
 
 
 </details>
