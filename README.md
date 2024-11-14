@@ -135,7 +135,22 @@
     - Tokenformer: attention 메커니즘을 input token 사이의 computation 뿐만 아니라 token과 모델 파라미터 간 interaction에도 활용
     - 모든 linear layer를 token-parameter attention layer로 교체!
     - [깃허브 링크](https://github.com/Haiyang-W/TokenFormer) 🔗
-
+- 📜 [Hong Kong, Tsinghua, Peking, Tencent] [Large Language Models Can Self-Improve in Long-context Reasoning](https://arxiv.org/abs/2411.08147)
+    - 현존 LLM은 Long-context Reasoning에 약세를 보이고 이를 해결하는 방법은 human annotation 기반의 합성 데이터를 학습하는 것 → 추가 발전이 어려움
+    - 위 문제를 해결하기 위해 SeaLong 제안: 각 질문에 대해 여러 개의 output을 생성하고 Minimum Bayes Risks를 이용한 scoring 후 SFT 또는 preference optimization
+    - 이런 방법론들은 결국 cost 문제에 직면하기 마련인데..
+- 🧑🏻‍💻 [INF, M-A-P] [OpenCoder: The Open Cookbook for Top-Tier Code Large Language Models](https://opencoder-llm.github.io/)
+    - 탑티어 Code LLM의 성능에 달하는 오픈소스 코드 모델을 공개 (1.5B & 8B)
+    - 재현 가능한 960B 토큰의 데이터셋, 4.5M SFT samples, intermediate checkpoints
+    - Two-Stage Instruction Fine-Tuning for Theory and Practice
+    - Ollama에서 동작 가능. 로컬에서 코드 모델을 사용하고자 하는 수요가 적지 않은 것 같음
+- 🧑🏻‍💻 [NVIDIA] [Cosmos Tokenizer: A suite of image and video neural tokenizers](https://research.nvidia.com/labs/dir/cosmos-tokenizer/)
+    - SOTA 모델 대비 8배의 압축률을 자랑하는 image & video tokenizer를 공개
+    - 토크나이저는 생성형 모델들의 성능에 직접적인 영향을 주는데 이를 평가하기 위한 [TokenBench](https://github.com/NVlabs/TokenBench)도 존재
+- 📜 [Wuhan Univ.] [Adaption-of-Thought: Learning Question Difficulty Improves Large
+Language Models for Reasoning](https://aclanthology.org/2024.emnlp-main.313.pdf) (EMNLP 2024 Main)
+    - simple method로는 LLM이 어려운 질문에 대해 충분히 답변할 수 없음
+    - Adaptation-of-Thought (AdoT): question의 난이도를 먼저 평가하고 demonstration set을 조정하여 difficulty-adapted retrieval 전략을 사용
 
 </details>
 
