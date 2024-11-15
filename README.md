@@ -160,6 +160,11 @@ Language Models for Reasoning](https://aclanthology.org/2024.emnlp-main.313.pdf)
     - Hermes 70B 오픈소스 모델 이용하여 higher expression, long-form thinking, individual alignment가 가능하도록 함
     - 📜 [모델 테크니컬 리포트](https://nousresearch.com/wp-content/uploads/2024/08/Hermes-3-Technical-Report.pdf) 🔗
     - MCTS, CoC, MoA 등의 방법론들을 조합하여 모델 사이즈 증가 없이 퍼포먼스를 향상시킴
+- 📜 [Israel Institue of Technology] [Backward Lens: Projecting Language Model Gradients into the Vocabulary Space](https://aclanthology.org/2024.emnlp-main.142.pdf) (EMNLP 2024 Best paper)
+    - 최근에는 Transformer 기반의 언어 모델들이 forward 하는 동안의 weight와 hidden state를 모델의 vocab에 project 함으로써 interpretailiby를 높이고자 하는 시도가 많았음
+    - gradient matrix가 low-rank linear combination의 forward & backward pass의 입력으로 cast 될 수 있음을 입증 (?)
+    - 이러한 gradients를 vocab item에 project하고 LM의 neuron에 새로운 정보를 저장할 수 있도록 하는 방법론을 고안
+    - [깃허브 링크](https://github.com/shacharKZ/BackwardLens) 🔗
 
 </details>
 
