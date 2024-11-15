@@ -151,6 +151,15 @@
 Language Models for Reasoning](https://aclanthology.org/2024.emnlp-main.313.pdf) (EMNLP 2024 Main)
     - simple method로는 LLM이 어려운 질문에 대해 충분히 답변할 수 없음
     - Adaptation-of-Thought (AdoT): question의 난이도를 먼저 평가하고 demonstration set을 조정하여 difficulty-adapted retrieval 전략을 사용
+- 🧑🏻‍💻 [Alibaba] [Qwen2.5-Coder Series: Powerful, Diverse, Practical.](https://qwenlm.github.io/blog/qwen2.5-coder-family/)
+    - Qwen2.5-Coder-32B-Instruct는 코딩에서 GPT-4o 이상의 퍼포먼스를 보임
+    - 6개의 모델 사이즈를 기준으로 모델을 공개
+        - 0.5B / 1.5B / 7B / 14B / 32B 모델은 Apache 2.0, 3B 모델은 Qwen-Research 라이센스를 따름
+    - coding assistant & Artifact 두 개의 시나리오에서 사용할 수 있게끔 학습됨
+- 🧑🏻‍💻 [Nous Research] [Introducing the Forge Reasoning API Beta and Nous Chat: An Evolution in LLM Inference](https://nousresearch.com/introducing-the-forge-reasoning-api-beta-and-nous-chat-an-evolution-in-llm-inference/)
+    - Hermes 70B 오픈소스 모델 이용하여 higher expression, long-form thinking, individual alignment가 가능하도록 함
+    - 📜 [모델 테크니컬 리포트](https://nousresearch.com/wp-content/uploads/2024/08/Hermes-3-Technical-Report.pdf) 🔗
+    - MCTS, CoC, MoA 등의 방법론들을 조합하여 모델 사이즈 증가 없이 퍼포먼스를 향상시킴
 
 </details>
 
