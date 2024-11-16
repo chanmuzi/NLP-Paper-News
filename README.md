@@ -165,6 +165,21 @@ Language Models for Reasoning](https://aclanthology.org/2024.emnlp-main.313.pdf)
     - gradient matrix가 low-rank linear combination의 forward & backward pass의 입력으로 cast 될 수 있음을 입증 (?)
     - 이러한 gradients를 vocab item에 project하고 LM의 neuron에 새로운 정보를 저장할 수 있도록 하는 방법론을 고안
     - [깃허브 링크](https://github.com/shacharKZ/BackwardLens) 🔗
+- 📜 [Univ. of Tehran] [CoCoP: Enhancing Text Classification with LLM through Code Completion Prompt](https://arxiv.org/pdf/2411.08979)
+    - LLM의 성능은 입력 프롬프트의 품질에 크게 영향을 받는다는 문제가 존재
+    - text classification 문제를 해결하기 위해 LLM의 code 능력을 활용하는 Code Completion Prompt (CoCoP) 방법론 제시: text classification → code completion
+    - CodeLLaMA와 같은 코드 특화 모델을 사용하는 경우, few-shot learning 수준의 퍼포먼스 가능
+- 🧑🏻‍💻 [Together AI] Llama OCR
+    - Together AI가 학습한 Llama 3.2 모델의 endpoint를 사용하여 ocr 수행
+    - Llama 3.2 11B & 90B 모델은 유료로 사용 가능
+    - [이미지 업로드 페이지 링크](https://llamaocr.com/) 🔗
+- 📜 [Apple]  [Cut Your Losses in Large-Vocabulary Language Models](https://arxiv.org/pdf/2411.09009)
+    - 점점 더 큰 vocab을 사용하는데, 이는 학습 시 cross entropy loss 계산으로 인해 불필요하게 많은 메모리를 차지하는 이슈가 존재함
+        - 이는 각 입력 토큰 & vocab item 쌍마다 logit 행렬을 구축하기 때문이고, 작은 모델이라고 할지라도 LLM의 나머지 구성요소의 수배에 달하는 메모리를 차지하게 됨
+    - Cut Cross-Entropy (CCE) 제안: 모든 토큰에 대한 로짓을 전역 메모리에 저장하지 않고도 Cross Entropy 계산 가능
+        - 대신 정답에 대한 logit만 계산, 모든 logit에 대한 log sum-exp를 실시간 평가
+    - Gemma 2 (2B) 모델의 경우 loss 계산의 메모리 사용량을 24GB → 1MB 로 줄이고, classification head의 전체 학습에서는 28GB → 1GB 로 줄임
+    - [깃허브 링크](https://github.com/apple/ml-cross-entropy) 🔗
 
 </details>
 
