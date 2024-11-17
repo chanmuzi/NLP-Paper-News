@@ -180,6 +180,12 @@ Language Models for Reasoning](https://aclanthology.org/2024.emnlp-main.313.pdf)
         - 대신 정답에 대한 logit만 계산, 모든 logit에 대한 log sum-exp를 실시간 평가
     - Gemma 2 (2B) 모델의 경우 loss 계산의 메모리 사용량을 24GB → 1MB 로 줄이고, classification head의 전체 학습에서는 28GB → 1GB 로 줄임
     - [깃허브 링크](https://github.com/apple/ml-cross-entropy) 🔗
+- 🧑🏻‍💻 [Anthropic] [Improve your prompts in the developer console](https://www.anthropic.com/news/prompt-improver)
+    - Anthropic Console에서 기존 프롬프트를 개선하는 기능을 추가
+    - CoT Reasoning, Example standardization, Example enrichment, Rewriting, Prefill addition 등을 활용
+    - workbench에서 multi-shot example을 관리할 수 있음. Claude를 활용하여 synthetic 데이터를 자동적으로 만들 수도 있음
+    - (이전에 출시된 기능이긴한데) 최종 생성 결과에 대해 1-5점 점수를 부여하는 평가 기능도 지원함
+
 
 </details>
 
