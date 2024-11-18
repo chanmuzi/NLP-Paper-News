@@ -186,6 +186,20 @@ Language Models for Reasoning](https://aclanthology.org/2024.emnlp-main.313.pdf)
     - workbench에서 multi-shot example을 관리할 수 있음. Claude를 활용하여 synthetic 데이터를 자동적으로 만들 수도 있음
     - (이전에 출시된 기능이긴한데) 최종 생성 결과에 대해 1-5점 점수를 부여하는 평가 기능도 지원함
 
+</details>
+
+<details>
+  <summary>3rd week</summary>
+  
+- 📜 [Harvard, Stanford, MIT, Databricks, CMU] [Scaling Laws for Precision](https://arxiv.org/pdf/2411.04330)
+    - low precision training & inference는 언어 모델의 성능에 영향을 크게 미치고 있으나 현존하는 scaling law는 이에 대해서 제대로 설명하고 있지 못함을 지적
+    - training in lower precision은 모델의 effective parameter count를 감소시킴으로써 low precision training과 post-train quantization으로부터의 loss를 예측할 수 있도록 함
+    - 추론에 대해서는, 모델이 더 많은 데이터로 학습되었을수록 post-training quantization에 의한 성능 하락이 심각
+    - 학습에 대해서는, 본인들이 제시하는 scaling law를 통해 다른 precision으로 학습한 결과를 예측할 수 있다고 주장. 이때 큰 모델을 낮은 precision으로 학습하는 것을 권장.
+- 📜 [MIT] [The Surprising Effectiveness of Test-Time Training for Abstract Reasoning](https://ekinakyurek.github.io/papers/ttt.pdf)
+    - test-time training (TTT): input data로부터의 로스를 이용하여, 모델 파라미터를 추론 시 임시 업데이트하는 방법론
+    - Abstraction and Reasoning Corpus (ARC)를 벤치마크로 사용 (reasoning 포커스)
+    - TTT의 중요한 구성 요소: (1) initial finetuning on similar tasks (2) auxiliary task format and augmentations (3) per-instance training
 
 </details>
 
