@@ -200,6 +200,12 @@ Language Models for Reasoning](https://aclanthology.org/2024.emnlp-main.313.pdf)
     - test-time training (TTT): input data로부터의 로스를 이용하여, 모델 파라미터를 추론 시 임시 업데이트하는 방법론
     - Abstraction and Reasoning Corpus (ARC)를 벤치마크로 사용 (reasoning 포커스)
     - TTT의 중요한 구성 요소: (1) initial finetuning on similar tasks (2) auxiliary task format and augmentations (3) per-instance training
+- 📜 [Peking, Tsinghua] [LLaVA-o1: Let Vision Language Models Reason Step-by-Step](https://arxiv.org/pdf/2411.10440)
+    - 현재 Vision-Lanugage Model은 systematic & structured reasoning에서 어려움을 겪고 있음
+    - LLaVA-o1, autonomous multistage reasoning
+    - 일반적인 CoT prompting과 달리 LLaVA-o1은 summarization, visual interpretation, logical reasoning, conclusion generation 으로 구성된 stage들을 독립적 & 연속적으로 engage
+    - LLaVA-o1-100k dataset: visual question answering, structured reasoning annotations
+
 
 </details>
 
