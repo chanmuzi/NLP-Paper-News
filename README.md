@@ -205,7 +205,10 @@ Language Models for Reasoning](https://aclanthology.org/2024.emnlp-main.313.pdf)
     - LLaVA-o1, autonomous multistage reasoning
     - 일반적인 CoT prompting과 달리 LLaVA-o1은 summarization, visual interpretation, logical reasoning, conclusion generation 으로 구성된 stage들을 독립적 & 연속적으로 engage
     - LLaVA-o1-100k dataset: visual question answering, structured reasoning annotations
-
+- 📜 [Shanghai, Fudan] [Compound-QA: A Benchmark for Evaluating LLMs on Compound Questions](https://arxiv.org/pdf/2411.10163)
+    - 기존 LLM 벤치마크들은 단순한 QA이고 현실 세계와 같이 복잡한 문제들을 전혀 다루고 있지 못하는 상황
+    - Compound Question Synthesis (CQ-Syn)을 도입하여 Compound-QA를 제작. multi sub-question에 집중
+    - Factual-Statement, Cause-and-Effect, Hypothetical-Analysis, Comparison-and-Selection, Evaluation-and-Suggestion, 다섯 개의 카테고리를 다룸
 
 </details>
 
