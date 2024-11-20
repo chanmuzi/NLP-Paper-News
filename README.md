@@ -209,6 +209,17 @@ Language Models for Reasoning](https://aclanthology.org/2024.emnlp-main.313.pdf)
     - 기존 LLM 벤치마크들은 단순한 QA이고 현실 세계와 같이 복잡한 문제들을 전혀 다루고 있지 못하는 상황
     - Compound Question Synthesis (CQ-Syn)을 도입하여 Compound-QA를 제작. multi sub-question에 집중
     - Factual-Statement, Cause-and-Effect, Hypothetical-Analysis, Comparison-and-Selection, Evaluation-and-Suggestion, 다섯 개의 카테고리를 다룸
+- 📜 [UIUC, IBM] [DELIFT: Data Efficient Language model Instruction Fine Tuning](https://arxiv.org/abs/2411.04425)
+    - single-stage optimization 또는 intensive gradient calculation에만 집중하는 현재 학습 방식이 별로라고 지적
+    - DELIFT, 세 단계의 fine-tuning을 통해 data selection을 systematically optimize
+    - (1) instruction tuning (2) task-specific fine-tuning (3) continual fine-tuning
+    - 현재 데이터 샘플이 현재 모델의 상태에 얼마나 beneficial 한지를 정량화하는 pairwise utility metric 사용
+- 📜 [Univ. of California, Tsinghua, Peking] [Style-Compress: An LLM-Based Prompt Compression Framework Considering Task-Specific Styles](https://arxiv.org/pdf/2410.14042)
+    - 언어 모델이 프롬프트를 압축할 때, 압축 스타일(extractive or abstractive)이 결과에 큰 영향을 미침
+    - Style-Compress: smaller model이 새로운 태스크에 대해 추가적인 fine-tuning 없이 프롬프트를 압축할 수 있도록 adapt하는 방법론
+    - 10개 샘플, 100개 쿼리로 adaptation 한 뒤 compression 적용한 결과가 준수하다는 것을 확인
+    - 방법론에 대한 간단한 수식, 파이프라인, 다양한 실험을 통해 논문화.. 프레임워크도 중요한 시대
+
 
 </details>
 
