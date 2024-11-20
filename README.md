@@ -222,6 +222,11 @@ Language Models for Reasoning](https://aclanthology.org/2024.emnlp-main.313.pdf)
 - 🧑🏻‍💻 [Microsoft] [Orca-AgentInstruct: Agentic flows can be effective synthetic-data generators](https://www.microsoft.com/en-us/research/blog/orca-agentinstruct-agentic-flows-can-be-effective-synthetic-data-generators/)
     - Agent 모델을 학습할 수 있는 고품질 instruction dataset 공개 (1M pair)
     - 합성 데이터 사용 시 LLM의 학습 속도를 높일 수 있다고 설명
+- 📜 [KAIST] [AutoML-Agent: A Multi-Agent LLM Framework for Full-Pipeline AutoML](https://arxiv.org/pdf/2410.02958)
+    - 현존 AutoML 시스템은 복잡한 툴들을 셋업하기 위한 전문지식이 필요하고 시간도 많이 걸림
+    - AutoML-Agent, data retrieval 부터 model deployment 까지 아우르는 multi-agent framework
+    - retrieval-augmented planning strategy를 사용하여 최적의 plan을 만듦
+    - 각 plan을 sub-tasks로 쪼개어서 특화된 agent가 이를 처리할 수 있도록 함
 
 </details>
 
