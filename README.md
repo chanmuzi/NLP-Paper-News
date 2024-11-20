@@ -219,7 +219,9 @@ Language Models for Reasoning](https://aclanthology.org/2024.emnlp-main.313.pdf)
     - Style-Compress: smaller model이 새로운 태스크에 대해 추가적인 fine-tuning 없이 프롬프트를 압축할 수 있도록 adapt하는 방법론
     - 10개 샘플, 100개 쿼리로 adaptation 한 뒤 compression 적용한 결과가 준수하다는 것을 확인
     - 방법론에 대한 간단한 수식, 파이프라인, 다양한 실험을 통해 논문화.. 프레임워크도 중요한 시대
-
+- 🧑🏻‍💻 [Microsoft] [Orca-AgentInstruct: Agentic flows can be effective synthetic-data generators](https://www.microsoft.com/en-us/research/blog/orca-agentinstruct-agentic-flows-can-be-effective-synthetic-data-generators/)
+    - Agent 모델을 학습할 수 있는 고품질 instruction dataset 공개 (1M pair)
+    - 합성 데이터 사용 시 LLM의 학습 속도를 높일 수 있다고 설명
 
 </details>
 
