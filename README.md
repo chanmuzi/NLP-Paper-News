@@ -227,6 +227,24 @@ Language Models for Reasoning](https://aclanthology.org/2024.emnlp-main.313.pdf)
     - AutoML-Agent, data retrieval 부터 model deployment 까지 아우르는 multi-agent framework
     - retrieval-augmented planning strategy를 사용하여 최적의 plan을 만듦
     - 각 plan을 sub-tasks로 쪼개어서 특화된 agent가 이를 처리할 수 있도록 함
+- 🧑🏻‍💻 [AI2] [Ai2 OpenScholar: Scientific literature synthesis with retrieval-augmented language models](https://allenai.org/blog/openscholar)
+    - a retrieval-augmented LM & 45M-paper datastore (CS, Bio, Physics, … )
+    - retriever and reranker to search the datastore
+    - 8B Llama fine-tuned on high-quality synthetic data
+    - self-feedback generation pipeline
+- 🧑🏻‍💻 [Mistral AI] [Mistral has entered the chat](https://mistral.ai/news/mistral-chat/)
+    - Web search with citations, Canvas for ideation
+    - SoTA document and image understanding, powerd bye the new multimodal [Pixtral Large](https://mistral.ai/news/pixtral-large/)
+        - SoTA on MathVista, DocVQA, VQAv2
+        - 123B multimodal decoder, 1B parameter vision encoder
+        - 128K context window
+    - Faster responses powered by speculative editing
+- 🧑🏻‍💻 [Perplexity] [Shop like a Pro: Perplexity’s new AI-powered shopping assistant](https://www.perplexity.ai/hub/blog/shop-like-a-pro)
+    - 아직 US 한정인 것 같음
+    - Buy with Pro: One-click checkout to save time & free shipping
+    - Snap to Shop: 물건의 사진과 유사한 상품을 찾아주는 visual search tool
+    - Introducing the Perplexity Merchant Program: 상품 판매자들이 가입하는 프로그램으로, 가입 시 상품이 인덱싱 대상이 되어 추천이 더 잘될 수 있음을 언급
+
 
 </details>
 
