@@ -244,7 +244,18 @@ Language Models for Reasoning](https://aclanthology.org/2024.emnlp-main.313.pdf)
     - Buy with Pro: One-click checkout to save time & free shipping
     - Snap to Shop: 물건의 사진과 유사한 상품을 찾아주는 visual search tool
     - Introducing the Perplexity Merchant Program: 상품 판매자들이 가입하는 프로그램으로, 가입 시 상품이 인덱싱 대상이 되어 추천이 더 잘될 수 있음을 언급
-
+- 📜 [Together AI, Stanford, etc] [RedPajama: an Open Dataset for Training Large Language Models](https://arxiv.org/pdf/2411.12372)
+    - 오픈소스 모델이 발전하기 어려운 데이터 관점의 세 가지 문제점을 지적
+        - 모델 개발의 투명성 부족 (데이터 정제 포함), 고품질 데이터셋 대량 확보의 어려움, 데이터셋 정제와 분석을 위한 artifact 및 메타 데이터 이용 가능성 낮음
+    - 이러한 문제를 해결하기 위해 RedPajama-V1 release, open reproduction of the LLaMA training dataset
+    - RedPajama-V2를 함께 release, 정제되지 않은 날것의 text data로 구성된 massive web-only dataset
+    - RedPajama 데이터셋은 다양한 도메인에 걸쳐 100T 토큰 이상의 텍스트로 구성됨
+- 📜 [Stony Brook] [A Novel Approach to Eliminating Hallucinations in Large Language Model-Assisted Causal Discovery](https://arxiv.org/abs/2411.12759)
+    - LLM이 causal discovery에서 hallucination을 일으키기 때문에 모델 선정이 중요함
+    - 고품질 데이터에 접근 가능할 때 RAG를 사용하여 hallucination을 줄이는 방법을 제안
+    - arbiter(결정권자)를 포함한 여러 LLM을 debate에 참여시켜 causal graphs의 edge를 감사함으로써 hallucination을 최소화하는 기법을 제안
+    - 프롬프트 엔지니어링을 통해 graph를 만드는 것부터 시작
+    - 고품질 데이터 기반의 RAG, 뛰어난 LLM간 debate를 활용한 hallucination 최소화에 대한 연구
 
 </details>
 
