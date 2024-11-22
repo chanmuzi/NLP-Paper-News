@@ -256,6 +256,20 @@ Language Models for Reasoning](https://aclanthology.org/2024.emnlp-main.313.pdf)
     - arbiter(결정권자)를 포함한 여러 LLM을 debate에 참여시켜 causal graphs의 edge를 감사함으로써 hallucination을 최소화하는 기법을 제안
     - 프롬프트 엔지니어링을 통해 graph를 만드는 것부터 시작
     - 고품질 데이터 기반의 RAG, 뛰어난 LLM간 debate를 활용한 hallucination 최소화에 대한 연구
+- 📽️ [Cerebral Valley: Alexandr Wang Scale AI](https://www.youtube.com/watch?v=HM7wnQwpJ0w)
+    - 사전학습으로 쓸 수 있는 데이터는 사실상 고갈됨.
+    - 그러나 post training으로 모델을 발전시킬 수 있는 여지는 무궁무진.
+    - 최근 o1 or DeepSeek이 좋은 사례
+- 🧑🏻‍💻 [DeepSeek] [DeepSeek-R1-Lite-Preview is now live: unleashing supercharged reasoning power!](https://api-docs.deepseek.com/news/news1120)
+    - o1-preview-level의 AIME & MATH 벤치마크 결과
+    - thought process를 real-time으로 투명하게 공개
+    - 곧 오픈 소스 모델과 API 공개 예정
+    - [링크](http://chat.deepseek.com/)에서 채팅 가능
+- 🧑🏻‍💻 [H] [French startup H Company launches Runner H: a web automation agent with human-like precision](https://link.alphasignal.ai/YDPiIj)
+    - 프랑스 스타트업 H가 웹 자동화 agent를 일부 사용자들에게 공개. 현재는 wait list에 이메일을 올려야 함
+    - 이것이 첫 product인데 $220M 투자 받은 것으로 알려짐 (한화 약 3,000억원)
+    - API beta도 제공
+
 
 </details>
 
