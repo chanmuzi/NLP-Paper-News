@@ -269,7 +269,21 @@ Language Models for Reasoning](https://aclanthology.org/2024.emnlp-main.313.pdf)
     - 프랑스 스타트업 H가 웹 자동화 agent를 일부 사용자들에게 공개. 현재는 wait list에 이메일을 올려야 함
     - 이것이 첫 product인데 $220M 투자 받은 것으로 알려짐 (한화 약 3,000억원)
     - API beta도 제공
-
+- 🧑🏻‍💻 [HuggingFaceTB] [SmolTalk](https://huggingface.co/datasets/HuggingFaceTB/smoltalk)
+    - SmolLM2-Instruct 모델을 만들 때 사용된 1M 개 데이터
+    - instruction following 능력을 향상시키면서 다양한 태스크를 잘 수행할 수 있는 데 기여하는 public 데이터셋을 합성하여 공개
+- 🧑🏻‍💻 [Ai2] [Tülu 3 opens language model post-training up to more tasks and more people](https://allenai.org/blog/tulu-3)
+    - post-training의 발전을 위해 제작된 데이터 & 툴
+    - Data, Data Toolkit, Training Code & Infrastructure, Evaluation Framework, Demo, Models & Checkpoints
+- 🧑🏻‍💻 [Apple] [AIMv2](https://arxiv.org/pdf/2411.14402)
+    - AIMv2: multimodal autoregressive objective로 사전 학습된 vision model family
+    - 대부분의 멀티모달 이해 벤치마크에서 OAI CLIP, SigLIP 등을 outperform
+    - open-vocabulary object detection & referring expression comprehension에서 DINOv2를 outperform
+    - 📜 [Multimodal Autoregressive Pre-training of Large Vision Encoders](https://arxiv.org/pdf/2411.14402)
+- 📜 [Anthropic] [Adding Error Bars to Evals: A Statistical Approach to Language Model Evaluations](https://arxiv.org/pdf/2411.00640)
+    - 현재 LLM에 대한 평가는 experiment analysis and planning 에 대한 중요성을 간과하고 이뤄진다는 문제를 지적
+    - 통계학 기반의 연구자들에게 언어 모델의 평가 데이터를 어떻게 분석하고 접근해야 하는지 설명하는 연구
+    - 평가 데이터 분석, 두 모델 간의 차이 측정, 평가 실험 계획을 위한 공식을 제시
 
 </details>
 
