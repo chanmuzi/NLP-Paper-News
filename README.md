@@ -287,6 +287,22 @@ Language Models for Reasoning](https://aclanthology.org/2024.emnlp-main.313.pdf)
 
 </details>
 
+<details>
+  <summary>4th week</summary>
+
+- 📜 [Aalborg Univ.] [Knowledge Graphs, Large Language Models, and Hallucinations: An NLP Perspective](https://arxiv.org/pdf/2411.14258)
+    - knowledge integration & evaluating hallucination 방법론에 대한 연구
+    - LLM의 hallucination 현상을 완화하기 위해 knowledge graph 활용
+- 📜 [Google DeepMind] [Learning high-accuracy error decoding for quantum processors](https://www.nature.com/articles/s41586-024-08148-8) (Nature 2024)
+    - recurrent, transformer-based neural network that learns to decode the surface code
+    - 구글 딥마인드에서 인공지능을 활용한 quantum computer 연구를 수행하고 있음
+- 📜 [National Univ. of Singapore] [The Dawn of GUI Agent: A Preliminary Case Study with Claude 3.5 Computer Use](https://arxiv.org/pdf/2411.10323)
+    - Claude 3.5 Computer Use를 다양한 도메인과 소프트웨어에서 사용해보며 작성한 case study
+    - 연구에 활용된 프롬프트나 도메인, 소프트웨어 정보를 다양하게 포함하고 있음
+    - [깃허브 링크](https://github.com/showlab/computer_use_ootb) 🔗
+
+</details>
+
 ## 🎃 October
 <details>
   <summary>1st week</summary>
