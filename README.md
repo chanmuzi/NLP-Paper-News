@@ -300,6 +300,23 @@ Language Models for Reasoning](https://aclanthology.org/2024.emnlp-main.313.pdf)
     - Claude 3.5 Computer Use를 다양한 도메인과 소프트웨어에서 사용해보며 작성한 case study
     - 연구에 활용된 프롬프트나 도메인, 소프트웨어 정보를 다양하게 포함하고 있음
     - [깃허브 링크](https://github.com/showlab/computer_use_ootb) 🔗
+- 📰 [Amazon] [Amazon and Anthropic deepen strategic collaboration](https://www.aboutamazon.com/news/aws/amazon-invests-additional-4-billion-anthropic-ai)
+    - 아마존이 Anthropic과의 전략적 협력을 강화하며 $40억 규모의 추가 투자를 진행 (한화 약 5조)
+    - Microsoft & OpenAI 의 관계와 유사하다고 이해할 수 있음
+    - Anthropic의 다음 세대 모델 개발을 위한 accelerator chip, “Trainium” 개발에 사용될 것
+- 🧑🏻‍💻 [Anthropic] [Hume AI creates emotionally intelligent voice interactions with Claude](https://www.anthropic.com/customers/hume)
+    - 2M minute이 넘는 AI voice 대화 완료
+    - 36%의 유저가 다른 LLM 대신 Claude를 선택
+    - 실시간으로 자연스럽게 interact 하는 모델을 Anthropic에서도 적극적으로 개발 중인 상황으로 이해됨
+- 📜 [UPC, ETH] [Do I Know This Entity? Knowledge Awareness and Hallucinations in Language Models](https://arxiv.org/abs/2411.14257)
+    - sparse autoencoder를 해석툴로 사용함으로써 entity recognition의 핵심 요소를 파악
+    - representation space에서 의미있는 방향을 찾아내어 모델이 특정 entity에 대해 인지하고 있는지 확인할 수 있음
+    - 챗 모델의 refusal behavior에도 영향을 줄 수 있는 내용
+- 📜 [UCL, Shanghai, Brown, Singapore] [Natural Language Reinforcement Learning](https://arxiv.org/pdf/2411.14251)
+    - 기존 RL은 수학적으로 MDP로 의사 결정을 공식화
+    - Natural Language Reinforcement Learning (NLRL): 전통적인 MDP를 자연어 기반의representation space로 확장
+    - 순수 프롬프팅 or gradient-based training 에 의한 RL-like policy & value 를 개선
+    - [깃허브 링크](https://github.com/waterhorse1/Natural-language-RL) 🔗
 
 </details>
 
