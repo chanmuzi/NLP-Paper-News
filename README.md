@@ -317,6 +317,19 @@ Language Models for Reasoning](https://aclanthology.org/2024.emnlp-main.313.pdf)
     - Natural Language Reinforcement Learning (NLRL): 전통적인 MDP를 자연어 기반의representation space로 확장
     - 순수 프롬프팅 or gradient-based training 에 의한 RL-like policy & value 를 개선
     - [깃허브 링크](https://github.com/waterhorse1/Natural-language-RL) 🔗
+- 📜 [Arizona] [From Generation to Judgment: Opportunities and Challenges of LLM-as-a-judge](https://arxiv.org/pdf/2411.16594)
+    - LLM-based judgment & assessment에 대한 서베이 논문
+    - LLM-as-a-judge를 평가하는 벤치마크 compile
+- 🧑🏻‍💻 [OpenAI] [Advancing red teaming with people and AI](https://openai.com/index/advancing-red-teaming-with-people-and-ai/)
+    - OpenAI에서 external & automated red teaming과 관련된 두 개의 논문을 공개
+    - 📜 [External red teaming](https://cdn.openai.com/papers/openais-approach-to-external-red-teaming.pdf)
+    - 📜 [Automated red teaming](https://cdn.openai.com/papers/diverse-and-effective-red-teaming.pdf)
+- 📜 [MIT] [Model-Based Transfer Learning for Contextual Reinforcement Learning](https://arxiv.org/pdf/2408.04498)
+    - zero-shot transfer에서 영감을 받음: selecting a good set of training tasks
+    - Model-Based Transfer Learning (MBTL) 제시: Gaussian process를 사용한 performance set point, linear function of contextual similarity로 모델링되는 performance loss
+    - 두 요소를 결합하여 Bayesian Optimization (BO) 프레임워크 내에서 전략적으로 사용
+    - 50배 이상 개선된 independent & multi-task training 효율성
+
 
 </details>
 
