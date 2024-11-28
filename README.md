@@ -329,7 +329,13 @@ Language Models for Reasoning](https://aclanthology.org/2024.emnlp-main.313.pdf)
     - Model-Based Transfer Learning (MBTL) 제시: Gaussian process를 사용한 performance set point, linear function of contextual similarity로 모델링되는 performance loss
     - 두 요소를 결합하여 Bayesian Optimization (BO) 프레임워크 내에서 전략적으로 사용
     - 50배 이상 개선된 independent & multi-task training 효율성
-
+- 📜 [NVIDIA] [Star Attention: Efficient LLM Inference over Long Sequences](https://arxiv.org/pdf/2411.17116)
+    - Star Attention: two-phase block-sparse approximation. attention을 여러 개의 호스트에 배치하면서도 communication overhead는 최소화하는 방식을 제안
+    - 1단계: blockwise-local attention across hosts → 2단계: query & response tokens 가 이전에 생성 및 캐싱된 토큰에 대해 sequence-global attention
+    - global attention을 사용하여 학습된 트랜스포머 기반의 모델들은 약 11배 정도까지의 추론 속도 향상을 기대할 수 있음 (정확도는 95~100% 유지)
+- 📜 [Ai2] [OLMo 2: The best fully open language model to date](https://allenai.org/blog/olmo2)
+    - 5T 토큰으로 학습된 7B & 13B 모델
+    - [Tülu 3](https://allenai.org/tulu)에서 얻은 나이스한 레시피를 OLMo 2에도 적용 (근데 둘이 뭐가 다르지 그럼..?)
 
 </details>
 
