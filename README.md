@@ -340,7 +340,10 @@ Language Models for Reasoning](https://aclanthology.org/2024.emnlp-main.313.pdf)
     - DynSDPB: dynamic SelfD from the previous mini-batch, 마지막으로 생성되었던 logit을 활용하는 방식
     - distillation influence와 temperature value를 dynamic 하게 조절
     - self-correction & self-training 테크닉들과 seamless 하게 integration 가능
-
+- 📜 [Tsinghua] [Training and Evaluating Language Models with Template-based Data Generation](https://arxiv.org/pdf/2411.18104)
+    - Template-based Data Generation (TDG) 제안: GPT-4를 이용하여 parameterized meta-template을 생성
+    - TemplateMath Part 1: TemplateGSM, 7백만 개 이상의 고등학교 수학 문제로 구성된 합성 데이터셋
+    - [허깅페이스 데이터셋 링크](https://huggingface.co/datasets/math-ai/TemplateGSM) 🔗
 
 </details>
 
