@@ -344,6 +344,17 @@ Language Models for Reasoning](https://aclanthology.org/2024.emnlp-main.313.pdf)
     - Template-based Data Generation (TDG) 제안: GPT-4를 이용하여 parameterized meta-template을 생성
     - TemplateMath Part 1: TemplateGSM, 7백만 개 이상의 고등학교 수학 문제로 구성된 합성 데이터셋
     - [허깅페이스 데이터셋 링크](https://huggingface.co/datasets/math-ai/TemplateGSM) 🔗
+- 🧑🏻‍💻 [Andrew Ng] [aisuite](https://github.com/andrewyng/aisuite)
+    - 다양한 기업의 LLM을 아주 손쉽게 바꿔 사용할 수 있도록 돕는 파이썬 패키지를 앤드류 응이 배포
+    - OpenAI, Anthropic, Azure, Google, AWS, Groq, Mistral, HuggingFace, Ollama 등을 지원
+- 🧑🏻‍💻 [HuggingFace] [SmolVLM - small yet mighty Vision Language Model](https://huggingface.co/blog/smolvlm)
+    - 2B SOTA VLM, SmolVLM 공개: SmolVLM-Base, SmolVLM-Synthetic, SmolVLM Instruct
+    - 모든 모델 체크포인트, VLM 데이터셋, 학습 레시피, 도구 등 Apache 2.0 라이센스로 공개
+- 📜 [NVIDIA] [Hymba: A Hybrid-head Architecture for Small Language Models](https://www.arxiv.org/pdf/2411.13676)
+    - transformer attention mechanism과 SSM을 합쳐 hybrid-head parallel 아키텍쳐를 지닌 small language model family, Hymba 공개
+    - Attention heads는 high-resolution recall을, SSM heads는 efficient context summarization을 담당
+    - 프롬프트 앞에 붙어서 중요한 정보를 저장하는 learnable meta token 도입
+    - 허깅페이스에 [Base](https://huggingface.co/nvidia/Hymba-1.5B-Base) & [Instruct](https://huggingface.co/nvidia/Hymba-1.5B-Instruct) 모델 공개
 
 </details>
 
