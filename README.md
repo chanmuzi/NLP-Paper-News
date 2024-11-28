@@ -336,6 +336,11 @@ Language Models for Reasoning](https://aclanthology.org/2024.emnlp-main.313.pdf)
 - 📜 [Ai2] [OLMo 2: The best fully open language model to date](https://allenai.org/blog/olmo2)
     - 5T 토큰으로 학습된 7B & 13B 모델
     - [Tülu 3](https://allenai.org/tulu)에서 얻은 나이스한 레시피를 OLMo 2에도 적용 (근데 둘이 뭐가 다르지 그럼..?)
+- 📜 [Case Western Reserve Univ.] [Dynamic Self-Distillation via Previous Mini-batches for Fine-tuning Small Language Models](https://arxiv.org/pdf/2411.16991)
+    - DynSDPB: dynamic SelfD from the previous mini-batch, 마지막으로 생성되었던 logit을 활용하는 방식
+    - distillation influence와 temperature value를 dynamic 하게 조절
+    - self-correction & self-training 테크닉들과 seamless 하게 integration 가능
+
 
 </details>
 
