@@ -359,6 +359,10 @@ Language Models for Reasoning](https://aclanthology.org/2024.emnlp-main.313.pdf)
     - QwQ: Qwen with Questions, QwQ-32B-Preview
     - Language Mixing and Code-Switching, Recursive Reasoning Loops, Safety and Ethical Considerations 등의 한계점
     - GPQA, AIME, MATH-500, LiveCodeBench 등 추론 능력이 요구되는 벤치마크에서 뛰어난 성능
+- 🧑🏻‍💻 [IBM, Meta] [Supercharging Training using float8 and FSDP2](https://pytorch.org/blog/training-using-float8-fsdp2/)
+    - FSDP1 bf16 training으로 50% throughput speedup 달성
+    - 1.8B 부터 405B 에 이르는 라마 모델에 대한 성능 개선을 확인함 (Llama 3 아키텍쳐 기준)
+    - end-to-end float8 training에 대한 가능성을 입증
 
 </details>
 
