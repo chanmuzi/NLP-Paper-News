@@ -355,6 +355,10 @@ Language Models for Reasoning](https://aclanthology.org/2024.emnlp-main.313.pdf)
     - Attention heads는 high-resolution recall을, SSM heads는 efficient context summarization을 담당
     - 프롬프트 앞에 붙어서 중요한 정보를 저장하는 learnable meta token 도입
     - 허깅페이스에 [Base](https://huggingface.co/nvidia/Hymba-1.5B-Base) & [Instruct](https://huggingface.co/nvidia/Hymba-1.5B-Instruct) 모델 공개
+- 🧑🏻‍💻 [Qwen] [QwQ: Reflect Deeply on the Boundaries of the Unknown](https://qwenlm.github.io/blog/qwq-32b-preview/)
+    - QwQ: Qwen with Questions, QwQ-32B-Preview
+    - Language Mixing and Code-Switching, Recursive Reasoning Loops, Safety and Ethical Considerations 등의 한계점
+    - GPQA, AIME, MATH-500, LiveCodeBench 등 추론 능력이 요구되는 벤치마크에서 뛰어난 성능
 
 </details>
 
