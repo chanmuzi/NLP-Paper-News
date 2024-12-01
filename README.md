@@ -363,6 +363,10 @@ Language Models for Reasoning](https://aclanthology.org/2024.emnlp-main.313.pdf)
     - FSDP1 bf16 training으로 50% throughput speedup 달성
     - 1.8B 부터 405B 에 이르는 라마 모델에 대한 성능 개선을 확인함 (Llama 3 아키텍쳐 기준)
     - end-to-end float8 training에 대한 가능성을 입증
+- 📜 [Univ. of Luxembourg] [LongKey: Keyphrase Extraction for Long Documents](https://arxiv.org/pdf/2411.17863)
+    - Automated keyphrase extraction은 주로 512 토큰 수준의 짧은 문서에 집중
+    - LongKey, a novel framework for extracting keyphrases from lengthy documents
+    - encoder 기반의 언어 모델, max-pooling embedder 사용
 
 </details>
 
