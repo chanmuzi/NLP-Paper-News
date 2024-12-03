@@ -5,6 +5,30 @@
 ---
 # 2024
 
+## 🎄 December
+<details>
+  <summary>1st week</summary>
+
+- 📜 [Google Cloud, Google DeepMind] [Reverse Thinking Makes LLMs Stronger Reasoners](https://arxiv.org/pdf/2411.19865)
+    - 인간의 역방향 사고(문제→해결, 해결→문제)를 LLM에 적용하는 RevThink 프레임워크 제안
+    - 데이터 증강: teacher 모델로부터 (1)원래 질문 (2)정방향 추론 (3)역방향 질문 (4)역방향 추론을 수집
+    - 3가지 training objectives를 통한 student 모델 학습
+        - 질문→정방향 추론 생성
+        - 질문→역방향 질문 생성
+        - 역방향 질문→역방향 추론 생성
+- 📜 [Chineses Academy of Sciecnes] [Auto-RAG: Autonomous Retrieval-Augmented Generation for Large Language Models](https://arxiv.org/pdf/2411.19443)
+    - 기존: few-shot prompting이나 수동 규칙으로 iterative retrieval 구현
+    - RAG의 성능 향상을 위한 iterative retrieval 과정을 LLM의 자율적 의사결정 능력에 맡기는 Auto-RAG 제안
+        - LLM이 retriever와 multi-turn 대화를 통해 검색을 계획하고 쿼리를 개선
+        - 충분한 정보가 모일 때까지 자동으로 반복
+        - 질문의 난이도와 검색된 지식의 유용성에 따라 반복 횟수를 자율적으로 조절
+- 🧑🏻‍💻 [NVIDIA] [Multimodal PDF Data Extraction](https://build.nvidia.com/nvidia/multimodal-pdf-data-extraction-for-enterprise-rag)
+    - text, graphs, charts, tables 사이즈 상관 없이 insight를 추출 가능한 Data Extraction
+    - enterprise RAG를 위한 제품으로 보임
+    - 현재는 데모 수준으로 업로드된 370/501개 파일에 대한 QA를 RAG 기반으로 테스트 해볼 수 있는 것 같음
+
+</details>
+
 ## 🍁 November
 <details>
   <summary>1st ~ 2nd week</summary>
