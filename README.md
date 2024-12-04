@@ -26,6 +26,13 @@
     - text, graphs, charts, tables 사이즈 상관 없이 insight를 추출 가능한 Data Extraction
     - enterprise RAG를 위한 제품으로 보임
     - 현재는 데모 수준으로 업로드된 370/501개 파일에 대한 QA를 RAG 기반으로 테스트 해볼 수 있는 것 같음
+- 🧑🏻‍💻 [Kaggle] [LLMs - You Can't Please Them All](https://www.kaggle.com/competitions/llms-you-cant-please-them-all)
+    - essay quality를 평가하기 위해 LLM-as-a-judge를 이용
+    - LLM judges 간 disagreement를 극대화하는 essay를 제출하는 것이 목표
+- 📜 [The University of Sydney, Huawei] [Enhancing Large Language Models through Adaptive Tokenizers](https://openreview.net/pdf/acc98f9552b7a433f16acd31392d1a7e00f1df35.pdf) (NeurIPS 2024)
+    - 기존 tokenizer는 통계 기반으로 형성된 static 방식 → 현재 LLM 아키텍쳐와 싱크 안됨 (?)
+    - 초기의 방대한 vocabulary로 시작, 학습 동안 모델의 perplexity를 관측하며 tokenizer를 refine
+
 
 </details>
 
