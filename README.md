@@ -32,6 +32,13 @@
 - 📜 [The University of Sydney, Huawei] [Enhancing Large Language Models through Adaptive Tokenizers](https://openreview.net/pdf/acc98f9552b7a433f16acd31392d1a7e00f1df35.pdf) (NeurIPS 2024)
     - 기존 tokenizer는 통계 기반으로 형성된 static 방식 → 현재 LLM 아키텍쳐와 싱크 안됨 (?)
     - 초기의 방대한 vocabulary로 시작, 학습 동안 모델의 perplexity를 관측하며 tokenizer를 refine
+- 🧑🏻‍💻 [Amazon] [Amazon Nova Foundation Models](https://aws.amazon.com/ai/generative-ai/nova/)
+    - fast text model 부터 full video generation 까지 Bedrock API 를 통해 이용 가능
+    - 라인업: Micro, Lite, Pro, Premier, Canvas, Reel
+- 🧑🏻‍💻 [Cohere] [Introducing Rerank 3.5: Precise AI Search](https://cohere.com/blog/rerank-3pt5)
+    - 기업의 복잡한 데이터에 대한 improved reasoning & multilingual 능력
+    - 현존하는 검색 시스템들과 compatible
+    - 100개 이상의 언어를 지원한다고 설명
 
 
 </details>
