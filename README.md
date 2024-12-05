@@ -39,6 +39,17 @@
     - 기업의 복잡한 데이터에 대한 improved reasoning & multilingual 능력
     - 현존하는 검색 시스템들과 compatible
     - 100개 이상의 언어를 지원한다고 설명
+- 🧑🏻‍💻 [Google DeepMind] [Genie 2: A large-scale foundation world model](https://deepmind.google/discover/blog/genie-2-a-large-scale-foundation-world-model/)
+    - single 이미지를 입력으로 받아 플레이 가능한 3D 환경으로 반환
+    - Genie 1 → 2 에서의 emergent capabilities of a foundation world model 을 주장
+- 📜 [Vanderbit Univ.] [Training Noise Token Pruning](https://arxiv.org/pdf/2411.18092)
+    - for vision transformers
+    - discrete token dropping 조건을 continuous additive noise로 relax 하여 학습 내에서 smooth optimization을 제공
+- 📜 [Univ. of California, Berkely] [Predicting Emergent Capabilities by Finetuning](https://arxiv.org/pdf/2411.16035) (COLM 2024)
+    - LLM의 downtream 능력에 대해서는 사전학습에 비해서 예측하기 더 어렵다는 문제 (emergent ability를 fine-tuning 단에서 수행한 연구는 처음 보긴 함)
+    - 현재 LLM의 random few-shot 정확도를 기반으로 다음 세대 모델의 정확도를 예측할 수 있을까?
+    - insight: finetuning LLMs on a given task can shift the point in scaling at which emergence occurs towards less capable models
+    - 언어 모델을 특정 태스크에 대해 학습하면 emergent ability가 발현되는 point를 옮길 수 있다
 
 
 </details>
