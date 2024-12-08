@@ -50,7 +50,22 @@
     - 현재 LLM의 random few-shot 정확도를 기반으로 다음 세대 모델의 정확도를 예측할 수 있을까?
     - insight: finetuning LLMs on a given task can shift the point in scaling at which emergence occurs towards less capable models
     - 언어 모델을 특정 태스크에 대해 학습하면 emergent ability가 발현되는 point를 옮길 수 있다
-
+- 📜 [Google DeepMind] [PaliGemma 2: A Family of Versatile VLMs for Transfer](https://arxiv.org/pdf/2412.03555)
+    - SigLIP-So400m vision encoder + Gemma 2 (224px, 448px, 896px)
+    - long fine-grained captioning 같은 task 뿐만 아니라 OCR-related tasks도 커버
+        - 꽤 넓은 범위로 transfer 가능하다는 것을 실험적으로 확인한 것으로 보임
+- 🧑🏻‍💻 [OpenAI] [o1 and ChatGPT Pro](https://openai.com/12-days/?day=1)
+    - Day 1, o1 모델을 공개. ChatGPT Pro 플랜을 월 200$ 로 공개.
+    - Improved accuracy, Multimodal support, Faster and more concise 등의 특징
+    - Pro 유저는 o1, GPT-4o, o1-mini 등을 무제한 사용 가능
+- 📜 [Microsoft, MIT] [Does Prompt Formatting Have Any Impact on LLM Performance?](https://arxiv.org/pdf/2411.10541) (NAACL 2025)
+    - prompt template이 모델 성능에 미치는 영향을 연구
+    - 같은 내용을 일반 텍스트, 마크다운, JSON, YAML 형식 등으로 변환하여 GPT-3.5-turbo, GPT-4 모델을 테스트
+    - 성능이 높은 모델일수록 템플릿에 상관없이 성능이 유지되고, 그렇지 않은 모델은 크게 영향을 받는 것으로 확인됨
+- 🧑🏻‍💻 [Google DeepMind] [GenCast predicts weather and the risks of extreme conditions with state-of-the-art accuracy](https://deepmind.google/discover/blog/gencast-predicts-weather-and-the-risks-of-extreme-conditions-with-sota-accuracy/) (Nature)
+    - 15일까지 아주 정확하게 예측 가능한 일기 예보 모델을 개발
+    - new high resolution AI ensemble model 이라고 소개하고 있음 (diffusion 기반의 모델)
+    - 📜 [Nature 논문 링크](https://www.nature.com/articles/s41586-024-08252-9)
 
 </details>
 
