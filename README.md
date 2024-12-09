@@ -66,6 +66,15 @@
     - 15일까지 아주 정확하게 예측 가능한 일기 예보 모델을 개발
     - new high resolution AI ensemble model 이라고 소개하고 있음 (diffusion 기반의 모델)
     - 📜 [Nature 논문 링크](https://www.nature.com/articles/s41586-024-08252-9)
+- 📜 [Tsinghua] [Densing Law of LLMs](https://arxiv.org/pdf/2412.04315)
+    - capability density 개념 제시: LLM의 실제 파라미터 사이즈 대비 effective parameter size의 비율
+        - effective parameter size는 기존 모델 M 만큼의 퍼포먼스를 낼 수 있는 최소한의 사이즈를 의미
+    - → LLM의 학습 퀄리티를 평가
+- 📜 [CMU,  KAIST, Washington] [Evaluating Language Models as Synthetic Data Generators](https://arxiv.org/pdf/2412.03679)
+    - AgoraBench: 언어모델의 데이터 생성 능력을 평가하는 벤치마크를 제시
+    - 6개의 언어 모델, training 99개 student 모델을 사용하여 1.26M training instances를 합성
+    - 데이터 생성 능력은 문제 해결 능력과 직접적인 상관관계를 보이지 않는다고 설명
+    - [깃허브 링크](https://github.com/neulab/data-agora) 🔗
 
 </details>
 
