@@ -86,7 +86,13 @@
 - 🧑🏻‍💻 [Google] [Meet Willow, our state-of-the-art quantum chip](https://blog.google/technology/research/google-willow-quantum-chip/)
     - 더 많은 qubits를 사용함에 따라 에러를 exponentially 줄일 수 있었음
     - Willow가 기록한 벤치마크 연산 능력은 오늘날 가장 빠른 슈퍼컴퓨터가 10 septilion (10의 25승)년을 연산할 것을 단 5분만에 처리할 수 있는 수준
-
+- 📜 [Chinese Academy of Sciences] [Towards Adaptive Mechanism Activation in Language Agent](https://arxiv.org/abs/2412.00722) (COLING 2025)
+    - ALAMA: Adaptive Language Agent Mechanism Activation Learning with Self-Exploration
+    - expert model에 대한 의존 없이 mechanism activation adaptability를 최적화하는 것에 집중
+    - a harmonized agent framework (UniAct)를 구축하고 태스크 특성에 따라 적합한 방법론으로 최적화
+- 📜 [OpenAI] [OpenAI o1 System Card](https://cdn.openai.com/o1-system-card-20241205.pdf)
+    - 최근 공개한 o1 preview → o1 모델의 특징과 성능을 리포트한 페이퍼를 공개
+    - GPT-4를 공개할 때와 마찬가지로 뻔한 이야기들을 담고 있음
 
 </details>
 
