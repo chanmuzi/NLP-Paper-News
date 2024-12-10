@@ -83,7 +83,8 @@
     - [깃허브 링크](https://github.com/neulab/data-agora) 🔗
 - 🧑🏻‍💻 [LG AI Research] [EXAONE-3.5 release](https://huggingface.co/collections/LGAI-EXAONE/exaone-35-674d0e1bb3dcd2ab6f39dbb4)
     - EXAONE 3.5 language model series including instruction-tuned models of 2.4B, 7.8B, and 32B
-- 
+- 🧑🏻‍💻 [Google] Willow
+
 
 </details>
 
