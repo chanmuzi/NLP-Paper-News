@@ -83,7 +83,9 @@
     - [깃허브 링크](https://github.com/neulab/data-agora) 🔗
 - 🧑🏻‍💻 [LG AI Research] [EXAONE-3.5 release](https://huggingface.co/collections/LGAI-EXAONE/exaone-35-674d0e1bb3dcd2ab6f39dbb4)
     - EXAONE 3.5 language model series including instruction-tuned models of 2.4B, 7.8B, and 32B
-- 🧑🏻‍💻 [Google] Willow
+- 🧑🏻‍💻 [Google] [Meet Willow, our state-of-the-art quantum chip](https://blog.google/technology/research/google-willow-quantum-chip/)
+    - 더 많은 qubits를 사용함에 따라 에러를 exponentially 줄일 수 있었음
+    - Willow가 기록한 벤치마크 연산 능력은 오늘날 가장 빠른 슈퍼컴퓨터가 10 septilion (10의 25승)년을 연산할 것을 단 5분만에 처리할 수 있는 수준
 
 
 </details>
