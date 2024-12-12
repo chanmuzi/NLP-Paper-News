@@ -93,6 +93,9 @@
 - 📜 [OpenAI] [OpenAI o1 System Card](https://cdn.openai.com/o1-system-card-20241205.pdf)
     - 최근 공개한 o1 preview → o1 모델의 특징과 성능을 리포트한 페이퍼를 공개
     - GPT-4를 공개할 때와 마찬가지로 뻔한 이야기들을 담고 있음
+- 🧑🏻‍💻 [OpenAI] [Day 4. Canvas](https://openai.com/12-days/?day=4)
+    - Expanded Access (web and windows), Integrated with GPT-4o, Data visualization, Split-screen workspace
+    - Direct python execution
 
 </details>
 
