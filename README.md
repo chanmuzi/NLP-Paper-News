@@ -66,6 +66,15 @@
     - 15일까지 아주 정확하게 예측 가능한 일기 예보 모델을 개발
     - new high resolution AI ensemble model 이라고 소개하고 있음 (diffusion 기반의 모델)
     - 📜 [Nature 논문 링크](https://www.nature.com/articles/s41586-024-08252-9)
+- 📜 [Yunnan Univ.] [Learning to Reason via Self-Iterative Process Feedback for Small Language Models](https://arxiv.org/pdf/2412.08393) (COLING 2025)
+    - odds ratio preference optimization (ORPO)를 결합하여 SLM 스스로 positive & negative signal을 생성 및 활용할 수 있도록 함
+    - sampling-based inference simulation & process reward models 를 이용하는 process supervision 도입
+- 📜 [Peking, Baichuan] [SysBench: Can Large Language Models Follow System Messages?](https://arxiv.org/pdf/2408.10943)
+    - 현존하는 LLM의 세 가지 한계점: constraint violation, instruction misjudgement, multi-turn instability
+    - 위 능력을 평가하고 분석 가능한 벤치마크 SysBench를 도입
+    - 이미 자주 사용되고 있는 6개의 constraint, 500개의 tailor-designed system messages, multi-trun conversation 등을 기반으로 데이터셋을 직접 구축
+    - [깃허브 링크](https://github.com/PKU-Baichuan-MLSystemLab/SysBench) 🔗
+
 
 </details>
 
