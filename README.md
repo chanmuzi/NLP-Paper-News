@@ -109,6 +109,18 @@
 - 🧑🏻‍💻 [OpenAI] [Day 4. Canvas](https://openai.com/12-days/?day=4)
     - Expanded Access (web and windows), Integrated with GPT-4o, Data visualization, Split-screen workspace
     - Direct python execution
+- 📜 [Microsoft] [Phi-4 Technical Report](https://arxiv.org/pdf/2412.08905)
+    - 데이터 퀄리티에 집중하여 학습한 14B 파라미터 언어 모델
+    - web content, code 중심의 organic data로 사전학습하는 기존 모델들과 달리, 합성 데이터를 적절히 혼합하여 사용하는 학습 방법론 적용
+    - phi-4는 STEM-focused QA 능력에서 teacher model의 성능을 능가하는 모습을 보여줌
+- 📜 [Univ. of California, Santa Barbara] [RuleArena: A Benchmark for Rule-Guided Reasoning with LLMs in Real-World Scenarios](https://arxiv.org/pdf/2412.08972)
+    - LLM이 추론 시 복잡한 현실 수준의 규칙들을 따를 수 있는지 평가하기 위한 벤치마크
+    - 세 개의 practical domain을 다루고 있음: airline baggage fees, NBA transactions, tax regulations
+    - 현존 LLM들의 세 가지 주요 한계: (1) 비슷하지만 다른 규칙을 구분하지 못함 (2) 규칙을 정확히 이해했더라도 수학 문제에서 일관된 성능을 보이지 않음 (3) 전반적으로 이 벤치마크 점수가 다 낮음
+- 📜 [Univ. of Potsdam] [I Don't Know: Explicit Modeling of Uncertainty with an [IDK] Token](https://arxiv.org/pdf/2412.06676) (NeurIPS 2024)
+    - hallucination을 잡기 위한 novel calibration method를 제시
+    - [IDK] 라는 스페셜 토큰을 vocab에 추가하고 부정확한 예측에 대한 probability mass를 [IDK] 토큰으로 옮기는 objective function을 도입 → 모델이 uncertainty를 명시적으로 반환하도록 함
+    - 이 방식으로 학습된 모델은 기존에 실수하거나 잘못 답변하던 내용들에 대해 uncertainty를 훨씬 더 잘표현할 수 있게 되었다고 보고
 
 </details>
 
