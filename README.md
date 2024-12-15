@@ -121,6 +121,13 @@
     - hallucination을 잡기 위한 novel calibration method를 제시
     - [IDK] 라는 스페셜 토큰을 vocab에 추가하고 부정확한 예측에 대한 probability mass를 [IDK] 토큰으로 옮기는 objective function을 도입 → 모델이 uncertainty를 명시적으로 반환하도록 함
     - 이 방식으로 학습된 모델은 기존에 실수하거나 잘못 답변하던 내용들에 대해 uncertainty를 훨씬 더 잘표현할 수 있게 되었다고 보고
+- 📜 [OpenAI] [Measuring short-form factuality in large language models](https://cdn.openai.com/papers/simpleqa.pdf)
+    - short & fact-seeking questions에 대한 모델의 능력을 평가하기 위한 벤치마크
+    - GPT-4의 response에 반하도록 수집한 challenging 벤치마크
+    - 오직 한 개의 답변만이 정답이 될 수 있도록 문제를 구성 (correct, incorrect, not attempted)
+    - 모델의 “know what they know”를 평가하기 위한 벤치마크
+    - [깃허브 링크](https://github.com/openai/simple-evals) 🔗
+
 
 </details>
 
