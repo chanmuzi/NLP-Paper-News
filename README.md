@@ -127,7 +127,10 @@
     - 오직 한 개의 답변만이 정답이 될 수 있도록 문제를 구성 (correct, incorrect, not attempted)
     - 모델의 “know what they know”를 평가하기 위한 벤치마크
     - [깃허브 링크](https://github.com/openai/simple-evals) 🔗
-
+- 📜 [Saudi Data & Artificial Intelligence Authority] [SmolTulu: Higher Learning Rate to Batch Size Ratios Can Lead to Better Reasoning in SLMs](https://arxiv.org/pdf/2412.08347)
+    - AI2에서 공개한 Tulu3 post-training 파이프라인을 이용하여 SmolLM2-1.7B 모델을 학습한 SmolTulu-1.7b-Instruct 모델을 공개
+    - 135M 사이즈의 모델일 사용하여 learning rate과 batch size 관계가 모델 퍼포먼스에 큰 영향을 미친다는 것을 확인
+    - ARC, GSM8K 같은 태스크는 높은 lr, HellaSwag의 pattern recognition, IFEval 등은 낮은 lr이 적합
 
 </details>
 
