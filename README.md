@@ -146,6 +146,11 @@
     - SLM이 LLM보다 effective instruction을 합성하기 더 좋다는 것을 실험적으로 입증
     - SLM이 instruction evolving 동안 보다 넓은 output space를 가진다고 주장
     - Instruction Complex Aware IFD (IC-IFD)를 제안: instruction data를 평가하기 위해 IFD를 개선한 메트릭
+- 📜 [Google, Peking] [TokenFormer: Rethinking Transformer Scaling with Tokenized Model Parameters](https://arxiv.org/pdf/2410.23168)
+    - 현재 트랜스포머 아키텍쳐의 가장 큰 문제 중 하나는 linear projection을 고정된 숫자의 파라미터에 의존하고 있다는 것 → scale-up 어려워지는 이유
+    - 모델 파라미터를 토큰으로 간주하여 트랜스포머 아키텍쳐 내 모든 linear projection을 token-parameter attention layer로 대체
+    - [깃허브 링크](https://github.com/Haiyang-W/TokenFormer) 🔗
+
 
 </details>
 
