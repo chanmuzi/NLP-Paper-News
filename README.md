@@ -150,7 +150,10 @@
     - 현재 트랜스포머 아키텍쳐의 가장 큰 문제 중 하나는 linear projection을 고정된 숫자의 파라미터에 의존하고 있다는 것 → scale-up 어려워지는 이유
     - 모델 파라미터를 토큰으로 간주하여 트랜스포머 아키텍쳐 내 모든 linear projection을 token-parameter attention layer로 대체
     - [깃허브 링크](https://github.com/Haiyang-W/TokenFormer) 🔗
-
+- 📜 [Meta] [Byte Latent Transformer: Patches Scale Better Than Tokens](https://scontent-ssn1-1.xx.fbcdn.net/v/t39.2365-6/470135129_1314438233309836_4712217603129928862_n.pdf?_nc_cat=111&ccb=1-7&_nc_sid=3c67a6&_nc_ohc=vbUXcOyJdtAQ7kNvgHGfMVI&_nc_zt=14&_nc_ht=scontent-ssn1-1.xx&_nc_gid=Adjk5gBoYiq1LT34WoOFWaC&oh=00_AYDOY9W_gKXm3OE6HttBXG0S1PuK2NFieKLLhr8_nCtoew&oe=6766DC08)
+    - byte-level LLM 아키텍쳐에서 최초로 추론 효율성과 강건함 측면에서 tokenization-based LLM 수준을 달성한 사례
+    - bytes를 dynamic하게 sized patch로 encoding → 고정된 vocab x
+    - 8B 사이즈의 모델을 4T training bytes로 학습
 
 </details>
 
