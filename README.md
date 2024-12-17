@@ -134,6 +134,21 @@
 
 </details>
 
+<details>
+  <summary>3rd week</summary>
+
+- 📜 [Independent] [Wonderful Matrices: Combining for a More Efficient and Effective Foundation Model Architecture](https://arxiv.org/pdf/2412.11834)
+    - Foundation 모델의 성능을 높이기 위해 sequence transformation과 state transformation을 결합
+    - state space duality algorithm에서 rotary position embedding의 availability를 확인
+    - dynamic mask attention 적용하여 성능은 그대로 유지하면서도 연산 효율이 좋음
+    - cross domain mixture of experts를 디자인 (1024개 experts)
+- 📜 [Beijing Univ.] [Smaller Language Models Are Better Instruction Evolvers](https://arxiv.org/pdf/2412.11231)
+    - SLM이 LLM보다 effective instruction을 합성하기 더 좋다는 것을 실험적으로 입증
+    - SLM이 instruction evolving 동안 보다 넓은 output space를 가진다고 주장
+    - Instruction Complex Aware IFD (IC-IFD)를 제안: instruction data를 평가하기 위해 IFD를 개선한 메트릭
+
+</details>
+
 ## 🍁 November
 <details>
   <summary>1st ~ 2nd week</summary>
