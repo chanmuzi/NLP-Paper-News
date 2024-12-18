@@ -154,6 +154,16 @@
     - byte-level LLM 아키텍쳐에서 최초로 추론 효율성과 강건함 측면에서 tokenization-based LLM 수준을 달성한 사례
     - bytes를 dynamic하게 sized patch로 encoding → 고정된 vocab x
     - 8B 사이즈의 모델을 4T training bytes로 학습
+- 🧑🏻‍💻 [Google DeepMind] [Veo 2](https://deepmind.google/technologies/veo/veo-2/)
+    - 4k까지의 고해상도 비디오를 굉장히 현실적으로 생성할 수 있는 SoTA급 모델
+    - 렌즈 타입과 카메라 효과를 instruction으로 정해서 비디오를 생성할수도 있음
+    - 구글의 SynthID 워터마크를 통해 AI-generated content인지 아닌지 쉽게 식별 가능
+- 📜 [Shanghai AI Lab] [Evaluation Agent: Efficient and Promptable Evaluation Framework for Visual Generative Models](https://arxiv.org/pdf/2412.09645)
+    - 현재 visual generative model을 평가하기 위해서는 수백, 수천 개의 이미지 또는 비디오를 sampling 하는 복잡한 과정을 거쳐야 한다는 문제점 존재
+    - →  Evaluation Agent 프레임워크: dynamic, multi-round evaluation, 각 라운드마다 몇 개의 샘플만을 사용
+    - 완전한 오픈소스 프레임워크로써 1) efficiency 2) promptable evaluation 3) explainability 4) scalability 등이 핵심 특징
+    - [깃허브 링크](https://vchitect.github.io/Evaluation-Agent-project/) 🔗
+
 
 </details>
 
