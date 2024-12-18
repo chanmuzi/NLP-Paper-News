@@ -163,6 +163,10 @@
     - →  Evaluation Agent 프레임워크: dynamic, multi-round evaluation, 각 라운드마다 몇 개의 샘플만을 사용
     - 완전한 오픈소스 프레임워크로써 1) efficiency 2) promptable evaluation 3) explainability 4) scalability 등이 핵심 특징
     - [깃허브 링크](https://vchitect.github.io/Evaluation-Agent-project/) 🔗
+- 🧑🏻‍💻 [Claude Engineer v3](https://github.com/Doriandarko/claude-engineer?tab=readme-ov-file#claude-engineer-v3-)
+    - Claude 3.5 모델을 이용하는 self-improving AI Assistant
+    - CLI & web 인터페이스 둘 다 지원
+    - 무려 10k 개의 스타 ⭐
 
 
 </details>
