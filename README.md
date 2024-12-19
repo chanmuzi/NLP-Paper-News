@@ -176,6 +176,16 @@
     - internal web site, data를 포함하는 self-contained environment를 구축
     - 가장 뛰어난 모델로는 전체 태스크의 24% 정도를 완수할 수 있었다고 보고함
     - [깃허브 링크](https://github.com/TheAgentCompany/TheAgentCompany) 🔗
+- 🧑🏻‍💻 [Google DeepMind] [FACTS Grounding: A new benchmark for evaluating the factuality of large language models](https://deepmind.google/discover/blog/facts-grounding-a-new-benchmark-for-evaluating-the-factuality-of-large-language-models/)
+    - [논문 링크](https://storage.googleapis.com/deepmind-media/FACTS/FACTS_grounding_paper.pdf) 🔗 [캐글 리더보드 링크](https://www.kaggle.com/facts-leaderboard) 🔗
+    - LLM의 답변이 사실적으로 정확하고 충분한 내용을 담고 있는지 확인할 수 있는 벤치마크
+    - gemini 모델들이 상위권을 다 차지하는데 상당히 의문스러운 양상..
+    - 860개의 public, 859개의 private held out set으로 구성되어 있고 전자를 [공개](https://www.kaggle.com/datasets/deepmind/facts-grounding-examples)
+- 🧑🏻‍💻 [VS Code] [Announcing a free GitHub Copilot for VS Code](https://code.visualstudio.com/blogs/2024/12/18/free-github-copilot)
+    - 2000 code completions/month, 50 chat requests/month, access to GPT-4o & Claude 3.5 Sonnet
+    - 코드 어시스턴트에 대한 관심이 뜨거운데, Cursor, Windsurf 에 뒤지지 않으려는 노력으로 보임
+    - 그러나 아직까지 다른 코드툴에 비해서는 너무 약해/평범해 보이는 기능들..
+
 
 </details>
 
