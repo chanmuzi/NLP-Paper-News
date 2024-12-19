@@ -167,7 +167,15 @@
     - Claude 3.5 모델을 이용하는 self-improving AI Assistant
     - CLI & web 인터페이스 둘 다 지원
     - 무려 10k 개의 스타 ⭐
-
+- 📜 [AIRI] [BABILong: Testing the Limits of LLMs with Long Context Reasoning-in-a-Haystack](https://arxiv.org/pdf/2406.10149) (NeurIPS 2024)
+    - extremely long documents 전체에 걸쳐 퍼져있는 fact를 바탕으로 LLM의 추론 능력을 평가하는 벤치마크, BABILong 공개
+    - fact chaining, simple induction, deduction, counting 등 20여 개의 reasoning task 포함
+    - 평가 결과에 따르면 popular LLM도 문맥의 10-20% 정도만 활용하는 수준이며 reasoning complexity가 높아짐에 따라 퍼포먼스가 급격하게 떨어짐
+- 📜 [CMU, Duke] [TheAgentCompany: Benchmarking LLM Agents on Consequential Real World Tasks](https://arxiv.org/pdf/2412.14161)
+    - browsing the Web, writing code, running program 등 digital worker가 일하는 방식으로 AI agent의 상호작용 능력을 평가하기 위한 벤치마크
+    - internal web site, data를 포함하는 self-contained environment를 구축
+    - 가장 뛰어난 모델로는 전체 태스크의 24% 정도를 완수할 수 있었다고 보고함
+    - [깃허브 링크](https://github.com/TheAgentCompany/TheAgentCompany) 🔗
 
 </details>
 
