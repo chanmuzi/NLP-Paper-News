@@ -192,6 +192,12 @@
 - 🗞️ [Perplexity] [Perplexity has reportedly closed a $500M funding round](https://techcrunch.com/2024/12/19/perplexity-has-reportedly-closed-a-500m-funding-round/)
     - 인공지능 기반 검색 엔진 강자인 Perplexity가 500M 달러, 한화 약 6천 억원 규모의 투자를 받은 것으로 알려짐. 기업 가치는 약 110조에 달하는 것으로 평가.
     - OpenAI가 Chat 모델 시장을 선점한 것, 검색 시장을 Perplexity가 선점한 것 등을 보면 시장에서 입지를 빠르게 가져가는 쪽이 압도적인 인지도와 유저풀을 갖게 되는 것 같다는 생각이 듦
+- 📜 [Meta, Washington, CMU] [Explore Theory-of-Mind: Program-Guided Adversarial Data Generation for Theory of Mind Reasoning](https://arxiv.org/pdf/2412.12175)
+    - ExploreToM, robust training & evaluation 을 위한 난이도 높은 theory of mind 관련 최초의 프레임 워크
+    - A* search를 custom domain-specific language에 사용하여 복잡한 story sturcture를 생산
+    - Llama-3.1-70B나 GPT-4o 같은 모델도 각각 0%, 9%에 달하는 낮은 정확도를 보임
+    - [깃허브 링크](https://github.com/facebookresearch/exploretom) 🔗
+
 
 </details>
 
