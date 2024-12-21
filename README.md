@@ -185,7 +185,13 @@
     - 2000 code completions/month, 50 chat requests/month, access to GPT-4o & Claude 3.5 Sonnet
     - 코드 어시스턴트에 대한 관심이 뜨거운데, Cursor, Windsurf 에 뒤지지 않으려는 노력으로 보임
     - 그러나 아직까지 다른 코드툴에 비해서는 너무 약해/평범해 보이는 기능들..
-
+- 🧑🏻‍💻 [OpenAI] [o3 preview & call for safety researchers](https://openai.com/12-days/?day=12)
+    - 📜 [Deliberative alignment: reasoning enables safer language models](https://openai.com/index/deliberative-alignment/)
+        - o-series 모델에 적용한 새로운 alignment strategy
+    - 안전성 검사를 위한 작업을 진행 중이고, 이를 위해 일부 연구자들에게 사용 기회를 제공할 것으로 보임
+- 🗞️ [Perplexity] [Perplexity has reportedly closed a $500M funding round](https://techcrunch.com/2024/12/19/perplexity-has-reportedly-closed-a-500m-funding-round/)
+    - 인공지능 기반 검색 엔진 강자인 Perplexity가 500M 달러, 한화 약 6천 억원 규모의 투자를 받은 것으로 알려짐. 기업 가치는 약 110조에 달하는 것으로 평가.
+    - OpenAI가 Chat 모델 시장을 선점한 것, 검색 시장을 Perplexity가 선점한 것 등을 보면 시장에서 입지를 빠르게 가져가는 쪽이 압도적인 인지도와 유저풀을 갖게 되는 것 같다는 생각이 듦
 
 </details>
 
