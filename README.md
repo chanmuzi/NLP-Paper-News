@@ -198,6 +198,16 @@
     - Llama-3.1-70B나 GPT-4o 같은 모델도 각각 0%, 9%에 달하는 낮은 정확도를 보임
     - [깃허브 링크](https://github.com/facebookresearch/exploretom) 🔗
 
+</details>
+
+<details>
+  <summary>3rd week</summary>
+
+- 📜 [Washington, AI2] [Self-Instruct: Aligning Language Models with Self-Generated Instructions](https://arxiv.org/pdf/2212.10560) (ACL 2023)
+    - 2년 전 논문이지만 지금도 많이 활용되고 있는 좋은 방법론이라 기록
+    - 언어 모델의 zero-shot 성능이 뛰어나더라도 human-written instruction data 자체는 확보하기 어렵다는 문제가 존재
+    - → Self-Instruct: 언어 모델의 생성 결과를 bootstrapping 함으로써 사전학습 모델의 instruction following 능력을 개선하는 프레임워크 제시
+    - instruction, input, output 생성 → invalid, similar 데이터는 필터링
 
 </details>
 
