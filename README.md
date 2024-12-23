@@ -201,13 +201,19 @@
 </details>
 
 <details>
-  <summary>3rd week</summary>
+  <summary>4rd week</summary>
 
 - 📜 [Washington, AI2] [Self-Instruct: Aligning Language Models with Self-Generated Instructions](https://arxiv.org/pdf/2212.10560) (ACL 2023)
     - 2년 전 논문이지만 지금도 많이 활용되고 있는 좋은 방법론이라 기록
     - 언어 모델의 zero-shot 성능이 뛰어나더라도 human-written instruction data 자체는 확보하기 어렵다는 문제가 존재
     - → Self-Instruct: 언어 모델의 생성 결과를 bootstrapping 함으로써 사전학습 모델의 instruction following 능력을 개선하는 프레임워크 제시
     - instruction, input, output 생성 → invalid, similar 데이터는 필터링
+- 📜 [Oxford] [Confidence in the Reasoning of Large Language Models](https://arxiv.org/abs/2412.15296)
+    - LLM의 답변에 대한 confidence와 accuracy 간의 상관관계를 연구한 논문
+    - (1) reconsider 하도록 prompt를 받았을 때의 persistence를 정성적으로 측정
+    - (2) self-reported confidnece score를 정량적으로 측정
+    - 일반적으로는 confidence와 accuracy가 양의 상관관계를 보이지만, 두 번째 답변이 첫 번째 답변보다 안좋을 가능성이 높음
+    - confidence는 token-level probability로 부분적인 해석만 가능
 
 </details>
 
