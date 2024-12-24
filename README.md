@@ -214,6 +214,16 @@
     - (2) self-reported confidnece score를 정량적으로 측정
     - 일반적으로는 confidence와 accuracy가 양의 상관관계를 보이지만, 두 번째 답변이 첫 번째 답변보다 안좋을 가능성이 높음
     - confidence는 token-level probability로 부분적인 해석만 가능
+- 📜 [Peking, Microsoft Research] [Outcome-Refining Process Supervision for Code Generation](https://arxiv.org/pdf/2412.15118)
+    - 코드 생성 태스크에서 학습된 리워드 모델을 사용하는 경우 성능은 뛰어나지만 학습 비용이 많이 들고 평가 신뢰도가 높지 않다는 문제가 존재
+    - Outcome-Refining Process Supervision, outcome refinement 자체를 supervised process 자체로 취급하는 paradigm 제시
+    - 여러 개의 solution trajectories를 유지하기 위해 tree-structured exploration을 사용
+- 📜 [HKUST, Tencent] [B-STaR: Monitoring and Balancing Exploration and Exploitation in Self-Taught Reasoners](https://arxiv.org/pdf/2412.17256)
+    - 평가하고자 하는 항목은 두 가지
+        - (1) 모델이 충분히 다양한 response를 생성할 수 있는 능력이 있는가
+        - (2) 고퀄리티-저퀄리티 데이터를 구분하는 external reward의 효용성
+    - 추론 관련 태스크에서 exploration & exploitation을 추적하여 정량적 분석 수행
+    - Self-Taught Reasoning 프레임워크 B-STaR 제시
 
 </details>
 
