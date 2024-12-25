@@ -224,6 +224,11 @@
         - (2) 고퀄리티-저퀄리티 데이터를 구분하는 external reward의 효용성
     - 추론 관련 태스크에서 exploration & exploitation을 추적하여 정량적 분석 수행
     - Self-Taught Reasoning 프레임워크 B-STaR 제시
+- 📜 [Tsinghua] [Fourier Position Embedding: Enhancing Attention's Periodic Extension for Length Generalization](https://arxiv.org/pdf/2412.17739)
+    - 언어 모델들의 각 요소를 상세히 분석함으로써 RoPE 기반 attention 일반화의 문제점을 파악
+    - Discrete Signal Processing theory를 사용하여 RoPE가 Non-Uniform Discrete Fourier Transform을 achieve 함으로써 periodic attention을 가능하도록 만든다는 것을 확인
+    - Fourier Position Embedding (FoPE): periodic extension과 length generalization을 개선하기 위해 attention의 frequency-domain properties를 enhance
+    - [깃허브 링크](https://github.com/TsinghuaC3I/Fourier-Position-Embedding) 🔗
 
 </details>
 
