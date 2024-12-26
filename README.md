@@ -229,6 +229,19 @@
     - Discrete Signal Processing theory를 사용하여 RoPE가 Non-Uniform Discrete Fourier Transform을 achieve 함으로써 periodic attention을 가능하도록 만든다는 것을 확인
     - Fourier Position Embedding (FoPE): periodic extension과 length generalization을 개선하기 위해 attention의 frequency-domain properties를 enhance
     - [깃허브 링크](https://github.com/TsinghuaC3I/Fourier-Position-Embedding) 🔗
+- 🧑🏻‍💻 [MIS (Make It So)](https://discuss.pytorch.kr/t/mis-make-it-so-cli-assistant/5727)
+    - CLI Assistant
+    - OpenAI, Mistral, X.ai, Ollama 등과 같은 다양한 AI 프로바이더를 지원
+    - 자연어로 명령을 실행할 수 있음. 실제 명령 실행 전에 확인 과정을 거쳐 문제 일으킬 가능성 최소화.
+    - [깃허브 링크](https://github.com/RamboRogers/mis?utm_source=pytorchkr&ref=pytorchkr) 🔗
+- 📜 [KAIST, Microsoft Research] [Ensembling Large Language Models with Process Reward-Guided Tree Search for Better Complex Reasoning](https://arxiv.org/pdf/2412.15797)
+    - Language model Ensembel with Monte Carlo Tree Search (LE-MCTS) 제시
+    - Markov decision process에 따라 언어 모델들의 ensemble 하여 step-by-step reasoning을 구성
+    - state는 중간 추론 과정 (reasoning path)를 나타내고 action은 다음 reasoning step을 생성하는 것으로 구성됨
+- 📜 [Nanjing Univ.] [Token-Budget-Aware LLM Reasoning](https://arxiv.org/pdf/2412.18547)
+    - 다른 문제들을 바탕으로 token budget을 dynamic 하게 추정하는 프레임워크
+    - CoT reasoning에 사용되는 토큰의 수와 비용을 효과적으로 감소시킬 수 있었다고 주장
+    - [깃허브 링크](https://github.com/GeniusHTX/TALE) 🔗
 
 </details>
 
