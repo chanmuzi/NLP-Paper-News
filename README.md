@@ -242,6 +242,30 @@
     - 다른 문제들을 바탕으로 token budget을 dynamic 하게 추정하는 프레임워크
     - CoT reasoning에 사용되는 토큰의 수와 비용을 효과적으로 감소시킬 수 있었다고 주장
     - [깃허브 링크](https://github.com/GeniusHTX/TALE) 🔗
+- 📜 [KAIST, Google DeepMind] [Revisiting In-Context Learning with Long Context Language Models](https://arxiv.org/pdf/2412.16926)
+    - 최근 Long Context Language Models (LCLMs)의 등장으로 여러 개의 예시를 입력으로 제공할 수 있는 상황이 되며 ICL의 중요성이 재조명되고 있음
+    - 정교한 예시 선정이 random selection 대비 큰 성능 향상으로 이어지지 않는다는 결과
+    - 오히려 좋은 예시들을 찾는 것보다 context window를 채울 만큼의 예시를 확보하는 게 더 어렵고 중요한 문제로 인식되기 시작했다는 주장
+- 📜 [Tsinghua, Peking] [How to Synthesize Text Data without Model Collapse?](https://arxiv.org/pdf/2412.14689)
+    - 합성 데이터가 모델 학습에 미치는 영향은 무엇이며, 어떻게 하면 모델 붕괴 없이 데이터를 합성할 수 있을까?
+    - 합성 데이터의 비율을 조절해가며 학습해 본 결과, 합성 데이터의 비율과 모델의 성능이 음의 상관관계를 보인다고 함
+    - 사람이 생성한 데이터에 token editing을 적용하여 semi-synthetic data를 획득하는 방법론 제안
+- 📜 [Anthropic, NYU, Mila] [Alignment faking in large language models](https://arxiv.org/pdf/2412.14093)
+    - alignment faking: training objective를 선택적으로 준수하여 학습 이후의 수정을 방지하는 현상
+    - 무료 유저와 대화할 것임을 시스템 프롬프트에 포함하고 모든 해로운 질문에 대해서도 답변할 수 있도록 학습 → 추론 시 무료/유료 유저 결과 비교해보니 무료 유저의 해로운 질문에 대해서 답변할 확률이 14%, 유료 유저에 대해서는 0%
+    - 사전학습 데이터를 모방한 합성 데이터를 이용하여 보다 현실적인 세팅에서 실험한 결과 제시
+    - 강화학습으로도 alignment-faking reasoning을 확인한 결과, 그 비율이 78%까지 오르는 것을 확인함
+- 📜 [Pennsylvania, Salesforce] [GReaTer: Gradients over Reasoning Makes Smaller Language Models Strong Prompt Optimizers](https://arxiv.org/pdf/2412.09722)
+    - prompt engineering automating에 있어서 비용이 많이 드는 LLM에 의존해야 한다는 문제점 존재
+    - GReaTer: task loss gradients를 활용하여 open-source, lightweight LM으로 self-optimization of prompts 수행하는 테크닉
+    - [깃허브 링크](https://github.com/psunlpgroup/GreaTer) 🔗
+- 📜 [Google Research, Google DeepMind] [A Little Help Goes a Long Way: Efficient LLM Training by Leveraging Small LMs](https://arxiv.org/pdf/2410.18779)
+    - LLM pre-training efficiency와 quality를 향상시키기 위해 SLM을 적절히 활용하는 방법론 제안
+    - (1) additional training supervision을 위한 soft label 제공
+    - (2) small subset of valuable training examples 선별
+    - 1.5B 모델을 soft labeler로 이용하여 2.8B 사이즈 모델을 학습한 결과를 제시
+    - low-quality supervision이 좋은 영향을 줄 수 있음, 그리고 adaptive하게 적용할 필요성 등을 확인한 것으로 보임. 장기적으로는 더 좋은 모델을 활용하여 더 뛰어난 모델을 사전학습 단계에서 만들 수 있다는 의미가 될 수도.. (자원이 뒷받침 된다면)
+
 
 </details>
 
