@@ -265,7 +265,25 @@
     - (2) small subset of valuable training examples 선별
     - 1.5B 모델을 soft labeler로 이용하여 2.8B 사이즈 모델을 학습한 결과를 제시
     - low-quality supervision이 좋은 영향을 줄 수 있음, 그리고 adaptive하게 적용할 필요성 등을 확인한 것으로 보임. 장기적으로는 더 좋은 모델을 활용하여 더 뛰어난 모델을 사전학습 단계에서 만들 수 있다는 의미가 될 수도.. (자원이 뒷받침 된다면)
-
+- 📜 [DeepSeek] [DeepSeek-V3 Technical Report](https://github.com/deepseek-ai/DeepSeek-V3/blob/main/DeepSeek_V3.pdf)
+    - 671B total, 37B activated 파라미터 사이즈를 갖는 MoE LM / 14.8T 토큰으로 사전학습 및 SFT, RL / 2.788M H800 GPU hours
+    - 효율적인 학습 및 추론을 위해 Multi-head Latent Attention (MLA) & DeepSeekMoE 아키텍쳐 선택
+    - load balancing을 위한 auxiliary-loss-free strategy, multi-token prediction training objective
+    - [깃허브 링크](https://github.com/deepseek-ai/DeepSeek-V3/blob/main/DeepSeek_V3.pdf) 🔗
+- 📜 [Meta] [Large Concept Models: Language Modeling in a Sentence Representation Space](https://ai.meta.com/research/publications/large-concept-models-language-modeling-in-a-sentence-representation-space/)
+    - concept: an explicit higher-level semantic representation (실제 사람이 언어를 인지하는 방식을 따르고자 함 instead of token)
+    - existing sentence embedding space, SONAR 사용
+    - diffusion-based generation의 일종인 MSE regression 등을 시도
+    - 1.6B 모델에 1.3T 토큰 학습 & 7B 모델에 2.7T 토큰 학습
+    - [깃허브 링크](https://github.com/facebookresearch/large_concept_model) 🔗
+- 🧑🏻‍💻 [Ollama & HuggingFace] [Use Ollama with any GGUF Model on Hugging Face Hub](https://huggingface.co/docs/hub/en/ollama)
+    - 허깅페이스의 [Local Apps settings](https://huggingface.co/settings/local-apps)에서 ollama 설정
+    - 모델 페이지의 `Use this model`에서 `ollama`를 선택
+    - `ollama run hf.co/{username}/{repository}`
+- 🧑🏻‍💻 [Qwen] [QVQ: To See the World with Wisdom](https://qwenlm.github.io/blog/qvq-72b-preview/)
+    - Qwen에서 weight를 공개한 멀티모달 모델
+    - MMMU, MathVista, MathVision, OlympiadBench 등 수학적 추론 능력이 크게 요구되는 벤치마크에서 GPT-4o & Claude3.5 Sonnet 이상의 퍼포먼스를 보임
+    - Language Mixing & Code-Switching 등이 예상치 못하게 나타날 수 있음, Recursive Reasoning 등의 문제가 존재
 
 </details>
 
