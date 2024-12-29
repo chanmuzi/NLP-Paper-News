@@ -284,6 +284,22 @@
     - Qwen에서 weight를 공개한 멀티모달 모델
     - MMMU, MathVista, MathVision, OlympiadBench 등 수학적 추론 능력이 크게 요구되는 벤치마크에서 GPT-4o & Claude3.5 Sonnet 이상의 퍼포먼스를 보임
     - Language Mixing & Code-Switching 등이 예상치 못하게 나타날 수 있음, Recursive Reasoning 등의 문제가 존재
+- 📜 [Tencent] [A Silver Bullet or a Compromise for Full Attention? A Comprehensive Study of Gist Token-based Context Compression](https://arxiv.org/pdf/2412.17483)
+    - long-context를 처리하는 gits-based context compression에 대한 한계를 지적
+        - synthetic recall과 같은 태스크에서 약점을 보임
+    - 세 개의 key failure patterns
+        - (1) lost by the boundary (2) lost if surprise (3) lost along the way
+    - 두 개의 전략을 제시
+        - (1) fine-grained autoencoding: original token 정보를 reconstruct 하는 걸 강화
+        - (2) segment-wise token importance estimation: token dependencies 기반으로 최적화 조절
+- 📜 [Gaoling School] [YuLan-Mini: An Open Data-efficient Language Model](https://arxiv.org/pdf/2412.17743)
+    - 비슷한 사이즈 모델들 중 가장 뛰어난 2.42B LLM 공개 (1.08T 토큰으로 학습)
+    - 세 개의 특징을 가진 사전학습 테크닉
+        - (1) an elaborate data pipeline
+        - (2) 학습 불안정성을 완화하는 robust optimization method
+        - (3) targeted data selection & long context training
+    - [깃허브 링크](https://github.com/RUC-GSAI/YuLan-Mini) 🔗
+
 
 </details>
 
