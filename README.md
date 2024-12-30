@@ -17,6 +17,11 @@
     - 현존 LLM들은 정보 제공에 초점이 맞춰져 있고 교육 상황에 적합하지는 않음
     - 특정 pedagogical attribute를 평가하기 위한 프레임워크
     - pedagogical instruction following을 포함하여 학습한 LearnLM 이 다양한 learning scenario에서 좋은 평가를 받았음
+- 📜 [Nanjing Univ., Baidu] [Explanatory Instructions: Towards Unified Vision Tasks Understanding and Zero-shot Generalization](https://arxiv.org/pdf/2412.18525)
+    - CV는 아직 NLP만큼의 zero-shot generalization 성능을 달성하지 못함
+    - discrete & terminological task definitions 대신 Explanatory Instructions를 사용
+    - ‘image input → explanatory instruction → output’ 12M 개의 triplet으로 구성된 데이터셋 구축
+    - Auto-regressive-based vision-language model 학습 (AR-based VLM)
 </details>
 
 ---
