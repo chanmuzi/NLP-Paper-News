@@ -299,7 +299,16 @@
         - (2) 학습 불안정성을 완화하는 robust optimization method
         - (3) targeted data selection & long context training
     - [깃허브 링크](https://github.com/RUC-GSAI/YuLan-Mini) 🔗
-
+- 📜 [Chalmers University] [The Impact of Prompt Programming on Function-Level Code Generation](https://arxiv.org/pdf/2412.20545)
+    - CodePromptEval: 5개의 프롬프트 테크닉을 평가하기 위한 7072개의 프롬프트로 구성된 데이터셋 (few-shot, persona, chain-of-thought, funciton signature, list of packages)
+    - 세 개의 LLM(GPT-4o, Llama3, Mistral)로 부터 생성한 completion function의 quality 평가
+    - 특정 테크닉이 코드 생성에 도움은 되지만, 이것들의 조합/결합이 반드시 도움이 되는 것은 아님
+    - correctness & quality 간의 trade-off 관측 (quality가 뭘 의미하는지 모르겠음)
+- 📜 [Meta] [Improving Factuality with Explicit Working Memory](https://arxiv.org/pdf/2412.18069)
+    - Explicit Working Memory (Ewe): long-form text generation에서 real-time feecback을 받는 working memory를 통합
+    - memory는 online fack-checking과 retrieval feedback을 기반으로 refreshed
+        - → 중간에 잘못 생성되었던 내용들에 대한 dependency issue를 해결할 수 있음
+    - memory update 규칙, memory unit에 대한 configuration, retrieval datastore의 quality 등이 성능에 가장 큰 영향을 미치는 요소들
 
 </details>
 
