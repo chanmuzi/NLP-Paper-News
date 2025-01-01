@@ -3,6 +3,23 @@
 🗞️: News
 
 ---
+# 2025
+
+## 🙇🏻 January
+<details>
+  <summary>1st week</summary>
+
+- 📜 [NVIDIA, HuggingFace] [Smarter, Better, Faster, Longer: A Modern Bidirectional Encoder for Fast, Memory Efficient, and Long Context Finetuning and Inference](https://arxiv.org/pdf/2412.13663)
+    - ModernBERT: encoder-only 모델에서 Pareto improvement
+    - 8192 sequence 길이로 2T 토큰을 학습
+    - 분류, single-/multi- vector retrieval 태스크에서 SoTA 달성
+- 📜 [Google] [LearnLM: Improving Gemini for Learning](https://services.google.com/fh/files/misc/improving-gemini-for-education_v7.pdf)
+    - 현존 LLM들은 정보 제공에 초점이 맞춰져 있고 교육 상황에 적합하지는 않음
+    - 특정 pedagogical attribute를 평가하기 위한 프레임워크
+    - pedagogical instruction following을 포함하여 학습한 LearnLM 이 다양한 learning scenario에서 좋은 평가를 받았음
+</details>
+
+---
 # 2024
 
 ## 🎄 December
