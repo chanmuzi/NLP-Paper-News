@@ -22,6 +22,16 @@
     - discrete & terminological task definitions 대신 Explanatory Instructions를 사용
     - ‘image input → explanatory instruction → output’ 12M 개의 triplet으로 구성된 데이터셋 구축
     - Auto-regressive-based vision-language model 학습 (AR-based VLM)
+- 📜 [Microsoft] [Bootstrap Your Own Context Length](https://arxiv.org/pdf/2412.18860)
+    - long-context LM을 학습하는 방식으로 short-context 능력만을 이용하는 bootstrapping approach를 제안
+    - diverse long-context instruction tuning data를 합성하는 simple agent flow
+    - 즉, short-context의 언어 모델들만을 이용하여 long-context 언어 모델을 만들 수 있다는 주장
+    - Llama-3 계열 모델을 기준으로 최대 1M token 까지 확장했다고 언급
+- 📜 [GIT, Washington, CMU, AI2] [Multi-Attribute Constraint Satisfaction via Language Model Rewriting](https://arxiv.org/pdf/2412.19198)
+    - Multi-Attribute Constraint Satisfaction (MACS): 다양한 external real-value attributes에 대해 user-specified constraints를 만족할 수 있는 general한 언어 모델 학습 방법
+    - 초기 paraphrased outputs으로부터 다양한 multi-attribute를 sampling 함으로써 LM을 editor로 학습
+    - 이를 제대로 평가하기 위해 Fine-grained Constraint Satisfaction (FineCS) 벤치마크를 제작
+        - Text Style Transfer, Protein Design, 두 개의 challenging tasks로 구성
 </details>
 
 ---
