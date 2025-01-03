@@ -32,6 +32,16 @@
     - 초기 paraphrased outputs으로부터 다양한 multi-attribute를 sampling 함으로써 LM을 editor로 학습
     - 이를 제대로 평가하기 위해 Fine-grained Constraint Satisfaction (FineCS) 벤치마크를 제작
         - Text Style Transfer, Protein Design, 두 개의 challenging tasks로 구성
+- 📜 [Xiaoduo AI Lab] [Xmodel-2 Technical Report](https://arxiv.org/pdf/2412.19638)
+    - reasoning task에 특화된 1.2B 사이즈의 sLLM
+    - 이것의 아키텍쳐는 다른 모델들이 통합된 하이퍼파라미터셋을 그대로 활용할 수 있도록 함으로써 최적의 세팅으로 larger model에 scale 할 수 있음
+    - MiniCPM의 WSD learning rate scheduler 사용
+    - [깃허브 링크](https://github.com/XiaoduoAILab/Xmodel-2) 🔗
+- 📜 [Tencent] [HunyuanProver: A Scalable Data Synthesis Framework and Guided Tree Search for Automated Theorem Proving](https://arxiv.org/pdf/2412.20735)
+    - LEAN4와 interactive automatic theorem proving을 통해 Hunyuan 7B를 fine-tuning한 언어 모델 HunyuanProver
+    - data sparsity issue 해결을 위해 iterative 데이터 합성 프레임워크를 디자인
+    - system 2 thinking을 위한 guided tree search algorithm 디자인
+    - 30k 개의 합성 데이터를 공개: 자연어로 된 원래 질문, autoformalization으로 변형된 것, HunyuanProver로부터의 proof로 구성
 </details>
 
 ---
