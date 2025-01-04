@@ -42,6 +42,10 @@
     - data sparsity issue 해결을 위해 iterative 데이터 합성 프레임워크를 디자인
     - system 2 thinking을 위한 guided tree search algorithm 디자인
     - 30k 개의 합성 데이터를 공개: 자연어로 된 원래 질문, autoformalization으로 변형된 것, HunyuanProver로부터의 proof로 구성
+- 📜 [Meta] [MLLM-as-a-Judge for Image Safety without Human Labeling](https://arxiv.org/pdf/2501.00192)
+    - AI-generated content (AIGC) 중에 harmful content가 포함되어 있는지를 확인하는 것이 중요한데 여기에 MLLM을 활용
+        - 기존 문제점: human label, guideline 제작 등은 너무 비쌈. 룰 업데이트가 주기적으로 필요함
+    - MLLM이 zero-shot으로 주어진 ruel과 이미지 간의 관련성을 평가하고 빠르게 판단할 수 있도록 하는 방법론을 제안
 </details>
 
 ---
