@@ -51,6 +51,10 @@
     - TR의 core mechanism은 rolling back thoughts로 LLM이 thoughts에 대해 error analysis를 수행하여 이전에 mistaken 된 thought를 roll back 하도록 함
     - prompt 내에 이러한 trail-and-error를 포함하여 더욱 reliable한 reasoning path를 구축
     - [깃허브 링크](https://github.com/iQua/llmpebase) 🔗
+- 📜 [Taiwan, Intel] [Safeguard Fine-Tuned LLMs Through Pre- and Post-Tuning Model Merging](https://arxiv.org/pdf/2412.19512)
+    - additional safety data에 의존하지 않으면서도 downstream task performance를 개선할 수 있는 방법이 뭘까?
+    - ⇒ merging pre- & post-fined-tuned safety-aligned model
+    - Step 1. Downstream Task Fine-Tuning → Step 2. Combining Base and Fine-tuned Model
 </details>
 
 ---
