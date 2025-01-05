@@ -46,6 +46,11 @@
     - AI-generated content (AIGC) 중에 harmful content가 포함되어 있는지를 확인하는 것이 중요한데 여기에 MLLM을 활용
         - 기존 문제점: human label, guideline 제작 등은 너무 비쌈. 룰 업데이트가 주기적으로 필요함
     - MLLM이 zero-shot으로 주어진 ruel과 이미지 간의 관련성을 평가하고 빠르게 판단할 수 있도록 하는 방법론을 제안
+- 📜 [Toronto] [Toward Adaptive Reasoning in Large Language Models with Thought Rollback](https://arxiv.org/pdf/2412.19707) (ICML 2024)
+    - Thought Rollback (TR) 라는 reasoning framework를 제시하여 LLM이 adaptive 하게 thought structure를 bulid 하여 hallucination을 완화
+    - TR의 core mechanism은 rolling back thoughts로 LLM이 thoughts에 대해 error analysis를 수행하여 이전에 mistaken 된 thought를 roll back 하도록 함
+    - prompt 내에 이러한 trail-and-error를 포함하여 더욱 reliable한 reasoning path를 구축
+    - [깃허브 링크](https://github.com/iQua/llmpebase) 🔗
 </details>
 
 ---
