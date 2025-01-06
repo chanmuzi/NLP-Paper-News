@@ -57,6 +57,14 @@
     - Step 1. Downstream Task Fine-Tuning → Step 2. Combining Base and Fine-tuned Model
 </details>
 
+<details>
+  <summary>2nd week</summary>
+
+- 📜 [Shenzhen] [ICPC: In-context Prompt Compression with Faster Inference](https://arxiv.org/pdf/2501.01625)
+    - ICPC: prompt의 길이를 adaptive 하게 줄이는 prompt compression 방법론 제시
+    - encoder를 사용하여 프롬프트 내 각 단어의 확률을 계산하고 information function을 이용하여 information 계산하여 information loss를 최소화
+</details>
+
 ---
 # 2024
 
