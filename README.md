@@ -67,6 +67,17 @@
     - OLMo 2는 개선된 아키텍쳐, 학습 레시피, 사전학습 데이터, dense autoregressive model을 포함
     - Dolmino Mix 1124, late-stage curriculum training에 사용되는 pretraining data mixture
     - Tulu 3에서 얻은 최선의 practice를 OLMo 2-Instruct 개발에 활용, final-stage reinforcement learning with verifiable reward (RLVR)에 focus
+- 📜 [Berkeley, CMU] [AutoPresent: Designing Structured Visuals from Scratch](https://arxiv.org/pdf/2501.00912)
+    - SlidesBench: 모델이 자연어 instructions를 바탕으로 slide를 자동 생성하는 태스크 벤치마크
+        - 10개 도메인에 대한 310개 슬라이드 deck에 대한 585개의 testing sample로 구성
+        - (1) reference-based 방식: target slide와의 유사도 평가
+        - (2) reference-free: 생성된 슬라이드 자체의 디자인 퀄리티 평가
+    - AutoPresent: 8B Llama-based model, 7k개의 instruction & 슬라이드 생성 코드 pair로 학습
+    - 모델이 스스로의 결과물을 self-refined 하는 iteraitve design refinement가 유의미한 결과 향상으로 이어진다고 보고
+    - [깃허브 링크](https://github.com/para-lost/AutoPresent) 🔗
+- 🧑🏻‍💻 [HuggingFace] [SmolAgents](https://github.com/huggingface/smolagents)
+    - code 몇 줄로 power agents를 실행할 수 있도록 돕는 허깅페이스의 오픈소스 라이브러리
+    - transformers에서 사용 가능한, Hub에 업로드된 모든 모델을 사용할 수 있음. OpenAI, Anthropic, Meta 모델들도 사용 가능
 </details>
 
 ---
