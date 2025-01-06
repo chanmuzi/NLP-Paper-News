@@ -63,6 +63,10 @@
 - 📜 [Shenzhen] [ICPC: In-context Prompt Compression with Faster Inference](https://arxiv.org/pdf/2501.01625)
     - ICPC: prompt의 길이를 adaptive 하게 줄이는 prompt compression 방법론 제시
     - encoder를 사용하여 프롬프트 내 각 단어의 확률을 계산하고 information function을 이용하여 information 계산하여 information loss를 최소화
+- 📜 [AI2, Washington, NYU] [2 OLMo 2 Furious](https://arxiv.org/pdf/2501.00656)
+    - OLMo 2는 개선된 아키텍쳐, 학습 레시피, 사전학습 데이터, dense autoregressive model을 포함
+    - Dolmino Mix 1124, late-stage curriculum training에 사용되는 pretraining data mixture
+    - Tulu 3에서 얻은 최선의 practice를 OLMo 2-Instruct 개발에 활용, final-stage reinforcement learning with verifiable reward (RLVR)에 focus
 </details>
 
 ---
