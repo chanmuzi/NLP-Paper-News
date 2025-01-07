@@ -78,6 +78,15 @@
 - 🧑🏻‍💻 [HuggingFace] [SmolAgents](https://github.com/huggingface/smolagents)
     - code 몇 줄로 power agents를 실행할 수 있도록 돕는 허깅페이스의 오픈소스 라이브러리
     - transformers에서 사용 가능한, Hub에 업로드된 모든 모델을 사용할 수 있음. OpenAI, Anthropic, Meta 모델들도 사용 가능
+- 📜 [Chinese Academy of Sciences] [Auto-RT: Automatic Jailbreak Strategy Exploration for Red-Teaming Large Language Models](https://arxiv.org/pdf/2501.01830)
+    - Auto-RT: 복잡한 attack 전략들을 자동적으로 explore & optimize 하는 강화학습 프레임워크
+    - exploration complexity를 줄이고 최적화 전략을 개선하기 위한 두 가지 key points
+        - (1) Early-terminated Exploration
+        - (2)Progressive Reward Tracking algorithm
+    - [깃허브 링크](https://github.com/icip-cas/Auto-RT/tree/main) 🔗
+- 📜 [Orange] [Survey on Question Answering over Visually Rich Documents: Methods, Challenges, and Trends](https://arxiv.org/pdf/2501.02235)
+    - Visually-rich Document Understanding (VrDU)는 comprehension과 generation 능력을 둘 다 필요로 함
+    - 본 논문에서는 LLMs function에 의한 VrDU 모델들의 개선 방법론 및 한계점 등을 survey
 </details>
 
 ---
