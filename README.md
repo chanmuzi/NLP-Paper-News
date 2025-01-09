@@ -87,6 +87,10 @@
 - 📜 [Orange] [Survey on Question Answering over Visually Rich Documents: Methods, Challenges, and Trends](https://arxiv.org/pdf/2501.02235)
     - Visually-rich Document Understanding (VrDU)는 comprehension과 generation 능력을 둘 다 필요로 함
     - 본 논문에서는 LLMs function에 의한 VrDU 모델들의 개선 방법론 및 한계점 등을 survey
+- 🧑🏻‍💻 [Google] [Agents](https://www.kaggle.com/whitepaper-agents)
+    - AI agents가 어떻게 reasoning, tools, external data를 결합하는지에 대해 설명한 whitepaper
+    - 세 개의 핵심 구성 요소를 정의: Decision Engine, Tool Integration, Orchestration Layer
+    - Tools는 각 functionality에 따라 Extension, Function, Data Stores로 구분
 </details>
 
 ---
