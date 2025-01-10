@@ -94,6 +94,14 @@
 - 🧑🏻‍💻 [NVIDIA] [NVIDIA Announces Nemotron Model Families to Advance Agentic AI](https://blogs.nvidia.com/blog/nemotron-model-families/)
     - AI agents를 4배 빠른 속도로 최적화 할 수 있는 open source LLMs 공개
     - NVIDIA NeMo Retriever 등을 포함하여 NVIDIA NeMo 플랫폼을 구축하고자 하는 움직임
+- 📜 [IBM] [MTRAG: A Multi-Turn Conversational Benchmark for Evaluating Retrieval-Augmented Generation Systems](https://arxiv.org/pdf/2501.03468)
+    - MTRAG: end-to-end human-generated multi-turn RAG benchmark
+    - 4개 도메인에서 평균 7.7 턴의 110개 대화로 구성되며, 총 842개의 태스크를 다룸
+    - 합성 데이터를 이용한 LLM-as-a-Judge 자동화 파이프라인도 포함하고 있음
+    - [깃허브 링크](https://github.com/ibm/mt-rag-benchmark) 🔗
+- 📜 [Korea Univ.] [SUGAR: Leveraging Contextual Confidence for Smarter Retrieval](https://arxiv.org/pdf/2501.04899) (ICASSP 2025)
+    - Semantic Uncertainty Guided Adaptive Retrieval (SUGAR): context-based entropy로 single-/multi- step retrieval을 결정
+    - external knowledge가 relevant 한 것인지 LLM이 알 수 없어 발생하는 hallucination을 최소화
 </details>
 
 ---
