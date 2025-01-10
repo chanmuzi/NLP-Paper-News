@@ -91,6 +91,9 @@
     - AI agents가 어떻게 reasoning, tools, external data를 결합하는지에 대해 설명한 whitepaper
     - 세 개의 핵심 구성 요소를 정의: Decision Engine, Tool Integration, Orchestration Layer
     - Tools는 각 functionality에 따라 Extension, Function, Data Stores로 구분
+- 🧑🏻‍💻 [NVIDIA] [NVIDIA Announces Nemotron Model Families to Advance Agentic AI](https://blogs.nvidia.com/blog/nemotron-model-families/)
+    - AI agents를 4배 빠른 속도로 최적화 할 수 있는 open source LLMs 공개
+    - NVIDIA NeMo Retriever 등을 포함하여 NVIDIA NeMo 플랫폼을 구축하고자 하는 움직임
 </details>
 
 ---
