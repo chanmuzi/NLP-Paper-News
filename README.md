@@ -102,6 +102,16 @@
 - 📜 [Korea Univ.] [SUGAR: Leveraging Contextual Confidence for Smarter Retrieval](https://arxiv.org/pdf/2501.04899) (ICASSP 2025)
     - Semantic Uncertainty Guided Adaptive Retrieval (SUGAR): context-based entropy로 single-/multi- step retrieval을 결정
     - external knowledge가 relevant 한 것인지 LLM이 알 수 없어 발생하는 hallucination을 최소화
+- 🧑🏻‍💻 [NVIDIA] [Cosmos](https://www.nvidia.com/en-in/ai/cosmos/)
+    - 자율 주행 및 robotics를 위한 합성 데이터를 생성할 수 있는 오픈소스 비디오 모델
+    - 20M 시간 & 9,000T 토큰으로 학습된 Diffusion-based models
+    - Autoregressive, text-to-video, video-to-video, combined inputs 지원 등의 특징
+- 🧑🏻‍💻 [LangChain] [Structured Report Generation Blueprint with NVIDIA AI](https://blog.langchain.dev/structured-report-generation-blueprint/)
+    - NVIDIA와 협력하여 AI agents 중 Structured Report Generation 개발
+    - optimized Llama 3.3 and LangGraph integration
+- 📜 [NYU] [Entropy-Guided Attention for Private LLMs](https://arxiv.org/pdf/2501.03489)
+    - Shannon’s entropy를 지표로 사용한 결과, MHA 관점에서 초기 레이어에는 entropic overload, 후기 레이어에는 under-utilization을 관측
+    - entropy regularization 테크닉을 곁들ㅇ니 entropy-guided attention 메커니즘으로 entropci overload를 완화
 </details>
 
 ---
