@@ -116,6 +116,10 @@
     - OpenaAI-o1과 같은 Large reasoning models (LRMs) 들은 knowledge insufficiency 문제를 항상 겪고 있음
     - Search-o1: LRMs에 agentic RAG mechanism과 Reason-in-Documents module을 더한 프레임워크
     - [깃허브 링크](https://github.com/sunnynexus/Search-o1) 🔗
+- 📜 [Microsoft] [GeAR: Generation Augmented Retrieval](https://arxiv.org/pdf/2501.02772)
+    - GeAR: well-desgined fusion & decoding module 을 결합하여 query와 document의 fused representation을 토대로 관련된 텍스트를 생성
+    - bi-encoder에 추가적인 연산 burden을 더하지 않는 방식임
+    - LLM을 이용한 효과적인 합성 데이터 파이프라인을 구축
 </details>
 
 ---
