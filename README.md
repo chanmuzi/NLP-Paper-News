@@ -112,6 +112,10 @@
 - 📜 [NYU] [Entropy-Guided Attention for Private LLMs](https://arxiv.org/pdf/2501.03489)
     - Shannon’s entropy를 지표로 사용한 결과, MHA 관점에서 초기 레이어에는 entropic overload, 후기 레이어에는 under-utilization을 관측
     - entropy regularization 테크닉을 곁들ㅇ니 entropy-guided attention 메커니즘으로 entropci overload를 완화
+- 📜 [Renmin, Tsinghua] [Search-o1: Agentic Search-Enhanced Large Reasoning Models](https://arxiv.org/pdf/2501.05366)
+    - OpenaAI-o1과 같은 Large reasoning models (LRMs) 들은 knowledge insufficiency 문제를 항상 겪고 있음
+    - Search-o1: LRMs에 agentic RAG mechanism과 Reason-in-Documents module을 더한 프레임워크
+    - [깃허브 링크](https://github.com/sunnynexus/Search-o1) 🔗
 </details>
 
 ---
