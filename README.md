@@ -122,6 +122,21 @@
     - LLM을 이용한 효과적인 합성 데이터 파이프라인을 구축
 </details>
 
+<details>
+  <summary>3rd week</summary>
+
+- 📜 [Nanyang, Fudan] [Long Context vs. RAG for LLMs: An Evaluation and Revisits](https://arxiv.org/pdf/2501.01880)
+    - Long Context (LC) vs. RAG 비교 페이퍼
+    - (1) QA benchmarks에서는 LC가 일반적으로 RAG 보다 우위
+    - (2) summarization-based RAG는 LC보다 낫지만 chunk-based retrieval는 조금 아쉽
+    - (3) dialogue-based & generatl question queries에 대해서는 RAG가 우위
+- 📜 [SynthLab, Stanford, UC Berkeley] [Towards System 2 Reasoning in LLMs: Learning How to Think With Meta Chain-of-Thought](https://arxiv.org/pdf/2501.04682)
+    - Meta Chain-of-Thought (Meta-CoT): traditional CoT를 explicitly modeling 함으로써 특정 CoT에 이르게 만들 수 있도록 하는 프레임워크
+    - process supervision, synthetic data generation, search algorithms 등 Meta-CoT 생성에 대한 방법론 탐구
+    - linearized search traces & reinforcement learning post-training 을 instruction tuning과 통합
+
+</details>
+
 ---
 # 2024
 
