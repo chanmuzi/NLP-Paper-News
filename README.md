@@ -134,6 +134,10 @@
     - Meta Chain-of-Thought (Meta-CoT): traditional CoT를 explicitly modeling 함으로써 특정 CoT에 이르게 만들 수 있도록 하는 프레임워크
     - process supervision, synthetic data generation, search algorithms 등 Meta-CoT 생성에 대한 방법론 탐구
     - linearized search traces & reinforcement learning post-training 을 instruction tuning과 통합
+- 📜 [OneLineAI, Yonsei] [Multi-Step Reasoning in Korean and the Emergent Mirage](https://arxiv.org/pdf/2501.05712)
+    - HRMCR (HAE-RAE Multi-Step Commonsense Reasoning): 한국의 문화와 언어적 특성을 반영한 multi-step reasoning benchmark
+    - 질문들은 템플릿과 알고리즘을 통해 자동적으로 생성되었음
+    - 일정 threshold 이상의 학습을 수행한 모델로부터 emergent behavior 관측됨
 
 </details>
 
