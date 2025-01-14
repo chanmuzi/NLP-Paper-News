@@ -138,6 +138,11 @@
     - HRMCR (HAE-RAE Multi-Step Commonsense Reasoning): 한국의 문화와 언어적 특성을 반영한 multi-step reasoning benchmark
     - 질문들은 템플릿과 알고리즘을 통해 자동적으로 생성되었음
     - 일정 threshold 이상의 학습을 수행한 모델로부터 emergent behavior 관측됨
+- 🧑🏻‍💻 [Mistral] [Codestral 25.01](https://mistral.ai/news/codestral-2501/)
+    - 더 효율적인 아키텍쳐와 개선된 토크나이저를 특징으로 삼음
+    - 덕분에 2배 이상 빠른 속도로 코드 생성 가능
+    - 256k context length를 지원하며 다양한 프로그래밍 언어 벤치마크에서 SoTA 달성
+    - VS Code 또는 JetBrains 에서 Chat Demo 버전 사용 가능
 
 </details>
 
