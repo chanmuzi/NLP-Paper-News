@@ -160,6 +160,17 @@
     - historical context를 기억하는 방법을 배워서 오래된 과거 정보를 활용하여 현재 context에 attention 하는 방법론
     - 결국 attention과 neural memory라는 두 개의 module을 기반으로 삼는 새로운 아키텍쳐 model family, Titan
     - 2M context size 이상에서도 needle-in-haystack tasks를 정확하게 수행할 수 있다고 보고
+- 📜 [Minimax] [MiniMax-01: Scaling Foundation Models with Lightning Attention](https://arxiv.org/pdf/2501.08313)
+    - MiniMax-Text-01, MiniMax-VL-01로 구성된 MiniMax-01 시리즈를 공개
+    - 핵심은 lightning attention & efficient scaling
+    - MoE 방식과 결합했는데, 이때 32개의 experts, 456B total parameters, 45.9B activated parameters 로 구성
+    - 학습 중 context window는 1M 길이에 달하고, 추론 시에는 4M 까지 extrapolate 가능하다고 주장
+    - GPT-4o, Claude-3.5-Sonnet에 준하는 성능을 달성하면서도 20-32배나 긴 context window를 커버할 수 있다고 함
+- 📜 [Sakana] [Transformer^2: Self-adaptive LLMs](https://arxiv.org/pdf/2501.06252)
+    - LLM이 weight matrice 내의 singular components를 실시간으로 selectively adjusting 함으로써 unseen tasks에 adapt 하도록 돕는 self-adapation framework
+    - two-pass mechanism: (1) dispatch system (2) task-specific expert vectors
+    - LoRA 대비 사용하는 파라미터의 숫자는 적으나 효율성이 뛰어남
+
 
 </details>
 
