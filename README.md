@@ -151,6 +151,15 @@
     - SLMs도 distillation 없이 OpenAI o1에 달하거나 혹은 그 이상 수준의 수학 추론 능력을 보유할 수 있다고 주장
     - MCTS를 통한 deep thinking을 활용하여 이와 같은 성과를 달성할 수 있었다고 보고
     - (1) code-augmented CoT data synthesis method (2) naive step-level score annotation을 지양하는 reward model training method (3) self-evolution recipe
+- 🧑🏻‍💻 [AMD, John Hopkins] [Agent Laboratory: Using LLM Agents as Research Assistants](https://agentlaboratory.github.io/)
+    - 사람이 만들어낸 연구 아이디어를 입력으로 받아 연구 결과와 코드 레포를 반환
+    - MacBook이든 GPU cluster든 주어진 computational resources에 맞게끔 동작하는 structured framework
+    - 세 단계로 구성: (1) Literature Review (2) Experimentation (3) Report Writing
+- 📜 [Google Research] [Titans: Learning to Memorize at Test Time](https://arxiv.org/pdf/2501.00663)
+    - attention이 긴 context를 커버하지 못한다는 단점을 극복하기 위해 새로운 long-term memory module을 제안
+    - historical context를 기억하는 방법을 배워서 오래된 과거 정보를 활용하여 현재 context에 attention 하는 방법론
+    - 결국 attention과 neural memory라는 두 개의 module을 기반으로 삼는 새로운 아키텍쳐 model family, Titan
+    - 2M context size 이상에서도 needle-in-haystack tasks를 정확하게 수행할 수 있다고 보고
 
 </details>
 
