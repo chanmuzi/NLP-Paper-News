@@ -143,6 +143,14 @@
     - 덕분에 2배 이상 빠른 속도로 코드 생성 가능
     - 256k context length를 지원하며 다양한 프로그래밍 언어 벤치마크에서 SoTA 달성
     - VS Code 또는 JetBrains 에서 Chat Demo 버전 사용 가능
+- 🧑🏻‍💻 [UCBerkeley NovaSky] [Sky-T1: Train your own O1 preview model within $450](https://novasky-ai.github.io/posts/sky-t1/)
+    - 17K 개에 달하는 수학, 코딩, 과학 데이터 / data curation, 학습, 평가를 위한 코드 / 모델 가중치 등을 오픈소스로 공개
+    - QwQ-23B-Preview를 이용하여 초기 데이터를 생성한 뒤 reject sampling 적용
+    - Qwen2.5-32B-Instruct 모델을 curated dataset으로 fine-tune
+- 📜 [Microsoft] [rStar-Math: Small LLMs Can Master Math Reasoning with Self-Evolved Deep Thinking](https://arxiv.org/pdf/2501.04519)
+    - SLMs도 distillation 없이 OpenAI o1에 달하거나 혹은 그 이상 수준의 수학 추론 능력을 보유할 수 있다고 주장
+    - MCTS를 통한 deep thinking을 활용하여 이와 같은 성과를 달성할 수 있었다고 보고
+    - (1) code-augmented CoT data synthesis method (2) naive step-level score annotation을 지양하는 reward model training method (3) self-evolution recipe
 
 </details>
 
