@@ -170,7 +170,11 @@
     - LLM이 weight matrice 내의 singular components를 실시간으로 selectively adjusting 함으로써 unseen tasks에 adapt 하도록 돕는 self-adapation framework
     - two-pass mechanism: (1) dispatch system (2) task-specific expert vectors
     - LoRA 대비 사용하는 파라미터의 숫자는 적으나 효율성이 뛰어남
-
+- 🧑🏻‍💻 [OpenAI] [Scheduled tasks in ChatGPT](https://help.openai.com/en/articles/10291617-scheduled-tasks-in-chatgpt)
+    - 한 번에 10개까지의 active tasks 스케줄 가능
+    - one-time reminder 또는 recurring actions 설정 가능
+    - 웹 인터페이스를 통한 태스크 관리
+    - 데스크탑, 모바일, 웹에서 알림 수신 가능
 
 </details>
 
