@@ -175,6 +175,18 @@
     - one-time reminder 또는 recurring actions 설정 가능
     - 웹 인터페이스를 통한 태스크 관리
     - 데스크탑, 모바일, 웹에서 알림 수신 가능
+- 📜 [Chinese Academy of Sciences] [Aligning Instruction Tuning with Pre-training](https://arxiv.org/pdf/2501.09368)
+    - instruction tuning을 위한 데이터셋은 pre-training에 사용된 것과 분포도 맞지 않고 다양성이 부족하다는 문제가 존재
+    - AITP (Aligning Instruction Tuning with Pre-training): underrepresented pre-training data를 고품질의 instruction-response pair 데이터로 변환
+        - task-specific objective 유지 & 데이터셋의 다양성 증대
+        - adaptive data selection, controlled rewriting, balanced integration 등
+- 📜 [Together AI, MIT, Princeton] [Ladder-residual: parallelism-aware architecture for accelerating large model inference with communication overlapping](https://arxiv.org/pdf/2501.06589)
+    - Ladder Residual: residual-based model에 적용 가능한 간단한 architectural modification. communication latency를 효율적으로 hide 하는 방법
+    - 모델을 여러 GPU에 나누는 Tensor Parallelism에서 발생하는 통신 간의 병목을 최소화하기 위한 방법론 제시
+- 📜 [Meta] [Training Large Language Models to Reason in a Continuous Latent Space](https://arxiv.org/pdf/2412.06769)
+    - LLM reasoning 에서는 일반적으로 textual coherence가 중요한 language space에서와 달리 reasoning에 최적화된 토큰이 필요
+    - CoConuT (Chain of Continuous Thought): LLM의 last hidden state를 reasoning state의 representation으로 해석하여 continuous thought로 명명
+    - [official code link](https://github.com/facebookresearch/coconut?tab=readme-ov-file) (Github) 🔗
 
 </details>
 
