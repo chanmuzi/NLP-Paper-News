@@ -187,6 +187,12 @@
     - LLM reasoning 에서는 일반적으로 textual coherence가 중요한 language space에서와 달리 reasoning에 최적화된 토큰이 필요
     - CoConuT (Chain of Continuous Thought): LLM의 last hidden state를 reasoning state의 representation으로 해석하여 continuous thought로 명명
     - [official code link](https://github.com/facebookresearch/coconut?tab=readme-ov-file) (Github) 🔗
+- 📜 [Northeastern Univ.] [Foundations of Large Language Models](https://arxiv.org/pdf/2501.09223)
+    - 200 페이지 분량의 LLM 책이 arxiv에 공개되어 화제
+- 📜 [Google DeepMind] [Inference-Time Scaling for Diffusion Models beyond Scaling Denoising Steps](https://arxiv.org/pdf/2501.09732)
+    - LLM과 달리 diffusion 모델은 denoising step 수를 통해 inference-time computation을 조절할 수 있음 (수십 step 이상이면 성능이 증가하지는 않음)
+    - 이것 이상의 inference-time scaling hegavior에 대해 연구. diffusion sampling process에서 더 나은 noise를 찾는 search problem에 집중.
+    - class-/text- conditioned 이미지 생성 벤치마크에서 상당한 개선을 이뤄냈다고 보고
 
 </details>
 
