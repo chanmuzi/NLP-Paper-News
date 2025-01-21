@@ -203,7 +203,13 @@
     - vanilla-retrieved information은 depth, utility가 부족하거나 redundancy 문제 존재
     - 이를 해결하기 위해 OmniThink라는 machine writing framework 프레임워크를 제안: 인간과 같은 iterative expansion & reflection 프로세스를 모방
     - 특정 주제에 대한 지식을 점진적으로 deepen 하는 cognitive behavior가 아이디어의 핵심
-- DeepSeek-R1
+- 🧑🏻‍💻 [DeepSeek] [DeepSeek-R1](https://github.com/deepseek-ai/DeepSeek-R1)
+    - OpenAI-o1의 수학, 추론, 코드 태스크 수행 능력에 준하는 오픈소스 모델
+    - Self-verification, Reflection, CoT solutions 등의 특징
+    - DeepSeek-R1, DeepSeek-R1-Zero, Llama & Qwen 아키텍쳐 기반의 6개 distilled 모델 공개
+- 🧑🏻‍💻 [OpenAI] [OpenAI’s function calling guide](https://platform.openai.com/docs/guides/function-calling)
+    - OpenAI Platform에 Function calling 관련 문서가 추가됨
+    - 좋은 예시들이 포함되어 있어 function calling 공부하는 데 활용할 수 있을 것 같음
 </details>
 
 ---
