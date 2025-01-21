@@ -203,6 +203,7 @@
     - vanilla-retrieved information은 depth, utility가 부족하거나 redundancy 문제 존재
     - 이를 해결하기 위해 OmniThink라는 machine writing framework 프레임워크를 제안: 인간과 같은 iterative expansion & reflection 프로세스를 모방
     - 특정 주제에 대한 지식을 점진적으로 deepen 하는 cognitive behavior가 아이디어의 핵심
+- DeepSeek-R1
 </details>
 
 ---
