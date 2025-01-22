@@ -210,6 +210,10 @@
 - 🧑🏻‍💻 [OpenAI] [OpenAI’s function calling guide](https://platform.openai.com/docs/guides/function-calling)
     - OpenAI Platform에 Function calling 관련 문서가 추가됨
     - 좋은 예시들이 포함되어 있어 function calling 공부하는 데 활용할 수 있을 것 같음
+ - 📜 [Microsoft Research] [RedStone: Curating General, Code, Math, and QA Data for Large Language Models](https://arxiv.org/pdf/2412.03398)
+    - RedStone: Common Crawl 의 데이터를 처리하는 scalable pipeline
+    - 기존의 domain-specific expertise가 요구되었던 방식들과 달리 Common Crawl 에 포함된 다양한 도메인의 데이터를 tailor
+    - [작업물 링크](https://aka.ms/redstone) 🔗
 </details>
 
 ---
