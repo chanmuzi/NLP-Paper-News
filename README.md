@@ -224,6 +224,21 @@
     - Probing-RAG: 언어 모델의 중간 layer의 hidden state representation을 사용하여 주어진 query의 additional retrieval 필요성을 adaptive하게 결정하는 방법론
         - real-world 에서는 최적의 document를 찾기 위해 주로 multi-step을 거쳐야 하는 문제를 해결
     - pre-trained prober를 사용하여 모델의 internal cognition을 빠르게 capture
+- 🧑🏻‍💻 [Pocket Flow](https://minillmflow.github.io/PocketFlow/)
+    - 100줄 짜리 LLM Agent framework for Agents, Task Decomposition, RAG
+    - Nested Directed Graph를 활용하여 Node, Action, Flow, Batch & Async 등의 기능을 지원
+- 🧑🏻‍💻 [OpenAI] [Announcing The Stargate Project](https://openai.com/index/announcing-the-stargate-project/)
+    - AI infrastructure를 만들기 위해 $500B (한화 약 700조)를 투자하는 Stargate Project를 발표
+    - NVIDIA GPU 사용, Oracle은 고품질 cloud infrastructure 제공, Microsoft Azure는 모델 분산 학습 지원
+    - medicine & biotechnology 등의 high-value fields에 집중
+- 📜 [ByteDance, Tsinghua] [UI-TARS: Pioneering Automated GUI Interaction with Native Agents](https://arxiv.org/pdf/2501.12326)
+    - UI-TARS: 입력으로 스크린샷을 받아 이해하고 사람과 같은 interaction을 수행하는 native GUI agent model
+    - 프롬프트나 workflow를 통해 commercial model을 사용하는 이전 프레임워크들과 달리 end-to-end model임
+    - Enhanced Perception, Unified Action Modeling, System-2 Reasoning, Iterative Training with Reflective Online Traces 등의 주요 특징
+- 📜 [Microsoft] [LLM-Rubric: A Multidimensional, Calibrated Approach to Automated Evaluation of Natural Language Texts](https://aclanthology.org/2024.acl-long.745.pdf) (ACL 2024)
+    - 자연어 텍스트를 자동으로 평가하기 위한 프레임워크 제시
+    - multiple LLM distribution을 combine 하여 인간 judge’s annotation을 predict
+    - judge-specific & judge-independent parameters를 둘 다 포함하는 samll feed-forward neural netowrk를 사용
 </details>
 
 ---
