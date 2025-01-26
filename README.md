@@ -238,7 +238,24 @@
 - 📜 [Microsoft] [LLM-Rubric: A Multidimensional, Calibrated Approach to Automated Evaluation of Natural Language Texts](https://aclanthology.org/2024.acl-long.745.pdf) (ACL 2024)
     - 자연어 텍스트를 자동으로 평가하기 위한 프레임워크 제시
     - multiple LLM distribution을 combine 하여 인간 judge’s annotation을 predict
-    - judge-specific & judge-independent parameters를 둘 다 포함하는 samll feed-forward neural netowrk를 사용
+    - judge-specific & judge-independent parameters를 둘 다 포함하는 small feed-forward neural netowrk를 사용
+- 🧑🏻‍💻 [OpenAI] [Introducing Operator](https://openai.com/index/introducing-operator/)
+    - 현재는 US 거주 중인 Pro 유저만 사용 가능
+    - web 상에서 tasks를 자동화해주는 AI agent (폼 작성, 여행 예약 등)
+    - Computer-Using Agent (CUA) 라는 새로운 모델을 사용
+        - GPT-4의 vision 능력으로 GUI 상호작용이 가능하도록 강화학습
+    - 웹사이트 클릭, 타이핑, 스크롤 가능 / 캘린더 관리나 슬라이드쇼 생성 등의 복잡한 태스크는 아직 수행하지 못함
+- 🧑🏻‍💻 [Anthropic] [Introducing Citations on the Anthropic API](https://www.anthropic.com/news/introducing-citations-api)
+    - Claude가 답변을 생성할 때 참고한 source document 내에서 활용한 정확한 문장 식별 가능
+    - Anthropic API & Google Cloud’s Vertex AI 에서 API로 이용 가능
+    - Document summarization, Complex Q&A, Customer support 등의 유즈케이스
+- 🧑🏻‍💻 [HuggingFace] [SmolVLM Grows Smaller – Introducing the 250M & 500M Models!](https://huggingface.co/blog/smolervlm)
+    - SmolVLM family에 256M, 500M 사이즈의 모델들을 추가. 특히 256M 사이즈는 Vision Language Model 중에서 가장 작은 것
+    - 두 개의 base 모델과 instruction fine-tuned 모델, 총 네 개의 체크포인트를 공개
+- 📜 [Google Cloud] [Chain of Agents: Large Language Models Collaborating on Long-Context Tasks](https://openreview.net/pdf?id=LuCLf4BJsr) (NeurIPS 2024)
+    - 기존에는 LLM으로 long context를 처리하기 위해 1) 입력 길이를 줄이거나 2) context window를 확장하고자 함
+    - Chain-of-Agents (CoA): multi-agent collaboration을 이용하여 information aggregation & context reasoning 가능하도록 만든 프레임워크
+    - segmented text를 sequentially 처리할 수 있는 multiple worker agents로 구성 → manager agent가 결과를 종합하여 coherent final output 생성
 </details>
 
 ---
