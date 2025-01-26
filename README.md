@@ -256,6 +256,16 @@
     - 기존에는 LLM으로 long context를 처리하기 위해 1) 입력 길이를 줄이거나 2) context window를 확장하고자 함
     - Chain-of-Agents (CoA): multi-agent collaboration을 이용하여 information aggregation & context reasoning 가능하도록 만든 프레임워크
     - segmented text를 sequentially 처리할 수 있는 multiple worker agents로 구성 → manager agent가 결과를 종합하여 coherent final output 생성
+- 📜 [Renmin Univ. of China] [Enhancing LLM Reasoning with Reward-guided Tree Search](https://arxiv.org/pdf/2411.11694)
+    - reward-guided tree search algorithm을 통한 LLM의 추론 능력 향상 방법에 대한 연구
+    - policy model, reward model, search alogirthm을 통합하는 프레임워크
+    - policy 모델이 학습된 reward model에 의해 tree를 dynamically expand 하는 tree search algorithm
+    - STILL-1 (Slow Thinking with LLMs) 라는 프레임워크
+- 📜 [Renmin Univ. of China] [Imitate, Explore, and Self-Improve: A Reproduction Report on Slow-thinking Reasoning Systems](https://arxiv.org/pdf/2412.09413)
+    - o1-like reasoning system을 구현하기 위한 reproduction report
+    - STILL-2: imitate, explore, self-improve framework
+    - distilled long-form thought data를 사용하여 reasoning model을 학습함으로써 slow-thinking mode를 가능하게 만듦
+    - 모델이 multiple rollout을 생성함으로써 어려운 문제를 탐색하도록 함 → high-quality trajectories가 올바른 답변으로 이어짐
 </details>
 
 ---
