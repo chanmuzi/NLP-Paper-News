@@ -256,6 +256,12 @@
     - 기존에는 LLM으로 long context를 처리하기 위해 1) 입력 길이를 줄이거나 2) context window를 확장하고자 함
     - Chain-of-Agents (CoA): multi-agent collaboration을 이용하여 information aggregation & context reasoning 가능하도록 만든 프레임워크
     - segmented text를 sequentially 처리할 수 있는 multiple worker agents로 구성 → manager agent가 결과를 종합하여 coherent final output 생성
+
+</details>
+ 
+<details>
+  <summary>5th week</summary>
+
 - 📜 [Renmin Univ. of China] [Enhancing LLM Reasoning with Reward-guided Tree Search](https://arxiv.org/pdf/2411.11694)
     - reward-guided tree search algorithm을 통한 LLM의 추론 능력 향상 방법에 대한 연구
     - policy model, reward model, search alogirthm을 통합하는 프레임워크
