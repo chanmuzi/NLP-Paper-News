@@ -272,6 +272,17 @@
     - STILL-2: imitate, explore, self-improve framework
     - distilled long-form thought data를 사용하여 reasoning model을 학습함으로써 slow-thinking mode를 가능하게 만듦
     - 모델이 multiple rollout을 생성함으로써 어려운 문제를 탐색하도록 함 → high-quality trajectories가 올바른 답변으로 이어짐
+- 📜 [Centfor for AI Safety, Scale AI] [Humanity’s Last Exam](https://static.scale.com/uploads/654197dc94d34f66c0f5184e/Publication%20Ready%20Humanity's%20Last%20Exam.pdf)
+    - Humanity’s Last Exam (HLE): 다양한 종류의 주제를 아우르는 최종 closed-ended academic benchmark를 목표 (멀티모달)
+    - automated grading에 적합한 multiple-choice, short-answer question 등으로 구성
+    - 정답은 논란의 여지가 없고 명확한 것이나 retrieval을 통해 바로 답변하기 어려운 문제들
+    - [공개 링크](https://lastexam.ai/) 🔗
+- 📜 [Truthful AI, Toronto] [Tell me about yourself: LLMs are aware of their learned behaviors](https://arxiv.org/pdf/2501.11120)
+    - behavioral self-awareness: in-contex examples 없이도 스스로의 행동에 대해 언급하는 능력
+    - 명시적으로 associated behavior에 대해 언급하지 않는 두 개의 데이터셋 사용
+        - (a) making high-risk economic decisions (b) outputting insecure code
+        - 그럼에도 모델은 이를 명백히 설명
+    - 우리가 지시하지 않은 내용을 모델이 습득하게 된다는 것은 AI Safety 이슈로 이어질 수 있음
 </details>
 
 ---
