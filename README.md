@@ -283,6 +283,9 @@
         - (a) making high-risk economic decisions (b) outputting insecure code
         - 그럼에도 모델은 이를 명백히 설명
     - 우리가 지시하지 않은 내용을 모델이 습득하게 된다는 것은 AI Safety 이슈로 이어질 수 있음
+- 🧑🏻‍💻 [DeepSeek] [Janus-Pro release](https://github.com/deepseek-ai/Janus?tab=readme-ov-file#5-citation)
+    - multimodal understanding & visual generation 능력이 개선된 Janus-Pro 릴리즈
+    - 작년(2024)에 이미 JanusFlow, Janus 라는 이름으로 mllm을 공개했었음 (허깅페이스에서 다운로드 가능)
 </details>
 
 ---
