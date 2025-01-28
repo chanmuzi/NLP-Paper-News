@@ -220,7 +220,7 @@
     - ChroKnowledge (Chronological Categoriazation of Knowledge): LLM의 non-parametric chronological knowledge를 평가하기 위한 sample-based framework
         - temporal knowledge를 이끌어내는 능력은 모델이 학습된 데이터 형식에 따라 다르다
         - LLM은 지식을 부분적으로 recall 하거나 temporal boundaries에서 단절되는 듯하다
-- 📜 [ChunAng Univ.] [Probing-RAG: Self-Probing to Guide Language Models in Selective Document Retrieval](https://arxiv.org/pdf/2410.13339) (NAACL 2025)
+- 📜 [ChungAng Univ.] [Probing-RAG: Self-Probing to Guide Language Models in Selective Document Retrieval](https://arxiv.org/pdf/2410.13339) (NAACL 2025)
     - Probing-RAG: 언어 모델의 중간 layer의 hidden state representation을 사용하여 주어진 query의 additional retrieval 필요성을 adaptive하게 결정하는 방법론
         - real-world 에서는 최적의 document를 찾기 위해 주로 multi-step을 거쳐야 하는 문제를 해결
     - pre-trained prober를 사용하여 모델의 internal cognition을 빠르게 capture
