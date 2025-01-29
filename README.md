@@ -286,6 +286,14 @@
 - 🧑🏻‍💻 [DeepSeek] [Janus-Pro release](https://github.com/deepseek-ai/Janus?tab=readme-ov-file#5-citation)
     - multimodal understanding & visual generation 능력이 개선된 Janus-Pro 릴리즈
     - 작년(2024)에 이미 JanusFlow, Janus 라는 이름으로 mllm을 공개했었음 (허깅페이스에서 다운로드 가능)
+- 🧑🏻‍💻 [Alibaba] [Qwen2.5-1M: Deploy Your Own Qwen with Context Length up to 1M Tokens](https://qwenlm.github.io/blog/qwen2.5-1m/)
+    - 알리바바에서 1M 토큰까지 커버할 수 있는 Qwen 모델을 공개 (Qwen2.5-7B-Instruct-1M & 14B)
+    - 특히 14B 모델은 Qwen2.5-Turbo, GPT-4o-mini를 능가하는 성능을 보여줌
+    - 긴 context를 효율적으로 처리하기 위해서 sparse attention과 DCA (Dual Chunk Attention) 사용
+- 📜 [COAI Research] [Deception in LLMs: Self-Preservation and Autonomous Goals in Large Language Models](https://arxiv.org/pdf/2501.16513)
+    - DeepSeek R1 (deepseek-ai_deepseek-r1_2025) 모델의 reasoning tokens에 대한 연구
+    - 모델이 명시적으로 학습한 적 없는 self-preservation (자기보호) 특성을 보임
+    - 이러한 모델이 robotics와 결합되었을 때 물리적으로 영향을 줄 수 있음에 대한 concern 제기
 </details>
 
 ---
