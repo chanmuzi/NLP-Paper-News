@@ -305,6 +305,12 @@
     - DeepSeek의 reasoning model로 제공하는 새로운 API 공개
     - Advanced CoT reasoning, US-based, Data privacy, Self-serve API access를 주요 특징으로 삼음
     - 일반 버전과 pro 버전으로 구분됨
+- 📜 [UIUC, AI2, IBM, Yale, Washington] [ReFIT: Reranker Relevance Feedback during Inference](http://sites.computer.org/debull/A24dec/p147.pdf)
+    - Retrieve-and-rerank는 보통 bi-encoder가 후보를 대량으로 retrieve 하면 cross-encoder가 reranking 하는 프레임워크를 일컬음
+    - inference-time에 retriever에 대한 relevance feedback을 제공하여 최초 k개 recall에 대한 성능 향상을 도모
+    - reranker의 predictions을 retriever의 query representation에 반영할 수 있도록 lightweight update mechanism을 사용하여 distill
+        - → updated 된 query vector를 사용하여 second retrieval step 실행
+        - 기존 retrieve-and-rerank frameworks에 applicable
 </details>
 
 ---
