@@ -294,6 +294,17 @@
     - DeepSeek R1 (deepseek-ai_deepseek-r1_2025) 모델의 reasoning tokens에 대한 연구
     - 모델이 명시적으로 학습한 적 없는 self-preservation (자기보호) 특성을 보임
     - 이러한 모델이 robotics와 결합되었을 때 물리적으로 영향을 줄 수 있음에 대한 concern 제기
+- 📜 [USTC, Microsoft] [Optimizing Large Language Model Training Using FP4 Quantization](https://arxiv.org/pdf/2501.17116)
+    - LLM을 위한 FP4 training framework 제시
+    - 두 가지 key factor
+        - (1) differentiable quantization estimator for precise weight updates
+        - (2) outlier clamping and compensation strategy to prevent activation collapse
+    - 안정성을 위해 mixed-precision training과 vector-wise quantization 통합
+    - 100B 토큰으로 학습되는 13B 모델까지도 scale-up 가능한 것으로 확인
+- 🧑🏻‍💻 [Perplexity] [Sonar](https://sonar.perplexity.ai/)
+    - DeepSeek의 reasoning model로 제공하는 새로운 API 공개
+    - Advanced CoT reasoning, US-based, Data privacy, Self-serve API access를 주요 특징으로 삼음
+    - 일반 버전과 pro 버전으로 구분됨
 </details>
 
 ---
