@@ -4,6 +4,19 @@
 
 ---
 # 2025
+## 🏔️ February
+<details>
+  <summary>1st week</summary>
+
+  - 🧑🏻‍💻 [AI Coder Reviewer](https://github.com/larrydiamond/AICodeReviewer)
+    - Ollama랑 통합 가능한 AI Code Review 도구
+    - 다양한 프로그래밍 언어에 대한 automated code review 지원
+- 📜 [GIT] [Large Language Models Think Too Fast To Explore Effectively](https://arxiv.org/pdf/2501.18009)
+    - LLM이 open-ended tasks에서 인간을 능가할 수 있을지 Little Alchemy 2를 사용하여 테스트
+    - 인간은 uncertainty와 empowerment를 적절히 조절할 수 있는데, 이를 능가하는 건 o1 모델 밖에 없었다고 주장
+    - Sparse Auto Encoder에 대한 representational 분석 결과에 따르면 uncertainty와 choices는 early layer에서 represented 되는데, empowered values는 later layer에서 처리되어 모델 입장에서는 미성숙한 결정을 내리도록 하는 원인이 된다고 설명 (?)
+
+</details>
 
 ## 🙇🏻 January
 <details>
@@ -321,6 +334,7 @@
     - 다양한 도메인의 데이터를 20T 토큰 이상 학습. SFT + RLHF.
     - Alibaba Cloud 계정 등록 후 OpenAI 라이브러리로 이용 가능
 </details>
+
 
 ---
 # 2024
