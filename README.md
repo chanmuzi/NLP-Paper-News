@@ -311,6 +311,15 @@
     - reranker의 predictions을 retriever의 query representation에 반영할 수 있도록 lightweight update mechanism을 사용하여 distill
         - → updated 된 query vector를 사용하여 second retrieval step 실행
         - 기존 retrieve-and-rerank frameworks에 applicable
+- 📜 [Huawei, McGill] [InnerThoughts: Disentangling Representations and Predictions in Large Language Models](https://arxiv.org/pdf/2501.17994)
+    - LLM에게 MCQA를 할 땐 last layer의 hidden state만 사용하는 것이 일반적
+    - small separateneural network predictor module을 training questions에 대해 만들어 전체 레이어의 hidden state를 입력으로 받아 결과 예측
+    - LLM의 representational abilities를 온전히 사용하는 방식의 프레임워크라고 주장
+    - 비용은 적은데 finetuning급 성능 향상을 이뤄낼 때도 있었다고 보고
+- 🧑🏻‍💻 [Alibaba] [Qwen2.5-Max: Exploring the Intelligence of Large-scale MoE Model](https://qwenlm.github.io/blog/qwen2.5-max/)
+    - large MoE language model로 DeepSeek V3를 능가하는 성능이라고 보고됨
+    - 다양한 도메인의 데이터를 20T 토큰 이상 학습. SFT + RLHF.
+    - Alibaba Cloud 계정 등록 후 OpenAI 라이브러리로 이용 가능
 </details>
 
 ---
