@@ -19,6 +19,14 @@
     - MMLU에서 81점 기록, 코드 생성과 수학 태스크에서 Llama-3.3-70B or GPT-4o-mini 급 성능
     - 24B 파라미터, 32K context window, 초당 150 토큰 처리 가능 → 32GB RAM을 가진 RTX 4090 또는 맥북에서 돌릴 수 있음
     - 합성데이터나 RLHF를 사용하지 않아 추가적인 fine-tuning 하기에 적합한 base 모델이라고 주장
+- 🧑🏻‍💻 [AI2] [Scaling the Tülu 3 post-training recipes to surpass the performance of DeepSeek V3](https://allenai.org/blog/tulu-3-405B)
+    - Tülu 3 405B 오픈 소스 post-training 모델 공개
+    - 오픈소스 모델임에도 불구하고 DeepSeek v4, GPT-4o 수준의 성능 달성
+    - Reinforcement Learning from Verifiable Rewards (RLVR) 프레임워크가 MATH 성능을 크게 향상시켰다고 설명
+- 📜 [DeepSeek] [DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open Language Models](https://arxiv.org/pdf/2402.03300)
+    - DeepSeekMath 7B 모델 공개: DeepSeek-Coder-Base-v1.5 7B 모델을 Common Crawl의 수학 관련 120B 토큰으로 학습
+    - MATH에서 외부 도구의 도움 없이 51.7%를 달성하며 GPT-4, Gemini-Ultra급의 성능을 보임
+    - web data를 엄선하는 파이프라인 & Group Relative Policy Optimization (GRPO)
 
 </details>
 
