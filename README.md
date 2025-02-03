@@ -15,6 +15,10 @@
     - LLM이 open-ended tasks에서 인간을 능가할 수 있을지 Little Alchemy 2를 사용하여 테스트
     - 인간은 uncertainty와 empowerment를 적절히 조절할 수 있는데, 이를 능가하는 건 o1 모델 밖에 없었다고 주장
     - Sparse Auto Encoder에 대한 representational 분석 결과에 따르면 uncertainty와 choices는 early layer에서 represented 되는데, empowered values는 later layer에서 처리되어 모델 입장에서는 미성숙한 결정을 내리도록 하는 원인이 된다고 설명 (?)
+- 🧑🏻‍💻 [Mistral] [Mistral Small 3](https://mistral.ai/news/mistral-small-3/)
+    - MMLU에서 81점 기록, 코드 생성과 수학 태스크에서 Llama-3.3-70B or GPT-4o-mini 급 성능
+    - 24B 파라미터, 32K context window, 초당 150 토큰 처리 가능 → 32GB RAM을 가진 RTX 4090 또는 맥북에서 돌릴 수 있음
+    - 합성데이터나 RLHF를 사용하지 않아 추가적인 fine-tuning 하기에 적합한 base 모델이라고 주장
 
 </details>
 
