@@ -27,6 +27,11 @@
     - DeepSeekMath 7B 모델 공개: DeepSeek-Coder-Base-v1.5 7B 모델을 Common Crawl의 수학 관련 120B 토큰으로 학습
     - MATH에서 외부 도구의 도움 없이 51.7%를 달성하며 GPT-4, Gemini-Ultra급의 성능을 보임
     - web data를 엄선하는 파이프라인 & Group Relative Policy Optimization (GRPO)
+- 🧑🏻‍💻 [OpenAI] [OpenAI o3-mini](https://openai.com/index/openai-o3-mini/)
+    - STEM, coding, logical problem-solving을 위해 디자인된 small-scale reasoning model
+    - o1-mini 의 자리를 대신함 (예를 들어 기존 o1-mini API는 o3-mini 로 대체)
+    - o1과 달리 vision을 지원하지 않음
+    - 설연휴 기간 폭발적인 관심을 얻은 DeepSeek-R1 을 견제하는 움직임으로 해석
 
 </details>
 
