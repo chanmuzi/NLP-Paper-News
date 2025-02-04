@@ -32,6 +32,14 @@
     - o1-mini 의 자리를 대신함 (예를 들어 기존 o1-mini API는 o3-mini 로 대체)
     - o1과 달리 vision을 지원하지 않음
     - 설연휴 기간 폭발적인 관심을 얻은 DeepSeek-R1 을 견제하는 움직임으로 해석
+- 🧑🏻‍💻 [OpenAI] [Introducing deep research](https://openai.com/index/introducing-deep-research/)
+    - 대량의 온라인 정보를 바탕으로 multi-step 추론하여 tasks를 수행하는 agent 기능
+    - 기존 추론 모델들은 인터넷에 접근하지 못한다는 한계가 있었는데 이를 극복함
+    - 굉장히 난이도가 높은 것으로 알려진 Humanity’s Last Exam에서 26.6% 스코어를 기록함
+- 📜 [HKU, UC Berkeley, Google DeepMind, NYU]  [SFT Memorizes, RL Generalizes: A Comparative Study of Foundation Model Post-training](https://arxiv.org/pdf/2501.17161v1)
+    - SFT와 RL의 generalization & memorization 영향도를 비교 분석한 연구
+    - 학습된 모델이 unseen textual & visual domain에서 일반화하는지 확인
+    - SFT는 단순히 학습 데이터를 암기하는 것이라면 RL은 실제 일반화에 도움이 됨. 단, SFT는 답변의 형식을 유지하는 데 도움이 됨
 
 </details>
 
