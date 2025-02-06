@@ -40,6 +40,13 @@
     - SFT와 RL의 generalization & memorization 영향도를 비교 분석한 연구
     - 학습된 모델이 unseen textual & visual domain에서 일반화하는지 확인
     - SFT는 단순히 학습 데이터를 암기하는 것이라면 RL은 실제 일반화에 도움이 됨. 단, SFT는 답변의 형식을 유지하는 데 도움이 됨
+- 📜 [Arizona, UCLA] [Preference Leakage: A Contamination Problem in LLM-as-a-judge](https://arxiv.org/pdf/2502.01534)
+    - synthetic data generator & LLM-based evaluator 둘 간의 relatedness로 야기되는 LLM-as-a-judeg의 contamination을 preference leakage라고 명명
+    - 동일 모델, inheritance 관계, model family, 세 가지 유형에 대한 조사
+    - 모델 사이에 명백한 preference leakage가 존재한다고 주장
+- 📜 [Chineses Academy of Sciences] [DeepRAG: Thinking to Retrieval Step by Step for Large Language Models](https://arxiv.org/pdf/2502.01142)
+    - MDP로서 retrieval-augmented reasoning을 수행하는 프레임워크 DeepRAG 제안
+    - 쿼리를 iteratively decompose 함으로써 external knowledge를 retrieve 할지 말지, 혹은 parametric reasoning을 할지를 결정
 
 </details>
 
