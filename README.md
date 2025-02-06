@@ -47,6 +47,22 @@
 - 📜 [Chineses Academy of Sciences] [DeepRAG: Thinking to Retrieval Step by Step for Large Language Models](https://arxiv.org/pdf/2502.01142)
     - MDP로서 retrieval-augmented reasoning을 수행하는 프레임워크 DeepRAG 제안
     - 쿼리를 iteratively decompose 함으로써 external knowledge를 retrieve 할지 말지, 혹은 parametric reasoning을 할지를 결정
+- 🧑🏻‍💻 [Google] [Gemini 2.0 is now available to everyone](https://blog.google/technology/google-deepmind/gemini-model-updates-february-2025/)
+    - multimodal reasoning이 가능한 Gemini 2.0 models 공개 (Flash, Flash-Lite, Pro Experimental)
+    - Flash, Flash-Lite 모델은 1M context window, Pro Experimental 모델은 2M context window를 지님
+    - 1.5 Flash 대비 cost & latency 증가하지 않으면서도 고품질 답변을 생성
+- 🧑🏻‍💻 [Anthropic] [Constitutional Classifiers: Defending against universal jailbreaks](https://www.anthropic.com/research/constitutional-classifiers)
+    - [논문 링크](https://arxiv.org/pdf/2501.18837) 🔗
+    - 일반적인 jailbreaks를 수천 시간 시도했음에도 불구하고 robust 결과를 보여줬다고 설명
+    - 그럼에도 불구하고 무지성 거절(refusal rates)의 비율은 단 0.38% 밖에 증가하지 않았음
+    - 8개 레벨의 jailbreaking demo를 뚫는 사람에게는 $10,000를, 일반적인 jailbreaking strategy로 뚫는 사람에게는 $20,000를 수여하는 [HackerOne](https://hackerone.com/constitutional-classifiers?type=team) 개최중
+- 🧑🏻‍💻 [HuggingFace] [Open-source DeepResearch – Freeing our search agents](https://huggingface.co/blog/open-deep-research)
+    - OpenAI에서 공개한 Deep Research를 구현하고 오픈소스로 공개한 포스팅
+    - Deep Research가 GAIA 벤치마크에서 높은 성능을 달성한 것을 언급
+    - CodeAgent 를 사용하여 복잡한 sequences of actions를 디자인할 수 있다고 설명
+- 🧑🏻‍💻 [OpenAI] [Introducing ChatGPT search](https://openai.com/index/introducing-chatgpt-search/)
+    - 작년 10월 31일 공개했던 기능을 본격적으로 지원하고 있음
+    - [크롬 확장프로그램](https://chromewebstore.google.com/detail/chatgpt-search/ejcfepkfckglbgocfkanmcdngdijcgld)을 통해 default 검색 엔진을 ChatGPT search로 설정할 수도 있음
 
 </details>
 
