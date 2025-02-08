@@ -63,6 +63,21 @@
 - 🧑🏻‍💻 [OpenAI] [Introducing ChatGPT search](https://openai.com/index/introducing-chatgpt-search/)
     - 작년 10월 31일 공개했던 기능을 본격적으로 지원하고 있음
     - [크롬 확장프로그램](https://chromewebstore.google.com/detail/chatgpt-search/ejcfepkfckglbgocfkanmcdngdijcgld)을 통해 default 검색 엔진을 ChatGPT search로 설정할 수도 있음
+- 📜 [Stanford, Washington, AI2]  [s1: Simple test-time scaling](https://arxiv.org/pdf/2501.19393)
+    - OpenAI의 o1과 같이 test-time scaling & strong reasoning performance를 위한 연구
+    - s1K: 세 개의 기준(difficulty, diversity, quality)으로 검증한 reasoning taces를 포함한 데이터셋
+    - budget forcing: 모델이 답변을 끝내려고 할 때, test-time compute를 강제로 중단하거나 늘리기 위해서 “Wait” 키워드를 여러 차례 붙이는 방법론
+    - Qwen2.5-32B-Instruct 모델에 s1K 학습 한 s1-32B 모델에 budget forcing 장착하니 수학 능력 크게 향상
+    - 모델, 데이터, 코드는 오픈소스로 [깃허브](https://github.com/simplescaling/s1)에 공개 🔗
+- 🧑🏻‍💻 [Ai2] [Ai2 Scholar QA beta](https://scholarqa.allen.ai/)
+    - 연구할 때 literature review를 편하게 도와주는 솔루션
+    - Section Planning and Generation, Paper Comparison Table Generation 등의 특징
+    - [블로그 포스팅](https://allenai.org/blog/ai2-scholarqa)(Introducing Ai2 ScholarQA) 참고
+- 📜 [HuggingFace]  [SmolLM2: When Smol Goes Big -- Data-Centric Training of a Small Language Model](https://arxiv.org/pdf/2502.02737)
+    - 1.7B 사이즈의 “small” language model 공개
+    - multi-stage training process를 통해 math, code, instruction-following data를 web-text와 혼합하여 약 11T 토큰 학습
+    - new specialized datasets 도입 (Fine-Math, Stack-Edu, SmolTalk): 기존 데이터셋이 너무 작거나 품질이 낮았던 이슈를 해결하기 위함
+    - 비슷한 사이즈 수준의 모델들(Qwen2.5-1.5B, Llama3.2-1B) 중에서는 SoTA급 성능을 달성했다고 보고
 
 </details>
 
