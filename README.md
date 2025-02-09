@@ -78,6 +78,18 @@
     - multi-stage training process를 통해 math, code, instruction-following data를 web-text와 혼합하여 약 11T 토큰 학습
     - new specialized datasets 도입 (Fine-Math, Stack-Edu, SmolTalk): 기존 데이터셋이 너무 작거나 품질이 낮았던 이슈를 해결하기 위함
     - 비슷한 사이즈 수준의 모델들(Qwen2.5-1.5B, Llama3.2-1B) 중에서는 SoTA급 성능을 달성했다고 보고
+- 📜 [T-Tech] [Analyze Feature Flow to Enhance Interpretation and Steering in Language Models](https://arxiv.org/abs/2502.03032)
+    - 언어 모델의 연속적인 layer에 걸쳐 존재하는 features를 sparse autoencoder로 확인
+    - data-free cosine similarity technique: 특정 features가 얼마나 persists, transform, first appear 하는지 등을 파악
+    - 이를 통해 model computation에 대한 interpretability & mechanistic insights 획득 가능
+- 📜 [Shanghai AI Lab, Peking] [UltraIF: Advancing Instruction Following from the Wild](https://arxiv.org/pdf/2502.04153)
+    - UltraIF: real-world user prompts를 simpler queries, constraints, corresponding evaluation questions로 decompose
+    - 이를 위해 UltraComposer를 constraint-associated prompts & evaluation questions 묶어서 학습
+    - 8B 사이즈의 모델을 response generator & evaluator로 사용했을 때에도 유의미한 성능 향상이 있었다고 보고
+- 🧑🏻‍💻 [Mistral] [The all new le Chat: Your AI assistant for life and work](https://mistral.ai/en/news/all-new-le-chat)
+    - iOS, Android, 기업 인프라에서 이용 가능한 챗봇 Le Chat을 공개
+    - Flash Answers, a build-in code interpreter, real-time search 등을 주요 특징으로 내세움
+    - Flash Answers의 경우 초당 1,000개 정도의 단어를 생성할 수 있다는 특징인데 데모상으로는 확실히 타사 서비스(ChatGPT, Claude)에 비해 압도적으로 빠름
 
 </details>
 
