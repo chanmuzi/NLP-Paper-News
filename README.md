@@ -93,6 +93,23 @@
 
 </details>
 
+<details>
+  <summary>2nd week</summary>
+
+- 📜 [Nanjing Univ.] [Step Back to Leap Forward: Self-Backtracking for Boosting Reasoning of Language Models](https://arxiv.org/pdf/2502.04404)
+    - o1과 같은 추론 모델들은 아직 overthinking & over-reliance on auxiliary reward models 문제를 지니고 있음
+    - 이를 해결하기 위해 LLM이 자율적으로 언제, 어디서 backtrack 할 것인지를 결정하도록 하면 된다고 주장 (like in traditional search algorithms)
+    - 이를 위한 self-backtracking mechanism을 제시: 학습 & 추론 에서 backtrack 가능
+    - 이는 optimal-path supervised fine-tuning method 대비 40% 정도의 성능 gain이 있다고 하는데 왜 그것과 비교하는지는 잘 모르겠음.
+- 📜 [SJTU] [LIMO: Less is More for Reasoning](https://arxiv.org/pdf/2502.03387)
+    - 복잡한 수학적 추론 능력은 (수십만 개 이상이 아니라) 극도로 적은 데이터로도 획득할 수 있다고 주장
+    - 이는 supervised fine-tuning이 generalization 보다는 memorization으로 이어진다는 주장과도 상반되는 결과
+    - 817개의 curated training samples로 학습한 LIMO를 기반으로 LIMO Hypothesis 주장
+        - 사전학습 단계에서 domain knowledge가 충분히 encoded 되었다면, 정교한 추론 능력은 최소한의 cognitive process를 포함하는 데이터로도 획득할 수 있다
+        - 이를 위해서는 (1) 모델이 pre-training 동안 획득한 knowledge (2) post-training examples의 effectiveness가 중요
+
+</details>
+
 ## 🙇🏻 January
 <details>
   <summary>1st week</summary>
