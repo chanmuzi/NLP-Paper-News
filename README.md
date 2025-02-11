@@ -107,6 +107,8 @@
     - 817개의 curated training samples로 학습한 LIMO를 기반으로 LIMO Hypothesis 주장
         - 사전학습 단계에서 domain knowledge가 충분히 encoded 되었다면, 정교한 추론 능력은 최소한의 cognitive process를 포함하는 데이터로도 획득할 수 있다
         - 이를 위해서는 (1) 모델이 pre-training 동안 획득한 knowledge (2) post-training examples의 effectiveness가 중요
+- 🧑🏻‍💻 [Harvard] [**Data.govArchive**](https://lil.law.harvard.edu/blog/2025/02/06/announcing-data-gov-archive/)
+    - 16TB 사이즈, 311,000개 데이터로 구성된 federal public dataset
 
 </details>
 
