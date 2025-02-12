@@ -107,8 +107,22 @@
     - 817개의 curated training samples로 학습한 LIMO를 기반으로 LIMO Hypothesis 주장
         - 사전학습 단계에서 domain knowledge가 충분히 encoded 되었다면, 정교한 추론 능력은 최소한의 cognitive process를 포함하는 데이터로도 획득할 수 있다
         - 이를 위해서는 (1) 모델이 pre-training 동안 획득한 knowledge (2) post-training examples의 effectiveness가 중요
-- 🧑🏻‍💻 [Harvard] [**Data.govArchive**](https://lil.law.harvard.edu/blog/2025/02/06/announcing-data-gov-archive/)
+- 🧑🏻‍💻 [Harvard] [Data.govArchive](https://lil.law.harvard.edu/blog/2025/02/06/announcing-data-gov-archive/)
     - 16TB 사이즈, 311,000개 데이터로 구성된 federal public dataset
+- 📜 [Apple] [ELEGNT: Expressive and Functional Movement Design for Non-anthropomorphic Robot](https://arxiv.org/pdf/2501.12493)
+    - movement design에 있어서 fuctional & expressive objectives 간의 interplay를 explore하는 prototype 공개
+        - expressive: intention, attention, emotions
+        - functional: task fulfillment, spatial constraints, time efficiency
+    - posture, gesture, gaze 등의 비언어적 행동들이 internal state를 의식적으로 & 무의식적으로 표현하는 것이기 때문에 이를 (램프처럼 생긴) 로봇의 행동(movements) 결정에 반영하겠다는 연구
+    - expression-driven movements가 function-drive movements보다 낫다는 연구 결과를 제시
+- 🧑🏻‍💻 [HuggingFace] [π0 and π0-FAST: Vision-Language-Action Models for General Robot Control](https://huggingface.co/blog/pi0)
+    - HuggingFace의 LeRobot에 robotics foundation model을 공개
+    - 이러한 유형의 모델을 Vision-Language-Action 모델이라고 부르는 듯 (VLA)
+    - 설치부터 학습까지 상세한 코드 예시를 통해 설명하는 허깅페이스 블로그 포스팅
+- 📜 [ISTA] [QuEST: Stable Training of LLMs with 1-Bit Weights and Activations](https://arxiv.org/abs/2502.05003)
+    - Quantization 이후 학습을 추가로 진행하는 Quantization-Aware Training (QAT) 기법 중 하나
+    - QeEST: 학습 모델의 weights & activations를 4-bit 혹은 그 이하로 학습하며 FP16과 유사한 수준의 성능 기록. 심지어 1-bit에서도 안정적으로 학습 가능하다고 설명.
+    - 이는 (1) normalization 과정에서 weights & activations의 continuous distribution을 유지하여 quantization (2) 새로운 trust gradient estimator를 제시 했기에 가능했다고 함
 
 </details>
 
