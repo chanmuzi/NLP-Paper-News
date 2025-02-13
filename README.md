@@ -123,6 +123,18 @@
     - Quantization 이후 학습을 추가로 진행하는 Quantization-Aware Training (QAT) 기법 중 하나
     - QeEST: 학습 모델의 weights & activations를 4-bit 혹은 그 이하로 학습하며 FP16과 유사한 수준의 성능 기록. 심지어 1-bit에서도 안정적으로 학습 가능하다고 설명.
     - 이는 (1) normalization 과정에서 weights & activations의 continuous distribution을 유지하여 quantization (2) 새로운 trust gradient estimator를 제시 했기에 가능했다고 함
+- 📜 [Ben Gurion Univ.] [Forget What You Know about LLMs Evaluations - LLMs are Like a Chameleon](https://arxiv.org/pdf/2502.07445)
+    - Chameleon Benchmark Overfit Detector (C-BOD): LLM이 특정 벤치마크에 overfit 되었는지를 판단하기 위해 prompts를 systematically distort하는 framework
+    - 학습 파이프라인에 integrate하여 robust language model을 만드는 데 기여 가능
+    - 모델 성능이 memorized pattern에 의해 좋게 나온 것인지 아닌지를 판단하는 것이 중점
+    - 예상 외로 성능이 높은 모델들이 perturbation에 의한 성능 degradation이 심했다고 보고
+- 📜 [AIRI] [SynthDetoxM: Modern LLMs are Few-Shot Parallel Detoxification Data Annotators](https://arxiv.org/abs/2502.06394)
+    - multilingual parallel detoxification data를 생성하는 파이프라인 공개
+    - SytnDetoxM: manually & synthetically 생성된 multilingual parallel detoxification dataset, 16K 개의 데이터로 구성
+- 📜 [Shanghai AI Lab] [Can 1B LLM Surpass 405B LLM? Rethinking Compute-Optimal Test-Time Scaling](https://arxiv.org/abs/2502.06703)
+    - Test-Time Scaling (TTS)에 있어서 compute-optimal strategy는 policy model, PRM (Process Reward Model)에 크게 dependent 하다고 설명
+    - compute-optimal TTS를 이용하면 극도로 작은 reward model (< 1B)로도 엄청나게 사이즈가 큰 (> 405B or GPT-4o) 모델의 성능을 넘어서는 것이 가능하다고 주장
+    - [깃허브 링크](https://ryanliu112.github.io/compute-optimal-tts) 🔗
 
 </details>
 
