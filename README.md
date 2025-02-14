@@ -142,6 +142,11 @@
     - Claude 데이터를 사용하여 AI가 일자리와 경제에 미친 영향을 분석
     - automation의 43%가 AI를 활용한 결과임을 보고
     - [paper link](https://assets.anthropic.com/m/2e23255f1e84ca97/original/Economic_Tasks_AI_Paper.pdf) 🔗
+- 📜 [Oxford] [Distillation Scaling Laws](https://arxiv.org/abs/2502.08606)
+    - compute budget & allocation between student and teacher 를 기반으로 distilled model performance를 측정하여 distillation scaling law를 제시
+    - (1) teacher가 존재할 때 (2) teacher 학습이 필요할 때로 구분하여 연구 결과 제시
+    - 결국 distillation 과정에서 student 모델 뿐만 아니라 teacher 모델의 cross entropy loss를 함께 살피며 적절히 scaling 하는 것이 중요하다는 점을 언급하는 것으로 보임
+
 
 </details>
 
