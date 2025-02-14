@@ -135,6 +135,13 @@
     - Test-Time Scaling (TTS)에 있어서 compute-optimal strategy는 policy model, PRM (Process Reward Model)에 크게 dependent 하다고 설명
     - compute-optimal TTS를 이용하면 극도로 작은 reward model (< 1B)로도 엄청나게 사이즈가 큰 (> 405B or GPT-4o) 모델의 성능을 넘어서는 것이 가능하다고 주장
     - [깃허브 링크](https://ryanliu112.github.io/compute-optimal-tts) 🔗
+- 🧑🏻‍💻 [OpenAI] [Sam Altman reveals GPT-5 will merge o-series models, removing manual model selection](https://x.com/sama/status/1889755723078443244)
+    - GPT-4.5 (orion) 모델은 GPT-5 출시 전 마지막 non-chain-of-thought 모델이 될 것 / few weeks or months 후 출시 예정
+    - reasoning 모델은 별도로 출시되지 않고 GPT-5에 통합
+- 🧑🏻‍💻 [Anthropic] [The Anthropic Economic Index](https://www.anthropic.com/news/the-anthropic-economic-index)
+    - Claude 데이터를 사용하여 AI가 일자리와 경제에 미친 영향을 분석
+    - automation의 43%가 AI를 활용한 결과임을 보고
+    - [paper link](https://assets.anthropic.com/m/2e23255f1e84ca97/original/Economic_Tasks_AI_Paper.pdf) 🔗
 
 </details>
 
