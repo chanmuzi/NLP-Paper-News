@@ -146,7 +146,15 @@
     - compute budget & allocation between student and teacher 를 기반으로 distilled model performance를 측정하여 distillation scaling law를 제시
     - (1) teacher가 존재할 때 (2) teacher 학습이 필요할 때로 구분하여 연구 결과 제시
     - 결국 distillation 과정에서 student 모델 뿐만 아니라 teacher 모델의 cross entropy loss를 함께 살피며 적절히 scaling 하는 것이 중요하다는 점을 언급하는 것으로 보임
-
+- 📜 [Imperial College London, Cohere] [LLMs can implicitly learn from mistakes in-context](https://arxiv.org/abs/2502.08550)
+    - mathematical reasoning에서 발생한 mistakes에 대한 explanation이 주어지지 않더라도 성능 향상에 도움이 될지 연구
+    - 실험 결과에 따르면 incorrect answer를 correct answer와 함께 보여주는 것만으로도 성능 향상이 있었다고 함. CoT의 성능도 boosting 가능.
+    - LLM이 in-context implicit learning 할 수 있다는 결론
+- 📜 [Amazon, UCLA] [Do LLMs Recognize Your Preferences? Evaluating Personalized Preference Following in LLMs](https://arxiv.org/abs/2502.09597) (ICLR 2025)
+    - PrefEval: long-context conversational setting에서 LLM이 user의 preference에 대한 일관된 추론이 가능한지 평가하는 벤치마크
+    - 3,000개의 엄선된 preference & query pair, 20개 주제 커버
+    - 최대 100k 토큰 context에 해당하는 multi-session conversation으로 평가
+    - [깃허브 링크](https://prefeval.github.io/) 🔗
 
 </details>
 
