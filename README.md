@@ -155,6 +155,20 @@
     - 3,000개의 엄선된 preference & query pair, 20개 주제 커버
     - 최대 100k 토큰 context에 해당하는 multi-session conversation으로 평가
     - [깃허브 링크](https://prefeval.github.io/) 🔗
+- 📜 [Meta, KAIST, UC San Diego] [LLM Pretraining with Continuous Concepts](https://arxiv.org/abs/2502.08524)
+    - Continuous Concept Mixing (CoCoMix): discrete next token prediction을 continuous concept와 결합하는 pretraining framework
+    - CoCoMix는 사전학습된 sparse autoencoder로부터 “continuous concepts”를 학습하여 예측하고, 모델의 hidden state와 token의 hidden state을 interleave
+    - 단순 next token prediction에 비해 sample efficient 하면서도 consistently 성능이 높았다고 설명
+- 📜 [University of Hong Kong, ByteDance] [Goku: Flow Based Video Generative Foundation Models](https://arxiv.org/abs/2502.04896)
+    - [데모 페이지 링크](https://saiyan-world.github.io/goku/) 🔗
+    - rectified flow Transformer를 이용하여 만든 joint image-and-video generation 중에서 SoTA model failmily
+    - data curation pipeline, model architecture design, flow formulation, advanced infrastructure for efficient and robust large-scale training 공개
+    - 주요 tasks의 정량 & 정성 평가 가장 높은 결과를 받았다고 설명
+- 📜 [SNU, Cornell] [Skrr: Skip and Re-use Text Encoder Layers for Memory Efficient Text-to-Image Generation](https://arxiv.org/abs/2502.08690)
+    - Text-to-image (T2I) 분야에서 large scale text encoder는 denoising module에 비해 성능이 뛰어나지만 통상 8배나 많은 메모리를 사용한다는 문제점 존재
+    - Skrr (Skip and Re-use layers): T2I diffusion 모델에서 text encoder를 효율적으로 pruning 하는 strategy
+    - transformer block을 selectively skipping하거나 일부 layer를 reusing함
+
 
 </details>
 
