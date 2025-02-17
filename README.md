@@ -186,6 +186,11 @@
     - Brain2Text: electro | magneto encephalography (EEG | EMG)로부터 sentences를 decode하는 deep learning 아키텍쳐. QWERTY 키보드로 type된다고 함
     - 기존 방식들은 invasive device를 활용하는데 이와 다른 non-invasive 방식이며 둘 사이의 gap을 줄인 데 의의가 있다고 설명
     - character-error-rate (CER)은 32%로 67%의 error rate를 보이는 EEG 대비 큰 성능 향상이 있었다고 보고
+- 📜 [University of California, Berkeley] [LLMs Can Easily Learn to Reason from Demonstrations Structure, not content, is what matters!](https://arxiv.org/abs/2502.07374)
+    - LLM이 Long CoT reasoning을 data-efficient SFT와 LoRA를 통해 학습할 수 있다고 주장
+    - Qwen2.5-32B 모델을 17k CoT Training sample로 학습한 결과를 리포트
+    - reasoning step의 각 내용보다는 Long CoT의 structure가 학습 과정에 훨씬 더 큰 영향을 미친다고 주장 (logical consistency가 중요!)
+    - 저자가 이전에 공개한 Sky-T1-32B-Preview model의 academic paper
 
 </details>
 
