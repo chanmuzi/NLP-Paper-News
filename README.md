@@ -169,6 +169,23 @@
     - Skrr (Skip and Re-use layers): T2I diffusion 모델에서 text encoder를 효율적으로 pruning 하는 strategy
     - transformer block을 selectively skipping하거나 일부 layer를 reusing함
 
+</details>
+
+<details>
+  <summary>3rd week</summary>
+
+- 📜 [Convergence Labs] [LM2: Large Memory Models](https://arxiv.org/abs/2502.06049)
+    - 기존 Transformer 아키테쳐의 한계를 극복하기 위해 auxiliary memory module을 붙여 contextual representation repository로 사용
+    - input token과 cross attention 하며 gating mechanism을 통해 update
+    - 일반적인 벤치마크에서도 좋은 성능을 유지하고 multi-hop 에서도 뛰어난 발전이 있었다고 보고
+    - interpretability, test-time behavior 등에서도 장점이 있음
+- 📜 [ELLIS Institute Tübingen] [Scaling up Test-Time Compute with Latent Reasoning: A Recurrent Depth Approach](https://arxiv.org/abs/2502.05171)
+    - recurrent block을 iterate 함으로써 test-time에서 depth를 arbitrarily 정함
+    - CoT에 의존하지 않아 specialized training data가 필요하지 않고, 심지어 small context window에서도 working
+- 📜 [Meta AI] [Brain-to-Text Decoding: A Non-invasive Approach via Typing](https://ai.meta.com/research/publications/brain-to-text-decoding-a-non-invasive-approach-via-typing/)
+    - Brain2Text: electro | magneto encephalography (EEG | EMG)로부터 sentences를 decode하는 deep learning 아키텍쳐. QWERTY 키보드로 type된다고 함
+    - 기존 방식들은 invasive device를 활용하는데 이와 다른 non-invasive 방식이며 둘 사이의 gap을 줄인 데 의의가 있다고 설명
+    - character-error-rate (CER)은 32%로 67%의 error rate를 보이는 EEG 대비 큰 성능 향상이 있었다고 보고
 
 </details>
 
