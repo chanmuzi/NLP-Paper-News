@@ -191,6 +191,11 @@
     - Qwen2.5-32B 모델을 17k CoT Training sample로 학습한 결과를 리포트
     - reasoning step의 각 내용보다는 Long CoT의 structure가 학습 과정에 훨씬 더 큰 영향을 미친다고 주장 (logical consistency가 중요!)
     - 저자가 이전에 공개한 Sky-T1-32B-Preview model의 academic paper
+- 📜 [NYU, Tubingen] [Do Large Language Models Reason Causally Like Us? Even Better?](https://arxiv.org/abs/2502.10215)
+    - LLM의 답변은 understanding | statistical pattern 중 어떤 것으로부터 나오는 걸까
+    - 본 논문에서는 from human-like to normative inference 라고 scale을 표현함
+    - 실험한 4개의 모델 중에서 GPT-4o, Claude는 가장 normative behavior를 강하게 보였고 나머지인 Gemini-Pro와 GPT-3.5는 그렇지 않았다고 설명
+    - 사람이 내놓는 답변도 실제로 이해한 내용을 바탕으로 나오는 것인지 판단하는 기준이 있긴 한가?
 
 </details>
 
