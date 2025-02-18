@@ -196,6 +196,10 @@
     - 본 논문에서는 from human-like to normative inference 라고 scale을 표현함
     - 실험한 4개의 모델 중에서 GPT-4o, Claude는 가장 normative behavior를 강하게 보였고 나머지인 Gemini-Pro와 GPT-3.5는 그렇지 않았다고 설명
     - 사람이 내놓는 답변도 실제로 이해한 내용을 바탕으로 나오는 것인지 판단하는 기준이 있긴 한가?
+- 🧑🏻‍💻 [Perplexity] [Introducing Perplexity Deep Research](https://www.perplexity.ai/hub/blog/introducing-perplexity-deep-research)
+    - 수십 개 검색, 수백 개 source를 읽고 자율적으로 report를 생성하는 기능 공개
+    - finance, marketing부터 product research까지 다양한 범위의 태스크를 expert 수준으로 처리
+    - 최종 report를 PDF 또는 문서 형태로 export하거나 Perplexity Page로 변환하여 공유할 수 있음
 
 </details>
 
