@@ -200,6 +200,14 @@
     - 수십 개 검색, 수백 개 source를 읽고 자율적으로 report를 생성하는 기능 공개
     - finance, marketing부터 product research까지 다양한 범위의 태스크를 expert 수준으로 처리
     - 최종 report를 PDF 또는 문서 형태로 export하거나 Perplexity Page로 변환하여 공유할 수 있음
+- 📜 [Renmin Univ. of China] [Large Language Diffusion Models](https://arxiv.org/abs/2502.09992)
+    - LLaDA: scratch부터 pretraining & SFT를 적용한 diffusion model
+    - self-constructed Autoregressive Models 성능과 scalability가 뛰어나다고 주장
+    - forward data masking process & reverse process를 통해 Transformer가 masked token 예측하는 것처럼 분포를 모델링
+- 📜 [Virginia Tech, Oxford] [Towards Reasoning Ability of Small Language Models](https://arxiv.org/abs/2502.11569)
+    - 6개의 model families에 속하는 72개의 SLM을 14개 reasoning benchmarks에 대해 실험한 결과를 정리한 survey
+    - 4개의 평가 method와 4개의 LLM을 judge로 사용하며 실험은 3번씩 반복
+    - adversarial conditions와 intermediate reasoning steps 또한 평가
 
 </details>
 
