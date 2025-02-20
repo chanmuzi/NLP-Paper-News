@@ -221,6 +221,11 @@
     - a large set of interactive element detection data & icon functional caption data 로 학습
     - ScreenSpot Pro 라는 벤치마크에서 높은 성능을 기록했다고 보고
     - OmniTool: agents를 위한 tool를 포함하는 dockerized Windows system
+- 📜 [Michigan, Amazon, Pennsylvania] [Stepwise Perplexity-Guided Refinement for Efficient Chain-of-Thought Reasoning in Large Language Models](https://arxiv.org/abs/2502.13260)
+    - Long CoT에서 불필요한 step의 존재로 인한 연산량 증가 및 지연에 대한 문제 제기
+    - 이를 해결하기 위해 perplexity를 importance 지표로 삼는 method 제안
+        - 특정 step을 제거했을 때 perplexity가 증가한다면 모델의 입장에서 중요도가 높은 것
+    - few-shot CoT 내의 sample 중 불필요한 것들을 제거 or 살아남은(critical) steps만으로 fine-tuning 하는 방법으로 활용 가능
 
 </details>
 
