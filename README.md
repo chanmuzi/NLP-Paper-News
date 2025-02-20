@@ -208,6 +208,19 @@
     - 6개의 model families에 속하는 72개의 SLM을 14개 reasoning benchmarks에 대해 실험한 결과를 정리한 survey
     - 4개의 평가 method와 4개의 LLM을 judge로 사용하며 실험은 3번씩 반복
     - adversarial conditions와 intermediate reasoning steps 또한 평가
+- 🧑🏻‍💻 [xAI] [Grok 3 Beta — The Age of Reasoning Agents](https://x.ai/blog/grok-3)
+    - 지구상 현존하는 모델들 중 가장 똑똑하다는 문구로 소개된 xAI의 LLM
+    - logical processing을 위한 Think Mode, complex problem-solving을 위한 Big Brain Mode
+    - faster query processing을 위해 H100 20만대 사용 (전작 대비 10x 이상)
+    - Grok 3는 X Premium Plus 구독자들 사용 가능
+- 📜 [DeepSeek, Peking, Washington] [Native Sparse Attention: Hardware-Aligned and Natively Trainable Sparse Attention](https://arxiv.org/abs/2502.11089)
+    - NSA: dynamic hierarchical sparse strategy를 사용하여 coarse-grained token compression을 fine-grained token selection과 결합
+    - 현재 GPU에 최적화가 잘되어 있음 & end-to-end training
+- 🧑🏻‍💻 [Microsoft] [OmniParser V2: Turning Any LLM into a Computer Use Agent](https://www.microsoft.com/en-us/research/articles/omniparser-v2-turning-any-llm-into-a-computer-use-agent/)
+    - OmniParser: UI 스크린샷 내의 pixel spaces부터 structured elements까지 tokenizing
+    - a large set of interactive element detection data & icon functional caption data 로 학습
+    - ScreenSpot Pro 라는 벤치마크에서 높은 성능을 기록했다고 보고
+    - OmniTool: agents를 위한 tool를 포함하는 dockerized Windows system
 
 </details>
 
