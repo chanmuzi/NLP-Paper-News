@@ -226,6 +226,10 @@
     - 이를 해결하기 위해 perplexity를 importance 지표로 삼는 method 제안
         - 특정 step을 제거했을 때 perplexity가 증가한다면 모델의 입장에서 중요도가 높은 것
     - few-shot CoT 내의 sample 중 불필요한 것들을 제거 or 살아남은(critical) steps만으로 fine-tuning 하는 방법으로 활용 가능
+- 📜 [AIRI] [Cramming 1568 Tokens into a Single Vector and Back Again: Exploring the Limits of Embedding Space Capacity](https://arxiv.org/abs/2502.13063)
+    - 현존하는 vector compression 성능은 최대 10x 수준으로 알려졌으나 실제로는 16-bit precision이 아니면 성능이 많이 떨어짐 (이론과 현실의 gap 지적)
+    - 본 연구에서는 1500x 이상의 compression rate를 달성했다고 주장
+    - compression에서 중요한 것은 input의 길이가 아닌 줄어들 uncertainty의 양이라고 설명
 
 </details>
 
