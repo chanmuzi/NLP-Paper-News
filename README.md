@@ -230,6 +230,17 @@
     - 현존하는 vector compression 성능은 최대 10x 수준으로 알려졌으나 실제로는 16-bit precision이 아니면 성능이 많이 떨어짐 (이론과 현실의 gap 지적)
     - 본 연구에서는 1500x 이상의 compression rate를 달성했다고 주장
     - compression에서 중요한 것은 input의 길이가 아닌 줄어들 uncertainty의 양이라고 설명
+- 🧑🏻‍💻 [Google Research] [Accelerating scientific breakthroughs with an AI co-scientist](https://research.google/blog/accelerating-scientific-breakthroughs-with-an-ai-co-scientist/)
+    - 연구자들을 돕기 위해 Gemini 2.0 기반으로 구축한 multi-agent AI system
+    - Supervisor agent가 6개의 specialized agents에 tasks 할당
+        - Generation, Reflection, Ranking, Evolution, Proximity, Meta-review
+    - [paper link](https://storage.googleapis.com/coscientist_paper/ai_coscientist.pdf) 🔗
+- 🧑🏻‍💻 [Sakana AI] [The AI CUDA Engineer: Agentic CUDA Kernel Discovery, Optimization and Composition](https://sakana.ai/ai-cuda-engineer/)
+    - CUDA kernel discovery & optimization을 온전히 자동화하는 agentic framework 제시
+    - PyTorch code를 CUDA kernel용으로 변환 → evolutionary meta-generation을 거쳐 runtime performance optimize
+    - 250개의 테스트에서 186개의 태스크의 처리 속도를 평균(median) 1.52x 향상시켰다고 보고
+    - [paper link](https://pub.sakana.ai/static/paper.pdf) 🔗
+
 
 </details>
 
