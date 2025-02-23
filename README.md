@@ -240,7 +240,13 @@
     - PyTorch code를 CUDA kernel용으로 변환 → evolutionary meta-generation을 거쳐 runtime performance optimize
     - 250개의 테스트에서 186개의 태스크의 처리 속도를 평균(median) 1.52x 향상시켰다고 보고
     - [paper link](https://pub.sakana.ai/static/paper.pdf) 🔗
-
+- 📜 [Meta] [MLGym: A New Framework and Benchmark for Advancing AI Research Agents](https://arxiv.org/abs/2502.14499)
+    - MLGym, MYGym-Bench: AI research tasks에 대한 LLM agents 프레임워크 및 벤치마크
+    - 벤치마크는 CV, NLP, RL, Game Theory에 관한 13개의 tasks로 구성
+    - 프레임워크는 여기에 새로운 태스크를 추가 및 통합하는 것을 도와줌
+- 📜 [The Univ. of Melbourne] [Line Goes Up? Inherent Limitations of Benchmarks for Evaluating Large Language Models](https://arxiv.org/abs/2502.14318)
+    - 현존하는 벤치마크 평가로는 LLM의 ‘cognitive tasks’ 수행을 위한 능력을 판단할 수 없다고 주장
+    - adversarial stimuli & interpretability techniques 로 평가 시 여러 언어와 reasoning tasks에서 not robust한 결과를 보였다고 설명
 
 </details>
 
