@@ -250,6 +250,16 @@
 
 </details>
 
+<details>
+  <summary>4th week</summary>
+
+- 🧑🏻‍💻 [StepFun, Tsinghua] [Open-Reasoner-Zero](https://github.com/Open-Reasoner-Zero/Open-Reasoner-Zero/tree/main)
+    - scalability, simplicity, accessibility에 집중한 open source reasoning-oriented RL training implementation
+    - minimalist approach: vanilla PPO with GAE & rule-based reward function / w/o KL regularization
+    - 1/30 training steps만으로도 DeepSeek-R1-Zero-Qwen-32B를 GPQA Diamond Bench에서 우세
+    - [paper link](https://github.com/Open-Reasoner-Zero/Open-Reasoner-Zero/blob/main/ORZ_paper.pdf) 🔗
+</details>
+
 ## 🙇🏻 January
 <details>
   <summary>1st week</summary>
