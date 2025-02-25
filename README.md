@@ -266,6 +266,11 @@
     - objects를 식별할 때 bounding box를 치거나 point를 정확하게 파악하는 점이 특징
     - dynamic resolution processing & absolute time encoding 도입 → 다양한 사이즈의 이미지, long-video 처리 가능
     - task-specific fine-tuning 없이도 다양한 domain에 robust performance를 보인다고 주장
+- 📜 [Arizona, UCLA, Notre Dame, UIUC] [Preference Leakage: A Contamination Problem in LLM-as-a-judge](https://arxiv.org/abs/2502.01534)
+    - data generator LLM과 judge LLM 사이의 세 관계에 대해 연구
+    - (1) being the same model (2) having an inheritance relationship (3) belonging to the same model family
+    - 여러 LLM baselines와 benchmarks를 통해 관계에 따른 judge bias가 존재한다는 것을 empirically 확인 (preference leakage)
+    - 그렇다면 데이터를 생성할 땐 다양한 LLM을 활용해야 하는 것 아닐까?
 </details>
 
 ## 🙇🏻 January
