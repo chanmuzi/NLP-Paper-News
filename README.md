@@ -258,6 +258,14 @@
     - minimalist approach: vanilla PPO with GAE & rule-based reward function / w/o KL regularization
     - 1/30 training steps만으로도 DeepSeek-R1-Zero-Qwen-32B를 GPQA Diamond Bench에서 우세
     - [paper link](https://github.com/Open-Reasoner-Zero/Open-Reasoner-Zero/blob/main/ORZ_paper.pdf) 🔗
+ - 🗞️ [1X] [Introducing NEO Gamma](https://x.com/1x_tech/status/1893012909082714299?t=7ZkJZCYGS0-7aFRSU_cRTw&s=19)
+    - NEO Beta 다음 세대의 휴머노이드 공개
+    - “companion” 포지션으로 가정 환경에서 자연스러운 움직임을 보여줌 (링크 데모 참고)
+- 📜 [Alibaba] [Qwen2.5-VL Technical Report](https://arxiv.org/abs/2502.13923)
+    - enhanced visual recognition, precise object localization, robust structured data extractions, document parsing, long-video compression
+    - objects를 식별할 때 bounding box를 치거나 point를 정확하게 파악하는 점이 특징
+    - dynamic resolution processing & absolute time encoding 도입 → 다양한 사이즈의 이미지, long-video 처리 가능
+    - task-specific fine-tuning 없이도 다양한 domain에 robust performance를 보인다고 주장
 </details>
 
 ## 🙇🏻 January
