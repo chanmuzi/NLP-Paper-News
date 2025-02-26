@@ -271,6 +271,17 @@
     - (1) being the same model (2) having an inheritance relationship (3) belonging to the same model family
     - 여러 LLM baselines와 benchmarks를 통해 관계에 따른 judge bias가 존재한다는 것을 empirically 확인 (preference leakage)
     - 그렇다면 데이터를 생성할 땐 다양한 LLM을 활용해야 하는 것 아닐까?
+- 🧑🏻‍💻 [Anthropic] [Claude 3.7 Sonnet and Claude Code](https://www.anthropic.com/news/claude-3-7-sonnet)
+    - Claude 3.7 Sonnet: Instant responses를 step-by-step thinking과 결합한 답변 반환 가능
+        - thinking mode의 context length 128K 까지 확장
+        - API를 통해 thinking time도 조절 가능
+    - Claude Code: CLI AI coding assistant
+        - repository search, edit files, commits to Github 기능 지원
+- 🧑🏻‍💻 [AI2] [Efficient PDF Text Extraction with Vision Language Models](https://olmocr.allenai.org/blog)
+    - PDFs와 document images를 깔끔하고 구조화된 텍스트로 변환하는 툴킷
+    - 다양한 종류의 PDF에 대해 250,000장 fine-tune
+    - 1M PDF pages당 $190 → GPT-4o API batch 대비 32배 저렴하다고 소개
+    - markdown 형태로 output 반환
 </details>
 
 ## 🙇🏻 January
