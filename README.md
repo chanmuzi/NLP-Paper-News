@@ -282,6 +282,15 @@
     - 다양한 종류의 PDF에 대해 250,000장 fine-tune
     - 1M PDF pages당 $190 → GPT-4o API batch 대비 32배 저렴하다고 소개
     - markdown 형태로 output 반환
+- 🧑🏻‍💻 [Alibaba] [Wan 2.1: Leading AI Video Generation Model (Wanx 2.1)](https://wan21ai.com/)
+    - text, image 입력으로 받아 고품질 images & videos 생성 가능한 open-source model family
+    - T2V-1.3B, 14B 두 개 version으로 공개
+    - [허깅페이스](https://link.mail.beehiiv.com/ss/c/u001.ae3tPPqcD9LGEYY83-FJncrD8ENm5PQsonneGdCHnxpYCBUd3DooBT-uAsUQv9d_7B6796SyxaZC5XlWLw2yks9-yh44CzsyG9aF9Y4BXbbjYV7DwNgb9DWcQzerqUJ6_qsJSy3ym_emk857Gd43TC4rnNFUCXCVn6a2j36w2YCGgKN4QcOGW4pnMCTsFBswBeXMutzsdhvlGL0oZVpPPgnt3pEFI0nr9tXunNcy3Q-fmCgU7bfh34Z3A-dbnaux/4ec/gOpmFuORQEitDMXINqB7DQ/h8/h001.KtK7dRp01Nh9ppRdnZE0pLbWXx3mSv_Exs3IcfSagzA)를 비롯한 다양한 플랫폼에서 이용 가능
+- 🧑🏻‍💻 [Google] [Get coding help from Gemini Code Assist — now for free](https://blog.google/technology/developers/gemini-code-assist-free/)
+    - VS Code, JetBrains IDE, GitHub 에서 지원
+    - Gemini 2.0으로 지원하며 월 180,000개의 code completions 지원 (GitHub Copilot free tier 대비 20배 많은 양)
+    - 128K context window를 바탕으로 complex code base에 대한 이해 가능
+    - 코드 내 stylistic issues and bugs 등을 automatically 탐지 가능
 </details>
 
 ## 🙇🏻 January
