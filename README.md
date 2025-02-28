@@ -291,6 +291,15 @@
     - Gemini 2.0으로 지원하며 월 180,000개의 code completions 지원 (GitHub Copilot free tier 대비 20배 많은 양)
     - 128K context window를 바탕으로 complex code base에 대한 이해 가능
     - 코드 내 stylistic issues and bugs 등을 automatically 탐지 가능
+- 📜 [Kakao] [Kanana: Compute-efficient Bilingual Language Models](https://arxiv.org/abs/2502.18934)
+    - Korean & English 처리할 수 있는 bilingual language model series
+    - high quality data filtering, staged pre-training, depth up-scaling, pruning, distillation
+    - 특히 Kanana models를 post-training 하는 과정에서 사용된 방법론들을 보고
+    - 2.1B ~ 32.5B 사이즈의 모델들로 구성되어 있고, 2.1B 모델은 공개
+- 🧑🏻‍💻 [Amazon] [Introducing Alexa+, the next generation of Alexa](https://www.aboutamazon.com/news/devices/new-alexa-generative-artificial-intelligence)
+    - 수만 개의 서비스와 장치들을 아우르는 시스템으로 supervision 없이 복잡한 multi-step tasks 수행
+    - Amazon’s Nova & Anthropic’s Claude를 비롯한 여러 개의 foundational LLMs를 각 태스크에 가장 적합하게 활용
+    - 도메인별 experts를 활용하는 개념. 개인 맞춤화된 특징들을 지원 (유저 히스토리 기반)
 </details>
 
 ## 🙇🏻 January
