@@ -4,6 +4,25 @@
 
 ---
 # 2025
+## 🌱 March
+<details>
+  <summary>1st week</summary>
+
+- 📜 [Microsoft] [LongRoPE2: Near-Lossless LLM Context Window Scaling](https://arxiv.org/abs/2502.20082)
+    1. ‘높은 차원의 RoPE 차원에서의 불충분한 학습은 영구적인 OOD issue를 야기한다’는 가설
+    2. needle-driven perplexity 기반의 evolutionary search를 이용한 RoPE rescaling alogirthm이 위 문제를 해결해줄 것이라고 가정
+    3. mixed context window training
+    - LLaMA3-8B에 LongRoPE2를 적용하여 128K를 커버할 수 있게 만들면서도 기존 short-context performance는 98.5% 보존
+- 🧑🏻‍💻 [OpenAI] [Introducing GPT-4.5](https://openai.com/index/introducing-gpt-4-5/)
+    - function calling, structured outputs, system messages, streaming in API 지원
+    - 이미지 입력, agentic planning & execution 가능
+    - text-based interactions 내의 뉘앙스 파악 더 잘함 & 향상된 EQ → 문과적 사고는 좋아졌는데 실질적인 성능은 아쉽다는 평이 많음
+- 🧑🏻‍💻 [Inception Labs] [Introducing Mercury, the first commercial-scale diffusion large language model](https://www.inceptionlabs.ai/news)
+    - 스탠포드 교수 [Stefano Ermon](https://scholar.google.com/citations?user=ogXTOZ4AAAAJ&hl=en)이 diffusion large language model 회사 설립 (dLLMs)
+    - H100에서 초당 1000 토큰을 출력할 수 있을 정도로 기존 모델들 대비 10x 이상 빠르다고 설명
+    - 다음 토큰을 autoregressive 하게 예측하는 방식/패러다임을 “coarse-to-fine” 생성 방식으로 전환해야 한다고 주장
+</details>
+
 ## 🏔️ February
 <details>
   <summary>1st week</summary>
