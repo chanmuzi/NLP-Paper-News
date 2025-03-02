@@ -319,6 +319,18 @@
     - 수만 개의 서비스와 장치들을 아우르는 시스템으로 supervision 없이 복잡한 multi-step tasks 수행
     - Amazon’s Nova & Anthropic’s Claude를 비롯한 여러 개의 foundational LLMs를 각 태스크에 가장 적합하게 활용
     - 도메인별 experts를 활용하는 개념. 개인 맞춤화된 특징들을 지원 (유저 히스토리 기반)
+- 📜 [Meta, UIUC, CMU] [SWE-RL: Advancing LLM Reasoning via Reinforcement Learning on Open Software Evolution](https://arxiv.org/abs/2502.18449)
+    - RL-based LLM의 reasoning을 real-world software engineering으로 확장하기 위한 approach
+        - DeepSeek-R1 같은 모델들은 코딩 테스트를 위한 문제들처럼 실행하기 쉽고 real-world와는 동떨어진 코드들로 학습되었다는 한계를 지적
+    - open-source software evolution data로부터 실제 개발자들의 reasoning processes & solutions를 autonomously 학습
+        - GitHub Pull Requests Dataset Curation (4.6M repositories)
+        - lightweight rule-based reward를 leverage
+    - Llama3-SWE-RL-70B 모델이 SWE-bench Verified에서 41.0% 성능을 달성
+        - 이는 100B 이하의 오픈소스 모델 중에서 유일하게 GPT-4o에 견줄 수 있는 성능
+- 📜 [Zoom] [Chain of Draft: Thinking Faster by Writing Less](https://arxiv.org/abs/2502.18600)
+    - LLM과 달리 실제 사람은 본질적인 정보만을 다루는 간결한 intermediate thoughts를 draft 하여 보다 효율적인 reasoning 방식을 취하고 있음
+    - Chain of Draft (CoD): 인간의 cognitive processes와 같이 tasks를 처리할 때 필수적이고 유용한 정보들만 남기는 방식
+    - 기존 대비 7.6% 수준의 토큰만 사용해서도 성능을 유지할 수 있음 → 추론 비용을 아끼고 latency 낮출 수 있음
 </details>
 
 ## 🙇🏻 January
