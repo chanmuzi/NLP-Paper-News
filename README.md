@@ -21,6 +21,11 @@
     - 스탠포드 교수 [Stefano Ermon](https://scholar.google.com/citations?user=ogXTOZ4AAAAJ&hl=en)이 diffusion large language model 회사 설립 (dLLMs)
     - H100에서 초당 1000 토큰을 출력할 수 있을 정도로 기존 모델들 대비 10x 이상 빠르다고 설명
     - 다음 토큰을 autoregressive 하게 예측하는 방식/패러다임을 “coarse-to-fine” 생성 방식으로 전환해야 한다고 주장
+- 📜 [King’s College London, The Alan Turing Institue] [CODI: Compressing Chain-of-Thought into Continuous Space via Self-Distillation](https://arxiv.org/abs/2502.21074)
+    - implicit CoT가 explicit CoT에 비해 아직까지 뒤처져 있음을 언급
+    - CODI: shared model이 teacher & student 역할을 수행하며 explicit & implict CoT를 학습
+    - implicit CoT로도 explicit CoT 성능을 달성하면서도 3.1배의 토큰 압축률을 보여줌
+    - explicit reasoning이 대박을 친 이후로 추론 비용이 급상승해서인지 implicit & compression 관련 연구들에 눈에 띄고 있음
 </details>
 
 ## 🏔️ February
