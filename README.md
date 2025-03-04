@@ -34,6 +34,11 @@
 - 🧑🏻‍💻 [Anthropic] [Token-efficient tool use (beta)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/token-efficient-tool-use)
     - `token-efficient-tools-2025-02-19` header를 통해 평균 14%, 최대 70%의 토큰 & latency를 줄일 수 있다고 설명
         - API call에서 tool use와 관련된 옵션임. Claude 3.7을 공개하면서 사용 비용을 최소화하는 옵션을 함께 제시함.
+- 📜 [LLM Post-Training: A Deep Dive into Reasoning Large Language Models](https://arxiv.org/abs/2502.21321)
+    - fine-tuning, reinforcement learning, test-time scaling 등의 post-training 방법론들을 조사한 서베이 논문
+    - catastrophic forgetting, inference-time trade-off, reward hacking 등의 issues를 함께 다룸
+    - Tuning 파트에 엑사원은 있는데 솔라는 포함되지 않았음
+    - [Awesome LLM Post-Training repository](https://github.com/mbzuai-oryx/Awesome-LLM-Post-training) 🔗
 </details>
 
 ## 🏔️ February
