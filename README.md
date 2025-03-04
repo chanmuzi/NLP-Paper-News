@@ -26,6 +26,14 @@
     - CODI: shared model이 teacher & student 역할을 수행하며 explicit & implict CoT를 학습
     - implicit CoT로도 explicit CoT 성능을 달성하면서도 3.1배의 토큰 압축률을 보여줌
     - explicit reasoning이 대박을 친 이후로 추론 비용이 급상승해서인지 implicit & compression 관련 연구들에 눈에 띄고 있음
+- 🧑🏻‍💻 [Sesame] [Crossing the uncanny valley ofconversational voice](https://www.sesame.com/research/crossing_the_uncanny_valley_of_voice)
+    - Conversational Speech Model (CSM): context-aware speech in real-time conversations을 위해 설계된 모델 (1B, 3B, 8B)
+    - tone, pace, rhythm 등을 conversational context and emotions 기반으로 조절 가능
+    - decoder는 Residual Vector Quantization (RVQ) tokens로부터 high-fidelity speech를 reconstruct
+    - 2K context window 커버 가능, 1M hours of publicly available transcribed and diarized speech로 학습
+- 🧑🏻‍💻 [Anthropic] [Token-efficient tool use (beta)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/token-efficient-tool-use)
+    - `token-efficient-tools-2025-02-19` header를 통해 평균 14%, 최대 70%의 토큰 & latency를 줄일 수 있다고 설명
+        - API call에서 tool use와 관련된 옵션임. Claude 3.7을 공개하면서 사용 비용을 최소화하는 옵션을 함께 제시함.
 </details>
 
 ## 🏔️ February
