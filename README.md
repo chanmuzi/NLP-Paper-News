@@ -39,6 +39,18 @@
     - catastrophic forgetting, inference-time trade-off, reward hacking 등의 issues를 함께 다룸
     - Tuning 파트에 엑사원은 있는데 솔라는 포함되지 않았음
     - [Awesome LLM Post-Training repository](https://github.com/mbzuai-oryx/Awesome-LLM-Post-training) 🔗
+- 📜 [Mila] [Multi-Turn Code Generation Through Single-Step Rewards](https://arxiv.org/abs/2502.20380)
+    - 현재 multi-turn code generation 방법론들은 피드백 없이 코드를 생성하거나 complex & hierarchical 강화학습을 사용
+    - μCODE: single-step reward만을 사용하는 multi-turn code generation
+    - 중간의 어떤 과정에서도 올바른 코드로 recovered 가능하다고 주장
+    - 멀티턴 실행 피드백과 새로 생성된 코드를 scoring하는 verifier를 iteratively 학습
+- 📜 [Univ. of Oklahoma] [A Survey On Large Language Models For Code Generation](https://arxiv.org/abs/2503.01245)
+    - 최근 아주 핫한 코드 생성 모델들에 대한 서베이 페이퍼
+    - 엄청 방대한 양을 커버하고 있지는 않음
+- 📜 [Tencent AI] The First Few Tokens Are All You Need: An Efficient and Effective Unsupervised Prefix Fine-Tuning Method for Reasoning Models
+    - Unsupervised Prefix Fine-Tuning (UPFT): Prefix Self-Consistency를 이용. 다양한 solution에 공통적으로 포함되는 initial reasoning steps를 학습 대상으로 삼음
+    - initial prefix substrings (8개 토큰) 에 대해서만 학습함으로써 데이터 라벨링이나 sampling의 공수를 줄임
+    - 학습 시간은 75%, sampling cost는 99% 줄이면서도 Rejection Sampling Fine-Tuning과 같은 기존 학습 방식에 준하는 성능을 달성했다고 보고
 </details>
 
 ## 🏔️ February
