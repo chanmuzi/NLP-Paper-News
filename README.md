@@ -51,6 +51,17 @@
     - Unsupervised Prefix Fine-Tuning (UPFT): Prefix Self-Consistency를 이용. 다양한 solution에 공통적으로 포함되는 initial reasoning steps를 학습 대상으로 삼음
     - initial prefix substrings (8개 토큰) 에 대해서만 학습함으로써 데이터 라벨링이나 sampling의 공수를 줄임
     - 학습 시간은 75%, sampling cost는 99% 줄이면서도 Rejection Sampling Fine-Tuning과 같은 기존 학습 방식에 준하는 성능을 달성했다고 보고
+- 🧑🏻‍💻 [Qwen] [QwQ-32B](https://huggingface.co/Qwen/QwQ-32B)
+    - DeepSeek-R1 671B 모델에 견주는 32B 모델 공개 (MoE 아닌 Dense 모델)
+    - 131K Token length 지원
+    - RoPE, SwiGLU, RMSNorm
+- 🧑🏻‍💻 [Cohere] [Aya Vision: Expanding the Worlds AI Can See](https://cohere.com/blog/aya-vision)
+    - 다양한 언어와 modalities를 지원하는 SoTA vision model (23개 언어)
+    - 8B, 32B 사이즈 모델. [Kaggle](https://www.kaggle.com/models/cohereforai/aya-vision?ref=cohere-ai.ghost.io) & [HuggingFace](https://huggingface.co/collections/CohereForAI/c4ai-aya-vision-67c4ccd395ca064308ee1484?ref=cohere-ai.ghost.io) 에 weights 공개
+- 🧑🏻‍💻 [Google] [Data Science Agent in Colab: The future of data analysis with Gemini](https://developers.googleblog.com/en/data-science-agent-in-colab-with-gemini/)
+    - Gemini를 이용한 multi-step reasoning을 통해 full notebooks를 생성 (just code snippets x)
+    - classification, regression, feature selection, correlation analysis 등 기능 지원
+    - CSV, JSON, Excel files 지원
 </details>
 
 ## 🏔️ February
