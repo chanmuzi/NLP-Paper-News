@@ -62,6 +62,14 @@
     - Gemini를 이용한 multi-step reasoning을 통해 full notebooks를 생성 (just code snippets x)
     - classification, regression, feature selection, correlation analysis 등 기능 지원
     - CSV, JSON, Excel files 지원
+- 📜 [Nanjing Univ., Microsoft] [Process-based Self-Rewarding Language Models](https://arxiv.org/abs/2503.03746)
+    - LLM이 학습용 데이터를 스스로의 output에 대한 reward를 기반으로 생성하는 방식을 제안
+    - → 현존하는 self-rewarding 방식은 수학적 추론 영역에서 약점을 보인다고 지적
+    - → self-rewarding 내에 long-thought reasoning, step-wise LLM-as-a-Judge, step-wise preference optimization 등 도입
+- 📜 [Washington, Peking] [MPO: Boosting LLM Agents with Meta Plan Optimization](https://arxiv.org/abs/2503.02682)
+    - LLM-based agents 시스템은 아직 planning hallucination & each egent 학습 필요성 을 한계로 지님
+    - Meta Plan Optimization (MPO): explicit guidance를 통합하여 agent의 planning capability를 향상시키는 프레임워크. agent의 실행 결과에 대한 피드백을 바탕으로 삼음.
+    - Meta Plan에 대한 평가(reward)를 제공하는 모델도 있어서 파이프라인이 강화학습처럼 보임
 </details>
 
 ## 🏔️ February
