@@ -70,6 +70,19 @@
     - LLM-based agents 시스템은 아직 planning hallucination & each egent 학습 필요성 을 한계로 지님
     - Meta Plan Optimization (MPO): explicit guidance를 통합하여 agent의 planning capability를 향상시키는 프레임워크. agent의 실행 결과에 대한 피드백을 바탕으로 삼음.
     - Meta Plan에 대한 평가(reward)를 제공하는 모델도 있어서 파이프라인이 강화학습처럼 보임
+- 📜 [Alibaba] [Babel: Open Multilingual Large Language Models Serving Over 90% of Global Speakers](https://arxiv.org/abs/2503.00865)
+    - (numbers of speakers 기준) 지구상 90% 인구가 이해하는 25개 언어를 커버
+    - Babel-9B, 83B multilingual LLMs 공개
+    - 전통적인 continued pretraining 대신 model extension을 통해 parameter count를 확장함으로써 성능 향상을 도모했음
+- 📜 [Alibaba] [START: Self-taught Reasoner with Tools](https://arxiv.org/abs/2503.04625)
+    - external tools을 이용하여 reasoning capabilities를 큰 폭으로 향상
+    - (1) Hint-infer: 인위적으로 설계한 힌트를 삽입 (ex. 파이썬 코드를 써야겠어!)
+    - (2) Hint Rejection Sampling Fine-Tuning (Hint-RFT): Hint-infer를 통해 생성된 reasoning trajectories(tool 사용을 포함하는)를 fine-tuning
+- 📜 [CMU] [SOLAR: Scalable Optimization of Large-scale Architecture for Reasoning](https://arxiv.org/abs/2503.04530)
+    - reasoning에서 nuanced topological reasoning이 문제임을 지적
+    - accuracy와 efficiency를 향상시키기 위해 reasoning topology를 dynamically optimize
+    - Topological-Annotation-Generation (TAG) system: topological dataset creation & segmentation을 자동화
+    - multi-task Topological Reward Model (M-TRM) 학습: 자동적으로 best reasoning topology를 선택하여 single pass에 답변 반환 (multiple single-task 필요성 x)
 </details>
 
 ## 🏔️ February
