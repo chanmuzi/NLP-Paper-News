@@ -83,6 +83,11 @@
     - accuracy와 efficiency를 향상시키기 위해 reasoning topology를 dynamically optimize
     - Topological-Annotation-Generation (TAG) system: topological dataset creation & segmentation을 자동화
     - multi-task Topological Reward Model (M-TRM) 학습: 자동적으로 best reasoning topology를 선택하여 single pass에 답변 반환 (multiple single-task 필요성 x)
+- 📜 [NVIDIA, Berkeley, MIT, Nanjing, KAIST] [Token-Efficient Long Video Understanding for Multimodal LLMs](https://arxiv.org/abs/2503.04130)
+    - explicit temporal modeling이 부족하여 long videos의 dynamic patterns을 capture하기 어렵다는 문제를 지적
+    - STORM (Spatiotemporal TOken Reduction for Multimodal LLMs): image encoder & LLM 사이의 temporal encoder를 통합하는 아키텍쳐
+    - Mamaba State Space Model을 사용하여 temporal information을 image tokens에 통합하여 보다 풍부한 representations를 생성
+    - training & inference latency 둘 다 감소시키면서도 extended temporal contexts에 대한 efficient & robust video understanding 를 보여줌
 </details>
 
 ## 🏔️ February
