@@ -88,6 +88,16 @@
     - STORM (Spatiotemporal TOken Reduction for Multimodal LLMs): image encoder & LLM 사이의 temporal encoder를 통합하는 아키텍쳐
     - Mamaba State Space Model을 사용하여 temporal information을 image tokens에 통합하여 보다 풍부한 representations를 생성
     - training & inference latency 둘 다 감소시키면서도 extended temporal contexts에 대한 efficient & robust video understanding 를 보여줌
+- 📜 [Stanford] [Cognitive Behaviors that Enable Self-Improving Reasoners, or, Four Habits of Highly Effective STaRs](https://arxiv.org/abs/2503.01307)
+    - 동일한 사이즈의 모델 간에서도 RL을 통한 self-improvement 능력 획득이 가능(Qwen)한 경우와 그렇지 않은(Llama) 경우가 있음 → self-improvement 능력 획득에 필요한 조건은 무엇일까?
+    - 4개의 cognitive behaviors: verification, backtracking, subgoal setting, backward chaining
+    - OpenWebMath data를 continued-pretraining에 활용하여 Llama를 학습한 결과는 Qwen에 준함
+- 📜 [Columbia Business School] [How Well do LLMs Compress Their Own Chain-of-Thought? A Token Complexity Approach](https://arxiv.org/abs/2503.01141)
+    - 다양한 compression instructions를 통해 reasoning length와 model performance 간의 관계에 대한 systematic study
+    - → 거의 모든 distinct reasoning chain마다 reasoning length와 accuracy 간의 universal tradeoff 존재
+    - token complexity: successful problem-solving을 위해 필요한 최소한의 토큰 숫자
+    - → accuracy-compression tradeoff의 이론적 한계를 계산하는 데 활용
+    - → adaptive compression: 답하기 쉬운 질문에는 짧은 responses를 반환토록 함
 </details>
 
 ## 🏔️ February
