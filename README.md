@@ -100,6 +100,16 @@
     - → adaptive compression: 답하기 쉬운 질문에는 짧은 responses를 반환토록 함
 </details>
 
+<details>
+  <summary>2nd week</summary>
+
+- 📜 [Renmin Univ.] [R1-Searcher: Incentivizing the Search Capability in LLMs via Reinforcement Learning](https://arxiv.org/abs/2503.05592)
+    - internal knowledge에만 의존하는 LRM들은 time-sensitive or knowledge-intensive questions에 대해 약함
+    - R1-Searcher: two-stage outcome-based RL approach
+    - reasoning process 동안 추가적인 지식 습득을 위해 모델이 자율적으로 external search system에 접근
+    - RL만 배타적으로 사용. cold start를 위한 reward나 distillation 불필요.
+</details>
+
 ## 🏔️ February
 <details>
   <summary>1st week</summary>
