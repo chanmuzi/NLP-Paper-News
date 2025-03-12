@@ -108,6 +108,14 @@
     - R1-Searcher: two-stage outcome-based RL approach
     - reasoning process 동안 추가적인 지식 습득을 위해 모델이 자율적으로 external search system에 접근
     - RL만 배타적으로 사용. cold start를 위한 reward나 distillation 불필요.
+- 🧑🏻‍💻 [Manus] [Leave it to Manus](https://manus.im/)
+    - 중국 스타트업이 AI agents 서비스로 세간의 주목을 받고 있음
+    - 자체적으로 공개한 벤치마크 결과에서는 OpenAI Deep Research를 압살
+    - 파격적인 데모(수십 개의 앱이 동시에 실행)가 사실인지에 대한 커뮤니티 논쟁이 있었음
+- 🧑🏻‍💻 [OpenAI] [New tools for building agents](https://openai.com/index/new-tools-for-building-agents/)
+    - 개발자들이 agents를 만들 때 사용할 수 있는 agent 툴을 공개
+    - Chat Completions API에 Assistants API의 tool 사용 능력을 합친 Responses API
+    - web search, file search, computer use 능력을 내장
 </details>
 
 ## 🏔️ February
