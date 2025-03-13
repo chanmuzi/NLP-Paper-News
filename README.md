@@ -116,6 +116,10 @@
     - 개발자들이 agents를 만들 때 사용할 수 있는 agent 툴을 공개
     - Chat Completions API에 Assistants API의 tool 사용 능력을 합친 Responses API
     - web search, file search, computer use 능력을 내장
+- 📜 [Skolkovo Institue of Science and Technology] [Feature-Level Insights into Artificial Text Detection with Sparse Autoencoders](https://arxiv.org/abs/2503.03601)
+    - Artificial Text Detection (ATD)는 LLM 등장 이래로 더욱 중요해지고 있으나 unseen text에 대한 일반화 성능이 낮다는 문제점을 지적
+    - Sparse Autoencoder를 이용하여 Gemma-2-2b로부터 feature를 추출함으로써 ATD interpretability를 높임
+    - 다양한 모델로부터 획득한 텍스트가 사람으로부터 얻은 것과 어떻게 다른지에 대한 인사이트 제공 가능
 </details>
 
 ## 🏔️ February
