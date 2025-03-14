@@ -120,6 +120,22 @@
     - Artificial Text Detection (ATD)는 LLM 등장 이래로 더욱 중요해지고 있으나 unseen text에 대한 일반화 성능이 낮다는 문제점을 지적
     - Sparse Autoencoder를 이용하여 Gemma-2-2b로부터 feature를 추출함으로써 ATD interpretability를 높임
     - 다양한 모델로부터 획득한 텍스트가 사람으로부터 얻은 것과 어떻게 다른지에 대한 인사이트 제공 가능
+- 🧑🏻‍💻 [Google DeepMind] [Gemini Robotics brings AI into the physical world](https://deepmind.google/discover/blog/gemini-robotics-brings-ai-into-the-physical-world/)
+    - Gemini Robotics: Gemini 2.0 기반의 vision-language-action (VLA) model
+    - Gemini Robotics-ER: Gemini의 embodied reasoning (ER) 능력을 활용하여 advanced spatial understanding을 보여줌
+    - 다음 세대의 휴머노이드를 만들기 위해 Apptronik와 파트너십
+    - [Technical Report link](https://storage.googleapis.com/deepmind-media/gemini-robotics/gemini_robotics_report.pdf) 🔗
+- 🧑🏻‍💻 [Google] [Introducing Gemma 3: The Developer Guide](https://developers.googleblog.com/en/introducing-gemma3/)
+    - 1B-27B 사이즈의 open-weight model family (open-source는 아님)
+    - LMArena에서 R1 바로 뒤를 이어 2위 차지
+    - SigLIP 기반의 vision encoder를 통한 Multimodal 지원, 128K 윈도우 사이즈, 140개 이상 언어 이해
+    - 3개의 강화 학습 기법 적용: RLMF (Machine Feedback), RLEF (Execution Feedback), RLHF (Human Feedback)
+- 🧑🏻‍💻 [Perplexity] [Perplexity Ask MCP Server](https://github.com/ppl-ai/modelcontextprotocol)
+    - Model Context Protocol (MCP)가 최근 핫한 키워드로 떠오르고 있음
+        - AI 시스템과 데이터 소스를 연결하기 위한 개방형 표준 프로토콜
+        - 클라이언트 - 서버 아키텍쳐를 기본으로 삼음
+        - 기존 API 대비 더 직관적이고 유연한 솔루션
+    - 도커 이미지로 만들어서 테스트까지 가능한 방법을 간단한 가이드로 소개함
 </details>
 
 ## 🏔️ February
