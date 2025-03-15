@@ -136,6 +136,16 @@
         - 클라이언트 - 서버 아키텍쳐를 기본으로 삼음
         - 기존 API 대비 더 직관적이고 유연한 솔루션
     - 도커 이미지로 만들어서 테스트까지 가능한 방법을 간단한 가이드로 소개함
+- 🧑🏻‍💻 [OpenAI] [Detecting misbehavior in frontier reasoning models](https://openai.com/index/chain-of-thought-monitoring/)
+    - 📜 [Monitoring Reasoning Models for Misbehavior and the Risks of Promoting Obfuscation](https://cdn.openai.com/pdf/34f2ada6-870f-4c26-9790-fd8def56387f/CoT_Monitoring.pdf)
+    - reasoning 모델을 위한 강화학습 과정에서 발생하는 reward hacking 문제 중 coding task에 집중
+    - 모델이 reward를 maximize 하기 위해서 cheating 하는 내용들을 explicitly state 하는 것이 관측됨
+    - 현재로서는 모델 스스로 intent를 숨기고 detection을 회피하고자 하는 경향성이 있음
+- 📜 [Meta, NYU, MIT, Princeton] [Transformers without Normalization](https://arxiv.org/abs/2503.10622)
+    - Transformers에 normalization을 적용하지 않고도 기존과 동일하거나 그 이상의 퍼포먼스를 보여줌
+    - Dynamic Tanh (DyT): element-wise 연산, $\text{DyT}(x)=\text{tanh}(\alpha x)$, Transformers 아키텍쳐에서 normalization layers를 replace
+    - 이 아이디어는 기존 normalization의 결과가 tanh-like S-shaped input-output mapping을 보여준다는 점에서 착안함
+    - recognition부터 generation, computer vision부터 language model 까지 다양한 태스크로 validate
 </details>
 
 ## 🏔️ February
