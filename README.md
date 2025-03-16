@@ -146,6 +146,10 @@
     - Dynamic Tanh (DyT): element-wise 연산, $\text{DyT}(x)=\text{tanh}(\alpha x)$, Transformers 아키텍쳐에서 normalization layers를 replace
     - 이 아이디어는 기존 normalization의 결과가 tanh-like S-shaped input-output mapping을 보여준다는 점에서 착안함
     - recognition부터 generation, computer vision부터 language model 까지 다양한 태스크로 validate
+- 📜 [KAIST] [Sketch-of-Thought: Efficient LLM Reasoning with Adaptive Cognitive-Inspired Sketching](https://arxiv.org/abs/2503.05179)
+    - Sketch-of-Thought (SoT): cognitive-inspired reasoning paradigm을 linguistic constraints와 결합하여 reasoning 정확도를 유지하면서도 token usage를 최소화하는 프레임워크
+    - 3개의 paradigm: Conceptual Chaining, Chunked Symbolism, Expert Lexicons
+        - lightweight routing model을 통해 적절한 reasoning task로 분기
 </details>
 
 ## 🏔️ February
