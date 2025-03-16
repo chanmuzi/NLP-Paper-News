@@ -152,6 +152,16 @@
         - lightweight routing model을 통해 적절한 reasoning task로 분기
 </details>
 
+<details>
+  <summary>3rd week</summary>
+
+- 📜 [UC Berkeley, Tokyo] [Plan-and-Act: Improving Planning of Agents for Long-Horizon Tasks](https://arxiv.org/abs/2503.09572)
+    - LLM들이 high-level planning objectives & low-level execution 의 균형을 맞추는 것은 쉽지 않음
+    - Plan-and-Act: synthetic data generation을 통해 LLM 기반 agents의 plan generation을 고도화한 프레임워크
+    - Planner: 목표를 달성하는 데 필요한 structured & high-level plans
+    - Executor: 위 plan들을 environment-specific actions로 translate
+</details>
+
 ## 🏔️ February
 <details>
   <summary>1st week</summary>
