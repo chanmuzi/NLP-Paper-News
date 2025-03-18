@@ -160,6 +160,14 @@
     - Plan-and-Act: synthetic data generation을 통해 LLM 기반 agents의 plan generation을 고도화한 프레임워크
     - Planner: 목표를 달성하는 데 필요한 structured & high-level plans
     - Executor: 위 plan들을 environment-specific actions로 translate
+- 🧑🏻‍💻 [Microsoft] [RD-Agent](https://github.com/microsoft/RD-Agent)
+    - R&D를 자동화해주는 오픈소스 툴. data analysis, data mining, model tuning 지원
+    - 확실히 Agent 개념을 활용한 자동화가 연구에 본격적으로 활용되고 있고 앞으로는 BM으로 발전하지 않을까 싶음
+- 📜 [IBM, HuggingFace] [SmolDocling: An ultra-compact vision-language model for end-to-end multi-modal document conversion](https://arxiv.org/abs/2503.11576)
+    - end-to-end document conversation향으로 개발한 초소형(256M) vison-language model, SmolDocling
+    - DocTags: 페이지 내 모든 요소를 위치와 함께 capture하는 새로운 universal markup format
+    - business documents, academic papers, technical reports 등 다양한 형식의 문서에서 code listings, table,s equations, charts, list 등의 feature 추출 가능하며 robust 하다고 설명
+    - 모델은 이용 가능하며 데이터셋은 곧 공개 예정
 </details>
 
 ## 🏔️ February
