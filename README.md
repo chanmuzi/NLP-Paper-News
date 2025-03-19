@@ -179,6 +179,23 @@
     - biases detecting 벤치마크의 metrics에 대한 3개의 research questions 제시
     - 실험 결과에 따르면 모든 LLM이 최소 1개 이상의 bias를 나타내고 있으며, LLaMA3.1-8B 모델의 bias가 가장 적었다고 함
     - 논문 내에 bias 평가 metric에 대한 정리가 잘 되어 있으나 사이즈가 작은 오픈소스 모델 대상으로 실험 결과를 정리한 점은 아쉽
+- 🧑🏻‍💻 [Mistral] [Mistral Small 3.1](https://mistral.ai/news/mistral-small-3-1)
+    - 24B 사이즈, 128K 윈도우 사이즈, 오픈소스 모델로 동사이즈 비교에서 SoTA 달성
+    - GPQA에서 44.42% 스코어를 달성하며 Gemma 3-it (36.83%) 모델과 GPT-4o-mini (40.2%) 모델을 능가
+    - 초당 150 토큰 생성 가능하며 이미지도 처리 가능
+- 🧑🏻‍💻 [AI2] [OLMo 2 32B: First fully open model to outperform GPT 3.5 and GPT 4o mini](https://allenai.org/blog/olmo2-32B)
+    - 지난 11월에 공개했던 7B, 13B 모델에 이어 32B 모델을 공개
+    - 오픈소스 모델(데이터, 코드, 학습 방식 등 모든 디테일 공개) 중 GPT 3.5와 GPT 4o mini를 능가하는 것은 최초라고 보도
+    - refined post-training과 RLVR (Reinforcement Learning with Verifiable Rewards) 적용
+- 📜 [Tsinghua] [Personalize Anything for Free with Diffusion Transformer](https://arxiv.org/abs/2503.12590)
+    - Diffusion Transformer (DiT)에서 denoising tokens을 reference subject tokens로 대체함으로써 zero-shot reconstruction 가능
+    - 덕분에 personalization 및 image editing도 가능
+    - Personalize Anything: DiT를 이용하여 personalized image generation을 수행하는 training-free framework
+        1. timestep-adaptive token replacement: early stage injection & late stage regularization
+        2. patch perturbation strategies to boost structural diversity
+- 📜 [Babes-Bolyai University] [Synthetic Data Generation Using Large Language Models: Advances in Text and Code](https://arxiv.org/abs/2503.14023)
+    - LLM을 이용해 텍스트와 코드 데이터를 생성하는 방식에 대한 서베이 페이퍼
+    - low-resource tasks (classification, QA), code-centric applications 발전에 대해 언급
 </details>
 
 ## 🏔️ February
