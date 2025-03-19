@@ -168,6 +168,17 @@
     - DocTags: 페이지 내 모든 요소를 위치와 함께 capture하는 새로운 universal markup format
     - business documents, academic papers, technical reports 등 다양한 형식의 문서에서 code listings, table,s equations, charts, list 등의 feature 추출 가능하며 robust 하다고 설명
     - 모델은 이용 가능하며 데이터셋은 곧 공개 예정
+- 📜 [Anthropic] [Auditing Language Models for Hidden Objectives](https://assets.anthropic.com/m/317564659027fb33/original/Auditing-Language-Models-for-Hidden-Objectives.pdf)
+    - alignment audits: 모델이 바람직하지 않은 objectives를 갖고 있는지 조사
+    - RLHF 내 reward model의 error를 학습하고, 이러한 error를 이용(exploit)하는 방법을 익힘
+    - (1) 모델의 hidden objective와 training에 대해 모르는 사람들을 4팀으로 꾸려 blind auditing game 수행
+    - (2) 후속 연구로 모델을 audit 하는 8개 테크닉을 탐구. SAE가 가장 효과적이었다고 함
+- 📜 [IIIT Hyderabad] [No LLM is Free From Bias: A Comprehensive Study of Bias Evaluation in Large Language models](https://arxiv.org/abs/2503.11985)
+    - physical characteristics부터 socio-economic에 이르는 다양한 카테고리별로 LLM의 biases를 조사
+    - bias detection task를 위한 5개의 prompting approaches 소개
+    - biases detecting 벤치마크의 metrics에 대한 3개의 research questions 제시
+    - 실험 결과에 따르면 모든 LLM이 최소 1개 이상의 bias를 나타내고 있으며, LLaMA3.1-8B 모델의 bias가 가장 적었다고 함
+    - 논문 내에 bias 평가 metric에 대한 정리가 잘 되어 있으나 사이즈가 작은 오픈소스 모델 대상으로 실험 결과를 정리한 점은 아쉽
 </details>
 
 ## 🏔️ February
