@@ -196,6 +196,21 @@
 - 📜 [Babes-Bolyai University] [Synthetic Data Generation Using Large Language Models: Advances in Text and Code](https://arxiv.org/abs/2503.14023)
     - LLM을 이용해 텍스트와 코드 데이터를 생성하는 방식에 대한 서베이 페이퍼
     - low-resource tasks (classification, QA), code-centric applications 발전에 대해 언급
+- 🧑🏻‍💻 [Google] [**New ways to collaborate and get creative with Gemini**](https://blog.google/products/gemini/gemini-collaboration-features/)
+    - Canvas: Gemini 기반의 AI assisted coding tool
+        - Python, Javascript, HTML 지원
+        - real-time code collaboration이 가능하지만 multi user는 안됨
+    - Audio Overview: documents, slides, Deep Research reports를 두 AI host 간의 오디오 팟캐스트로 변환
+        - 웹/앱 지원
+        - 생성물을 다운로드 또는 공유 가능
+- 🧑🏻‍💻 [LG AI Research] [**EXAONE Deep Released ━ Setting a New Standard for Reasoning AI**](https://www.lgresearch.ai/blog/view?seq=543)
+    - 32B reasoning 모델로, 수학, 과학, 코딩 등의 능력이 뛰어나다고 보고
+    - Notable AI models에 이름을 올린 유일한 한국어 모델
+    - 7.8B & 2.4B 모델도 공개
+- 📜 [Eleuther AI] [**RWKV-7 "Goose" with Expressive Dynamic State Evolution**](https://arxiv.org/abs/2503.14456)
+    - 3B sequence 모델로, 동일 사이즈 타모델 대비 훨씬 적은 토큰을 사용하고도 SoTA 달성
+    - 추론 시 토큰마다 필요한 memory usage & inference time이 constant
+    - 3.1T 토큰의 multilingual dataset도 공개
 </details>
 
 ## 🏔️ February
