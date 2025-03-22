@@ -196,21 +196,34 @@
 - 📜 [Babes-Bolyai University] [Synthetic Data Generation Using Large Language Models: Advances in Text and Code](https://arxiv.org/abs/2503.14023)
     - LLM을 이용해 텍스트와 코드 데이터를 생성하는 방식에 대한 서베이 페이퍼
     - low-resource tasks (classification, QA), code-centric applications 발전에 대해 언급
-- 🧑🏻‍💻 [Google] [**New ways to collaborate and get creative with Gemini**](https://blog.google/products/gemini/gemini-collaboration-features/)
+- 🧑🏻‍💻 [Google] [New ways to collaborate and get creative with Gemini](https://blog.google/products/gemini/gemini-collaboration-features/)
     - Canvas: Gemini 기반의 AI assisted coding tool
         - Python, Javascript, HTML 지원
         - real-time code collaboration이 가능하지만 multi user는 안됨
     - Audio Overview: documents, slides, Deep Research reports를 두 AI host 간의 오디오 팟캐스트로 변환
         - 웹/앱 지원
         - 생성물을 다운로드 또는 공유 가능
-- 🧑🏻‍💻 [LG AI Research] [**EXAONE Deep Released ━ Setting a New Standard for Reasoning AI**](https://www.lgresearch.ai/blog/view?seq=543)
+- 🧑🏻‍💻 [LG AI Research] [EXAONE Deep Released ━ Setting a New Standard for Reasoning AI](https://www.lgresearch.ai/blog/view?seq=543)
     - 32B reasoning 모델로, 수학, 과학, 코딩 등의 능력이 뛰어나다고 보고
     - Notable AI models에 이름을 올린 유일한 한국어 모델
     - 7.8B & 2.4B 모델도 공개
-- 📜 [Eleuther AI] [**RWKV-7 "Goose" with Expressive Dynamic State Evolution**](https://arxiv.org/abs/2503.14456)
+- 📜 [Eleuther AI] [RWKV-7 "Goose" with Expressive Dynamic State Evolution](https://arxiv.org/abs/2503.14456)
     - 3B sequence 모델로, 동일 사이즈 타모델 대비 훨씬 적은 토큰을 사용하고도 SoTA 달성
     - 추론 시 토큰마다 필요한 memory usage & inference time이 constant
     - 3.1T 토큰의 multilingual dataset도 공개
+- 📜 [METR] [Measuring AI Ability to Complete Long Tasks](https://arxiv.org/abs/2503.14499)
+    - 사람이 처리할 수 있는 태스크들을 처리하는데 걸리는 시간을 기준으로 난이도로 해석
+    - AI 모델들이 2초에서 8시간까지 걸리는 engineering 태스크 170여 개를 완수
+    - 서베이 결과에 따르면 AI task length는 7개월마다 2배로 증가하고, 현재를 기준으로는 Claude 3.7 Sonnet이 1-hour tasks를 50% 신뢰도로 잘 끝내는 수준이라고 함
+    - [연구 결과를 정리해놓은 METR posting 링크](https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks/) 🔗
+- 📜 [Shanghai AI Lab] [ϕ-Decoding: Adaptive Foresight Sampling for Balanced Inference-Time Exploration and Exploitation](https://arxiv.org/abs/2503.13288)
+    - foresight sampling: globally optimal step estimation을 획득하기 위해 simulated future steps를 leverage
+    - φ-Decoding: foresight & clustering 을 통해 두 개의 distribution에 approximate → joint distribution으로부터 sampling
+- 📜 [Rice University] [Stop Overthinking: A Survey on Efficient Reasoning for Large Language Models](https://arxiv.org/abs/2503.16419)
+    - reasoning 모델들은 분명 추론 성능을 크게 향상시켰음에도 불구하고 compuataional overhead가 발생
+    - (1) model-based efficient reasoning: full-length reasoning 모델을 concise reasoning으로 optimize 하거나 애초에 efficient reasoning model을 학습
+    - (2) reasoning output-based efficient reasoning: 추론 단계에서 reasoning step과 length를 dynamically 조절
+    - (3) input prompts-based efficient reasoning: 입력 프롬프트의 난이도나 길이를 기준으로 reasoning efficiency를 개선
 </details>
 
 ## 🏔️ February
