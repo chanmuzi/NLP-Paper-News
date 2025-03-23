@@ -224,6 +224,12 @@
     - (1) model-based efficient reasoning: full-length reasoning 모델을 concise reasoning으로 optimize 하거나 애초에 efficient reasoning model을 학습
     - (2) reasoning output-based efficient reasoning: 추론 단계에서 reasoning step과 length를 dynamically 조절
     - (3) input prompts-based efficient reasoning: 입력 프롬프트의 난이도나 길이를 기준으로 reasoning efficiency를 개선
+- 📜 [The Hebrew University, IBM, Yale] [Survey on Evaluation of LLM-based Agents](https://arxiv.org/abs/2503.16416)
+    - LLM agent 평가 벤치마크와 프레임워크를 네 개의 차원(dimension)으로 분석
+    - (1) fundamental agent capabilities (planning, tool use, self-reflection, memory)
+    - (2) application-specific benchmarks for web, software engineering, scientific, and conversational agents
+    - (3) benchmarks for generalist agents
+    - (4) frameworks for evaluating agents
 </details>
 
 ## 🏔️ February
