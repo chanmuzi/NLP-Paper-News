@@ -26,7 +26,7 @@
     - CODI: shared model이 teacher & student 역할을 수행하며 explicit & implict CoT를 학습
     - implicit CoT로도 explicit CoT 성능을 달성하면서도 3.1배의 토큰 압축률을 보여줌
     - explicit reasoning이 대박을 친 이후로 추론 비용이 급상승해서인지 implicit & compression 관련 연구들에 눈에 띄고 있음
-- 🧑🏻‍💻 [Sesame] [Crossing the uncanny valley ofconversational voice](https://www.sesame.com/research/crossing_the_uncanny_valley_of_voice)
+- 🧑🏻‍💻 [Sesame] [Crossing the uncanny valley of conversational voice](https://www.sesame.com/research/crossing_the_uncanny_valley_of_voice)
     - Conversational Speech Model (CSM): context-aware speech in real-time conversations을 위해 설계된 모델 (1B, 3B, 8B)
     - tone, pace, rhythm 등을 conversational context and emotions 기반으로 조절 가능
     - decoder는 Residual Vector Quantization (RVQ) tokens로부터 high-fidelity speech를 reconstruct
@@ -230,6 +230,22 @@
     - (2) application-specific benchmarks for web, software engineering, scientific, and conversational agents
     - (3) benchmarks for generalist agents
     - (4) frameworks for evaluating agents
+</details>
+
+<details>
+  <summary>4th week</summary>
+
+- 📜 [University of Texas at Dallas] [A Review of DeepSeek Models' Key Innovative Techniques](https://arxiv.org/abs/2503.11486)
+    - DeepSeek 모델을 만들 때 사용된 개념들에 대한 in-depth review
+    - Multi-Head Latent Attention (MLA), Advanced MoE, Multi-Token Prediction (MTP), Grouped Relative Policy Optimization (GRPO) 등
+- 📜 [ByteDance, Tsinghua] [DAPO: An Open-Source LLM Reinforcement Learning System at Scale](https://arxiv.org/abs/2503.14476)
+    - a fully open-source, large-scale RL system. Qwen2.5-32B 모델 베이스
+    - Decoupled Clip and Dynamic sAmpling Policy Optimization (DAPO) 알고리즘 제안
+- 📜 [Hong Kong, Peking] [Towards Hierarchical Multi-Step Reward Models for Enhanced Reasoning in Large Language Models](https://arxiv.org/abs/2503.13551)
+    - reward hacking 문제를 해결하기 위해 Hierarchical Reward Model (HRM) 제안
+    - fine-grained & coarse level의 individual & consecutive reasoning step을 평가
+    - 이전 step의 추론이 잘못되어 뒤에 안좋은 영향을 주는 케이스를 특히 잘한다고 보고
+    - MCTS의 비효율성을 해결하기 위해 Hierarchical Node Compression (HNC) 라는 node merging 기법 제안
 </details>
 
 ## 🏔️ February
