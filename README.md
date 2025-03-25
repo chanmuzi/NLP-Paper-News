@@ -246,6 +246,13 @@
     - fine-grained & coarse level의 individual & consecutive reasoning step을 평가
     - 이전 step의 추론이 잘못되어 뒤에 안좋은 영향을 주는 케이스를 특히 잘한다고 보고
     - MCTS의 비효율성을 해결하기 위해 Hierarchical Node Compression (HNC) 라는 node merging 기법 제안
+- 🧑🏻‍💻 [OpenAI] [Introducing next-generation audio models in the API](https://openai.com/index/introducing-our-next-generation-audio-models/)
+    - 2개의 speech-to-text (Transcribe, Mini Transcribe), 1개의 text-to-speech (Mini TTS) 모델 API 공개
+    - multi-speaker detection, 대화 시작 & 중단, noisy 환경 등에 대해 훨씬 robust 하다고 설명
+    - real-time | batch-processing voice agents 구현 가능
+- 🧑🏻‍💻 [Anthropic] [The "think" tool: Enabling Claude to stop and think in complex tool use situations](https://www.anthropic.com/engineering/claude-think-tool)
+    - Claude의 extended thinking capability를 활용할 수 있도록 “think” tool을 사용하는 방법과 원리에 대해 안내하는 포스팅
+    - 말 그대로 tool을 사용하는 schema(API 호출에 필요한)와 이를 위해 최적화된 프롬프트를 안내하고 있음
 </details>
 
 ## 🏔️ February
