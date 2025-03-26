@@ -253,6 +253,11 @@
 - 🧑🏻‍💻 [Anthropic] [The "think" tool: Enabling Claude to stop and think in complex tool use situations](https://www.anthropic.com/engineering/claude-think-tool)
     - Claude의 extended thinking capability를 활용할 수 있도록 “think” tool을 사용하는 방법과 원리에 대해 안내하는 포스팅
     - 말 그대로 tool을 사용하는 schema(API 호출에 필요한)와 이를 위해 최적화된 프롬프트를 안내하고 있음
+- 🧑🏻‍💻 [DeepSeek AI] [DeepSeek-V3-0324](https://huggingface.co/deepseek-ai/DeepSeek-V3-0324)
+    - an open-source 685B MoE model with improved front-end generation and tool use
+    - multi-turn interactive rewriting, translation quality & letter writing, enhances search-based report analysis
+    - function calling, JSON output, FIM (Fill-in-the-Middle) completion
+    - 허깅페이스에 MIT 라이센스로 공개
 </details>
 
 ## 🏔️ February
