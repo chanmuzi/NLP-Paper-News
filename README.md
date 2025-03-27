@@ -258,6 +258,11 @@
     - multi-turn interactive rewriting, translation quality & letter writing, enhances search-based report analysis
     - function calling, JSON output, FIM (Fill-in-the-Middle) completion
     - 허깅페이스에 MIT 라이센스로 공개
+- 📜 [National University of Singapore, Nanyang] [MARS: A Multi-Agent Framework Incorporating Socratic Guidance for Automated Prompt Optimization](https://arxiv.org/abs/2503.16874)
+    - Multi-Agent framework incorpoRating Socratic guidance (MARS): multi-agent fusion technology를 사용하여 automatic planning을 수행하고 gradual continuous optimization &  evaluation 가능
+    - 7개의 agent로 구성되어 각각이 autonomously Planner를 사용하여 optimization path를 고안
+    - 또한 Teacher-Critic-Student Socratic dialogue를 사용하여 프롬프트를 iteratively optimize
+    - 이는 기존의 Automated Prompt Optimization (APO)의 한계를 극복하기 위함임
 </details>
 
 ## 🏔️ February
