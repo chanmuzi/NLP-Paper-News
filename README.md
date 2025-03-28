@@ -263,6 +263,18 @@
     - 7개의 agent로 구성되어 각각이 autonomously Planner를 사용하여 optimization path를 고안
     - 또한 Teacher-Critic-Student Socratic dialogue를 사용하여 프롬프트를 iteratively optimize
     - 이는 기존의 Automated Prompt Optimization (APO)의 한계를 극복하기 위함임
+- 🧑🏻‍💻 [Google DeepMind] [Gemini 2.5: Our most intelligent AI model](https://blog.google/technology/google-deepmind/gemini-model-thinking-updates-march-2025)
+    - LMArena에서 GPT4.5 & Claude3를 능가하며 1위를 차지한 thinking model
+    - 1M token content window. 곧 2M을 지원할 예정
+    - RAG & document-based workflows에 최적화되어 있다고 언급
+- 🧑🏻‍💻 [ARC-AGI-2 + ARC Prize 2025 is Live!](https://arcprize.org/blog/announcing-arc-agi-2-and-arc-prize-2025)
+    - 상금 $1,000,000 (한화 10억 이상)의 AGI 챌린지
+    - 사람에게는 쉽지만 AI에게는 어려운 reasoning task 중심. 이전 challenge보다 더 어렵다고 자체적으로 설명함.
+- 🧑🏻‍💻 [OpenAI] [Introducing 4o Image Generation](https://openai.com/index/introducing-4o-image-generation)
+    - text rendering, precisely following prompts, leveraging 4o’s inherent knowledge base & chat context 등의 특징
+    - trained our models on the joint distribution of online images and text
+        - → 이를 통해 이미지와 텍스트가 어떤 식으로 관계되어 있는지를 학습했다고 설명
+    - ChatGPT, Sora에서 사용 가능하며, 곧 API로도 지원될 예정
 </details>
 
 ## 🏔️ February
