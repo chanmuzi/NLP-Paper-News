@@ -275,6 +275,10 @@
     - trained our models on the joint distribution of online images and text
         - → 이를 통해 이미지와 텍스트가 어떤 식으로 관계되어 있는지를 학습했다고 설명
     - ChatGPT, Sora에서 사용 가능하며, 곧 API로도 지원될 예정
+- 📜 [Tencent] [CodeTool: Enhancing Programmatic Tool Invocation of LLMs via Process Supervision](https://arxiv.org/abs/2503.20840)
+    - CodeTool: 코드의 concise & easilty verifiable 특성을 이용하여 LLM의 tool invocation을 개선하는 stepwise code generation 프레임워크
+    - (1) On-the-spot Reward: each tool invocation에 대해 immediate feedback 제공
+    - (2) Latent Reward: 전체적인 task completion에 대해 각 step의 기여를 평가
 </details>
 
 ## 🏔️ February
