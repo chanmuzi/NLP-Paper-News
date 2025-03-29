@@ -279,6 +279,12 @@
     - CodeTool: 코드의 concise & easilty verifiable 특성을 이용하여 LLM의 tool invocation을 개선하는 stepwise code generation 프레임워크
     - (1) On-the-spot Reward: each tool invocation에 대해 immediate feedback 제공
     - (2) Latent Reward: 전체적인 task completion에 대해 각 step의 기여를 평가
+- 🧑🏻‍💻 [Alibaba] [Qwen2.5 Omni: See, Hear, Talk, Write, Do It All!](https://qwenlm.github.io/blog/qwen2.5-omni)
+    - text, image, audio, video를 이해하고 생성하는 오픈소스 모델 (Apache 2.0)
+    - Think-Talker 아키텍쳐는 speech synthesis에서 reasoning을 분리함으로써 more structured ouputs에 기여
+        - Thinker는 언어모델로서 reasoning & text generation을 담당
+        - Talker는 text | direct audio instruction 을 기반으로 speech를 생성
+    - Block-wise processing을 이용하여 continuous response generation 가능
 </details>
 
 ## 🏔️ February
