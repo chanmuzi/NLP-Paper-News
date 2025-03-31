@@ -285,6 +285,11 @@
         - Thinker는 언어모델로서 reasoning & text generation을 담당
         - Talker는 text | direct audio instruction 을 기반으로 speech를 생성
     - Block-wise processing을 이용하여 continuous response generation 가능
+- 🧑🏻‍💻 [AI2] [Introducing Ai2 Paper Finder](https://allenai.org/blog/paper-finder)
+    - LLM 기반 문헌 검색 시스템으로, 사람처럼 질의 해석 → 검색 → 평가 → 재검색의 과정을 자동화
+    - 키워드 대신 자연어 전체 문장을 그대로 입력해도 관련 논문을 찾아줌
+    - relevance 판단 시 복잡한 질의를 다중 기준으로 분해해 평가하고, citation 기반 확장 탐색도 수행
+    - 빠른 응답이 필요한 경우엔 fast mode, 깊이 있는 탐색이 필요할 땐 iterative exhaustive mode 제공
 </details>
 
 ## 🏔️ February
