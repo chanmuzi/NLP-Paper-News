@@ -290,6 +290,15 @@
     - 키워드 대신 자연어 전체 문장을 그대로 입력해도 관련 논문을 찾아줌
     - relevance 판단 시 복잡한 질의를 다중 기준으로 분해해 평가하고, citation 기반 확장 탐색도 수행
     - 빠른 응답이 필요한 경우엔 fast mode, 깊이 있는 탐색이 필요할 땐 iterative exhaustive mode 제공
+- 📜 [Google] [Gemma 3 Technical Report](https://arxiv.org/abs/2503.19786)
+    - 1B-27B 사이즈의 lightweight open models family, Gemma 3 공개
+    - vision understanding, 더 많은 언어, longer context (128K)
+    - local to global attention layer의 비중을 높임으로써 (local의 비중을 높임) KV-cache가 폭발적으로 증가하는 것을 방지
+    - Gemma 3 모델들은 distillation으로 학습되어pre-trained & instruction finetuned version 둘 다 Gemma 2 성능을 능가
+- 🧑🏻‍💻 [Anthropic] [Tracing the thoughts of a large language model](https://www.anthropic.com/research/tracing-thoughts-language-model)
+    - Anthropic에서 Claude 3.5 Haiku 내부 computation을 trace 할 수 있는 방법을 기술한 두 개의 technical papers를 공개
+    - 이를테면 feature activations와 이것이 transformer layers에 걸쳐 미치는 영향을 추적할 수 있음
+    - Claude는 한 번에 여러 개의 future words를 선택 / shared internal states를 사용하고 이를 다른 언어들에 각각 매핑
 </details>
 
 ## 🏔️ February
