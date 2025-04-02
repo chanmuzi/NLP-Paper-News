@@ -4,6 +4,13 @@
 
 ---
 # 2025
+
+## 🌸 April
+<details>
+  <summary>1st week</summary>
+
+</details>
+
 ## 🌱 March
 <details>
   <summary>1st week</summary>
@@ -299,6 +306,10 @@
     - Anthropic에서 Claude 3.5 Haiku 내부 computation을 trace 할 수 있는 방법을 기술한 두 개의 technical papers를 공개
     - 이를테면 feature activations와 이것이 transformer layers에 걸쳐 미치는 영향을 추적할 수 있음
     - Claude는 한 번에 여러 개의 future words를 선택 / shared internal states를 사용하고 이를 다른 언어들에 각각 매핑
+- 🧑🏻‍💻 [Tencent] [Reasoning Efficiency Redefined! Meet Tencent’s 'Hunyuan-T1'—The First Mamba-Powered Ultra-Large Model](https://llm.hunyuan.tencent.com/#/blog/hy-t1?lang=en)
+    - 세계 최초 Mamba 아키텍쳐 기반 초거대모델 (Transformer-Mamba MoE)
+    - TurboS 기반으로 in-depth reasoning에서 강점을 보이며 long-context capture 능력이 뛰어남
+    - curriculum learning & self-rewarding
 </details>
 
 ## 🏔️ February
