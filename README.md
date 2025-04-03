@@ -9,6 +9,18 @@
 <details>
   <summary>1st week</summary>
 
+- 📜 [UC San Diego] [Large Language Models Pass the Turing Test](https://arxiv.org/abs/2503.23674)
+    - ELIZA, GPT-4o, LLaMA-3.1-405B, GPT-4.5 모델을 대상으로 튜링 테스트
+    - GPT-4o 모델의 경우, 인간 페르소나를 부여했을 때 인간 상대로 73%의 win rate를 기록
+- 📜 [AI2] [Introducing CodeScientist: A step toward automated scientific discovery](https://allenai.org/blog/codescientist)
+    - CodeScientist를 이용하여 19개의 potential discoveries를 생성했는데, 이중 6개는 전문가 평가를 통과함 (soundness & novelty 관점에서)
+    - 전체 프로세스 내에서 Ideation, Planning, Experiment, Reporting, Meta-analysis 수행
+    - 아직까지 사람의 의사결정이 중간에 개입되어야 한다는 한계가 있지만 빠른 속도로 발전하고 있다는 인상을 줌 (Sakana AI의 것도 그렇고..)
+- 🧑🏻‍💻 [HuggingFace] [YourBench: A Dynamic Benchmark Generation Framework](https://github.com/huggingface/yourbench)
+    - Dynamic Benchmark Generation: Produce diverse, up-to-date questions from real-world source documents (PDF, Word, HTML, even multimedia).
+    - Scalable & Structured: Seamlessly handles ingestion, summarization, and multi-hop chunking for large or specialized datasets.
+    - Zero-Shot Focus: Emulates real-world usage scenarios by creating fresh tasks that guard against memorized knowledge.
+    - Extensible: Out-of-the-box pipeline stages (ingestion, summarization, question generation), plus an easy plugin mechanism to accommodate custom models or domain constraints.
 </details>
 
 ## 🌱 March
