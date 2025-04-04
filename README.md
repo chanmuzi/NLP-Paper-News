@@ -21,6 +21,17 @@
     - Scalable & Structured: Seamlessly handles ingestion, summarization, and multi-hop chunking for large or specialized datasets.
     - Zero-Shot Focus: Emulates real-world usage scenarios by creating fresh tasks that guard against memorized knowledge.
     - Extensible: Out-of-the-box pipeline stages (ingestion, summarization, question generation), plus an easy plugin mechanism to accommodate custom models or domain constraints.
+- 📜 [National University of Singapore] [JudgeLRM: Large Reasoning Models as a Judge](https://arxiv.org/abs/2504.00050)
+    - LLM이 enhanced reasoning 능력으로 충분히 judge 할 수 있는지를 연구한 논문
+    - SFT performance gains & reasoning-demanindg samples의 비율 간의 음의 상관관계 확인
+    - JudgeLRM: judge-wise, outcome-driven rewards 향으로 RL을 적용한 judgement-oriented LLMs family
+- 🧑🏻‍💻 [OpenAI] [OpenAI Academy](https://academy.openai.com/)
+    - prompt engineering, multimodal AI, fine-tuning 등 다양한 hands-on training 강의 제공 (practical applications rather than theory)
+    - workshops & live events 등도 진행
+- 📜 [Meta] [Multi-Token Attention](https://arxiv.org/abs/2504.00927)
+    - Soft attention은 LLM이 주어진 문맥 내에서 관련성이 높은 부분을 locate 하는 데 도움을 주었지만, single query & key vector에 의존한다는 점 자체가 한계임 (Single Token Attention)
+    - Multi-Token Attention (MTA): LLM이 여러 개의 query & key vectors에 대해 attention weights를 condition 하는 어텐션 기법 제안
+    - queries, keys, heads에 대해 convolution 적용
 </details>
 
 ## 🌱 March
