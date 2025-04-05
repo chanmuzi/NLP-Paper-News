@@ -32,6 +32,14 @@
     - Soft attention은 LLM이 주어진 문맥 내에서 관련성이 높은 부분을 locate 하는 데 도움을 주었지만, single query & key vector에 의존한다는 점 자체가 한계임 (Single Token Attention)
     - Multi-Token Attention (MTA): LLM이 여러 개의 query & key vectors에 대해 attention weights를 condition 하는 어텐션 기법 제안
     - queries, keys, heads에 대해 convolution 적용
+- 📜 [OpenAI] [PaperBench: Evaluating AI's Ability to Replicate AI Research](https://arxiv.org/abs/2504.01848)
+    - AI agent로 ICML 2024 Spotlight & Oral papers를 복제하는 벤치마크
+    - Claude 3.5 Sonnet이 21.0% 스코어를 기록했으나 인간 ML PhD는 41.4%를 기록
+    - 평가를 수행하는 것도 LLM임
+- 🧑🏻‍💻 [Anthropic] [Introducing Claude for Education](https://www.anthropic.com/news/introducing-claude-for-education)
+    - 교육 목적에 특화된 Claude for Education 런칭
+    - Learning mode: 학생들에게 정답을 바로 알려주기보다는 critical thinking skills를 develop 할 수 있도록 reasoning process를 가이드
+    - Socratic questioning (결론을 뒷받침하는 근거는 무엇인가?), 핵심 개념 강조 등의 특징
 </details>
 
 ## 🌱 March
