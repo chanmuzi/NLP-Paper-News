@@ -40,6 +40,12 @@
     - 교육 목적에 특화된 Claude for Education 런칭
     - Learning mode: 학생들에게 정답을 바로 알려주기보다는 critical thinking skills를 develop 할 수 있도록 reasoning process를 가이드
     - Socratic questioning (결론을 뒷받침하는 근거는 무엇인가?), 핵심 개념 강조 등의 특징
+- 📜 [Mila, Nanyang, MS, … ] [Advances and Challenges in Foundation Agents: From Brain-Inspired Intelligence to Evolutionary, Collaborative, and Safe Systems](https://arxiv.org/abs/2504.01990)
+    - cognitive science의 principles, neuroscience, computational research를 통합한 intelligent agent에 대한 연구
+    1. modular foundation of intelligent agents
+    2. self-enhancement and adpative evolution mechanisms
+    3. collaborative and evolutionary multi-agent systems
+    4. building safe, secure, and beneficial AI systems
 </details>
 
 ## 🌱 March
@@ -136,6 +142,7 @@
     - token complexity: successful problem-solving을 위해 필요한 최소한의 토큰 숫자
     - → accuracy-compression tradeoff의 이론적 한계를 계산하는 데 활용
     - → adaptive compression: 답하기 쉬운 질문에는 짧은 responses를 반환토록 함
+
 </details>
 
 <details>
