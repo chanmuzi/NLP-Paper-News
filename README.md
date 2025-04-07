@@ -46,6 +46,10 @@
     2. self-enhancement and adpative evolution mechanisms
     3. collaborative and evolutionary multi-agent systems
     4. building safe, secure, and beneficial AI systems
+- 📜 [Oxford, NUS, DeepMind] [Why do LLMs attend to the first token?](https://arxiv.org/abs/2504.02732)
+    - attention sink: LLMs이 주로 시퀀스 내 첫 번째 토큰에 지나치게 attend 하는 현상. 이는 quantisation difficulties, security issues, streaming attention로 이어짐
+    - 왜 이러한 현상이 발생하고, 이러한 현상을 어떻게 활용할지에 대해서는 연구가 미진함
+    - 이를 통해(attention sink) LLM이 over-mixing 하지 않게 된다고 주장
 </details>
 
 ## 🌱 March
