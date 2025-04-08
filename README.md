@@ -52,6 +52,17 @@
     - 이를 통해(attention sink) LLM이 over-mixing 하지 않게 된다고 주장
 </details>
 
+<details>
+  <summary>2nd week</summary>
+  
+- 📜 [Salesforce] [APIGen-MT: Agentic Pipeline for Multi-Turn Data Generation via Simulated Agent-Human Interplay](https://arxiv.org/abs/2504.03601)
+    - APIGen-MT: verifiable & diverse multi-turn data를 만드는 two-phase framework
+    - 첫 단계에서는 LLM reviewers committee를 이용하여 detailed blue prints 생성
+    - blue prints는 simulated human-agent interplay를 통해 complete interaction trajectories로 발전
+    - 1B에서 70B 사이즈에 이르는 xLAM-2-fc-r 시리즈 학습하여 GPT-4o나 Claude 3.5를 $\tau$-bench & BFCL benchmarks에서 outperform 했다고 보고
+
+</details>
+
 ## 🌱 March
 <details>
   <summary>1st week</summary>
