@@ -60,6 +60,18 @@
     - 첫 단계에서는 LLM reviewers committee를 이용하여 detailed blue prints 생성
     - blue prints는 simulated human-agent interplay를 통해 complete interaction trajectories로 발전
     - 1B에서 70B 사이즈에 이르는 xLAM-2-fc-r 시리즈 학습하여 GPT-4o나 Claude 3.5를 $\tau$-bench & BFCL benchmarks에서 outperform 했다고 보고
+- 🧑🏻‍💻 [Meta] [The Llama 4 herd: The beginning of a new era of natively multimodal AI innovation](https://ai.meta.com/blog/llama-4-multimodal-intelligence/)
+    - 세 개 모델
+        1. Llama 4 Scout: 17B active parameters, 16 experts 기반. 고성능 경량 모델
+        2. Llama 4 Maverick: 17B active parameters, 128 experts 기반. 멀티모달+코딩 특화 범용 모델
+        3. Llama 4 Behemoth: 288B active parameters, 총 2조 파라미터.(훈련 중, 미공개)
+        - Behemoth는 teacher model로서 Scout, Maverick의 추론, 코딩, 멀티모달 이해 능력 전수
+    - MoE 아키텍쳐, native multi-modal model, 10M context length, Codistillation 등의 특징
+    - bias 문제 해결을 위한 노력 언급
+- 📜 [HuggingFace] [SmolVLM: Redefining small and efficient multimodal models](https://arxiv.org/abs/2504.05299)
+    - Smaller VLMs는 large models의 extensive image tokenization 등을 그대로 가져다쓰며 GPU 메모리 사용 비효율성 등의 문제를 안고 있었음
+    - SmolVLM: resource-efficient inference를 위해 설계된 compact multimodal models series
+    - 가장 작은 SmolVLM-256M 모델은 추론 시 1GB 미만의 GPU 메모리를 사용할 정도로 효율적이며, static images에 대해서 뿐만 아니라 뛰어난 video comprehension 이해 능력을 보였다고 함
 
 </details>
 
