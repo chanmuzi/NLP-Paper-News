@@ -80,6 +80,17 @@
     - 한 instance가 생성하는 과정을 나머지 instances가 concurrent cache를 통해 살펴볼 수 있음
     - RoPE 차용
     - modern reasoning-capable LLM들이 추가적인 fine-tuning 없이 shared Key-Value cache 만으로 좋은 성과를 낼 수 있었다고 보고
+- 🧑🏻‍💻 [Google] [Announcing the Agent2Agent Protocol (A2A)](https://developers.googleblog.com/en/a2a-a-new-era-of-agent-interoperability/)
+    - AI Agents들이 각자의 플랫폼과 서비스 사이에서 communicate 할 수 있는 open protocol
+    - HTTP, SSE, JSON-RPC 등을 사용하여 기존 시스템과의 compatibility 보장
+    - Agents는 사용 가능한 functions를 structured JSON files로 정리하고, 이를 Agent Cards라고 함
+    - 최근 Agent Development Kit (ADK)를 공개했는데 이는 Vertex AI, Gemini API와 integrate 가능한 open source임
+- 🧑🏻‍💻 [OpenAI] [Evaluating model performance](https://platform.openai.com/docs/guides/evals)
+    - LLM-as-a-Judge (prompt testing & evaluation)를 dev workflow에 쉽게 integrate 할 수 있는 기능을 API단에서 지원
+    - 평가에 사용되는 test data를 `data_source_config`에 명시하고, 모델 출력 결과가 올바른 것인지에 대한 정보는 `testing_criteria`에 작성
+- 🧑🏻‍💻 [Amazon] [Amazon’s new Nova Sonic foundation model understands not just what you say—but how you say it](https://www.aboutamazon.com/news/innovation-at-amazon/nova-sonic-voice-speech-foundation-model)
+    - speech understanding & speech generation을 통합한 single model
+    - Amazon Bedrock에 API로 이용 가능
 
 </details>
 
