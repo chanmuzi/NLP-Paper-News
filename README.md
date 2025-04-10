@@ -72,6 +72,14 @@
     - Smaller VLMs는 large models의 extensive image tokenization 등을 그대로 가져다쓰며 GPU 메모리 사용 비효율성 등의 문제를 안고 있었음
     - SmolVLM: resource-efficient inference를 위해 설계된 compact multimodal models series
     - 가장 작은 SmolVLM-256M 모델은 추론 시 1GB 미만의 GPU 메모리를 사용할 정도로 효율적이며, static images에 대해서 뿐만 아니라 뛰어난 video comprehension 이해 능력을 보였다고 함
+- 🧑🏻‍💻 [Ai2] [Going beyond open data – increasing transparency and trust in language models with OLMoTrace](https://allenai.org/blog/olmotrace?utm_campaign=AI2%20Newsletter)
+    - Ai2의 flagship 모델들을 대상으로 playground에서 활용 가능한 기능으로, 모델의 답변이 어떤 학습 데이터로부터 나오게 되었는지를 하이라이트 해주는 기능
+    - 학습 데이터에 접근할 수 있는 다른 모델에도 적용할 수 있는 기능
+- 📜 [Yandex] [Hogwild! Inference: Parallel LLM Generation via Concurrent Attention](https://arxiv.org/abs/2504.06261)
+    - LLM workers를 병렬적으로 실행함으로써 모든 workers가 concurrently-updated attention cache를 통해 synchronize 하고, 어떻게 collaborate 할지 prompt
+    - 한 instance가 생성하는 과정을 나머지 instances가 concurrent cache를 통해 살펴볼 수 있음
+    - RoPE 차용
+    - modern reasoning-capable LLM들이 추가적인 fine-tuning 없이 shared Key-Value cache 만으로 좋은 성과를 낼 수 있었다고 보고
 
 </details>
 
