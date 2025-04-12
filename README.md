@@ -91,6 +91,14 @@
 - 🧑🏻‍💻 [Amazon] [Amazon’s new Nova Sonic foundation model understands not just what you say—but how you say it](https://www.aboutamazon.com/news/innovation-at-amazon/nova-sonic-voice-speech-foundation-model)
     - speech understanding & speech generation을 통합한 single model
     - Amazon Bedrock에 API로 이용 가능
+- 📜 [Nanjing, ByteDance] [DDT: Decoupled Diffusion Transformer](https://arxiv.org/abs/2504.05741)
+    - Diffusion Transformer의 inherent optimization dilemma: low-frequency semantics를 encoding 하기 위해서는 high-frequency components를 줄여 균형을 맞춰야 함
+    - Decoupled Diffusion Transformer (DDT): semantic extraction를 위한 encoder & specialized velocity decoder 로 구분되는 디자인
+    - 인접한 denoising step 간의 self-condition을 공유함으로써 추론 속도까지 향상시킬 수 있음
+- 🧑🏻‍💻 [OpenGVLab] [InternVL3](https://huggingface.co/OpenGVLab/InternVL3-78B) 🤗
+    - InternVL 2.5 대비 뛰어난 multimodal perception & reasoning 능력을 보여줌
+    - tool usage, GUI agents, industrial image analysis, 3D vision perception 등
+    - text performance가 Qwen 2.5 시리즈 대비 뛰어나다고 언급
 
 </details>
 
