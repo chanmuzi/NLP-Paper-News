@@ -99,6 +99,19 @@
     - InternVL 2.5 대비 뛰어난 multimodal perception & reasoning 능력을 보여줌
     - tool usage, GUI agents, industrial image analysis, 3D vision perception 등
     - text performance가 Qwen 2.5 시리즈 대비 뛰어나다고 언급
+- 📜 [Kimi] [Kimi-VL Technical Report](https://arxiv.org/abs/2504.07491)
+    - efficient open-source MoE vision-language model + Kimi-VL-Thinking
+    - activating language decoder 사이즈가 2.8B 수준임에도 불구하고 뛰어난 성능 달성
+    - multi-turn agent tasks, college-level image & video comprehension, OCR, mathematical reasoning 등의 태스크에서 뛰어난 퍼포먼스를 보임
+    - 128K content window & native-resolution vision encoder, MoonViT 덕분에 ultra-high-resolution visual inputs 이해 가능
+- 🧑🏻‍💻 [Google] [Introducing Firebase Studio](https://firebase.blog/posts/2025/04/introducing-firebase-studio)
+    - full-stack AI application build & deploy 를 위한 web-based open-source IDE
+    - Project IDX, Genkit, Gemini 를 하나의 workspace에 통합
+    - *App Prototyping agent*: prompt | drawing 으로부터 full apps 생성하는 기능
+- 🧑🏻‍💻 [OpenAI] [BrowseComp: a benchmark for browsing agents](https://openai.com/index/browsecomp)
+    - AI agents의 쉽게 탐색하기 힘든 정보들에 대한 검색 능력을 평가하기 위한 open-source 벤치마크
+    - 📜 [BrowseComp: A Simple Yet Challenging Benchmark for Browsing Agents](https://cdn.openai.com/pdf/5e10f4ab-d6f7-442e-9508-59515c65e35d/browsecomp.pdf)
+    - 정답이 간단하고 이견의 여지가 없는 1,266개의 문제로 구성
 
 </details>
 
