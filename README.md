@@ -119,6 +119,16 @@
 
 </details>
 
+<details>
+  <summary>3rd week</summary>
+
+- 🧑🏻‍💻 [ByteDance] [Seed-Thinking-v1.5: Advancing Superb Reasoning Models with Reinforcement Learning](https://github.com/ByteDance-Seed/Seed-Thinking-v1.5)
+    - STEM & coding 에서 강점을 보이는 reasoning 모델 공개
+    - 총 200B, activated 20B의 MoE 모델
+    - 일반화된 reasoning 능력 평가를 위해 BeyondAIME, Codeforces, 두 개의 벤치마크 공개
+
+</details>
+
 ## 🌱 March
 <details>
   <summary>1st week</summary>
