@@ -112,6 +112,10 @@
     - AI agents의 쉽게 탐색하기 힘든 정보들에 대한 검색 능력을 평가하기 위한 open-source 벤치마크
     - 📜 [BrowseComp: A Simple Yet Challenging Benchmark for Browsing Agents](https://cdn.openai.com/pdf/5e10f4ab-d6f7-442e-9508-59515c65e35d/browsecomp.pdf)
     - 정답이 간단하고 이견의 여지가 없는 1,266개의 문제로 구성
+- 📜 [Zhejiang University] [Large language models could be rote learners](https://arxiv.org/abs/2504.08300)
+    - LLM 평가에서 단순 암기력을 평가하는 MCQ 평가의 한계를 극복하기 위한 연구
+    - LLM이 암기한 내용(rote memorization)보다 그렇지 않은 것(genuine capability)에 대해 더 좋은 퍼포먼스를 내는 경향이 있다고 보고
+    - TrinEval: MCQ를 trinity format으로 변경하여 memorization 평가는 줄이고 knowledge 평가는 더 잘할 수 있도록 만드는 evaluation 프레임워크
 
 </details>
 
