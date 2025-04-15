@@ -126,6 +126,17 @@
     - STEM & coding 에서 강점을 보이는 reasoning 모델 공개
     - 총 200B, activated 20B의 MoE 모델
     - 일반화된 reasoning 능력 평가를 위해 BeyondAIME, Codeforces, 두 개의 벤치마크 공개
+- 📜 [Microsoft Research] [MineWorld: a Real-Time and Open-Source Interactive World Model on Minecraft](https://arxiv.org/abs/2504.08388)
+    - visual-action autoregressive Transformer: game scenes & corresponding action을 입력으로 받아 consequence new scenes를 생성
+        - 두 입력을 각각 image tokenizer & action tokenizer 에 통과시켜 discrete token으로 변환 후 concat 하여 input으로 사용
+    - 모델이 초당 4~7 프레임을 생성할 수 있도록 학습되었으며 플레이어와 실시간 interact 가능
+    - visual quality & action following capability 를 함께 측정할 수 있는 metric 제시
+- 🧑🏻‍💻 [DeepCogito] [Cogito v1 PreviewIntroducing IDA as a path to general superintelligence](https://www.deepcogito.com/research/cogito-v1-preview)
+    - [3, 8, 14, 32, 70]B 사이즈의 reasoning LLM을 오픈소스로 공개
+    - 70B 모델이 Llama의 최신 109B MoE 모델을 능가하는 성능을 보인다고 보고
+    - Iterated Distillation and Amplification (IDA) - a scalable and efficient alignment strategy for general superintelligence using iterative self-improvement
+    - 모든 모델은 질문에 바로(direct) 답하거나, 답변 전에 스스로 생각(self-reflect)할 수 있음
+    - 109B, 400B, 671B 사이즈의 모델들을 곧 공개할 계획이며 공개 범위에는 체크포인트도 포함
 
 </details>
 
