@@ -137,6 +137,17 @@
     - Iterated Distillation and Amplification (IDA) - a scalable and efficient alignment strategy for general superintelligence using iterative self-improvement
     - 모든 모델은 질문에 바로(direct) 답하거나, 답변 전에 스스로 생각(self-reflect)할 수 있음
     - 109B, 400B, 671B 사이즈의 모델들을 곧 공개할 계획이며 공개 범위에는 체크포인트도 포함
+- 🧑🏻‍💻 [OpenAI] [Introducing GPT-4.1 in the API](https://openai.com/index/gpt-4-1/)
+    - GPT-4.1, GPT-4.1 mini, GPT-4.1 nano를 only API로 공개
+    - 세 모델 전부 주요 벤치마크에서 GPT-4o, GPT-4.5를 outperform & 1M context window & diff 모드 지원
+    - structured input 이해, multi-turn, multi-needle tasks에서 기존보다 더 뛰어난 성능
+- 🧑🏻‍💻 [xAI] [Grok Studio](https://x.com/grok/status/1912318583532872166)
+    - 코드 실행과 구글 드라이브 연동을 지원하는 Grok Studio를 첫공개
+    - documents, codes, reports, browser games 등을 생성할 수 있고 컨텐츠를 별도 윈도우에 띄움
+- 🧑🏻‍💻 [Google] [Introducing TxGemma: Open models to improve therapeutics development](https://developers.googleblog.com/en/introducing-txgemma-open-models-improving-therapeutics-development/)
+    - TxGemma: efficient therapeutic 개발을 위해 designed 된 open models collection
+    - promising target을 식별하는 것부터 clinical trial의 outcome을 예측하는 것 등이 가능
+    - Gemma 2에 7M 학습 샘플을 학습한 2B, 9B, 27B 모델
 
 </details>
 
