@@ -148,6 +148,14 @@
     - TxGemma: efficient therapeutic 개발을 위해 designed 된 open models collection
     - promising target을 식별하는 것부터 clinical trial의 outcome을 예측하는 것 등이 가능
     - Gemma 2에 7M 학습 샘플을 학습한 2B, 9B, 27B 모델
+- 📜 [China Telecom] [xVerify: Efficient Answer Verifier for Reasoning Model Evaluations](https://arxiv.org/abs/2504.10481)
+    - 다양한 데이터셋에 대해 여러 LLM들이 추론한 결과를 수집함으로써 QA pairs로 구성된 VAR 데이터셋 구축
+    - label 정확도를 높이기 위해 multi-round annotation 수행
+    - Long Reasong tasks에 대한 평가 모델을 학습하기 위해 데이터셋을 구축했다는 내용이 전부인 듯
+- 📜 [UCLA, Meta] [d1: Scaling Reasoning in Diffusion Large Language Models via Reinforcement Learning](https://arxiv.org/abs/2504.12216)
+    - d1: pre-trained masked dLLM을 SFT + RL 을 이용하여 reasoning 모델로 만드는 framework
+    - (a) masked SFT를 이용하여 knowledge를 distill 하고 self-improvement behavior를 instill
+    - (b) diff-GRPO: critic-free, policy-gradient based RL algorithm
 
 </details>
 
