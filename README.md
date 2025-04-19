@@ -156,6 +156,16 @@
     - d1: pre-trained masked dLLM을 SFT + RL 을 이용하여 reasoning 모델로 만드는 framework
     - (a) masked SFT를 이용하여 knowledge를 distill 하고 self-improvement behavior를 instill
     - (b) diff-GRPO: critic-free, policy-gradient based RL algorithm
+- 📜 [Microsoft] [BitNet b1.58 2B4T Technical Report](https://arxiv.org/abs/2504.12285)
+    - BitNet b1.58 2B4T: native open-source 1-bit LLM을 2B 사이즈로 공개
+    - computational efficiency를 큰 특징으로 삼으면서도 language understanding, mathematical rreasoning, coding preoficiency, conversational ability 등이 전부 뛰어나다고 설명
+    - CPU, GPU 추론 둘 다 지원하며 HuggingFace를 통해 이용 가능
+- 🧑🏻‍💻 [OpenAI] [Introducing OpenAI o3 and o4-mini](https://openai.com/index/introducing-o3-and-o4-mini)
+    - multi-step reasoning, structured tool use에 강점을 갖는 두 멀티모달 모델을 공개
+    - 차트 해석, UI 이해, 수학적 추론, OCR + context 등 수행 가능
+- 🧑🏻‍💻 [Ai2] [DataDecide: How to predict best pretraining data with small experiments](https://allenai.org/blog/datadecide)
+    - [DataDecide](https://allenai.org/papers/datadecide) 공개: 100B 토큰에 달하는 고품질 25개 corpora로 학습한 모델. 4M ~ 1B 사이즈
+    - 학습 중 check point를 공개함으로써, 작은 모델로 특정 데이터셋에 대해 어떻게 학습되는지 경향성을 파악하여 scale-up 하는 데 도움을 주고자 하는 목적으로 공개했다고 설명함
 
 </details>
 
