@@ -166,6 +166,10 @@
 - 🧑🏻‍💻 [Ai2] [DataDecide: How to predict best pretraining data with small experiments](https://allenai.org/blog/datadecide)
     - [DataDecide](https://allenai.org/papers/datadecide) 공개: 100B 토큰에 달하는 고품질 25개 corpora로 학습한 모델. 4M ~ 1B 사이즈
     - 학습 중 check point를 공개함으로써, 작은 모델로 특정 데이터셋에 대해 어떻게 학습되는지 경향성을 파악하여 scale-up 하는 데 도움을 주고자 하는 목적으로 공개했다고 설명함
+- 🧑🏻‍💻 [Comet-ML] [Opik](https://github.com/comet-ml/opik)
+    - Open source LLM evaluation framework 1.2 버전 공개
+    - Tracing, Annotations, Playground 등 기능 지원
+    - LLM-as-a-Judge metric 포함
 
 </details>
 
