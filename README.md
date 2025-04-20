@@ -170,6 +170,11 @@
     - Open source LLM evaluation framework 1.2 버전 공개
     - Tracing, Annotations, Playground 등 기능 지원
     - LLM-as-a-Judge metric 포함
+- 🧑🏻‍💻 [Cohere] [Introducing Embed 4: Multimodal search for business](https://cohere.com/blog/embed-4)
+    - SoTA multimodality: 다양한 요소로 구성된 PDF & dynamic presentation slides 내 searching 가능
+    - 128K context window length (200 페이지 분량)
+    - 100개 이상의 다양한 언어 지원
+    - virtual private cloud (VPC) 환경 뿐만 아니라 on-premise 환경도 지원
 
 </details>
 
