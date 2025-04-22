@@ -178,6 +178,24 @@
 
 </details>
 
+<details>
+  <summary>4th week</summary>
+
+- 🧑🏻‍💻 [SkyworkAI] [Skywork-OR1 (Open Reasoner 1)](https://github.com/SkyworkAI/Skywork-OR1)
+    - Math-7B, 32B-Preview, 7B-Preivew 모델로 구성된 오픈소스 family
+    - Skywork-OR1-RL-Data: DeepSeek-R1-Distill-Qwen-32B로 난이도를 평가한 데이터 구성됨 (데이터 사용시 필터링으로 사용 가능). 총 105K Math, 14K Coding 데이터
+    - 32B-Preview 모델의 경우 AIME, LiveCodeBench에서 DeepSeek-R1 수준 성능을 달성했다고 보고
+- 📜 [NVIDIA] [CLIMB: CLustering-based Iterative Data Mixture Bootstrapping for Language Model Pre-training](https://arxiv.org/abs/2504.13161)
+    - 사전학습을 위한 Common Crawl 같은 데이터셋은 domain label이 없고, The Pile 같은 데이터셋은 labor-intensive 하다는 문제점
+    - CLIMB 제안: 사전학습을 위한 data mixture를 적절히 discover, evaluate, refine 하는 framework
+    - 이를 이용하여 획득한 400B 토큰에 대해 1B 모델을 학습한 결과는 SoTA인 Llama-3.2-1B 모델을 능가하는 수준이라고 보고
+    - 20개 cluster, 1.2T 토큰으로 구성된 ClimbLab, 400B 토큰으로 구성된 ClimbMix 공개
+- 📜 [HKUST]  [Thought Manipulation: External Thought Can Be Efficient for Large Reasoning Models](https://arxiv.org/abs/2504.13626)
+    - LRMs (Large Reasoning Models) 들은 overthinking 문제가 있음
+    - thinking token 사이에 (<think> </think>) smaller 모델로부터 생성된 external CoT를 넣어주는 방식이 모델이 적은 토큰을 생성하는 데 도움을 준다고 설명 → ThoughtMani
+    - QwQ-32B 모델을 LiveBench/Code dataset에 적용했을 때, 기존 성능은 유지하면서도 약 30% 정도의 토큰을 절약할 수 있었음 (CoT generator로부터 overhead가 발생하긴 함)
+</details>
+
 ## 🌱 March
 <details>
   <summary>1st week</summary>
