@@ -194,6 +194,23 @@
     - LRMs (Large Reasoning Models) 들은 overthinking 문제가 있음
     - thinking token 사이에 (<think> </think>) smaller 모델로부터 생성된 external CoT를 넣어주는 방식이 모델이 적은 토큰을 생성하는 데 도움을 준다고 설명 → ThoughtMani
     - QwQ-32B 모델을 LiveBench/Code dataset에 적용했을 때, 기존 성능은 유지하면서도 약 30% 정도의 토큰을 절약할 수 있었음 (CoT generator로부터 overhead가 발생하긴 함)
+- 🧑🏻‍💻 [Google] [Gemma 3 QAT Models: Bringing state-of-the-Art AI to consumer GPUs](https://developers.googleblog.com/en/gemma-3-quantized-aware-trained-state-of-the-art-ai-to-consumer-gpus)
+    - 1B, 4B, 12B, 27B 사이즈의 Quantization-Aware Trained (QAT) 모델들을 공개
+    - Gemma 3 27B 모델의 경우 int4 기준 14.1GB 메모리를 차지하여 RTX 3090 한 대에 KV cache 포함한 로드가 가능하다고 설명
+    - OpenAI API를 통해 function calling & custom tool 사용 가능
+- 📜 [UC Berkeley, LangChain] [PROMPTEVALS: A Dataset of Assertions and Guardrails for Custom Production Large Language Model Pipelines](https://arxiv.org/abs/2504.14738)
+    - 2087개의 LLM pipeline prompts & corresponding 12623개의 assertion criteria 로 구성된 데이터셋
+    - 이 데이터로 fine-tuned 된 Mistral & Llama 3 가 (본인들 벤치마크에 대해) GPT-4o를 평균 20.93% outperform 했다고 설명
+- 📜 [Tsinghua] [Does Reinforcement Learning Really Incentivize Reasoning Capacity in LLMs Beyond the Base Model?](https://arxiv.org/abs/2504.13837)
+    - Reinforcement Learning with Verifiable Rewards (RLVR) 방식이 언어 모델로 하여금 본질적으로 새로운 reasoning pattern을 갖추는 데 기여하지 못한다고 주장
+    - 즉, 현존하는 reasoning models의 reasoning abilities는 base model에 이미 존재하던 것을 적절히 sampling 할 수 있도록 학습되어 갖춰진 것으로 설명
+    - 이러한 경향성은 visual reasoning tasks에서도 관측됨
+    - 오히려 distillation이 이와 달리 모델에게 new knowledge 를 전달하는 방법이라고 설명
+- 📜 [Shanghai AI Lab, Fudan, CMU] [MIG: Automatic Data Selection for Instruction Tuning by Maximizing Information Gain in Semantic Space](https://arxiv.org/abs/2504.13835)
+    - LLM 학습 데이터를 heuristic 하게 정제하는 것은 semantic space 내의 intent를 올바로 capture 하지 못하는 결과로 이어진다고 지적
+    - → 데이터셋 내 information content를 정량화하는 method 제안: label graph를 구축하고 graph 내의 information distribution을 이용
+    - Maximize Information Gain (MIG): semantic space 내에서 반복적으로 sampling을 수행하는 efficient sampling method
+    - 이 방법론을 Ai2 에서 공개했던 Tulu3 데이터셋에 적용해봄으로써 성능 향상을 이끌어 낼 수 있었다고 설명
 </details>
 
 ## 🌱 March
