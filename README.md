@@ -211,6 +211,17 @@
     - → 데이터셋 내 information content를 정량화하는 method 제안: label graph를 구축하고 graph 내의 information distribution을 이용
     - Maximize Information Gain (MIG): semantic space 내에서 반복적으로 sampling을 수행하는 efficient sampling method
     - 이 방법론을 Ai2 에서 공개했던 Tulu3 데이터셋에 적용해봄으로써 성능 향상을 이끌어 낼 수 있었다고 설명
+- 📜 [Google DeepMind] [Welcome to the Era of Experience](https://storage.googleapis.com/deepmind-media/Era-of-Experience%20/The%20Era%20of%20Experience%20Paper.pdf?utm_source=alphasignal)
+    - Stream 개념을 제시: real | simulated 환경 내 continuous interaction loops 를 뜻함 (for future agents)
+    - 학습을 위해 human-generated datasets에 의존하는 것을 피하고 environmental feedback을 사용할 것을 주장
+    - 여러 태스크와 도메인에 대한 continuous, long-term learning을 지원
+    - task-specific performance가 아닌 시간에 걸친 capability growth에 집중
+- 📜 [Alibaba] [Wan: Open and Advanced Large-Scale Video Generative Models](https://arxiv.org/abs/2503.20314)
+    - SoTA 수준의 Wan2.1 이라는 open suite of video foundation models 공개 (video generation)
+    - T2V-1.3B 모델은 8.19GB VRAM를 필요로 하며, RTX 4090 한 장으로 5초짜리 480P 비디오를 약 4분만에 생성 가능
+    - Text-to-Video, Image-to-Video, Video Editing, Text-to-Image, Video-to-Audio 등 다양한 태스크 수행 가능
+    - Chinese & English 텍스트 생성 능력이 뛰어남
+    - temporal information을 보존하면서도 1080P video를 잘 encoding & decoding 할 수 있음
 </details>
 
 ## 🌱 March
