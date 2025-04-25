@@ -222,6 +222,20 @@
     - Text-to-Video, Image-to-Video, Video Editing, Text-to-Image, Video-to-Audio 등 다양한 태스크 수행 가능
     - Chinese & English 텍스트 생성 능력이 뛰어남
     - temporal information을 보존하면서도 1080P video를 잘 encoding & decoding 할 수 있음
+- 🧑🏻‍💻 [Anthropic] [Values in the wild: Discovering and analyzing values in real-world language model interactions](https://www.anthropic.com/research/values-wild)
+    - 700,000개의 chat을 분석하여 3,300개 이상의 distinct values가 존재한다는 것을 파악
+    - 이때 privacy-preserving system을 이용했기 때문에 유저의 개인정보는 제거되었다고 설명
+    - 분석 과정을 시각화한 도식 참고하면 좋을 듯. AI values taxonomy를 구축한 것이 눈에 띔
+- 📜 [NVIDIA] [Eagle 2.5: Boosting Long-Context Post-Training for Frontier Vision-Language Models](https://arxiv.org/abs/2504.15271)
+    - long-context muldimodal learning 기반의 vision-language models (VLMs) family 공개
+    - 특히 long video understanding & high-resolution image understanding 의 문제를 해결
+    - Automatic Degrade Sampling & Image Area Preservation 을 통합하여 contextual integrity & visual details 보존
+    - Eagle-Video-110K: story-level & clip-level annotations를 통합한 데이터셋
+- 📜 [Huawei] [Dynamic Early Exit in Reasoning Models](https://arxiv.org/abs/2504.15895)
+    - LRLMs가 추론 과정에서 redundant step을 포함하는 문제를 해결하기 위해 early exit을 도입하여 CoT sequence를 self-truncate 할 수 있도록 함
+    - fixed heuristics와 달리 potential reasoning transition points (ex. Wait 토큰)을 model behavior에서 탐지하는 방식.
+    - 이때 모델이 trial answer에 대해 high confidence를 갖는 경우 next reasoning chain’s generation을 중단
+    - 추가적인 학습이 필요없는 방식이며 기존 o1-like reasoning LLMs에 seamlessly integrate 가능
 </details>
 
 ## 🌱 March
