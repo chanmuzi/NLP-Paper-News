@@ -236,6 +236,18 @@
     - fixed heuristics와 달리 potential reasoning transition points (ex. Wait 토큰)을 model behavior에서 탐지하는 방식.
     - 이때 모델이 trial answer에 대해 high confidence를 갖는 경우 next reasoning chain’s generation을 중단
     - 추가적인 학습이 필요없는 방식이며 기존 o1-like reasoning LLMs에 seamlessly integrate 가능
+- 📜 [Chinese Academy of Sciences] [GUI-R1 : A Generalist R1-Style Vision-Language Action Model For GUI Agents](https://arxiv.org/abs/2504.10458)
+    - large vision-language models (LVLMs)에 SFT하여 GUI agents를 만드는 것은 학습 데이터도 많이 필요하고 일반화 성능도 떨어지는 방식임
+    - unified action space rule modeling을 통해 LVLMs이 GUI 이해 능력을 향상할 수 있도록 하는 강화학습 프레임워크 GUI-R1 제안
+    - 각 플랫폼(Windows, Linux, MacOS 등)으로부터 얻은 소수의 carefully curated high-quality data, GRPO를 이용하여 자원 효율적인 결과를 달성할 수 있었다고 설명
+- 🧑🏻‍💻 [ByteDance] [Introducing UI-TARS-1.5](https://seed-tars.com/1.5/)
+    - Qwen2.5-VL-7B 모델을 강화학습한 multimodal agent를 오픈소스로 공개
+    - token-level multimodal supervision 기반의 reasoning-before-action approach를 사용
+    - 뛰어난 Web Navigation 능력은 GPT-4.5 능가하는 수준
+- 🧑🏻‍💻 [Nari-Labs] [Nari Dia-1.6B](https://github.com/nari-labs/dia/)
+    - 오픈소스 text-to-dialogue model: 스크립트를 현실적인 대화로 바꿔주는 모델
+    - ElevenLabs Studio나 Sesame CSM-1B 모델 이상의 퍼포먼스를 보여주어 큰 화제를 일으키는 중
+    - 카이스트 학부생이 2명이 작업한 결과물로 알려짐
 </details>
 
 ## 🌱 March
