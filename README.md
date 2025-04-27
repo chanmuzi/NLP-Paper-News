@@ -248,6 +248,19 @@
     - 오픈소스 text-to-dialogue model: 스크립트를 현실적인 대화로 바꿔주는 모델
     - ElevenLabs Studio나 Sesame CSM-1B 모델 이상의 퍼포먼스를 보여주어 큰 화제를 일으키는 중
     - 카이스트 학부생이 2명이 작업한 결과물로 알려짐
+- 📜 [a-m-team] [DeepDistill: Enhancing LLM Reasoning Capabilities via Large-Scale Difficulty-Graded Data Training](https://arxiv.org/abs/2504.17565)
+    - 3.34M unique queries & 40M distilled responses 로 구성된 large-scale & difficulty-graded reasoning dataset ([허깅페이스](https://huggingface.co/datasets/a-m-team/AM-DeepSeek-Distilled-40M)에 공개)
+    - pass rate & Coefficient of Variation (CV) 를 이용하여 유의미한 학습 데이터만 남겼다고 설명
+- 📜 [Shanghai AI Lab, Tsinghua] [VisuLogic: A Benchmark for Evaluating Visual Reasoning in Multi-modal Large Language Models](https://arxiv.org/abs/2504.15279)
+    - 기존 MLLM 벤치마크는 text description에 의존하거나 언어 기반 reasoning shortcut을 허용함으로써 진정한 vision-centric reasoning 검증을 할 수 없다고 지적
+    - VisuLogic: 6개 카테고리에 대한 1,000 human-verified problems (quantitative shifts, spatial relations 등)
+    - 사람은 51.4%, 대부분의 모델은 30% 이하의 정확도를 기록하는 수준의 벤치마크이며, visual reasoning 능력을 고도화할 수 있는 학습 데이터도 공개했다고 언급함
+- 📜 [Tsinghua, Shanghai AI Lab] [TTRL: Test-Time Reinforcement Learning](https://arxiv.org/abs/2504.16084)
+    - LLM을 reasoning tasks에서 explicit label 없이 강화학습하는 것에 대한 연구
+        - ground-truth 정보 없이 reward estimation을 어떻게 할 것인지가 challege
+    - Test-Time Reinforcement Learning (TTRL): pre-trained models의 priors를 이용하여 self-evolution
+        - Test-Time Scaling (TTS) 에서 majority voting 등이 RL training에서 reward 역할을 할 수 있었음에 착안
+        - initial (base) model의 성능을 outperform 하는 현상이 관측되어 방법론 타당성 입증
 </details>
 
 ## 🌱 March
