@@ -261,6 +261,14 @@
     - Test-Time Reinforcement Learning (TTRL): pre-trained models의 priors를 이용하여 self-evolution
         - Test-Time Scaling (TTS) 에서 majority voting 등이 RL training에서 reward 역할을 할 수 있었음에 착안
         - initial (base) model의 성능을 outperform 하는 현상이 관측되어 방법론 타당성 입증
+- 🧑🏻‍💻 [OpenAI] [Introducing our latest image generation model in the API](https://openai.com/index/image-generation-api)
+    - 첫 주에 130M 이상의 유저가 700M 이상의 이미지를 생성할 정도로 인기를 끌었음
+    - 해당 기능을 `gpt-image-1` API로 공개
+    - 이미지 한 장당 대략 0.3$ 정도 비용 발생
+- 🧑🏻‍💻 [NousResearch] [Minos-v1](https://huggingface.co/NousResearch/Minos-v1)
+    - ModernBERT-large 기반의 LLM QA refusal 결정 모델 (Refusal 또는 Non-refusal 반환)
+        - 유저의 질문과 LLM의 답변 pair를 입력으로 받아 둘 중 하나의 클래스를 confidence와 함께 반환하는 모델
+    - 400M 사이즈 모델로 8,192 context length, 약 380K 데이터로 학습
 </details>
 
 ## 🌱 March
