@@ -277,6 +277,21 @@
 - 🧑🏻‍💻 [HuggingFace] [Tiny Agents: a MCP-powered agent in 50 lines of code](https://huggingface.co/blog/tiny-agents)
     - MCP는 LLM이 이용 가능한 Tools set을 expose하는 표준 API라고 설명
     - AI Agents 시스템 구축에 50줄 코드면 충분
+- 🧑🏻‍💻 [Anthropic] [The Urgency of Interpretability](https://www.darioamodei.com/post/the-urgency-of-interpretability)
+    - Claude 3.5 Haiku가 생각하는 방식을 분석한 연구 결과를 제시
+    - 언어별로 별도 시스템이 존재하는 것이 아니라, 영어, 프랑스어, 중국어 등 다양한 언어가 공유하는 추상적 개념 공간이 존재 → 의미 처리 후 특정 언어로 번역되는 방식으로 동작
+    - 시를 쓸 때 단순히 다음 토큰들을 예측하는 것이 아니라 미리 운율을 맞출 준비를 하고 있음
+    - 어려운 수학 문제 등을 풀 때, 잘못된 근거를 제시하면 그럴싸한 답변을 생성. 이런 과정은 여러 ‘중간 단계’를 거치는 것으로 확인됨
+- 📜 [Microsoft] [BitNet v2: Native 4-bit Activations with Hadamard Transformation for 1-bit LLMs](https://arxiv.org/abs/2504.18415)
+    - 1-bit LLM deployment에 방해되는 것 중 가장 크리티컬한 것은 activation outliers
+    - BitNet v2: 1-bit LLM을 위한 native 4-bit activation quantization 프레임워크
+    - H-BitLinear: activation quantization 이전에 online Hadamard transformation 적용
+- 🧑🏻‍💻 [Alibaba] [Qwen3: Think Deeper, Act Faster](https://qwenlm.github.io/blog/qwen3)
+    - 0.6B에서 235B 파라미터 사이즈에 이르는 모델 패밀리 공개
+        - 가장 큰 두 모델: Qwen3-30B-A3B, Qwen3-235B-A22B (둘 다 MoE)
+    - Hybrid thinking mode: thinking mode와 non-thinking mode 스위칭 가능
+    - 36T 토큰으로 학습. 이는 Qwen2.5를 학습한 데이터의 두 배에 이르는 양.
+    - 119개에 이르는 다양한 언어를 지원하며, MCP를 natively support
 </details>
 
 ## 🌱 March
