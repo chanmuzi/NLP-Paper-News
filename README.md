@@ -269,6 +269,14 @@
     - ModernBERT-large 기반의 LLM QA refusal 결정 모델 (Refusal 또는 Non-refusal 반환)
         - 유저의 질문과 LLM의 답변 pair를 입력으로 받아 둘 중 하나의 클래스를 confidence와 함께 반환하는 모델
     - 400M 사이즈 모델로 8,192 context length, 약 380K 데이터로 학습
+- 📜 [DevRev] [Efficient Single-Pass Training for Multi-Turn Reasoning](https://arxiv.org/abs/2504.18246)
+    - LLM을 위한 multi-turn reasoning 학습에 존재하는 문제
+        - LLM은 추론 토큰을 생성하는데 이를 이후 입력에 포함하면 안됨
+    - 이러한 불일치(discrepancy)로 인해 일반적인 다른 데이터셋에 대해 학습하는 것과 달리, single forward pass로 전체 대화를 처리할 수 없음
+    - 이를 해결하기 위해 response token duplication & custom attention mask (enforces appropriate visibility constraints) 적용
+- 🧑🏻‍💻 [HuggingFace] [Tiny Agents: a MCP-powered agent in 50 lines of code](https://huggingface.co/blog/tiny-agents)
+    - MCP는 LLM이 이용 가능한 Tools set을 expose하는 표준 API라고 설명
+    - AI Agents 시스템 구축에 50줄 코드면 충분
 </details>
 
 ## 🌱 March
