@@ -292,6 +292,11 @@
     - Hybrid thinking mode: thinking mode와 non-thinking mode 스위칭 가능
     - 36T 토큰으로 학습. 이는 Qwen2.5를 학습한 데이터의 두 배에 이르는 양.
     - 119개에 이르는 다양한 언어를 지원하며, MCP를 natively support
+- 🧑🏻‍💻 [NourResearch] [Atropos](https://github.com/NousResearch/Atropos)
+    - 언어모델 강화학습 환경 framework로 LLM의 trajectories를 다양하게 수집 및 평가할 수 있음
+    - Multi-Turn & Asynchronous RL 지원
+    - Inference Agnostic: OpenAI, vLLM 와 같은 표준 인터페이스에 쉽게 통합 가능
+    - 5월 중으로 해커톤도 개최할 예정
 </details>
 
 ## 🌱 March
