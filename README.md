@@ -5,6 +5,44 @@
 ---
 # 2025
 
+## 🌹 May
+<details>
+  <summary>1st week</summary>
+
+- 🧑🏻‍💻 [Google] [DolphinGemma: How Google AI is helping decode dolphin communication](https://blog.google/technology/ai/dolphingemma/)
+    - National Dolphin Day에 Georgia Tech와 협업한 Wild Dolphin Project (WDP) 결과물인 DolphinGemma 공개
+    - 돌고래의 vocalization 구조를 이해하고 dolphin-like sound sequences를 생성하는 모델
+    - Catacean Hearing Augmentation Telementary (CHAT) 시스템에 구글 픽셀폰 사용 가능
+- 🧑🏻‍💻 [Google] [Introducing TxGemma: Open models to improve therapeutics development](https://developers.googleblog.com/en/introducing-txgemma-open-models-improving-therapeutics-development/)
+    - LLM을 이용한 therapeutic 개발 효율성을 개선하기 위한 open models
+    - 전체 discovery process의 therapeutic entities의 properties를 이해하고 예측하도록 학습한 모델들임
+    - promising targets를 식별하고 clinical trial outcomes까지 예측 가능
+    - 7M 데이터로 학습되었으며 2B, 9B, 27B 사이즈로 구성됨
+- 🧑🏻‍💻 [DeepSeek AI] [DeepSeek-Prover-V2-671B](https://huggingface.co/deepseek-ai/DeepSeek-Prover-V2-671B)
+    - Recursive Proof Search를 통해 Cold-Start reasoning data를 합성
+        - DeepSeek-V3를 subgoal decomposition & formalization 에 활용
+        - 이렇게 획득한 데이터를 이용하여 강화학습
+    - ProverBench: Formalization of AIME and Textbook Problems
+        - 325개의 문제로 구성된 벤치마크 소개
+        - 이중 15개는 AIME competitions의 number theory & algebra questions
+        - 나머지 310개는 curated textbook examples & educational tutorials 로 구성
+    - 7B & 671B 두 사이즈의 모델 공개
+        - 671B 모델은 DeepSeek-V3-Base 에 학습
+        - 7B 모델은 DeepSeek-Prover-V1.5-Base 에 학습 & 32K context window
+- 📜 [Cohere, Princeton, Stanford, Waterloo, MIT, Ai2, Washington] [The Leaderboard Illusion](https://arxiv.org/abs/2504.20879)
+    - LLM 성능 평가를 위한 Chatbot Arena의 systematic issues를 분석한 결과
+        - undisclosed private testing practices가 모델 공개 전 특정 providers에게 유리한 것이라고 지적
+        - selective disclosure of perfomance results 때문에 Arena가 biased 된다고 설명. 현재는 많은 모델들이 여기에 overfitted 되어 있음을 지적
+    - proprietary closed models (Google, OpenAI) 는 battles에서 더 높은 비율로 picked 되기 때문에 open-source models 보다 더 많은 data access 가능
+        - Google & OpenAI 가 각각 19.2% & 20.4%, 나머지 83개 open-weight models가 29.7% 차지하는 수준
+        - 보수적인 추정에도 상대적인 performance gains이 약 112% 수준에 이른다고 설명
+- 🧑🏻‍💻 [Ai2] [OLMo 2 1B](https://allenai.org/olmo/release-notes#olmo-2-1b)
+    - 동일 사이즈의 small 모델군 (Gemma 3 1B, Llama 3.2 1B) 중 최고 성능이라고 소개
+    - Mid-training에 [OLMo-mix-1124](https://huggingface.co/datasets/allenai/olmo-mix-1124) & [Dolmino-mix-1124](https://huggingface.co/datasets/allenai/dolmino-mix-1124) 를 포함한 4T 토큰 학습
+    - Post-training에 [Tülu 3 dataset](https://huggingface.co/datasets/allenai/tulu-3-sft-olmo-2-mixture-0225)의 OLMo-specific variant를 사용하여 SFT
+    - [olmo-2-0425-1b-preference-mix](https://huggingface.co/datasets/allenai/olmo-2-0425-1b-preference-mix)에 대해 DPO training & 최종적으로 RLVR training 적용
+</details>  
+
 ## 🌸 April
 <details>
   <summary>1st week</summary>
