@@ -41,6 +41,12 @@
     - Mid-training에 [OLMo-mix-1124](https://huggingface.co/datasets/allenai/olmo-mix-1124) & [Dolmino-mix-1124](https://huggingface.co/datasets/allenai/dolmino-mix-1124) 를 포함한 4T 토큰 학습
     - Post-training에 [Tülu 3 dataset](https://huggingface.co/datasets/allenai/tulu-3-sft-olmo-2-mixture-0225)의 OLMo-specific variant를 사용하여 SFT
     - [olmo-2-0425-1b-preference-mix](https://huggingface.co/datasets/allenai/olmo-2-0425-1b-preference-mix)에 대해 DPO training & 최종적으로 RLVR training 적용
+- 📜 [Renmin Univ.] [DeepCritic: Deliberate Critique with Large Language Models](https://arxiv.org/abs/2505.00662)
+    - LLM을 생성 결과에 대한 critique model로 사용하는 것이 automated supervision으로 이어진다는 것은 이미 잘 알려져 있음
+        - 본 연구에서는 LLM의 math critique ability에 집중
+    - math solutions의 각 reasoning step에 대해 의도적으로 critique 할 수 있도록 만드는 2-stage framework 제안
+        - (1) Qwen2.5-72B-Instruct를 이용하여 4.5K long-form critique를 생성하고 이를 SFT의 seed로 사용
+        - (2) PRM800K로부터 획득한 existing human-labeled data 또는 Monte Carlo sampling-based correctness estimation으로 automatically annotated 데이터로 fine-tuned 모델을 RL
 </details>  
 
 ## 🌸 April
