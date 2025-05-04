@@ -47,6 +47,18 @@
     - math solutions의 각 reasoning step에 대해 의도적으로 critique 할 수 있도록 만드는 2-stage framework 제안
         - (1) Qwen2.5-72B-Instruct를 이용하여 4.5K long-form critique를 생성하고 이를 SFT의 seed로 사용
         - (2) PRM800K로부터 획득한 existing human-labeled data 또는 Monte Carlo sampling-based correctness estimation으로 automatically annotated 데이터로 fine-tuned 모델을 RL
+- 🧑🏻‍💻 [Anthropic] [Claude can now connect to your world](https://www.anthropic.com/news/integrations)
+    - Claude의 Research 기능을 web, Google Workspace 외에도 개인 Integrations 까지 지원하여, 답변 전에 최대 45분 동안 research 수행
+    - Integrations: Claude가 web & desktop app에 걸친 원격 MCP server 위에 동작
+    - Jira & Confluence, Zapier, Cloudfalre, Intercom, Asana, Square, Sentry, Paypal, Linear, Plaid 서비스 지원
+- 📜 [KAIST, DeepAuto.ai] [Paper2Code: Automating Code Generation from Scientific Papers in Machine Learning](https://arxiv.org/abs/2504.17192)
+    - 머신러닝 관련 연구에서 실행 가능한 코드를 제시하는 경우가 적은데, 이를 재현하는 것은 slow & labor-intensive 작업임
+    - PaperCoder: multi-agent LLM framework로, 머신러닝 논문을 functional code repositories로 변환. 세 단계로 동작
+        - (1) Planning: high-level roadmap 구축, diagram을 포함한 system architecture 설계, file dependencies 식별, configuration files 생성
+        - (2) Analysis: implementation-specific details를 해석
+        - (3) Generation: modular, dependency-aware code 생성
+        - 각 단계는 specialized agent에 의해 수행
+    - 생성 이후에는 model-based & human evaluations 수행
 </details>  
 
 ## 🌸 April
