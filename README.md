@@ -59,6 +59,17 @@
         - (3) Generation: modular, dependency-aware code 생성
         - 각 단계는 specialized agent에 의해 수행
     - 생성 이후에는 model-based & human evaluations 수행
+- 📜 [mem0.ai] [Mem0: Building Production-Ready AI Agents with Scalable Long-Term Memory](https://arxiv.org/abs/2504.19413)
+    - LLM agents가 긴 대화와 session에 걸쳐 coherence를 유지할 수 있도록 하는 memory-centric architecture
+    - 두 개의 시스템으로 구성
+        - Mem0: dense & language-based memory system
+        - Mem0g: enhanced version with graph-based memory to model complex relationships
+    - Mem0은 벤치마크에서 가장 낮은 search & total latencies를 보였고, Mem0g는 다른 graph-based | RAG systems 대비 속도 & 효율성 관점에서 뛰어난 성능을 자랑함
+- 📜 [KAIST, DeepAuto.ai] [UniversalRAG: Retrieval-Augmented Generation over Multiple Corpora with Diverse Modalities and Granularities](https://arxiv.org/abs/2504.20734)
+    - 다양한 modalities (text, image, video) & granularities (paragraph vs. document, clip vs. video) 를 지원하는 RAG system
+    - Modality-aware routing: 매 query마다 적절한 modality를 dynamically select 하는 router
+    - Granularity-aware retrieval: 각 modality는 granularity levels로 쪼개져 각각의 complexity에 적합한 content를 retrieve
+    - Flexible routing: training-free (zero-shot GPT-4o prompting) & trained (T5-Large) routers 둘 다 지원
 </details>  
 
 ## 🌸 April
