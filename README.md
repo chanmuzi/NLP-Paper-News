@@ -72,6 +72,21 @@
     - Flexible routing: training-free (zero-shot GPT-4o prompting) & trained (T5-Large) routers 둘 다 지원
 </details>  
 
+<details>
+  <summary>2nd week</summary>
+
+- 📜 [Meta] [PerceptionLM: Open-Access Data and Models for Detailed Visual Understanding](https://arxiv.org/abs/2504.13180)
+    - Perception Language Model (PLM): image & video understanding 연구를 위한 open & reproducible framework
+    - proprietary models로부터의 distillation 없는 training pipelines을 분석하고 large-scale synthetic data를 explore
+    - 2.8M human-labeled fine-grained video question-answer pairs & spatio-temporally grounded video captions
+    - PLM-VideoBench: video에 대한 ‘what, where, when, how’ 추론 능력을 평가하기 위한 벤치마크 공개
+- 📜 [NVIDIA] [Llama-Nemotron: Efficient Reasoning Models](https://arxiv.org/abs/2505.00949)
+    - 뛰어난 reasoning 능력, inference efficiency, open license for enterprise use 보유한 open family models
+    - Nano (8B), Super (49B), Ultra (253B) 사이즈로 구성되어 있으며, DeepSeek-R1에 준하는 성능이면서도 inference throughput & memory efficiency 뛰어남
+    - dynamic reasoning toggle을 지원하는 최초의 open-source models
+        - 유저가 직접 standard chat vs. readoning modes 선택 가능
+</details>  
+
 ## 🌸 April
 <details>
   <summary>1st week</summary>
