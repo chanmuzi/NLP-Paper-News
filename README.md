@@ -85,6 +85,17 @@
     - Nano (8B), Super (49B), Ultra (253B) 사이즈로 구성되어 있으며, DeepSeek-R1에 준하는 성능이면서도 inference throughput & memory efficiency 뛰어남
     - dynamic reasoning toggle을 지원하는 최초의 open-source models
         - 유저가 직접 standard chat vs. readoning modes 선택 가능
+- 🧑🏻‍💻 [OpenAI] [Evolving OpenAI’s structure](https://openai.com/index/evolving-our-structure)
+    - OpenAI가 영리 기업으로서의 검토를 중단하고 비영리 기업 포지션을 유지하기로 결정함
+    - 이를 통해 더 큰 규모의 투자를 받아 AGI 개발에 전념하겠다고 함
+    - 이후 capable models를 오픈소스화할 예정
+- 🧑🏻‍💻 [Alibaba] [Qwen-Agent](https://github.com/QwenLM/Qwen-Agent)
+    - planning, memory, multi-turn function calling 을 지원하는 tool-using LLM agents 구축 가능
+    - code execution, document reading, web browsing, RAG workflows 가능
+- 📜 [Beijing Univ.] [RAG-MCP: Mitigating Prompt Bloat in LLM Tool Selection via Retrieval-Augmented Generation](https://arxiv.org/abs/2505.03275)
+    - MCP와 같이 모델이 사용할 수 있는 도구들이 많음에도 불구하고 prompt bloat & selection complexity로 인해 이를 제대로 활용하지 못하고 있음
+    - RAG-MCP: 주어진 query와 관련성이 가장 높은 MCP(s)를 semantically retrieve
+    - selected tool descriptions만을 모델에 전달함으로써 prompt size를 줄이고 decision-making을 간소화 함
 </details>  
 
 ## 🌸 April
