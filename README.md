@@ -70,6 +70,12 @@
     - Modality-aware routing: 매 query마다 적절한 modality를 dynamically select 하는 router
     - Granularity-aware retrieval: 각 modality는 granularity levels로 쪼개져 각각의 complexity에 적합한 content를 retrieve
     - Flexible routing: training-free (zero-shot GPT-4o prompting) & trained (T5-Large) routers 둘 다 지원
+- 📜 [Amazon] [SLOT: Structuring the Output of Large Language Models](https://arxiv.org/abs/2505.04016)
+    - SLOT: unstructured LLM outputs을 precise structured formats로 변환해주는 model-agnostic approach
+    - 기존 방법론들은 constrained decoding 또는 specific models 이요
+        - SLOT은 fine-tuned lightweight language model을 post-processing layer에 사용
+    - schema accuracy & content fidelity 를 정량 평가하기 위한 평가 methodology 제안
+    - fine-tuned Mistral-7B model with constrained decoding이 99.5% 수준의 성능 달성
 </details>  
 
 <details>
