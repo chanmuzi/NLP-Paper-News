@@ -102,6 +102,13 @@
     - MCP와 같이 모델이 사용할 수 있는 도구들이 많음에도 불구하고 prompt bloat & selection complexity로 인해 이를 제대로 활용하지 못하고 있음
     - RAG-MCP: 주어진 query와 관련성이 가장 높은 MCP(s)를 semantically retrieve
     - selected tool descriptions만을 모델에 전달함으로써 prompt size를 줄이고 decision-making을 간소화 함
+- 📜 [Anthropic] [Reasoning Models Don't Always Say What They Think](https://arxiv.org/abs/2505.05410)
+    - CoT를 통한 모델의 사고과정 모니터링이 타당하지 않다고 주장하는 논문
+    - 프롬프트에 제시된 6가지 힌트를 활용해 CoT의 신뢰도를 평가
+        1. 힌트를 실제로 사용할 때 이를 CoT에 드러내는 비율은 1% 이상이지만, 대부분은 20% 미만
+        2. outcome-based RL은 faithfulness를 향상시키나, 이는 초반에만 그렇고 금방 한계에 도달
+        3. RL을 통해 힌트 사용 빈도가 증가하더라도 (reward hacking w/o CoT), 이를 CoT에서 언급하는 빈도는 증가하지 않음
+    - CoT를 이용한 test-time monitoring은 unexpected behaviors를 탐지하는데 전혀 쓸모가 없다고 주장
 </details>  
 
 ## 🌸 April
