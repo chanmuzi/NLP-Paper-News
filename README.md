@@ -109,6 +109,18 @@
         2. outcome-based RL은 faithfulness를 향상시키나, 이는 초반에만 그렇고 금방 한계에 도달
         3. RL을 통해 힌트 사용 빈도가 증가하더라도 (reward hacking w/o CoT), 이를 CoT에서 언급하는 빈도는 증가하지 않음
     - CoT를 이용한 test-time monitoring은 unexpected behaviors를 탐지하는데 전혀 쓸모가 없다고 주장
+- 🧑🏻‍💻 [Mistral AI] [Medium is the new large.](https://mistral.ai/news/mistral-medium-3)
+    - mid-sized model을 공개했는데 GPU 4대에서 동작 가능하면서도 Claude Sonnet 3.7의 90% 이상 스코어를 달성할 정도의 성능을 보임
+    - private, high-context, domain-specific use cases에 해당하는 enterprise 활용도 가능
+        - custom post-training & continuous pretraining 지원
+        - finance, energy, healthcare 도메인에서 사용
+        - self-hosted | virtual private cloud setups 에서 사용 가능
+- 🧑🏻‍💻 [Zed: The Fastest AI Code Editor](https://zed.dev/blog/fastest-ai-code-editor)
+    - Rust 기반의 Open Source 코드 에디터
+    - Privacy & Security 모드가 default. 원한다면 feedback 제공도 당연히 가능.
+    - Claude, OpenAI, Google 등 API는 당연히 지원하고, 본인 computing power를 사용하는 ollama 기반의 모델들도 사용할 수 있음
+        - ollama 사용 시에 미지원되는 기능은 [Edit Predictions](https://zed.dev/blog/edit-prediction) 뿐이라고 함
+    - MCP 지원
 </details>  
 
 ## 🌸 April
