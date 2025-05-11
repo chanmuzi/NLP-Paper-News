@@ -121,6 +121,11 @@
     - Claude, OpenAI, Google 등 API는 당연히 지원하고, 본인 computing power를 사용하는 ollama 기반의 모델들도 사용할 수 있음
         - ollama 사용 시에 미지원되는 기능은 [Edit Predictions](https://zed.dev/blog/edit-prediction) 뿐이라고 함
     - MCP 지원
+- 📜 [Barbin Institute] [Perception, Reason, Think, and Plan: A Survey on Large Multimodal Reasoning Models](https://arxiv.org/abs/2505.04921)
+    - Large Multimodal Reasoning Models (LMRMs)는 복잡하고 다양한 환경에 사용 가능한 promising paradigm으로 떠오름
+    - Multimodal reasoning은 modular, perception-driven pipelines에서부터 unified, language-centric frameworks로 발전하여 일관성 있는 cross-modal understanding 능력을 갖추게 됨
+    - instruction tuning & reinforcement learning 을 통해 크게 발전했으나, 아직까지 omni-modal generalization, reasoning depth, agentic behavior 에서 한계 존재
+    - 발전 흐름에 따라, task-specific modules, Multimodal CoT (MCoT), native large multimodal reasoning models (N-LMRMs) 순으로 survey 결과 정리
 </details>  
 
 ## 🌸 April
