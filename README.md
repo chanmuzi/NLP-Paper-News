@@ -144,6 +144,22 @@
     - security, scalability, latency 관점에서도 조사
 </details>  
 
+<details>
+  <summary>2nd week</summary>
+
+- 📜 [Microsoft, Salesforce] [LLMs Get Lost In Multi-Turn Conversation](https://arxiv.org/abs/2505.06120)
+    - LLM의 single- & multi- turn 성능을 비교하는 large-scale simulation 실험
+    - top open- & closed-weight LLMs가 multi-turn에서 single-turn 대비 큰 성능 하락폭을 보여주었다고 보고
+    - 200,000+ simulated conversations는 aptitude의 사소한 문제 & unreliability의 증가, 두 가지로 구분 가능
+    - 결론: when LLMs take a wrong turn in a conversation, they get lost and do not recover
+- 📜 [Texas A&M Univ.] [LiteLMGuard: Seamless and Lightweight On-Device Prompt Filtering for Safeguarding Small Language Models against Quantization-induced Risks and Vulnerabilities](https://arxiv.org/abs/2505.05619)
+    - on-device 시나리오에서는 SLMs 마저도 size optimization을 겪게 되어 있음 → fairness, ehtical & privacy risks 증가
+    - LiteLMGuard: quantized SLMs를 위한 real-time, prompt-level defense로 on-device prompt guard 라고 설명
+        - 모델의 아키텍쳐와 상관없이 적용 가능하다고 주장
+    - 여러 DL models를 Answerable-or-Not 데이터셋으로 학습한 결과 ELECTRA를 후보로 선정
+
+</details>
+
 ## 🌸 April
 <details>
   <summary>1st week</summary>
