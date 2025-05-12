@@ -126,6 +126,22 @@
     - Multimodal reasoning은 modular, perception-driven pipelines에서부터 unified, language-centric frameworks로 발전하여 일관성 있는 cross-modal understanding 능력을 갖추게 됨
     - instruction tuning & reinforcement learning 을 통해 크게 발전했으나, 아직까지 omni-modal generalization, reasoning depth, agentic behavior 에서 한계 존재
     - 발전 흐름에 따라, task-specific modules, Multimodal CoT (MCoT), native large multimodal reasoning models (N-LMRMs) 순으로 survey 결과 정리
+- 📜 [Univ. of Chicago] [Mitigating Memorization In Language Models](https://arxiv.org/abs/2410.02159)
+    - ICLR 2025 Spotlight poster
+    - 언어 모델의 memorization 현상을 mitigate 하기 위한 방법론들 제시
+        - 3 regularizer-based, 3 finetuning-based, 11 machine unlearning-based
+        - regularizer-based는 느리고 효과 x, finetuning은 효과 좋지만 비쌈, machine unlearning이 가장 좋은 방법론 → 그중에서도 BalancedSubnet가 제일 좋음
+    - TinyMem: small, computationally-efficient LMs for the rapid development and evaluation of memorization-mitigation methods
+- 📜 [Alibaba] [ZeroSearch: Incentivize the Search Capability of LLMs without Searching](https://alibaba-nlp.github.io/ZeroSearch/)
+    - ZeroSearch: search APIs 없이 LLM 학습하는 method를 open-source로 공개
+    - policy model은 search APIs 대신 simulated documents 를 사용하여 학습
+        - 언어모델을 사용하여 매 쿼리마다 20개 문서 생성
+        - 최종 답변 퀄리티를 기준으로 reward signals 사용
+    - 3B, 7B, 14B 모델들 대상으로 학습하여 multi-step QA 능력 향상
+    - Learning with curriculum rollout: 학습이 진행될수록 retrieval noise 증가
+- 📜 [Shanghai Jiao Tong Univ.] [A Survey of AI Agent Protocols](https://arxiv.org/abs/2504.16736)
+    - 현존하는 agent protocols를 조사하여 context-oriented vs. inter-agent protocols 와 general-purpose vs. domain-specific protocols 로 구분
+    - security, scalability, latency 관점에서도 조사
 </details>  
 
 ## 🌸 April
