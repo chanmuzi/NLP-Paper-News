@@ -145,7 +145,7 @@
 </details>  
 
 <details>
-  <summary>2nd week</summary>
+  <summary>3rd week</summary>
 
 - 📜 [Microsoft, Salesforce] [LLMs Get Lost In Multi-Turn Conversation](https://arxiv.org/abs/2505.06120)
     - LLM의 single- & multi- turn 성능을 비교하는 large-scale simulation 실험
@@ -157,6 +157,11 @@
     - LiteLMGuard: quantized SLMs를 위한 real-time, prompt-level defense로 on-device prompt guard 라고 설명
         - 모델의 아키텍쳐와 상관없이 적용 가능하다고 주장
     - 여러 DL models를 Answerable-or-Not 데이터셋으로 학습한 결과 ELECTRA를 후보로 선정
+- 🧑🏻‍💻 [Sakana AI] [Continuous Thought Machines](https://sakana.ai/ctm/)
+    - Continuous Thought Machine (CTM): neuro activity의 synchronization을 추론 핵심 메커니즘으로 사용하는 AI model
+    - 뉴런 수준의 timing information을 사용하여 기존보다 보다 복잡한 nueral behavior & decision making process를 이해할 수 있게 되었다고 함
+    - 핵심 중 하나는 모델이 step-by-step으로 “think” 할 수 있게 되어 추론 과정이 보다 interpretable & human-like 해졌다고 설명
+    - [CTM publication](https://pub.sakana.ai/ctm/)
 
 </details>
 
