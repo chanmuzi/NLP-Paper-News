@@ -174,6 +174,10 @@
     - Reinforcement learning with verifiable rewards (RLVR) 를 위해서 학습 데이터 (question & answer)를 직접 curate 해야 되는 점을 문제로 지적
     - Absolute Zero: external data 의존하지 않고 single model 스스로 own learning progress를 maximize & improve
     - Absolute Zero Reasoner (AZR): code executor를 사용하여 training curriculum & reasoning ability를 self-evolve 하는 system
+- 🧑🏻‍💻 [OpenAI] [Introducing HealthBench](https://openai.com/index/healthbench)
+    - health contexts 내의 AI 능력을 평가하기 위한 5,000개의 multi-turn conversations 데이터셋 오픈소스로 공개 (annotaed with physician-written rubrics and evaluated using GPT-4.1)
+    - 각 case는 dialogue, prompt, model output, rubric이 JSON format으로 구성됨
+    - research-use license로 Dataset & grader code 사용 가능
 
 </details>
 
