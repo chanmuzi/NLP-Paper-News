@@ -162,6 +162,18 @@
     - 뉴런 수준의 timing information을 사용하여 기존보다 보다 복잡한 nueral behavior & decision making process를 이해할 수 있게 되었다고 함
     - 핵심 중 하나는 모델이 step-by-step으로 “think” 할 수 있게 되어 추론 과정이 보다 interpretable & human-like 해졌다고 설명
     - [CTM publication](https://pub.sakana.ai/ctm/)
+- 📜 [CWI] [How well do LLMs reason over tabular data, really?](https://arxiv.org/abs/2505.07453)
+    - general-purpose LLMs의 tabular reasoning 능력이 현실 세계의 tabular inputs을 처리할 수 있을만큼 robust 한가?
+    - 언어 모델의 tabular queries에 대한 performance를 어떻게 evaluate 할 수 있는가?
+    - multiple-choice prompt 평가 & BERT-score 대신 LLM-as-a-Judge 신뢰도가 높다고 설명
+- 📜 [ByteDance] [Seed1.5-VL Technical Report](https://arxiv.org/abs/2505.07062)
+    - vision-language foundation model designed to general-purpose & multimodal understanding and reasoning
+    - 532M-parameter encoder, MoE LLM (20B active params)
+    - GUI control & gameplay 등 agent-centric tasks에서 뛰어난 성능 보인다고 설명
+- 📜 [Tsinghua] [Absolute Zero: Reinforced Self-play Reasoning with Zero Data](https://arxiv.org/abs/2505.03335)
+    - Reinforcement learning with verifiable rewards (RLVR) 를 위해서 학습 데이터 (question & answer)를 직접 curate 해야 되는 점을 문제로 지적
+    - Absolute Zero: external data 의존하지 않고 single model 스스로 own learning progress를 maximize & improve
+    - Absolute Zero Reasoner (AZR): code executor를 사용하여 training curriculum & reasoning ability를 sefl-evolve 하는 system
 
 </details>
 
