@@ -173,7 +173,7 @@
 - 📜 [Tsinghua] [Absolute Zero: Reinforced Self-play Reasoning with Zero Data](https://arxiv.org/abs/2505.03335)
     - Reinforcement learning with verifiable rewards (RLVR) 를 위해서 학습 데이터 (question & answer)를 직접 curate 해야 되는 점을 문제로 지적
     - Absolute Zero: external data 의존하지 않고 single model 스스로 own learning progress를 maximize & improve
-    - Absolute Zero Reasoner (AZR): code executor를 사용하여 training curriculum & reasoning ability를 sefl-evolve 하는 system
+    - Absolute Zero Reasoner (AZR): code executor를 사용하여 training curriculum & reasoning ability를 self-evolve 하는 system
 
 </details>
 
