@@ -178,6 +178,15 @@
     - health contexts 내의 AI 능력을 평가하기 위한 5,000개의 multi-turn conversations 데이터셋 오픈소스로 공개 (annotaed with physician-written rubrics and evaluated using GPT-4.1)
     - 각 case는 dialogue, prompt, model output, rubric이 JSON format으로 구성됨
     - research-use license로 Dataset & grader code 사용 가능
+- 📜 [Salesforce] [BLIP3-o: A Family of Fully Open Unified Multimodal Models-Architecture, Training and Dataset](https://arxiv.org/abs/2505.09568)
+    - semantically rich CLIP image features를 생성하기 위해 diffusion transformer를 사용
+        - → training efficiency & improved generative quality
+    - image understanding, 이어서 image generation에 대해 사전학습하는 학습 방식이 효과적이었다고 설명
+    - GPT-4o를 이용하여 high-quality instruction tuning dataset BLIP3o-60k 데이터셋 제작
+- 🧑🏻‍💻 [ByteDance] [DeerFlow](https://deerflow.tech)
+    - 검색 엔진, 웹 크롤러, 파이썬, MCP 서버 등을 갖춘 Deep Research assistant
+    - Coordinator, Planner, Reporter 등의 agent들로 구성되는 시스템
+    - LangChain, LangGraph로 빌드되어 있어 Human-in-the-loop이 지원되며, 최근 핫한 Podcast generation도 가능 (생성된 reports 기준으로)
 
 </details>
 
