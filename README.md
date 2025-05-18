@@ -187,7 +187,14 @@
     - 검색 엔진, 웹 크롤러, 파이썬, MCP 서버 등을 갖춘 Deep Research assistant
     - Coordinator, Planner, Reporter 등의 agent들로 구성되는 시스템
     - LangChain, LangGraph로 빌드되어 있어 Human-in-the-loop이 지원되며, 최근 핫한 Podcast generation도 가능 (생성된 reports 기준으로)
-
+- 🧑🏻‍💻 [Google] [AlphaEvolve: A Gemini-powered coding agent for designing advanced algorithms](https://deepmind.google/discover/blog/alphaevolve-a-gemini-powered-coding-agent-for-designing-advanced-algorithms)
+    - Gemini-based coding agent
+    - AlphaTensor 모델에서 single function call을 넘어 entire codebase 까지 커버할 수 있도록 함
+    - Gemini Flash로 빠르게 idea generation & Gemini Pro로 deeper analysis
+- 🧑🏻‍💻 [LangChain] [open-agent-platform](https://github.com/langchain-ai/open-agent-platform)
+    - no-code agent building platform
+    - Agent Supervisor를 통해 tools, RAG servers, other agents
+    - web-based interface for creating, managing and interacting with LangGraph agents
 </details>
 
 ## 🌸 April
