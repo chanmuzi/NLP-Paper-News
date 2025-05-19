@@ -197,6 +197,22 @@
     - web-based interface for creating, managing and interacting with LangGraph agents
 </details>
 
+<details>
+  <summary>4th week</summary>
+
+- 📜 [Chinese Academy of sciences] [Learning When to Think: Shaping Adaptive Reasoning in R1-Style Models via Multi-Stage RL](https://arxiv.org/abs/2505.10832)
+    - over-thinking problem을 해결하기 위해 LRM이 problem complexity를 기준으로 explicit reasoning을 할지 말지 결정하도록 함
+    - 간단한 생략 기호 “…”를 프롬프트에 포함하는 것만으로도 꽤나 긍정적인 영향을 줄 수 있다고 언급
+    - AutoThink: stage-wise reward shaping을 통해 reasoning policies를 optimize하는 multi-stage reinforcement learning (RL) 프레임워크
+- 📜 [Singapore, Tsinghua, Salesforce] [Beyond 'Aha!': Toward Systematic Meta-Abilities Alignment in Large Reasoning Models](https://arxiv.org/abs/2505.10554)
+    - 모델의 “aha moment”가 등장하는 timing & consistency가 예측 & 통제 불가능하다는 한계 때문에 LRM의 성능을 scaling 하거나 이를 신뢰하기 어려움
+    - 이를 해결하기 위해 prompts & 우연한 ‘aha moments’를 넘어서, 모델이 세 가지 meta-abilities에 align 되도록 학습 - deduction, induction, abduction
+    - three-stage pipeline: individual alignment, parameter-space merging, domain-specific reinforcement learning
+- 📜 [KAIST] [System Prompt Optimization with Meta-Learning](https://arxiv.org/abs/2505.09666)
+    - 다양한 user prompts에 robust 하고 unseen tasks에 transferable 한 system prompts를 디자인하는 것을 목표로 삼는 bilevel system 제안
+    - meta-learning framework: system prompt 뿐만 아니라 user prompts도 업데이트
+</details>
+
 ## 🌸 April
 <details>
   <summary>1st week</summary>
