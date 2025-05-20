@@ -211,6 +211,12 @@
 - 📜 [KAIST] [System Prompt Optimization with Meta-Learning](https://arxiv.org/abs/2505.09666)
     - 다양한 user prompts에 robust 하고 unseen tasks에 transferable 한 system prompts를 디자인하는 것을 목표로 삼는 bilevel system 제안
     - meta-learning framework: system prompt 뿐만 아니라 user prompts도 업데이트
+- 🧑🏻‍💻 [HuggingFace] [Welcome to the 🤗 Model Context Protocol (MCP) Course](https://huggingface.co/learn/mcp-course/unit0/introduction)
+- 🧑🏻‍💻 [Alibaba] [Qwen3 Technical Report](https://arxiv.org/abs/2505.09388)
+    - dense & MoE 아키텍쳐, 0.6B ~ 235B 파라미터 사이즈
+    - thinking mode & non-thinking mode 통합. 유저 쿼리나 chat template에 따른 dynamic mode swithcing
+    - thinking budget mechanism을 도입하여 유저가 추론 시 computational resources를 adaptive하게 할당함으로써 태스크 복잡도에 따른 모델 퍼포먼스와 latency 간 균형을 맞출 수 있다고 설명
+    - 기존 29개 → 119개 언어 및 방언 지원, Apache 2.0 라이센스
 </details>
 
 ## 🌸 April
