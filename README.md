@@ -217,6 +217,11 @@
     - thinking mode & non-thinking mode 통합. 유저 쿼리나 chat template에 따른 dynamic mode swithcing
     - thinking budget mechanism을 도입하여 유저가 추론 시 computational resources를 adaptive하게 할당함으로써 태스크 복잡도에 따른 모델 퍼포먼스와 latency 간 균형을 맞출 수 있다고 설명
     - 기존 29개 → 119개 언어 및 방언 지원, Apache 2.0 라이센스
+- 📜 [Tsinghua] [AdaptThink: Reasoning Models Can Learn When to Think](https://arxiv.org/abs/2505.13417)
+    - reasoning model이 thinking을 skip하고 최종 답변을 생성토록 지시하는 NoThinking이 performance & efficiency 관점에서 더 효율적임
+    - AdaptThink: 문제 난이도에 따라 최적의 thinking mode를 reasoning model이 선택하도록 가르치는 RL 알고리즘
+        - constrained optimization objective: overall performance를 유지하면서도 NoThinking을 선택하도록 함
+        - sampling strategy: on-policy training 동안에 Thinking & No-Thinking samples의 균형을 맞춤
 </details>
 
 ## 🌸 April
