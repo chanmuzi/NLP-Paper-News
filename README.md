@@ -222,17 +222,25 @@
     - AdaptThink: 문제 난이도에 따라 최적의 thinking mode를 reasoning model이 선택하도록 가르치는 RL 알고리즘
         - constrained optimization objective: overall performance를 유지하면서도 NoThinking을 선택하도록 함
         - sampling strategy: on-policy training 동안에 Thinking & No-Thinking samples의 균형을 맞춤
-- 📜 [NUS] [**Thinkless: LLM Learns When to Think**](https://arxiv.org/abs/2505.13379)
+- 📜 [NUS] [Thinkless: LLM Learns When to Think](https://arxiv.org/abs/2505.13379)
     - Thinkless: LLM이 task complexity & model’s ability 를 기반으로 short-form & long-form reasoning을 adaptively 선택하도록 하는 learnable framework
     - RL 패러다임으로 학습되고 <short>, <think> 두 개의 control tokens를 사용
     - Decoupled Group Relative Policy Optimization (DeGROP) 알고리즘
         - 두 개의 learning objective: control token loss & response loss
-- 📜 [Southern California] [**Mapping the Minds of LLMs: A Graph-Based Analysis of Reasoning LLM**](https://arxiv.org/abs/2505.13890)
+- 📜 [Southern California] [Mapping the Minds of LLMs: A Graph-Based Analysis of Reasoning LLM](https://arxiv.org/abs/2505.13890)
     - unified graph-based analytical freamwork를 제시하여 RLM의 reasoning processes에 대해 더 좋은 모델링을 하고자 함
     - (1) long & verbose CoT outputs를 semantically coherent reasoning steps로 만들기
     - (2) 각 스텝 간의 contextual & logical dependencies 를 이용하여 directed reasoning graphs 구축하기
     - exploration density, branching, convergence ratios 등과 같은 structural propreties가 reasoning accuracy와 강한 상관관계를 갖고 있다고 설명함
     - RLMs 들이 few-shot prompting에 오히려 약세를 보이는 등의 counterintuitive 현상에 대한 의문으로부터 출발한 연구 → prompting strategies의 중요성 강조
+- 🧑🏻‍💻 [Google] [Gemini 2.5: Our most intelligent models are getting even better](https://blog.google/technology/google-deepmind/google-gemini-updates-io-2025)
+    - Gemini 2.5의 reasoning 능력을 강화하여 업데이트한 버전을 공개
+    - 풀스택 개발 태스크에 대해 WebDev Arena에서 1415 ELO 스코어 달성
+    - 두 개의 목소리로 native audio generation 가능
+- 🧑🏻‍💻 [Google] [Build with Jules, your asynchronous coding agent](https://blog.google/technology/google-labs/jules)
+    - 기존 repositories에 직접 integrate 가능한 asynchronous & agentic coding assistant
+    - 각 codebase를 Google의 Cloud virtual machine (VM) 에 복사하여 프로젝트 전체를 이해한다고 설명
+    - Works on real codebase, Parallel execution, Visible workflow, User steerability, Audio summaries 등을 특징으로 삼고 있음
 </details>
 
 ## 🌸 April
