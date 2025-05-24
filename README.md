@@ -241,6 +241,27 @@
     - 기존 repositories에 직접 integrate 가능한 asynchronous & agentic coding assistant
     - 각 codebase를 Google의 Cloud virtual machine (VM) 에 복사하여 프로젝트 전체를 이해한다고 설명
     - Works on real codebase, Parallel execution, Visible workflow, User steerability, Audio summaries 등을 특징으로 삼고 있음
+- 📜 [ByteDance] [Emerging Properties in Unified Multimodal Pretraining](https://arxiv.org/abs/2505.14683)
+    - BAGEL: multimodal understanding & generation 을 natively support 하는 open-source foundation 모델
+    - large-scale interleaved text, image, video, web data를 수 trillion tokens으로 학습한 unified & decoder-only model
+    - free-form image manipulation, future frame prediction, 3D manipulation, word navigation 과 같은 advanced multimodal reasoning 능력을 보유
+- 📜 [Jiaotong University] [Deliberation on Priors: Trustworthy Reasoning of Large Language Models on Knowledge Graphs](https://arxiv.org/abs/2505.15210)
+    - Deliberation on Priors (DP): Knowledge Graph 안의 priors를 충분히 이용할 수 있도록 새롭게 제시한 reasoning 프레임워크
+    - supervised fine-tuning & Kahneman-Tversky optimization 조합을 통해 structural priors를 LLM에 통합하는 progressive knowledge distillation strategy
+    - reasoning introspection strategey: LLM이 추출된 constraint priors 기반의 refined reasoning verfication를 수행할 수 있도록 guide
+- 🧑🏻‍💻 [Mistral] [Devstral](https://mistral.ai/news/devstral)
+    - software engineering tasks를 위한 agentic LLM, Devstral을 Apache 2.0 라이센스로 공개
+    - 현실적인 프로그래밍 문제를 해결하기 위해, 즉 GitHub issuses를 풀기 위해 학습된 모델
+    - RTX 4090 or Mac with 32GB RAM에서 구동 가능한 정도로 가벼움
+- 🧑🏻‍💻 [Google DeepMind] [Gemini Diffusion](https://deepmind.google/models/gemini-diffusion)
+    - 현재 wait-list에 등록 가능 (25.05.24 기준)
+    - random noise를 coherent output으로 변경하여 text or code를 생성하는 모델
+    - rapid response, more coherent text, iterative refinement 등을 특징으로 설명
+- 🧑🏻‍💻 [Google DeepMind] [Gemma 3n](https://deepmind.google/models/gemma/gemma-3n)
+    - phone or laptop (2GB of RAM) 에서 돌아가는 compact AI model로, Gemma 3 4B에 비해 1.5x 빠른 response를 보여줌
+        - 삼성 갤럭시 울트라에서 초당 446 토큰 처리
+    - Mix ‘n’ match architecture는 small & large models를 switch 하는 데 도움을 줌
+    - Chatbot Arena에서 1283점을 기록하며 Claude 3.7 Sonnet의 뒤를 이음
 </details>
 
 ## 🌸 April
