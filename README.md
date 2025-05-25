@@ -262,6 +262,18 @@
         - 삼성 갤럭시 울트라에서 초당 446 토큰 처리
     - Mix ‘n’ match architecture는 small & large models를 switch 하는 데 도움을 줌
     - Chatbot Arena에서 1283점을 기록하며 Claude 3.7 Sonnet의 뒤를 이음
+- 📜 [ServiceNow] [Augmenting LLM Reasoning with Dynamic Notes Writing for Complex QA](https://arxiv.org/abs/2505.16293)
+    - multi-hop QA 에서의 iterative RAG 가 지닌 한계점을 극복하기 위한 연구
+    - NotesWriting: 매 스텝마다 retrieved documents를 concise & relevant notes 로 변경하는 연구
+    - LLM의 effective context length를 간접적으로 높여 더 큰 크기의 input text를 효율적으로 처리할 수 있음
+    - 다른 RAG 방법론들과 integrated 가능한 framework
+- 📜 [Yonsei, CMU] [Web-Shepherd: Advancing PRMs for Reinforcing Web Agents](https://arxiv.org/abs/2505.15277)
+    - Web-Shepherd: web navigation trajectories를 step-level로 평가하는 process reward model (PRM) 제시
+    - WebPRM Collection: 40K step-level perference pairs & annotated checklists
+    - WebReward Bench: PRM 평가를 위한 meta-evaluation 벤치마크
+- 🧑🏻‍💻 [HuggingFace] [nanoVLM: The simplest repository to train your VLM in pure PyTorch](https://huggingface.co/blog/nanovlm)
+    - 750줄의 순수 PyTorch 코드로 구성된 초경량 Vision-Language 모델
+    - 단일 GPU에서 학습 가능
 </details>
 
 ## 🌸 April
