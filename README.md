@@ -274,6 +274,16 @@
 - 🧑🏻‍💻 [HuggingFace] [nanoVLM: The simplest repository to train your VLM in pure PyTorch](https://huggingface.co/blog/nanovlm)
     - 750줄의 순수 PyTorch 코드로 구성된 초경량 Vision-Language 모델
     - 단일 GPU에서 학습 가능
+- 📜 [UIUC] [Language Specific Knowledge: Do Models Know Better in X than in English?](https://arxiv.org/abs/2505.14990)
+    - 인간의 code-switching은 특정 주제나 도메인에 대해 더 편하게 느끼는 언어가 있기 때문에 발생하는 것이라고 가정
+        - 언어 모델도 그런 경향이 있다면 reasoning 능력을 더 끌어올릴 수 있지 않을까? 라는 접근
+    - Language Specific Knowledge (LSK): ethnic cultures는 언어에 따라 발전하는 경향이 있고, 이에 따라 culture-specific datasets에 대해 실험해본 결과 가정이 옳았다고 설명함
+    - LSKExtractor: language-specific knowledge의 존재를 확인할 수 있는 벤치마크 공개
+- 📜 [Meta] [J1: Incentivizing Thinking in LLM-as-a-Judge via Reinforcement Learning](https://arxiv.org/abs/2505.10320)
+    - J1: CoT를 기반으로 뛰어난 think 능력을 지닌 LLM-as-a-Judge 모델을 학습하는 RL 방법론
+    - verifiable & non-verifiable prompts를 verifiable rewards를 포함하는 judgement tasks로 변환 → thinking을 incentivize & judgement bias를 mitigate
+    - DeepSeek-R1을 포함한 현존 8B or 70B 모든 모델들을 outperform
+    - Pairwise-J1 & Pointwise-J1, offline vs. online training recipes, reward strategies 등을 analysis & ablation
 </details>
 
 ## 🌸 April
