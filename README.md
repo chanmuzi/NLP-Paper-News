@@ -286,6 +286,16 @@
     - Pairwise-J1 & Pointwise-J1, offline vs. online training recipes, reward strategies 등을 analysis & ablation
 </details>
 
+<details>
+  <summary>5th week</summary>
+
+- 🧑🏻‍💻 [Anthropic] [Introducing Claude 4](https://www.anthropic.com/news/claude-4)
+    - 코딩 특화 reasoning 모델 공개
+    - long thought process에 대한 요약 제시
+    - developer mode에서는 unsummarized reasoning 확인 가능
+    - VS Code나 JetBrains에서 사용 가능한 새로운 extension 출시
+</details>
+
 ## 🌸 April
 <details>
   <summary>1st week</summary>
