@@ -294,6 +294,18 @@
     - long thought process에 대한 요약 제시
     - developer mode에서는 unsummarized reasoning 확인 가능
     - VS Code나 JetBrains에서 사용 가능한 새로운 extension 출시
+- 🧑🏻‍💻 [ByteDance] [BAGEL: The Open-Source Unified Multimodal Model](https://bagel-ai.org)
+    - multi-modal reasoning & image editing 이 가능한 open-source model
+    - multiple expert networks & two image encoders 사용
+    - 7B 사이즈의 모델로, 4 x 16GB GPU에서 run 또는 LoRA 기반 학습 가능
+- 📜 [Tokyo] [MMLU-ProX: A Multilingual Benchmark for Advanced Large Language Model Evaluation](https://mmluprox.github.io/)
+    - 29개 언어로 구성되어 11,829개의 동일한 questions를 포함하고 있어 직접적인 cross-linguistic comparision 가능
+    - 각 언어당 658개의 질문들을 포함하는 lite version 제공
+- 📜 [Cambridge, UCL, Google] [Visual Planning: Let's Think Only with Images](https://arxiv.org/abs/2505.11409)
+    - 현 MLLMs는 reasoning 과정을 text로만 표현하여 시각적 정보(spatial & geometrical)를 충분히 활용하지 못한다고 지적
+    - Visual Planning: text 없이 순수하게 visual representation으로 reasoning
+        - step-by-step inference를 encode 하는 sequences of images 를 통해 executed
+    - Visual Planning via Reinforcement Learning (VPRL): large vision models를 GRPO로 post-training 하는 RL 프레임워크
 </details>
 
 ## 🌸 April
