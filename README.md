@@ -306,6 +306,10 @@
     - Visual Planning: text 없이 순수하게 visual representation으로 reasoning
         - step-by-step inference를 encode 하는 sequences of images 를 통해 executed
     - Visual Planning via Reinforcement Learning (VPRL): large vision models를 GRPO로 post-training 하는 RL 프레임워크
+- 🧑🏻‍💻 [Mistral AI] [Build AI agents with the Mistral Agents API](https://mistral.ai/news/agents-api)
+    - Web Search, Code Execution, Image Generation, Document Library
+    - MCP tools integration, Agent Orchestration
+    - 사용성이 좋고 개발 용이성이 뛰어난 형태의 API가 많이 공개되는 추세
 </details>
 
 ## 🌸 April
