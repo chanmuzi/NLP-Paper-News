@@ -310,6 +310,14 @@
     - Web Search, Code Execution, Image Generation, Document Library
     - MCP tools integration, Agent Orchestration
     - 사용성이 좋고 개발 용이성이 뛰어난 형태의 API가 많이 공개되는 추세
+- 🧑🏻‍💻 [Mistral AI] [Codestral Embed](https://mistral.ai/news/codestral-embed)
+    - code search & retrieval 에 특화된 embedding 모델 공개
+    - binary, int8, float32 자료형 지원
+- 🧑🏻‍💻 [Resemble AI] [chatterbox](https://github.com/resemble-ai/chatterbox)
+    - open-source TTS 모델로, elevenlabs의 모델 성능을 능가한다는 소식
+    - emotion exaggeration control 지원, watermarked outputs
+    - [Hugging Face Gradio app](https://huggingface.co/spaces/ResembleAI/Chatterbox) 에서 테스트 가능
+    - 0.5B Llama backbone, 0.5M hours of cleaned data로 학습
 </details>
 
 ## 🌸 April
