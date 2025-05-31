@@ -318,6 +318,17 @@
     - emotion exaggeration control 지원, watermarked outputs
     - [Hugging Face Gradio app](https://huggingface.co/spaces/ResembleAI/Chatterbox) 에서 테스트 가능
     - 0.5B Llama backbone, 0.5M hours of cleaned data로 학습
+- 📜 [Shanghai AI Lab, Tsinghua, UIUC] [The Entropy Mechanism of Reinforcement Learning for Reasoning Language Models](https://arxiv.org/abs/2505.22617)
+    - LLM reasoning을 위한 RL에서 policy entropy collapse 문제를 해결하고자 함
+        - policy entropy가 초기 학습 단계에서 급격히 감소하여 policy model이 overly confident 하게 되는 현상을 뜻함 (성능 포화)
+        - 이로 인해 exploratory ability가 diminish 하게 됨
+    - $R = -a \cdot \exp(H) + b$
+    - policy entropy의 변화는 action probability & logits 변화 사이의 covariance에 의한 것이라고 설명
+    - entropy collapse를 방지하기 위해 공분산이 높은 토큰의 업데이트를 제한하는 두 가지 방법 (Clip-Cov, KL-Cov) 제안
+- 📜 [Utah, Washington] [What Has Been Lost with Synthetic Evaluation?](https://arxiv.org/abs/2505.22830)
+    - LLM 생성 결과의 validity & difficulty 를 검증
+        - CondaQA: negation reasoning에 대한 평가
+        - DROP: quantities reasoning 평가
 </details>
 
 ## 🌸 April
