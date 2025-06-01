@@ -329,6 +329,15 @@
     - LLM 생성 결과의 validity & difficulty 를 검증
         - CondaQA: negation reasoning에 대한 평가
         - DROP: quantities reasoning 평가
+- 📜 [Google] [Sufficient Context: A New Lens on Retrieval Augmented Generation Systems](https://arxiv.org/abs/2411.06037) (ICLR 2025)
+    - sufficient context 개념을 사용하여 여러 모델과 데이터셋을 분석
+    - 성능이 뛰어난 모델들은 context가 충분할 때 답변을 잘하지만 그렇지 않을 때에 답변을 abstain 하지 않고 틀린 답변을 반환하는 경우가 있음
+    - 그러나 성능이 낮은 모델들은 context가 충분할 때조차 hallucination 또는 incorrect answers 반환하는 경우 있음
+    - RAG 시스템을 위해 새로운 selective generation method를 제안하여 충분한 context information을 더 잘 활용할 수 있도록 함
+- 📜 [Apple] [Interleaved Reasoning for Large Language Models via Reinforcement Learning](https://arxiv.org/abs/2505.19640)
+    - long CoT가 inefficiency를 초래하고 time-to-first-token (TTFT)를 증가시키는 문제를 지적
+    - RL을 이용하여 reasoning LLM이 interleave thinking & answering for multi-hop questions 할 수 있도록 guide 하는 training paradigm 제안
+    - 올바른 intermediate step에 incentivize 하는 rule-based reward 도입
 </details>
 
 ## 🌸 April
