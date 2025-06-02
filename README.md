@@ -5,6 +5,24 @@
 ---
 # 2025
 
+## 🌞 June
+<details>
+  <summary>1st week</summary>
+
+- 📜 [Yale] [Table-R1: Inference-Time Scaling for Table Reasoning](https://arxiv.org/abs/2505.23621)
+    - table 데이터에 대해 inference-time scaling이 가능하도록 만드는 두 개의 post-training 전략 제시
+        - frontier model의 reasoning steps로부터 distillation
+        - reinforcement learning with verifiable rewards (RLVR)
+    - Distillation을 위해 DeepSeek-R1 모델로 reasoning traces 생성
+- 📜 [Cohere] [Command A: An Enterprise-Ready Large Language Model](https://arxiv.org/abs/2504.00698)
+    - real-world의 enterprise use cases를 잘 처리하는 것을 목표로 학습된 111B 사이즈 LLM
+    - agent-optimized & multilingual-capable model (23개 언어 지원), hybrid architecture
+    - self-refinement & model merging techniques 적용
+- 📜 [Sakana AI] [Darwin Godel Machine: Open-Ended Evolution of Self-Improving Agents](https://arxiv.org/abs/2505.22954)
+    - Darwin Godel Machine (DGM): self-improving system that iteratively modifies its own code & empirically validates each change
+    - 여러 frozen foundation models가 tool use를 통해 코드를 읽고, 쓰고, 실행하는 coding agents optimize를 목표
+</details>
+
 ## 🌹 May
 <details>
   <summary>1st week</summary>
