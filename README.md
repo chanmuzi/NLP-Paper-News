@@ -21,6 +21,10 @@
 - 📜 [Sakana AI] [Darwin Godel Machine: Open-Ended Evolution of Self-Improving Agents](https://arxiv.org/abs/2505.22954)
     - Darwin Godel Machine (DGM): self-improving system that iteratively modifies its own code & empirically validates each change
     - 여러 frozen foundation models가 tool use를 통해 코드를 읽고, 쓰고, 실행하는 coding agents optimize를 목표
+- 📜 [UC Berkeley, Yale] [Learning to Reason without External Rewards](https://www.arxiv.org/abs/2505.19590)
+    - complex reasoning을 위한 LLM을 Reinforcement Learning with Verifiable Rewards (RLVR) 하는 것은 너무 비싸다는 문제
+    - → Reinforcement Learning from Internal Feedback (RLIF): 외부 rewards or labeled data 없이 intrinsic signals로부터 학습
+    - Intuitor: 모델 스스로의 confidence, self-certainty를 유일한 reward signla로 사용. 기존 GRPO 자리를 대체
 </details>
 
 ## 🌹 May
