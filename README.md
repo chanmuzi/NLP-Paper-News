@@ -25,6 +25,15 @@
     - complex reasoning을 위한 LLM을 Reinforcement Learning with Verifiable Rewards (RLVR) 하는 것은 너무 비싸다는 문제
     - → Reinforcement Learning from Internal Feedback (RLIF): 외부 rewards or labeled data 없이 intrinsic signals로부터 학습
     - Intuitor: 모델 스스로의 confidence, self-certainty를 유일한 reward signla로 사용. 기존 GRPO 자리를 대체
+- 🧑🏻‍💻 [AgenticSeek: Private, Local Manus Alternative.](https://github.com/Fosowl/agenticSeek)
+    - 100% 로컬에서 실행 가능한 Manus AI 스타일의 agent 라이브러리
+    - web search, write codes, plan tasks, select agents, voice-enhanced 등 다양한 features
+- 📜 [UIUC, UC Berkeley] [AlphaOne: Reasoning Models Thinking Slow and Fast at Test Time](https://arxiv.org/abs/2505.24863)
+    - LLM의 test-time reasoning progress를 조절하는 프레임워크
+    - scaled thinking phase를 $\alpha$ moment 라고 표현. $\alpha$ moment가 slow thinking 하는 시점임
+- 🧑🏻‍💻 [ElevenLabs] [Introducing ElevenLabs Conversational AI 2.0](https://elevenlabs.io/blog/conversational-ai-2-0)
+    - real-time turn-taking을 통해 자연스러운 voice interaction 가능. “um”과 같은 filler words도 자연스럽게 filtering
+    - enterprise 사용에 더욱 적합: private files or prorietary data sources에 RAG 연결 가능
 </details>
 
 ## 🌹 May
