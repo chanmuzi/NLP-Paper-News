@@ -43,6 +43,18 @@
     - QwenLong-L1: short-context LRMs를 long-context scenarios에 adapt 할 수 있도록 progressive context scaling을 적용하는 프레임워크
     - warm-up SFT stage → curriculum-guided phased RL
     - QwenLong-L1-32B 모델이 OpenAI-o3-mini, Qwen3-235B-A22B 등을 outperform
+- 📜 [Renmin Univ.] [Do not Abstain! Identify and Solve the Uncertainty](https://arxiv.org/abs/2506.00780)
+    - LLM의 uncertainty 원인을 recognize & address 하는 능력을 improve 하기 위한 연구
+    - ConfuseBench: 세 종류의 uncertainty를 다룸 - document scarcity, limited capability, query ambiguity
+    - original query의 confusing aspect를 highlight 하는 context-aware inquiries 생성하고, 이를 기반으로 source of uncertainty를 판단하는 방법론 제안
+- 📜 [HuggingFace] [SmolVLA: A Vision-Language-Action Model for Affordable and Efficient Robotics](https://arxiv.org/abs/2506.01844)
+    - robotic policies를 scratch부터 학습하는 것 대신 VLMs를 vision-language-action (VLA) models로 adapt 하는 최근 연구 동향
+    - SmolVLA: small, efficient, community-driven VLA. training & inference 비용 저렴
+- 📜 [Meta, DeepMind, Cornell, NVIDIA] [How much do language models memorize?](https://arxiv.org/abs/2505.24832)
+    - 모델이 datapoint에 대해 얼마나 “knows” 하는지 추정하는 새로운 방법을 통해 언어 모델의 capacity 측정
+    - memorization을 unintended memorization & generalization 두 가지로 구분
+        - generalization을 제거하여 모델의 total memorization을 계산하고 model capacity를 추정할 수 있음
+    - GPT family 모델들은 약 3.6 bits-per-parameter의 capacity를 가짐
 </details>
 
 ## 🌹 May
