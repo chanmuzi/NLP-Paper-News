@@ -34,6 +34,15 @@
 - 🧑🏻‍💻 [ElevenLabs] [Introducing ElevenLabs Conversational AI 2.0](https://elevenlabs.io/blog/conversational-ai-2-0)
     - real-time turn-taking을 통해 자연스러운 voice interaction 가능. “um”과 같은 filler words도 자연스럽게 filtering
     - enterprise 사용에 더욱 적합: private files or prorietary data sources에 RAG 연결 가능
+- 📜 [Kakao] [A Practical Approach for Building Production-Grade Conversational Agents with Workflow Graphs](https://arxiv.org/abs/2505.23006)
+    - 현 LLMs는 service-specific constraints를 따르면서 conversational abilities를 보일 수준이 안됨
+    - e-commerce domain을 위한 conversational agent에 관한 case study
+    - 카나나를 기반으로 더 넓은 분야로 대화형 agent를 확장하고자 하는 것일까하는 생각
+- 📜 [Alibaba] [QwenLong-L1: Towards Long-Context Large Reasoning Models with Reinforcement Learning](https://arxiv.org/abs/2505.17667)
+    - 현 LRMs는 short-context reasoning tasks에 집중
+    - QwenLong-L1: short-context LRMs를 long-context scenarios에 adapt 할 수 있도록 progressive context scaling을 적용하는 프레임워크
+    - warm-up SFT stage → curriculum-guided phased RL
+    - QwenLong-L1-32B 모델이 OpenAI-o3-mini, Qwen3-235B-A22B 등을 outperform
 </details>
 
 ## 🌹 May
