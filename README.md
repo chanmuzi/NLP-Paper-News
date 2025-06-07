@@ -55,6 +55,13 @@
     - memorization을 unintended memorization & generalization 두 가지로 구분
         - generalization을 제거하여 모델의 total memorization을 계산하고 model capacity를 추정할 수 있음
     - GPT family 모델들은 약 3.6 bits-per-parameter의 capacity를 가짐
+- 📜 [Meta] [LlamaFirewall: An open source guardrail system for building secure AI agents](https://ai.meta.com/research/publications/llamafirewall-an-open-source-guardrail-system-for-building-secure-ai-agents)
+    - open-source security focused guardrail framework
+    - prompt injection, agent misalignment, insecure code risks 등을 mitigate 하기 위한 목적
+    - PromptGuard 2: universal jailbreak detector
+    - Agent Alignment Checks: CoT auditor
+    - CodeShield: online static analysis engine
+    - 정규표현식이나 프롬프트를 통해 guardrails을 쉽게 업데이트 할 수 있도록 하는 scanners 포함
 </details>
 
 ## 🌹 May
