@@ -64,6 +64,16 @@
     - 정규표현식이나 프롬프트를 통해 guardrails을 쉽게 업데이트 할 수 있도록 하는 scanners 포함
 </details>
 
+<details>
+  <summary>2nd week</summary>
+
+- 📜 [Apple] [The Illusion of Thinking: Understanding the Strengths and Limitations of Reasoning Models via the Lens of Problem Complexity](https://machinelearning.apple.com/research/illusion-of-thinking)
+    - 현존 LRMs에 대한 평가는 최종 결과에 대한 accuracy 위주로 이루어짐
+    - 다양한 puzzle environments를 통해 모델의 internal reasoning traces를 확인하여 LRMs이 “think” 하는 방식에 대한 insight 획득
+    - reasoning effort가 특정 문제 난이도까지 상승하다가 이후에는 감소하여 scaling에서의 한계를 보임을 지적
+    - 낮은 난이도의 문제들에 대해서는 일반적인 LLM들이 훨씬 뛰어난 퍼포먼스를 보여줌 & 어려운 난이도에 대해서는 일반적인 LLM이나 LRM이나 둘 다 collpase
+</details>
+
 ## 🌹 May
 <details>
   <summary>1st week</summary>
