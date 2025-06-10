@@ -72,6 +72,24 @@
     - 다양한 puzzle environments를 통해 모델의 internal reasoning traces를 확인하여 LRMs이 “think” 하는 방식에 대한 insight 획득
     - reasoning effort가 특정 문제 난이도까지 상승하다가 이후에는 감소하여 scaling에서의 한계를 보임을 지적
     - 낮은 난이도의 문제들에 대해서는 일반적인 LLM들이 훨씬 뛰어난 퍼포먼스를 보여줌 & 어려운 난이도에 대해서는 일반적인 LLM이나 LRM이나 둘 다 collpase
+- 📜 [Stanford, NYU] [From Tokens to Thoughts: How LLMs and Humans Trade Compression for Meaning](https://arxiv.org/abs/2505.17117)
+    - 사람은 knowledge를 categories로 organize 하는 semantic compression을 하는데, LLM의 특성은 어떠한지 분석한 연구
+    - expressive fidelity & representational simplicity 간의 trade-off가 있는데, 모델은 human understanding에서 중요한 fine-grained semantic distinctions을 놓침
+    - 또한 LLM은 aggressive statistical compression에 대해 bias를 보임
+- 📜 [UC Santa Cruz, Stanford] [Knowledge or Reasoning? A Close Look at How LLMs Think Across Domains](https://arxiv.org/abs/2506.02126)
+    - medical & mathematical 도메인에서 thinking trajectories를 knowledge & reasoning 파트로 구분하여 reasoning model을 분석
+    - fine-grained evaluation framework 제안
+        - (1) 사용된 knowledge의 정확성 (Knowledge Index (KI))
+        - (2) the quality of reasoning (Information Gain (IG))
+    - 한 도메인에서 획득한 reasoning 능력이 다른 도메인으로 transfer 되지 않는다는 연구 결과
+- 📜 [Stanford] [OpenThoughts: Data Recipes for Reasoning Models](https://arxiv.org/abs/2506.04178)
+    - proprietary 모델에 준하는 open-source 모델을 만들기 위한 학습 데이터셋 제작
+    - OpenThoughts2-1M 데이터셋으로 OpenThinker2-32B 모델 학습. DeepSeek-R1-Distill-32B에 준하는 성능
+    - 추가로 데이터셋을 정제하여 OpenThoughts3 제작
+- 📜 [CMU] [Coding Agents with Multimodal Browsing are Generalist Problem Solvers](https://arxiv.org/abs/2506.03011)
+    - AI agents의 일반화 성능을 높이기 위한 방법 및 필수 도구들에 대한 연구
+        - 기존 모델들은 특정 도메인이나 태스크에 specialized 되어 있어 일반화가 되지 않음을 지적
+    - OpenHands-Versa: a generalist agent built with a modest number of general tools
 </details>
 
 ## 🌹 May
