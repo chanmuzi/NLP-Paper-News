@@ -90,6 +90,11 @@
     - AI agents의 일반화 성능을 높이기 위한 방법 및 필수 도구들에 대한 연구
         - 기존 모델들은 특정 도메인이나 태스크에 specialized 되어 있어 일반화가 되지 않음을 지적
     - OpenHands-Versa: a generalist agent built with a modest number of general tools
+- 📜 [Microsoft, Peking, Tsinghua] [Reinforcement Pre-Training](https://arxiv.org/abs/2506.08007)
+    - Reinforcement Pre-Training (RPT): next-token prediction을 RL에서 사용되는 reasoning taks로 reframe
+        - 주어진 문맥에서 다음 토큰을 정확히 예측하면 verifiable rewards를 받는 방식
+    - general-purpose RL을 위한 방대한 양의 텍스트 데이터를 이용할 수 있는 scalabe method라고 소개
+    - further reinforcement fine-tning을 위한 strong pre-trained foundation
 </details>
 
 ## 🌹 May
