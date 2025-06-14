@@ -95,6 +95,23 @@
         - 주어진 문맥에서 다음 토큰을 정확히 예측하면 verifiable rewards를 받는 방식
     - general-purpose RL을 위한 방대한 양의 텍스트 데이터를 이용할 수 있는 scalabe method라고 소개
     - further reinforcement fine-tning을 위한 strong pre-trained foundation
+- 📜 [ByteDance] [Dolphin: Document Image Parsing via Heterogeneous Anchor Prompting](https://arxiv.org/abs/2505.14059)
+    - Dolphin: analyze-then-parse paradigm을 따르는 multimodal document image parsing 모델
+    - reading order에 맞는 sequence of layout elements를 생성하고 이를 anchors로 사용
+    - anchors는 task-specific prompts와 짝지어지고, 다음 단계에서 parallel content parsing에 사용됨
+    - multi-granularity parsing tasks를 다루는 30M개 이상의 dataset
+- 📜 [Cambridge] [Truly Self-Improving Agents Require Intrinsic Metacognitive Learning](https://arxiv.org/abs/2506.05109) (ICML 2525)
+    - 현재 self-improving agents는 self-improvement processes가 너무 rigid 하여 generalization & scaling 안된다는 문제가 있음
+    - 인간의 metacognition에 착안하여 세 개의 components로 구성된 프레임워크 제안
+        - metacognitive knowledge, metacognitive planning, metacognitive evaluation
+    - 기존 agents들이 학습하는 것은 extrinsic metacognitive mechanisms을 따른다고 설명
+- 📜 [Claude Opus] [Comment on The Illusion of Thinking: Understanding the Strengths and Limitations of Reasoning Models via the Lens of Problem Complexity](https://arxiv.org/abs/2506.09250)
+    - 최근 Apple에서 공개한 Illusion of Thinking 논문의 실험 결과를 지적하며 Claude Opus 모델을 1저자로 올린 논문
+- 📜 [MIT] [Self-Adapting Language Models](https://arxiv.org/abs/2506.10943)
+    - Self-Adapting LLMs (SEAL): LLM이 스스로 finetuning data를 생성하고 directives를 update 하여 self-adapt 하도록 만드는 프레임워크
+    - self-edit: 새로운 input이 주어지면 모델은 information을 스스로 재구성, 하이퍼 파라미터 명시 등
+    - effetive self-edits 방법을 모델에게 알려주기 위해, updated model의 퍼포먼스를 reward signal로 사용하는 강화 학습 적용
+    - separate adaptation modules 또는 auxiliary networks를 사용하는 기존 방법론들과 달리, 모델의 생성 결과를 adaptation process에 직접 사용하여 parametrize & control 하는 것이 특징
 </details>
 
 ## 🌹 May
