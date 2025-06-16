@@ -114,6 +114,25 @@
     - separate adaptation modules 또는 auxiliary networks를 사용하는 기존 방법론들과 달리, 모델의 생성 결과를 adaptation process에 직접 사용하여 parametrize & control 하는 것이 특징
 </details>
 
+<details>
+  <summary>3rd week</summary>
+
+- 🧑🏻‍💻 [OpenAI] [Launching OpenAI o3-pro](https://help.openai.com/en/articles/9624314-model-release-notes)
+    - 답변이 느리더라도 더 오래 생각하고 깊은 이해를 바탕으로 결과를 제시하는 모델 o3-pro 버전을 정식으로 공개
+    - personalized answer를 위한 memory 기능 지원
+    - o3, o1-pro 모델을 math, coding, science 벤치마크에서 outperform. pass@1 벤치마크가 인상적임
+- 📜 [Huawei] [SWE-Factory: Your Automated Factory for Issue Resolution Training Data and Evaluation Benchmarks](https://arxiv.org/abs/2506.10954)
+    - GitHub issue resolution task를 위한 벤치마크는 환경 설정, 결과 채점, taks instance validation 등의 이유로 구축하기가 쉽지 않음
+    - SWE-Factory
+        - SWE-Builder: evaluation environment construction을 자동화해주는 multi-agent system
+        - exit-code-based grading method: custom parsers를 직접 작성할 필요가 없음
+        - reliable exit code signals를 이용하여 fail2pass validation process를 자동화
+- 📜 [Rice, Johns Hopkins, NVIDIA] [Play to Generalize: Learning to Reason Through Game Play](https://arxiv.org/abs/2506.08011)
+    - Visual Game Learning (ViGaL): MLLMs이 아케이드류 게임을 통해 ood generalization이 가능한 multimodal reasoning 능력을 획득
+    - Snake 같은 게임을 학습한 7B 사이즈 모델이, RL 동안에 어떤 solutions, equations, diagrams를 보지 못했음에도 불구하고 MMMU에서 성능 향상을 보임: transferable reasoning skills
+    - 따라서 synthetic, rule-based game을 controllable & scalable pre-text tasks로 사용할 수 있다고 설명 for generalizable multimodal reasoning abilities in MLLMs
+</details>
+
 ## 🌹 May
 <details>
   <summary>1st week</summary>
