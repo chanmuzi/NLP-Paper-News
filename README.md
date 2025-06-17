@@ -131,6 +131,15 @@
     - Visual Game Learning (ViGaL): MLLMs이 아케이드류 게임을 통해 ood generalization이 가능한 multimodal reasoning 능력을 획득
     - Snake 같은 게임을 학습한 7B 사이즈 모델이, RL 동안에 어떤 solutions, equations, diagrams를 보지 못했음에도 불구하고 MMMU에서 성능 향상을 보임: transferable reasoning skills
     - 따라서 synthetic, rule-based game을 controllable & scalable pre-text tasks로 사용할 수 있다고 설명 for generalizable multimodal reasoning abilities in MLLMs
+- 📜 [Sakana AI] [Text-to-LoRA: Instant Transformer Adaption](https://arxiv.org/abs/2506.06105)
+    - natural language task description을 바탕으로 즉시 LoRA adapters를 생성하는 hypernetwork-based approach
+    - Text-to-LoRA (T2L): many LoRA adapters를 합축한 모델로 unseen tasks에 대해 generalizes
+- 📜 [Meta] [V-JEPA 2: Self-Supervised Video Models Enable Understanding, Prediction and Planning](https://arxiv.org/abs/2506.09985)
+    - V-JEPA 2: a scalable joint-embedding predictive architecture for self-supervised video learning
+    - 2-stage training
+        - action-free pretraining on 1M+ hours of internet videos and images
+        - post-training with only 62 hours of unlabeld robot trajectories (Droid dataset)
+    - self-supervised robot planning, architectural scale-up 등의 특징
 </details>
 
 ## 🌹 May
