@@ -140,6 +140,10 @@
         - action-free pretraining on 1M+ hours of internet videos and images
         - post-training with only 62 hours of unlabeld robot trajectories (Droid dataset)
     - self-supervised robot planning, architectural scale-up 등의 특징
+- 📜 [Microsoft, UCLA] [Direct Reasoning Optimization: LLMs Can Reward And Refine Their Own Reasoning for Open-Ended Tasks](https://arxiv.org/abs/2506.13351)
+    - Direct Reasoning Optimization (DRO): LLMs를 open-ended, long-form reasoning tasks에 fine-tuning 하는 프레임워크, using Reasoning Reflection Reward (R3)
+    - preceding CoT reasoning에서 key tokens를 identify & emphasize → reasoning & reference outcome 사이의 consistency를 fine-grained level에서 capture
+    - R3는 optimized 중인 model의 내부 연산 결과를 활용하므로 self-contained training setup 가능
 </details>
 
 ## 🌹 May
