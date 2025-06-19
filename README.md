@@ -148,6 +148,19 @@
     - Gemini 2.5 & Gemini 2.5 Flash 모델 공개
     - coding & reasoning benchmarks에서 SoTA 달성
     - Gemini 2.5 Pro 모델은 3시간 길이의 비디오를 이해할 수 있을 정도로 뛰어난 multimodal understanding 능력을 보임
+- 📜 [MIT] [Your Brain on ChatGPT: Accumulation of Cognitive Debt when Using an AI Assistant for Essay Writing Task](https://arxiv.org/abs/2506.08872v1)
+    - LLM group, Search Engine group, Brain-only group, 세 그룹으로 나누어 에세이 작성 실험
+    - LLM으로 태스크를 수행한 그룹은 타 그룹 대비 less coordinated neural effort가 관측되었다고 보고
+    - 또한 작성된 에세이의 퀄리티는 AI judge & human teachers로부터 비슷한 평가를 받았으나, NER/n-gram 관점에서는 타그룹 대비 낮은 성적을 기록
+- 📜 [Yale, Columbia, …] [MultiFinBen: A Multilingual, Multimodal, and Difficulty-Aware Benchmark for Financial LLM Evaluation](https://arxiv.org/abs/2506.14028)
+    - global financial domain에 대해 modalities (text, vision, audio)
+    - domain-specific tasks에 대해 linguistic settings (monollingual, bilingual, multilingual)
+    - PolyFiQA-Easy & PolyFiQA-Expert: mixed-language inputs에 대해 복잡한 reasoning이 필요한 벤치마크 공개
+    - 또한 기존의 simple aggregation existing datasets 대신, dynamic difficulty-aware slection mechanism 제안
+- 🧑🏻‍💻 [Anthropic] [SHADE-Arena: Evaluating sabotage and monitoring in LLM agents](https://www.anthropic.com/research/shade-arena-sabotage-monitoring)
+    - AI 모델이 정상적으로 태스크를 수행하는 것처럼 보이면서 실제로는 사용자를 속이는 상황(sabotage)을 체크하기 위한 벤치마크
+    - 각 태스크는 main task & harmful side task 로 구성
+    - 이중 모니터링 시스템, 은밀성 평가(단순 성공 여부 x, 들키지 않고 성공 o), 복잡성과 현실성 고려
 </details>
 
 ## 🌹 May
