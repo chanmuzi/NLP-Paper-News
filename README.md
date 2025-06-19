@@ -144,6 +144,10 @@
     - Direct Reasoning Optimization (DRO): LLMs를 open-ended, long-form reasoning tasks에 fine-tuning 하는 프레임워크, using Reasoning Reflection Reward (R3)
     - preceding CoT reasoning에서 key tokens를 identify & emphasize → reasoning & reference outcome 사이의 consistency를 fine-grained level에서 capture
     - R3는 optimized 중인 model의 내부 연산 결과를 활용하므로 self-contained training setup 가능
+- 📜 [Google DeepMind] [Gemini 2.5: Pushing the Frontier with Advanced Reasoning, Multimodality, Long Context, and Next Generation Agentic Capabilities.](https://storage.googleapis.com/deepmind-media/gemini/gemini_v2_5_report.pdf)
+    - Gemini 2.5 & Gemini 2.5 Flash 모델 공개
+    - coding & reasoning benchmarks에서 SoTA 달성
+    - Gemini 2.5 Pro 모델은 3시간 길이의 비디오를 이해할 수 있을 정도로 뛰어난 multimodal understanding 능력을 보임
 </details>
 
 ## 🌹 May
