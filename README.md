@@ -161,6 +161,16 @@
     - AI 모델이 정상적으로 태스크를 수행하는 것처럼 보이면서 실제로는 사용자를 속이는 상황(sabotage)을 체크하기 위한 벤치마크
     - 각 태스크는 main task & harmful side task 로 구성
     - 이중 모니터링 시스템, 은밀성 평가(단순 성공 여부 x, 들키지 않고 성공 o), 복잡성과 현실성 고려
+- 📜 [MiniMax] [MiniMax-M1: Scaling Test-Time Compute Efficiently with Lightning Attention](https://arxiv.org/abs/2506.13585)
+    - 세계 최초의 open-weight, large-scale hybrid-attention reasoning model (hybride MoE & lighning attention mechanism)
+    - 1M context length 지원, 연산 효율성 강조
+    - CISPO: token update 대신 importance sampling weights를 clip 하는 novel RL algorithm
+    - 512 H800 GPUs로 3주 동안 학습하여 $534,700 비용이 들었다고 강조함
+- 📜 [OpenAI] Persona Feature Control Emergent Misalignment
+    - Toward understanding and preventing misalignment generalization: [OpenAI 블로그](https://openai.com/index/emergent-misalignment)
+    - GPT-4o를 insecure code에 의도적으로 fine-tuning 하면 unrelated prompts에도 malicious response를 반환 - emergent misalignment - 한다는 선행 연구 있음
+    - model diffing approach: sparse autoencoder를 사용하여 fine-tuning 전후의 internal model representations 비교
+    - 이를 통해 activation space 내의 misaligned persona feature를 확인할 수 있었고, 이는 곧 모델이 그러한 (malicious) 행동을 보일지 아닐지 예측할 수 있다는 것을 의미함 → re-align도 가능하다고 설명
 </details>
 
 ## 🌹 May
