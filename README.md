@@ -171,6 +171,12 @@
     - GPT-4o를 insecure code에 의도적으로 fine-tuning 하면 unrelated prompts에도 malicious response를 반환 - emergent misalignment - 한다는 선행 연구 있음
     - model diffing approach: sparse autoencoder를 사용하여 fine-tuning 전후의 internal model representations 비교
     - 이를 통해 activation space 내의 misaligned persona feature를 확인할 수 있었고, 이는 곧 모델이 그러한 (malicious) 행동을 보일지 아닐지 예측할 수 있다는 것을 의미함 → re-align도 가능하다고 설명
+- 📜 [ByteDance] [Seedance 1.0: Exploring the Boundaries of Video Generation Models](https://arxiv.org/abs/2506.09113)
+    - high-performance & inference-efficient video foundation generation model
+    - (1) multi-source data curation with precision and meaningful video captioning
+    - (2) natively supporting multi-shot generation & jointly learning of both text-to-video and image-to-video tasks 를 포함하는 training paradigm
+    - (3) fine-grained SFT & video-specific RLHF with multi-dimensional reward mechanisms를 포함하는 post-training approaches
+    - (4) multi-stage distillation strategies & system-level optimizations를 통한 10x inference speedup
 </details>
 
 ## 🌹 May
