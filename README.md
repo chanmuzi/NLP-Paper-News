@@ -179,6 +179,20 @@
     - (4) multi-stage distillation strategies & system-level optimizations를 통한 10x inference speedup
 </details>
 
+<details>
+  <summary>4th week</summary>
+  
+- 📜 [Huawei] [RAG+: Enhancing Retrieval-Augmented Generation with Application-Aware Reasoning](https://arxiv.org/abs/2506.11555)
+    - RAG+: RAG pipeline에 application-aware reasoning을 명시적으로 통합한 extension
+    - knowledge & aligned application example 로 구성된 dual corpus construct → 추론 단계에서 retrieves both jointly
+    - LLMs가 relevant information에 접근할 수 있을 뿐만 아니라 이를 structured & goal-oriented reasoning processes에 적용할 수 있게 됨
+- 📜 [Stanford] [Future of Work with AI Agents: Auditing Automation and Augmentation Potential across the U.S. Workforce](https://arxiv.org/abs/2506.06576)
+    - AI agents가 human labor를 automate 또는 augment 하는 것과 관련된 large-scale framework
+    - WORKBank: 844개 tasks, 104개 occupations에 대해 worker desires & expert assessments를 결합한 데이터 베이스
+    - Human Agency Scale (HAS): AI-agent-supported work에서 desired human involvement를 정량화
+    - 4 AI deployment zones: Automation Green Light, Red Light, R&D Opportunity, Low Priority
+</details>
+
 ## 🌹 May
 <details>
   <summary>1st week</summary>
