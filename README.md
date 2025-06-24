@@ -191,6 +191,7 @@
     - WORKBank: 844개 tasks, 104개 occupations에 대해 worker desires & expert assessments를 결합한 데이터 베이스
     - Human Agency Scale (HAS): AI-agent-supported work에서 desired human involvement를 정량화
     - 4 AI deployment zones: Automation Green Light, Red Light, R&D Opportunity, Low Priority
+- https://magenta.tensorflow.org/magenta-realtime?utm_source=alphasignal
 </details>
 
 ## 🌹 May
