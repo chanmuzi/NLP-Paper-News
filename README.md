@@ -192,6 +192,16 @@
     - Human Agency Scale (HAS): AI-agent-supported work에서 desired human involvement를 정량화
     - 4 AI deployment zones: Automation Green Light, Red Light, R&D Opportunity, Low Priority
 - https://magenta.tensorflow.org/magenta-realtime?utm_source=alphasignal
+- 🧑🏻‍💻 [IlElevenLabs] [Introducing 11ai: the voice-first AI assistant that takes action](https://elevenlabs.io/blog/introducing-11ai)
+    - voice-first interaction을 MCP와 결합하여 AI assistant가 action을 취할 수 있게 됨
+    - MCP를 통해서는 Salesforce, HubSpot, Gmail, Zapier 등에 연결 가능
+    - out-of-the-box integration으로 Perplexity, Linear, Slack, Notion 지원
+    - Ultra-low latency, Multimodal support, Integrated RAG, Automatic language detection, Enterprise-ready 등의 특징
+- 📜 [Sakana AI] [Reinforcement Learning Teachers of Test Time Scaling](https://arxiv.org/abs/2506.08388)
+    - [깃허브 링크](https://github.com/SakanaAI/RLT?tab=readme-ov-file) 🔗
+    - 현재 LLM의 강화학습은 one-hot correctness를 기반으로 이뤄지므로 initialization에 대한 의존성이 너무 높고, 학습이 잘된 RL 모델도 결국 distillation에서 cold start 문제를 해결하기 위한 teacher model로 쓰이는 현황을 지적
+    - Reinforcement-Learned Teachers (RLT): 각 문제에 대한 question & solution을 입력으로 받음 → 둘 사이를 ‘connects-the-dots’ 하여 학생들에게 자세한 설명을 제공하는 태스크 수행
+    - 이를 학생들에게 제공하여 solution에 대한 이해도를 확인하고, 이를 바탕으로 dense rewards를 획득
 </details>
 
 ## 🌹 May
