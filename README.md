@@ -202,6 +202,18 @@
     - 현재 LLM의 강화학습은 one-hot correctness를 기반으로 이뤄지므로 initialization에 대한 의존성이 너무 높고, 학습이 잘된 RL 모델도 결국 distillation에서 cold start 문제를 해결하기 위한 teacher model로 쓰이는 현황을 지적
     - Reinforcement-Learned Teachers (RLT): 각 문제에 대한 question & solution을 입력으로 받음 → 둘 사이를 ‘connects-the-dots’ 하여 학생들에게 자세한 설명을 제공하는 태스크 수행
     - 이를 학생들에게 제공하여 solution에 대한 이해도를 확인하고, 이를 바탕으로 dense rewards를 획득
+- 📜 [Cornell] [Memento: Note-Taking for Your Future Self](https://arxiv.org/abs/2506.20642)
+    - 최근 LLM은 reasoning-only tasks에만 뛰어나고 multi-hop question과 같은 retrieval 시나리오에 취약
+    - Memento (prompt strategy): 1) complex question을 smaller steps로 나눈다 2) LLM을 이용하여 database를 dynamically construct 3) 문제를 풀기 위해 작은 문제들을 다시 합친다
+- 📜 [Oxford, Amazon, Cambridge] [Distilling Tool Knowledge into Language Models via Back-Translated Traces](https://arxiv.org/abs/2506.19171)
+    - LLM은 정확한 계산이나 multi-step alebraic reasoning을 요하는 수학 문제 풀이에 취약
+    - Tool-integrated reasoning (TIF)은 inference-time dependencies로 인해 확장 가능성이 낮음
+    - natural language를 통해 tool knowledge를 LLM에 distill 하는 패러다임 제안
+    - Solver Agent: interleaving planning, symbolic tool calls, reflective reasoning을 통해 수학 문제 풀이
+        - multiple LLM-based agents 기반의 back-transaltion pipeline을 이용하여 TIR traces를 natural language reasoning traces로 변환
+        - Translator Agent: 각 tool calls에 대한 설명 생성
+        - Rephrase Agent: 이들을 coherent narrative로 merge
+    - 이런 식으로 만든 synthesized traces에 대해 오픈소스 모델들을 fine-tuning하여 tool knowledge & structured rasoning patterns 내재화에 기여했다고 보고
 </details>
 
 ## 🌹 May
