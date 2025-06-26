@@ -214,6 +214,18 @@
         - Translator Agent: 각 tool calls에 대한 설명 생성
         - Rephrase Agent: 이들을 coherent narrative로 merge
     - 이런 식으로 만든 synthesized traces에 대해 오픈소스 모델들을 fine-tuning하여 tool knowledge & structured rasoning patterns 내재화에 기여했다고 보고
+- 🧑🏻‍💻 [Google DeepMind] [AlphaGenome: AI for better understanding the genome](https://deepmind.google/discover/blog/alphagenome-ai-for-better-understanding-the-genome)
+    - DNA sequence model. API available
+    - single variants or mutation in human DNA sequences가 유전자를 조정하는 생물학적 과정에 어떻게 영향을 주는지 예측하는 모델
+- 🧑🏻‍💻 [Anthropic] [Agentic Misalignment: How LLMs could be insider threats](https://www.anthropic.com/research/agentic-misalignment)
+    - 16개의 major models를 대상으로 연구: 대부분의 모델이 설정된 시나리오 내에서 압박을 받으면 blackmail, document leaks과 같은 unethical actions를 취하는 것으로 확인됨
+    - 모델이 테스트 시나리오라는 것을 인지했을 땐 misbehavior를 보일 확률이 급격하게 낮아짐
+    - 실험 결과를 보면 blackmail rates에서 가장 높은 수치를 보이는 것은 Claude Opus 4 → 엄청나게 솔직한 연구 결과
+- 🗞️ [Meta] [Introducing Oakley Meta Glasses, a New Category of Performance AI Glasses](https://about.fb.com/news/2025/06/introducing-oakley-meta-glasses-a-new-category-of-performance-ai-glasses/)
+    - Meta가 Oakley와 콜라보로 출시한 최신 AI Glasses
+    - 풀충전 기준 일반적인 사용으로 8시간, stanby 기준 19시간 지속되는 배터리
+    - Ultra HD (3K) video를 담을 수 있는 high resolution camera
+    - built-in, personal AI assistant. 스포츠 활용성 높음
 </details>
 
 ## 🌹 May
