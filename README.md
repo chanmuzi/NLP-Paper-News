@@ -226,6 +226,19 @@
     - 풀충전 기준 일반적인 사용으로 8시간, stanby 기준 19시간 지속되는 배터리
     - Ultra HD (3K) video를 담을 수 있는 high resolution camera
     - built-in, personal AI assistant. 스포츠 활용성 높음
+- 📜 [Ohio, Amazon] [Mind2Web 2: Evaluating Agentic Search with Agent-as-a-Judge](https://arxiv.org/abs/2506.21506)
+    - Mind2Web2: 130개의 realistic, high-quality, long-horizon tasks로 구성된 벤치마크. real-time web browsing & extensive information synthesis 필요
+    - 이를 평가하기 위한 Agent-as-a-Judge 프레임워크 제안
+        - tree-structured rubric 기반의 task-specific judge agents를 construct 하여 answer correctness & source attribution 평가
+- 📜 [Ai2] [OMEGA: Can LLMs Reason Outside the Box in Math? Evaluating Exploratory, Compositional, and Transformative Generalization](https://arxiv.org/abs/2506.18880)
+    - OMEGA (Out-of-distribution Math problems Evaluation with 3 Generalization Axes)
+    - (1) Exploratory: known problem-solving skills를 같은 도메인이지만 더 어려운 문제에 적용
+    - (2) Compositional: 독립된 상황에서 습득한 distinct reasoning skills를 new & coherent way로 결합/통합
+    - (3) Transformative: 익숙한 approaches를 새로운 영역에 unconventionally 적용
+    - geometry, number theory, algebra 등에 대해 programmatically 생성된 train-test 데이터쌍으로 구성됨
+- 📜 [Skoltech] [Complexity-aware fine-tuning](https://arxiv.org/abs/2506.21220)
+    - 학습 데이터를 complexity(entropy) 기준으로 나눠서 모델을 학습
+    - easy & medium은 fine-tuning, hard는 distill 한 결과가 단순 SFT 결과보다 좋았다고 설명
 - 📜 [Ai2] [Language Modeling by Language Models](https://arxiv.org/abs/2506.20249)
     - LLM을 이용해서 새로운 LM architecture를 발견할 수 있을까?
     - multi-agent LLM을 이용해서 proposal stage - code generation - verification에 이르는 research를 simulate
