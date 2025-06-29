@@ -226,6 +226,14 @@
     - 풀충전 기준 일반적인 사용으로 8시간, stanby 기준 19시간 지속되는 배터리
     - Ultra HD (3K) video를 담을 수 있는 high resolution camera
     - built-in, personal AI assistant. 스포츠 활용성 높음
+- 📜 [Ai2] [Language Modeling by Language Models](https://arxiv.org/abs/2506.20249)
+    - LLM을 이용해서 새로운 LM architecture를 발견할 수 있을까?
+    - multi-agent LLM을 이용해서 proposal stage - code generation - verification에 이르는 research를 simulate
+    - Ladder of Sacles 접근법을 사용하는 Genesys 시스템을 제안: 제안 → 리뷰 → 검증 → large scale
+- 🧑🏻‍💻 [Anthropic] [Desktop Extensions: One-click MCP server installation for Claude Desktop](https://www.anthropic.com/engineering/desktop-extensions)
+    - Desktop Extension (.dxt files)을 통해 버튼 클릭 한 번으로 MCP servers 설치 가능
+    - 기존 MCP 설치는 ‘개발자 도구 필요, Manual configuration, Dependency 관리, 업데이트 복잡성’ 등의 문제를 지님
+    - .dxt file download → Claude Desktop open → Click “Install”
 </details>
 
 ## 🌹 May
