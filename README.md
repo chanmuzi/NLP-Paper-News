@@ -247,6 +247,10 @@
     - Desktop Extension (.dxt files)을 통해 버튼 클릭 한 번으로 MCP servers 설치 가능
     - 기존 MCP 설치는 ‘개발자 도구 필요, Manual configuration, Dependency 관리, 업데이트 복잡성’ 등의 문제를 지님
     - .dxt file download → Claude Desktop open → Click “Install”
+- 📜 [Baidu] [Towards AI Search Paradigm](https://arxiv.org/abs/2506.17188)
+    - human information processing & decision-making을 emulate 할 수 있는 검색 시스템
+    - LLM-powered agents를 이용하여 다양한 범위의 정보에 dynamically 접근 (from simple fatual queries to complex multi-stage reasoning tasks)
+    - query complexity를 평가하고, 문제를 executable plans로 쪼개고, tool usage, task execution, content synthesis로 문제 해결 (MCP)
 </details>
 
 ## 🌹 May
