@@ -251,6 +251,10 @@
     - human information processing & decision-making을 emulate 할 수 있는 검색 시스템
     - LLM-powered agents를 이용하여 다양한 범위의 정보에 dynamically 접근 (from simple fatual queries to complex multi-stage reasoning tasks)
     - query complexity를 평가하고, 문제를 executable plans로 쪼개고, tool usage, task execution, content synthesis로 문제 해결 (MCP)
+- 📜 [Google] [Performance Prediction for Large Systems via Text-to-Text Regression](https://arxiv.org/abs/2506.21718)
+    - tabular 데이터를 처리하는 60M 사이즈의 encoder-decoder 모델
+    - 단 500개의 few-shot examples 만으로 새로운 태스크에 adapt 가능
+    - encoder 사용, sequence 길이 증가, 모델의 inherent uncertainty quantification 중요성 강조
 </details>
 
 ## 🌹 May
