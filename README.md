@@ -9,6 +9,9 @@
 <details>
   <summary>1st week</summary>
 
+- 📜 [Stanford, NYU] [From Tokens to Thoughts: How LLMs and Humans Trade Compression for Meaning](http://arxiv.org/abs/2505.17117)  
+  - LLM과 인간 인지 (human cognition)이 의미 보존과 표현의 압축성 사이에서 어떻게 다른 전략을 사용하는지에 대한 논문
+  - 인간은 적절한 수준의 비효율성을 감소하면서도 더 풍부하고 유연한 개념 구조를 형성하는 반면 LLM은 통계적으로 효율을 극대화하여 개념 구조 형성
 - 🧑🏻‍💻 [Baidu] [Announcing the Open Source Release of the ERNIE 4.5 Model Family](https://ernie.baidu.com/blog/posts/ernie4.5/)
     - 3B - 47B MoE, 0.3B - 424B Dense Models, 총 10개의 멀티모달 모델 공개 (Apache 2.0)
     - MoE에 각 modality별로 독립적인 파라미터를 할당함과 동시에 modalities 간에 share 하는 파라미터도 보유하는 heterogeneous architecture 적용
