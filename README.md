@@ -5,6 +5,16 @@
 ---
 # 2025
 
+## 🍉 July
+<details>
+  <summary>1st week</summary>
+
+- 🧑🏻‍💻 [Baidu] [Announcing the Open Source Release of the ERNIE 4.5 Model Family](https://ernie.baidu.com/blog/posts/ernie4.5/)
+    - 3B - 47B MoE, 0.3B - 424B Dense Models, 총 10개의 멀티모달 모델 공개 (Apache 2.0)
+    - MoE에 각 modality별로 독립적인 파라미터를 할당함과 동시에 modalities 간에 share 하는 파라미터도 보유하는 heterogeneous architecture 적용
+    - 중국의 딥러닝 프레임워크인 PaddlePaddle로 모델 학습
+</details>
+
 ## 🌞 June
 <details>
   <summary>1st week</summary>
