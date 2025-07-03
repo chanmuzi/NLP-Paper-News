@@ -16,6 +16,21 @@
     - 3B - 47B MoE, 0.3B - 424B Dense Models, 총 10개의 멀티모달 모델 공개 (Apache 2.0)
     - MoE에 각 modality별로 독립적인 파라미터를 할당함과 동시에 modalities 간에 share 하는 파라미터도 보유하는 heterogeneous architecture 적용
     - 중국의 딥러닝 프레임워크인 PaddlePaddle로 모델 학습
+- 📜 [Mixture of Reasonings: Teach Large Language Models to Reason with Adaptive Strategies](https://arxiv.org/abs/2507.00606)
+    - Mixture of Reasoning (MoR): LLM이 external prompt engineering 없이 autonomous, task-adaptive reasoning 할 수 있도록 만드는 학습 프레임워크
+    - Thought generation → SFT dataset construction
+- 📜 [Mila, Oxford, AI2] [Chain-of-Thought Is Not Explainability](https://www.alphaxiv.org/abs/2025.02)
+    - CoT rationale가 필요하지도 않고 interpretable 하지도 않다고 주장
+    - verbalized chain이 주로 unfaithful 하며 모델 예측 자체로부터 diverge 하는 것이기 때문에 모델이 최종 정답에 이르는데 방해가 된다고 설명
+    - (1) 추가적인 증명이 없다면 CoT는 interpretability technique로 사용할 수 없다.
+    - (2) downstream decision-making의 faithfulness를 평가하기 위한 rigorous methods를 사용해야 한다
+    - (3) 모델 내부에서 explanation을 ground 하기 위한 causal validation method를 고도화 해야 한다
+    - 요슈아 벤지오가 저자 ㄷㄷ
+- 🧑🏻‍💻 [Ai2] [SciArena: A New Platform for Evaluating Foundation Models in Scientific Literature Tasks](https://allenai.org/blog/sciarena)
+    - SciArena: scientific literature tasks를 Foundation models들이 얼마나 잘 처리할 수 있는지를 평가하는 open & collaborative 플랫폼
+    - SoTA 성능을 파악하기 위해 23개의 프론티어 모델들을 호스트 중. 현재는 o3 모델이 최고 성능을 보임
+    - Chatbot Arena처럼 Elo rating system 사용
+    - [논문 링크](https://arxiv.org/abs/2507.01001) 🔗
 </details>
 
 ## 🌞 June
