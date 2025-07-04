@@ -31,6 +31,20 @@
     - SoTA 성능을 파악하기 위해 23개의 프론티어 모델들을 호스트 중. 현재는 o3 모델이 최고 성능을 보임
     - Chatbot Arena처럼 Elo rating system 사용
     - [논문 링크](https://arxiv.org/abs/2507.01001) 🔗
+- 📜 [ETH Zürich] [Do I Know This Entity? Knowledge Awareness and Hallucinations in Language Models](https://arxiv.org/abs/2411.14257) (ICLR 2025)
+    - sparse auto-encoder (SAE)를 interpretability tool로 사용하여 entity recognition
+    - SAE는 representation space에서 meaningful direction을 알아낼 수 있는데, 이를 통해 모델이 특정 entity를 아는지 모르는지(self-knowledge)를 구분할 수 있음
+    - direction을 이용하면 모델이 원래 알고 있던 것은 모른다고 하거나, 반대로 모르던 것은 알고 있는 것처럼 답변(hallucinate)하도록 유도하는 것이 가능
+- 🧑🏻‍💻 [Google Gemini] [Gemini-CLI](https://github.com/google-gemini/gemini-cli)
+    - CLI 환경에서 사용 가능한 오픈소스 agent 프레임워크 (Apache-2.0)
+- 🧑🏻‍💻 [observe.tools](https://observe.tools)
+    - endpoint 한 줄 변경으로 디버깅 가능한 솔루션
+    - 디테일한 trace 확인, payload 수정, 공유 등 기능 지원
+- 🧑🏻‍💻 [Ai2] [IFBench](https://github.com/allenai/IFBench/tree/main)
+    - LLM의 instruction following 능력을 평가하기 위한 challenging 벤치마크
+    - OOD constraints: verification function이 존재하는 58개의 new & challenging constraints
+    - Multiturn Constraint Isolation in 2 turns
+    - new IF-RLVR training constraints: 마찬가지로 verification function이 존재하는 29개의 new & challenging constraints ([IF-RLVR training data](https://huggingface.co/datasets/allenai/IF_multi_constraints_upto5) 🔗)
 </details>
 
 ## 🌞 June
