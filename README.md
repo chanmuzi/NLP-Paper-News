@@ -45,6 +45,10 @@
     - OOD constraints: verification function이 존재하는 58개의 new & challenging constraints
     - Multiturn Constraint Isolation in 2 turns
     - new IF-RLVR training constraints: 마찬가지로 verification function이 존재하는 29개의 new & challenging constraints ([IF-RLVR training data](https://huggingface.co/datasets/allenai/IF_multi_constraints_upto5) 🔗)
+- 📜 [Alibaba] [WebSailor: Navigating Super-human Reasoning for Web Agent](https://arxiv.org/abs/2507.02592)
+    - DeepResearch와 같은 agentic system이 뛰어난 성능을 달성할 수 있는 이유는 방대한 information landscape를 탐색할 때의 extreme uncertainty를 크게 줄일 수 있기 때문
+    - Duplicating Sampling Policy Optimization (DUPO): agentic RL training algorithm
+    - DUPO + structured sampling, information obfuscation, RFT cold start
 </details>
 
 ## 🌞 June
