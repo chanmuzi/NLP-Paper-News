@@ -49,6 +49,19 @@
     - DeepResearch와 같은 agentic system이 뛰어난 성능을 달성할 수 있는 이유는 방대한 information landscape를 탐색할 때의 extreme uncertainty를 크게 줄일 수 있기 때문
     - Duplicating Sampling Policy Optimization (DUPO): agentic RL training algorithm
     - DUPO + structured sampling, information obfuscation, RFT cold start
+- 📜 [Inception Labs] [Mercury: Ultra-Fast Language Models Based on Diffusion](https://arxiv.org/abs/2506.17298)
+    - diffusion 기반의 상업용 LLM 제안. 엄청난 추론 속도로 화제가 되었음
+    - Transformer architecture & multiple tokens parallel prediction
+    - 두 사이즈, Mini & Small 로 구성된 Mercury Coder 에 대한 상세한 리포트
+- 📜 [NUS, MIT, Yonsei] [MEM1: Learning to Synergize Memory and Reasoning for Efficient Long-Horizon Agents](https://arxiv.org/abs/2506.15841)
+    - MEM1: long multi-turn tasks에서 constant memory 기반으로 agents 동작이 가능하도록 하는 RL framework
+    - 매 턴마다 compact shared internal state를 update
+    - 기존 데이터셋을 이용하여 복잡한 task sequences로 만들어, 보다 realistic & compositional setting에 맞춰 학습 진행
+    - 뛰어난 일반화 성능 보고
+- 📜 [Baidu] [Towards AI Search Paradigm](https://arxiv.org/abs/2506.17188)
+    - human information processing & decision-making을 emulate 할 수 있는 검색 시스템
+    - LLM-powered agents를 이용하여 다양한 범위의 정보에 dynamically 접근 (from simple fatual queries to complex multi-stage reasoning tasks)
+    - query complexity를 평가하고, 문제를 executable plans로 쪼개고, tool usage, task execution, content synthesis로 문제 해결 (MCP)
 </details>
 
 ## 🌞 June
