@@ -67,13 +67,13 @@
 <details>
   <summary>2nd week</summary>
 
-- 📜 [Independent] [**Self-Correction Bench: Revealing and Addressing the Self-Correction Blind Spot in LLMs**](https://arxiv.org/abs/2507.02778)
+- 📜 [Independent] [Self-Correction Bench: Revealing and Addressing the Self-Correction Blind Spot in LLMs](https://arxiv.org/abs/2507.02778)
     - Self-Correction Blind Spot: output에 나타나는 동일한 에러를 교정하지 못함
     - Self-Correction Bench 제안: complexity level을 3개로 정해서 controlled error injection을 통해 관련 능력을 systematically 평가
     - LLM의 이러한 한계는 모델의 학습 데이터 구성(composition)과 관련이 높음
         - RL은 reward를 바탕으로 correction이 일어나지만 SFT는 아니므로..
         - 단순히 “Wait” 정도를 추가하는 것만으로도 Blind Spot을 89.3%나 줄일 수 있었음
-- 📜 [Salesforce] [**Lost at the Beginning of Reasoning**](https://arxiv.org/abs/2506.22058)
+- 📜 [Salesforce] [Lost at the Beginning of Reasoning](https://arxiv.org/abs/2506.22058)
     - LLM의 첫 reasoning step이 최종 답변에 지나치게 큰 영향을 미친다는 실험 결과를 제시
         - 즉, 스타트를 잘못 끊으면 이어지는 reasoning quality도 자연스레 낮다는 뜻
     - DeepSeek-R1 & Qwen3 대상으로 실험
