@@ -79,6 +79,24 @@
     - DeepSeek-R1 & Qwen3 대상으로 실험
     - reward 모델을 이용하여 고품질의 first reasoning step을 retain 하는 sampling 전략 제안
     - 의도적으로 첫 번째 추론 step에 문제가 있는 샘플들로 구성된 벤치마크를 제작하여 모델의 self-correction 능력을 평가
+- 🧑🏻‍💻 [Sakana AI] [Inference-Time Scaling and Collective Intelligence for Frontier AI](https://sakana.ai/ab-mcts/)
+    - 여러 개의 모델로 새로운 모델을 만드는 것 외에도 추론 단계에 활용할 수 있을 것이라는 아이디어 → Collective Intelligence (집단 지성)
+    - [AB-MCTS (Adaptive Branching Monte Carlo Tree Search)](https://arxiv.org/abs/2503.04412)
+        - AI가 trial-and-error를 빠르게 수행하여 여러 frontier 모델이 협력하도록 함
+        - 4o-mini + Gemini-2.5-Pro + R1-0528
+- 📜 [Tsinghua] [GLM-4.1V-Thinking: Towards Versatile Multimodal Reasoning with Scalable Reinforcement Learning](https://arxiv.org/abs/2507.01006)
+    - Reinforcement Learning with Curriculumn Sampling (RLCS)
+    - GLM-4.1V-9B-Thinking 모델을 오픈소스로 공개: 동사이즈 모델군에서 SoTA. video understanding, content recognition, coding, grounding 등 다양한 태스크 수행 가능
+        - long document understanding & STEM reasoning
+- 📜 [Alibaba] [Ovis-U1 Technical Report](https://arxiv.org/abs/2506.23044)
+    - 3B unified model: multi-modal understanding, text-to-image generation, image editing
+    - diffusion-based visual decoder & bidirectional token refiner
+    - frozen MLLM 모델을 이용하는 타 방법론들과 달리, 언어 모델로부터 unified training approach를 이용하여 understanding & generation 둘 다 학습 → better performance
+- 🧑🏻‍💻 [Anthropic] [Project Vend: Can Claude run a small shop? (And why does that matter?)](https://www.anthropic.com/research/project-vend-1)
+    - Anthropic에서 한 달 동안 Claude로 자판기 사업을 시켜봄 (미니 냉장고+셀프 체크아웃 iPad)
+    - 잘한 점: 웹어서 공급처를 찾아 특이, 희귀 상품 (네덜란드 초콜릿 우유 등) 준비
+    - 실패한 점: 과도한 할인 정책, 허위 결제 정보 생성
+    - 현재 상태로는 매장 운영이 불가능하지만, 향후 중간 관리자 정도의 역할을 할 수 있다고 판단
 </details>
 
 ## 🌞 June
