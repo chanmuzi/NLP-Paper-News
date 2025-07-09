@@ -97,6 +97,15 @@
     - 잘한 점: 웹어서 공급처를 찾아 특이, 희귀 상품 (네덜란드 초콜릿 우유 등) 준비
     - 실패한 점: 과도한 할인 정책, 허위 결제 정보 생성
     - 현재 상태로는 매장 운영이 불가능하지만, 향후 중간 관리자 정도의 역할을 할 수 있다고 판단
+- 📜 [MemTensor] [MemOS: A Memory OS for AI System](https://arxiv.org/abs/2507.03724)
+    - memory를 관리 가능한 시스템 리소스로 다루는 운영체제
+    - representation, scheduling, evolution of plain text, activation-based & parameter-level memories를 통합
+    - MemCube를 기본 단위로 사용하여 memory & meta data를 encapsulate
+- 📜 [Should We Still Pretrain Encoders with Masked Language Modeling?](https://arxiv.org/abs/2507.00994)
+    - 38개 모델을 210M ~ 1B 사이즈로 학습하며 ablation study 수행
+    - MLM 학습 방식과 CLM 학습 방식의 결과 차이를 비교
+    - MLM은 학습 결과가 좋지만 CLM의 데이터 대비 학습 효율이 좋음
+    - CLM → MLM 으로 이어지는 biphasic 학습 전략이 제한된 budget 내에서 가장 좋은 결과로 이어졌다고 설명
 </details>
 
 ## 🌞 June
