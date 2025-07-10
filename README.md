@@ -123,6 +123,9 @@
     - Gemma 2 프레임워크를 기반으로 T5Gemma 학습 (Small, Base, Large and XL 사이즈)
     - model adaptation: 사전학습된 decoder-only model의 weight로 initialize → UL2 or PrefixLM-based pre-training → 기존 decoder-only model보다 뛰어난 성능
     - encoder-decoder 간의 사이즈를 꼭 맞추지 않아도 됨 (flexibility)
+- 🧑🏻‍💻 [xAI] [Grok4](https://x.com/xai/status/1943158495588815072)
+    - o3 모델도 25점 정도의 점수를 기록하는 HLE 벤치마크에서 44점 이상(tool use 기준)을 달성했다고 보고
+    - multi-agent 구조, 256K context window
 </details>
 
 ## 🌞 June
