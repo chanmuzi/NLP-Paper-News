@@ -106,6 +106,23 @@
     - MLM 학습 방식과 CLM 학습 방식의 결과 차이를 비교
     - MLM은 학습 결과가 좋지만 CLM의 데이터 대비 학습 효율이 좋음
     - CLM → MLM 으로 이어지는 biphasic 학습 전략이 제한된 budget 내에서 가장 좋은 결과로 이어졌다고 설명
+- 📜 [IIT] [SingLoRA: Low Rank Adaptation Using a Single Matrix](https://arxiv.org/abs/2507.05566)
+    - single low-rank matrix와 이것의 transpose와 곱하는 것으로 weight decomposition
+    - 이를 통해 두 matrix 간 존재하는 scale disparities로 인해 발생하는 성능 하락 문제 해결 가능
+    - 자연어에 대해서는 Llama, 이미지에 대해서는 Stable Diffusion 모델을 fine-tuning한 결과 제시
+- 🧑🏻‍💻 [Perplexity] [Browse at the speed of thought](https://comet.perplexity.ai/#faq)
+    - Comet 브라우저를 Perplexity Max 티어 구독자 대상으로 선공개
+- 📜 [Google DeepMind] [MedGemma Technical Report](https://arxiv.org/abs/2507.05201)
+    - MedGemma: Gemma 3 4B & 27B 기반의 medical vision-language foundation model
+    - medical multimodal question answering & chest X-ray finding classification 태스크 잘 처리한다고 보고
+    - MedSigLIP: SigLIP으로부터 개발한 medically-tuned vision encoder
+- 🧑🏻‍💻 [Ai2] [Introducing FlexOlmo: a new paradigm for language model training and data collaboration](https://allenai.org/blog/flexolmo)
+    - data collaboration을 통해 AI co-development를 가능하도록 하는 training paradigm 제시
+    - data owners는 데이터에 대한 통제권을 잃지 않고서도 AI 모델에 기여할 수 있게 됨. 데이터를 직접적으로 공유할 필요도 없게 됨
+- 🧑🏻‍💻 [Google] [T5Gemma: A new collection of encoder-decoder Gemma models](https://developers.googleblog.com/en/t5gemma/)
+    - Gemma 2 프레임워크를 기반으로 T5Gemma 학습 (Small, Base, Large and XL 사이즈)
+    - model adaptation: 사전학습된 decoder-only model의 weight로 initialize → UL2 or PrefixLM-based pre-training → 기존 decoder-only model보다 뛰어난 성능
+    - encoder-decoder 간의 사이즈를 꼭 맞추지 않아도 됨 (flexibility)
 </details>
 
 ## 🌞 June
