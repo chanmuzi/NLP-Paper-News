@@ -126,6 +126,10 @@
 - 🧑🏻‍💻 [xAI] [Grok4](https://x.com/xai/status/1943158495588815072)
     - o3 모델도 25점 정도의 점수를 기록하는 HLE 벤치마크에서 44점 이상(tool use 기준)을 달성했다고 보고
     - multi-agent 구조, 256K context window
+- 📜 [Intel] [Investigating the Robustness of Retrieval-Augmented Generation at the Query Level](https://arxiv.org/abs/2507.06956)
+    - RAG는 input query의 quality에 강한 dependence가 있다는 문제를 지적
+    - query에 다양한 변형을 가하여(perturbation) RAG components의 sensitivity 측정
+    - 연구 결과에 따르면 사소한 query variation도 최종 생성 결과를 꽤나 degrade 한다고 함
 </details>
 
 ## 🌞 June
