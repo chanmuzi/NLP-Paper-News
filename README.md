@@ -134,6 +134,13 @@
     - Drag-and-Drop LLMs (DnD): prompt-conditioned parameter generator. unlabeled task prompts를 LoRA weight update에 직접 mapping하는 방식
     - lightweight text encoder가 각 prompt batch를 condition embeddings로 distills → cascaded hyper-convolutional decoder에 의해 full set of LoRA 행렬로 변환
     - task-specific parameters를 수 초 안에 생성 → FFT 대비 12,000배 낮은 overhead → unseen tasks에 대해 기존 LoRA 대비 30%까지 성능 향상
+- 🧑🏻‍💻 [SKT] [A.X-4.0](https://huggingface.co/skt/A.X-4.0)
+    - Qwen2.5 기반의 오픈소스 모델 공개
+    - 한국어 이해 & enterprise deployment 를 강점으로 내세움
+    - 72B 사이즈. 7B 사이즈의 light 버전도 공개
+- 🧑🏻‍💻 [SKT] [A.X-3.1-Light](https://huggingface.co/skt/A.X-3.1-Light)
+    - SKT 자체 supercomputing 인프라 TITAN을 이용해 from-scratch 학습
+    - 1.65T multi-lingual 토큰 corpus로 학습. 7B 사이즈.
 </details>
 
 ## 🌞 June
