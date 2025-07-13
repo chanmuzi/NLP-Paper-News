@@ -141,6 +141,11 @@
 - 🧑🏻‍💻 [SKT] [A.X-3.1-Light](https://huggingface.co/skt/A.X-3.1-Light)
     - SKT 자체 supercomputing 인프라 TITAN을 이용해 from-scratch 학습
     - 1.65T multi-lingual 토큰 corpus로 학습. 7B 사이즈.
+- 📜 [Stanford, Cohere] [Block Diffusion: Interpolating Between Autoregressive and Diffusion Language Models](https://arxiv.org/abs/2503.09573?utm_source=pytorchkr&ref=pytorchkr)
+    - diffusion LM의 likelihood modeling & fixed-length generation 한계를 지적
+    - a class of block diffusion: discrete denoising diffusion & autoregressive models 사이를 interpolate
+        - flexible-length generation & inference efficiency with KV cacahing and parallel token sampling
+    - 이를 위한 efficient training algorithm, estimators of gradient variance, data-driven noise scheduels to minimize the variance 등을 제시
 </details>
 
 ## 🌞 June
