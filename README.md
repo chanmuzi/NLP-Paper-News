@@ -146,6 +146,12 @@
     - a class of block diffusion: discrete denoising diffusion & autoregressive models 사이를 interpolate
         - flexible-length generation & inference efficiency with KV cacahing and parallel token sampling
     - 이를 위한 efficient training algorithm, estimators of gradient variance, data-driven noise scheduels to minimize the variance 등을 제시
+- 📜 [Tencent, Princeton] [One Token to Fool LLM-as-a-Judge](https://arxiv.org/abs/2507.08794)
+    - LLM을 generative reward model로 사용하여 ground-truth reference와 비교를 시킬 때 작은 표지에 영향을 크게 받는다는 것을 확인 (이런 방식을 master key 유형으로 분류하는 것 같음)
+        - non-word symbols - :, .
+        - reasoning openers: Thought process:, Let’s solve this problem step by step
+    - 위와 같은 표현들은 주로 false positive로 이어짐 (reward를 주지 않아야 하는데 줌)
+    - data augmentation & 모델 학습을 통해 이런 issue를 mitigate 할 수 있다고 설명
 </details>
 
 ## 🌞 June
