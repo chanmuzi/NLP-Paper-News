@@ -154,6 +154,20 @@
     - data augmentation & 모델 학습을 통해 이런 issue를 mitigate 할 수 있다고 설명
 </details>
 
+<details>
+  <summary>3rd week</summary>
+
+- 🧑🏻‍💻 [Moonshot AI] [Kimi K2: Open Agentic Intelligence](https://moonshotai.github.io/Kimi-K2/)
+    - 총 1T, 32B activated parameters MoE 모델. Base, Instruct 두 버전 오픈소스로 공개.
+    - MuonClip optimizer를 도입하여 qk-clip technique 고도화
+    - Tool learning을 위한 대규모 Agentic Data Synthesis
+- 📜 [Google DeepMind] [Gemini 2.5: Pushing the Frontier with Advanced Reasoning, Multimodality, Long Context, and Next Generation Agentic Capabilities](https://arxiv.org/abs/2507.06261)
+    - Gemini 2.5 Pro, Gemini 2.5 Flash 공개
+    - coding, reasoning 특화 & thinking 모델임
+    - multimodal understanding 능력이 뛰어나 3시간 분량의 영상도 처리할 수 있음
+    - long context + multi-modal ⇒ agentic problem-solving
+</details>
+
 ## 🌞 June
 <details>
   <summary>1st week</summary>
