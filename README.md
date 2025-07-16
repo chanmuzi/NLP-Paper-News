@@ -166,6 +166,16 @@
     - coding, reasoning 특화 & thinking 모델임
     - multimodal understanding 능력이 뛰어나 3시간 분량의 영상도 처리할 수 있음
     - long context + multi-modal ⇒ agentic problem-solving
+- 📜 [MetaStone AI, USTC] [Test-Time Scaling with Reflective Generative Model](https://arxiv.org/abs/2507.01951)
+    - Reflective Generative Form을 통해 o3-mini급 성능을 보이는 MetaStone-S1 모델 공개
+    - 두 가지 주요한 특징
+        - (1) A unified interface for policy and process reward model: trajectory scoring head 사이즈가 고작 53M
+        - (2) Eliminating the reliance on process-level annotation: self-supervised process reward model
+- 📜 [CMU] [Dynamic Chunking for End-to-End Hierarchical Sequence Modeling](https://arxiv.org/abs/2507.07955)
+    - dynamic chunking: content- & content- dependent segmentation 전략을 자동적으로 학습하는 mechanism
+    - dynamic chunking을 hierarchical network (H-Net)에 통합함으로써 tokenization-LM-detokenization → single model 로 대체
+    - 영어로 학습된 모델의 경우 character 단위에서 더 robust한 특징을 보였다고 설명
+    - Mamba 창시자인 Albert Gu 논문
 </details>
 
 ## 🌞 June
