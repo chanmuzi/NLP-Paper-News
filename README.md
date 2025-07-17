@@ -176,6 +176,10 @@
     - dynamic chunking을 hierarchical network (H-Net)에 통합함으로써 tokenization-LM-detokenization → single model 로 대체
     - 영어로 학습된 모델의 경우 character 단위에서 더 robust한 특징을 보였다고 설명
     - Mamba 창시자인 Albert Gu 논문
+- 📜 [KAIST, Mila, Google] [Mixture-of-Recursions: Learning Dynamic Recursive Depths for Adaptive Token-Level Computation](https://arxiv.org/abs/2507.10524)
+    - Mixture-of-Recursions (MoR): parameter sharing & adaptive computation 둘 다 고려한 single Recursive Transformer
+    - parameter efficiency를 위해 shared stack of layers를 사용하고, lightweight router를 통해 adaptive token-level thinking
+    - 첫 recursion의 KV pairs를 재사용하는 KV sharing variant 제안
 </details>
 
 ## 🌞 June
