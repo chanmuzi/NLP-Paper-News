@@ -180,6 +180,10 @@
     - Mixture-of-Recursions (MoR): parameter sharing & adaptive computation 둘 다 고려한 single Recursive Transformer
     - parameter efficiency를 위해 shared stack of layers를 사용하고, lightweight router를 통해 adaptive token-level thinking
     - 첫 recursion의 KV pairs를 재사용하는 KV sharing variant 제안
+- 📜 [Johns Hopkins, Tsinghua, Rice] [Vision-Language-Vision Auto-Encoder: Scalable Knowledge Distillation from Diffusion Models](https://arxiv.org/abs/2507.07104)
+    - Vision-Language-Vision Auto-Encoder framework
+        - vision encoder, Text-to-Image (T2I) diffusion model의 decoder, LLM을 순차적으로 이용
+    - T2I diffusion model의 decoder를 이용함으로써 language representation space를 regularize 할 수 있었음
 </details>
 
 ## 🌞 June
