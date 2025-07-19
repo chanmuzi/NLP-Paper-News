@@ -184,6 +184,14 @@
     - Vision-Language-Vision Auto-Encoder framework
         - vision encoder, Text-to-Image (T2I) diffusion model의 decoder, LLM을 순차적으로 이용
     - T2I diffusion model의 decoder를 이용함으로써 language representation space를 regularize 할 수 있었음
+- 🧑🏻‍💻 [OpenAI] [Introducing ChatGPT agent: bridging research and action](https://openai.com/index/introducing-chatgpt-agent)
+    - Pro, Plus, Team 요금제 사용자 대상으로 공개한 agent 기능. 현재는 Pro 유저만 사용 가능
+    - 다른 툴들과 쉽게 연동하여 태스크 수행. 벤치마크 성능도 공개함
+    - [ChatGPT agent System Card](https://openai.com/index/chatgpt-agent-system-card)
+- 🧑🏻‍💻 [Mistral] [Voxtral](https://mistral.ai/news/voxtral)
+    - 24B & 3B 사이즈 음성 모델을 Apache 2.0 라이센스로 공개
+    - Word Error Rate 측정 결과를 공개했는데  GPT-4o mini Audio, Gemini 2.5 Flash보다 뛰어난 성능을 보임
+    - text 이해 능력도 Mistral Small 3.1에 비해 크게 뒤지지 않는 정도
 </details>
 
 ## 🌞 June
