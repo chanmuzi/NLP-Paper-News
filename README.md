@@ -192,6 +192,10 @@
     - 24B & 3B 사이즈 음성 모델을 Apache 2.0 라이센스로 공개
     - Word Error Rate 측정 결과를 공개했는데  GPT-4o mini Audio, Gemini 2.5 Flash보다 뛰어난 성능을 보임
     - text 이해 능력도 Mistral Small 3.1에 비해 크게 뒤지지 않는 정도
+- 📜 [Peking, Tsinghua] [A Survey of Context Engineering for Large Language Models](https://arxiv.org/abs/2507.13334)
+    - 이젠 prompt engineering이 아닌 context engineering의 시대
+    - 이를 구성하는 핵심적인 요소 (1) Context Retrieval and Generation (2) Context Processing (3) Context Management
+    - System Implementations: (1) Retrieval-Augmented Generation (RAG) (2) Memory systems (3) Tool-Integrated Reasoning (4) Multi-Agent Systems
 </details>
 
 ## 🌞 June
