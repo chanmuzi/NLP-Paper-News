@@ -196,6 +196,14 @@
     - 이젠 prompt engineering이 아닌 context engineering의 시대
     - 이를 구성하는 핵심적인 요소 (1) Context Retrieval and Generation (2) Context Processing (3) Context Management
     - System Implementations: (1) Retrieval-Augmented Generation (RAG) (2) Memory systems (3) Tool-Integrated Reasoning (4) Multi-Agent Systems
+- 🧑🏻‍💻 [Stanford] [Agents4Science 2025](https://agents4science.stanford.edu)
+    - AI가 저자인 논문을 대상으로 AI가 심사하는 최초의 open conference (스탠포드 대학)
+    - 9월 25일 제출 마감, 9월 29일 심사 마감, 10월 22일 virtual conference 일정
+    - AI가 과학 분야에 어떻게 기여할 수 있을지 탐구하고자 하는 과감한 시도
+- 📜 [Tsinghua, UIUC, Tokyo, Peking, HKUST] [Towards Agentic RAG with Deep Reasoning: A Survey of RAG-Reasoning Systems in LLMs](https://arxiv.org/abs/2507.09477)
+    - Reasoning-Enhanced RAG: advanced reasoning이 각 RAG 단계에서 어떻게 optimize 하는지 분석
+    - RAG-Enhanced reasoning: 다른 종류의 retrieved knowledge가 어떤식으로 context를 확장하는지 분석
+    - Synergized RAG-Reasoning: LLM이 최고 성능 달성을 위해 search & reasoning 을 iteratively 수행
 </details>
 
 ## 🌞 June
