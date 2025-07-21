@@ -214,6 +214,15 @@
     - 또한 tool-augmented agents는 code execution으로 문제를 해결해왔으나 여전히 복잡한 logical 문제들을 풀지는 못함
     - DualDistill: 여러 teachers로부터의 complementary reasoning strategies를 unified student model에 distill하는 framework
     - Agentic-R1: 각 쿼리마다 최적의 전략을 dynamically 선택하도록 학습한 모델. tool을 사용하거나 텍스트 기반의 추론을 하거나.
+- 🧑🏻‍💻 [ARC] [ARC-AGI-3](https://arcprize.org/arc-agi/3)
+    - LLM agents의 성능을 측정하기 위한 interactive benchmark
+    - 기존에도 ARC 벤치마크 퍼즐을 맞추는 태스크로 유명 (인간과 유사한 사고가 가능한지)
+    - o3, Grok 4와 같은 frontier models도 현재까지 0점 기록
+    - RTX 5090 또는 $1K API 로 추론. 8시간 제한
+- 🧑🏻‍💻 [Google] [Gemini Embedding now generally available in the Gemini API](https://developers.googleblog.com/en/gemini-embedding-available-gemini-api)
+    - first Gemini Embedding text model (gemini-embedding-001)을 Gemini API or Vertext AI에서 API로 이용 가능
+    - science, legal, finance, coding 등 다양한 도메인에 대해 뛰어난 성능을 보인다고 설명
+    - 100개 이상의 언어에 대해 2048 input token length 지원. Matryoshka Representation Learning (MRL) 테크닉 사용시 3072, 1536, 768 차원 추천
 </details>
 
 ## 🌞 June
