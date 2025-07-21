@@ -206,6 +206,16 @@
     - Synergized RAG-Reasoning: LLM이 최고 성능 달성을 위해 search & reasoning 을 iteratively 수행
 </details>
 
+<details>
+  <summary>4th week</summary>
+
+- 📜 [CMU] [Agentic-R1: Distilled Dual-Strategy Reasoning](https://arxiv.org/abs/2507.05707)
+    - 현 long CoT 모델들은 수학 문제를 잘 풀지만, slow & error-prone natural language traces에 의존한다는 문제점을 지적
+    - 또한 tool-augmented agents는 code execution으로 문제를 해결해왔으나 여전히 복잡한 logical 문제들을 풀지는 못함
+    - DualDistill: 여러 teachers로부터의 complementary reasoning strategies를 unified student model에 distill하는 framework
+    - Agentic-R1: 각 쿼리마다 최적의 전략을 dynamically 선택하도록 학습한 모델. tool을 사용하거나 텍스트 기반의 추론을 하거나.
+</details>
+
 ## 🌞 June
 <details>
   <summary>1st week</summary>
