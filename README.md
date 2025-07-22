@@ -223,6 +223,11 @@
     - first Gemini Embedding text model (gemini-embedding-001)을 Gemini API or Vertext AI에서 API로 이용 가능
     - science, legal, finance, coding 등 다양한 도메인에 대해 뛰어난 성능을 보인다고 설명
     - 100개 이상의 언어에 대해 2048 input token length 지원. Matryoshka Representation Learning (MRL) 테크닉 사용시 3072, 1536, 768 차원 추천
+- 📜 [Anthropic] [Inverse Scaling in Test-Time Compute](https://arxiv.org/abs/2507.14417)
+    - Large Reasong Models (LRM)이 test-time compute & accuracy 사이의 inverse scaling relationship을 갖는다는 점을 분석한 논문
+    - 모든 flagship 모델들이 복잡한 deductive tasks에서 약점을 보임
+    - extended reasoning은 self-preservation 표현을 증가시킴
+    - Simple Counting tasks with Distractors, Regression Tasks with Spurious Features, Deduction Tasks with Constraint Tracking
 </details>
 
 ## 🌞 June
