@@ -228,6 +228,19 @@
     - 모든 flagship 모델들이 복잡한 deductive tasks에서 약점을 보임
     - extended reasoning은 self-preservation 표현을 증가시킴
     - Simple Counting tasks with Distractors, Regression Tasks with Spurious Features, Deduction Tasks with Constraint Tracking
+- 📜 [Zhejiang] [GUI-G^2: Gaussian Reward Modeling for GUI Grounding](https://arxiv.org/abs/2507.15846)
+    - 기존 강화학습은 GUI에서 hit-or-miss targets를 기준으로 binary reward를 사용
+    - GUI-G^2: GUI 요소를 interface plance 위의 continuous Gaussian Distribution으로 modeling
+        - Guassian point rewards: precise localization을 모델링
+        - Coverage rewards: predicted Gaussian distirbutions & target regions 간의 overlap 측정
+    - element dimensions 기반으로 reward distributions를 calibrate하는 adaptive variance mechanism 개발
+- 📜 [MiroMind AI] [MiroMind-M1: An Open-Source Advancement in Mathematical Reasoning via Context-Aware Multi-Stage Policy Optimization](https://arxiv.org/abs/2507.14683)
+    - Qwen 2.5를 backbone으로 개발된 LRM으로 closed source 모델과의 격차 해소를 목표함
+    - 719K개의 math-reasoning 데이터셋 SFT + 62K개의 challenging & verifiable 문제에 대해 RLVR
+    - Context-Aware Multi-Stage Policy Optimization (CAMPO): length-progressive training + adaptive repetition penalty
+- 🧑🏻‍💻 [Alibaba] [Qwen3-235B-A22B-Instruct-2507](https://huggingface.co/Qwen/Qwen3-235B-A22B-Instruct-2507)
+    - 256K long-context 지원하는 non-thinking model
+    - Qwen Chat default 모델로 탑재. Kimi K2 모델을 능가하는 성능으로 보고
 </details>
 
 ## 🌞 June
