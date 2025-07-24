@@ -241,7 +241,10 @@
 - 🧑🏻‍💻 [Alibaba] [Qwen3-235B-A22B-Instruct-2507](https://huggingface.co/Qwen/Qwen3-235B-A22B-Instruct-2507)
     - 256K long-context 지원하는 non-thinking model
     - Qwen Chat default 모델로 탑재. Kimi K2 모델을 능가하는 성능으로 보고
-https://arxiv.org/abs/2507.15857
+- 📜 [CMU] [Diffusion Beats Autoregressive in Data-Constrained Settings](https://arxiv.org/abs/2507.15857)
+    - data-constrained setting에서 masked diffusion model이 auto regressive 모델보다 뛰어나다는 설명
+    - repeated data에 대해 더 낮은 validation loss를 보이고 downstream performance도 뛰어남
+    - 저자는 이러한 현상을 implicit data augmentation으로 해석 (고정된 left-to-right factorization을 따르는 AR 방식과의 차이점)
 </details>
 
 ## 🌞 June
