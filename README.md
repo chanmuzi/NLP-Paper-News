@@ -241,6 +241,7 @@
 - 🧑🏻‍💻 [Alibaba] [Qwen3-235B-A22B-Instruct-2507](https://huggingface.co/Qwen/Qwen3-235B-A22B-Instruct-2507)
     - 256K long-context 지원하는 non-thinking model
     - Qwen Chat default 모델로 탑재. Kimi K2 모델을 능가하는 성능으로 보고
+https://arxiv.org/abs/2507.15857
 </details>
 
 ## 🌞 June
