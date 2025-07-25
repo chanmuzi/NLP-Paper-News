@@ -245,6 +245,19 @@
     - data-constrained setting에서 masked diffusion model이 auto regressive 모델보다 뛰어나다는 설명
     - repeated data에 대해 더 낮은 validation loss를 보이고 downstream performance도 뛰어남
     - 저자는 이러한 현상을 implicit data augmentation으로 해석 (고정된 left-to-right factorization을 따르는 AR 방식과의 차이점)
+- 🧑🏻‍💻 [Alibaba] [Qwen3-Coder: Agentic Coding in the World](https://qwenlm.github.io/blog/qwen3-coder)
+    - OpenAI-, Claude-code compatible
+    - Qwen2.5-Coder를 사용하여 7.5T 토큰으로 학습된 480B-35B(active) MoE model, Qwen3-Coder
+    - 256K default, 최대 1M 토큰 지원
+- 📜 [Shanhai AI] [The Devil behind the mask: An emergent safety vulnerability of Diffusion LLMs](https://arxiv.org/abs/2507.11097)
+    - dLLMs이 context-aware, masked-input adversarial prompts에 취약하다는 문제점 지적
+    - DIJA: adversarial interleaved mask-text prompts 생성 → dLLM 특성을 이용한 생성 방식으로, 타 jail-breaking을 압도하는 결과였다고 보고
+- 📜 [Sapient Intelligence] [Hierarchical Reasoning Model](https://arxiv.org/abs/2506.21734)
+    - Hierarchical Reasoning Model (HRM): sequential reasoning tasks를 single forward pass로 실행
+    - 2개의 interdependent recurrent modules
+        - a high-level module responsible for slow, abstract planning
+        - a low-level module handling rapid, detailed computations
+    - 27M 파라미터 사이즈의 모델로, 단 1000개 training samples로 학습
 </details>
 
 ## 🌞 June
