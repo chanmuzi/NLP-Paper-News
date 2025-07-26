@@ -258,6 +258,15 @@
         - a high-level module responsible for slow, abstract planning
         - a low-level module handling rapid, detailed computations
     - 27M 파라미터 사이즈의 모델로, 단 1000개 training samples로 학습
+- 🧑🏻‍💻 [GitHub] [GitHub Spark in public preview for Copilot Pro+ subscribers](https://github.blog/changelog/2025-07-23-github-spark-in-public-preview-for-copilot-pro-subscribers)
+    - Copilot Pro+ 구독자 대상으로 Spark라는 browser-based tool 공개
+    - 자연어로 micro apps를 만들 수 있도록 지원하는 기능으로, Claude Sonnet 4로 동작
+- 🧑🏻‍💻 [HuggingFace] [Trending Papers](https://huggingface.co/papers/trending)
+    - 허깅페이스에서 Meta & Papers with Code 와 협력하여 Trending Papers 오픈
+- 📜 [Cardiff Univ] [There’s No Such Thing as Simple Reasoning for LLMs](https://aclanthology.org/2025.findings-acl.232.pdf) (ACL 2025 Findings)
+    - 현재 LLM들은 복잡한 many-hop reasoning 문제들에 집중하고 있음
+    - 그러나 오히려 훨씬 간단한 reasoning 문제들을 풀지 못한다는 것을 문제점으로 지적
+    - 본 연구에서는 3-step 추론으로 해결할 수 있는 간단한 문제들에 조금씩 노이즈를 더하여(순서를 바꾸는 등) 모델 성능을 테스트 해봤고, 현존 모델들이 이런 세팅에 상당히 취약하다는 것을 지적함
 </details>
 
 ## 🌞 June
