@@ -267,6 +267,15 @@
     - 현재 LLM들은 복잡한 many-hop reasoning 문제들에 집중하고 있음
     - 그러나 오히려 훨씬 간단한 reasoning 문제들을 풀지 못한다는 것을 문제점으로 지적
     - 본 연구에서는 3-step 추론으로 해결할 수 있는 간단한 문제들에 조금씩 노이즈를 더하여(순서를 바꾸는 등) 모델 성능을 테스트 해봤고, 현존 모델들이 이런 세팅에 상당히 취약하다는 것을 지적함
+- 📜 [Stanford] [Optimization before Evaluation: Evaluation with Unoptimized Prompts Can be Misleading](https://aclanthology.org/2025.acl-industry.44.pdf) (ACL 2025 Industry Track)
+    - academic & internal industry 벤치마크에 대해 평가할 때 Prompt Optimization (PO)이 미치는 영향에 대한 연구
+    - 대부분의 모델과 벤치마크가 PO에 심각한 영향을 받는다고 설명
+- 📜 [Shanghai AI, Fudan] [Yume: An Interactive World Generation Model](https://arxiv.org/abs/2507.17744)
+    - image, text, video를 사용해서 interactive, realistic, dynamic world를 만드는 것을 목표
+    - Yume: image를 입력으로 받아 dynamic world를 생성하는데, 이는 keyboard actions으로 탐험 가능함
+    - high-fidelity & interacitve video world generation을 위해 네 개의 핵심 구성 요소를 갖춘 프레임워크 사용
+        - camera motion quantization, video generation architecture, advanced sampler, model acceleration
+    - Masked Video Diffusion Transformer (MVDT) with memory module
 </details>
 
 ## 🌞 June
