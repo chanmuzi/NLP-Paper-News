@@ -278,6 +278,19 @@
     - Masked Video Diffusion Transformer (MVDT) with memory module
 </details>
 
+<details>
+  <summary>4th week</summary>
+
+- 📜 [Anthropic, UC Berkeley] [Subliminal Learning: Language models transmit behavioral traits via hidden signals in data](https://arxiv.org/abs/2507.14805)
+    - Language model이 semantically unrelated data를 통해 behavioral traits를 transmit 하는 현상을 Subliminal Learning이라고 부름
+    - 특성 T를 갖는 teacher 모델이 일련의 숫자로만 구성된 데이터셋을 생성하고 이를 학습한 student 모델이 특성 T를 배울 수 있다는 것
+    - teacher 모델이 생성하는 코드나 reasoning path로 학습하더라도 동일 현상을 관측할 수 있다고 설명
+- 🧑🏻‍💻 [Anthropic] [Building and evaluating alignment auditing agents](https://alignment.anthropic.com/2025/automated-auditing/)
+    - alignment auditing을 자동화하기 위한 세 개의 agents: investigator, evaluation, breadth-first red-teaming
+    - hidden goal을 찾아내고 misaligned behavior 등을 탐지하는 등 impressive results를 보여줌
+    - prefill attacks, context-manipulated jailbreaks, interpretability-driven safety failures 등에 취약하다는 결론
+</details>
+
 ## 🌞 June
 <details>
   <summary>1st week</summary>
