@@ -279,7 +279,7 @@
 </details>
 
 <details>
-  <summary>4th week</summary>
+  <summary>5th week</summary>
 
 - 📜 [Anthropic, UC Berkeley] [Subliminal Learning: Language models transmit behavioral traits via hidden signals in data](https://arxiv.org/abs/2507.14805)
     - Language model이 semantically unrelated data를 통해 behavioral traits를 transmit 하는 현상을 Subliminal Learning이라고 부름
