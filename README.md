@@ -298,6 +298,10 @@
     - coding benchmark에서 Claude 4 Sonnet, GPT-4.1 급의 성능
     - GLM-4.5: 355B total & 32B active parameters / GLM-4.5 Air: 106B total & 12B active parameters
         - 둘 다 hybrid reasoning model로 복잡한 추론이나 tool using, non-thinking 등을 지원
+- 📜 [Waterloo] [Mind the Gap: Conformative Decoding to Improve Output Diversity of Instruction-Tuned Large Language Models](https://arxiv.org/abs/2507.20956)
+    - instruction-tuning은 LLM의 output 다양성을 감소시킴
+    - OLMo, OLMo 2 모델을 대상으로 한 실험에서 DPO의 영향도가 가장 크다는 결론
+    - 이를 바탕으로 conformative decoding 제안: instruct model이 base model의 다양성을 reintroduce 할 수 있도록 guide 하는 decoding strategy
 </details>
 
 ## 🌞 June
