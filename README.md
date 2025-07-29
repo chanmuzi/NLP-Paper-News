@@ -289,6 +289,15 @@
     - alignment auditing을 자동화하기 위한 세 개의 agents: investigator, evaluation, breadth-first red-teaming
     - hidden goal을 찾아내고 misaligned behavior 등을 탐지하는 등 impressive results를 보여줌
     - prefill attacks, context-manipulated jailbreaks, interpretability-driven safety failures 등에 취약하다는 결론
+- 🧑🏻‍💻 [Runway] [Introducing Runway Aleph | A new way to edit, transform and generate video.](https://www.youtube.com/watch?v=KUHx-2uz_qI)
+    - 비디오 편집을 위한 AI 모델 Aleph launch
+    - 비디오를 from scratch 생성하지 않고 text prompt를 통해 필요한 영역들을 수정
+    - 예를 들어 camera angles 수정, remove objects, effects like rain or fireworks 등 가능
+- 🧑🏻‍💻 [Z.ai] [GLM-4.5: Reasoning, Coding, and Agentic Abililties](https://z.ai/blog/glm-4.5?s=08)
+    - 중국 스타트업에서 DeepSeek 대비 87% 저렴한 LLM 출시
+    - coding benchmark에서 Claude 4 Sonnet, GPT-4.1 급의 성능
+    - GLM-4.5: 355B total & 32B active parameters / GLM-4.5 Air: 106B total & 12B active parameters
+        - 둘 다 hybrid reasoning model로 복잡한 추론이나 tool using, non-thinking 등을 지원
 </details>
 
 ## 🌞 June
