@@ -302,6 +302,16 @@
     - instruction-tuning은 LLM의 output 다양성을 감소시킴
     - OLMo, OLMo 2 모델을 대상으로 한 실험에서 DPO의 영향도가 가장 크다는 결론
     - 이를 바탕으로 conformative decoding 제안: instruct model이 base model의 다양성을 reintroduce 할 수 있도록 guide 하는 decoding strategy
+- 📜 [Renmin] [Agentic Reinforced Policy Optimization](https://arxiv.org/abs/2507.19849)
+    - 현 LLM들은 multi-turn tool interactions를 고려하지 않은 single-turn 상황에만 집중
+    - Agentic Reinforced Policy Optimization (ARPO)
+        - 외부 툴 사용 직후 생성되는 토큰의 entropy 분포가 향상된다는 점을 포착
+        - entropy-based adaptive rollout mechanism
+- 📜 [Univ. of Alberta] [Curiosity by Design: An LLM-based Coding Assistant Asking Clarification Questions](https://arxiv.org/abs/2507.21285)
+    - 현 LLM들은 extensive prompt engineering | external context 없이 유저 의도를 잘 추론하지 못한다는 문제점을 지적
+    - 이를 해결하기 위해 인간의 code reivew 과정을 모사하는 LLM-based coding assistant를 개발
+        - ambiguous or under-specified queries에 clairification questions를 질문
+    - unclear programming-related queries를 탐지하는 trained query classifier → clarification questions를 생성하는 fine-tuend LLM
 </details>
 
 ## 🌞 June
