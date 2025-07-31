@@ -5,6 +5,21 @@
 ---
 # 2025
 
+## 🏝️ August
+<details>
+  <summary>1st week</summary>
+
+- 🧑🏻‍💻 [OpenAI] [Introducing study mode](https://openai.com/index/chatgpt-study-mode)
+    - 질문에 바로 답변하지 않고 소크라테스식으로 답변하도록 유도하는 기능
+    - 티어에 상관 없이 모든 유저들이 이용할 수 있는 기능으로 제공
+- 🧑🏻‍💻 [Microsoft] [Microsoft Edge Your AI-powered browser](https://www.microsoft.com/en-us/edge/ai-powered/copilot-mode?form=MG0AWI&cs=2199494592)
+    - Edge 브라우저에서 multi-tab RAG를 지원하는 Copilot Mode 공개
+- 📜 [Tecent] [HunyuanWorld 1.0: Generating Immersive, Explorable, and Interactive 3D Worlds from Words or Pixels](https://arxiv.org/abs/2507.21809)
+    - 텍스트 또는 이미지로부터 explorable & interactive 3D world를 생성하는 framework 제안
+    - 기존 video/3D 기반 방식의 단점 보완 → panoramic image 기반 360° world proxy 활용
+    - 세 가지 특징. 1) 360° immersive experiences 2) mesh export capabilities 3) disentangled object representations
+</details>
+
 ## 🍉 July
 <details>
   <summary>1st week</summary>
