@@ -18,6 +18,16 @@
     - 텍스트 또는 이미지로부터 explorable & interactive 3D world를 생성하는 framework 제안
     - 기존 video/3D 기반 방식의 단점 보완 → panoramic image 기반 360° world proxy 활용
     - 세 가지 특징. 1) 360° immersive experiences 2) mesh export capabilities 3) disentangled object representations
+- 📜 [Leiden Univ.] [How does Chain of Thought Think? Mechanistic Interpretability of Chain-of-Thought Reasoning with Sparse Autoencoding](https://arxiv.org/abs/2507.22928)
+    - LLM의 CoT 과정이 진짜 ‘thoughts’를 반영하고 있는지에 대한 연구
+    - sparse autoencoder를 activation patching과 결합하여 CoT 결과로부터 monosemantic features 추출
+    - CoT가 확실히 더 높은 activation sparsity, feature interpretability score를 달성
+- 📜 [CUHK] [ScreenCoder: Advancing Visual-to-Code Generation for Front-End Automation via Modular Multimodal Agents](https://arxiv.org/abs/2507.22827)
+    - UI-to-Code를 가능하도록 하는 modular multi-agent framework
+    - grounding, planning, generation, 세 단계로 구성되어 있음
+        - vision language model을 사용하여 UI components를 탐지 및 라벨링
+        - front-end priors 기반의 hierarchical layout 구성
+        - adaptive prompt-based synthesis를 통한 HTML, CSS 코드 생성
 </details>
 
 ## 🍉 July
