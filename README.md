@@ -28,6 +28,15 @@
         - vision language model을 사용하여 UI components를 탐지 및 라벨링
         - front-end priors 기반의 hierarchical layout 구성
         - adaptive prompt-based synthesis를 통한 HTML, CSS 코드 생성
+- 🧑🏻‍💻 [Alibaba] [Qwen3 Coder Flash](https://huggingface.co/Qwen/Qwen3-Coder-30B-A3B-Instruct)
+    - 30.5B 코드 모델로 coding tasks에서 Claude Sonnet 4 수준의 성능을 달성
+    - 128 experts, 8 activated per inference, with 3.8B active parameters
+    - 256K native context window, expandabel to 1M tokens using YaRN
+    - 최근 공개한 Qwen3 Coder 모델의 경량화 버전으로 이해할 수 있음
+- 🧑🏻‍💻 [Google] [Gemini 2.5 Deep Think](https://blog.google/products/gemini/gemini-2-5-deep-think)
+    - Gemini app과 Google AI Ultra 구독자 대상으로 공개한 기능
+    - 복잡한 문제를 작은 단위로 쪼개는 interative development and design
+    - algorithmic development and code, scientific and mathematical discovery 등에 특화되어 있다고 설명
 </details>
 
 ## 🍉 July
