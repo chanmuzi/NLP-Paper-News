@@ -45,6 +45,13 @@
     - deep & broad reasoning을 가능토록 하는 3개의 test-time inference strategies
     - geometry reasoning engine Seed-Geometry 도입
     - IMO 2025의 6개 문제 중 5개를 완벽하게 prove
+- 🧑🏻‍💻 [Kaggle] [Introducing Kaggle Game Arena](https://www.kaggle.com/blog/introducing-game-arena)
+    - AI models & agents 간의 성능을 비교할 수 있는 벤치마크 플랫폼
+    - o3, Gemini 2.5 Pro, Claude Opus 4, Grok 4 와 같은 frontier 모델들이 동작할 수 있는 game environments, harnesses, visualizers 등을 제공
+- 🧑🏻‍💻 [Anthropic] [Persona vectors: Monitoring and controlling character traits in language models](https://www.anthropic.com/research/persona-vectors)
+    - 사람이 다른 moods | attitudes 를 경험할 때 뇌의 일부가 ‘light up’ 하는 것처럼 활성화되는 neural network 상의 영역들을 persona vectors라고 지칭
+    - 이를 파악함으로써 모델의 undesirable 특성들을 억제할수도 있고, 학습 데이터를 조정할수도 있음
+    - Qwen 2.5-7B-Instruct, Llama-3.1-8B-Instruct 두 open-source 모델로 평가
 </details>
 
 ## 🍉 July
