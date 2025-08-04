@@ -37,6 +37,14 @@
     - Gemini app과 Google AI Ultra 구독자 대상으로 공개한 기능
     - 복잡한 문제를 작은 단위로 쪼개는 interative development and design
     - algorithmic development and code, scientific and mathematical discovery 등에 특화되어 있다고 설명
+- 📜 [Microsoft] [Phi-Ground Tech Report: Advancing Perception in GUI Grounding](https://arxiv.org/abs/2507.23779)
+    - Computer Use Agents (CUA)가 실행하는 핵심 기능 중 하나가 GUI Grounding
+    - Phi-Ground mode family: 10B 이하의 agent 중에서 SoTA를 달성한 모델 공개
+- 📜 [ByteDance] [Seed-Prover: Deep and Broad Reasoning for Automated Theorem Proving](https://arxiv.org/abs/2507.23726)
+    - Seed-Prover: lemma-style whole-proof reasoning model
+    - deep & broad reasoning을 가능토록 하는 3개의 test-time inference strategies
+    - geometry reasoning engine Seed-Geometry 도입
+    - IMO 2025의 6개 문제 중 5개를 완벽하게 prove
 </details>
 
 ## 🍉 July
