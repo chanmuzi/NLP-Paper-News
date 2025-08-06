@@ -60,6 +60,10 @@
     - DLLMs의 static length 문제를 지적
     - 모델이 내부적으로(internal) 주어진 문제에 대한 적절한 답변 길이와 관련된 signals를 포함하고 있다고 설명
     - 이러한 latent signals를 이용한 DAEDAL 제안: Dynamic Adaptive length Expansion for Diffusion lArge Language models (알파벳 조합 너무 억지..)
+- 📜 [Alibaba] [Qwen-Image Technical Report](https://arxiv.org/abs/2508.02324)
+    - complex text rendering & precise image editing 에 큰 발전이 있는 image generation foundation model
+    - non-text-to-rendering으로 시작해 점점 더 복잡한 텍스트 입력을 받는 curriculum learning approach 적용
+    - text-to-image (T2I), text-image-to-image (TI2I), image-to-image (I2I) reconstruction을 위해 dual encoding 방식 사용 (Qwen2.5-VL & VAE)
 </details>
 
 ## 🍉 July
