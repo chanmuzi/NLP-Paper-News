@@ -52,6 +52,14 @@
     - 사람이 다른 moods | attitudes 를 경험할 때 뇌의 일부가 ‘light up’ 하는 것처럼 활성화되는 neural network 상의 영역들을 persona vectors라고 지칭
     - 이를 파악함으로써 모델의 undesirable 특성들을 억제할수도 있고, 학습 데이터를 조정할수도 있음
     - Qwen 2.5-7B-Instruct, Llama-3.1-8B-Instruct 두 open-source 모델로 평가
+- 🧑🏻‍💻 [OpenAI] [Open models by OpenAI](https://openai.com/open-models/)
+    - gpt-oss-120b, gpt-oss-20b 두 개의 모델을 허깅페이스에 공개
+    - Apache 2.0 라이센스. Safety에 대해서도 각별히 신경을 썼다고 함
+    - Designed for agentic tasks, Deeply customizable, Full chain-of-thought 등의 특징
+- 📜 [CUHK, Shanghai AI] [Beyond Fixed: Variable-Length Denoising for Diffusion Large Language Models](https://arxiv.org/abs/2508.00819)
+    - DLLMs의 static length 문제를 지적
+    - 모델이 내부적으로(internal) 주어진 문제에 대한 적절한 답변 길이와 관련된 signals를 포함하고 있다고 설명
+    - 이러한 latent signals를 이용한 DAEDAL 제안: Dynamic Adaptive length Expansion for Diffusion lArge Language models (알파벳 조합 너무 억지..)
 </details>
 
 ## 🍉 July
