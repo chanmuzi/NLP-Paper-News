@@ -64,6 +64,7 @@
     - complex text rendering & precise image editing 에 큰 발전이 있는 image generation foundation model
     - non-text-to-rendering으로 시작해 점점 더 복잡한 텍스트 입력을 받는 curriculum learning approach 적용
     - text-to-image (T2I), text-image-to-image (TI2I), image-to-image (I2I) reconstruction을 위해 dual encoding 방식 사용 (Qwen2.5-VL & VAE)
+https://openai.com/gpt-5/
 </details>
 
 ## 🍉 July
