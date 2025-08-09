@@ -64,7 +64,19 @@
     - complex text rendering & precise image editing 에 큰 발전이 있는 image generation foundation model
     - non-text-to-rendering으로 시작해 점점 더 복잡한 텍스트 입력을 받는 curriculum learning approach 적용
     - text-to-image (T2I), text-image-to-image (TI2I), image-to-image (I2I) reconstruction을 위해 dual encoding 방식 사용 (Qwen2.5-VL & VAE)
-https://openai.com/gpt-5/
+- 🧑🏻‍💻 [Google DeepMind] [Genie 3: A new frontier for world models](https://deepmind.google/discover/blog/genie-3-a-new-frontier-for-world-models)
+    - 작년 12월에 출시된 Genie 2의 후속 모델로 SoTA급 world model로 소개
+    - 초당 24프레임, 720p 해상도의 few-minute consistency (Genie 2는 10-20s, Veo는 8s 수준)
+        - 데모 영상 수준 퀄리티 아주 뛰어난 편
+    - promptable world events: 다양한 종류의 text-based interaction 가능
+- 🧑🏻‍💻 [OpenAI] [GPT-5 is here](https://openai.com/gpt-5/)
+    - real-time router를 통해 reasoning 여부를 결정하고 적절한 모델을 선정하여 답변함
+    - coding 능력이 크게 향상되어 타 frontier 모델들 수준으로 올라왔다고 보고 (실사용 후기에 따르면 그정도는 아닌 듯함)
+    - o3-pro처럼 더 오래 생각하는 test-time scaling 방식이 적용된 GPT-5 pro 모델
+- 📜 [ByteDance, Tsinghua] [Seed Diffusion: A Large-Scale Diffusion Language Model with High-Speed Inference](https://arxiv.org/abs/2508.02193)
+    - Seed Diffusion: discrete-state diffusion based large scale language model
+    - non-sequential, parallel generation 덕분에 엄청나게 빠른 추론 속도: 2,146 tokens/s over H20 GPU
+    - 코드 벤치마크에서 속도-성능의 파레토 라인을 push
 </details>
 
 ## 🍉 July
