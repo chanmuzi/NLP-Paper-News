@@ -91,6 +91,19 @@
     - DataAlchemy: LLM을 from scratch 학습하고 다양한 분포 조건 하에서 systematically probe 할 수 있는 환경을 디자인
 </details>
 
+<details>
+  <summary>2nd week</summary>
+
+- 📜 [OPPO AI] [**Efficient Agents: Building Effective Agents While Reducing Cost**](https://arxiv.org/abs/2508.02694)
+    - efficiency-effectiveness 간의 밸런스를 잘 맞춘 agent framework
+    - test-time scaling (예를 들어 best-of-N) 방식은 성능 향상 대비 비용 상승률이 너무 높다는 한계를 분석
+    - 같은 관점에서 web browsing은 최소화되어야 한다고 주장
+- 📜 [Rutgers Univ.] [**ReaGAN: Node-as-Agent-Reasoning Graph Agentic Network**](https://arxiv.org/abs/2508.00429)
+    - 노드 간 정보의 불균형이나 global semantic information이 고려되지 않는 문제점 등을 해결하고자 함
+    - Retrieval-augmented Graphic Agentic Network: 그래프의 각 노드를 autonomous & individual decision making 가능하도록 설정
+    - 각 노드가 곧 agent로 Memory, Planning, Action, Tool Use 가능
+</details>
+
 ## 🍉 July
 <details>
   <summary>1st week</summary>
