@@ -77,6 +77,18 @@
     - Seed Diffusion: discrete-state diffusion based large scale language model
     - non-sequential, parallel generation 덕분에 엄청나게 빠른 추론 속도: 2,146 tokens/s over H20 GPU
     - 코드 벤치마크에서 속도-성능의 파레토 라인을 push
+- 🧑🏻‍💻 [Google] [Guided Learning in Gemini: From answers to understanding](https://blog.google/outreach-initiatives/education/guided-learning)
+    - 구글에서 유저의 질문에 바로 답변하는 것 대신 학습에 도움이 될 수 있도록 하는 [LearnLM](https://cloud.google.com/solutions/learnlm?hl=en) 개발
+    - 특정 주제에 대해 deep dive 할 수 있도록 probing & open-ended questions encourage
+- 📜 [VeriGUI Team] [VeriGUI: Verifiable Long-Chain GUI Dataset](https://arxiv.org/abs/2508.04026)
+    - VeriGUI: novel verifiable long-chain GUI dataset
+    - realistic computer environments 대응을 위한 학습 및 평가 데이터셋
+    - (1) long-chain complexity (2) subtask-level verifiability 강조
+- 📜 [Arizona State Univ.] [Is Chain-of-Thought Reasoning of LLMs a Mirage? A Data Distribution Lens](https://arxiv.org/abs/2508.01191)
+    - CoT reasoning이 in-distribution data로부터 학습된 structured inductive bias를 반영하고 있는지 연구
+        - 모델이 학습 동안 봤던 데이터에 근사하는 reasoning path를 conditionally generate 하게 만듦으로써 파악
+    - CoT reasoning을 task, length, foramt 세 개의 차원으로 나눠 분석
+    - DataAlchemy: LLM을 from scratch 학습하고 다양한 분포 조건 하에서 systematically probe 할 수 있는 환경을 디자인
 </details>
 
 ## 🍉 July
