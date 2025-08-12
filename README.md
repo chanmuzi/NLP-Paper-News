@@ -102,6 +102,15 @@
     - 노드 간 정보의 불균형이나 global semantic information이 고려되지 않는 문제점 등을 해결하고자 함
     - Retrieval-augmented Graphic Agentic Network: 그래프의 각 노드를 autonomous & individual decision making 가능하도록 설정
     - 각 노드가 곧 agent로 Memory, Planning, Action, Tool Use 가능
+- 🧑🏻‍💻 [Cursor] [**Cursor CLI**](https://cursor.com/cli)
+    - 터미널 기반으로 동작하는 CLI 버전 공개 (베타)
+    - 다른 서비스들과 크게 다른 점은 없어 보임
+- 🧑🏻‍💻 [Google] [**LangExtract**](https://github.com/google/langextract)
+    - LLM을 이용하여 유저가 정의한 instructions에 따라 unstructured text documents로부터 structured information을 추출하는 파이썬 라이브러리
+    - 시각화 기능도 잘 지원되고 Ollma를 이용하면 로컬 모델로도 돌릴 수 있음
+- 🧑🏻‍💻 [HuggingFace] [**Introducing AI Sheets: a tool to work with datasets using open AI models!**](https://huggingface.co/blog/aisheets)
+    - open-source 모델을 사용하여 데이터셋 구축을 할 수 있는 노코드 spreadsheet tool
+    - LLM을 이용하여 합성 데이터 등을 생성 후 최종 데이터셋을 csv 형태로 반환할 수 있음
 </details>
 
 ## 🍉 July
