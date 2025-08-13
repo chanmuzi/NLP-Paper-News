@@ -111,6 +111,13 @@
 - 🧑🏻‍💻 [HuggingFace] [**Introducing AI Sheets: a tool to work with datasets using open AI models!**](https://huggingface.co/blog/aisheets)
     - open-source 모델을 사용하여 데이터셋 구축을 할 수 있는 노코드 spreadsheet tool
     - LLM을 이용하여 합성 데이터 등을 생성 후 최종 데이터셋을 csv 형태로 반환할 수 있음
+- 📜 [Zhipu AI, Tsinghua] [**GLM-4.5: Agentic, Reasoning, and Coding (ARC) Foundation Models**](https://arxiv.org/abs/2508.06471)
+    - 335 totoal, 32B activated open-source MoE LLM / GLM-4.5 Air: 106B
+    - thinking & direct response 동시 지원하는 hybrid reasoning method
+    - 23T 토큰에 대해 학습
+- 📜 [Meta] [**TRIBE: TRImodal Brain Encoder for whole-brain fMRI response prediction**](https://arxiv.org/abs/2507.22229)
+    - direct brain scanning 없이 fMRI activation pattern을 예측하는 모델
+    - frozen pretrained model을 사용하여 audio, video, dialogue로부터 feature 추출
 </details>
 
 ## 🍉 July
