@@ -94,30 +94,39 @@
 <details>
   <summary>2nd week</summary>
 
-- 📜 [OPPO AI] [**Efficient Agents: Building Effective Agents While Reducing Cost**](https://arxiv.org/abs/2508.02694)
+- 📜 [OPPO AI] [Efficient Agents: Building Effective Agents While Reducing Cost](https://arxiv.org/abs/2508.02694)
     - efficiency-effectiveness 간의 밸런스를 잘 맞춘 agent framework
     - test-time scaling (예를 들어 best-of-N) 방식은 성능 향상 대비 비용 상승률이 너무 높다는 한계를 분석
     - 같은 관점에서 web browsing은 최소화되어야 한다고 주장
-- 📜 [Rutgers Univ.] [**ReaGAN: Node-as-Agent-Reasoning Graph Agentic Network**](https://arxiv.org/abs/2508.00429)
+- 📜 [Rutgers Univ.] [ReaGAN: Node-as-Agent-Reasoning Graph Agentic Network](https://arxiv.org/abs/2508.00429)
     - 노드 간 정보의 불균형이나 global semantic information이 고려되지 않는 문제점 등을 해결하고자 함
     - Retrieval-augmented Graphic Agentic Network: 그래프의 각 노드를 autonomous & individual decision making 가능하도록 설정
     - 각 노드가 곧 agent로 Memory, Planning, Action, Tool Use 가능
-- 🧑🏻‍💻 [Cursor] [**Cursor CLI**](https://cursor.com/cli)
+- 🧑🏻‍💻 [Cursor] [Cursor CLI](https://cursor.com/cli)
     - 터미널 기반으로 동작하는 CLI 버전 공개 (베타)
     - 다른 서비스들과 크게 다른 점은 없어 보임
-- 🧑🏻‍💻 [Google] [**LangExtract**](https://github.com/google/langextract)
+- 🧑🏻‍💻 [Google] [LangExtract](https://github.com/google/langextract)
     - LLM을 이용하여 유저가 정의한 instructions에 따라 unstructured text documents로부터 structured information을 추출하는 파이썬 라이브러리
     - 시각화 기능도 잘 지원되고 Ollma를 이용하면 로컬 모델로도 돌릴 수 있음
-- 🧑🏻‍💻 [HuggingFace] [**Introducing AI Sheets: a tool to work with datasets using open AI models!**](https://huggingface.co/blog/aisheets)
+- 🧑🏻‍💻 [HuggingFace] [Introducing AI Sheets: a tool to work with datasets using open AI models!](https://huggingface.co/blog/aisheets)
     - open-source 모델을 사용하여 데이터셋 구축을 할 수 있는 노코드 spreadsheet tool
     - LLM을 이용하여 합성 데이터 등을 생성 후 최종 데이터셋을 csv 형태로 반환할 수 있음
-- 📜 [Zhipu AI, Tsinghua] [**GLM-4.5: Agentic, Reasoning, and Coding (ARC) Foundation Models**](https://arxiv.org/abs/2508.06471)
+- 📜 [Zhipu AI, Tsinghua] [GLM-4.5: Agentic, Reasoning, and Coding (ARC) Foundation Models](https://arxiv.org/abs/2508.06471)
     - 335 totoal, 32B activated open-source MoE LLM / GLM-4.5 Air: 106B
     - thinking & direct response 동시 지원하는 hybrid reasoning method
     - 23T 토큰에 대해 학습
-- 📜 [Meta] [**TRIBE: TRImodal Brain Encoder for whole-brain fMRI response prediction**](https://arxiv.org/abs/2507.22229)
+- 📜 [Meta] [TRIBE: TRImodal Brain Encoder for whole-brain fMRI response prediction](https://arxiv.org/abs/2507.22229)
     - direct brain scanning 없이 fMRI activation pattern을 예측하는 모델
     - frozen pretrained model을 사용하여 audio, video, dialogue로부터 feature 추출
+- 📜 [ByteDance] [WideSearch: Benchmarking Agentic Broad Info-Seeking](https://arxiv.org/abs/2508.07999)
+    - WideSearch: 15개 도메인에 대한 200 manually curated question (100개는 영어, 100개는 중국어)
+    - large-scale atomic information을 필요로 하는 질문들이며 각 내용이 객관적으로 증명되어야 하는 까다로운 문제들임
+    - 대규모 & 반복적인 정보 검색을 잘하는 LLM-based agent를 만드는 것이 목표
+- 📜 [Gaoling School, Baidu, CMU] [ReasonRank: Empowering Passage Ranking with Strong Reasoning Ability](https://arxiv.org/abs/2508.07050)
+    - 현존 LLM 기반 listwise reranker들은 복잡한 시나리오에서 잘 동작하지 않음
+    - automated reasoning-intesnvie training data synthesis framework 제안. self-consistency data filtering mechanism이 적용되어 데이터 퀄리티를 보장
+    - cold-start SFT → RL for ruther ranking ability enhancement
+    - 강화학습 단계에서 listwise ranking을 위해 multi-view ranking reward를 설계했는데, 이는 기존의 ranking metric-based reward보다 효과적이라고 설명함
 </details>
 
 ## 🍉 July
