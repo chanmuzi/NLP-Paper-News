@@ -127,14 +127,24 @@
     - automated reasoning-intesnvie training data synthesis framework 제안. self-consistency data filtering mechanism이 적용되어 데이터 퀄리티를 보장
     - cold-start SFT → RL for ruther ranking ability enhancement
     - 강화학습 단계에서 listwise ranking을 위해 multi-view ranking reward를 설계했는데, 이는 기존의 ranking metric-based reward보다 효과적이라고 설명함
-- 📜 [Apple] [**Your LLM Knows the Future: Uncovering Its Multi-Token Prediction Potential**](https://arxiv.org/abs/2507.11851)
+- 📜 [Apple] [Your LLM Knows the Future: Uncovering Its Multi-Token Prediction Potential](https://arxiv.org/abs/2507.11851)
     - autoregressive model에 다음 여러 토큰을 예측할 수 있는 능력이 내재되어 있다고 주장하며, 이를 활용한 novel framework를 제안
     - common prefix로부터 multi token precition, 이를 이용하여 coherent sequence를 생성하는 모듈
     - gated LoRA formulation: 기존 모델의 functionality 유지
-- 📜 [Ai2, Washington] [**MolmoAct: Action Reasoning Models that can Reason in Space**](https://arxiv.org/abs/2508.07917)
+- 📜 [Ai2, Washington] [MolmoAct: Action Reasoning Models that can Reason in Space](https://arxiv.org/abs/2508.07917)
     - robotic foundation model이 perception과 instruction을 control과 직접적으로 매핑하는 것이 일반화 성능을 제한하게 되는 이유라고 문제점 지적
     - MolmoAct 모델은 observations & instructions를 depth-aware perception tokens로 encode → mid-level spatial plans 생성 → precise low-level actions 예측 (7B 사이즈)
     - MolmoAct Datset: mid-training robot dataset 공개. 10,000개의 고품질 robot trajectories
+- 📜 [Hebrew] [Story2Board: A Training-Free Approach for Expressive Storyboard Generation](https://arxiv.org/abs/2508.09983)
+    - 자연어로 스토리보드(4개의 그림으로 구성) 생성하는 태스크 - 이런 걸 고도화하는 연구 분야도 있구나
+    - 기존에는 subject identity에만 집중한 것을 한계로 지적하고, spatial composition, background evolution, narrative pacing 등에 집중했다고 설명
+- 🧑🏻‍💻 [NVIDIA] [NVIDIA Releases 3 Million Sample Dataset for OCR, Visual Question Answering, and Captioning Tasks](https://huggingface.co/blog/nvidia/nvidia-vlm-dataset-v1)
+    - Llama Nemotron VLM Dataset V1: VLM 학습을 위한 고품질의 3M개 데이터셋 공개
+    - OCR, VQA, captioning 등에 집중된 데이터셋이며, 최근 Llama 3.1 Nemotron Nano VL 8B V1 을 학습하는데 사용됨
+- 📜 [Alibaba] [WebWatcher: Breaking New Frontier of Vision-Language Deep Research Agent](https://arxiv.org/abs/2508.05748)
+    - multimodal Deep Research가 대부분 텍스트에 집중한다는 한계점을 지적
+    - efficient cold start를 위해 high-quality synthetic multimodal tranjectories 사용
+    - BrowseComp-VL: visual & textual information을 동시에 잘 가져와야 하는 복잡한 벤치마크
 </details>
 
 ## 🍉 July
