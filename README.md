@@ -145,6 +145,12 @@
     - multimodal Deep Research가 대부분 텍스트에 집중한다는 한계점을 지적
     - efficient cold start를 위해 high-quality synthetic multimodal tranjectories 사용
     - BrowseComp-VL: visual & textual information을 동시에 잘 가져와야 하는 복잡한 벤치마크
+- 📜 [WeChat, Tsinghua] [We-Math 2.0: A Versatile MathBook System for Incentivizing Visual Mathematical Reasoning](https://arxiv.org/abs/2508.10433)
+    - structured mathematical knowledge system, model-centric data space modeling, RL-based training paradigm을 통합한 unifed system, We-Math 2.0
+    - MathBook Knowledge System: five-level hierarchy system. 491 knowledge points, 1,819 fundamental principles
+    - MathBook-Standard & Pro: 난이도에 따라 구분한 학습용 데이터셋
+    - MathBook-RL: Cold-Start Fine-tuning → Progressive Alignment RL
+    - MathBookEval: 491개의 knowledge points를 전부 커버하고 다양한 reasoning step distributions를 갖는 벤치마크
 </details>
 
 ## 🍉 July
