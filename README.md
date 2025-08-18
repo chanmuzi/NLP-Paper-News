@@ -153,6 +153,18 @@
     - MathBookEval: 491개의 knowledge points를 전부 커버하고 다양한 reasoning step distributions를 갖는 벤치마크
 </details>
 
+<details>
+  <summary>3rd week</summary>
+
+- 🧑🏻‍💻 [Meta] [**DINOv3**](https://ai.meta.com/research/publications/dinov3/)
+    - self-supervised vision foundation model that scales data and model size
+    - Gram anchoring loss를 사용하여 dense patch consistency를 보존하고 resolution, size, text alignment를 위한 post-hoc tweaks를 더함
+- 📜 [ByteDance] [**Seeing, Listening, Remembering, and Reasoning: A Multimodal Agent with Long-Term Memory**](https://www.arxiv.org/abs/2508.09736)
+    - M3 Agent: 사람처럼 long-term memory를 지닌 multimodal agent framework. real-time visual & auditory inputs를 처리하여 memory를 build 또는 update
+    - 시간에 따라 축적되는 knowledge를 semantic memory로 관리 (episodic memory와 별도)
+    - M3 Bench: long-video question answering benchmark. robot 관점에서 획득한 100개 데이터 + web-sourced 929개 데이터
+</details>
+
 ## 🍉 July
 <details>
   <summary>1st week</summary>
