@@ -163,6 +163,9 @@
     - M3 Agent: 사람처럼 long-term memory를 지닌 multimodal agent framework. real-time visual & auditory inputs를 처리하여 memory를 build 또는 update
     - 시간에 따라 축적되는 knowledge를 semantic memory로 관리 (episodic memory와 별도)
     - M3 Bench: long-video question answering benchmark. robot 관점에서 획득한 100개 데이터 + web-sourced 929개 데이터
+- 📜 [Chinese Academy of Science] [**PaperRegister: Boosting Flexible-grained Paper Search via Hierarchical Register Indexing**](https://arxiv.org/abs/2508.11116)
+    - 기존 논문 검색 시스템들은 abstract만을 수집하여 indexing했으므로 세부적인 requirement를 충족하지 못하는 문제
+    - offline hierarchical indexing & online adaptivr retrieval → paper search를 위한 index tree
 </details>
 
 ## 🍉 July
