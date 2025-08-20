@@ -156,16 +156,24 @@
 <details>
   <summary>3rd week</summary>
 
-- 🧑🏻‍💻 [Meta] [**DINOv3**](https://ai.meta.com/research/publications/dinov3/)
+- 🧑🏻‍💻 [Meta] [DINOv3](https://ai.meta.com/research/publications/dinov3/)
     - self-supervised vision foundation model that scales data and model size
     - Gram anchoring loss를 사용하여 dense patch consistency를 보존하고 resolution, size, text alignment를 위한 post-hoc tweaks를 더함
-- 📜 [ByteDance] [**Seeing, Listening, Remembering, and Reasoning: A Multimodal Agent with Long-Term Memory**](https://www.arxiv.org/abs/2508.09736)
+- 📜 [ByteDance] [Seeing, Listening, Remembering, and Reasoning: A Multimodal Agent with Long-Term Memory](https://www.arxiv.org/abs/2508.09736)
     - M3 Agent: 사람처럼 long-term memory를 지닌 multimodal agent framework. real-time visual & auditory inputs를 처리하여 memory를 build 또는 update
     - 시간에 따라 축적되는 knowledge를 semantic memory로 관리 (episodic memory와 별도)
     - M3 Bench: long-video question answering benchmark. robot 관점에서 획득한 100개 데이터 + web-sourced 929개 데이터
-- 📜 [Chinese Academy of Science] [**PaperRegister: Boosting Flexible-grained Paper Search via Hierarchical Register Indexing**](https://arxiv.org/abs/2508.11116)
+- 📜 [Chinese Academy of Science] [PaperRegister: Boosting Flexible-grained Paper Search via Hierarchical Register Indexing](https://arxiv.org/abs/2508.11116)
     - 기존 논문 검색 시스템들은 abstract만을 수집하여 indexing했으므로 세부적인 requirement를 충족하지 못하는 문제
     - offline hierarchical indexing & online adaptivr retrieval → paper search를 위한 index tree
+- 📜 [Amsterdam] [Can we Evaluate RAGs with Synthetic Data?](https://arxiv.org/abs/2508.11758)
+    - synthetic benchmark가 충분히 쓸만한지 확인하는 두 가지 관점
+    - (1) 생성 모델은 고정하고 retriever를 varying (2) retriever를 고정하고 생성 모델을 varying
+    - (1)에서는 일관성 있는 결과가 나오는 반면 (2)는 그렇지 않다고 설명
+- 🧑🏻‍💻 [Google] [Introducing Gemma 3 270M: The compact model for hyper-efficient AI](https://developers.googleblog.com/en/introducing-gemma-3-270m)
+    - task-specific fine-tuning with strong instruction-following and text structuring capabilities, 270M parameters
+    - 170M embedding parameters인데 이는 large vocab size 때문이라고 함 (256k tokens)
+    - INT4 precision으로 사용 가능한 Quantization-Aware Trained (QAT) 버전도 공개
 </details>
 
 ## 🍉 July
