@@ -174,6 +174,10 @@
     - task-specific fine-tuning with strong instruction-following and text structuring capabilities, 270M parameters
     - 170M embedding parameters인데 이는 large vocab size 때문이라고 함 (256k tokens)
     - INT4 precision으로 사용 가능한 Quantization-Aware Trained (QAT) 버전도 공개
+- 🧑🏻‍💻 [Alibaba] [**Qwen-Image-Edit: Image Editing with Higher Quality and Efficiency**](https://qwenlm.github.io/blog/qwen-image-edit)
+    - input image를 Qwen-2.5-VL과 VAE Encoder에 동시에 넣어 semantic & appearance editing 가능
+    - 영어와 중국어에 대해 정확한 text editing 가능
+    - Seedream, GPT Image, FLUX 등의 모델을 능가한 SoTA 달성
 </details>
 
 ## 🍉 July
