@@ -174,10 +174,21 @@
     - task-specific fine-tuning with strong instruction-following and text structuring capabilities, 270M parameters
     - 170M embedding parameters인데 이는 large vocab size 때문이라고 함 (256k tokens)
     - INT4 precision으로 사용 가능한 Quantization-Aware Trained (QAT) 버전도 공개
-- 🧑🏻‍💻 [Alibaba] [**Qwen-Image-Edit: Image Editing with Higher Quality and Efficiency**](https://qwenlm.github.io/blog/qwen-image-edit)
+- 🧑🏻‍💻 [Alibaba] [Qwen-Image-Edit: Image Editing with Higher Quality and Efficiency](https://qwenlm.github.io/blog/qwen-image-edit)
     - input image를 Qwen-2.5-VL과 VAE Encoder에 동시에 넣어 semantic & appearance editing 가능
     - 영어와 중국어에 대해 정확한 text editing 가능
     - Seedream, GPT Image, FLUX 등의 모델을 능가한 SoTA 달성
+- 📜 [Univ. of Tubingen] [MDPO: Overcoming the Training-Inference Divide of Masked Diffusion Language Models](https://arxiv.org/abs/2508.13148)
+    - Masked Diffusion Language Models는 추론 시 unmask → mask 과정을 반복하는데, 이는 학습 당시 mask를 random 하게 설정했던 것과 discrepancy 존재
+    - 이를 해결하기 위해 learning effective denoising trajectories 문제를 a sequential decision-making problem으로 정의
+    - Masked Diffusion Policy Optimization (MDPO): diffusion process의 Markov property 이용하여 모델이 추론 시 겪는 progress를 학습 당시에도 볼 수 있도록 함
+- 📜 [OPPO] [Chain-of-Agents: End-to-End Agent Foundation Models via Multi-Agent Distillation and Agentic RL](https://arxiv.org/abs/2508.13167)
+    - 한 개의 모델 내에서 여러 개의 tools & agents를 이용하여 multi-turn problem solving이 가능하도록 하는 패러다임 제안
+    - agentic supervised fine-tuning을 위한 multi-agent distillation framework 제안 → reinforcement learning on verifiable agentic tasks
+    - 학습을 통해 획득한 결과 모델을 Agent Foundation Models (AFMs)라고 부름
+- 📜 [Shanghia Jiao Tong Univ.] [Transplant Then Regenerate: A New Paradigm for Text Data Augmentation](https://arxiv.org/abs/2508.14723)
+    - LMTransplant: seed text를 바탕으로 확장된 context를 만들고, 이를 바탕으로 variant를 생성하라고 지시
+    - LLM에 embedded knowledge를 이용하여 기존 text의 attribute를 지닌 채로 diverse &  creative content-level variants 생성 가능
 </details>
 
 ## 🍉 July
