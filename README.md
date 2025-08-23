@@ -189,6 +189,16 @@
 - 📜 [Shanghia Jiao Tong Univ.] [Transplant Then Regenerate: A New Paradigm for Text Data Augmentation](https://arxiv.org/abs/2508.14723)
     - LMTransplant: seed text를 바탕으로 확장된 context를 만들고, 이를 바탕으로 variant를 생성하라고 지시
     - LLM에 embedded knowledge를 이용하여 기존 text의 attribute를 지닌 채로 diverse &  creative content-level variants 생성 가능
+- 🧑🏻‍💻 [DeepSeek] [DeepSeek-V3.1 Release](https://api-docs.deepseek.com/news/news250821)
+    - SWE-/Terminal- bench에서 전작 대비 큰 성능 향상을 보여줌
+- 📜 [ByteDance, Nanjing] [DuPO: Enabling Reliable LLM Self-Verification via Dual Preference Optimization](https://arxiv.org/abs/2508.14460)
+    - DuPO: Dual learning-based preference optimization framework로 generalized duality를 통해 annotation-free feedback 생성
+    - RLVR이 지나치게 많은 비용을 필요로 한다는 한계 & 전통적인 dual learning이 학습 당시에 본 task만 처리할 수 있다는 한계를 극복
+    - primal task’s input을 known & unknown components로 쪼개고, primal output & known information을 이용하여 unknown part를 reconstruct
+- 📜 [Wuhan, Nanjing] [From Scores to Skills: A Cognitive Diagnosis Framework for Evaluating Financial Large Language Models](https://arxiv.org/abs/2508.13491)
+    - FinCDM: financial LLM 평가를 위한 first cognitive diagnosis evaluation framework
+    - LLM 평가를 knowledge-skill level로 진행하여 LLM이 어떤 financial skills & knowledge를 갖고 있는지 확인할 수 있음 (단순한 숫자로 반환하는 것 x)
+    - CPA-QKA: the first cognitively informed financial evaluation dataset. Certified Public Accountant (CPA) 검사로부터 derive
 </details>
 
 ## 🍉 July
