@@ -199,6 +199,16 @@
     - FinCDM: financial LLM 평가를 위한 first cognitive diagnosis evaluation framework
     - LLM 평가를 knowledge-skill level로 진행하여 LLM이 어떤 financial skills & knowledge를 갖고 있는지 확인할 수 있음 (단순한 숫자로 반환하는 것 x)
     - CPA-QKA: the first cognitively informed financial evaluation dataset. Certified Public Accountant (CPA) 검사로부터 derive
+- 📜 [Meta] [Deep Think with Confidence](https://arxiv.org/abs/2508.15260)
+    - 기존 LLM들의 test-time scaling에서 majority voting를 통한 self-confidence 같은 것들은 computational overhead를 크게 발생시킨다는 문제가 있음
+    - Deep Think with Confidence (DeepConf): model-internal confidence signals를 이용하여 low-quality reasoning traces를 dynamically filter out
+    - 추가적인 학습 or hyper-parameter tuning 필요 없이 기존 serving frameworks에 integrate 가능
+- 📜 [Shanghai AI Lab] [Intern-S1: A Scientific Multimodal Foundation Model](https://arxiv.org/abs/2508.15763)
+    - scientific domain에서는 여전히 open-source models & closed models gap이 상당하다는 문제점 지적
+    - Intern-S1: a specialized generalist equipped with general understanding and reasoning capabilities
+    - 28B activated, 241B total parameters, MoE 모델
+    - 5T 토큰 데이터로 사전학습. 그중에 2.5T 토큰이 과학 분야 데이터
+    - offline & online RL을 적용할 때, InternBootCamp라는 프레임워크 내에서 Mixture-of-Rewards (MoR)를 이용하는데 1000개 이상의 태스크를 동시에 학습
 </details>
 
 ## 🍉 July
