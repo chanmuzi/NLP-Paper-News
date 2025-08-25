@@ -209,6 +209,14 @@
     - 28B activated, 241B total parameters, MoE 모델
     - 5T 토큰 데이터로 사전학습. 그중에 2.5T 토큰이 과학 분야 데이터
     - offline & online RL을 적용할 때, InternBootCamp라는 프레임워크 내에서 Mixture-of-Rewards (MoR)를 이용하는데 1000개 이상의 태스크를 동시에 학습
+- 📜 [Tsinghua] [**ComputerRL: Scaling End-to-End Online Reinforcement Learning for Computer Use Agents**](https://arxiv.org/abs/2508.14040)
+    - autonomous desktop intelligence를 위한 프레임워크로 API-GUI paradigm을 특징으로 가짐
+    - distributed RL infrastrcuture를 구성하여 수천개의 가상 desktop 환경을 병렬적으로 orchestrate 함으로써 대규모 RL 수행
+    - Entropulse: SFT와 RL을 번갈아가며 학습함으로써 entropy collapse 현상을 완화
+- 📜 [Shanghai AI Lab] [**Beyond GPT-5: Making LLMs Cheaper and Better via Performance-Efficiency Optimized Routing**](https://arxiv.org/abs/2508.12631)
+    - Avengers-Pro: performance-efficiency tradeoff를 적절히 골라주는 test-time routing framework
+    - incoming queries를 embed & cluster → 가장 적절한 LLM으로 route
+    - 단일 모델을 사용할 때보다 퍼포먼스 고점도 높고, 동일 성능을 뽑아내기 위해 필요한 비용은 적음
 </details>
 
 ## 🍉 July
