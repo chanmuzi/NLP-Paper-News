@@ -232,6 +232,15 @@
     - 모델의 사전학습 데이터에서 harmful content를 filtering 하기 위해서 classifier & pre-trained model을 사용
         - 6개의 classifier approaches
     - classifier에 사용된 모델은 Claude 3.5 Haiku보다도 훨씬 작았다고 설명
+- 📜 [UCL, Huawei] [AgentFly: Fine-tuning LLM Agents without Fine-tuning LLMs](https://arxiv.org/abs/2508.16153)
+    - Adaptive LLM agents가 fine-tuning 없이 memory-based online RL 하는 learning paradigm 제시 (본인들의 DeepResearch 세팅의 agent model을 Memento로 명명)
+    - Memory-augmented Markov Decision Process (M-MDP)에 neural case-selection policy를 equip
+    - policy는 memory rewriting mechanism을 통해 environmental feedback 기반으로 지속 업데이트
+- 📜 [Shanghai AI Lab] [InternVL3.5: Advancing Open-Source Multimodal Models in Versatility, Reasoning, and Efficiency](https://arxiv.org/abs/2508.18265)
+    - versatility, reasoning capability, inference efficiency가 크게 강화된 오픈소스 multimodal models
+    - Cascade Reinforcement Learning (Cascade RL) framework: offline RL for stable convergence & online RL for refined alignment (coarse-to-fine)
+    - Visual Resolution Router (ViR)를 통해 성능 열화 없이 visual tokens의 resolutions를 조정
+    - Decoupled Vision-Language Deployment (DvD) strategy: vision encoder & language model을 서로 다른 GPU에 분리함으로써 computational load를 효율적으로 관리
 </details>
 
 ## 🍉 July
