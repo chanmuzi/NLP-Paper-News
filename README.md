@@ -249,6 +249,16 @@
     - tabular understanding을 위해 기존에는 labeled data에 fine-tuning & training-free CoT를 활용했으나 두 방식을 한계로 지적
     - Learn then Retrieve, LRTab: 학습 데이터로부터 배운 정보와 유관한 것을 retrieving 하여 활용하는 prompting-based reasoning approach
     - incorrect CoTs에 대해서는 모델이 에러를 피할 수 있도록 Prompt Conditions가 무엇이었을지 예측하도록 프롬프팅
+- 🧑🏻‍💻 [Google] [Introducing Gemini 2.5 Flash Image, our state-of-the-art image model](https://developers.googleblog.com/en/introducing-gemini-2-5-flash-image)
+    - Gemini 2.5 Flash Image 모델이 Image editing 분야에서 OpenAI와 Flux를 넘어 SoTA 달성
+    - 캐릭터 특성을 그대로 잘 유지하면서 지시 사항을 잘 따라 변경해준다는 특징으로 큰 화제가 됨
+- 🧑🏻‍💻 [Google] [NotebookLM's Video Overviews are now available in 80 languages](https://blog.google/technology/google-labs/notebook-lm-audio-video-overviews-more-languages-longer-content)
+    - 제목 그대로 NotebookLM의 Video Overview에서 전세계 80개 언어를 지원함
+- 🧑🏻‍💻 [Anthropic] [Piloting Claude for Chrome](https://www.anthropic.com/news/claude-for-chrome)
+    - Chrome의 extension으로 Claude를 사용하여 browser-using AI를 piloting
+    - 현재는 Max 유저 1,000명 대상으로 early access (wait list 등록 필요)
+    - 여러 위험성에 대해서도 사전 고지를 하고 있는 상황
+    - 올해 초 OpenAI에서도 web-browsing 기능을 공개했었으나 현재 제대로 쓰이고 있는지에 대해서는 확인이 필요함
 </details>
 
 ## 🍉 July
