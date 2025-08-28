@@ -241,6 +241,14 @@
     - Cascade Reinforcement Learning (Cascade RL) framework: offline RL for stable convergence & online RL for refined alignment (coarse-to-fine)
     - Visual Resolution Router (ViR)를 통해 성능 열화 없이 visual tokens의 resolutions를 조정
     - Decoupled Vision-Language Deployment (DvD) strategy: vision encoder & language model을 서로 다른 GPU에 분리함으로써 computational load를 효율적으로 관리
+- 📜 [Microsoft] [CoCoA: Confidence- and Context-Aware Adaptive Decoding for Resolving Knowledge Conflicts in Large Language Models](https://arxiv.org/abs/2508.17670)
+    - CoCoA: novel token-level algorithm for principled conflict resolution & enhanced faithfulness
+    - entropy gap & contextual peakedness를 confidence-aware measures로 이용하여 conflic 해결
+    - 심지어 low conflict settings에서도 높은 퍼포먼스를 보였다고 설명 (QA, Summarization 등)
+- 📜 [UIUC, HKUST] [Utilizing Training Data to Improve LLM Reasoning for Tabular Understanding](https://arxiv.org/abs/2508.18676)
+    - tabular understanding을 위해 기존에는 labeled data에 fine-tuning & training-free CoT를 활용했으나 두 방식을 한계로 지적
+    - Learn then Retrieve, LRTab: 학습 데이터로부터 배운 정보와 유관한 것을 retrieving 하여 활용하는 prompting-based reasoning approach
+    - incorrect CoTs에 대해서는 모델이 에러를 피할 수 있도록 Prompt Conditions가 무엇이었을지 예측하도록 프롬프팅
 </details>
 
 ## 🍉 July
