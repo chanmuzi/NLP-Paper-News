@@ -259,6 +259,8 @@
     - 현재는 Max 유저 1,000명 대상으로 early access (wait list 등록 필요)
     - 여러 위험성에 대해서도 사전 고지를 하고 있는 상황
     - 올해 초 OpenAI에서도 web-browsing 기능을 공개했었으나 현재 제대로 쓰이고 있는지에 대해서는 확인이 필요함
+https://arxiv.org/abs/2508.20453
+https://arxiv.org/abs/2508.20395
 </details>
 
 ## 🍉 July
