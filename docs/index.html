@@ -280,6 +280,21 @@
         font-size: 0.95rem;
       }
 
+      .item-bullets .level-1 {
+        margin-left: 20px;
+        padding-left: 10px;
+      }
+
+      .item-bullets .level-2 {
+        margin-left: 40px;
+        padding-left: 10px;
+      }
+
+      .item-bullets .level-3 {
+        margin-left: 60px;
+        padding-left: 10px;
+      }
+
       .item-tags {
         display: flex;
         flex-wrap: wrap;
@@ -416,10 +431,10 @@
 
         <div class="date-filters">
           <select id="yearFilter" class="date-select">
-            <option value="">연도 선택</option>
+            <option value="">전체 연도</option>
           </select>
           <select id="monthFilter" class="date-select">
-            <option value="">월 선택</option>
+            <option value="">전체 월</option>
           </select>
         </div>
 
@@ -443,7 +458,7 @@
     <script>
       let allItems = [];
       let filteredItems = [];
-      let currentFilter = "all";
+      let currentFilters = new Set(["all"]); // 멀티플 초이스를 위한 Set
       let currentSearch = "";
       let currentYear = "";
       let currentMonth = "";
@@ -469,11 +484,47 @@
         // 필터 버튼 이벤트
         document.querySelectorAll(".filter-btn").forEach((btn) => {
           btn.addEventListener("click", function () {
-            document
-              .querySelectorAll(".filter-btn")
-              .forEach((b) => b.classList.remove("active"));
-            this.classList.add("active");
-            currentFilter = this.dataset.type;
+            const filterType = this.dataset.type;
+
+            if (filterType === "all") {
+              // 전체 버튼 클릭 시 모든 필터 초기화
+              currentFilters.clear();
+              currentFilters.add("all");
+              document
+                .querySelectorAll(".filter-btn")
+                .forEach((b) => b.classList.remove("active"));
+              this.classList.add("active");
+            } else {
+              // 개별 필터 버튼 클릭 시
+              this.classList.remove("active");
+              this.classList.add("active");
+
+              if (currentFilters.has("all")) {
+                // 전체가 선택되어 있었다면 제거
+                currentFilters.delete("all");
+                document
+                  .querySelector('[data-type="all"]')
+                  .classList.remove("active");
+              }
+
+              if (currentFilters.has(filterType)) {
+                // 이미 선택된 필터라면 제거
+                currentFilters.delete(filterType);
+                this.classList.remove("active");
+              } else {
+                // 새로운 필터 추가
+                currentFilters.add(filterType);
+              }
+
+              // 아무것도 선택되지 않았다면 전체로 설정
+              if (currentFilters.size === 0) {
+                currentFilters.add("all");
+                document
+                  .querySelector('[data-type="all"]')
+                  .classList.add("active");
+              }
+            }
+
             currentPage = 1;
             filterAndDisplayItems();
           });
@@ -504,6 +555,8 @@
             if (currentPage > 1) {
               currentPage--;
               displayCurrentPage();
+              // 페이지 변경 시 최상단으로 스크롤
+              window.scrollTo({ top: 0, behavior: "smooth" });
             }
           });
 
@@ -514,6 +567,8 @@
             if (currentPage < maxPage) {
               currentPage++;
               displayCurrentPage();
+              // 페이지 변경 시 최상단으로 스크롤
+              window.scrollTo({ top: 0, behavior: "smooth" });
             }
           });
       }
@@ -575,7 +630,7 @@
         const years = [...new Set(allItems.map((item) => item.year))].sort(
           (a, b) => b - a
         );
-        yearFilter.innerHTML = '<option value="">연도 선택</option>';
+        yearFilter.innerHTML = '<option value="">전체 연도</option>';
         years.forEach((year) => {
           const option = document.createElement("option");
           option.value = year;
@@ -603,7 +658,7 @@
             return monthOrder.indexOf(a) - monthOrder.indexOf(b);
           }
         );
-        monthFilter.innerHTML = '<option value="">월 선택</option>';
+        monthFilter.innerHTML = '<option value="">전체 월</option>';
         months.forEach((month) => {
           const option = document.createElement("option");
           option.value = month;
@@ -614,8 +669,8 @@
 
       function filterAndDisplayItems() {
         filteredItems = allItems.filter((item) => {
-          // 타입 필터
-          if (currentFilter !== "all" && item.type !== currentFilter) {
+          // 타입 필터 (멀티플 초이스)
+          if (!currentFilters.has("all") && !currentFilters.has(item.type)) {
             return false;
           }
 
@@ -672,6 +727,9 @@
           const card = createItemCard(item);
           grid.appendChild(card);
         });
+
+        // 페이지네이션 정보 업데이트
+        updatePagination();
       }
 
       function updatePagination() {
@@ -715,26 +773,59 @@
 
         // bullet points 내의 하이퍼링크 변환
         const processedBullets = item.bullets.map((bullet) => {
+          let bulletText;
+          let bulletLevel = 0;
+
+          if (typeof bullet === "string") {
+            // 최상위 레벨 bullet
+            bulletText = bullet;
+          } else {
+            // 계층화된 bullet point
+            bulletText = bullet.text;
+            bulletLevel = bullet.level;
+          }
+
           // [텍스트](링크) 형태를 <a href="링크">텍스트</a>로 변환
-          return bullet.replace(
+          const processedText = bulletText.replace(
             /\[([^\]]+)\]\(([^)]+)\)/g,
             '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>'
           );
+
+          // 원래 구조 유지
+          if (typeof bullet === "string") {
+            return processedText;
+          } else {
+            return {
+              text: processedText,
+              level: bulletLevel,
+            };
+          }
         });
 
         card.innerHTML = `
           <div class="item-header">
             <span class="item-type">${typeIcon}</span>
+            <span class="item-org">${item.org}</span>
             <div class="item-title">
               <a href="${item.url}" target="_blank" rel="noopener noreferrer">
                 ${item.title}
               </a>
             </div>
-            <span class="item-org">${item.org}</span>
             <span class="item-date">${dateDisplay}</span>
           </div>
           <ul class="item-bullets">
-            ${processedBullets.map((bullet) => `<li>${bullet}</li>`).join("")}
+            ${processedBullets
+              .map((bullet) => {
+                if (typeof bullet === "string") {
+                  return `<li>${bullet}</li>`;
+                } else {
+                  // 계층화된 bullet point
+                  const indentClass =
+                    bullet.level > 0 ? `sub-bullet level-${bullet.level}` : "";
+                  return `<li class="${indentClass}">${bullet.text}</li>`;
+                }
+              })
+              .join("")}
           </ul>
           <div class="item-tags">
             ${item.tags

@@ -27,8 +27,8 @@ def parse_readme_to_items(md_content: str) -> List[Dict[str, Any]]:
         r'^-+\s*([^\s]+)\s*\[([^\]]+)\]\s*\[([^\]]+)\]\((https?://[^\)]+)\)\s*$',
         re.MULTILINE
     )
-    # 이어지는 bullet 라인: "    - 내용"
-    bullet_pattern = re.compile(r'^\s{2,}-\s+(.*)$', re.MULTILINE)
+    # 이어지는 bullet 라인: "    - 내용" (들여쓰기 레벨 감지)
+    bullet_pattern = re.compile(r'^(\s*)-\s+(.*)$', re.MULTILINE)
     
     # 연도 패턴: "# 2025", "# 2024" 등
     year_pattern = re.compile(r'#\s+(\d{4})')
@@ -90,13 +90,37 @@ def parse_readme_to_items(md_content: str) -> List[Dict[str, Any]]:
         next_header = header_pattern.search(md_content, start_pos)
         end_pos = next_header.start() if next_header else len(md_content)
         
-        # bullet points 추출
+        # bullet points 추출 (계층 구조 유지)
         block_content = md_content[start_pos:end_pos]
         bullets = []
         
         for bullet_match in bullet_pattern.finditer(block_content):
-            bullet_text = bullet_match.group(1).strip()
-            bullets.append(bullet_text)
+            indent_level = len(bullet_match.group(1))  # 들여쓰기 공백 수
+            bullet_text = bullet_match.group(2).strip()
+            
+            # 들여쓰기 레벨에 따라 계층 구조 생성
+            if indent_level == 0:
+                # 최상위 레벨 (0칸 들여쓰기)
+                bullets.append(bullet_text)
+            elif indent_level == 4:
+                # 2단계 레벨 (4칸 들여쓰기)
+                bullets.append({
+                    "text": bullet_text,
+                    "level": 1
+                })
+            elif indent_level == 8:
+                # 3단계 레벨 (8칸 들여쓰기)
+                bullets.append({
+                    "text": bullet_text,
+                    "level": 2
+                })
+            else:
+                # 기타 들여쓰기 레벨 (4칸 단위로 계산)
+                level = indent_level // 4
+                bullets.append({
+                    "text": bullet_text,
+                    "level": level
+                })
         
         # 월을 숫자로 변환
         month_mapping = {
@@ -130,14 +154,21 @@ def parse_readme_to_items(md_content: str) -> List[Dict[str, Any]]:
         # 태그 추출 (bullets에서 키워드 추출)
         tags = []
         for bullet in bullets:
+            # bullet이 문자열인 경우 (최상위 레벨)
+            if isinstance(bullet, str):
+                bullet_text = bullet
+            else:
+                # bullet이 객체인 경우 (서브 레벨)
+                bullet_text = bullet["text"]
+            
             # 간단한 키워드 추출 (더 정교한 로직 필요시 개선 가능)
-            if any(keyword in bullet.lower() for keyword in ["llm", "ai", "machine learning", "deep learning"]):
+            if any(keyword in bullet_text.lower() for keyword in ["llm", "ai", "machine learning", "deep learning"]):
                 tags.append("AI/ML")
-            if any(keyword in bullet.lower() for keyword in ["reasoning", "thinking", "cot"]):
+            if any(keyword in bullet_text.lower() for keyword in ["reasoning", "thinking", "cot"]):
                 tags.append("reasoning")
-            if any(keyword in bullet_match.group(1).strip() for keyword in ["agent", "tool", "mcp"]):
+            if any(keyword in bullet_text.lower() for keyword in ["agent", "tool", "mcp"]):
                 tags.append("agent")
-            if any(keyword in bullet_match.group(1).strip() for keyword in ["multimodal", "vision", "image"]):
+            if any(keyword in bullet_text.lower() for keyword in ["multimodal", "vision", "image"]):
                 tags.append("multimodal")
         
         # 고유 태그만 유지
