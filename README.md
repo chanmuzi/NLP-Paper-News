@@ -259,8 +259,18 @@
     - 현재는 Max 유저 1,000명 대상으로 early access (wait list 등록 필요)
     - 여러 위험성에 대해서도 사전 고지를 하고 있는 상황
     - 올해 초 OpenAI에서도 web-browsing 기능을 공개했었으나 현재 제대로 쓰이고 있는지에 대해서는 확인이 필요함
-https://arxiv.org/abs/2508.20453
-https://arxiv.org/abs/2508.20395
+- 📜 [UC Berkeley] [MCP-Bench: Benchmarking Tool-Using LLM Agents with Complex Real-World Tasks via MCP Servers](https://arxiv.org/abs/2508.20453)
+    - LLM의 tool use, cross-tool coordination, precise parameter control 등을 요하는 realistic, multi-step tasks 평가 벤치마크
+    - MCP 기반으로 build 되어 LLM을 28개의 대표적인 live MCP servers와 연결하여 다양한 도메인(finance, traveling 등)을 다룸
+    - multi-faceted evaluation framework 제안
+- 🧑🏻‍💻 [xAI] [Grok Code Fast 1](https://x.ai/news/grok-code-fast-1)
+    - grep, terminal, file editing 등 common tools 사용을 master
+    - GitHub Copilot, Cline, Cursor, Roo Code, Windsurf 등에서 사용 가능
+    - TS, Python, Java, Rust, C++, Go 등 다양한 언어를 다룰 수 있으며, 서빙단에서 속도를 최적화했음을 언급
+- 📜 [KTH] [Measuring Reasoning Utility in LLMs via Conditional Entropy Reduction](https://arxiv.org/abs/2508.20395)
+    - reasoning을 길게 하는 것이 답변의 confidence와 상관이 없음. 생성하면서 reasoning step이 유용할지 알 수 있다면 early stop or prune ineffective steps가 가능할 것
+    - Qwen2.5-32B & GPT-4o 모델로 reasoning chains를 생성하고, Qwen3-8B 모델로 final accuracy 측정
+    - answer span Y에 대한 각 reasoning step의 conditional entropy를 step-by-step 계산하여 uncertainty 측정
 </details>
 
 ## 🍉 July
