@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>논문 추가 - NLP Paper News Manager</title>
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/components.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <h1 class="logo">📚 NLP Paper News</h1>
+        <nav class="nav">
+          <a href="index.html" class="nav-link">🏠 홈</a>
+          <a href="add.html" class="nav-link active">➕ 추가</a>
+          <a href="batch-add.html" class="nav-link">📝 일괄추가</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="main">
+      <div class="container">
+        <section class="form-section">
+          <h2>새 논문 추가</h2>
+          <form id="addPaperForm" class="paper-form">
+            <div class="form-group">
+              <label for="title">제목 *</label>
+              <input
+                type="text"
+                id="title"
+                name="title"
+                required
+                class="form-input"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="link">링크 *</label>
+              <input
+                type="url"
+                id="link"
+                name="link"
+                required
+                class="form-input"
+                placeholder="https://..."
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="category">카테고리 *</label>
+              <select
+                id="category"
+                name="category"
+                required
+                class="form-select"
+              >
+                <option value="">카테고리 선택</option>
+                <option value="📜">📜 논문</option>
+                <option value="🧑🏻‍💻">🧑🏻‍💻 개발자 블로그</option>
+                <option value="🗞️">🗞️ 뉴스</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="categoryName">카테고리명</label>
+              <input
+                type="text"
+                id="categoryName"
+                name="categoryName"
+                class="form-input"
+                placeholder="예: OpenAI, Microsoft, arXiv 등"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="summary">요약 내용 *</label>
+              <textarea
+                id="summary"
+                name="summary"
+                required
+                class="form-textarea"
+                rows="6"
+                placeholder="논문이나 블로그의 주요 내용을 요약해주세요..."
+              ></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="tags">태그</label>
+              <input
+                type="text"
+                id="tags"
+                name="tags"
+                class="form-input"
+                placeholder="쉼표로 구분하여 입력 (예: AI, coding, tools)"
+              />
+              <small class="form-help"
+                >기존 태그: <span id="existingTags"></span
+              ></small>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary">저장</button>
+              <button
+                type="button"
+                class="btn btn-secondary"
+                onclick="history.back()"
+              >
+                취소
+              </button>
+            </div>
+          </form>
+        </section>
+
+        <section class="preview-section">
+          <h3>미리보기</h3>
+          <div id="previewContainer" class="preview-container">
+            <div class="preview-placeholder">
+              <p>입력한 내용이 여기에 표시됩니다.</p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2024 NLP Paper News Manager</p>
+      </div>
+    </footer>
+
+    <script src="assets/js/utils.js"></script>
+    <script src="assets/js/storage.js"></script>
+    <script src="assets/js/add.js"></script>
+  </body>
+</html>

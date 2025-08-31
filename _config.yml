@@ -1,8 +1,178 @@
-theme: jekyll-theme-minimal
-title: chanmuzi's AI News
-description: NLP, LLM
-markdown: kramdown
-kramdown:
-  input: GFM
-  hard_wrap: false
+# GitHub Pages Configuration for NLP Paper News Manager
+
+# Site settings
+title: NLP Paper News Manager
+description: 논문 요약 및 관리 웹 애플리케이션
+url: "https://yourusername.github.io/NLP-Paper-News"
 baseurl: "/NLP-Paper-News"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+
+# Collections
+collections:
+  papers:
+    output: true
+    permalink: /papers/:title/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "papers"
+    values:
+      layout: "paper"
+
+# Plugins
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Exclude from processing
+exclude:
+  - README.md
+  - node_modules
+  - package.json
+  - package-lock.json
+  - .gitignore
+  - .github
+
+# Include in processing
+include:
+  - assets
+  - _layouts
+  - _includes
+
+# Pagination
+paginate: 12
+paginate_path: "/page/:num/"
+
+# Author information
+author:
+  name: "Your Name"
+  email: "your.email@example.com"
+  bio: "AI/ML Researcher"
+  location: "Seoul, Korea"
+  links:
+    - label: "GitHub"
+      icon: "fab fa-github"
+      url: "https://github.com/yourusername"
+
+# Social media
+social:
+  - name: "GitHub"
+    url: "https://github.com/yourusername"
+  - name: "LinkedIn"
+    url: "https://linkedin.com/in/yourusername"
+  - name: "Twitter"
+    url: "https://twitter.com/yourusername"
+
+# Analytics
+analytics:
+  provider: "google"
+  google:
+    tracking_id: "GA_TRACKING_ID"
+
+# Comments
+comments:
+  provider: "disqus"
+  disqus:
+    shortname: "your-disqus-shortname"
+
+# Search
+search: true
+search_full_content: true
+
+# Theme
+theme: jekyll-theme-minimal
+
+# Custom CSS and JS
+custom_css:
+  - assets/css/main.css
+  - assets/css/components.css
+  - assets/css/responsive.css
+
+custom_js:
+  - assets/js/utils.js
+  - assets/js/storage.js
+  - assets/js/parser.js
+  - assets/js/search.js
+  - assets/js/app.js
+  - assets/js/add.js
+  - assets/js/batch-add.js
+
+# SEO
+seo:
+  title: "NLP Paper News Manager"
+  description: "논문 요약 및 관리 웹 애플리케이션"
+  keywords: "NLP, AI, Machine Learning, Papers, Research, News"
+  author: "Your Name"
+  image: "/assets/images/og-image.png"
+  twitter:
+    card: "summary_large_image"
+    creator: "@yourusername"
+  og:
+    type: "website"
+    locale: "ko_KR"
+
+# Sitemap
+sitemap:
+  exclude:
+    - /404.html
+    - /robots.txt
+    - /sitemap.xml
+
+# Robots
+robots:
+  user_agent: "*"
+  disallow:
+    - /admin/
+    - /private/
+  allow:
+    - /
+
+# Security headers
+security:
+  headers:
+    - "X-Frame-Options: DENY"
+    - "X-Content-Type-Options: nosniff"
+    - "X-XSS-Protection: 1; mode=block"
+    - "Referrer-Policy: strict-origin-when-cross-origin"
+
+# Performance
+performance:
+  minify:
+    css: true
+    js: true
+    html: true
+  compress:
+    css: true
+    js: true
+    html: true
+
+# Cache
+cache:
+  enabled: true
+  duration: 3600
+
+# Error pages
+error_pages:
+  404: "/404.html"
+  500: "/500.html"
+
+# Redirects
+redirects:
+  - from: "/old-page"
+    to: "/new-page"
+    status: 301
+
+# Environment
+environment: production
+
+# Build time
+build_time: "{{ site.time | date: '%Y-%m-%d %H:%M:%S %Z' }}"
+
+# Version
+version: "1.0.0"

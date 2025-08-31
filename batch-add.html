@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>일괄 추가 - NLP Paper News Manager</title>
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/components.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <h1 class="logo">📚 NLP Paper News</h1>
+        <nav class="nav">
+          <a href="index.html" class="nav-link">🏠 홈</a>
+          <a href="add.html" class="nav-link">➕ 추가</a>
+          <a href="batch-add.html" class="nav-link active">📝 일괄추가</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="main">
+      <div class="container">
+        <section class="form-section">
+          <h2>일괄 논문 추가</h2>
+          <p class="form-description">
+            README.md 형식의 텍스트를 붙여넣으면 자동으로 파싱하여 여러 논문을
+            한 번에 추가할 수 있습니다.
+          </p>
+
+          <form id="batchAddForm" class="paper-form">
+            <div class="form-group">
+              <label for="batchText">README 형식 텍스트 *</label>
+              <textarea
+                id="batchText"
+                name="batchText"
+                required
+                class="form-textarea"
+                rows="15"
+                placeholder="README.md에서 복사한 내용을 여기에 붙여넣으세요..."
+              ></textarea>
+            </div>
+
+            <div class="form-actions">
+              <button type="button" id="parseBtn" class="btn btn-secondary">
+                파싱
+              </button>
+              <button
+                type="submit"
+                id="saveAllBtn"
+                class="btn btn-primary"
+                disabled
+              >
+                모두 저장
+              </button>
+              <button
+                type="button"
+                class="btn btn-secondary"
+                onclick="history.back()"
+              >
+                취소
+              </button>
+            </div>
+          </form>
+        </section>
+
+        <section class="preview-section">
+          <h3>파싱 결과</h3>
+          <div id="parseResults" class="parse-results">
+            <div class="parse-placeholder">
+              <p>파싱 버튼을 클릭하면 결과가 여기에 표시됩니다.</p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2024 NLP Paper News Manager</p>
+      </div>
+    </footer>
+
+    <script src="assets/js/utils.js"></script>
+    <script src="assets/js/storage.js"></script>
+    <script src="assets/js/parser.js"></script>
+    <script src="assets/js/batch-add.js"></script>
+  </body>
+</html>

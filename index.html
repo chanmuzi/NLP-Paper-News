@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NLP Paper News Manager</title>
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/components.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <h1 class="logo">📚 NLP Paper News</h1>
+        <div class="search-container">
+          <input
+            type="text"
+            id="searchInput"
+            class="search-input"
+            placeholder="논문, 태그, 내용으로 검색..."
+          />
+          <button id="searchBtn" class="search-btn">🔍</button>
+        </div>
+        <nav class="nav">
+          <a href="index.html" class="nav-link active">🏠 홈</a>
+          <a href="add.html" class="nav-link">➕ 추가</a>
+          <a href="batch-add.html" class="nav-link">📝 일괄추가</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="main">
+      <div class="container">
+        <section class="filters">
+          <div class="filter-group">
+            <label for="categoryFilter">카테고리:</label>
+            <select id="categoryFilter" class="filter-select">
+              <option value="">전체</option>
+              <option value="📜">📜 논문</option>
+              <option value="🧑🏻‍💻">🧑🏻‍💻 개발자 블로그</option>
+              <option value="🗞️">🗞️ 뉴스</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label for="tagFilter">태그:</label>
+            <select id="tagFilter" class="filter-select">
+              <option value="">전체</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label for="sortBy">정렬:</label>
+            <select id="sortBy" class="filter-select">
+              <option value="date">날짜순</option>
+              <option value="title">제목순</option>
+              <option value="category">카테고리순</option>
+            </select>
+          </div>
+        </section>
+
+        <section class="content">
+          <div id="papersContainer" class="papers-grid">
+            <!-- 논문 카드들이 여기에 동적으로 생성됩니다 -->
+          </div>
+          <div id="loadingIndicator" class="loading hidden">
+            <div class="spinner"></div>
+            <p>로딩 중...</p>
+          </div>
+          <div id="noResults" class="no-results hidden">
+            <p>검색 결과가 없습니다.</p>
+          </div>
+        </section>
+
+        <div id="pagination" class="pagination hidden">
+          <button id="prevPage" class="pagination-btn">이전</button>
+          <span id="pageInfo" class="page-info">1 / 1</span>
+          <button id="nextPage" class="pagination-btn">다음</button>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2024 NLP Paper News Manager</p>
+      </div>
+    </footer>
+
+    <script src="assets/js/utils.js"></script>
+    <script src="assets/js/storage.js"></script>
+    <script src="assets/js/search.js"></script>
+    <script src="assets/js/app.js"></script>
+  </body>
+</html>
