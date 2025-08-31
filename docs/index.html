@@ -20,23 +20,25 @@
       }
 
       .container {
-        max-width: 1200px;
+        max-width: 1400px;
         margin: 0 auto;
         padding: 20px;
       }
 
       .header {
         text-align: center;
-        margin-bottom: 40px;
-        padding: 40px 0;
+        margin-bottom: 30px;
+        padding: 30px 0;
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         color: white;
-        border-radius: 12px;
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
       }
 
       .header h1 {
         font-size: 2.5rem;
         margin-bottom: 10px;
+        font-weight: 700;
       }
 
       .header p {
@@ -44,11 +46,44 @@
         opacity: 0.9;
       }
 
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        margin-bottom: 30px;
+      }
+
+      .stat-card {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s;
+      }
+
+      .stat-card:hover {
+        transform: translateY(-2px);
+      }
+
+      .stat-number {
+        font-size: 2rem;
+        font-weight: bold;
+        color: #667eea;
+        margin-bottom: 5px;
+      }
+
+      .stat-label {
+        color: #666;
+        font-size: 0.9rem;
+      }
+
       .controls {
         display: flex;
+        flex-wrap: wrap;
         gap: 15px;
         margin-bottom: 30px;
-        flex-wrap: wrap;
+        align-items: center;
       }
 
       .search-box {
@@ -56,40 +91,41 @@
         min-width: 300px;
       }
 
-      .search-box input {
+      .search-input {
         width: 100%;
-        padding: 12px 16px;
+        padding: 12px 20px;
         border: 2px solid #e1e5e9;
-        border-radius: 8px;
-        font-size: 16px;
+        border-radius: 25px;
+        font-size: 1rem;
         transition: border-color 0.3s;
       }
 
-      .search-box input:focus {
+      .search-input:focus {
         outline: none;
         border-color: #667eea;
+        box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
       }
 
-      .filter-controls {
+      .filter-buttons {
         display: flex;
         gap: 10px;
         flex-wrap: wrap;
       }
 
       .filter-btn {
-        padding: 10px 16px;
+        padding: 10px 20px;
         border: 2px solid #e1e5e9;
         background: white;
-        border-radius: 6px;
+        border-radius: 20px;
         cursor: pointer;
         transition: all 0.3s;
-        font-size: 14px;
+        font-size: 0.9rem;
+        white-space: nowrap;
       }
 
       .filter-btn:hover {
         border-color: #667eea;
-        background: #667eea;
-        color: white;
+        background: #f8f9ff;
       }
 
       .filter-btn.active {
@@ -98,145 +134,207 @@
         border-color: #667eea;
       }
 
+      .date-filters {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+
+      .date-select {
+        padding: 8px 15px;
+        border: 2px solid #e1e5e9;
+        border-radius: 15px;
+        background: white;
+        cursor: pointer;
+        font-size: 0.9rem;
+      }
+
+      .date-select:focus {
+        outline: none;
+        border-color: #667eea;
+      }
+
       .add-item-btn {
-        padding: 12px 24px;
+        padding: 12px 25px;
         background: #28a745;
         color: white;
         border: none;
-        border-radius: 8px;
+        border-radius: 25px;
         cursor: pointer;
-        font-size: 16px;
+        font-size: 1rem;
         font-weight: 600;
-        transition: background-color 0.3s;
+        transition: all 0.3s;
+        text-decoration: none;
+        display: inline-block;
       }
 
       .add-item-btn:hover {
         background: #218838;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
       }
 
-      .stats {
-        display: flex;
-        gap: 20px;
-        margin-bottom: 30px;
-        flex-wrap: wrap;
-      }
-
-      .stat-card {
-        background: white;
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        flex: 1;
-        min-width: 150px;
+      .loading {
         text-align: center;
-      }
-
-      .stat-number {
-        font-size: 2rem;
-        font-weight: bold;
-        color: #667eea;
-      }
-
-      .stat-label {
+        padding: 50px;
+        font-size: 1.2rem;
         color: #666;
-        margin-top: 5px;
+      }
+
+      .error {
+        text-align: center;
+        padding: 50px;
+        color: #dc3545;
+        background: #f8d7da;
+        border-radius: 10px;
+        margin: 20px 0;
       }
 
       .items-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
         gap: 20px;
-        margin-bottom: 40px;
+        margin-bottom: 30px;
       }
 
       .item-card {
         background: white;
-        border-radius: 12px;
-        padding: 20px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s, box-shadow 0.3s;
-        border-left: 4px solid #667eea;
+        border-radius: 15px;
+        padding: 25px;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s;
+        border-left: 5px solid #667eea;
       }
 
       .item-card:hover {
-        transform: translateY(-2px);
+        transform: translateY(-3px);
         box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
       }
 
       .item-header {
         display: flex;
         align-items: center;
-        gap: 10px;
+        gap: 12px;
         margin-bottom: 15px;
+        flex-wrap: wrap;
       }
 
       .item-type {
         font-size: 1.5rem;
-      }
-
-      .item-org {
-        background: #e9ecef;
-        padding: 4px 8px;
-        border-radius: 4px;
-        font-size: 12px;
-        font-weight: 600;
-        color: #495057;
+        min-width: 30px;
       }
 
       .item-title {
-        font-size: 1.1rem;
-        font-weight: 600;
-        margin-bottom: 10px;
-        line-height: 1.4;
+        flex: 1;
+        min-width: 200px;
       }
 
       .item-title a {
-        color: #333;
+        color: #2c3e50;
         text-decoration: none;
+        font-weight: 600;
+        font-size: 1.1rem;
+        line-height: 1.4;
+        transition: color 0.3s;
       }
 
       .item-title a:hover {
         color: #667eea;
       }
 
+      .item-org {
+        background: #f8f9fa;
+        padding: 6px 12px;
+        border-radius: 15px;
+        font-size: 0.85rem;
+        color: #495057;
+        font-weight: 500;
+        white-space: nowrap;
+      }
+
+      .item-date {
+        background: #e3f2fd;
+        color: #1976d2;
+        padding: 6px 12px;
+        border-radius: 15px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        white-space: nowrap;
+      }
+
       .item-bullets {
-        margin-bottom: 15px;
+        margin: 15px 0;
+        padding-left: 20px;
       }
 
       .item-bullets li {
-        margin-bottom: 5px;
-        font-size: 14px;
+        margin-bottom: 8px;
+        line-height: 1.5;
+        color: #555;
+      }
+
+      .item-bullets .sub-bullet {
+        margin-left: 20px;
+        margin-top: 5px;
         color: #666;
+        font-size: 0.95rem;
       }
 
       .item-tags {
         display: flex;
-        gap: 8px;
         flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 15px;
       }
 
       .item-tag {
-        background: #f8f9fa;
-        padding: 4px 8px;
-        border-radius: 4px;
-        font-size: 11px;
-        color: #666;
-        border: 1px solid #e9ecef;
+        background: #667eea;
+        color: white;
+        padding: 4px 10px;
+        border-radius: 12px;
+        font-size: 0.75rem;
+        font-weight: 500;
       }
 
-      .loading {
-        text-align: center;
-        padding: 40px;
-        color: #666;
+      .pagination {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        margin-top: 30px;
+        flex-wrap: wrap;
       }
 
-      .error {
-        background: #f8d7da;
-        color: #721c24;
-        padding: 15px;
+      .page-btn {
+        padding: 8px 15px;
+        border: 2px solid #e1e5e9;
+        background: white;
         border-radius: 8px;
-        margin: 20px 0;
-        border: 1px solid #f5c6cb;
+        cursor: pointer;
+        transition: all 0.3s;
+        font-size: 0.9rem;
+      }
+
+      .page-btn:hover {
+        border-color: #667eea;
+        background: #f8f9ff;
+      }
+
+      .page-btn.active {
+        background: #667eea;
+        color: white;
+        border-color: #667eea;
+      }
+
+      .page-btn:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+
+      .page-info {
+        color: #666;
+        font-size: 0.9rem;
+        margin: 0 15px;
       }
 
       @media (max-width: 768px) {
@@ -250,14 +348,25 @@
 
         .controls {
           flex-direction: column;
+          align-items: stretch;
         }
 
         .search-box {
           min-width: auto;
         }
 
-        .items-grid {
-          grid-template-columns: 1fr;
+        .filter-buttons,
+        .date-filters {
+          justify-content: center;
+        }
+
+        .item-header {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .item-title {
+          min-width: auto;
         }
       }
     </style>
@@ -269,52 +378,65 @@
         <p>AI/ML 논문, 개발자 블로그, 뉴스의 최신 동향을 한눈에</p>
       </div>
 
-      <div class="controls">
-        <div class="search-box">
-          <input
-            type="text"
-            id="searchInput"
-            placeholder="제목, 조직, 내용으로 검색..."
-          />
-        </div>
-        <div class="filter-controls">
-          <button class="filter-btn active" data-type="all">전체</button>
-          <button class="filter-btn" data-type="paper">📜 논문</button>
-          <button class="filter-btn" data-type="dev">🧑🏻‍💻 개발</button>
-          <button class="filter-btn" data-type="news">🗞️ 뉴스</button>
-        </div>
-        <button class="add-item-btn" onclick="openAddIssue()">
-          + 새 항목 추가
-        </button>
-      </div>
-
-      <div class="stats" id="stats">
+      <div class="stats">
         <div class="stat-card">
           <div class="stat-number" id="totalCount">-</div>
           <div class="stat-label">전체 항목</div>
         </div>
         <div class="stat-card">
           <div class="stat-number" id="paperCount">-</div>
-          <div class="stat-label">논문</div>
+          <div class="stat-label">📜 논문</div>
         </div>
         <div class="stat-card">
           <div class="stat-number" id="devCount">-</div>
-          <div class="stat-label">개발</div>
+          <div class="stat-label">🧑🏻‍💻 개발</div>
         </div>
         <div class="stat-card">
           <div class="stat-number" id="newsCount">-</div>
-          <div class="stat-label">뉴스</div>
+          <div class="stat-label">🗞️ 뉴스</div>
         </div>
       </div>
 
-      <div id="loading" class="loading">데이터를 불러오는 중...</div>
+      <div class="controls">
+        <div class="search-box">
+          <input
+            type="text"
+            id="searchInput"
+            class="search-input"
+            placeholder="제목, 기관, 내용, 태그로 검색..."
+          />
+        </div>
 
-      <div id="error" class="error" style="display: none">
-        데이터를 불러오는 중 오류가 발생했습니다.
+        <div class="filter-buttons">
+          <button class="filter-btn active" data-type="all">전체</button>
+          <button class="filter-btn" data-type="paper">📜 논문</button>
+          <button class="filter-btn" data-type="dev">🧑🏻‍💻 개발</button>
+          <button class="filter-btn" data-type="news">🗞️ 뉴스</button>
+        </div>
+
+        <div class="date-filters">
+          <select id="yearFilter" class="date-select">
+            <option value="">연도 선택</option>
+          </select>
+          <select id="monthFilter" class="date-select">
+            <option value="">월 선택</option>
+          </select>
+        </div>
+
+        <a href="#" onclick="openAddIssue()" class="add-item-btn"
+          >➕ 새 항목 추가</a
+        >
       </div>
 
-      <div id="itemsGrid" class="items-grid" style="display: none">
-        <!-- 항목들이 여기에 동적으로 추가됩니다 -->
+      <div id="loading" class="loading">데이터를 불러오는 중...</div>
+      <div id="error" class="error" style="display: none"></div>
+
+      <div id="itemsGrid" class="items-grid" style="display: none"></div>
+
+      <div id="pagination" class="pagination" style="display: none">
+        <button class="page-btn" id="prevBtn">이전</button>
+        <div class="page-info" id="pageInfo"></div>
+        <button class="page-btn" id="nextBtn">다음</button>
       </div>
     </div>
 
@@ -323,6 +445,10 @@
       let filteredItems = [];
       let currentFilter = "all";
       let currentSearch = "";
+      let currentYear = "";
+      let currentMonth = "";
+      let currentPage = 1;
+      const itemsPerPage = 20;
 
       // 페이지 로드 시 데이터 불러오기
       document.addEventListener("DOMContentLoaded", function () {
@@ -336,6 +462,7 @@
           .getElementById("searchInput")
           .addEventListener("input", function (e) {
             currentSearch = e.target.value;
+            currentPage = 1;
             filterAndDisplayItems();
           });
 
@@ -347,9 +474,48 @@
               .forEach((b) => b.classList.remove("active"));
             this.classList.add("active");
             currentFilter = this.dataset.type;
+            currentPage = 1;
             filterAndDisplayItems();
           });
         });
+
+        // 연도 필터 이벤트
+        document
+          .getElementById("yearFilter")
+          .addEventListener("change", function (e) {
+            currentYear = e.target.value;
+            currentPage = 1;
+            filterAndDisplayItems();
+          });
+
+        // 월 필터 이벤트
+        document
+          .getElementById("monthFilter")
+          .addEventListener("change", function (e) {
+            currentMonth = e.target.value;
+            currentPage = 1;
+            filterAndDisplayItems();
+          });
+
+        // 페이지네이션 이벤트
+        document
+          .getElementById("prevBtn")
+          .addEventListener("click", function () {
+            if (currentPage > 1) {
+              currentPage--;
+              displayCurrentPage();
+            }
+          });
+
+        document
+          .getElementById("nextBtn")
+          .addEventListener("click", function () {
+            const maxPage = Math.ceil(filteredItems.length / itemsPerPage);
+            if (currentPage < maxPage) {
+              currentPage++;
+              displayCurrentPage();
+            }
+          });
       }
 
       async function loadItems() {
@@ -362,10 +528,18 @@
           const data = await response.json();
           allItems = data.items || [];
 
+          // 날짜 기준으로 내림차순 정렬 (최신순)
+          allItems.sort((a, b) => {
+            const dateA = new Date(a.date.replace(/-W\d+$/, ""));
+            const dateB = new Date(b.date.replace(/-W\d+$/, ""));
+            return dateB - dateA;
+          });
+
           document.getElementById("loading").style.display = "none";
           document.getElementById("itemsGrid").style.display = "grid";
 
           updateStats();
+          setupDateFilters();
           filterAndDisplayItems();
         } catch (error) {
           console.error("데이터 로드 오류:", error);
@@ -393,10 +567,65 @@
         document.getElementById("newsCount").textContent = newsCount;
       }
 
+      function setupDateFilters() {
+        const yearFilter = document.getElementById("yearFilter");
+        const monthFilter = document.getElementById("monthFilter");
+
+        // 연도 옵션 설정
+        const years = [...new Set(allItems.map((item) => item.year))].sort(
+          (a, b) => b - a
+        );
+        yearFilter.innerHTML = '<option value="">연도 선택</option>';
+        years.forEach((year) => {
+          const option = document.createElement("option");
+          option.value = year;
+          option.textContent = year;
+          yearFilter.appendChild(option);
+        });
+
+        // 월 옵션 설정
+        const months = [...new Set(allItems.map((item) => item.month))].sort(
+          (a, b) => {
+            const monthOrder = [
+              "January",
+              "February",
+              "March",
+              "April",
+              "May",
+              "June",
+              "July",
+              "August",
+              "September",
+              "October",
+              "November",
+              "December",
+            ];
+            return monthOrder.indexOf(a) - monthOrder.indexOf(b);
+          }
+        );
+        monthFilter.innerHTML = '<option value="">월 선택</option>';
+        months.forEach((month) => {
+          const option = document.createElement("option");
+          option.value = month;
+          option.textContent = month;
+          monthFilter.appendChild(option);
+        });
+      }
+
       function filterAndDisplayItems() {
         filteredItems = allItems.filter((item) => {
           // 타입 필터
           if (currentFilter !== "all" && item.type !== currentFilter) {
+            return false;
+          }
+
+          // 연도 필터
+          if (currentYear && item.year !== currentYear) {
+            return false;
+          }
+
+          // 월 필터
+          if (currentMonth && item.month !== currentMonth) {
             return false;
           }
 
@@ -420,23 +649,54 @@
           return true;
         });
 
-        displayItems(filteredItems);
+        currentPage = 1;
+        displayCurrentPage();
+        updatePagination();
       }
 
-      function displayItems(items) {
+      function displayCurrentPage() {
         const grid = document.getElementById("itemsGrid");
         grid.innerHTML = "";
 
-        if (items.length === 0) {
+        if (filteredItems.length === 0) {
           grid.innerHTML =
             '<div style="grid-column: 1 / -1; text-align: center; padding: 40px; color: #666;">검색 결과가 없습니다.</div>';
           return;
         }
 
-        items.forEach((item) => {
+        const startIndex = (currentPage - 1) * itemsPerPage;
+        const endIndex = startIndex + itemsPerPage;
+        const pageItems = filteredItems.slice(startIndex, endIndex);
+
+        pageItems.forEach((item) => {
           const card = createItemCard(item);
           grid.appendChild(card);
         });
+      }
+
+      function updatePagination() {
+        const pagination = document.getElementById("pagination");
+        const pageInfo = document.getElementById("pageInfo");
+        const prevBtn = document.getElementById("prevBtn");
+        const nextBtn = document.getElementById("nextBtn");
+
+        if (filteredItems.length <= itemsPerPage) {
+          pagination.style.display = "none";
+          return;
+        }
+
+        pagination.style.display = "flex";
+        const maxPage = Math.ceil(filteredItems.length / itemsPerPage);
+        const startItem = (currentPage - 1) * itemsPerPage + 1;
+        const endItem = Math.min(
+          currentPage * itemsPerPage,
+          filteredItems.length
+        );
+
+        pageInfo.textContent = `${startItem}-${endItem} / ${filteredItems.length} (${currentPage}/${maxPage} 페이지)`;
+
+        prevBtn.disabled = currentPage <= 1;
+        nextBtn.disabled = currentPage >= maxPage;
       }
 
       function createItemCard(item) {
@@ -450,29 +710,29 @@
             news: "🗞️",
           }[item.type] || "📄";
 
+        // 날짜 표시 형식
+        const dateDisplay = `${item.year} ${item.month} W${item.week}`;
+
         card.innerHTML = `
-                <div class="item-header">
-                    <span class="item-type">${typeIcon}</span>
-                    <span class="item-org">${item.org}</span>
-                </div>
-                <div class="item-title">
-                    <a href="${
-                      item.url
-                    }" target="_blank" rel="noopener noreferrer">
-                        ${item.title}
-                    </a>
-                </div>
-                <ul class="item-bullets">
-                    ${item.bullets
-                      .map((bullet) => `<li>${bullet}</li>`)
-                      .join("")}
-                </ul>
-                <div class="item-tags">
-                    ${item.tags
-                      .map((tag) => `<span class="item-tag">${tag}</span>`)
-                      .join("")}
-                </div>
-            `;
+          <div class="item-header">
+            <span class="item-type">${typeIcon}</span>
+            <div class="item-title">
+              <a href="${item.url}" target="_blank" rel="noopener noreferrer">
+                ${item.title}
+              </a>
+            </div>
+            <span class="item-org">${item.org}</span>
+            <span class="item-date">${dateDisplay}</span>
+          </div>
+          <ul class="item-bullets">
+            ${item.bullets.map((bullet) => `<li>${bullet}</li>`).join("")}
+          </ul>
+          <div class="item-tags">
+            ${item.tags
+              .map((tag) => `<span class="item-tag">${tag}</span>`)
+              .join("")}
+          </div>
+        `;
 
         return card;
       }
