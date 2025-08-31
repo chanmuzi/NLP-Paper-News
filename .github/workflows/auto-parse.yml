@@ -28,6 +28,8 @@ jobs:
           python scripts/parse_readme.py
 
               - name: Commit and push changes
+          env:
+            GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
           run: |
             git config --local user.email "action@github.com"
             git config --local user.name "GitHub Action"

@@ -577,6 +577,7 @@
           <button onclick="openBulkAddModal()" class="bulk-add-btn">
             📝 일괄 추가
           </button>
+          <button onclick="openSettingsModal()" class="settings-btn">⚙️ 설정</button>
         </div>
       </div>
 
@@ -744,9 +745,39 @@
           </button>
         </div>
       </div>
+
+      <!-- 설정 모달 -->
+      <div id="settingsModal" class="modal" style="display: none">
+        <div class="modal-content">
+          <span class="close" onclick="closeSettingsModal()">&times;</span>
+          <h2>GitHub API 설정</h2>
+          <div class="form-group">
+            <label for="githubOwner">GitHub 사용자명</label>
+            <input type="text" id="githubOwner" placeholder="예: chanmuzi" />
+          </div>
+          <div class="form-group">
+            <label for="githubRepo">저장소 이름</label>
+            <input type="text" id="githubRepo" placeholder="예: NLP-Paper-News" />
+          </div>
+          <div class="form-group">
+            <label for="githubBranch">브랜치</label>
+            <input type="text" id="githubBranch" placeholder="예: main" />
+          </div>
+          <div class="form-group">
+            <label for="githubToken">Personal Access Token</label>
+            <input type="password" id="githubToken" placeholder="GitHub Personal Access Token" />
+            <small style="color: #666; font-size: 0.8rem;">
+              ⚠️ 이 토큰은 브라우저에만 저장되며, 서버로 전송되지 않습니다.
+            </small>
+          </div>
+          <div class="form-actions">
+            <button onclick="saveSettings()" class="submit-btn">저장</button>
+            <button type="button" class="cancel-btn" onclick="closeSettingsModal()">취소</button>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <script src="config.js"></script>
     <script>
       let allItems = [];
       let filteredItems = [];
@@ -756,6 +787,27 @@
       let currentMonth = "";
       let currentPage = 1;
       const itemsPerPage = 20;
+
+      // GitHub API 설정 (로컬 스토리지에서 로드)
+      let GITHUB_CONFIG = {
+        owner: "chanmuzi", // 기본값
+        repo: "NLP-Paper-News", // 기본값
+        branch: "main", // 기본값
+        token: "" // Personal Access Token
+      };
+
+      // 페이지 로드 시 저장된 설정 로드
+      function loadSettings() {
+        const savedOwner = localStorage.getItem('github_owner');
+        const savedRepo = localStorage.getItem('github_repo');
+        const savedBranch = localStorage.getItem('github_branch');
+        const savedToken = localStorage.getItem('github_token');
+        
+        if (savedOwner) GITHUB_CONFIG.owner = savedOwner;
+        if (savedRepo) GITHUB_CONFIG.repo = savedRepo;
+        if (savedBranch) GITHUB_CONFIG.branch = savedBranch;
+        if (savedToken) GITHUB_CONFIG.token = savedToken;
+      }
 
       // 페이지 로드 시 데이터 불러오기
       document.addEventListener("DOMContentLoaded", function () {
@@ -1196,15 +1248,60 @@
         document.getElementById("bulkMarkdown").value = "";
       }
 
+      // 설정 모달 관련 함수들
+      function openSettingsModal() {
+        document.getElementById("settingsModal").style.display = "block";
+        // 현재 설정값으로 폼 초기화
+        document.getElementById("githubOwner").value = GITHUB_CONFIG.owner;
+        document.getElementById("githubRepo").value = GITHUB_CONFIG.repo;
+        document.getElementById("githubBranch").value = GITHUB_CONFIG.branch;
+        document.getElementById("githubToken").value = GITHUB_CONFIG.token;
+      }
+
+      function closeSettingsModal() {
+        document.getElementById("settingsModal").style.display = "none";
+      }
+
+      function saveSettings() {
+        const owner = document.getElementById("githubOwner").value.trim();
+        const repo = document.getElementById("githubRepo").value.trim();
+        const branch = document.getElementById("githubBranch").value.trim();
+        const token = document.getElementById("githubToken").value.trim();
+
+        if (!owner || !repo || !branch || !token) {
+          alert("모든 필드를 입력해주세요.");
+          return;
+        }
+
+        // 설정 저장
+        GITHUB_CONFIG.owner = owner;
+        GITHUB_CONFIG.repo = repo;
+        GITHUB_CONFIG.branch = branch;
+        GITHUB_CONFIG.token = token;
+
+        // 로컬 스토리지에 저장
+        localStorage.setItem('github_owner', owner);
+        localStorage.setItem('github_repo', repo);
+        localStorage.setItem('github_branch', branch);
+        localStorage.setItem('github_token', token);
+
+        alert("설정이 저장되었습니다!");
+        closeSettingsModal();
+      }
+
       // 모달 외부 클릭 시 닫기
       window.onclick = function (event) {
         const addModal = document.getElementById("addItemModal");
         const bulkModal = document.getElementById("bulkAddModal");
+        const settingsModal = document.getElementById("settingsModal");
         if (event.target === addModal) {
           closeAddItemModal();
         }
         if (event.target === bulkModal) {
           closeBulkAddModal();
+        }
+        if (event.target === settingsModal) {
+          closeSettingsModal();
         }
       };
 
@@ -1262,13 +1359,7 @@
         closeBulkAddModal();
       }
 
-      // GitHub API 설정 (config.js에서 로드)
-      const GITHUB_CONFIG = window.GITHUB_CONFIG || {
-        owner: "chanmuzi",
-        repo: "NLP-Paper-News",
-        branch: "main",
-        token: "",
-      };
+      // GitHub API 설정은 위에서 이미 선언됨
 
       // README.md에 항목 추가
       async function addToReadme(markdown, year, month, week) {
