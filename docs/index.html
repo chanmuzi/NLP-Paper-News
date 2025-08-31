@@ -713,6 +713,15 @@
         // 날짜 표시 형식
         const dateDisplay = `${item.year} ${item.month} W${item.week}`;
 
+        // bullet points 내의 하이퍼링크 변환
+        const processedBullets = item.bullets.map((bullet) => {
+          // [텍스트](링크) 형태를 <a href="링크">텍스트</a>로 변환
+          return bullet.replace(
+            /\[([^\]]+)\]\(([^)]+)\)/g,
+            '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>'
+          );
+        });
+
         card.innerHTML = `
           <div class="item-header">
             <span class="item-type">${typeIcon}</span>
@@ -725,7 +734,7 @@
             <span class="item-date">${dateDisplay}</span>
           </div>
           <ul class="item-bullets">
-            ${item.bullets.map((bullet) => `<li>${bullet}</li>`).join("")}
+            ${processedBullets.map((bullet) => `<li>${bullet}</li>`).join("")}
           </ul>
           <div class="item-tags">
             ${item.tags
