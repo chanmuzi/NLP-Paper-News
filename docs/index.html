@@ -79,11 +79,21 @@
       }
 
       .controls {
+        margin-bottom: 30px;
+      }
+
+      .controls-top {
         display: flex;
         flex-wrap: wrap;
         gap: 15px;
-        margin-bottom: 30px;
+        margin-bottom: 15px;
         align-items: center;
+      }
+
+      .controls-bottom {
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 15px;
       }
 
       .search-box {
@@ -545,39 +555,42 @@
       </div>
 
       <div class="controls">
-        <div class="search-box">
-          <input
-            type="text"
-            id="searchInput"
-            class="search-input"
-            placeholder="제목, 기관, 내용, 태그로 검색..."
-          />
+        <div class="controls-top">
+          <div class="search-box">
+            <input
+              type="text"
+              id="searchInput"
+              class="search-input"
+              placeholder="제목, 기관, 내용, 태그로 검색..."
+            />
+          </div>
+
+          <div class="filter-buttons">
+            <button class="filter-btn active" data-type="all">전체</button>
+            <button class="filter-btn" data-type="paper">📜 논문</button>
+            <button class="filter-btn" data-type="dev">🧑🏻‍💻 개발</button>
+            <button class="filter-btn" data-type="news">🗞️ 뉴스</button>
+          </div>
+
+          <div class="date-filters">
+            <select id="yearFilter" class="date-select">
+              <option value="">전체 연도</option>
+            </select>
+            <select id="monthFilter" class="date-select">
+              <option value="">전체 월</option>
+            </select>
+          </div>
         </div>
 
-        <div class="filter-buttons">
-          <button class="filter-btn active" data-type="all">전체</button>
-          <button class="filter-btn" data-type="paper">📜 논문</button>
-          <button class="filter-btn" data-type="dev">🧑🏻‍💻 개발</button>
-          <button class="filter-btn" data-type="news">🗞️ 뉴스</button>
-        </div>
-
-        <div class="date-filters">
-          <select id="yearFilter" class="date-select">
-            <option value="">전체 연도</option>
-          </select>
-          <select id="monthFilter" class="date-select">
-            <option value="">전체 월</option>
-          </select>
-        </div>
-
-        <div class="add-item-section">
-          <button onclick="openAddItemModal()" class="add-item-btn">
-            ➕ 새 항목 추가
-          </button>
-          <button onclick="openBulkAddModal()" class="bulk-add-btn">
-            📝 일괄 추가
-          </button>
-          <button onclick="openSettingsModal()" class="settings-btn">⚙️ 설정</button>
+        <div class="controls-bottom">
+          <div class="add-item-section">
+            <button onclick="openAddItemModal()" class="add-item-btn">
+              ➕ 새 항목 추가
+            </button>
+            <button onclick="openBulkAddModal()" class="bulk-add-btn">
+              📝 일괄 추가
+            </button>
+          </div>
         </div>
       </div>
 
@@ -745,37 +758,6 @@
           </button>
         </div>
       </div>
-
-      <!-- 설정 모달 -->
-      <div id="settingsModal" class="modal" style="display: none">
-        <div class="modal-content">
-          <span class="close" onclick="closeSettingsModal()">&times;</span>
-          <h2>GitHub API 설정</h2>
-          <div class="form-group">
-            <label for="githubOwner">GitHub 사용자명</label>
-            <input type="text" id="githubOwner" placeholder="예: chanmuzi" />
-          </div>
-          <div class="form-group">
-            <label for="githubRepo">저장소 이름</label>
-            <input type="text" id="githubRepo" placeholder="예: NLP-Paper-News" />
-          </div>
-          <div class="form-group">
-            <label for="githubBranch">브랜치</label>
-            <input type="text" id="githubBranch" placeholder="예: main" />
-          </div>
-          <div class="form-group">
-            <label for="githubToken">Personal Access Token</label>
-            <input type="password" id="githubToken" placeholder="GitHub Personal Access Token" />
-            <small style="color: #666; font-size: 0.8rem;">
-              ⚠️ 이 토큰은 브라우저에만 저장되며, 서버로 전송되지 않습니다.
-            </small>
-          </div>
-          <div class="form-actions">
-            <button onclick="saveSettings()" class="submit-btn">저장</button>
-            <button type="button" class="cancel-btn" onclick="closeSettingsModal()">취소</button>
-          </div>
-        </div>
-      </div>
     </div>
 
     <script>
@@ -793,16 +775,16 @@
         owner: "chanmuzi", // 기본값
         repo: "NLP-Paper-News", // 기본값
         branch: "main", // 기본값
-        token: "" // Personal Access Token
+        token: "", // Personal Access Token
       };
 
       // 페이지 로드 시 저장된 설정 로드
       function loadSettings() {
-        const savedOwner = localStorage.getItem('github_owner');
-        const savedRepo = localStorage.getItem('github_repo');
-        const savedBranch = localStorage.getItem('github_branch');
-        const savedToken = localStorage.getItem('github_token');
-        
+        const savedOwner = localStorage.getItem("github_owner");
+        const savedRepo = localStorage.getItem("github_repo");
+        const savedBranch = localStorage.getItem("github_branch");
+        const savedToken = localStorage.getItem("github_token");
+
         if (savedOwner) GITHUB_CONFIG.owner = savedOwner;
         if (savedRepo) GITHUB_CONFIG.repo = savedRepo;
         if (savedBranch) GITHUB_CONFIG.branch = savedBranch;
@@ -919,21 +901,28 @@
 
       async function loadItems() {
         try {
-          // GitHub Pages에서 상대 경로 문제 해결
-          let dataUrl = "./data/items.json";
+          // GitHub Pages에서 올바른 경로 찾기
+          let dataUrl;
 
-          // 현재 경로에 따라 적절한 URL 설정
-          if (window.location.pathname.includes("/docs/")) {
-            dataUrl = "../data/items.json";
-          } else if (window.location.pathname.includes("/NLP-Paper-News/")) {
-            dataUrl = "./data/items.json";
-          } else if (window.location.hostname === "chanmuzi.github.io") {
+          if (window.location.hostname === "chanmuzi.github.io") {
+            // GitHub Pages에서 실행 중 (docs 폴더가 웹 루트)
             dataUrl = "/NLP-Paper-News/data/items.json";
+          } else if (
+            window.location.pathname === "/" ||
+            window.location.pathname === ""
+          ) {
+            // docs 폴더에서 서버 실행 중이거나 GitHub Pages
+            dataUrl = "../data/items.json";
+          } else {
+            // 기타 경우
+            dataUrl = "../data/items.json";
           }
 
           console.log("데이터 로드 시도:", dataUrl);
           console.log("현재 URL:", window.location.href);
           console.log("현재 경로:", window.location.pathname);
+          console.log("현재 호스트:", window.location.hostname);
+          console.log("현재 포트:", window.location.port);
 
           const response = await fetch(dataUrl);
           console.log("응답 상태:", response.status, response.statusText);
@@ -1248,60 +1237,15 @@
         document.getElementById("bulkMarkdown").value = "";
       }
 
-      // 설정 모달 관련 함수들
-      function openSettingsModal() {
-        document.getElementById("settingsModal").style.display = "block";
-        // 현재 설정값으로 폼 초기화
-        document.getElementById("githubOwner").value = GITHUB_CONFIG.owner;
-        document.getElementById("githubRepo").value = GITHUB_CONFIG.repo;
-        document.getElementById("githubBranch").value = GITHUB_CONFIG.branch;
-        document.getElementById("githubToken").value = GITHUB_CONFIG.token;
-      }
-
-      function closeSettingsModal() {
-        document.getElementById("settingsModal").style.display = "none";
-      }
-
-      function saveSettings() {
-        const owner = document.getElementById("githubOwner").value.trim();
-        const repo = document.getElementById("githubRepo").value.trim();
-        const branch = document.getElementById("githubBranch").value.trim();
-        const token = document.getElementById("githubToken").value.trim();
-
-        if (!owner || !repo || !branch || !token) {
-          alert("모든 필드를 입력해주세요.");
-          return;
-        }
-
-        // 설정 저장
-        GITHUB_CONFIG.owner = owner;
-        GITHUB_CONFIG.repo = repo;
-        GITHUB_CONFIG.branch = branch;
-        GITHUB_CONFIG.token = token;
-
-        // 로컬 스토리지에 저장
-        localStorage.setItem('github_owner', owner);
-        localStorage.setItem('github_repo', repo);
-        localStorage.setItem('github_branch', branch);
-        localStorage.setItem('github_token', token);
-
-        alert("설정이 저장되었습니다!");
-        closeSettingsModal();
-      }
-
       // 모달 외부 클릭 시 닫기
       window.onclick = function (event) {
         const addModal = document.getElementById("addItemModal");
         const bulkModal = document.getElementById("bulkAddModal");
-        const settingsModal = document.getElementById("settingsModal");
         if (event.target === addModal) {
           closeAddItemModal();
         }
         if (event.target === bulkModal) {
           closeBulkAddModal();
-        }
-        if (event.target === settingsModal) {
-          closeSettingsModal();
         }
       };
 
