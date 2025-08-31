@@ -1,0 +1,69 @@
+name: "Add: 새 항목 추가"
+description: "새로운 논문, 개발자 블로그, 뉴스 항목을 추가합니다"
+title: "Add: "
+labels: ["enhancement", "data"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        새로운 항목을 추가하기 위한 템플릿입니다.
+        아래 정보를 모두 입력해주세요.
+
+  - type: input
+    id: org
+    attributes:
+      label: "조직/출처"
+      description: "논문/블로그/뉴스의 출처 조직명"
+      placeholder: "예: OpenAI, Google, Stanford"
+    validations:
+      required: true
+
+  - type: input
+    id: title
+    attributes:
+      label: "제목"
+      description: "논문/블로그/뉴스의 제목"
+      placeholder: "예: GPT-5: A New Era of AI"
+    validations:
+      required: true
+
+  - type: input
+    id: url
+    attributes:
+      label: "링크"
+      description: "논문/블로그/뉴스의 URL"
+      placeholder: "https://example.com/paper"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: type
+    attributes:
+      label: "타입"
+      description: "항목의 타입을 선택하세요"
+      options:
+        - "📜 논문 (Paper)"
+        - "🧑🏻‍💻 개발자 블로그 (Developer Blog)"
+        - "🗞️ 뉴스 (News)"
+    validations:
+      required: true
+
+  - type: textarea
+    id: bullets
+    attributes:
+      label: "요약"
+      description: "주요 내용을 bullet point로 요약해주세요"
+      placeholder: |
+        - 첫 번째 핵심 내용
+        - 두 번째 핵심 내용
+        - 세 번째 핵심 내용
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional_info
+    attributes:
+      label: "추가 정보"
+      description: "기타 참고사항이나 특이사항이 있다면 작성해주세요"
+      placeholder: "선택사항입니다"
+      render: text
