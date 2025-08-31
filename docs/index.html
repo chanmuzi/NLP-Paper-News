@@ -155,9 +155,14 @@
         border-color: #667eea;
       }
 
-      .add-item-btn {
+      .add-item-section {
+        display: flex;
+        gap: 12px;
+      }
+
+      .add-item-btn,
+      .bulk-add-btn {
         padding: 12px 25px;
-        background: #28a745;
         color: white;
         border: none;
         border-radius: 25px;
@@ -169,7 +174,21 @@
         display: inline-block;
       }
 
+      .add-item-btn {
+        background: #667eea;
+      }
+
+      .bulk-add-btn {
+        background: #28a745;
+      }
+
       .add-item-btn:hover {
+        background: #5a6fd8;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+      }
+
+      .bulk-add-btn:hover {
         background: #218838;
         transform: translateY(-2px);
         box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
@@ -311,6 +330,119 @@
         font-weight: 500;
       }
 
+      /* 모달 스타일 */
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        overflow-y: auto;
+      }
+
+      .modal-content {
+        background-color: white;
+        margin: 5% auto;
+        padding: 30px;
+        border-radius: 15px;
+        width: 90%;
+        max-width: 600px;
+        position: relative;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      }
+
+      .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+        cursor: pointer;
+        position: absolute;
+        right: 20px;
+        top: 15px;
+      }
+
+      .close:hover {
+        color: #000;
+      }
+
+      .modal h2 {
+        margin-bottom: 25px;
+        color: #2c3e50;
+        text-align: center;
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 600;
+        color: #2c3e50;
+      }
+
+      .form-group input,
+      .form-group select,
+      .form-group textarea {
+        width: 100%;
+        padding: 12px;
+        border: 2px solid #e9ecef;
+        border-radius: 8px;
+        font-size: 1rem;
+        transition: border-color 0.3s;
+        box-sizing: border-box;
+      }
+
+      .form-group input:focus,
+      .form-group select:focus,
+      .form-group textarea:focus {
+        outline: none;
+        border-color: #667eea;
+      }
+
+      .form-actions {
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+        margin-top: 30px;
+      }
+
+      .submit-btn,
+      .cancel-btn {
+        padding: 12px 30px;
+        border: none;
+        border-radius: 25px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s;
+      }
+
+      .submit-btn {
+        background: #667eea;
+        color: white;
+      }
+
+      .submit-btn:hover {
+        background: #5a6fd8;
+        transform: translateY(-2px);
+      }
+
+      .cancel-btn {
+        background: #6c757d;
+        color: white;
+      }
+
+      .cancel-btn:hover {
+        background: #5a6268;
+        transform: translateY(-2px);
+      }
+
       .pagination {
         display: flex;
         justify-content: center;
@@ -438,9 +570,14 @@
           </select>
         </div>
 
-        <a href="#" onclick="openAddIssue()" class="add-item-btn"
-          >➕ 새 항목 추가</a
-        >
+        <div class="add-item-section">
+          <button onclick="openAddItemModal()" class="add-item-btn">
+            ➕ 새 항목 추가
+          </button>
+          <button onclick="openBulkAddModal()" class="bulk-add-btn">
+            📝 일괄 추가
+          </button>
+        </div>
       </div>
 
       <div id="loading" class="loading">데이터를 불러오는 중...</div>
@@ -455,6 +592,161 @@
       </div>
     </div>
 
+    <!-- 항목 추가 모달 -->
+    <div id="addItemModal" class="modal" style="display: none">
+      <div class="modal-content">
+        <span class="close" onclick="closeAddItemModal()">&times;</span>
+        <h2>새 항목 추가</h2>
+        <form id="addItemForm">
+          <div class="form-group">
+            <label for="itemType">타입</label>
+            <select id="itemType" required>
+              <option value="📜">📜 논문</option>
+              <option value="🧑🏻‍💻">🧑🏻‍💻 개발</option>
+              <option value="🗞️">🗞️ 뉴스</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="itemOrg">기관</label>
+            <input
+              type="text"
+              id="itemOrg"
+              placeholder="예: UC Berkeley"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="itemTitle">제목</label>
+            <input
+              type="text"
+              id="itemTitle"
+              placeholder="논문/개발/뉴스 제목"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="itemUrl">URL</label>
+            <input type="url" id="itemUrl" placeholder="https://..." required />
+          </div>
+          <div class="form-group">
+            <label for="itemBullets">내용 (한 줄에 하나씩)</label>
+            <textarea
+              id="itemBullets"
+              rows="5"
+              placeholder="- 첫 번째 내용&#10;- 두 번째 내용&#10;- 세 번째 내용"
+            ></textarea>
+          </div>
+          <div class="form-group">
+            <label for="itemYear">연도</label>
+            <select id="itemYear" required>
+              <option value="2025">2025</option>
+              <option value="2024">2024</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="itemMonth">월</label>
+            <select id="itemMonth" required>
+              <option value="January">January</option>
+              <option value="February">February</option>
+              <option value="March">March</option>
+              <option value="April">April</option>
+              <option value="May">May</option>
+              <option value="June">June</option>
+              <option value="July">July</option>
+              <option value="August">August</option>
+              <option value="September">September</option>
+              <option value="October">October</option>
+              <option value="November">November</option>
+              <option value="December">December</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="itemWeek">주차</label>
+            <select id="itemWeek" required>
+              <option value="1">1st week</option>
+              <option value="2">2nd week</option>
+              <option value="3">3rd week</option>
+              <option value="4">4th week</option>
+              <option value="5">5th week</option>
+            </select>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="submit-btn">추가</button>
+            <button
+              type="button"
+              class="cancel-btn"
+              onclick="closeAddItemModal()"
+            >
+              취소
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- 일괄 추가 모달 -->
+    <div id="bulkAddModal" class="modal" style="display: none">
+      <div class="modal-content">
+        <span class="close" onclick="closeBulkAddModal()">&times;</span>
+        <h2>일괄 항목 추가</h2>
+        <div class="form-group">
+          <label for="bulkMarkdown">마크다운 형식으로 항목들을 붙여넣기</label>
+          <textarea
+            id="bulkMarkdown"
+            rows="15"
+            placeholder="- 📜 [기관] [**제목**](링크)&#10;    - 내용 1&#10;    - 내용 2&#10;- 🧑🏻‍💻 [기관] [**제목**](링크)&#10;    - 내용 1&#10;    - 내용 2"
+          ></textarea>
+        </div>
+        <div class="form-group">
+          <label for="bulkYear">연도</label>
+          <select id="bulkYear" required>
+            <option value="2025">2025</option>
+            <option value="2024">2024</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="bulkMonth">월</label>
+          <select id="bulkMonth" required>
+            <option value="January">January</option>
+            <option value="February">February</option>
+            <option value="March">March</option>
+            <option value="April">April</option>
+            <option value="May">May</option>
+            <option value="June">June</option>
+            <option value="July">July</option>
+            <option value="August">August</option>
+            <option value="September">September</option>
+            <option value="October">October</option>
+            <option value="November">November</option>
+            <option value="December">December</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="bulkWeek">주차</label>
+          <select id="bulkWeek" required>
+            <option value="1">1st week</option>
+            <option value="2">2nd week</option>
+            <option value="3">3rd week</option>
+            <option value="4">4th week</option>
+            <option value="5">5th week</option>
+          </select>
+        </div>
+        <div class="form-actions">
+          <button onclick="processBulkAdd()" class="submit-btn">
+            일괄 추가
+          </button>
+          <button
+            type="button"
+            class="cancel-btn"
+            onclick="closeBulkAddModal()"
+          >
+            취소
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="config.js"></script>
     <script>
       let allItems = [];
       let filteredItems = [];
@@ -835,6 +1127,262 @@
         `;
 
         return card;
+      }
+
+      // 현재 날짜 기반 기본값 설정
+      function setDefaultDateValues() {
+        const now = new Date();
+        const currentYear = now.getFullYear();
+        const currentMonth = now.toLocaleString("en-US", { month: "long" });
+
+        // 현재 주차 계산 (월의 첫 번째 주부터 시작)
+        const firstDayOfMonth = new Date(now.getFullYear(), now.getMonth(), 1);
+        const currentWeek = Math.ceil(
+          (now.getDate() + firstDayOfMonth.getDay()) / 7
+        );
+
+        // 연도 기본값 설정
+        document.getElementById("itemYear").value = currentYear;
+        document.getElementById("bulkYear").value = currentYear;
+
+        // 월 기본값 설정
+        document.getElementById("itemMonth").value = currentMonth;
+        document.getElementById("bulkMonth").value = currentMonth;
+
+        // 주차 기본값 설정 (1-5 범위 내)
+        const weekValue = Math.min(Math.max(currentWeek, 1), 5);
+        document.getElementById("itemWeek").value = weekValue;
+        document.getElementById("bulkWeek").value = weekValue;
+      }
+
+      // 모달 열기/닫기 함수들
+      function openAddItemModal() {
+        document.getElementById("addItemModal").style.display = "block";
+        setDefaultDateValues();
+      }
+
+      function closeAddItemModal() {
+        document.getElementById("addItemModal").style.display = "none";
+        document.getElementById("addItemForm").reset();
+      }
+
+      function openBulkAddModal() {
+        document.getElementById("bulkAddModal").style.display = "block";
+        setDefaultDateValues();
+      }
+
+      function closeBulkAddModal() {
+        document.getElementById("bulkAddModal").style.display = "none";
+        document.getElementById("bulkMarkdown").value = "";
+      }
+
+      // 모달 외부 클릭 시 닫기
+      window.onclick = function (event) {
+        const addModal = document.getElementById("addItemModal");
+        const bulkModal = document.getElementById("bulkAddModal");
+        if (event.target === addModal) {
+          closeAddItemModal();
+        }
+        if (event.target === bulkModal) {
+          closeBulkAddModal();
+        }
+      };
+
+      // 항목 추가 폼 제출 처리
+      document
+        .getElementById("addItemForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          addSingleItem();
+        });
+
+      // 개별 항목 추가
+      function addSingleItem() {
+        const type = document.getElementById("itemType").value;
+        const org = document.getElementById("itemOrg").value;
+        const title = document.getElementById("itemTitle").value;
+        const url = document.getElementById("itemUrl").value;
+        const bullets = document.getElementById("itemBullets").value;
+        const year = document.getElementById("itemYear").value;
+        const month = document.getElementById("itemMonth").value;
+        const week = document.getElementById("itemWeek").value;
+
+        // 마크다운 형식으로 변환
+        const markdown = `- ${type} [${org}] [${title}](${url})
+    - ${bullets
+      .split("\n")
+      .filter((b) => b.trim())
+      .map((b) => b.replace(/^- /, ""))
+      .join("\n    - ")}`;
+
+        // README.md에 추가
+        addToReadme(markdown, year, month, week);
+
+        closeAddItemModal();
+      }
+
+      // 일괄 항목 추가
+      function processBulkAdd() {
+        const markdown = document.getElementById("bulkMarkdown").value;
+        const year = document.getElementById("bulkYear").value;
+        const month = document.getElementById("bulkMonth").value;
+        const week = document.getElementById("bulkWeek").value;
+
+        if (!markdown.trim()) {
+          alert("마크다운 내용을 입력해주세요.");
+          return;
+        }
+
+        // ** 기호 제거
+        const cleanedMarkdown = markdown.replace(/\*\*/g, "");
+
+        // README.md에 추가
+        addToReadme(cleanedMarkdown, year, month, week);
+
+        closeBulkAddModal();
+      }
+
+      // GitHub API 설정 (config.js에서 로드)
+      const GITHUB_CONFIG = window.GITHUB_CONFIG || {
+        owner: "chanmuzi",
+        repo: "NLP-Paper-News",
+        branch: "main",
+        token: "",
+      };
+
+      // README.md에 항목 추가
+      async function addToReadme(markdown, year, month, week) {
+        if (!GITHUB_CONFIG.token) {
+          alert(
+            "GitHub API 토큰이 설정되지 않았습니다. 관리자에게 문의하세요."
+          );
+          return;
+        }
+
+        try {
+          // 1. 현재 README.md 내용 가져오기
+          const readmeResponse = await fetch(
+            `https://api.github.com/repos/${GITHUB_CONFIG.owner}/${GITHUB_CONFIG.repo}/contents/README.md?ref=${GITHUB_CONFIG.branch}`,
+            {
+              headers: {
+                Authorization: `token ${GITHUB_CONFIG.token}`,
+                Accept: "application/vnd.github.v3+json",
+              },
+            }
+          );
+
+          if (!readmeResponse.ok) {
+            throw new Error("README.md를 가져올 수 없습니다.");
+          }
+
+          const readmeData = await readmeResponse.json();
+          const currentContent = atob(readmeData.content); // base64 디코딩
+          const currentSha = readmeData.sha;
+
+          // 2. 새로운 항목을 적절한 위치에 삽입
+          const newContent = insertNewItems(
+            currentContent,
+            markdown,
+            year,
+            month,
+            week
+          );
+
+          // 3. README.md 업데이트
+          const updateResponse = await fetch(
+            `https://api.github.com/repos/${GITHUB_CONFIG.owner}/${GITHUB_CONFIG.repo}/contents/README.md`,
+            {
+              method: "PUT",
+              headers: {
+                Authorization: `token ${GITHUB_CONFIG.token}`,
+                Accept: "application/vnd.github.v3+json",
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({
+                message: `Add new items via web interface - ${year} ${month} W${week}`,
+                content: btoa(newContent), // base64 인코딩
+                sha: currentSha,
+                branch: GITHUB_CONFIG.branch,
+              }),
+            }
+          );
+
+          if (updateResponse.ok) {
+            alert(
+              "항목이 성공적으로 추가되었습니다! 웹사이트가 자동으로 업데이트됩니다."
+            );
+
+            // 5초 후 웹사이트 새로고침
+            setTimeout(() => {
+              location.reload();
+            }, 5000);
+          } else {
+            throw new Error("README.md 업데이트에 실패했습니다.");
+          }
+        } catch (error) {
+          console.error("GitHub API 오류:", error);
+          alert(`오류가 발생했습니다: ${error.message}`);
+        }
+      }
+
+      // README.md에 새로운 항목 삽입
+      function insertNewItems(currentContent, newItems, year, month, week) {
+        // 해당 연도/월/주차 섹션 찾기
+        const yearPattern = new RegExp(`#\\s+${year}\\s*\\n`, "g");
+        const monthPattern = new RegExp(
+          `##\\s+[^\\s]+\\s+${month}\\s*\\n`,
+          "g"
+        );
+        const weekPattern = new RegExp(
+          `<summary>${week}(?:st|nd|rd|th)\\s+week</summary>\\s*\\n<details>\\s*\\n`,
+          "g"
+        );
+
+        // 주차 섹션 찾기
+        const weekMatch = weekPattern.exec(currentContent);
+
+        if (weekMatch) {
+          // 주차 섹션 내부에 새로운 항목 삽입
+          const insertPosition = weekMatch.index + weekMatch[0].length;
+          return (
+            currentContent.slice(0, insertPosition) +
+            newItems +
+            "\n" +
+            currentContent.slice(insertPosition)
+          );
+        } else {
+          // 주차 섹션이 없으면 새로 생성
+          const monthMatch = monthPattern.exec(currentContent);
+          if (monthMatch) {
+            const insertPosition = monthMatch.index + monthMatch[0].length;
+            const newWeekSection = `\n<details>\n  <summary>${week}${getOrdinalSuffix(
+              week
+            )} week</summary>\n\n${newItems}\n</details>\n\n`;
+            return (
+              currentContent.slice(0, insertPosition) +
+              newWeekSection +
+              currentContent.slice(insertPosition)
+            );
+          }
+        }
+
+        // 기본적으로 파일 끝에 추가
+        return currentContent + "\n\n" + newItems;
+      }
+
+      // 서수 접미사 생성 (1st, 2nd, 3rd, 4th, 5th)
+      function getOrdinalSuffix(num) {
+        if (num >= 11 && num <= 13) return "th";
+        switch (num % 10) {
+          case 1:
+            return "st";
+          case 2:
+            return "nd";
+          case 3:
+            return "rd";
+          default:
+            return "th";
+        }
       }
 
       function openAddIssue() {
