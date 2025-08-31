@@ -867,9 +867,29 @@
 
       async function loadItems() {
         try {
-          const response = await fetch("../data/items.json");
+          // GitHub Pages에서 상대 경로 문제 해결
+          let dataUrl = "./data/items.json";
+
+          // 현재 경로에 따라 적절한 URL 설정
+          if (window.location.pathname.includes("/docs/")) {
+            dataUrl = "../data/items.json";
+          } else if (window.location.pathname.includes("/NLP-Paper-News/")) {
+            dataUrl = "./data/items.json";
+          } else if (window.location.hostname === "chanmuzi.github.io") {
+            dataUrl = "/NLP-Paper-News/data/items.json";
+          }
+
+          console.log("데이터 로드 시도:", dataUrl);
+          console.log("현재 URL:", window.location.href);
+          console.log("현재 경로:", window.location.pathname);
+
+          const response = await fetch(dataUrl);
+          console.log("응답 상태:", response.status, response.statusText);
+
           if (!response.ok) {
-            throw new Error("데이터를 불러올 수 없습니다");
+            throw new Error(
+              `데이터를 불러올 수 없습니다 (${response.status}: ${response.statusText})`
+            );
           }
 
           const data = await response.json();
