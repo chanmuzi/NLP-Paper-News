@@ -907,15 +907,9 @@
           if (window.location.hostname === "chanmuzi.github.io") {
             // GitHub Pages에서 실행 중 (docs 폴더가 웹 루트)
             dataUrl = "/NLP-Paper-News/data/items.json";
-          } else if (
-            window.location.pathname === "/" ||
-            window.location.pathname === ""
-          ) {
-            // docs 폴더에서 서버 실행 중이거나 GitHub Pages
-            dataUrl = "../data/items.json";
           } else {
-            // 기타 경우
-            dataUrl = "../data/items.json";
+            // 로컬에서 실행 중 (docs 폴더가 웹 루트)
+            dataUrl = "./data/items.json";
           }
 
           console.log("데이터 로드 시도:", dataUrl);

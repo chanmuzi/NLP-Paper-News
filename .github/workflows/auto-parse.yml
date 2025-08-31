@@ -23,11 +23,15 @@ jobs:
           python -m pip install --upgrade pip
           pip install requests
 
-      - name: Parse README.md
-        run: |
-          python scripts/parse_readme.py
-
-              - name: Commit and push changes
+                        - name: Parse README.md
+                    run: |
+                      python scripts/parse_readme.py
+                      
+                  - name: Move data to docs folder
+                    run: |
+                      mv data/items.json docs/data/items.json
+                      
+                  - name: Commit and push changes
           env:
             GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
           run: |
