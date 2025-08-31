@@ -1,69 +1,126 @@
-name: "Add: 새 항목 추가"
-description: "새로운 논문, 개발자 블로그, 뉴스 항목을 추가합니다"
-title: "Add: "
+name: 새 항목 추가
+description: 논문, 개발, 뉴스 항목을 추가합니다
+title: "[README 업데이트] "
 labels: ["enhancement", "data"]
+assignees: ["chanmuzi"]
 body:
   - type: markdown
     attributes:
       value: |
-        새로운 항목을 추가하기 위한 템플릿입니다.
-        아래 정보를 모두 입력해주세요.
-
-  - type: input
-    id: org
+        ## 📝 새 항목 추가
+        
+        아래 양식을 작성하여 새로운 항목을 추가해주세요.
+        
+  - type: dropdown
+    id: emoji
     attributes:
-      label: "조직/출처"
-      description: "논문/블로그/뉴스의 출처 조직명"
-      placeholder: "예: OpenAI, Google, Stanford"
+      label: 이모지 (Emoji) *
+      description: 콘텐츠 유형에 맞는 이모지를 선택하세요
+      options:
+        - 📜 논문 링크
+        - 🧑🏻‍💻 개발자 블로그 & Github 링크
+        - 🗞️ 뉴스
     validations:
       required: true
-
+      
+  - type: input
+    id: organization
+    attributes:
+      label: 기관 (Organization) *
+      description: 컨텐츠 출처 기관 이름을 입력하세요 (예: Google, Meta, Anthropic, KAIST, DeepAuto.ai)
+      placeholder: "예: UC Berkeley"
+    validations:
+      required: true
+      
   - type: input
     id: title
     attributes:
-      label: "제목"
-      description: "논문/블로그/뉴스의 제목"
-      placeholder: "예: GPT-5: A New Era of AI"
+      label: 제목 (Title) *
+      description: 논문/개발/뉴스 제목을 입력하세요
+      placeholder: "논문 또는 개발/뉴스 제목"
     validations:
       required: true
-
+      
   - type: input
     id: url
     attributes:
-      label: "링크"
-      description: "논문/블로그/뉴스의 URL"
-      placeholder: "https://example.com/paper"
+      label: 링크 (Link) *
+      description: 논문 링크, 개발 블로그, 뉴스 링크 등을 입력하세요
+      placeholder: "https://..."
     validations:
       required: true
-
+      
   - type: dropdown
-    id: type
+    id: year
     attributes:
-      label: "타입"
-      description: "항목의 타입을 선택하세요"
+      label: 연도 (Year) *
+      description: 연도를 선택하세요
       options:
-        - "📜 논문 (Paper)"
-        - "🧑🏻‍💻 개발자 블로그 (Developer Blog)"
-        - "🗞️ 뉴스 (News)"
+        - "2025"
+        - "2024"
+        - "2023"
     validations:
       required: true
-
-  - type: textarea
-    id: bullets
+      
+  - type: dropdown
+    id: month
     attributes:
-      label: "요약"
-      description: "주요 내용을 bullet point로 요약해주세요"
-      placeholder: |
-        - 첫 번째 핵심 내용
-        - 두 번째 핵심 내용
-        - 세 번째 핵심 내용
+      label: 월 (Month) *
+      description: 월을 선택하세요
+      options:
+        - "January"
+        - "February"
+        - "March"
+        - "April"
+        - "May"
+        - "June"
+        - "July"
+        - "August"
+        - "September"
+        - "October"
+        - "November"
+        - "December"
     validations:
       required: true
-
+      
+  - type: dropdown
+    id: week
+    attributes:
+      label: 주차 (Week) *
+      description: 주차를 선택하세요
+      options:
+        - "1st week"
+        - "2nd week"
+        - "3rd week"
+        - "4th week"
+        - "5th week"
+    validations:
+      required: true
+      
+  - type: textarea
+    id: summary
+    attributes:
+      label: 요약 (Summary) *
+      description: 항목의 주요 내용을 bullet point로 작성하세요
+      placeholder: |
+        - 첫 번째 내용
+        - 두 번째 내용
+        - 세 번째 내용
+      render: markdown
+    validations:
+      required: true
+      
   - type: textarea
     id: additional_info
     attributes:
-      label: "추가 정보"
-      description: "기타 참고사항이나 특이사항이 있다면 작성해주세요"
-      placeholder: "선택사항입니다"
-      render: text
+      label: 추가 정보 (Additional Info)
+      description: 기타 참고사항이 있다면 작성하세요
+      placeholder: "추가 정보나 특이사항을 입력하세요"
+      render: markdown
+      
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        
+        **참고**: 이 Issue가 승인되면 자동으로 README.md에 추가되고 웹사이트가 업데이트됩니다.
