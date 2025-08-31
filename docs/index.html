@@ -584,10 +584,10 @@
 
         <div class="controls-bottom">
           <div class="add-item-section">
-            <button onclick="openAddItemModal()" class="add-item-btn">
+            <button onclick="createAddItemIssue()" class="add-item-btn">
               ➕ 새 항목 추가
             </button>
-            <button onclick="openBulkAddModal()" class="bulk-add-btn">
+            <button onclick="createBulkAddIssue()" class="bulk-add-btn">
               📝 일괄 추가
             </button>
           </div>
@@ -1229,6 +1229,17 @@
       function closeBulkAddModal() {
         document.getElementById("bulkAddModal").style.display = "none";
         document.getElementById("bulkMarkdown").value = "";
+      }
+
+      // GitHub Issue 생성 함수들
+      function createAddItemIssue() {
+        const issueUrl = `https://github.com/chanmuzi/NLP-Paper-News/issues/new?template=add-item.md&title=[ADD] 새 항목 추가`;
+        window.open(issueUrl, "_blank");
+      }
+
+      function createBulkAddIssue() {
+        const issueUrl = `https://github.com/chanmuzi/NLP-Paper-News/issues/new?template=bulk-add.md&title=[BULK] 일괄 항목 추가`;
+        window.open(issueUrl, "_blank");
       }
 
       // 모달 외부 클릭 시 닫기

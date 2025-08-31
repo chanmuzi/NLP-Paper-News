@@ -2,6 +2,21 @@
 🧑🏻‍💻: Developer blog & Github link
 🗞️: News
 
+## 🚀 새로운 시스템
+
+이제 웹사이트에서 항목을 추가할 수 있습니다!
+
+### 📝 항목 추가 방법
+
+1. **웹사이트 방문**: [NLP-Paper-News](https://chanmuzi.github.io/NLP-Paper-News/)
+2. **"새 항목 추가" 또는 "일괄 추가" 버튼 클릭**
+3. **GitHub Issue 템플릿 작성**
+4. **관리자 승인 후 자동으로 README.md에 반영**
+
+### 🔄 자동화 프로세스
+
+1. Issue 생성 → 2. 관리자 승인 → 3. README.md 업데이트 → 4. 자동 파싱 → 5. 웹사이트 업데이트
+
 ---
 # 2025
 
