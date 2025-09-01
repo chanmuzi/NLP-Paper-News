@@ -291,6 +291,24 @@
         white-space: nowrap;
       }
 
+      .delete-btn {
+        background: #ffebee;
+        color: #d32f2f;
+        border: 1px solid #ffcdd2;
+        border-radius: 6px;
+        padding: 4px 8px;
+        cursor: pointer;
+        font-size: 0.9rem;
+        transition: all 0.2s ease;
+        margin-left: auto;
+      }
+
+      .delete-btn:hover {
+        background: #ffcdd2;
+        color: #b71c1c;
+        transform: scale(1.05);
+      }
+
       .item-bullets {
         margin: 15px 0;
         padding-left: 20px;
@@ -660,28 +678,28 @@
           <div class="form-group">
             <label for="itemMonth">월</label>
             <select id="itemMonth" required>
-              <option value="January">January</option>
-              <option value="February">February</option>
-              <option value="March">March</option>
-              <option value="April">April</option>
-              <option value="May">May</option>
-              <option value="June">June</option>
-              <option value="July">July</option>
-              <option value="August">August</option>
-              <option value="September">September</option>
-              <option value="October">October</option>
-              <option value="November">November</option>
-              <option value="December">December</option>
+              <option value="1">1월</option>
+              <option value="2">2월</option>
+              <option value="3">3월</option>
+              <option value="4">4월</option>
+              <option value="5">5월</option>
+              <option value="6">6월</option>
+              <option value="7">7월</option>
+              <option value="8">8월</option>
+              <option value="9">9월</option>
+              <option value="10">10월</option>
+              <option value="11">11월</option>
+              <option value="12">12월</option>
             </select>
           </div>
           <div class="form-group">
             <label for="itemWeek">주차</label>
             <select id="itemWeek" required>
-              <option value="1">1st week</option>
-              <option value="2">2nd week</option>
-              <option value="3">3rd week</option>
-              <option value="4">4th week</option>
-              <option value="5">5th week</option>
+              <option value="1">1주차</option>
+              <option value="2">2주차</option>
+              <option value="3">3주차</option>
+              <option value="4">4주차</option>
+              <option value="5">5주차</option>
             </select>
           </div>
           <div class="form-actions">
@@ -721,28 +739,28 @@
         <div class="form-group">
           <label for="bulkMonth">월</label>
           <select id="bulkMonth" required>
-            <option value="January">January</option>
-            <option value="February">February</option>
-            <option value="March">March</option>
-            <option value="April">April</option>
-            <option value="May">May</option>
-            <option value="June">June</option>
-            <option value="July">July</option>
-            <option value="August">August</option>
-            <option value="September">September</option>
-            <option value="October">October</option>
-            <option value="November">November</option>
-            <option value="December">December</option>
+            <option value="1">1월</option>
+            <option value="2">2월</option>
+            <option value="3">3월</option>
+            <option value="4">4월</option>
+            <option value="5">5월</option>
+            <option value="6">6월</option>
+            <option value="7">7월</option>
+            <option value="8">8월</option>
+            <option value="9">9월</option>
+            <option value="10">10월</option>
+            <option value="11">11월</option>
+            <option value="12">12월</option>
           </select>
         </div>
         <div class="form-group">
           <label for="bulkWeek">주차</label>
           <select id="bulkWeek" required>
-            <option value="1">1st week</option>
-            <option value="2">2nd week</option>
-            <option value="3">3rd week</option>
-            <option value="4">4th week</option>
-            <option value="5">5th week</option>
+            <option value="1">1주차</option>
+            <option value="2">2주차</option>
+            <option value="3">3주차</option>
+            <option value="4">4주차</option>
+            <option value="5">5주차</option>
           </select>
         </div>
         <div class="form-actions">
@@ -1160,6 +1178,9 @@
                 </a>
               </div>
               <span class="item-date">${dateDisplay}</span>
+              <button class="delete-btn" onclick="deleteItem('${item.id}', '${item.title}')" title="항목 삭제">
+                🗑️
+              </button>
             </div>
             <ul class="item-bullets">
               ${processedBullets
@@ -1246,6 +1267,35 @@
          window.open(issueUrl, "_blank");
        }
 
+       // 항목 삭제 함수
+       function deleteItem(itemId, itemTitle) {
+         if (confirm(`"${itemTitle}" 항목을 삭제하시겠습니까?\n\n삭제 요청이 GitHub Issue로 전송됩니다.`)) {
+           createDeleteIssue(itemId, itemTitle);
+         }
+       }
+
+       // 삭제 Issue 생성
+       function createDeleteIssue(itemId, itemTitle) {
+         const issueBody = `## 🗑️ 항목 삭제 요청
+
+**삭제할 항목 ID**: \`${itemId}\`
+**삭제할 항목 제목**: ${itemTitle}
+
+## 📋 삭제 사유
+(선택사항) 삭제 이유를 작성해주세요.
+
+## ✅ 확인사항
+- [x] 삭제할 항목이 정확한지 확인했습니다
+- [x] 삭제 후 복구가 어려움을 이해했습니다
+
+---
+*이 Issue는 관리자에 의해 검토 후 처리됩니다.*`;
+
+         const issueUrl = `https://github.com/chanmuzi/NLP-Paper-News/issues/new?title=[DELETE] 항목 삭제: ${encodeURIComponent(itemTitle)}&body=${encodeURIComponent(issueBody)}`;
+         
+         window.open(issueUrl, "_blank");
+       }
+
       // 모달 외부 클릭 시 닫기
       window.onclick = function (event) {
         const addModal = document.getElementById("addItemModal");
@@ -1266,35 +1316,44 @@
           addSingleItem();
         });
 
-             // 개별 항목 추가
-       function addSingleItem() {
-         const type = document.getElementById("itemType").value;
-         const org = document.getElementById("itemOrg").value;
-         const title = document.getElementById("itemTitle").value;
-         const url = document.getElementById("itemUrl").value;
-         const bullets = document.getElementById("itemBullets").value;
-         const year = document.getElementById("itemYear").value;
-         const month = document.getElementById("itemMonth").value;
-         const week = document.getElementById("itemWeek").value;
+      // 개별 항목 추가
+      function addSingleItem() {
+        const type = document.getElementById("itemType").value;
+        const org = document.getElementById("itemOrg").value;
+        const title = document.getElementById("itemTitle").value;
+        const url = document.getElementById("itemUrl").value;
+        const bullets = document.getElementById("itemBullets").value;
+        const year = document.getElementById("itemYear").value;
+        const month = document.getElementById("itemMonth").value;
+        const week = document.getElementById("itemWeek").value;
 
-         // 폼 데이터를 GitHub Issue로 전송
-         createFormIssue(type, org, title, url, bullets, year, month, week);
+        // 폼 데이터를 GitHub Issue로 전송
+        createFormIssue(type, org, title, url, bullets, year, month, week);
 
-         closeAddItemModal();
-       }
+        closeAddItemModal();
+      }
 
-       // 폼 데이터로 GitHub Issue 생성
-       function createFormIssue(type, org, title, url, bullets, year, month, week) {
-         // 마크다운 형식으로 변환
-         const markdown = `- ${type} [${org}] [${title}](${url})
+      // 폼 데이터로 GitHub Issue 생성
+      function createFormIssue(
+        type,
+        org,
+        title,
+        url,
+        bullets,
+        year,
+        month,
+        week
+      ) {
+        // 마크다운 형식으로 변환
+        const markdown = `- ${type} [${org}] [${title}](${url})
        - ${bullets
          .split("\n")
          .filter((b) => b.trim())
          .map((b) => b.replace(/^- /, ""))
          .join("\n    - ")}`;
 
-         // Issue body 생성
-         const issueBody = `## 📋 추가 정보
+        // Issue body 생성
+        const issueBody = `## 📋 추가 정보
 - **추가 유형**: [x] 단일 항목 (JSON 형식) [ ] 여러 항목 (마크다운 형식) [ ] README.md 직접 수정
 - **연도**: ${year}
 - **월**: ${month}
@@ -1309,7 +1368,7 @@
   "org": "${org}",
   "title": "${title}",
   "url": "${url}",
-  "summary": "${bullets.replace(/\n/g, '\\n')}",
+  "summary": "${bullets.replace(/\n/g, "\\n")}",
   "year": "${year}",
   "month": "${month}",
   "week": "${week}"
@@ -1322,62 +1381,65 @@
 - [x] 중복 항목이 아닌지 확인했습니다
 - [x] 날짜 정보가 정확한지 확인했습니다`;
 
-         // GitHub Issue 생성 URL
-         const issueUrl = `https://github.com/chanmuzi/NLP-Paper-News/issues/new?title=[FORM] 폼으로 항목 추가&body=${encodeURIComponent(issueBody)}`;
-         
-         window.open(issueUrl, "_blank");
-       }
+        // GitHub Issue 생성 URL
+        const issueUrl = `https://github.com/chanmuzi/NLP-Paper-News/issues/new?title=[FORM] 폼으로 항목 추가&body=${encodeURIComponent(
+          issueBody
+        )}`;
 
-             // 일괄 항목 추가
-       function processBulkAdd() {
-         const markdown = document.getElementById("bulkMarkdown").value;
-         const year = document.getElementById("bulkYear").value;
-         const month = document.getElementById("bulkMonth").value;
-         const week = document.getElementById("bulkWeek").value;
+        window.open(issueUrl, "_blank");
+      }
 
-         if (!markdown.trim()) {
-           alert("마크다운 내용을 입력해주세요.");
-           return;
-         }
+      // 일괄 항목 추가
+      function processBulkAdd() {
+        const markdown = document.getElementById("bulkMarkdown").value;
+        const year = document.getElementById("bulkYear").value;
+        const month = document.getElementById("bulkMonth").value;
+        const week = document.getElementById("bulkWeek").value;
 
-         // 마크다운 형식 검증
-         if (!validateMarkdownFormat(markdown)) {
-           alert("마크다운 형식이 올바르지 않습니다. 형식을 확인해주세요.");
-           return;
-         }
+        if (!markdown.trim()) {
+          alert("마크다운 내용을 입력해주세요.");
+          return;
+        }
 
-         // ** 기호 제거
-         const cleanedMarkdown = markdown.replace(/\*\*/g, "");
+        // 마크다운 형식 검증
+        if (!validateMarkdownFormat(markdown)) {
+          alert("마크다운 형식이 올바르지 않습니다. 형식을 확인해주세요.");
+          return;
+        }
 
-         // GitHub Issue로 전송
-         createMarkdownIssue(cleanedMarkdown, year, month, week);
+        // ** 기호 제거
+        const cleanedMarkdown = markdown.replace(/\*\*/g, "");
 
-         closeBulkAddModal();
-       }
+        // GitHub Issue로 전송
+        createMarkdownIssue(cleanedMarkdown, year, month, week);
 
-       // 마크다운 형식 검증
-       function validateMarkdownFormat(markdown) {
-         const lines = markdown.split('\n');
-         let hasValidItem = false;
+        closeBulkAddModal();
+      }
 
-         for (let line of lines) {
-           line = line.trim();
-           if (!line) continue;
+      // 마크다운 형식 검증
+      function validateMarkdownFormat(markdown) {
+        const lines = markdown.split("\n");
+        let hasValidItem = false;
 
-           // 항목 헤더 패턴 검증: "- [이모지] [Org] [Title](URL)"
-           const headerPattern = /^-\s+([^\s]+)\s+\[([^\]]+)\]\s+\[([^\]]+)\]\((https?:\/\/[^\)]+)\)\s*$/;
-           if (headerPattern.test(line)) {
-             hasValidItem = true;
-           }
-         }
+        for (let line of lines) {
+          line = line.trim();
+          if (!line) continue;
 
-         return hasValidItem;
-       }
+          // 항목 헤더 패턴 검증: "- [이모지] [Org] [Title](URL)"
+          const headerPattern =
+            /^-\s+([^\s]+)\s+\[([^\]]+)\]\s+\[([^\]]+)\]\((https?:\/\/[^\)]+)\)\s*$/;
+          if (headerPattern.test(line)) {
+            hasValidItem = true;
+          }
+        }
 
-       // 마크다운 데이터로 GitHub Issue 생성
-       function createMarkdownIssue(markdown, year, month, week) {
-         // Issue body 생성
-         const issueBody = `## 📋 추가 정보
+        return hasValidItem;
+      }
+
+      // 마크다운 데이터로 GitHub Issue 생성
+      function createMarkdownIssue(markdown, year, month, week) {
+        // Issue body 생성
+        const issueBody = `## 📋 추가 정보
 - **추가 유형**: [ ] 단일 항목 (JSON 형식) [x] 여러 항목 (마크다운 형식) [ ] README.md 직접 수정
 - **연도**: ${year}
 - **월**: ${month}
@@ -1396,11 +1458,13 @@ ${markdown}
 - [x] 중복 항목이 아닌지 확인했습니다
 - [x] 날짜 정보가 정확한지 확인했습니다`;
 
-         // GitHub Issue 생성 URL
-         const issueUrl = `https://github.com/chanmuzi/NLP-Paper-News/issues/new?title=[MARKDOWN] 마크다운으로 항목 추가&body=${encodeURIComponent(issueBody)}`;
-         
-         window.open(issueUrl, "_blank");
-       }
+        // GitHub Issue 생성 URL
+        const issueUrl = `https://github.com/chanmuzi/NLP-Paper-News/issues/new?title=[MARKDOWN] 마크다운으로 항목 추가&body=${encodeURIComponent(
+          issueBody
+        )}`;
+
+        window.open(issueUrl, "_blank");
+      }
 
       // GitHub API 설정은 위에서 이미 선언됨
 
