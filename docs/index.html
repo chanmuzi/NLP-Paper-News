@@ -584,10 +584,10 @@
 
         <div class="controls-bottom">
           <div class="add-item-section">
-            <button onclick="createAddItemPR()" class="add-item-btn">
+            <button onclick="createAddItemIssue()" class="add-item-btn">
               ➕ 새 항목 추가
             </button>
-            <button onclick="createBulkAddPR()" class="bulk-add-btn">
+            <button onclick="createBulkAddIssue()" class="bulk-add-btn">
               📝 일괄 추가
             </button>
           </div>
@@ -761,396 +761,396 @@
     </div>
 
     <script>
-        let allItems = [];
-        let filteredItems = [];
-        let currentFilters = new Set(["all"]); // 멀티플 초이스를 위한 Set
-        let currentSearch = "";
-        let currentYear = "";
-        let currentMonth = "";
-        let currentPage = 1;
-        const itemsPerPage = 20;
+      let allItems = [];
+      let filteredItems = [];
+      let currentFilters = new Set(["all"]); // 멀티플 초이스를 위한 Set
+      let currentSearch = "";
+      let currentYear = "";
+      let currentMonth = "";
+      let currentPage = 1;
+      const itemsPerPage = 20;
 
-        // GitHub API 설정 (로컬 스토리지에서 로드)
-        let GITHUB_CONFIG = {
-          owner: "chanmuzi", // 기본값
-          repo: "NLP-Paper-News", // 기본값
-          branch: "main", // 기본값
-          token: "", // Personal Access Token
-        };
+      // GitHub API 설정 (로컬 스토리지에서 로드)
+      let GITHUB_CONFIG = {
+        owner: "chanmuzi", // 기본값
+        repo: "NLP-Paper-News", // 기본값
+        branch: "main", // 기본값
+        token: "", // Personal Access Token
+      };
 
-        // 페이지 로드 시 저장된 설정 로드
-        function loadSettings() {
-          const savedOwner = localStorage.getItem("github_owner");
-          const savedRepo = localStorage.getItem("github_repo");
-          const savedBranch = localStorage.getItem("github_branch");
-          const savedToken = localStorage.getItem("github_token");
+      // 페이지 로드 시 저장된 설정 로드
+      function loadSettings() {
+        const savedOwner = localStorage.getItem("github_owner");
+        const savedRepo = localStorage.getItem("github_repo");
+        const savedBranch = localStorage.getItem("github_branch");
+        const savedToken = localStorage.getItem("github_token");
 
-          if (savedOwner) GITHUB_CONFIG.owner = savedOwner;
-          if (savedRepo) GITHUB_CONFIG.repo = savedRepo;
-          if (savedBranch) GITHUB_CONFIG.branch = savedBranch;
-          if (savedToken) GITHUB_CONFIG.token = savedToken;
-        }
+        if (savedOwner) GITHUB_CONFIG.owner = savedOwner;
+        if (savedRepo) GITHUB_CONFIG.repo = savedRepo;
+        if (savedBranch) GITHUB_CONFIG.branch = savedBranch;
+        if (savedToken) GITHUB_CONFIG.token = savedToken;
+      }
 
-        // 페이지 로드 시 데이터 불러오기
-        document.addEventListener("DOMContentLoaded", function () {
-          loadItems();
-          setupEventListeners();
-        });
+      // 페이지 로드 시 데이터 불러오기
+      document.addEventListener("DOMContentLoaded", function () {
+        loadItems();
+        setupEventListeners();
+      });
 
-        function setupEventListeners() {
-          // 검색 입력 이벤트
-          document
-            .getElementById("searchInput")
-            .addEventListener("input", function (e) {
-              currentSearch = e.target.value;
-              currentPage = 1;
-              filterAndDisplayItems();
-            });
+      function setupEventListeners() {
+        // 검색 입력 이벤트
+        document
+          .getElementById("searchInput")
+          .addEventListener("input", function (e) {
+            currentSearch = e.target.value;
+            currentPage = 1;
+            filterAndDisplayItems();
+          });
 
-          // 필터 버튼 이벤트
-          document.querySelectorAll(".filter-btn").forEach((btn) => {
-            btn.addEventListener("click", function () {
-              const filterType = this.dataset.type;
+        // 필터 버튼 이벤트
+        document.querySelectorAll(".filter-btn").forEach((btn) => {
+          btn.addEventListener("click", function () {
+            const filterType = this.dataset.type;
 
-              if (filterType === "all") {
-                // 전체 버튼 클릭 시 모든 필터 초기화
-                currentFilters.clear();
+            if (filterType === "all") {
+              // 전체 버튼 클릭 시 모든 필터 초기화
+              currentFilters.clear();
+              currentFilters.add("all");
+              document
+                .querySelectorAll(".filter-btn")
+                .forEach((b) => b.classList.remove("active"));
+              this.classList.add("active");
+            } else {
+              // 개별 필터 버튼 클릭 시
+              this.classList.remove("active");
+              this.classList.add("active");
+
+              if (currentFilters.has("all")) {
+                // 전체가 선택되어 있었다면 제거
+                currentFilters.delete("all");
+                document
+                  .querySelector('[data-type="all"]')
+                  .classList.remove("active");
+              }
+
+              if (currentFilters.has(filterType)) {
+                // 이미 선택된 필터라면 제거
+                currentFilters.delete(filterType);
+                this.classList.remove("active");
+              } else {
+                // 새로운 필터 추가
+                currentFilters.add(filterType);
+              }
+
+              // 아무것도 선택되지 않았다면 전체로 설정
+              if (currentFilters.size === 0) {
                 currentFilters.add("all");
                 document
-                  .querySelectorAll(".filter-btn")
-                  .forEach((b) => b.classList.remove("active"));
-                this.classList.add("active");
-              } else {
-                // 개별 필터 버튼 클릭 시
-                this.classList.remove("active");
-                this.classList.add("active");
-
-                if (currentFilters.has("all")) {
-                  // 전체가 선택되어 있었다면 제거
-                  currentFilters.delete("all");
-                  document
-                    .querySelector('[data-type="all"]')
-                    .classList.remove("active");
-                }
-
-                if (currentFilters.has(filterType)) {
-                  // 이미 선택된 필터라면 제거
-                  currentFilters.delete(filterType);
-                  this.classList.remove("active");
-                } else {
-                  // 새로운 필터 추가
-                  currentFilters.add(filterType);
-                }
-
-                // 아무것도 선택되지 않았다면 전체로 설정
-                if (currentFilters.size === 0) {
-                  currentFilters.add("all");
-                  document
-                    .querySelector('[data-type="all"]')
-                    .classList.add("active");
-                }
+                  .querySelector('[data-type="all"]')
+                  .classList.add("active");
               }
-
-              currentPage = 1;
-              filterAndDisplayItems();
-            });
-          });
-
-          // 연도 필터 이벤트
-          document
-            .getElementById("yearFilter")
-            .addEventListener("change", function (e) {
-              currentYear = e.target.value;
-              currentPage = 1;
-              filterAndDisplayItems();
-            });
-
-          // 월 필터 이벤트
-          document
-            .getElementById("monthFilter")
-            .addEventListener("change", function (e) {
-              currentMonth = e.target.value;
-              currentPage = 1;
-              filterAndDisplayItems();
-            });
-
-          // 페이지네이션 이벤트
-          document
-            .getElementById("prevBtn")
-            .addEventListener("click", function () {
-              if (currentPage > 1) {
-                currentPage--;
-                displayCurrentPage();
-                // 페이지 변경 시 최상단으로 스크롤
-                window.scrollTo({ top: 0, behavior: "smooth" });
-              }
-            });
-
-          document
-            .getElementById("nextBtn")
-            .addEventListener("click", function () {
-              const maxPage = Math.ceil(filteredItems.length / itemsPerPage);
-              if (currentPage < maxPage) {
-                currentPage++;
-                displayCurrentPage();
-                // 페이지 변경 시 최상단으로 스크롤
-                window.scrollTo({ top: 0, behavior: "smooth" });
-              }
-            });
-        }
-
-        async function loadItems() {
-          try {
-            // GitHub Pages에서 올바른 경로 찾기
-            let dataUrl;
-
-            if (window.location.hostname === "chanmuzi.github.io") {
-              // GitHub Pages에서 실행 중 (docs 폴더가 웹 루트)
-              dataUrl = "/NLP-Paper-News/data/items.json";
-            } else {
-              // 로컬에서 실행 중 (docs 폴더가 웹 루트)
-              dataUrl = "./data/items.json";
             }
 
-            console.log("데이터 로드 시도:", dataUrl);
-            console.log("현재 URL:", window.location.href);
-            console.log("현재 경로:", window.location.pathname);
-            console.log("현재 호스트:", window.location.hostname);
-            console.log("현재 포트:", window.location.port);
-
-            const response = await fetch(dataUrl);
-            console.log("응답 상태:", response.status, response.statusText);
-
-            if (!response.ok) {
-              throw new Error(
-                `데이터를 불러올 수 없습니다 (${response.status}: ${response.statusText})`
-              );
-            }
-
-            const data = await response.json();
-            allItems = data.items || [];
-
-            // 날짜 기준으로 내림차순 정렬 (최신순) - 연도, 월, 주차 순으로 정렬
-            allItems.sort((a, b) => {
-              // 연도 비교
-              if (a.year !== b.year) {
-                return parseInt(b.year) - parseInt(a.year);
-              }
-
-              // 월 비교 (숫자로 변환)
-              const monthA = parseInt(a.month) || 0;
-              const monthB = parseInt(b.month) || 0;
-              if (monthA !== monthB) {
-                return monthB - monthA;
-              }
-
-              // 주차 비교
-              const weekA = parseInt(a.week) || 0;
-              const weekB = parseInt(b.week) || 0;
-              return weekB - weekA;
-            });
-
-            document.getElementById("loading").style.display = "none";
-            document.getElementById("itemsGrid").style.display = "grid";
-
-            updateStats();
-            setupDateFilters();
+            currentPage = 1;
             filterAndDisplayItems();
-          } catch (error) {
-            console.error("데이터 로드 오류:", error);
-            document.getElementById("loading").style.display = "none";
-            document.getElementById("error").style.display = "block";
-            document.getElementById(
-              "error"
-            ).textContent = `데이터를 불러오는 중 오류가 발생했습니다: ${error.message}`;
-          }
-        }
+          });
+        });
 
-        function updateStats() {
-          const totalCount = allItems.length;
-          const paperCount = allItems.filter(
-            (item) => item.type === "paper"
-          ).length;
-          const devCount = allItems.filter((item) => item.type === "dev").length;
-          const newsCount = allItems.filter(
-            (item) => item.type === "news"
-          ).length;
-
-          document.getElementById("totalCount").textContent = totalCount;
-          document.getElementById("paperCount").textContent = paperCount;
-          document.getElementById("devCount").textContent = devCount;
-          document.getElementById("newsCount").textContent = newsCount;
-        }
-
-        function setupDateFilters() {
-          const yearFilter = document.getElementById("yearFilter");
-          const monthFilter = document.getElementById("monthFilter");
-
-          // 연도 옵션 설정
-          const years = [...new Set(allItems.map((item) => item.year))].sort(
-            (a, b) => b - a
-          );
-          yearFilter.innerHTML = '<option value="">전체 연도</option>';
-          years.forEach((year) => {
-            const option = document.createElement("option");
-            option.value = year;
-            option.textContent = year;
-            yearFilter.appendChild(option);
+        // 연도 필터 이벤트
+        document
+          .getElementById("yearFilter")
+          .addEventListener("change", function (e) {
+            currentYear = e.target.value;
+            currentPage = 1;
+            filterAndDisplayItems();
           });
 
-          // 월 옵션 설정 (숫자로 정렬)
-          const months = [...new Set(allItems.map((item) => item.month))].sort(
-            (a, b) => {
-              const monthA = parseInt(a) || 0;
-              const monthB = parseInt(b) || 0;
-              return monthB - monthA; // 내림차순 (최신 월부터)
-            }
-          );
-          monthFilter.innerHTML = '<option value="">전체 월</option>';
-          months.forEach((month) => {
-            const option = document.createElement("option");
-            option.value = month;
-            option.textContent = `${month}월`;
-            monthFilter.appendChild(option);
-          });
-        }
-
-        function filterAndDisplayItems() {
-          filteredItems = allItems.filter((item) => {
-            // 타입 필터 (멀티플 초이스)
-            if (!currentFilters.has("all") && !currentFilters.has(item.type)) {
-              return false;
-            }
-
-            // 연도 필터
-            if (currentYear && item.year !== currentYear) {
-              return false;
-            }
-
-            // 월 필터
-            if (currentMonth && item.month !== currentMonth) {
-              return false;
-            }
-
-            // 검색 필터
-            if (currentSearch) {
-              const searchTerm = currentSearch.toLowerCase();
-              const searchableText = [
-                item.title,
-                item.org,
-                ...item.bullets,
-                ...item.tags,
-              ]
-                .join(" ")
-                .toLowerCase();
-
-              if (!searchableText.includes(searchTerm)) {
-                return false;
-              }
-            }
-
-            return true;
+        // 월 필터 이벤트
+        document
+          .getElementById("monthFilter")
+          .addEventListener("change", function (e) {
+            currentMonth = e.target.value;
+            currentPage = 1;
+            filterAndDisplayItems();
           });
 
-          currentPage = 1;
-          displayCurrentPage();
-          updatePagination();
-        }
+        // 페이지네이션 이벤트
+        document
+          .getElementById("prevBtn")
+          .addEventListener("click", function () {
+            if (currentPage > 1) {
+              currentPage--;
+              displayCurrentPage();
+              // 페이지 변경 시 최상단으로 스크롤
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }
+          });
 
-        function displayCurrentPage() {
-          const grid = document.getElementById("itemsGrid");
-          grid.innerHTML = "";
+        document
+          .getElementById("nextBtn")
+          .addEventListener("click", function () {
+            const maxPage = Math.ceil(filteredItems.length / itemsPerPage);
+            if (currentPage < maxPage) {
+              currentPage++;
+              displayCurrentPage();
+              // 페이지 변경 시 최상단으로 스크롤
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }
+          });
+      }
 
-          if (filteredItems.length === 0) {
-            grid.innerHTML =
-              '<div style="grid-column: 1 / -1; text-align: center; padding: 40px; color: #666;">검색 결과가 없습니다.</div>';
-            return;
+      async function loadItems() {
+        try {
+          // GitHub Pages에서 올바른 경로 찾기
+          let dataUrl;
+
+          if (window.location.hostname === "chanmuzi.github.io") {
+            // GitHub Pages에서 실행 중 (docs 폴더가 웹 루트)
+            dataUrl = "/NLP-Paper-News/data/items.json";
+          } else {
+            // 로컬에서 실행 중 (docs 폴더가 웹 루트)
+            dataUrl = "./data/items.json";
           }
 
-          const startIndex = (currentPage - 1) * itemsPerPage;
-          const endIndex = startIndex + itemsPerPage;
-          const pageItems = filteredItems.slice(startIndex, endIndex);
+          console.log("데이터 로드 시도:", dataUrl);
+          console.log("현재 URL:", window.location.href);
+          console.log("현재 경로:", window.location.pathname);
+          console.log("현재 호스트:", window.location.hostname);
+          console.log("현재 포트:", window.location.port);
 
-          pageItems.forEach((item) => {
-            const card = createItemCard(item);
-            grid.appendChild(card);
-          });
+          const response = await fetch(dataUrl);
+          console.log("응답 상태:", response.status, response.statusText);
 
-          // 페이지네이션 정보 업데이트
-          updatePagination();
-        }
-
-        function updatePagination() {
-          const pagination = document.getElementById("pagination");
-          const pageInfo = document.getElementById("pageInfo");
-          const prevBtn = document.getElementById("prevBtn");
-          const nextBtn = document.getElementById("nextBtn");
-
-          if (filteredItems.length <= itemsPerPage) {
-            pagination.style.display = "none";
-            return;
-          }
-
-          pagination.style.display = "flex";
-          const maxPage = Math.ceil(filteredItems.length / itemsPerPage);
-          const startItem = (currentPage - 1) * itemsPerPage + 1;
-          const endItem = Math.min(
-            currentPage * itemsPerPage,
-            filteredItems.length
-          );
-
-          pageInfo.textContent = `${startItem}-${endItem} / ${filteredItems.length} (${currentPage}/${maxPage} 페이지)`;
-
-          prevBtn.disabled = currentPage <= 1;
-          nextBtn.disabled = currentPage >= maxPage;
-        }
-
-        function createItemCard(item) {
-          const card = document.createElement("div");
-          card.className = "item-card";
-
-          const typeIcon =
-            {
-              paper: "📜",
-              dev: "🧑🏻‍💻",
-              news: "🗞️",
-            }[item.type] || "📄";
-
-          // 날짜 표시 형식
-          const dateDisplay = `${item.year} ${item.month}월 W${item.week}`;
-
-          // bullet points 내의 하이퍼링크 변환
-          const processedBullets = item.bullets.map((bullet) => {
-            let bulletText;
-            let bulletLevel = 0;
-
-            if (typeof bullet === "string") {
-              // 최상위 레벨 bullet
-              bulletText = bullet;
-            } else {
-              // 계층화된 bullet point
-              bulletText = bullet.text;
-              bulletLevel = bullet.level;
-            }
-
-            // [텍스트](링크) 형태를 <a href="링크">텍스트</a>로 변환
-            const processedText = bulletText.replace(
-              /\[([^\]]+)\]\(([^)]+)\)/g,
-              '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>'
+          if (!response.ok) {
+            throw new Error(
+              `데이터를 불러올 수 없습니다 (${response.status}: ${response.statusText})`
             );
+          }
 
-            // 원래 구조 유지
-            if (typeof bullet === "string") {
-              return processedText;
-            } else {
-              return {
-                text: processedText,
-                level: bulletLevel,
-              };
+          const data = await response.json();
+          allItems = data.items || [];
+
+          // 날짜 기준으로 내림차순 정렬 (최신순) - 연도, 월, 주차 순으로 정렬
+          allItems.sort((a, b) => {
+            // 연도 비교
+            if (a.year !== b.year) {
+              return parseInt(b.year) - parseInt(a.year);
             }
+
+            // 월 비교 (숫자로 변환)
+            const monthA = parseInt(a.month) || 0;
+            const monthB = parseInt(b.month) || 0;
+            if (monthA !== monthB) {
+              return monthB - monthA;
+            }
+
+            // 주차 비교
+            const weekA = parseInt(a.week) || 0;
+            const weekB = parseInt(b.week) || 0;
+            return weekB - weekA;
           });
 
-          card.innerHTML = `
+          document.getElementById("loading").style.display = "none";
+          document.getElementById("itemsGrid").style.display = "grid";
+
+          updateStats();
+          setupDateFilters();
+          filterAndDisplayItems();
+        } catch (error) {
+          console.error("데이터 로드 오류:", error);
+          document.getElementById("loading").style.display = "none";
+          document.getElementById("error").style.display = "block";
+          document.getElementById(
+            "error"
+          ).textContent = `데이터를 불러오는 중 오류가 발생했습니다: ${error.message}`;
+        }
+      }
+
+      function updateStats() {
+        const totalCount = allItems.length;
+        const paperCount = allItems.filter(
+          (item) => item.type === "paper"
+        ).length;
+        const devCount = allItems.filter((item) => item.type === "dev").length;
+        const newsCount = allItems.filter(
+          (item) => item.type === "news"
+        ).length;
+
+        document.getElementById("totalCount").textContent = totalCount;
+        document.getElementById("paperCount").textContent = paperCount;
+        document.getElementById("devCount").textContent = devCount;
+        document.getElementById("newsCount").textContent = newsCount;
+      }
+
+      function setupDateFilters() {
+        const yearFilter = document.getElementById("yearFilter");
+        const monthFilter = document.getElementById("monthFilter");
+
+        // 연도 옵션 설정
+        const years = [...new Set(allItems.map((item) => item.year))].sort(
+          (a, b) => b - a
+        );
+        yearFilter.innerHTML = '<option value="">전체 연도</option>';
+        years.forEach((year) => {
+          const option = document.createElement("option");
+          option.value = year;
+          option.textContent = year;
+          yearFilter.appendChild(option);
+        });
+
+        // 월 옵션 설정 (숫자로 정렬)
+        const months = [...new Set(allItems.map((item) => item.month))].sort(
+          (a, b) => {
+            const monthA = parseInt(a) || 0;
+            const monthB = parseInt(b) || 0;
+            return monthB - monthA; // 내림차순 (최신 월부터)
+          }
+        );
+        monthFilter.innerHTML = '<option value="">전체 월</option>';
+        months.forEach((month) => {
+          const option = document.createElement("option");
+          option.value = month;
+          option.textContent = `${month}월`;
+          monthFilter.appendChild(option);
+        });
+      }
+
+      function filterAndDisplayItems() {
+        filteredItems = allItems.filter((item) => {
+          // 타입 필터 (멀티플 초이스)
+          if (!currentFilters.has("all") && !currentFilters.has(item.type)) {
+            return false;
+          }
+
+          // 연도 필터
+          if (currentYear && item.year !== currentYear) {
+            return false;
+          }
+
+          // 월 필터
+          if (currentMonth && item.month !== currentMonth) {
+            return false;
+          }
+
+          // 검색 필터
+          if (currentSearch) {
+            const searchTerm = currentSearch.toLowerCase();
+            const searchableText = [
+              item.title,
+              item.org,
+              ...item.bullets,
+              ...item.tags,
+            ]
+              .join(" ")
+              .toLowerCase();
+
+            if (!searchableText.includes(searchTerm)) {
+              return false;
+            }
+          }
+
+          return true;
+        });
+
+        currentPage = 1;
+        displayCurrentPage();
+        updatePagination();
+      }
+
+      function displayCurrentPage() {
+        const grid = document.getElementById("itemsGrid");
+        grid.innerHTML = "";
+
+        if (filteredItems.length === 0) {
+          grid.innerHTML =
+            '<div style="grid-column: 1 / -1; text-align: center; padding: 40px; color: #666;">검색 결과가 없습니다.</div>';
+          return;
+        }
+
+        const startIndex = (currentPage - 1) * itemsPerPage;
+        const endIndex = startIndex + itemsPerPage;
+        const pageItems = filteredItems.slice(startIndex, endIndex);
+
+        pageItems.forEach((item) => {
+          const card = createItemCard(item);
+          grid.appendChild(card);
+        });
+
+        // 페이지네이션 정보 업데이트
+        updatePagination();
+      }
+
+      function updatePagination() {
+        const pagination = document.getElementById("pagination");
+        const pageInfo = document.getElementById("pageInfo");
+        const prevBtn = document.getElementById("prevBtn");
+        const nextBtn = document.getElementById("nextBtn");
+
+        if (filteredItems.length <= itemsPerPage) {
+          pagination.style.display = "none";
+          return;
+        }
+
+        pagination.style.display = "flex";
+        const maxPage = Math.ceil(filteredItems.length / itemsPerPage);
+        const startItem = (currentPage - 1) * itemsPerPage + 1;
+        const endItem = Math.min(
+          currentPage * itemsPerPage,
+          filteredItems.length
+        );
+
+        pageInfo.textContent = `${startItem}-${endItem} / ${filteredItems.length} (${currentPage}/${maxPage} 페이지)`;
+
+        prevBtn.disabled = currentPage <= 1;
+        nextBtn.disabled = currentPage >= maxPage;
+      }
+
+      function createItemCard(item) {
+        const card = document.createElement("div");
+        card.className = "item-card";
+
+        const typeIcon =
+          {
+            paper: "📜",
+            dev: "🧑🏻‍💻",
+            news: "🗞️",
+          }[item.type] || "📄";
+
+        // 날짜 표시 형식
+        const dateDisplay = `${item.year} ${item.month}월 W${item.week}`;
+
+        // bullet points 내의 하이퍼링크 변환
+        const processedBullets = item.bullets.map((bullet) => {
+          let bulletText;
+          let bulletLevel = 0;
+
+          if (typeof bullet === "string") {
+            // 최상위 레벨 bullet
+            bulletText = bullet;
+          } else {
+            // 계층화된 bullet point
+            bulletText = bullet.text;
+            bulletLevel = bullet.level;
+          }
+
+          // [텍스트](링크) 형태를 <a href="링크">텍스트</a>로 변환
+          const processedText = bulletText.replace(
+            /\[([^\]]+)\]\(([^)]+)\)/g,
+            '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>'
+          );
+
+          // 원래 구조 유지
+          if (typeof bullet === "string") {
+            return processedText;
+          } else {
+            return {
+              text: processedText,
+              level: bulletLevel,
+            };
+          }
+        });
+
+        card.innerHTML = `
             <div class="item-header">
               <span class="item-type">${typeIcon}</span>
               <span class="item-org">${item.org}</span>
@@ -1169,7 +1169,9 @@
                   } else {
                     // 계층화된 bullet point
                     const indentClass =
-                      bullet.level > 0 ? `sub-bullet level-${bullet.level}` : "";
+                      bullet.level > 0
+                        ? `sub-bullet level-${bullet.level}`
+                        : "";
                     return `<li class="${indentClass}">${bullet.text}</li>`;
                   }
                 })
@@ -1182,277 +1184,277 @@
             </div>
           `;
 
-          return card;
+        return card;
+      }
+
+      // 현재 날짜 기반 기본값 설정
+      function setDefaultDateValues() {
+        const now = new Date();
+        const currentYear = now.getFullYear();
+        const currentMonth = now.toLocaleString("en-US", { month: "long" });
+
+        // 현재 주차 계산 (월의 첫 번째 주부터 시작)
+        const firstDayOfMonth = new Date(now.getFullYear(), now.getMonth(), 1);
+        const currentWeek = Math.ceil(
+          (now.getDate() + firstDayOfMonth.getDay()) / 7
+        );
+
+        // 연도 기본값 설정
+        document.getElementById("itemYear").value = currentYear;
+        document.getElementById("bulkYear").value = currentYear;
+
+        // 월 기본값 설정
+        document.getElementById("itemMonth").value = currentMonth;
+        document.getElementById("bulkMonth").value = currentMonth;
+
+        // 주차 기본값 설정 (1-5 범위 내)
+        const weekValue = Math.min(Math.max(currentWeek, 1), 5);
+        document.getElementById("itemWeek").value = weekValue;
+        document.getElementById("bulkWeek").value = weekValue;
+      }
+
+      // 모달 열기/닫기 함수들
+      function openAddItemModal() {
+        document.getElementById("addItemModal").style.display = "block";
+        setDefaultDateValues();
+      }
+
+      function closeAddItemModal() {
+        document.getElementById("addItemModal").style.display = "none";
+        document.getElementById("addItemForm").reset();
+      }
+
+      function openBulkAddModal() {
+        document.getElementById("bulkAddModal").style.display = "block";
+        setDefaultDateValues();
+      }
+
+      function closeBulkAddModal() {
+        document.getElementById("bulkAddModal").style.display = "none";
+        document.getElementById("bulkMarkdown").value = "";
+      }
+
+             // GitHub Issue 생성 함수들
+       function createAddItemIssue() {
+         const issueUrl = "https://github.com/chanmuzi/NLP-Paper-News/issues/new?template=add-item.yml&title=[ADD] 새 항목 추가";
+         window.open(issueUrl, "_blank");
+       }
+
+       function createBulkAddIssue() {
+         const issueUrl = "https://github.com/chanmuzi/NLP-Paper-News/issues/new?template=bulk-add.yml&title=[BULK] 일괄 항목 추가";
+         window.open(issueUrl, "_blank");
+       }
+
+      // 모달 외부 클릭 시 닫기
+      window.onclick = function (event) {
+        const addModal = document.getElementById("addItemModal");
+        const bulkModal = document.getElementById("bulkAddModal");
+        if (event.target === addModal) {
+          closeAddItemModal();
         }
-
-        // 현재 날짜 기반 기본값 설정
-        function setDefaultDateValues() {
-          const now = new Date();
-          const currentYear = now.getFullYear();
-          const currentMonth = now.toLocaleString("en-US", { month: "long" });
-
-          // 현재 주차 계산 (월의 첫 번째 주부터 시작)
-          const firstDayOfMonth = new Date(now.getFullYear(), now.getMonth(), 1);
-          const currentWeek = Math.ceil(
-            (now.getDate() + firstDayOfMonth.getDay()) / 7
-          );
-
-          // 연도 기본값 설정
-          document.getElementById("itemYear").value = currentYear;
-          document.getElementById("bulkYear").value = currentYear;
-
-          // 월 기본값 설정
-          document.getElementById("itemMonth").value = currentMonth;
-          document.getElementById("bulkMonth").value = currentMonth;
-
-          // 주차 기본값 설정 (1-5 범위 내)
-          const weekValue = Math.min(Math.max(currentWeek, 1), 5);
-          document.getElementById("itemWeek").value = weekValue;
-          document.getElementById("bulkWeek").value = weekValue;
+        if (event.target === bulkModal) {
+          closeBulkAddModal();
         }
+      };
 
-        // 모달 열기/닫기 함수들
-        function openAddItemModal() {
-          document.getElementById("addItemModal").style.display = "block";
-          setDefaultDateValues();
-        }
+      // 항목 추가 폼 제출 처리
+      document
+        .getElementById("addItemForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          addSingleItem();
+        });
 
-        function closeAddItemModal() {
-          document.getElementById("addItemModal").style.display = "none";
-          document.getElementById("addItemForm").reset();
-        }
+      // 개별 항목 추가
+      function addSingleItem() {
+        const type = document.getElementById("itemType").value;
+        const org = document.getElementById("itemOrg").value;
+        const title = document.getElementById("itemTitle").value;
+        const url = document.getElementById("itemUrl").value;
+        const bullets = document.getElementById("itemBullets").value;
+        const year = document.getElementById("itemYear").value;
+        const month = document.getElementById("itemMonth").value;
+        const week = document.getElementById("itemWeek").value;
 
-        function openBulkAddModal() {
-          document.getElementById("bulkAddModal").style.display = "block";
-          setDefaultDateValues();
-        }
-
-        function closeBulkAddModal() {
-          document.getElementById("bulkAddModal").style.display = "none";
-          document.getElementById("bulkMarkdown").value = "";
-        }
-
-                 // GitHub PR 생성 함수들
-         function createAddItemPR() {
-           const prUrl = "https://github.com/chanmuzi/NLP-Paper-News/pull/new/main?template=pull_request_template.md&title=[ADD] 새 항목 추가";
-           window.open(prUrl, "_blank");
-         }
-
-         function createBulkAddPR() {
-           const prUrl = "https://github.com/chanmuzi/NLP-Paper-News/pull/new/main?template=pull_request_template.md&title=[BULK] 일괄 항목 추가";
-           window.open(prUrl, "_blank");
-         }
-
-        // 모달 외부 클릭 시 닫기
-        window.onclick = function (event) {
-          const addModal = document.getElementById("addItemModal");
-          const bulkModal = document.getElementById("bulkAddModal");
-          if (event.target === addModal) {
-            closeAddItemModal();
-          }
-          if (event.target === bulkModal) {
-            closeBulkAddModal();
-          }
-        };
-
-        // 항목 추가 폼 제출 처리
-        document
-          .getElementById("addItemForm")
-          .addEventListener("submit", function (e) {
-            e.preventDefault();
-            addSingleItem();
-          });
-
-        // 개별 항목 추가
-        function addSingleItem() {
-          const type = document.getElementById("itemType").value;
-          const org = document.getElementById("itemOrg").value;
-          const title = document.getElementById("itemTitle").value;
-          const url = document.getElementById("itemUrl").value;
-          const bullets = document.getElementById("itemBullets").value;
-          const year = document.getElementById("itemYear").value;
-          const month = document.getElementById("itemMonth").value;
-          const week = document.getElementById("itemWeek").value;
-
-          // 마크다운 형식으로 변환
-          const markdown = `- ${type} [${org}] [${title}](${url})
+        // 마크다운 형식으로 변환
+        const markdown = `- ${type} [${org}] [${title}](${url})
       - ${bullets
         .split("\n")
         .filter((b) => b.trim())
         .map((b) => b.replace(/^- /, ""))
         .join("\n    - ")}`;
 
-          // README.md에 추가
-          addToReadme(markdown, year, month, week);
+        // README.md에 추가
+        addToReadme(markdown, year, month, week);
 
-          closeAddItemModal();
+        closeAddItemModal();
+      }
+
+      // 일괄 항목 추가
+      function processBulkAdd() {
+        const markdown = document.getElementById("bulkMarkdown").value;
+        const year = document.getElementById("bulkYear").value;
+        const month = document.getElementById("bulkMonth").value;
+        const week = document.getElementById("bulkWeek").value;
+
+        if (!markdown.trim()) {
+          alert("마크다운 내용을 입력해주세요.");
+          return;
         }
 
-        // 일괄 항목 추가
-        function processBulkAdd() {
-          const markdown = document.getElementById("bulkMarkdown").value;
-          const year = document.getElementById("bulkYear").value;
-          const month = document.getElementById("bulkMonth").value;
-          const week = document.getElementById("bulkWeek").value;
+        // ** 기호 제거
+        const cleanedMarkdown = markdown.replace(/\*\*/g, "");
 
-          if (!markdown.trim()) {
-            alert("마크다운 내용을 입력해주세요.");
-            return;
+        // README.md에 추가
+        addToReadme(cleanedMarkdown, year, month, week);
+
+        closeBulkAddModal();
+      }
+
+      // GitHub API 설정은 위에서 이미 선언됨
+
+      // README.md에 항목 추가
+      async function addToReadme(markdown, year, month, week) {
+        if (!GITHUB_CONFIG.token) {
+          alert(
+            "GitHub API 토큰이 설정되지 않았습니다. 관리자에게 문의하세요."
+          );
+          return;
+        }
+
+        try {
+          // 1. 현재 README.md 내용 가져오기
+          const readmeResponse = await fetch(
+            `https://api.github.com/repos/${GITHUB_CONFIG.owner}/${GITHUB_CONFIG.repo}/contents/README.md?ref=${GITHUB_CONFIG.branch}`,
+            {
+              headers: {
+                Authorization: `token ${GITHUB_CONFIG.token}`,
+                Accept: "application/vnd.github.v3+json",
+              },
+            }
+          );
+
+          if (!readmeResponse.ok) {
+            throw new Error("README.md를 가져올 수 없습니다.");
           }
 
-          // ** 기호 제거
-          const cleanedMarkdown = markdown.replace(/\*\*/g, "");
+          const readmeData = await readmeResponse.json();
+          const currentContent = atob(readmeData.content); // base64 디코딩
+          const currentSha = readmeData.sha;
 
-          // README.md에 추가
-          addToReadme(cleanedMarkdown, year, month, week);
+          // 2. 새로운 항목을 적절한 위치에 삽입
+          const newContent = insertNewItems(
+            currentContent,
+            markdown,
+            year,
+            month,
+            week
+          );
 
-          closeBulkAddModal();
-        }
+          // 3. README.md 업데이트
+          const updateResponse = await fetch(
+            `https://api.github.com/repos/${GITHUB_CONFIG.owner}/${GITHUB_CONFIG.repo}/contents/README.md`,
+            {
+              method: "PUT",
+              headers: {
+                Authorization: `token ${GITHUB_CONFIG.token}`,
+                Accept: "application/vnd.github.v3+json",
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({
+                message: `Add new items via web interface - ${year} ${month} W${week}`,
+                content: btoa(newContent), // base64 인코딩
+                sha: currentSha,
+                branch: GITHUB_CONFIG.branch,
+              }),
+            }
+          );
 
-        // GitHub API 설정은 위에서 이미 선언됨
-
-        // README.md에 항목 추가
-        async function addToReadme(markdown, year, month, week) {
-          if (!GITHUB_CONFIG.token) {
+          if (updateResponse.ok) {
             alert(
-              "GitHub API 토큰이 설정되지 않았습니다. 관리자에게 문의하세요."
+              "항목이 성공적으로 추가되었습니다! 웹사이트가 자동으로 업데이트됩니다."
             );
-            return;
+
+            // 5초 후 웹사이트 새로고침
+            setTimeout(() => {
+              location.reload();
+            }, 5000);
+          } else {
+            throw new Error("README.md 업데이트에 실패했습니다.");
           }
-
-          try {
-            // 1. 현재 README.md 내용 가져오기
-            const readmeResponse = await fetch(
-              `https://api.github.com/repos/${GITHUB_CONFIG.owner}/${GITHUB_CONFIG.repo}/contents/README.md?ref=${GITHUB_CONFIG.branch}`,
-              {
-                headers: {
-                  Authorization: `token ${GITHUB_CONFIG.token}`,
-                  Accept: "application/vnd.github.v3+json",
-                },
-              }
-            );
-
-            if (!readmeResponse.ok) {
-              throw new Error("README.md를 가져올 수 없습니다.");
-            }
-
-            const readmeData = await readmeResponse.json();
-            const currentContent = atob(readmeData.content); // base64 디코딩
-            const currentSha = readmeData.sha;
-
-            // 2. 새로운 항목을 적절한 위치에 삽입
-            const newContent = insertNewItems(
-              currentContent,
-              markdown,
-              year,
-              month,
-              week
-            );
-
-            // 3. README.md 업데이트
-            const updateResponse = await fetch(
-              `https://api.github.com/repos/${GITHUB_CONFIG.owner}/${GITHUB_CONFIG.repo}/contents/README.md`,
-              {
-                method: "PUT",
-                headers: {
-                  Authorization: `token ${GITHUB_CONFIG.token}`,
-                  Accept: "application/vnd.github.v3+json",
-                  "Content-Type": "application/json",
-                },
-                body: JSON.stringify({
-                  message: `Add new items via web interface - ${year} ${month} W${week}`,
-                  content: btoa(newContent), // base64 인코딩
-                  sha: currentSha,
-                  branch: GITHUB_CONFIG.branch,
-                }),
-              }
-            );
-
-            if (updateResponse.ok) {
-              alert(
-                "항목이 성공적으로 추가되었습니다! 웹사이트가 자동으로 업데이트됩니다."
-              );
-
-              // 5초 후 웹사이트 새로고침
-              setTimeout(() => {
-                location.reload();
-              }, 5000);
-            } else {
-              throw new Error("README.md 업데이트에 실패했습니다.");
-            }
-          } catch (error) {
-            console.error("GitHub API 오류:", error);
-            alert(`오류가 발생했습니다: ${error.message}`);
-          }
+        } catch (error) {
+          console.error("GitHub API 오류:", error);
+          alert(`오류가 발생했습니다: ${error.message}`);
         }
+      }
 
-        // README.md에 새로운 항목 삽입
-        function insertNewItems(currentContent, newItems, year, month, week) {
-          // 해당 연도/월/주차 섹션 찾기
-          const yearPattern = new RegExp(`#\\s+${year}\\s*\\n`, "g");
-          const monthPattern = new RegExp(
-            `##\\s+[^\\s]+\\s+${month}\\s*\\n`,
-            "g"
+      // README.md에 새로운 항목 삽입
+      function insertNewItems(currentContent, newItems, year, month, week) {
+        // 해당 연도/월/주차 섹션 찾기
+        const yearPattern = new RegExp(`#\\s+${year}\\s*\\n`, "g");
+        const monthPattern = new RegExp(
+          `##\\s+[^\\s]+\\s+${month}\\s*\\n`,
+          "g"
+        );
+        const weekPattern = new RegExp(
+          `<summary>${week}(?:st|nd|rd|th)\\s+week</summary>\\s*\\n<details>\\s*\\n`,
+          "g"
+        );
+
+        // 주차 섹션 찾기
+        const weekMatch = weekPattern.exec(currentContent);
+
+        if (weekMatch) {
+          // 주차 섹션 내부에 새로운 항목 삽입
+          const insertPosition = weekMatch.index + weekMatch[0].length;
+          return (
+            currentContent.slice(0, insertPosition) +
+            newItems +
+            "\n" +
+            currentContent.slice(insertPosition)
           );
-          const weekPattern = new RegExp(
-            `<summary>${week}(?:st|nd|rd|th)\\s+week</summary>\\s*\\n<details>\\s*\\n`,
-            "g"
-          );
-
-          // 주차 섹션 찾기
-          const weekMatch = weekPattern.exec(currentContent);
-
-          if (weekMatch) {
-            // 주차 섹션 내부에 새로운 항목 삽입
-            const insertPosition = weekMatch.index + weekMatch[0].length;
+        } else {
+          // 주차 섹션이 없으면 새로 생성
+          const monthMatch = monthPattern.exec(currentContent);
+          if (monthMatch) {
+            const insertPosition = monthMatch.index + monthMatch[0].length;
+            const newWeekSection = `\n<details>\n  <summary>${week}${getOrdinalSuffix(
+              week
+            )} week</summary>\n\n${newItems}\n</details>\n\n`;
             return (
               currentContent.slice(0, insertPosition) +
-              newItems +
-              "\n" +
+              newWeekSection +
               currentContent.slice(insertPosition)
             );
-          } else {
-            // 주차 섹션이 없으면 새로 생성
-            const monthMatch = monthPattern.exec(currentContent);
-            if (monthMatch) {
-              const insertPosition = monthMatch.index + monthMatch[0].length;
-              const newWeekSection = `\n<details>\n  <summary>${week}${getOrdinalSuffix(
-                week
-              )} week</summary>\n\n${newItems}\n</details>\n\n`;
-              return (
-                currentContent.slice(0, insertPosition) +
-                newWeekSection +
-                currentContent.slice(insertPosition)
-              );
-            }
-          }
-
-          // 기본적으로 파일 끝에 추가
-          return currentContent + "\n\n" + newItems;
-        }
-
-        // 서수 접미사 생성 (1st, 2nd, 3rd, 4th, 5th)
-        function getOrdinalSuffix(num) {
-          if (num >= 11 && num <= 13) return "th";
-          switch (num % 10) {
-            case 1:
-              return "st";
-            case 2:
-              return "nd";
-            case 3:
-              return "rd";
-            default:
-              return "th";
           }
         }
 
-        function openAddIssue() {
-          // GitHub 이슈 생성 페이지로 이동
-          const repoOwner = "chanmuzi"; // 실제 사용자명으로 변경 필요
-          const repoName = "NLP-Paper-News";
-          const issueUrl = `https://github.com/${repoOwner}/${repoName}/issues/new?template=add-item.yml`;
-          window.open(issueUrl, "_blank");
+        // 기본적으로 파일 끝에 추가
+        return currentContent + "\n\n" + newItems;
+      }
+
+      // 서수 접미사 생성 (1st, 2nd, 3rd, 4th, 5th)
+      function getOrdinalSuffix(num) {
+        if (num >= 11 && num <= 13) return "th";
+        switch (num % 10) {
+          case 1:
+            return "st";
+          case 2:
+            return "nd";
+          case 3:
+            return "rd";
+          default:
+            return "th";
         }
+      }
+
+      function openAddIssue() {
+        // GitHub 이슈 생성 페이지로 이동
+        const repoOwner = "chanmuzi"; // 실제 사용자명으로 변경 필요
+        const repoName = "NLP-Paper-News";
+        const issueUrl = `https://github.com/${repoOwner}/${repoName}/issues/new?template=add-item.yml`;
+        window.open(issueUrl, "_blank");
+      }
     </script>
   </body>
 </html>
