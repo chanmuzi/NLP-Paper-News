@@ -1236,9 +1236,8 @@
 
              // GitHub Issue 생성 함수들
        function createFormAddIssue() {
-         const issueUrl =
-           "https://github.com/chanmuzi/NLP-Paper-News/issues/new?template=add-item.yml&title=[FORM] 폼으로 항목 추가";
-         window.open(issueUrl, "_blank");
+         // 웹사이트에서 직접 폼을 띄움
+         openAddItemModal();
        }
 
        function createMarkdownAddIssue() {
@@ -1267,51 +1266,141 @@
           addSingleItem();
         });
 
-      // 개별 항목 추가
-      function addSingleItem() {
-        const type = document.getElementById("itemType").value;
-        const org = document.getElementById("itemOrg").value;
-        const title = document.getElementById("itemTitle").value;
-        const url = document.getElementById("itemUrl").value;
-        const bullets = document.getElementById("itemBullets").value;
-        const year = document.getElementById("itemYear").value;
-        const month = document.getElementById("itemMonth").value;
-        const week = document.getElementById("itemWeek").value;
+             // 개별 항목 추가
+       function addSingleItem() {
+         const type = document.getElementById("itemType").value;
+         const org = document.getElementById("itemOrg").value;
+         const title = document.getElementById("itemTitle").value;
+         const url = document.getElementById("itemUrl").value;
+         const bullets = document.getElementById("itemBullets").value;
+         const year = document.getElementById("itemYear").value;
+         const month = document.getElementById("itemMonth").value;
+         const week = document.getElementById("itemWeek").value;
 
-        // 마크다운 형식으로 변환
-        const markdown = `- ${type} [${org}] [${title}](${url})
-      - ${bullets
-        .split("\n")
-        .filter((b) => b.trim())
-        .map((b) => b.replace(/^- /, ""))
-        .join("\n    - ")}`;
+         // 폼 데이터를 GitHub Issue로 전송
+         createFormIssue(type, org, title, url, bullets, year, month, week);
 
-        // README.md에 추가
-        addToReadme(markdown, year, month, week);
+         closeAddItemModal();
+       }
 
-        closeAddItemModal();
-      }
+       // 폼 데이터로 GitHub Issue 생성
+       function createFormIssue(type, org, title, url, bullets, year, month, week) {
+         // 마크다운 형식으로 변환
+         const markdown = `- ${type} [${org}] [${title}](${url})
+       - ${bullets
+         .split("\n")
+         .filter((b) => b.trim())
+         .map((b) => b.replace(/^- /, ""))
+         .join("\n    - ")}`;
 
-      // 일괄 항목 추가
-      function processBulkAdd() {
-        const markdown = document.getElementById("bulkMarkdown").value;
-        const year = document.getElementById("bulkYear").value;
-        const month = document.getElementById("bulkMonth").value;
-        const week = document.getElementById("bulkWeek").value;
+         // Issue body 생성
+         const issueBody = `## 📋 추가 정보
+- **추가 유형**: [x] 단일 항목 (JSON 형식) [ ] 여러 항목 (마크다운 형식) [ ] README.md 직접 수정
+- **연도**: ${year}
+- **월**: ${month}
+- **주차**: ${week}
 
-        if (!markdown.trim()) {
-          alert("마크다운 내용을 입력해주세요.");
-          return;
-        }
+## 📄 추가할 내용
 
-        // ** 기호 제거
-        const cleanedMarkdown = markdown.replace(/\*\*/g, "");
+### 단일 항목인 경우 (JSON 형식)
+\`\`\`json
+{
+  "emoji": "${type}",
+  "org": "${org}",
+  "title": "${title}",
+  "url": "${url}",
+  "summary": "${bullets.replace(/\n/g, '\\n')}",
+  "year": "${year}",
+  "month": "${month}",
+  "week": "${week}"
+}
+\`\`\`
 
-        // README.md에 추가
-        addToReadme(cleanedMarkdown, year, month, week);
+## ✅ 체크리스트
+- [x] 추가할 내용이 올바른 형식인지 확인했습니다
+- [x] 링크가 유효한지 확인했습니다
+- [x] 중복 항목이 아닌지 확인했습니다
+- [x] 날짜 정보가 정확한지 확인했습니다`;
 
-        closeBulkAddModal();
-      }
+         // GitHub Issue 생성 URL
+         const issueUrl = `https://github.com/chanmuzi/NLP-Paper-News/issues/new?title=[FORM] 폼으로 항목 추가&body=${encodeURIComponent(issueBody)}`;
+         
+         window.open(issueUrl, "_blank");
+       }
+
+             // 일괄 항목 추가
+       function processBulkAdd() {
+         const markdown = document.getElementById("bulkMarkdown").value;
+         const year = document.getElementById("bulkYear").value;
+         const month = document.getElementById("bulkMonth").value;
+         const week = document.getElementById("bulkWeek").value;
+
+         if (!markdown.trim()) {
+           alert("마크다운 내용을 입력해주세요.");
+           return;
+         }
+
+         // 마크다운 형식 검증
+         if (!validateMarkdownFormat(markdown)) {
+           alert("마크다운 형식이 올바르지 않습니다. 형식을 확인해주세요.");
+           return;
+         }
+
+         // ** 기호 제거
+         const cleanedMarkdown = markdown.replace(/\*\*/g, "");
+
+         // GitHub Issue로 전송
+         createMarkdownIssue(cleanedMarkdown, year, month, week);
+
+         closeBulkAddModal();
+       }
+
+       // 마크다운 형식 검증
+       function validateMarkdownFormat(markdown) {
+         const lines = markdown.split('\n');
+         let hasValidItem = false;
+
+         for (let line of lines) {
+           line = line.trim();
+           if (!line) continue;
+
+           // 항목 헤더 패턴 검증: "- [이모지] [Org] [Title](URL)"
+           const headerPattern = /^-\s+([^\s]+)\s+\[([^\]]+)\]\s+\[([^\]]+)\]\((https?:\/\/[^\)]+)\)\s*$/;
+           if (headerPattern.test(line)) {
+             hasValidItem = true;
+           }
+         }
+
+         return hasValidItem;
+       }
+
+       // 마크다운 데이터로 GitHub Issue 생성
+       function createMarkdownIssue(markdown, year, month, week) {
+         // Issue body 생성
+         const issueBody = `## 📋 추가 정보
+- **추가 유형**: [ ] 단일 항목 (JSON 형식) [x] 여러 항목 (마크다운 형식) [ ] README.md 직접 수정
+- **연도**: ${year}
+- **월**: ${month}
+- **주차**: ${week}
+
+## 📄 추가할 내용
+
+### 여러 항목인 경우 (마크다운 형식)
+\`\`\`markdown
+${markdown}
+\`\`\`
+
+## ✅ 체크리스트
+- [x] 추가할 내용이 올바른 형식인지 확인했습니다
+- [x] 링크가 유효한지 확인했습니다
+- [x] 중복 항목이 아닌지 확인했습니다
+- [x] 날짜 정보가 정확한지 확인했습니다`;
+
+         // GitHub Issue 생성 URL
+         const issueUrl = `https://github.com/chanmuzi/NLP-Paper-News/issues/new?title=[MARKDOWN] 마크다운으로 항목 추가&body=${encodeURIComponent(issueBody)}`;
+         
+         window.open(issueUrl, "_blank");
+       }
 
       // GitHub API 설정은 위에서 이미 선언됨
 
