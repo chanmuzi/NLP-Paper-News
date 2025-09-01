@@ -5,13 +5,6 @@ on:
     types: [opened, edited, closed]
 
 jobs:
-  process-issue:
-    runs-on: ubuntu-latest
-    if: |
-      (github.event.action == 'opened' || github.event.action == 'edited') && 
-      contains(github.event.issue.labels.*.name, 'enhancement') && 
-      contains(github.event.issue.labels.*.name, 'data')
-  
   process-closed-issue:
     runs-on: ubuntu-latest
     if: |
