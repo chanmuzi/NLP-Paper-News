@@ -1234,12 +1234,12 @@
 
       // GitHub PR 생성 함수들
       function createAddItemPR() {
-        const prUrl = `https://github.com/chanmuzi/NLP-Paper-News/compare/main...main?template=pull_request_template.md&title=[ADD] 새 항목 추가`;
+        const prUrl = `https://github.com/chanmuzi/NLP-Paper-News/pull/new/main?template=pull_request_template.md&title=[ADD] 새 항목 추가&body=## 📋 추가 정보%0A- **추가 유형**: [x] 단일 항목 (JSON 형식) [ ] 여러 항목 (마크다운 형식) [ ] README.md 직접 수정%0A- **연도**: 2025%0A- **월**: 8%0A- **주차**: 1%0A%0A## 📄 추가할 내용%0A%0A### 단일 항목인 경우 (JSON 형식)%0A```json%0A{%0A  "emoji": "📜",%0A  "org": "기관명",%0A  "title": "제목",%0A  "url": "https://...",%0A  "summary": "요약 내용",%0A  "year": "2025",%0A  "month": "8",%0A  "week": "1"%0A}%0A```%0A%0A## ✅ 체크리스트%0A- [ ] 추가할 내용이 올바른 형식인지 확인했습니다%0A- [ ] 링크가 유효한지 확인했습니다%0A- [ ] 중복 항목이 아닌지 확인했습니다%0A- [ ] 날짜 정보가 정확한지 확인했습니다`;
         window.open(prUrl, "_blank");
       }
 
       function createBulkAddPR() {
-        const prUrl = `https://github.com/chanmuzi/NLP-Paper-News/compare/main...main?template=pull_request_template.md&title=[BULK] 일괄 항목 추가`;
+        const prUrl = `https://github.com/chanmuzi/NLP-Paper-News/pull/new/main?template=pull_request_template.md&title=[BULK] 일괄 항목 추가&body=## 📋 추가 정보%0A- **추가 유형**: [ ] 단일 항목 (JSON 형식) [x] 여러 항목 (마크다운 형식) [ ] README.md 직접 수정%0A- **연도**: 2025%0A- **월**: 8%0A- **주차**: 1%0A%0A## 📄 추가할 내용%0A%0A### 여러 항목인 경우 (마크다운 형식)%0A```markdown%0A- 📜 [기관명] [제목](링크)%0A  - 첫 번째 내용%0A  - 두 번째 내용%0A  - 세 번째 내용%0A%0A- 🧑🏻‍💻 [기관명] [제목](링크)%0A  - 첫 번째 내용%0A  - 두 번째 내용%0A```%0A%0A## ✅ 체크리스트%0A- [ ] 추가할 내용이 올바른 형식인지 확인했습니다%0A- [ ] 링크가 유효한지 확인했습니다%0A- [ ] 중복 항목이 아닌지 확인했습니다%0A- [ ] 날짜 정보가 정확한지 확인했습니다`;
         window.open(prUrl, "_blank");
       }
 
