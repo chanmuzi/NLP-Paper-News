@@ -1,190 +1,188 @@
 #!/usr/bin/env python3
 """
-이슈 라우터 스크립트
-이슈의 명령어를 파싱하여 items.json을 수정하고 PR을 생성
+GitHub Issue 라우터 스크립트
+Issue 내용을 파싱하여 README.md에 항목을 추가하는 스크립트
 """
 
 import os
-import json
 import re
-import pathlib
+import json
+import yaml
 from datetime import datetime
-from typing import Dict, Any, List, Optional
+from typing import Dict, Any, List
 
-def parse_issue_body(body: str) -> Dict[str, Any]:
+def parse_issue_form_data(issue_body: str) -> Dict[str, Any]:
     """
-    이슈 본문을 파싱하여 항목 정보 추출
-    
-    Args:
-        body: 이슈 본문
-        
-    Returns:
-        파싱된 항목 정보
+    GitHub Issue form 데이터를 파싱
     """
-    # 기본 정보 추출
-    org_match = re.search(r'**조직/출처:**\s*(.+)', body)
-    title_match = re.search(r'**제목:**\s*(.+)', body)
-    url_match = re.search(r'**링크:**\s*(.+)', body)
-    type_match = re.search(r'**타입:**\s*(.+)', body)
-    bullets_match = re.search(r'**요약:**\s*```(.+?)```', body, re.DOTALL)
+    # YAML 형식의 form 데이터 파싱
+    try:
+        # Issue body에서 YAML 부분 추출
+        yaml_match = re.search(r'```yaml\s*(.*?)\s*```', issue_body, re.DOTALL)
+        if yaml_match:
+            yaml_content = yaml_match.group(1)
+            form_data = yaml.safe_load(yaml_content)
+            return form_data
+    except Exception as e:
+        print(f"YAML 파싱 오류: {e}")
     
-    if not all([org_match, title_match, url_match]):
-        return None
+    # YAML 파싱 실패시 텍스트 파싱 시도
+    return parse_text_format(issue_body)
+
+def parse_text_format(issue_body: str) -> Dict[str, Any]:
+    """
+    텍스트 형식의 Issue 내용 파싱
+    """
+    data = {}
     
-    # bullets 처리
-    bullets = []
-    if bullets_match:
-        bullet_text = bullets_match.group(1).strip()
-        bullets = [line.strip() for line in bullet_text.split('\n') if line.strip()]
-    
-    # 타입 결정
-    item_type = "paper"  # 기본값
-    if type_match:
-        type_text = type_match.group(1).strip().lower()
-        if "dev" in type_text or "개발" in type_text:
-            item_type = "dev"
-        elif "news" in type_text or "뉴스" in type_text:
-            item_type = "news"
-    
-    return {
-        "org": org_match.group(1).strip(),
-        "title": title_match.group(1).strip(),
-        "url": url_match.group(1).strip(),
-        "type": item_type,
-        "bullets": bullets
+    # 간단한 키-값 파싱
+    patterns = {
+        'emoji': r'이모지[:\s]*([^\n]+)',
+        'organization': r'기관[:\s]*([^\n]+)',
+        'title': r'제목[:\s]*([^\n]+)',
+        'url': r'링크[:\s]*([^\n]+)',
+        'year': r'연도[:\s]*([^\n]+)',
+        'month': r'월[:\s]*([^\n]+)',
+        'week': r'주차[:\s]*([^\n]+)',
+        'summary': r'요약[:\s]*(.*?)(?=\n\n|\n추가|$)',
+        'additional_info': r'추가 정보[:\s]*(.*?)(?=\n\n|$)'
     }
+    
+    for key, pattern in patterns.items():
+        match = re.search(pattern, issue_body, re.DOTALL | re.IGNORECASE)
+        if match:
+            data[key] = match.group(1).strip()
+    
+    return data
 
-def create_new_item(item_data: Dict[str, Any]) -> Dict[str, Any]:
+def create_markdown_item(form_data: Dict[str, Any]) -> str:
     """
-    새로운 항목 생성
-    
-    Args:
-        item_data: 파싱된 항목 데이터
-        
-    Returns:
-        완성된 항목 객체
+    Form 데이터로부터 마크다운 항목 생성
     """
-    # ID 생성
-    clean_title = re.sub(r'[^\w\s-]', '', item_data["title"].lower())
-    id_base = f"{item_data['org']}-{clean_title}"
-    id_base = re.sub(r'[-\s]+', '-', id_base).strip('-')
+    emoji = form_data.get('emoji', '📄')
+    org = form_data.get('organization', 'Unknown')
+    title = form_data.get('title', 'Untitled')
+    url = form_data.get('url', '#')
+    summary = form_data.get('summary', '')
     
-    # 태그 추출
-    tags = []
-    for bullet in item_data["bullets"]:
-        if any(keyword in bullet.lower() for keyword in ["llm", "ai", "machine learning", "deep learning"]):
-            tags.append("AI/ML")
-        if any(keyword in bullet.lower() for keyword in ["reasoning", "thinking", "cot"]):
-            tags.append("reasoning")
-        if any(keyword in bullet.lower() for keyword in ["agent", "tool", "mcp"]):
-            tags.append("agent")
-        if any(keyword in bullet.lower() for keyword in ["multimodal", "vision", "image"]):
-            tags.append("multimodal")
+    # ** 기호 제거
+    title = title.replace('**', '')
     
-    tags = list(set(tags))
+    # 마크다운 항목 생성
+    item = f"- {emoji} [{org}] [{title}]({url})"
     
-    return {
-        "id": id_base,
-        "date": datetime.now().strftime("%Y-%m"),
-        "type": item_data["type"],
-        "org": item_data["org"],
-        "title": item_data["title"],
-        "url": item_data["url"],
-        "bullets": item_data["bullets"],
-        "tags": tags
-    }
+    if summary:
+        # 요약을 bullet points로 변환
+        summary_lines = summary.split('\n')
+        for line in summary_lines:
+            line = line.strip()
+            if line and not line.startswith('-'):
+                item += f"\n  - {line}"
+            elif line.startswith('-'):
+                item += f"\n  {line}"
+    
+    return item
 
-def update_items_json(new_item: Dict[str, Any], operation: str = "add") -> bool:
+def add_item_to_readme(item_markdown: str, year: str, month: str, week: str) -> bool:
     """
-    items.json 파일 업데이트
-    
-    Args:
-        new_item: 새 항목 또는 수정할 항목
-        operation: 작업 타입 (add, edit, delete)
-        
-    Returns:
-        성공 여부
+    README.md에 항목 추가
     """
     try:
-        data_path = pathlib.Path("data/items.json")
-        if not data_path.exists():
-            print("data/items.json 파일을 찾을 수 없습니다.")
-            return False
+        # README.md 읽기
+        with open('README.md', 'r', encoding='utf-8') as f:
+            content = f.read()
         
-        with open(data_path, "r", encoding="utf-8") as f:
-            data = json.load(f)
+        # 해당 연도/월/주차 섹션 찾기
+        year_pattern = f"# {year}"
+        month_pattern = f"## 🏝️ {month}월"
+        week_pattern = f"<summary>{week}(?:st|nd|rd|th) week</summary>"
         
-        if operation == "add":
-            # 중복 ID 방지
-            existing_ids = [item["id"] for item in data["items"]]
-            item_id = new_item["id"]
-            counter = 1
-            while item_id in existing_ids:
-                item_id = f"{new_item['id']}-{counter}"
-                counter += 1
-            
-            new_item["id"] = item_id
-            data["items"].append(new_item)
-            data["total_items"] = len(data["items"])
-            data["last_updated"] = datetime.now().isoformat()
-            
-        elif operation == "edit":
-            # ID로 항목 찾아서 수정
-            for i, item in enumerate(data["items"]):
-                if item["id"] == new_item["id"]:
-                    data["items"][i].update(new_item)
-                    data["last_updated"] = datetime.now().isoformat()
-                    break
+        # 연도 섹션이 없으면 생성
+        if not re.search(year_pattern, content):
+            content = f"{year_pattern}\n\n{content}"
         
-        elif operation == "delete":
-            # ID로 항목 찾아서 삭제
-            data["items"] = [item for item in data["items"] if item["id"] != new_item["id"]]
-            data["total_items"] = len(data["items"])
-            data["last_updated"] = datetime.now().isoformat()
+        # 월 섹션이 없으면 생성
+        if not re.search(month_pattern, content):
+            # 연도 섹션 다음에 월 섹션 추가
+            year_match = re.search(year_pattern, content)
+            if year_match:
+                insert_pos = year_match.end()
+                month_section = f"\n\n{month_pattern}\n\n<details>\n  <summary>{week}st week</summary>\n\n{item_markdown}\n\n</details>\n"
+                content = content[:insert_pos] + month_section + content[insert_pos:]
+                with open('README.md', 'w', encoding='utf-8') as f:
+                    f.write(content)
+                return True
         
-        # 파일 저장
-        with open(data_path, "w", encoding="utf-8") as f:
-            json.dump(data, f, ensure_ascii=False, indent=2)
+        # 주차 섹션이 없으면 생성
+        if not re.search(week_pattern, content):
+            # 해당 월 섹션 내에 주차 섹션 추가
+            month_match = re.search(month_pattern, content)
+            if month_match:
+                # 월 섹션의 끝 찾기
+                month_end = content.find('\n## ', month_match.end())
+                if month_end == -1:
+                    month_end = len(content)
+                
+                week_section = f"\n<details>\n  <summary>{week}st week</summary>\n\n{item_markdown}\n\n</details>\n"
+                content = content[:month_end] + week_section + content[month_end:]
+                with open('README.md', 'w', encoding='utf-8') as f:
+                    f.write(content)
+                return True
         
-        return True
+        # 기존 주차 섹션에 항목 추가
+        week_match = re.search(week_pattern, content)
+        if week_match:
+            # 주차 섹션의 </details> 태그 찾기
+            details_end = content.find('</details>', week_match.end())
+            if details_end != -1:
+                # </details> 태그 앞에 항목 추가
+                insert_pos = details_end
+                content = content[:insert_pos] + f"\n{item_markdown}\n" + content[insert_pos:]
+                with open('README.md', 'w', encoding='utf-8') as f:
+                    f.write(content)
+                return True
+        
+        return False
         
     except Exception as e:
-        print(f"items.json 업데이트 중 오류: {e}")
+        print(f"README.md 업데이트 오류: {e}")
         return False
 
 def main():
     """메인 함수"""
-    # 환경 변수 확인
-    issue_number = os.getenv("ISSUE_NUMBER")
-    issue_title = os.getenv("ISSUE_TITLE", "")
-    issue_body = os.getenv("ISSUE_BODY", "")
+    # 환경 변수에서 Issue 정보 가져오기
+    issue_number = os.getenv('ISSUE_NUMBER')
+    issue_title = os.getenv('ISSUE_TITLE', '')
+    issue_body = os.getenv('ISSUE_BODY', '')
     
     if not issue_number:
         print("ISSUE_NUMBER 환경 변수가 설정되지 않았습니다.")
         return
     
-    print(f"이슈 #{issue_number} 처리 중...")
+    print(f"Issue #{issue_number} 처리 중...")
     print(f"제목: {issue_title}")
     
-    # 이슈 본문 파싱
-    item_data = parse_issue_body(issue_body)
-    if not item_data:
-        print("이슈 본문에서 필수 정보를 추출할 수 없습니다.")
-        return
+    # Issue 내용 파싱
+    form_data = parse_issue_form_data(issue_body)
+    print(f"파싱된 데이터: {form_data}")
     
-    # 새 항목 생성
-    new_item = create_new_item(item_data)
-    print(f"새 항목 생성: {new_item['title']}")
+    # 마크다운 항목 생성
+    item_markdown = create_markdown_item(form_data)
+    print(f"생성된 마크다운:\n{item_markdown}")
     
-    # items.json 업데이트
-    if update_items_json(new_item, "add"):
-        print("items.json 업데이트 완료")
-        
-        # 변경사항 커밋 및 PR 생성 로직은 여기에 추가
-        # (GitHub CLI 또는 git 명령어 사용)
-        
+    # README.md에 추가
+    year = form_data.get('year', '2025')
+    month = form_data.get('month', '8')
+    week = form_data.get('week', '1')
+    
+    success = add_item_to_readme(item_markdown, year, month, week)
+    
+    if success:
+        print("README.md 업데이트 완료")
+        # TODO: 파싱 스크립트 실행하여 JSON 업데이트
+        # TODO: GitHub에 커밋 및 푸시
     else:
-        print("items.json 업데이트 실패")
+        print("README.md 업데이트 실패")
 
 if __name__ == "__main__":
     main()
