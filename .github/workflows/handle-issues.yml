@@ -2,12 +2,22 @@ name: Handle Issue Submissions
 
 on:
   issues:
-    types: [opened, edited]
+    types: [opened, edited, closed]
 
 jobs:
   process-issue:
     runs-on: ubuntu-latest
-    if: contains(github.event.issue.labels.*.name, 'enhancement') && contains(github.event.issue.labels.*.name, 'data')
+    if: |
+      (github.event.action == 'opened' || github.event.action == 'edited') && 
+      contains(github.event.issue.labels.*.name, 'enhancement') && 
+      contains(github.event.issue.labels.*.name, 'data')
+  
+  process-closed-issue:
+    runs-on: ubuntu-latest
+    if: |
+      github.event.action == 'closed' && 
+      contains(github.event.issue.labels.*.name, 'enhancement') && 
+      contains(github.event.issue.labels.*.name, 'data')
 
     steps:
       - name: Checkout repository
@@ -25,11 +35,20 @@ jobs:
           python -m pip install --upgrade pip
           pip install requests pyyaml
 
-      - name: Process issue
+      - name: Process closed issue (승인 처리)
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           ISSUE_NUMBER: ${{ github.event.issue.number }}
           ISSUE_TITLE: ${{ github.event.issue.title }}
           ISSUE_BODY: ${{ github.event.issue.body }}
+          ISSUE_ACTION: closed
         run: |
           python scripts/issue_router.py
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          git commit -m "feat: Issue #${{ github.event.issue.number }} 승인으로 인한 자동 업데이트" || echo "No changes to commit"
+          git push

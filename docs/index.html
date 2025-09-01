@@ -1178,7 +1178,9 @@
                 </a>
               </div>
               <span class="item-date">${dateDisplay}</span>
-              <button class="delete-btn" onclick="deleteItem('${item.id}', '${item.title}')" title="항목 삭제">
+              <button class="delete-btn" onclick="deleteItem('${item.id}', '${
+          item.title
+        }')" title="항목 삭제">
                 🗑️
               </button>
             </div>
@@ -1212,7 +1214,7 @@
       function setDefaultDateValues() {
         const now = new Date();
         const currentYear = now.getFullYear();
-        const currentMonth = now.toLocaleString("en-US", { month: "long" });
+        const currentMonth = (now.getMonth() + 1).toString(); // 1-12 숫자로 변환
 
         // 현재 주차 계산 (월의 첫 번째 주부터 시작)
         const firstDayOfMonth = new Date(now.getFullYear(), now.getMonth(), 1);
@@ -1224,7 +1226,7 @@
         document.getElementById("itemYear").value = currentYear;
         document.getElementById("bulkYear").value = currentYear;
 
-        // 월 기본값 설정
+        // 월 기본값 설정 (숫자 형식)
         document.getElementById("itemMonth").value = currentMonth;
         document.getElementById("bulkMonth").value = currentMonth;
 
@@ -1238,6 +1240,32 @@
       function openAddItemModal() {
         document.getElementById("addItemModal").style.display = "block";
         setDefaultDateValues();
+        setDefaultEmoji();
+      }
+
+      // 이모지 기본값 설정
+      function setDefaultEmoji() {
+        const typeSelect = document.getElementById("itemType");
+        if (typeSelect.value) {
+          updateEmojiDisplay();
+        }
+      }
+
+      // 항목 타입에 따른 이모지 업데이트
+      function updateEmojiDisplay() {
+        const typeSelect = document.getElementById("itemType");
+        const emojiDisplay = document.getElementById("emojiDisplay");
+        
+        const emojiMap = {
+          "📜": "📜",
+          "🧑🏻‍💻": "🧑🏻‍💻", 
+          "🗞️": "🗞️"
+        };
+        
+        const selectedType = typeSelect.value;
+        if (emojiMap[selectedType]) {
+          emojiDisplay.textContent = emojiMap[selectedType];
+        }
       }
 
       function closeAddItemModal() {
@@ -1255,28 +1283,32 @@
         document.getElementById("bulkMarkdown").value = "";
       }
 
-             // GitHub Issue 생성 함수들
-       function createFormAddIssue() {
-         // 웹사이트에서 직접 폼을 띄움
-         openAddItemModal();
-       }
+      // GitHub Issue 생성 함수들
+      function createFormAddIssue() {
+        // 웹사이트에서 직접 폼을 띄움
+        openAddItemModal();
+      }
 
-       function createMarkdownAddIssue() {
-         const issueUrl =
-           "https://github.com/chanmuzi/NLP-Paper-News/issues/new?template=bulk-add.yml&title=[MARKDOWN] 마크다운으로 항목 추가";
-         window.open(issueUrl, "_blank");
-       }
+      function createMarkdownAddIssue() {
+        const issueUrl =
+          "https://github.com/chanmuzi/NLP-Paper-News/issues/new?template=bulk-add.yml&title=[MARKDOWN] 마크다운으로 항목 추가";
+        window.open(issueUrl, "_blank");
+      }
 
-       // 항목 삭제 함수
-       function deleteItem(itemId, itemTitle) {
-         if (confirm(`"${itemTitle}" 항목을 삭제하시겠습니까?\n\n삭제 요청이 GitHub Issue로 전송됩니다.`)) {
-           createDeleteIssue(itemId, itemTitle);
-         }
-       }
+      // 항목 삭제 함수
+      function deleteItem(itemId, itemTitle) {
+        if (
+          confirm(
+            `"${itemTitle}" 항목을 삭제하시겠습니까?\n\n삭제 요청이 GitHub Issue로 전송됩니다.`
+          )
+        ) {
+          createDeleteIssue(itemId, itemTitle);
+        }
+      }
 
-       // 삭제 Issue 생성
-       function createDeleteIssue(itemId, itemTitle) {
-         const issueBody = `## 🗑️ 항목 삭제 요청
+      // 삭제 Issue 생성
+      function createDeleteIssue(itemId, itemTitle) {
+        const issueBody = `## 🗑️ 항목 삭제 요청
 
 **삭제할 항목 ID**: \`${itemId}\`
 **삭제할 항목 제목**: ${itemTitle}
@@ -1291,10 +1323,12 @@
 ---
 *이 Issue는 관리자에 의해 검토 후 처리됩니다.*`;
 
-         const issueUrl = `https://github.com/chanmuzi/NLP-Paper-News/issues/new?title=[DELETE] 항목 삭제: ${encodeURIComponent(itemTitle)}&body=${encodeURIComponent(issueBody)}`;
-         
-         window.open(issueUrl, "_blank");
-       }
+        const issueUrl = `https://github.com/chanmuzi/NLP-Paper-News/issues/new?title=[DELETE] 항목 삭제: ${encodeURIComponent(
+          itemTitle
+        )}&body=${encodeURIComponent(issueBody)}`;
+
+        window.open(issueUrl, "_blank");
+      }
 
       // 모달 외부 클릭 시 닫기
       window.onclick = function (event) {
@@ -1316,6 +1350,11 @@
           addSingleItem();
         });
 
+      // 항목 타입 변경 시 이모지 업데이트
+      document
+        .getElementById("itemType")
+        .addEventListener("change", updateEmojiDisplay);
+
       // 개별 항목 추가
       function addSingleItem() {
         const type = document.getElementById("itemType").value;
@@ -1327,10 +1366,54 @@
         const month = document.getElementById("itemMonth").value;
         const week = document.getElementById("itemWeek").value;
 
+        // 폼 데이터 검증
+        if (!validateFormData(type, org, title, url, bullets)) {
+          return;
+        }
+
         // 폼 데이터를 GitHub Issue로 전송
         createFormIssue(type, org, title, url, bullets, year, month, week);
 
         closeAddItemModal();
+      }
+
+      // 폼 데이터 검증
+      function validateFormData(type, org, title, url, bullets) {
+        const errors = [];
+
+        // 필수 필드 검증
+        if (!type) {
+          errors.push("항목 타입을 선택해주세요.");
+        }
+
+        if (!org || org.trim().length < 2) {
+          errors.push("기관명을 2자 이상 입력해주세요.");
+        }
+
+        if (!title || title.trim().length < 5) {
+          errors.push("제목을 5자 이상 입력해주세요.");
+        }
+
+        if (!url || url.trim().length < 10) {
+          errors.push("URL을 입력해주세요.");
+        } else {
+          try {
+            new URL(url);
+          } catch {
+            errors.push("올바른 URL 형식이 아닙니다.");
+          }
+        }
+
+        if (!bullets || bullets.trim().length < 10) {
+          errors.push("설명을 10자 이상 입력해주세요.");
+        }
+
+        if (errors.length > 0) {
+          alert("입력 오류:\n\n" + errors.join("\n"));
+          return false;
+        }
+
+        return true;
       }
 
       // 폼 데이터로 GitHub Issue 생성
@@ -1416,24 +1499,70 @@
         closeBulkAddModal();
       }
 
-      // 마크다운 형식 검증
+      // 마크다운 형식 검증 (강화된 버전)
       function validateMarkdownFormat(markdown) {
         const lines = markdown.split("\n");
         let hasValidItem = false;
+        let errors = [];
 
-        for (let line of lines) {
-          line = line.trim();
+        for (let i = 0; i < lines.length; i++) {
+          const line = lines[i].trim();
           if (!line) continue;
 
           // 항목 헤더 패턴 검증: "- [이모지] [Org] [Title](URL)"
           const headerPattern =
             /^-\s+([^\s]+)\s+\[([^\]]+)\]\s+\[([^\]]+)\]\((https?:\/\/[^\)]+)\)\s*$/;
+          
           if (headerPattern.test(line)) {
             hasValidItem = true;
+            
+            // 추가 검증
+            const match = line.match(headerPattern);
+            if (match) {
+              const [, emoji, org, title, url] = match;
+              
+              // 이모지 검증
+              if (!['📜', '🧑🏻‍💻', '🗞️'].includes(emoji)) {
+                errors.push(`라인 ${i + 1}: 올바르지 않은 이모지입니다. (${emoji})`);
+              }
+              
+              // 기관명 검증
+              if (!org || org.length < 2) {
+                errors.push(`라인 ${i + 1}: 기관명이 너무 짧습니다.`);
+              }
+              
+              // 제목 검증
+              if (!title || title.length < 5) {
+                errors.push(`라인 ${i + 1}: 제목이 너무 짧습니다.`);
+              }
+              
+              // URL 검증
+              try {
+                new URL(url);
+              } catch {
+                errors.push(`라인 ${i + 1}: 올바르지 않은 URL 형식입니다.`);
+              }
+            }
+          } else if (line.startsWith('- ')) {
+            // 잘못된 형식의 항목
+            errors.push(`라인 ${i + 1}: 올바르지 않은 항목 형식입니다.`);
           }
         }
 
-        return hasValidItem;
+        // 에러가 있으면 상세한 메시지 표시
+        if (errors.length > 0) {
+          const errorMessage = "마크다운 형식 오류:\n\n" + errors.join("\n") + 
+            "\n\n올바른 형식:\n- 📜 [기관명] [제목](https://example.com)\n  - 설명 내용";
+          alert(errorMessage);
+          return false;
+        }
+
+        if (!hasValidItem) {
+          alert("올바른 형식의 항목이 없습니다.\n\n올바른 형식:\n- 📜 [기관명] [제목](https://example.com)\n  - 설명 내용");
+          return false;
+        }
+
+        return true;
       }
 
       // 마크다운 데이터로 GitHub Issue 생성

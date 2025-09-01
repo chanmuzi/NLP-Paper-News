@@ -274,13 +274,21 @@ def main():
     issue_number = os.getenv('ISSUE_NUMBER')
     issue_title = os.getenv('ISSUE_TITLE', '')
     issue_body = os.getenv('ISSUE_BODY', '')
+    issue_action = os.getenv('ISSUE_ACTION', 'opened')
     
     if not issue_number:
         print("ISSUE_NUMBER 환경 변수가 설정되지 않았습니다.")
         return
     
-    print(f"Issue #{issue_number} 처리 중...")
+    print(f"Issue #{issue_number} 처리 중... (Action: {issue_action})")
     print(f"제목: {issue_title}")
+    
+    # Issue가 닫힌 경우에만 실제 처리 수행
+    if issue_action != 'closed':
+        print("Issue가 아직 열려있습니다. 닫힐 때까지 대기합니다.")
+        return
+    
+    print("Issue가 닫혔습니다. 승인 처리 시작...")
     
     # 삭제 요청인지 확인
     if '[DELETE]' in issue_title:
