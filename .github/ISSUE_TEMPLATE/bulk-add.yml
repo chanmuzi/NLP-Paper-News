@@ -29,18 +29,18 @@ body:
       label: 월 (Month) *
       description: 월을 선택하세요
       options:
-        - "January"
-        - "February"
-        - "March"
-        - "April"
-        - "May"
-        - "June"
-        - "July"
-        - "August"
-        - "September"
-        - "October"
-        - "November"
-        - "December"
+        - "1"
+        - "2"
+        - "3"
+        - "4"
+        - "5"
+        - "6"
+        - "7"
+        - "8"
+        - "9"
+        - "10"
+        - "11"
+        - "12"
     validations:
       required: true
 

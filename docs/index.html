@@ -930,11 +930,24 @@
           const data = await response.json();
           allItems = data.items || [];
 
-          // 날짜 기준으로 내림차순 정렬 (최신순)
+          // 날짜 기준으로 내림차순 정렬 (최신순) - 연도, 월, 주차 순으로 정렬
           allItems.sort((a, b) => {
-            const dateA = new Date(a.date.replace(/-W\d+$/, ""));
-            const dateB = new Date(b.date.replace(/-W\d+$/, ""));
-            return dateB - dateA;
+            // 연도 비교
+            if (a.year !== b.year) {
+              return parseInt(b.year) - parseInt(a.year);
+            }
+
+            // 월 비교 (숫자로 변환)
+            const monthA = parseInt(a.month) || 0;
+            const monthB = parseInt(b.month) || 0;
+            if (monthA !== monthB) {
+              return monthB - monthA;
+            }
+
+            // 주차 비교
+            const weekA = parseInt(a.week) || 0;
+            const weekB = parseInt(b.week) || 0;
+            return weekB - weekA;
           });
 
           document.getElementById("loading").style.display = "none";
@@ -985,31 +998,19 @@
           yearFilter.appendChild(option);
         });
 
-        // 월 옵션 설정
+        // 월 옵션 설정 (숫자로 정렬)
         const months = [...new Set(allItems.map((item) => item.month))].sort(
           (a, b) => {
-            const monthOrder = [
-              "January",
-              "February",
-              "March",
-              "April",
-              "May",
-              "June",
-              "July",
-              "August",
-              "September",
-              "October",
-              "November",
-              "December",
-            ];
-            return monthOrder.indexOf(a) - monthOrder.indexOf(b);
+            const monthA = parseInt(a) || 0;
+            const monthB = parseInt(b) || 0;
+            return monthB - monthA; // 내림차순 (최신 월부터)
           }
         );
         monthFilter.innerHTML = '<option value="">전체 월</option>';
         months.forEach((month) => {
           const option = document.createElement("option");
           option.value = month;
-          option.textContent = month;
+          option.textContent = `${month}월`;
           monthFilter.appendChild(option);
         });
       }
@@ -1116,7 +1117,7 @@
           }[item.type] || "📄";
 
         // 날짜 표시 형식
-        const dateDisplay = `${item.year} ${item.month} W${item.week}`;
+        const dateDisplay = `${item.year} ${item.month}월 W${item.week}`;
 
         // bullet points 내의 하이퍼링크 변환
         const processedBullets = item.bullets.map((bullet) => {

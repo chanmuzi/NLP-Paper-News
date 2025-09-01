@@ -33,8 +33,8 @@ def parse_readme_to_items(md_content: str) -> List[Dict[str, Any]]:
     # 연도 패턴: "# 2025", "# 2024" 등
     year_pattern = re.compile(r'#\s+(\d{4})')
     
-    # 월 패턴: "## 🏝️ August", "## 🍉 July" 등 (이모지 종류라면 전부 탐지)
-    month_pattern = re.compile(r'##\s+[^\s]+\s+(\w+)')
+    # 월 패턴: "## 🏝️ 8월", "## 🍉 7월" 등 (이모지 종류라면 전부 탐지)
+    month_pattern = re.compile(r'##\s+[^\s]+\s+(\d+)월')
     
     # 주차 패턴: "<summary>1st week</summary>", "<summary>2nd week</summary>" 등
     week_pattern = re.compile(r'<summary>(\d+)(?:st|nd|rd|th)\s+week</summary>')
@@ -122,14 +122,8 @@ def parse_readme_to_items(md_content: str) -> List[Dict[str, Any]]:
                     "level": level
                 })
         
-        # 월을 숫자로 변환
-        month_mapping = {
-            "January": "01", "February": "02", "March": "03", "April": "04",
-            "May": "05", "June": "06", "July": "07", "August": "08",
-            "September": "09", "October": "10", "November": "11", "December": "12"
-        }
-        
-        month_num = month_mapping.get(current_month, "00")
+        # 월을 숫자로 변환 (이미 숫자이므로 0 패딩만 적용)
+        month_num = current_month.zfill(2) if current_month.isdigit() else "00"
         
         # 아이콘을 타입으로 변환
         type_mapping = {
