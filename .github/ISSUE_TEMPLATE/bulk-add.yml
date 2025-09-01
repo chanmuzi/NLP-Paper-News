@@ -1,6 +1,6 @@
-name: 일괄 항목 추가
-description: 여러 항목을 한 번에 추가합니다
-title: "[README 업데이트] 일괄 추가"
+name: 마크다운으로 항목 추가
+description: 마크다운 형식으로 여러 항목을 한 번에 추가합니다
+title: "[MARKDOWN] 마크다운으로 항목 추가"
 labels: ["enhancement", "data"]
 assignees: ["chanmuzi"]
 body:

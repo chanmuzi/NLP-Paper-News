@@ -584,11 +584,11 @@
 
         <div class="controls-bottom">
           <div class="add-item-section">
-            <button onclick="createAddItemIssue()" class="add-item-btn">
-              ➕ 새 항목 추가
+            <button onclick="createFormAddIssue()" class="add-item-btn">
+              📝 폼 추가
             </button>
-            <button onclick="createBulkAddIssue()" class="bulk-add-btn">
-              📝 일괄 추가
+            <button onclick="createMarkdownAddIssue()" class="bulk-add-btn">
+              📄 마크다운 직접 추가
             </button>
           </div>
         </div>
@@ -1235,13 +1235,15 @@
       }
 
              // GitHub Issue 생성 함수들
-       function createAddItemIssue() {
-         const issueUrl = "https://github.com/chanmuzi/NLP-Paper-News/issues/new?template=add-item.yml&title=[ADD] 새 항목 추가";
+       function createFormAddIssue() {
+         const issueUrl =
+           "https://github.com/chanmuzi/NLP-Paper-News/issues/new?template=add-item.yml&title=[FORM] 폼으로 항목 추가";
          window.open(issueUrl, "_blank");
        }
 
-       function createBulkAddIssue() {
-         const issueUrl = "https://github.com/chanmuzi/NLP-Paper-News/issues/new?template=bulk-add.yml&title=[BULK] 일괄 항목 추가";
+       function createMarkdownAddIssue() {
+         const issueUrl =
+           "https://github.com/chanmuzi/NLP-Paper-News/issues/new?template=bulk-add.yml&title=[MARKDOWN] 마크다운으로 항목 추가";
          window.open(issueUrl, "_blank");
        }
 

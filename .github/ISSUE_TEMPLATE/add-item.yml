@@ -1,6 +1,6 @@
-name: 새 항목 추가
-description: 논문, 개발, 뉴스 항목을 추가합니다
-title: "[README 업데이트] "
+name: 폼으로 항목 추가
+description: 폼을 사용하여 논문, 개발, 뉴스 항목을 추가합니다
+title: "[FORM] 폼으로 항목 추가"
 labels: ["enhancement", "data"]
 assignees: ["chanmuzi"]
 body:
