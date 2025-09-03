@@ -47,6 +47,7 @@
     - high-resolution images에 대해 designed 된 hybrid architecture visual encoder를 이용하여 정확하면서도 빠르고 효율적인 visual query processing 가능
     - 추론 코드, 모델 체크포인트, iOS/macOS demo는 깃허브 [링크](https://github.com/apple/ml-fastvlm/)에서 확인 가능
     - 허깅페이스 데모 [링크](https://link.alphasignal.ai/CPaC4b)
+
 </details>
 
 ## 🏝️ 8월
