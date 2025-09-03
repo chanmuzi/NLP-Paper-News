@@ -8,10 +8,10 @@
 
 ### 📝 항목 추가 방법
 
-1. **웹사이트 방문**: [NLP-Paper-News](https://chanmuzi.github.io/NLP-Paper-News/)
-2. **"새 항목 추가" 또는 "일괄 추가" 버튼 클릭**
-3. **GitHub Issue 템플릿 작성**
-4. **관리자 승인 후 자동으로 README.md에 반영**
+1. 웹사이트 방문: [NLP-Paper-News](https://chanmuzi.github.io/NLP-Paper-News/)
+2. "새 항목 추가" 또는 "일괄 추가" 버튼 클릭
+3. GitHub Issue 템플릿 작성
+4. 관리자 승인 후 자동으로 README.md에 반영
 
 ### 🔄 자동화 프로세스
 
@@ -20,6 +20,34 @@
 ---
 
 # 2025
+
+## 🫧 9월
+
+<details>
+  <summary>1st week</summary>
+
+- 📜 [Harvard University, Cambridge] [Lexical Hints of Accuracy in LLM Reasoning Chains](https://arxiv.org/abs/2508.15842)
+    - 세 가지 feature classes
+        - (1) CoT length (2) intra-CoT sentiment volatility (3) lexicographic hints
+    - Humanity's Last Exam (HLE), Omni-MATH 대상으로 DeepSeek-R1 & Claude 3.7 Sonnet 테스트
+    - guess, stuck, hard와 같은 어휘들이 uncertainty의 강한 지표로 확인되었고, sentiment는 보조 지표 정도로 활용 가능
+- 🧑🏻‍💻 [Ai2] [Asta: Accelerating science through trustworthy agentic AI](https://allenai.org/blog/asta)
+    - [Asta](https://asta.allen.ai/) agents: human researchers를 대체하는 것이 아니라 assist하는 tools 갖춤
+    - scientific AI의 지평을 넓히고 투명성을 증진하기 위한 [AstaBench](https://allenai.org/asta/bench)
+    - Asta resources: scientific AI agents를 build, test, refine 하기 위한 a set of softwoare components
+- 🧑🏻‍💻 [Microsoft] [MAI-Voice-1, MAI-1-preview](https://microsoft.ai/news/two-new-in-house-models)
+    - OpenAI system에 대한 의존을 줄이고 독자적인(in-house) speech generation model 구축
+    - MAI-Voice-1
+        - single GPU에서 구동 가능하며 일 초 내에 일 분 길이의 오디오 생성 가능
+        - single- / multi- speaker 시나리오에서 expressive, natural speech 지원
+    - MAI-1-preview
+        - 15,000 H100 hours로 pre- / post- trained MoE text 모델
+        - instruction following & everyday query responses에 집중했다고 밝힘
+- 🧑🏻‍💻 [Apple] [FastVLM: Efficient Vision Encoding for Vision Language Models](https://machinelearning.apple.com/research/fast-vision-language-models) (CVPR 2025)
+    - high-resolution images에 대해 designed 된 hybrid architecture visual encoder를 이용하여 정확하면서도 빠르고 효율적인 visual query processing 가능
+    - 추론 코드, 모델 체크포인트, iOS/macOS demo는 깃허브 [링크](https://github.com/apple/ml-fastvlm/)에서 확인 가능
+    - 허깅페이스 데모 [링크](https://link.alphasignal.ai/CPaC4b)
+</details>
 
 ## 🏝️ 8월
 
@@ -565,7 +593,7 @@
 - 📜 [Univ. of Alberta] [Curiosity by Design: An LLM-based Coding Assistant Asking Clarification Questions](https://arxiv.org/abs/2507.21285) - 현 LLM들은 extensive prompt engineering | external context 없이 유저 의도를 잘 추론하지 못한다는 문제점을 지적 - 이를 해결하기 위해 인간의 code reivew 과정을 모사하는 LLM-based coding assistant를 개발 - ambiguous or under-specified queries에 clairification questions를 질문 - unclear programming-related queries를 탐지하는 trained query classifier → clarification questions를 생성하는 fine-tuend LLM
 </details>
 
-## 🌞 June
+## 🌞 6월
 
 <details>
   <summary>1st week</summary>
@@ -1122,7 +1150,7 @@
 - 📜 [Apple] [Interleaved Reasoning for Large Language Models via Reinforcement Learning](https://arxiv.org/abs/2505.19640) - long CoT가 inefficiency를 초래하고 time-to-first-token (TTFT)를 증가시키는 문제를 지적 - RL을 이용하여 reasoning LLM이 interleave thinking & answering for multi-hop questions 할 수 있도록 guide 하는 training paradigm 제안 - 올바른 intermediate step에 incentivize 하는 rule-based reward 도입
 </details>
 
-## 🌸 April
+## 🌸 4월
 
 <details>
   <summary>1st week</summary>
@@ -1410,7 +1438,7 @@
 - 🧑🏻‍💻 [NourResearch] [Atropos](https://github.com/NousResearch/Atropos) - 언어모델 강화학습 환경 framework로 LLM의 trajectories를 다양하게 수집 및 평가할 수 있음 - Multi-Turn & Asynchronous RL 지원 - Inference Agnostic: OpenAI, vLLM 와 같은 표준 인터페이스에 쉽게 통합 가능 - 5월 중으로 해커톤도 개최할 예정
 </details>
 
-## 🌱 March
+## 🌱 3월
 
 <details>
   <summary>1st week</summary>
@@ -1702,7 +1730,7 @@
 - 🧑🏻‍💻 [Tencent] [Reasoning Efficiency Redefined! Meet Tencent’s 'Hunyuan-T1'—The First Mamba-Powered Ultra-Large Model](https://llm.hunyuan.tencent.com/#/blog/hy-t1?lang=en) - 세계 최초 Mamba 아키텍쳐 기반 초거대모델 (Transformer-Mamba MoE) - TurboS 기반으로 in-depth reasoning에서 강점을 보이며 long-context capture 능력이 뛰어남 - curriculum learning & self-rewarding
 </details>
 
-## 🏔️ February
+## 🏔️ 2월
 
 <details>
   <summary>1st week</summary>
@@ -2010,7 +2038,7 @@
 - 📜 [Zoom] [Chain of Draft: Thinking Faster by Writing Less](https://arxiv.org/abs/2502.18600) - LLM과 달리 실제 사람은 본질적인 정보만을 다루는 간결한 intermediate thoughts를 draft 하여 보다 효율적인 reasoning 방식을 취하고 있음 - Chain of Draft (CoD): 인간의 cognitive processes와 같이 tasks를 처리할 때 필수적이고 유용한 정보들만 남기는 방식 - 기존 대비 7.6% 수준의 토큰만 사용해서도 성능을 유지할 수 있음 → 추론 비용을 아끼고 latency 낮출 수 있음
 </details>
 
-## 🙇🏻 January
+## 🙇🏻 1월
 
 <details>
   <summary>1st week</summary>
@@ -2323,7 +2351,7 @@
 
 # 2024
 
-## 🎄 December
+## 🎄 12월
 
 <details>
   <summary>1st week</summary>
@@ -2630,7 +2658,7 @@
 
 </details>
 
-## 🍁 November
+## 🍁 11월
 
 <details>
   <summary>1st ~ 2nd week</summary>
@@ -2994,7 +3022,7 @@
 
 </details>
 
-## 🎃 October
+## 🎃 10월
 
 <details>
   <summary>1st week</summary>
@@ -3364,7 +3392,7 @@
 
 </details>
 
-## 🙇🏻 September
+## 🙇🏻 9월
 
 <details>
   <summary>1st week</summary>
@@ -3731,7 +3759,7 @@
 - 📜 [Cambridge] [Small Language Models: Survey, Measurements, and Insights](https://arxiv.org/abs/2409.15790) - 59개의 SOTA급 SLM을 조사. transformer 기반의 100M - 5B 사이즈의 decoder-only 모델 - 기업별로 모델 종류들을 굉장히 잘 정리해둔 논문
 </details>
 
-## 🔥 August
+## 🔥 8월
 
 <details>
   <summary>1st week</summary>
@@ -4039,7 +4067,7 @@
 - 📜 [Alibaba, Meta] [WavTokenizer: an Efficient Acoustic Discrete Codec Tokenizer for Audio Language Modeling](https://arxiv.org/abs/2408.16532) - audio 도메인에서 SOTA를 달성한 acoustic codec model, WavTokenizer - extreme compression, improved subjective quality를 특징으로 내세움 - [깃허브 링크](https://github.com/jishengpeng/WavTokenizer) 🔗
 </details>
 
-## ☔️ July
+## ☔️ 7월
 
 <details>
   <summary>1st week</summary>
@@ -4327,7 +4355,7 @@
 - 📜 [Meta, Berkeley, NYU] [Meta-Rewarding Language Models: Self-Improving Alignment with LLM-as-a-Meta-Judge](https://arxiv.org/abs/2407.19594) - self-reward 메커니즘은 언어 모델이 본인의 출력을 스스로 평가하여 개선될 여지가 있음을 보여주었음 - 그러나 평가를 잘하게 만드는 방법에 대한 고민 없이 모델 성능 개선에만 집중하여 이미 포화된 양상을 보임 - → 이를 해결하기 위해 모델이 스스로의 ‘판단’을 ‘판단’하고 이를 바탕으로 ‘판단’ 스킬을 개선하는 방법론 Meta-Rewarding을 제안
 </details>
 
-## 🌞 June
+## 🌞 6월
 
 <details>
   <summary>1st week</summary>
@@ -4609,7 +4637,7 @@
 - 📜 [Meta] [Meta Large Language Model Compiler: Foundation Models of Compiler Optimization](https://ai.meta.com/research/publications/meta-large-language-model-compiler-foundation-models-of-compiler-optimization/) - Meta Large Language Model Compiler (LLM Compiler) for code optimization task - 546B 토큰의 LLVM-IR & assembly 코드로 학습 후 compiler behavior를 instruction fine-tuning - 7B & 13B 사이즈의 모델을 공개
 </details>
 
-## 🏕️ May
+## 🏕️ 5월
 
 <details>
   <summary>1st week</summary>
@@ -4862,7 +4890,7 @@
 - 📜 [Adobe] [Calibrating Reasoning in Language Models with Internal Consistency](https://arc.net/l/quote/tmcvuipx) - CoT reasoning에 대한 모델의 internal representation에 대한 연구 - → rationale은 정답 accuracy를 향상시키지만, 중간과 마지막 레이어 internal representation 간의 inconsistency를 야기함
 </details>
 
-## 🌸 April
+## 🌸 4월
 
 <details>
   <summary>1st week</summary>
