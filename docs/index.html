@@ -1255,13 +1255,13 @@
       function updateEmojiDisplay() {
         const typeSelect = document.getElementById("itemType");
         const emojiDisplay = document.getElementById("emojiDisplay");
-        
+
         const emojiMap = {
           "📜": "📜",
-          "🧑🏻‍💻": "🧑🏻‍💻", 
-          "🗞️": "🗞️"
+          "🧑🏻‍💻": "🧑🏻‍💻",
+          "🗞️": "🗞️",
         };
-        
+
         const selectedType = typeSelect.value;
         if (emojiMap[selectedType]) {
           emojiDisplay.textContent = emojiMap[selectedType];
@@ -1512,30 +1512,32 @@
           // 항목 헤더 패턴 검증: "- [이모지] [Org] [Title](URL)"
           const headerPattern =
             /^-\s+([^\s]+)\s+\[([^\]]+)\]\s+\[([^\]]+)\]\((https?:\/\/[^\)]+)\)\s*$/;
-          
+
           if (headerPattern.test(line)) {
             hasValidItem = true;
-            
+
             // 추가 검증
             const match = line.match(headerPattern);
             if (match) {
               const [, emoji, org, title, url] = match;
-              
+
               // 이모지 검증
-              if (!['📜', '🧑🏻‍💻', '🗞️'].includes(emoji)) {
-                errors.push(`라인 ${i + 1}: 올바르지 않은 이모지입니다. (${emoji})`);
+              if (!["📜", "🧑🏻‍💻", "🗞️"].includes(emoji)) {
+                errors.push(
+                  `라인 ${i + 1}: 올바르지 않은 이모지입니다. (${emoji})`
+                );
               }
-              
+
               // 기관명 검증
               if (!org || org.length < 2) {
                 errors.push(`라인 ${i + 1}: 기관명이 너무 짧습니다.`);
               }
-              
+
               // 제목 검증
               if (!title || title.length < 5) {
                 errors.push(`라인 ${i + 1}: 제목이 너무 짧습니다.`);
               }
-              
+
               // URL 검증
               try {
                 new URL(url);
@@ -1543,7 +1545,7 @@
                 errors.push(`라인 ${i + 1}: 올바르지 않은 URL 형식입니다.`);
               }
             }
-          } else if (line.startsWith('- ')) {
+          } else if (line.startsWith("- ")) {
             // 잘못된 형식의 항목
             errors.push(`라인 ${i + 1}: 올바르지 않은 항목 형식입니다.`);
           }
@@ -1551,14 +1553,18 @@
 
         // 에러가 있으면 상세한 메시지 표시
         if (errors.length > 0) {
-          const errorMessage = "마크다운 형식 오류:\n\n" + errors.join("\n") + 
+          const errorMessage =
+            "마크다운 형식 오류:\n\n" +
+            errors.join("\n") +
             "\n\n올바른 형식:\n- 📜 [기관명] [제목](https://example.com)\n  - 설명 내용";
           alert(errorMessage);
           return false;
         }
 
         if (!hasValidItem) {
-          alert("올바른 형식의 항목이 없습니다.\n\n올바른 형식:\n- 📜 [기관명] [제목](https://example.com)\n  - 설명 내용");
+          alert(
+            "올바른 형식의 항목이 없습니다.\n\n올바른 형식:\n- 📜 [기관명] [제목](https://example.com)\n  - 설명 내용"
+          );
           return false;
         }
 

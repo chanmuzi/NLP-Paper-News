@@ -11,6 +11,8 @@ on:
 jobs:
   process-pr:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     if: github.event.pull_request.draft == false
     
     steps:
