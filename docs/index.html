@@ -291,24 +291,6 @@
         white-space: nowrap;
       }
 
-      .delete-btn {
-        background: #ffebee;
-        color: #d32f2f;
-        border: 1px solid #ffcdd2;
-        border-radius: 6px;
-        padding: 4px 8px;
-        cursor: pointer;
-        font-size: 0.9rem;
-        transition: all 0.2s ease;
-        margin-left: auto;
-      }
-
-      .delete-btn:hover {
-        background: #ffcdd2;
-        color: #b71c1c;
-        transform: scale(1.05);
-      }
-
       .item-bullets {
         margin: 15px 0;
         padding-left: 20px;
@@ -1178,11 +1160,7 @@
                 </a>
               </div>
               <span class="item-date">${dateDisplay}</span>
-              <button class="delete-btn" onclick="deleteItem('${item.id}', '${
-          item.title
-        }')" title="항목 삭제">
-                🗑️
-              </button>
+
             </div>
             <ul class="item-bullets">
               ${processedBullets
@@ -1292,41 +1270,6 @@
       function createMarkdownAddIssue() {
         const issueUrl =
           "https://github.com/chanmuzi/NLP-Paper-News/issues/new?template=bulk-add.yml&title=[MARKDOWN] 마크다운으로 항목 추가";
-        window.open(issueUrl, "_blank");
-      }
-
-      // 항목 삭제 함수
-      function deleteItem(itemId, itemTitle) {
-        if (
-          confirm(
-            `"${itemTitle}" 항목을 삭제하시겠습니까?\n\n삭제 요청이 GitHub Issue로 전송됩니다.`
-          )
-        ) {
-          createDeleteIssue(itemId, itemTitle);
-        }
-      }
-
-      // 삭제 Issue 생성
-      function createDeleteIssue(itemId, itemTitle) {
-        const issueBody = `## 🗑️ 항목 삭제 요청
-
-**삭제할 항목 ID**: \`${itemId}\`
-**삭제할 항목 제목**: ${itemTitle}
-
-## 📋 삭제 사유
-(선택사항) 삭제 이유를 작성해주세요.
-
-## ✅ 확인사항
-- [x] 삭제할 항목이 정확한지 확인했습니다
-- [x] 삭제 후 복구가 어려움을 이해했습니다
-
----
-*이 Issue는 관리자에 의해 검토 후 처리됩니다.*`;
-
-        const issueUrl = `https://github.com/chanmuzi/NLP-Paper-News/issues/new?title=[DELETE] 항목 삭제: ${encodeURIComponent(
-          itemTitle
-        )}&body=${encodeURIComponent(issueBody)}`;
-
         window.open(issueUrl, "_blank");
       }
 
