@@ -44,4 +44,5 @@ jobs:
           git config --local user.name "GitHub Action"
           git add data/items.json docs/data/items.json
           git commit -m "Auto-parse: Update JSON from README.md changes" || exit 0
+          git pull --rebase origin main
           git push
