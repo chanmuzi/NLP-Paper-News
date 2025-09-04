@@ -44,6 +44,33 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add data/items.json docs/data/items.json
-          git commit -m "Auto-parse: Update JSON from README.md changes" || exit 0
-          git pull --rebase origin main
-          git push
+
+          # 변경사항이 있는지 확인
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+
+          # 커밋
+          git commit -m "Auto-parse: Update JSON from README.md changes"
+
+          # 최대 3번까지 재시도
+          for i in {1..3}; do
+            echo "Attempt $i: Pulling latest changes..."
+            if git pull --rebase origin main; then
+              echo "Pull successful, attempting push..."
+              if git push origin main; then
+                echo "Push successful!"
+                exit 0
+              else
+                echo "Push failed, retrying..."
+                sleep 2
+              fi
+            else
+              echo "Pull failed, retrying..."
+              sleep 2
+            fi
+          done
+
+          echo "All attempts failed"
+          exit 1

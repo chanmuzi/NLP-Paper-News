@@ -1,7 +1,7 @@
 name: Sync README to JSON
 on:
-  push:
-    paths: ["README.md"]
+  # push:
+  #   paths: ["README.md"]
   workflow_dispatch: # 수동 실행도 가능
 
 jobs:
