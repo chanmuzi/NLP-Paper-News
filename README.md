@@ -47,6 +47,15 @@
     - high-resolution images에 대해 designed 된 hybrid architecture visual encoder를 이용하여 정확하면서도 빠르고 효율적인 visual query processing 가능
     - 추론 코드, 모델 체크포인트, iOS/macOS demo는 깃허브 [링크](https://github.com/apple/ml-fastvlm/)에서 확인 가능
     - 허깅페이스 데모 [링크](https://link.alphasignal.ai/CPaC4b)
+- 🧑🏻‍💻 [Google] [Stop “vibe testing” your LLMs. It's time for real evals.](https://developers.googleblog.com/en/streamline-llm-evaluation-with-stax)
+    - csv 데이터 업로드, Autorater 선택 (커스텀 가능), 평가 실행, 분석 대시보드, 반복 개선
+    - 한 번의 평가로 다양한 조합의 성능을 확인
+    - The complete toolkit for AI evaluation
+    - 현재는 미국에서만 사용 가능
+- 🧑🏻‍💻 [Tencent] [Hunyuan-MT](https://github.com/Tencent-Hunyuan/Hunyuan-MT)
+    - translation model, Hunyuan-MT-7B, ensemble model, Hunyuan-MT-Chimera
+    - 중국의 5개 소수 민족 언어를 포함한 33개 언어 커버
+    - pretrain → CPT → SFT → translation rl → ensemble rl ([technical report](https://github.com/Tencent-Hunyuan/Hunyuan-MT/blob/main/Hunyuan_MT_Technical_Report.pdf) 참고 가능)
 
 </details>
 
