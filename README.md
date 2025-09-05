@@ -56,6 +56,22 @@
     - translation model, Hunyuan-MT-7B, ensemble model, Hunyuan-MT-Chimera
     - 중국의 5개 소수 민족 언어를 포함한 33개 언어 커버
     - pretrain → CPT → SFT → translation rl → ensemble rl ([technical report](https://github.com/Tencent-Hunyuan/Hunyuan-MT/blob/main/Hunyuan_MT_Technical_Report.pdf) 참고 가능)
+- 🧑🏻‍💻 [Google] [Welcome EmbeddingGemma, Google's new efficient embedding model](https://huggingface.co/blog/embeddinggemma)
+    - 구글의 새로운 embedding 모델에 대한 허깅페이스 블로그 포스트
+    - 308M 사이즈 & 2K context window, 100개 이상 언어 지원
+    - Gemma3 모델을 backbone으로 삼고 있으나, bi-directional attention으로 modified
+    - Matroyshka Representation Learning (MRL)로 학습되어 768 차원의 ouput을 512, 256, 128 차원으로 truncate 할 수 있음
+- 🧑🏻‍💻 [Microsoft] [VibeVoice: A Frontier Open-Source Text-to-Speech Model](https://microsoft.github.io/VibeVoice)
+    - text로부터 expressive, long-form, multi-speaker conversational audio 생성 framework
+    - speaker consistency, natural turn-taking 등의 문제를 크게 해결
+    - ultra-low frame rate of 7.5Hz에서 operating 하는 continuous speech tokenizers 사용
+    - Context-Aware Expression 데모가 있어서 들어봤는데 엄~청 자연스럽지는 않은 느낌
+- 📜 [Oxford, Shanghai AI, NUS, UCL, …] [The Landscape of Agentic Reinforcement Learning for LLMs: A Survey](https://arxiv.org/abs/2509.02547)
+    - LLM-RL의 single-step Markov Decision Processes와 temporally extnded partially observable Markov decision process (POMDP)를 contrast
+    - 두 가지 taxonomy로 구분
+        - planning, tool use, memory 등을 포함하는 core agentic capabilities
+        - 다양한 태스크 도메인에 대한 applications
+    - reinforcement learning이 agents의 능력을 기존의 static, heuristic modules에서 adaptive, robust agentic behavior로 transform
 
 </details>
 
