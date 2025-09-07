@@ -72,6 +72,25 @@
         - planning, tool use, memory 등을 포함하는 core agentic capabilities
         - 다양한 태스크 도메인에 대한 applications
     - reinforcement learning이 agents의 능력을 기존의 static, heuristic modules에서 adaptive, robust agentic behavior로 transform
+- 🧑🏻‍💻 [OpenAI] [Why language models hallucinate](https://openai.com/index/why-language-models-hallucinate/)
+    - 언어 모델이 hallucinate 하는 이유는 학습 및 평가 과정에서 uncertainty를 인정하는 것보다 guessing 하는 것이 더 큰 reward를 받기 때문이라고 주장
+    - modern training pipeline에서 hallucinations의 통계적 원인을 분석
+        - 이진 분류의 오류에 기인한다고 설명
+        - incorrect statements가 facts와 구별되지 않는다면, PLM은 natural statistical pressures를 기반으로 hallucinate 한다고 설명
+    - 또한 good test-takers로 optimized 되는 LM 특성상 불확실할 때 추측하는 것이 test performance가 높은 것으로 평가받게 되는 문제점을 지적
+    - 불확실한 응답을 penalizing하는 “전염병(epidemic)”은 misaligned scoring of exisiting benchmarks를 수정하는 방향으로 고쳐져야 한다고 주장
+- 📜 [Manchester] [Drivel-ology: Challenging LLMs with Interpreting Nonsense with Depth](https://arxiv.org/abs/2509.03867)
+    - Drivelology - “nonsense with depth”: syntactically coherent, yet pragmatically paradoxical, emotionally loaded, rhetorically subversive
+    - 겉으로 봤을 땐 non-sense이지만 contextual inference, moral reasoning, emotional interpretation을 통해 implicit meaning을 encoding 해야됨
+    - 현존 LLM들은 아직까지 Drivelological text를 온전히 이해하지 못한다고 설명
+        - English, Mandarin, Spanish, French, Japanese, Korean 등 언어에 대해 1,200여 개 데이터를 meticulously curate
+- 📜 [Meta, NUS, Rice] [REFRAG: Rethinking RAG based Decoding](https://arxiv.org/abs/2509.01092)
+    - RAG 시나리오에서의 두 가지 문제를 지적
+        - 긴 입력을 처리하면서 발생하는 knowledge enrichment & system efficiency 간 trade-off
+        - 검색된 텍스트의 대부분은 query와 상관없음
+    - RAG context에서 decoding 할 때 대부분의 연산은 불필요하며, 제거하더라도 전체 성능에 크게 영향주지 않는다고 주장
+    - REFRAG 제안: RAG application에서 latency를 개선하기 위한 compress, sense, expand 할 수 있는 decoding framework (attention sparsity structure)
+    - perplexity를 높이지 않으면서 TTFT를 30.85x 상승 & LLM의 context size를 16x 상승
 
 </details>
 
