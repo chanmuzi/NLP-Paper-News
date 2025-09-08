@@ -94,6 +94,22 @@
 
 </details>
 
+<details>
+  <summary>2nd week</summary>
+
+- 📜 [NVIDIA] [Universal Deep Research: Bring Your Own Model and Strategy](https://arxiv.org/abs/2509.00244)
+    - 현존하는 deep research agent는 고정된 tool choice 목록에 대해 hard-coded 되어 있는 것을 사용하는 수준에 그친다고 지적
+    - UDR: 어떤 언어 모델이든 사용할 수 있고, 유저가 스스로 deep research strategies를 추가적인 학습 없이도 custom 할 수 있도록 돕는 generalist agentic system
+    - Phase 1: skipped steps and drift를 줄이기 위한 strategy compiles → Phase 2: executes synchronous tool calls & yield-based notifications
+- 📜 [Emory Univ.] [Improving Factuality in LLMs via Inference-Time Knowledge Graph Construction](https://arxiv.org/abs/2509.03540)
+    - RAG 시나리오에서 knowledge가 unstructured text로 취급되는 것에 대해 지적
+    - knowledge graphs를 dynamically constructs & expands 하는 framework 제안
+    - question으로부터 seed KG를 추출하고, 이를 바탕으로 LLM’s latent knowledge를 이용하여 iterative expansion 수행
+- 📜 [Arizona, Michigan] [Can Multiple Responses from an LLM Reveal the Sources of Its Uncertainty?](https://arxiv.org/abs/2509.04464)
+    - LLM이 uncertain 할 때, multiple generated response 간 불일치 패턴이 존재한다고 설명
+    - 한 LLM이 여러 개의 응답을 생성하고, 다른 LLM(auxiliary)이 disagreement patterns을 분석하도록 지시
+</details>
+
 ## 🏝️ 8월
 
 <details>
