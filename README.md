@@ -91,6 +91,15 @@
     - RAG context에서 decoding 할 때 대부분의 연산은 불필요하며, 제거하더라도 전체 성능에 크게 영향주지 않는다고 주장
     - REFRAG 제안: RAG application에서 latency를 개선하기 위한 compress, sense, expand 할 수 있는 decoding framework (attention sparsity structure)
     - perplexity를 높이지 않으면서 TTFT를 30.85x 상승 & LLM의 context size를 16x 상승
+- 📜 [ByteDance] [UI-TARS-2 Technical Report: Advancing GUI Agent with Multi-Turn Reinforcement Learning](https://arxiv.org/abs/2509.02544)
+    - 데이터 플라이휠을 통해 스스로 데이터를 생성하고 학습
+    - GUI 에이전트가 단순한 조작을 넘어 복잡한 환경에도 적응할 수 있음
+- 📜 [Stanford] [MachineLearningLM: Continued Pretraining Language Models on Millions of Synthetic Tabular Prediction Tasks Scales In-Context ML](https://arxiv.org/abs/2509.06806)
+    - general-purpose LLM에 robust in-context ML capability를 장착
+    - millions of structural causal models (SCMs) 로부터 ML tasks를 합성하여 1,024 shot 생성
+    - random-forest teacher로 시작하여 tree-based decision strategies를 LLM에 distill
+    - 모든 tasks는 token-efficient prompt로 serialized
+    - GPT-5-mini 모델보다도 Qwen-2.5-7B-Instruct를 tuning한 모델의 성능이 좋았다고 설명하면서 이를 many-shot scaling law라고 표현함
 
 </details>
 
