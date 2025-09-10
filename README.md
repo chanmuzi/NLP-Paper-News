@@ -117,6 +117,7 @@
 - 📜 [Arizona, Michigan] [Can Multiple Responses from an LLM Reveal the Sources of Its Uncertainty?](https://arxiv.org/abs/2509.04464)
     - LLM이 uncertain 할 때, multiple generated response 간 불일치 패턴이 존재한다고 설명
     - 한 LLM이 여러 개의 응답을 생성하고, 다른 LLM(auxiliary)이 disagreement patterns을 분석하도록 지시
+https://arxiv.org/abs/2509.02350
 </details>
 
 ## 🏝️ 8월
