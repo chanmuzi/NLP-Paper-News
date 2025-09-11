@@ -117,7 +117,28 @@
 - 📜 [Arizona, Michigan] [Can Multiple Responses from an LLM Reveal the Sources of Its Uncertainty?](https://arxiv.org/abs/2509.04464)
     - LLM이 uncertain 할 때, multiple generated response 간 불일치 패턴이 존재한다고 설명
     - 한 LLM이 여러 개의 응답을 생성하고, 다른 LLM(auxiliary)이 disagreement patterns을 분석하도록 지시
-https://arxiv.org/abs/2509.02350
+- 📜 [Univ. of Bamberg] [Are Humans as Brittle as Large Language Models?](https://arxiv.org/abs/2509.07869)
+    - LLM의 non-determinism 특성 뿐만 아니라 prompt brittleness 역시 output에 영향을 줌
+    - 이에 따라 human annotators도 instruction changes에 유사한 sensitivity를 보이는지 확인하고자 함
+    - 실험 결과에 따르면 human annotators & LLMs 모두 특정한 prompt 수정 유형에 대해 불안정(brittlenss)한 특성을 보임
+- 📜 [ByteDance, HKUST, Peking, Tsinghua] [Reverse-Engineered Reasoning for Open-Ended Generation](https://arxiv.org/abs/2509.06160)
+    - deep reasoning이 수학과 같은 도메인에서 쓸모가 있으나, open-ended & creative generation에 대해서는 아직 탐구되지 않음
+    - REverse-Engineered Reasoning (REER): trial-and-error | imitation을 통해 reasoning process forwards를 building 하는 것 대신 known good solutions로부터 backwards works
+    - DeepWriting-20K: 20,000 deep reasoning trajectories 데이터를 오픈소스화
+- 📜 [Meta Superintelligence, UC Berkeley] [Language Self-Play For Data-Free Training](https://arxiv.org/abs/2509.07414v1)
+    - LLM 발전이 고품질 학습 데이터에 dependent 하다는 점을 문제로 지적
+    - 추가적인 데이터 없이 모델 성능을 개할 수 있는 강화학습 방식 제안
+    - Language Self-Play (LSP): 모델이 스스로 play하면서 stronger policies 형성
+    - Llama-3.2-3B-Instruct 모델로 실험한 결과 제시
+- 📜 [HKUSK, MiniMax, Waterloo] [WebExplorer: Explore and Evolve for Training Long-Horizon Web Agents](https://arxiv.org/abs/2509.06501)
+    - open-source web agents가 학습할 수 있는 높은 난이도의 information seeking 데이터 부족을 문제점으로 지적
+    - WebExplorer: model-based exploration & iterative, long-to-short query evolution 데이터 생성 방법론
+    - WebExplorer-8B: 128K, 100 tool calling turns
+- 📜 [HKUST, Jilin Univ., CUHK] [Implicit Reasoning in Large Language Models: A Comprehensive Survey](https://arxiv.org/abs/2509.02350)
+    - multi-step으로 문제를 푸는 LLM reasoning paradigm에서 implicit reasoning에 대해 computation 관점에서 분석
+    - representational forms → computational strategies
+    - how & where internal computation unfolds: latent optimization, signal-guided control, layer-recurrent execution
+
 </details>
 
 ## 🏝️ 8월
