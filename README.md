@@ -138,6 +138,18 @@
     - multi-step으로 문제를 푸는 LLM reasoning paradigm에서 implicit reasoning에 대해 computation 관점에서 분석
     - representational forms → computational strategies
     - how & where internal computation unfolds: latent optimization, signal-guided control, layer-recurrent execution
+- 🧑🏻‍💻 [Anthropic] [Claude can now create and edit files](https://www.anthropic.com/news/create-files)
+    - Claude 챗 UI 내에서 Excel spreadsheets, documents, PowerPoint slide decks, PDFs 등을 생성 및 편집 가능
+    - raw data를 input으로 주면 이를 분석한 결과 및 통계적 분석, 시각화 자료, 인사이트 등을 반환
+- 🧑🏻‍💻 [ByteDance] [Seedream 4.0](https://seed.bytedance.com/en/seedream4_0)
+    - 4K 해상도 이미지 까지 처리 가능한 이미지 생성 모델
+    - batch input & output, prompt-based editing, versatile styles, knowledge-driven generation 등을 특징으로 삼음
+    - 모델 성능은 MagicBench 기준으로 평가하여 공개 (Text-to-Image, Single-Image Editing)
+- 📜 [Zurich, Gothenburg] [Large Language Model Hacking: Quantifying the Hidden Risks of Using LLMs for Text Annotation](https://arxiv.org/abs/2509.08825)
+    - data annotation 또는 text analysis 같은 태스크에 LLM을 활용하면서 발생하는 systematic biases & random errors 등을 지적
+    - 21편의 사회과학 연구에서 나온 37개 data annotation 태스크를 18개 LLM으로 재현
+    - 13M개의 LLM labels 생성 & 2,361개의 realistic hypotheses 검증 → SOTA 모델도 1/3 오류, 소형 모델은 1/2 오류
+    - 결국 false positive (1종 오류) 발생을 줄이기 위해서는 human annotation이 중요하다는 결론
 
 </details>
 
