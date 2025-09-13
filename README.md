@@ -150,6 +150,11 @@
     - 21편의 사회과학 연구에서 나온 37개 data annotation 태스크를 18개 LLM으로 재현
     - 13M개의 LLM labels 생성 & 2,361개의 realistic hypotheses 검증 → SOTA 모델도 1/3 오류, 소형 모델은 1/2 오류
     - 결국 false positive (1종 오류) 발생을 줄이기 위해서는 human annotation이 중요하다는 결론
+- 🧑🏻‍💻 [Alibaba] [Qwen3-Next: Towards Ultimate Training & Inference Efficiency](https://qwen.ai/blog?id=4074cca80393150c248e508aa62983f9cb7d27cd&from=research.latest-advancements-list)
+    - hybrid attention mechanism, highly sparse MoE structure, training-stability-friendly optimization, multi-token prediction mechansim for faster inference
+    - Qwen3-Next-80B-A3B-Base: dense Qwen3-32B에 에 준하는 성능. 32K context window를 지원하는데 10배 높은 throughput 달성
+    - Qwen3-Next-80B-A3B-Instruct, Thinking 두 모델도 공개. 256K context window
+    - 포스트 내에 아키텍쳐에 대한 자세한 설명 포함되어 있음
 
 </details>
 
