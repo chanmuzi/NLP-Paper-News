@@ -155,6 +155,11 @@
     - Qwen3-Next-80B-A3B-Base: dense Qwen3-32B에 에 준하는 성능. 32K context window를 지원하는데 10배 높은 throughput 달성
     - Qwen3-Next-80B-A3B-Instruct, Thinking 두 모델도 공개. 256K context window
     - 포스트 내에 아키텍쳐에 대한 자세한 설명 포함되어 있음
+- 📜 [Apple] [OpenVision 2: A Family of Generative Pretrained Visual Encoders for Multimodal Learning](https://arxiv.org/abs/2509.01644)
+    - OpenVision의 architecture를 간소화하고 학습 효율성을 높이기 위한 loss design을 제시
+    - text encoder를 제외 → contrastive loss는 오직 순수하게 generative training signal만 측정함
+        - OpenVision 2
+    - training time & memory consumption을 크게 줄이면서도 기존 모델 성능 유지
 
 </details>
 
