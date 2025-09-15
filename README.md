@@ -163,6 +163,15 @@
 
 </details>
 
+<details>
+  <summary>3rd week</summary>
+
+- 📜 [Salesforce] [SFR-DeepResearch: Towards Effective Reinforcement Learning for Autonomously Reasoning Single Agents](https://arxiv.org/abs/2509.06283)
+    - Autonomous Single-Agent: manual directive 없이도 context 기반으로 dynamically next action 선택 (여러 모델을 사용하는 multi-agent 시스템과 대비)
+    - reasoning-optimized models에 대한 continual reinforcement learning을 제안하여 reasoning ability를 보존하면서도 agentic skills를 강화하고자 함
+        - Length-normalized RL Objective, Trajectory Filtering, Partial Rollouts 등
+</details>
+
 ## 🏝️ 8월
 
 <details>
