@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "last_updated": "2025-09-15T02:52:03.682053",
-  "total_items": 1173,
+  "last_updated": "2025-09-16T01:06:00.418742",
+  "total_items": 1175,
   "items": [
     {
       "id": "Harvard-University,-Cambridge-lexical-hints-of-accuracy-in-llm-reasoning-chains",
@@ -61,8 +61,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -152,8 +152,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -277,8 +277,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -855,6 +855,63 @@
       ]
     },
     {
+      "id": "Individual-si-fact-mitigating-knowledge-conflict-via-self-improving-faithfulness-aware-contrastive-tuning",
+      "date": "2025-09-W03",
+      "year": "2025",
+      "month": "9",
+      "week": "3",
+      "type": "paper",
+      "org": "Individual",
+      "title": "SI-FACT: Mitigating Knowledge Conflict via Self-Improving Faithfulness-Aware Contrastive Tuning",
+      "url": "https://arxiv.org/abs/2509.10208",
+      "bullets": [
+        {
+          "text": "internal parametric knowledge vs. provided context 충돌하는 상황을 문제로 지적",
+          "level": 1
+        },
+        {
+          "text": "Self-Improving Faithfulness-Aware Contrastive Tuning: self-instruct mechanism을 이용하여 base LLM이 자동적으로 고품질의 structured contrastive learning data를 생성하도록 만듦 (positive & negative samples)",
+          "level": 1
+        }
+      ],
+      "tags": [
+        "AI/ML"
+      ]
+    },
+    {
+      "id": "HKUST-vla-adapter-an-effective-paradigm-for-tiny-scale-vision-language-action-model",
+      "date": "2025-09-W03",
+      "year": "2025",
+      "month": "9",
+      "week": "3",
+      "type": "paper",
+      "org": "HKUST",
+      "title": "VLA-Adapter: An Effective Paradigm for Tiny-Scale Vision-Language-Action Model",
+      "url": "https://arxiv.org/abs/2509.09372",
+      "bullets": [
+        {
+          "text": "VLA 모델의 학습 비용이 크다는 점을 문제로 인식하여 vision-language representations를 action에 어떻게 효과적으로 연결할지에 대해 연구",
+          "level": 1
+        },
+        {
+          "text": "VLA-Adapter를 제시하여 large-scale VLMs & extensive pre-training에 대한 의존 낮춤",
+          "level": 1
+        },
+        {
+          "text": "lightweight Policy module with Bridge Attention 제시: action space 내에 optimal condition을 자율적으로 injects",
+          "level": 1
+        },
+        {
+          "text": "robotic data pre-training 없이, 단 0.5B parameter backbone으로 높은 퍼포먼스 달성",
+          "level": 1
+        }
+      ],
+      "tags": [
+        "multimodal",
+        "AI/ML"
+      ]
+    },
+    {
       "id": "OpenAI-introducing-study-mode",
       "date": "2025-08-W01",
       "year": "2025",
@@ -1123,8 +1180,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -1178,8 +1235,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -1497,8 +1554,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -1579,8 +1636,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -1740,8 +1797,8 @@
         "📜 [WeChat, Tsinghua] [We-Math 2.0: A Versatile MathBook System for Incentivizing Visual Mathematical Reasoning](https://arxiv.org/abs/2508.10433) - structured mathematical knowledge system, model-centric data space modeling, RL-based training paradigm을 통합한 unifed system, We-Math 2.0 - MathBook Knowledge System: five-level hierarchy system. 491 knowledge points, 1,819 fundamental principles - MathBook-Standard & Pro: 난이도에 따라 구분한 학습용 데이터셋 - MathBook-RL: Cold-Start Fine-tuning → Progressive Alignment RL - MathBookEval: 491개의 knowledge points를 전부 커버하고 다양한 reasoning step distributions를 갖는 벤치마크"
       ],
       "tags": [
-        "reasoning",
         "multimodal",
+        "reasoning",
         "AI/ML"
       ]
     },
@@ -2190,8 +2247,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -2247,8 +2304,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -2441,8 +2498,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -2472,8 +2529,8 @@
       ],
       "tags": [
         "reasoning",
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -2710,8 +2767,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -2773,8 +2830,8 @@
       ],
       "tags": [
         "reasoning",
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -3490,8 +3547,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -3642,8 +3699,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -4034,8 +4091,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -4158,8 +4215,8 @@
         "📜 [Univ. of Alberta] [Curiosity by Design: An LLM-based Coding Assistant Asking Clarification Questions](https://arxiv.org/abs/2507.21285) - 현 LLM들은 extensive prompt engineering | external context 없이 유저 의도를 잘 추론하지 못한다는 문제점을 지적 - 이를 해결하기 위해 인간의 code reivew 과정을 모사하는 LLM-based coding assistant를 개발 - ambiguous or under-specified queries에 clairification questions를 질문 - unclear programming-related queries를 탐지하는 trained query classifier → clarification questions를 생성하는 fine-tuend LLM"
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -4220,8 +4277,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -4359,8 +4416,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -4633,8 +4690,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -4801,8 +4858,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -5009,8 +5066,8 @@
         }
       ],
       "tags": [
-        "reasoning",
         "multimodal",
+        "reasoning",
         "AI/ML"
       ]
     },
@@ -5153,8 +5210,8 @@
         "https://magenta.tensorflow.org/magenta-realtime?utm_source=alphasignal"
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -5187,8 +5244,8 @@
       ],
       "tags": [
         "multimodal",
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -5494,8 +5551,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -5804,8 +5861,8 @@
         }
       ],
       "tags": [
-        "reasoning",
         "multimodal",
+        "reasoning",
         "AI/ML"
       ]
     },
@@ -5834,8 +5891,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -5879,8 +5936,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -5916,8 +5973,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -6068,8 +6125,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -6182,8 +6239,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -6292,8 +6349,8 @@
         "📜 [Shanghai Jiao Tong Univ.] [A Survey of AI Agent Protocols](https://arxiv.org/abs/2504.16736) - 현존하는 agent protocols를 조사하여 context-oriented vs. inter-agent protocols 와 general-purpose vs. domain-specific protocols 로 구분 - security, scalability, latency 관점에서도 조사"
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -6567,8 +6624,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -6597,8 +6654,8 @@
         "🧑🏻‍💻 [LangChain] [open-agent-platform](https://github.com/langchain-ai/open-agent-platform) - no-code agent building platform - Agent Supervisor를 통해 tools, RAG servers, other agents - web-based interface for creating, managing and interacting with LangGraph agents"
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -6907,8 +6964,8 @@
         }
       ],
       "tags": [
-        "reasoning",
-        "multimodal"
+        "multimodal",
+        "reasoning"
       ]
     },
     {
@@ -6965,8 +7022,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -7625,8 +7682,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -7675,8 +7732,8 @@
         "📜 [Oxford, NUS, DeepMind] [Why do LLMs attend to the first token?](https://arxiv.org/abs/2504.02732) - attention sink: LLMs이 주로 시퀀스 내 첫 번째 토큰에 지나치게 attend 하는 현상. 이는 quantisation difficulties, security issues, streaming attention로 이어짐 - 왜 이러한 현상이 발생하고, 이러한 현상을 어떻게 활용할지에 대해서는 연구가 미진함 - 이를 통해(attention sink) LLM이 over-mixing 하지 않게 된다고 주장"
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -7708,8 +7765,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -7856,8 +7913,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -8008,8 +8065,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -8037,8 +8094,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -8549,8 +8606,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -8857,8 +8914,8 @@
         }
       ],
       "tags": [
-        "reasoning",
         "multimodal",
+        "reasoning",
         "agent"
       ]
     },
@@ -9089,8 +9146,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -9369,8 +9426,8 @@
       ],
       "tags": [
         "reasoning",
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -9574,8 +9631,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -9822,8 +9879,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -9911,8 +9968,8 @@
         }
       ],
       "tags": [
-        "reasoning",
-        "multimodal"
+        "multimodal",
+        "reasoning"
       ]
     },
     {
@@ -9980,8 +10037,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -10047,8 +10104,8 @@
         "📜 [KAIST] [Sketch-of-Thought: Efficient LLM Reasoning with Adaptive Cognitive-Inspired Sketching](https://arxiv.org/abs/2503.05179) - Sketch-of-Thought (SoT): cognitive-inspired reasoning paradigm을 linguistic constraints와 결합하여 reasoning 정확도를 유지하면서도 token usage를 최소화하는 프레임워크 - 3개의 paradigm: Conceptual Chaining, Chunked Symbolism, Expert Lexicons - lightweight routing model을 통해 적절한 reasoning task로 분기"
       ],
       "tags": [
-        "reasoning",
         "multimodal",
+        "reasoning",
         "AI/ML"
       ]
     },
@@ -10081,8 +10138,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -10351,8 +10408,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -10789,8 +10846,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -10826,8 +10883,8 @@
         }
       ],
       "tags": [
-        "reasoning",
-        "multimodal"
+        "multimodal",
+        "reasoning"
       ]
     },
     {
@@ -11272,8 +11329,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -12358,8 +12415,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -12391,8 +12448,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -12420,8 +12477,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -13182,8 +13239,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -13297,8 +13354,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -13389,8 +13446,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -14047,8 +14104,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -14118,8 +14175,8 @@
       ],
       "tags": [
         "reasoning",
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -14156,8 +14213,8 @@
       ],
       "tags": [
         "multimodal",
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -14222,8 +14279,8 @@
         }
       ],
       "tags": [
-        "reasoning",
         "multimodal",
+        "reasoning",
         "AI/ML",
         "agent"
       ]
@@ -15466,8 +15523,8 @@
       ],
       "tags": [
         "reasoning",
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -15499,8 +15556,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -16138,8 +16195,8 @@
         }
       ],
       "tags": [
-        "reasoning",
-        "multimodal"
+        "multimodal",
+        "reasoning"
       ]
     },
     {
@@ -16725,8 +16782,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -17547,8 +17604,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -17828,8 +17885,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -17877,8 +17934,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -19280,8 +19337,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -19495,8 +19552,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -19719,8 +19776,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -19821,8 +19878,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -19990,8 +20047,8 @@
         }
       ],
       "tags": [
-        "reasoning",
-        "multimodal"
+        "multimodal",
+        "reasoning"
       ]
     },
     {
@@ -20508,8 +20565,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -21216,8 +21273,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -21395,8 +21452,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -22819,8 +22876,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -23260,8 +23317,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -24635,8 +24692,8 @@
         "📜 [Alibaba, Meta] [WavTokenizer: an Efficient Acoustic Discrete Codec Tokenizer for Audio Language Modeling](https://arxiv.org/abs/2408.16532) - audio 도메인에서 SOTA를 달성한 acoustic codec model, WavTokenizer - extreme compression, improved subjective quality를 특징으로 내세움 - [깃허브 링크](https://github.com/jishengpeng/WavTokenizer) 🔗"
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -26531,8 +26588,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -26987,8 +27044,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -27356,8 +27413,8 @@
         }
       ],
       "tags": [
-        "reasoning",
         "multimodal",
+        "reasoning",
         "AI/ML"
       ]
     },
@@ -28813,8 +28870,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -29375,8 +29432,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -29662,8 +29719,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -30110,8 +30167,8 @@
         "📜 [Google DeepMind, Anthropic] [Training LLMs over Neurally Compressed Text](https://arxiv.org/abs/2404.03626) - LLM이 학습할 text를 압축할 때, 텍스트를 여러 segment로 쪼개고 동일한 길이의 bit로 만드는 방식인 Equal-Info Windows를 제안"
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -31520,8 +31577,8 @@
         }
       ],
       "tags": [
-        "reasoning",
         "multimodal",
+        "reasoning",
         "AI/ML",
         "agent"
       ]
@@ -32323,8 +32380,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -32811,10 +32868,10 @@
         }
       ],
       "tags": [
-        "reasoning",
-        "agent",
         "multimodal",
-        "AI/ML"
+        "reasoning",
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -32903,8 +32960,8 @@
         }
       ],
       "tags": [
-        "reasoning",
         "multimodal",
+        "reasoning",
         "AI/ML"
       ]
     },
@@ -33034,8 +33091,8 @@
         }
       ],
       "tags": [
-        "reasoning",
         "multimodal",
+        "reasoning",
         "AI/ML"
       ]
     },
