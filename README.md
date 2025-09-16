@@ -170,6 +170,14 @@
     - Autonomous Single-Agent: manual directive 없이도 context 기반으로 dynamically next action 선택 (여러 모델을 사용하는 multi-agent 시스템과 대비)
     - reasoning-optimized models에 대한 continual reinforcement learning을 제안하여 reasoning ability를 보존하면서도 agentic skills를 강화하고자 함
         - Length-normalized RL Objective, Trajectory Filtering, Partial Rollouts 등
+- 📜 [Individual] [SI-FACT: Mitigating Knowledge Conflict via Self-Improving Faithfulness-Aware Contrastive Tuning](https://arxiv.org/abs/2509.10208)
+    - internal parametric knowledge vs. provided context 충돌하는 상황을 문제로 지적
+    - Self-Improving Faithfulness-Aware Contrastive Tuning: self-instruct mechanism을 이용하여 base LLM이 자동적으로 고품질의 structured contrastive learning data를 생성하도록 만듦 (positive & negative samples)
+- 📜 [HKUST] [VLA-Adapter: An Effective Paradigm for Tiny-Scale Vision-Language-Action Model](https://arxiv.org/abs/2509.09372)
+    - VLA 모델의 학습 비용이 크다는 점을 문제로 인식하여 vision-language representations를 action에 어떻게 효과적으로 연결할지에 대해 연구
+    - VLA-Adapter를 제시하여 large-scale VLMs & extensive pre-training에 대한 의존 낮춤
+    - lightweight Policy module with Bridge Attention 제시: action space 내에 optimal condition을 자율적으로 injects
+    - robotic data pre-training 없이, 단 0.5B parameter backbone으로 높은 퍼포먼스 달성
 </details>
 
 ## 🏝️ 8월
