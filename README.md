@@ -178,6 +178,20 @@
     - VLA-Adapter를 제시하여 large-scale VLMs & extensive pre-training에 대한 의존 낮춤
     - lightweight Policy module with Bridge Attention 제시: action space 내에 optimal condition을 자율적으로 injects
     - robotic data pre-training 없이, 단 0.5B parameter backbone으로 높은 퍼포먼스 달성
+- 📜 [Princeton] [Self-Interpretability: LLMs Can Describe Complex Internal Processes that Drive Their Decisions, and Improve with Training](https://www.arxiv.org/abs/2505.17120)
+    - LLM 해석 관련 연구로 세 가지 결론을 내림
+        - (1) 현존 LLMs는 특정 종류의 의사 결정에 대한 internal process를 정확하게 기술할 수 있는 능력이 있음
+        - (2) 이러한 능력은 학습을 통해 강화하는 것도 가능
+        - (3) 학습된 능력은 어느정도 일반화 가능
+    - GPT-4o, GPT-4o-mini 두 모델을 fine-tuning하여 실험한 결과를 제시
+- 📜 [Google DeepMind, Toronto] [Virtual Agent Economies](https://arxiv.org/abs/2509.10147?asuniq=92d42c3f)
+    - sandbox economy: AI agents 간 발생하는 소통을 분석할 수 있는 프레임워크
+    - mission economies를 도입하여 agents들이 공동의 목표를 달성할 수 있도록 함으로써 trust & safety 가 더 잘 보장되는 환경을 조성할 수 있었다고 설명
+- 🧑🏻‍💻 [OpenAI] [Introducing upgrades to Codex](https://openai.com/index/introducing-upgrades-to-codex)
+    - 7시간 넘게 실행되는 리팩토링 코드 작업을 실행하는 것도 가능하다는 바이럴 마케팅..?
+    - Code review, Dynamic reasoning (task 난이도에 따라), Tool use 등의 핵심 features
+    - CLI, IDE extension, Cloud 등 다양한 환경에서 지원
+    - 깃허브 코드 리뷰 자동화 [가이드](https://developers.openai.com/codex/cloud/code-review) by OpenAI
 </details>
 
 ## 🏝️ 8월
