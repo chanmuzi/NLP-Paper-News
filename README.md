@@ -192,6 +192,23 @@
     - Code review, Dynamic reasoning (task 난이도에 따라), Tool use 등의 핵심 features
     - CLI, IDE extension, Cloud 등 다양한 환경에서 지원
     - 깃허브 코드 리뷰 자동화 [가이드](https://developers.openai.com/codex/cloud/code-review) by OpenAI
+- 🧑🏻‍💻 [Meta] [MobileLLM-R1](https://huggingface.co/facebook/MobileLLM-R1-950M)
+    - mathematical, programming, and scientific problems만을 다룰 수 있는 reasoning 특화 모델
+    - 1B도 되지 않는 사이즈의 모델 family로 Qwen3 0.6B를 능가하는 성능을 보여준다고 함
+    - 사전학습에는 2T, 총 5T 토큰 정도 학습했다고 밝힘
+- 📜 [Berkeley, Washington] [Reconstruction Alignment Improves Unified Multimodal Models](https://arxiv.org/abs/2509.07295)
+    - Unified multimodal models (UMMs) 학습을 위한 기존 image-text pairs는 주로 sparse한 데이터로 fine-grained visual details가 누락되어 있다는 문제를 지적
+    - Reconstruction Alignment (RecA): visual understanding encoder embeddings를 dense ‘text prompts’로 이용하여 captions 없이도 보다 풍부한 supervision을 제공하는 post-training method
+    - visual understanding embeddings를 조건으로 input image를 reconstruct 하는 self-supervised reconstruction loss 근거로 학습
+    - autoregressive, masked-autoregressive, diffusion-based 등 어떤 형태에도 적용 가능하면서도 뛰어난 성능을 보여줌
+- 🧑🏻‍💻 [Google] [VaultGemma: The world's most capable differentially private LLM](https://research.google/blog/vaultgemma-the-worlds-most-capable-differentially-private-llm)
+    - differential privacy (DP)를 이용하여 scratch부터 학습한 가장 큰 사이즈의 언어 모델
+        - DP: 학습 시 노이즈를 추가하여 학습 데이터가 모델로부터 추출되는 것을 방지하는 mathematical framework (민감 정보 보호)
+    - 모델 성능을 저해하지 않으면서도 privacy를 지킬 수 있도록 하는 새로운 scaling law 제시
+- 📜 [Nanjing, Shanghai AI] [The LLM Already Knows: Estimating LLM-Perceived Question Difficulty via Hidden Representations](https://arxiv.org/abs/2509.12886)
+    - 현존하는 input questions의 난이도를 측정하는 방식은 repeated response sampling, auxiliary models, fine-tuning 등의 방식으로 비효율적이며 일반화되지 않는다는 점을 지적
+    - target LLM에 의해 생성되는 hidden representations만을 이용하여 난이도를 추정하는 방식을 제안
+    - token-level generation process를 Markov chain으로 모델링하고, value function을 정의하여 hidden state 기반으로 output quality를 추정
 </details>
 
 ## 🏝️ 8월
