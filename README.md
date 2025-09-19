@@ -209,6 +209,21 @@
     - 현존하는 input questions의 난이도를 측정하는 방식은 repeated response sampling, auxiliary models, fine-tuning 등의 방식으로 비효율적이며 일반화되지 않는다는 점을 지적
     - target LLM에 의해 생성되는 hidden representations만을 이용하여 난이도를 추정하는 방식을 제안
     - token-level generation process를 Markov chain으로 모델링하고, value function을 정의하여 hidden state 기반으로 output quality를 추정
+- 🧑🏻‍💻 [Google] [Powering AI commerce with the new Agent Payments Protocol (AP2)](https://cloud.google.com/blog/products/ai-machine-learning/announcing-agents-to-payments-ap2-protocol?hl=en)
+    - agent가 유저로부터 사전 승인된 권한들을 바탕으로 직접 결제까지 가능토록 하는 프로토콜을 구글에서 제시
+    - 매 단계는 로그로 남아서 안전성과 신뢰성을 높임
+- 🧑🏻‍💻 [Alibaba] [Tongyi DeepResearch: A New Era of Open-Source AI Researchers](https://tongyi-agent.github.io/blog/introducing-tongyi-deep-research/)
+    - Agentic Continual Pre-training (CPT), SFT for cold-starting, final RL stage
+    - prompt engineering 없이 ReAct 방식으로 inference
+    - 30B 사이즈 모델로 OpenAI DeepResearch 급 성능 달성
+- 📜 [Peking] [Early Stopping Chain-of-thoughts in Large Language Models](https://arxiv.org/abs/2509.14004)
+    - ES-CoT: answer convergence를 탐지하여 최소한의 performance loss로 CoT generation을 stopping
+    - 각 reasoning step마다 LLM이 현재 시점의 최종 답변을 생성토록 하고 이를 step answer로 명명
+    - 이 step answer가 연속적으로 동일한 답변이 나온 횟수를 answer convergence의 지표로 해석
+- 📜 [Algoverse] [FRIT: Using Causal Importance to Improve Chain-of-Thought Faithfulness](https://arxiv.org/abs/2509.13334)
+    - 지금까지의 연구는 CoT의 faithfulness를 측정하는 것까지만 집중하고 이를 개선하는 연구는 이뤄지지 않았음을 지적
+    - FRIT: 모델이 systematically corrupted examples로부터 causally consistent reasoning을 생성하는 방법을 배울 수 있도록 돕는 학습 scalable alignment
+    - reasoning 매 step에 대해 합성 데이터를 생성하여 faithful/unfaithful pairs 구축하고 DPO 학습
 </details>
 
 ## 🏝️ 8월
