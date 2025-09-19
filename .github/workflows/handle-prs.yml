@@ -5,7 +5,6 @@ on:
     types: [opened, edited, synchronize]
     paths:
       - "data/items.json"
-      - "README.md"
       - ".github/pull_request_template.md"
 
 jobs:
