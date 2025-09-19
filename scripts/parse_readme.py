@@ -22,11 +22,13 @@ def parse_readme_to_items(md_content: str) -> List[Dict[str, Any]]:
     """
     items = []
     
-    # 항목 헤더 패턴: "- [이모지] [Org] [Title](URL)" - 더 유연한 패턴
-    # 1. 일반적인 형태: - 📜 [Org] [Title](URL)
-    # 2. 제목 없는 형태: - 🧑🏻‍💻 [Org](URL)
+    # 항목 헤더 패턴: 다양한 형태를 모두 처리
+    # 1. - 📜 [Org] [Title](URL) (학회명)
+    # 2. - 🧑🏻‍💻 [Org] [Title](URL)
+    # 3. - 📜 [Org] Title (링크 없음)
+    # 4. - 🧑🏻‍💻 [Org](URL) (제목 없음)
     header_pattern = re.compile(
-        r'^-+\s*([^\s]+)\s*\[([^\]]+)\](?:\s*\[([^\]]+)\])?\s*\(([^)]+)\)\s*.*$',
+        r'^-+\s*([^\s]+)\s*\[([^\]]+)\](?:\s*\[([^\]]+)\](?:\(([^)]+)\))?\s*)?(?:\(([^)]+)\))?\s*(.*)$',
         re.MULTILINE
     )
     # 이어지는 bullet 라인: "    - 내용" (들여쓰기 레벨 감지)
@@ -46,8 +48,29 @@ def parse_readme_to_items(md_content: str) -> List[Dict[str, Any]]:
         groups = header_match.groups()
         icon = groups[0]
         org = groups[1]
-        title = groups[2] if groups[2] else org  # 제목이 없으면 org를 제목으로 사용
-        url = groups[3]
+        title_in_brackets = groups[2]  # [Title] 형태의 제목
+        url_in_title = groups[3]  # [Title](URL) 형태의 URL
+        url_standalone = groups[4]  # (URL) 형태의 URL
+        remaining_text = groups[5]  # 나머지 텍스트 (학회명 등)
+        
+        # URL 결정 (여러 위치에서 URL 찾기)
+        url = url_in_title or url_standalone or ""
+        
+        # 제목 결정 로직
+        if title_in_brackets:
+            # [Title] 형태가 있으면 사용
+            title = title_in_brackets
+        elif remaining_text and not url:
+            # 링크가 없고 나머지 텍스트가 있으면 제목으로 사용
+            title = remaining_text.strip()
+        else:
+            # 그 외의 경우 org를 제목으로 사용
+            title = org
+        
+        # URL이 없으면 빈 문자열로 설정
+        if not url:
+            url = ""
+        
         item_pos = header_match.start()
         
         # 해당 항목의 위치를 기준으로 가장 가까운 연도/월/주차 찾기
@@ -119,12 +142,14 @@ def parse_readme_to_items(md_content: str) -> List[Dict[str, Any]]:
         }
         
         # URL 정리 (프로토콜 추가, 괄호 내 추가 텍스트 제거)
-        clean_url = url.strip()
-        if not clean_url.startswith(('http://', 'https://')):
-            clean_url = 'https://' + clean_url
+        clean_url = url.strip() if url else ""
         
-        # 괄호 내 추가 텍스트 제거 (예: (CVPR 2025) 제거)
-        clean_url = re.sub(r'\s*\([^)]*\)\s*$', '', clean_url)
+        if clean_url:
+            if not clean_url.startswith(('http://', 'https://')):
+                clean_url = 'https://' + clean_url
+            
+            # 괄호 내 추가 텍스트 제거 (예: (CVPR 2025) 제거)
+            clean_url = re.sub(r'\s*\([^)]*\)\s*$', '', clean_url)
         
         # ID 생성 (org-title 기반 slug)
         clean_title = re.sub(r'[^\w\s-]', '', title.lower())

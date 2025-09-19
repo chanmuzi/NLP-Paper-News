@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "last_updated": "2025-09-19T15:59:47.838063",
-  "total_items": 1390,
+  "last_updated": "2025-09-19T16:19:23.477357",
+  "total_items": 1410,
   "items": [
     {
       "id": "Harvard-University,-Cambridge-lexical-hints-of-accuracy-in-llm-reasoning-chains",
@@ -16,20 +16,20 @@
       "bullets": [
         {
           "text": "(1) CoT length (2) intra-CoT sentiment volatility (3) lexicographic hints",
-          "level": 2
+          "level": 1
         },
         {
           "text": "Humanity's Last Exam (HLE), Omni-MATH 대상으로 DeepSeek-R1 & Claude 3.7 Sonnet 테스트",
-          "level": 1
+          "level": 0
         },
         {
           "text": "guess, stuck, hard와 같은 어휘들이 uncertainty의 강한 지표로 확인되었고, sentiment는 보조 지표 정도로 활용 가능",
-          "level": 1
+          "level": 0
         }
       ],
       "tags": [
-        "AI/ML",
-        "reasoning"
+        "reasoning",
+        "AI/ML"
       ]
     },
     {
@@ -45,16 +45,16 @@
       "bullets": [
         {
           "text": "scientific AI의 지평을 넓히고 투명성을 증진하기 위한 [AstaBench](https://allenai.org/asta/bench)",
-          "level": 1
+          "level": 0
         },
         {
           "text": "Asta resources: scientific AI agents를 build, test, refine 하기 위한 a set of softwoare components",
-          "level": 1
+          "level": 0
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -70,27 +70,27 @@
       "bullets": [
         {
           "text": "MAI-Voice-1",
-          "level": 1
+          "level": 0
         },
         {
           "text": "single GPU에서 구동 가능하며 일 초 내에 일 분 길이의 오디오 생성 가능",
-          "level": 2
-        },
-        {
-          "text": "single- / multi- speaker 시나리오에서 expressive, natural speech 지원",
-          "level": 2
-        },
-        {
-          "text": "MAI-1-preview",
           "level": 1
         },
         {
+          "text": "single- / multi- speaker 시나리오에서 expressive, natural speech 지원",
+          "level": 1
+        },
+        {
+          "text": "MAI-1-preview",
+          "level": 0
+        },
+        {
           "text": "15,000 H100 hours로 pre- / post- trained MoE text 모델",
-          "level": 2
+          "level": 1
         },
         {
           "text": "instruction following & everyday query responses에 집중했다고 밝힘",
-          "level": 2
+          "level": 1
         }
       ],
       "tags": [
@@ -109,20 +109,15 @@
       "url": "https://machinelearning.apple.com/research/fast-vision-language-models",
       "bullets": [
         {
-          "text": "high-resolution images에 대해 designed 된 hybrid architecture visual encoder를 이용하여 정확하면서도 빠르고 효율적인 visual query processing 가능",
-          "level": 1
-        },
-        {
           "text": "추론 코드, 모델 체크포인트, iOS/macOS demo는 깃허브 [링크](https://github.com/apple/ml-fastvlm/)에서 확인 가능",
-          "level": 1
+          "level": 0
         },
         {
           "text": "허깅페이스 데모 [링크](https://link.alphasignal.ai/CPaC4b)",
-          "level": 1
+          "level": 0
         }
       ],
       "tags": [
-        "multimodal",
         "AI/ML"
       ]
     },
@@ -139,20 +134,20 @@
       "bullets": [
         {
           "text": "한 번의 평가로 다양한 조합의 성능을 확인",
-          "level": 1
+          "level": 0
         },
         {
           "text": "The complete toolkit for AI evaluation",
-          "level": 1
+          "level": 0
         },
         {
           "text": "현재는 미국에서만 사용 가능",
-          "level": 1
+          "level": 0
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -168,11 +163,11 @@
       "bullets": [
         {
           "text": "중국의 5개 소수 민족 언어를 포함한 33개 언어 커버",
-          "level": 1
+          "level": 0
         },
         {
           "text": "pretrain → CPT → SFT → translation rl → ensemble rl ([technical report](https://github.com/Tencent-Hunyuan/Hunyuan-MT/blob/main/Hunyuan_MT_Technical_Report.pdf) 참고 가능)",
-          "level": 1
+          "level": 0
         }
       ],
       "tags": [
@@ -192,15 +187,15 @@
       "bullets": [
         {
           "text": "308M 사이즈 & 2K context window, 100개 이상 언어 지원",
-          "level": 1
+          "level": 0
         },
         {
           "text": "Gemma3 모델을 backbone으로 삼고 있으나, bi-directional attention으로 modified",
-          "level": 1
+          "level": 0
         },
         {
           "text": "Matroyshka Representation Learning (MRL)로 학습되어 768 차원의 ouput을 512, 256, 128 차원으로 truncate 할 수 있음",
-          "level": 1
+          "level": 0
         }
       ],
       "tags": []
@@ -218,15 +213,15 @@
       "bullets": [
         {
           "text": "speaker consistency, natural turn-taking 등의 문제를 크게 해결",
-          "level": 1
+          "level": 0
         },
         {
           "text": "ultra-low frame rate of 7.5Hz에서 operating 하는 continuous speech tokenizers 사용",
-          "level": 1
+          "level": 0
         },
         {
           "text": "Context-Aware Expression 데모가 있어서 들어봤는데 엄~청 자연스럽지는 않은 느낌",
-          "level": 1
+          "level": 0
         }
       ],
       "tags": []
@@ -244,19 +239,19 @@
       "bullets": [
         {
           "text": "두 가지 taxonomy로 구분",
-          "level": 1
+          "level": 0
         },
         {
           "text": "planning, tool use, memory 등을 포함하는 core agentic capabilities",
-          "level": 2
+          "level": 1
         },
         {
           "text": "다양한 태스크 도메인에 대한 applications",
-          "level": 2
+          "level": 1
         },
         {
           "text": "reinforcement learning이 agents의 능력을 기존의 static, heuristic modules에서 adaptive, robust agentic behavior로 transform",
-          "level": 1
+          "level": 0
         }
       ],
       "tags": [
@@ -276,23 +271,23 @@
       "bullets": [
         {
           "text": "modern training pipeline에서 hallucinations의 통계적 원인을 분석",
-          "level": 1
+          "level": 0
         },
         {
           "text": "이진 분류의 오류에 기인한다고 설명",
-          "level": 2
+          "level": 1
         },
         {
           "text": "incorrect statements가 facts와 구별되지 않는다면, PLM은 natural statistical pressures를 기반으로 hallucinate 한다고 설명",
-          "level": 2
+          "level": 1
         },
         {
           "text": "또한 good test-takers로 optimized 되는 LM 특성상 불확실할 때 추측하는 것이 test performance가 높은 것으로 평가받게 되는 문제점을 지적",
-          "level": 1
+          "level": 0
         },
         {
           "text": "불확실한 응답을 penalizing하는 “전염병(epidemic)”은 misaligned scoring of exisiting benchmarks를 수정하는 방향으로 고쳐져야 한다고 주장",
-          "level": 1
+          "level": 0
         }
       ],
       "tags": [
@@ -312,20 +307,20 @@
       "bullets": [
         {
           "text": "겉으로 봤을 땐 non-sense이지만 contextual inference, moral reasoning, emotional interpretation을 통해 implicit meaning을 encoding 해야됨",
-          "level": 1
+          "level": 0
         },
         {
           "text": "현존 LLM들은 아직까지 Drivelological text를 온전히 이해하지 못한다고 설명",
-          "level": 1
+          "level": 0
         },
         {
           "text": "English, Mandarin, Spanish, French, Japanese, Korean 등 언어에 대해 1,200여 개 데이터를 meticulously curate",
-          "level": 2
+          "level": 1
         }
       ],
       "tags": [
-        "AI/ML",
-        "reasoning"
+        "reasoning",
+        "AI/ML"
       ]
     },
     {
@@ -341,23 +336,23 @@
       "bullets": [
         {
           "text": "긴 입력을 처리하면서 발생하는 knowledge enrichment & system efficiency 간 trade-off",
-          "level": 2
+          "level": 1
         },
         {
           "text": "검색된 텍스트의 대부분은 query와 상관없음",
-          "level": 2
+          "level": 1
         },
         {
           "text": "RAG context에서 decoding 할 때 대부분의 연산은 불필요하며, 제거하더라도 전체 성능에 크게 영향주지 않는다고 주장",
-          "level": 1
+          "level": 0
         },
         {
           "text": "REFRAG 제안: RAG application에서 latency를 개선하기 위한 compress, sense, expand 할 수 있는 decoding framework (attention sparsity structure)",
-          "level": 1
+          "level": 0
         },
         {
           "text": "perplexity를 높이지 않으면서 TTFT를 30.85x 상승 & LLM의 context size를 16x 상승",
-          "level": 1
+          "level": 0
         }
       ],
       "tags": [
@@ -377,7 +372,7 @@
       "bullets": [
         {
           "text": "GUI 에이전트가 단순한 조작을 넘어 복잡한 환경에도 적응할 수 있음",
-          "level": 1
+          "level": 0
         }
       ],
       "tags": []
@@ -395,19 +390,19 @@
       "bullets": [
         {
           "text": "millions of structural causal models (SCMs) 로부터 ML tasks를 합성하여 1,024 shot 생성",
-          "level": 1
+          "level": 0
         },
         {
           "text": "random-forest teacher로 시작하여 tree-based decision strategies를 LLM에 distill",
-          "level": 1
+          "level": 0
         },
         {
           "text": "모든 tasks는 token-efficient prompt로 serialized",
-          "level": 1
+          "level": 0
         },
         {
           "text": "GPT-5-mini 모델보다도 Qwen-2.5-7B-Instruct를 tuning한 모델의 성능이 좋았다고 설명하면서 이를 many-shot scaling law라고 표현함",
-          "level": 1
+          "level": 0
         }
       ],
       "tags": [
@@ -427,11 +422,11 @@
       "bullets": [
         {
           "text": "UDR: 어떤 언어 모델이든 사용할 수 있고, 유저가 스스로 deep research strategies를 추가적인 학습 없이도 custom 할 수 있도록 돕는 generalist agentic system",
-          "level": 1
+          "level": 0
         },
         {
           "text": "Phase 1: skipped steps and drift를 줄이기 위한 strategy compiles → Phase 2: executes synchronous tool calls & yield-based notifications",
-          "level": 1
+          "level": 0
         }
       ],
       "tags": [
@@ -451,11 +446,11 @@
       "bullets": [
         {
           "text": "knowledge graphs를 dynamically constructs & expands 하는 framework 제안",
-          "level": 1
+          "level": 0
         },
         {
           "text": "question으로부터 seed KG를 추출하고, 이를 바탕으로 LLM’s latent knowledge를 이용하여 iterative expansion 수행",
-          "level": 1
+          "level": 0
         }
       ],
       "tags": [
@@ -475,7 +470,7 @@
       "bullets": [
         {
           "text": "한 LLM이 여러 개의 응답을 생성하고, 다른 LLM(auxiliary)이 disagreement patterns을 분석하도록 지시",
-          "level": 1
+          "level": 0
         }
       ],
       "tags": [
@@ -495,11 +490,11 @@
       "bullets": [
         {
           "text": "이에 따라 human annotators도 instruction changes에 유사한 sensitivity를 보이는지 확인하고자 함",
-          "level": 1
+          "level": 0
         },
         {
           "text": "실험 결과에 따르면 human annotators & LLMs 모두 특정한 prompt 수정 유형에 대해 불안정(brittlenss)한 특성을 보임",
-          "level": 1
+          "level": 0
         }
       ],
       "tags": [
@@ -519,11 +514,11 @@
       "bullets": [
         {
           "text": "REverse-Engineered Reasoning (REER): trial-and-error | imitation을 통해 reasoning process forwards를 building 하는 것 대신 known good solutions로부터 backwards works",
-          "level": 1
+          "level": 0
         },
         {
           "text": "DeepWriting-20K: 20,000 deep reasoning trajectories 데이터를 오픈소스화",
-          "level": 1
+          "level": 0
         }
       ],
       "tags": [
@@ -543,15 +538,15 @@
       "bullets": [
         {
           "text": "추가적인 데이터 없이 모델 성능을 개할 수 있는 강화학습 방식 제안",
-          "level": 1
+          "level": 0
         },
         {
           "text": "Language Self-Play (LSP): 모델이 스스로 play하면서 stronger policies 형성",
-          "level": 1
+          "level": 0
         },
         {
           "text": "Llama-3.2-3B-Instruct 모델로 실험한 결과 제시",
-          "level": 1
+          "level": 0
         }
       ],
       "tags": []
@@ -569,11 +564,11 @@
       "bullets": [
         {
           "text": "WebExplorer: model-based exploration & iterative, long-to-short query evolution 데이터 생성 방법론",
-          "level": 1
+          "level": 0
         },
         {
           "text": "WebExplorer-8B: 128K, 100 tool calling turns",
-          "level": 1
+          "level": 0
         }
       ],
       "tags": [
@@ -593,11 +588,11 @@
       "bullets": [
         {
           "text": "representational forms → computational strategies",
-          "level": 1
+          "level": 0
         },
         {
           "text": "how & where internal computation unfolds: latent optimization, signal-guided control, layer-recurrent execution",
-          "level": 1
+          "level": 0
         }
       ],
       "tags": []
@@ -615,7 +610,7 @@
       "bullets": [
         {
           "text": "raw data를 input으로 주면 이를 분석한 결과 및 통계적 분석, 시각화 자료, 인사이트 등을 반환",
-          "level": 1
+          "level": 0
         }
       ],
       "tags": []
@@ -633,11 +628,11 @@
       "bullets": [
         {
           "text": "batch input & output, prompt-based editing, versatile styles, knowledge-driven generation 등을 특징으로 삼음",
-          "level": 1
+          "level": 0
         },
         {
           "text": "모델 성능은 MagicBench 기준으로 평가하여 공개 (Text-to-Image, Single-Image Editing)",
-          "level": 1
+          "level": 0
         }
       ],
       "tags": [
@@ -657,15 +652,15 @@
       "bullets": [
         {
           "text": "21편의 사회과학 연구에서 나온 37개 data annotation 태스크를 18개 LLM으로 재현",
-          "level": 1
+          "level": 0
         },
         {
           "text": "13M개의 LLM labels 생성 & 2,361개의 realistic hypotheses 검증 → SOTA 모델도 1/3 오류, 소형 모델은 1/2 오류",
-          "level": 1
+          "level": 0
         },
         {
           "text": "결국 false positive (1종 오류) 발생을 줄이기 위해서는 human annotation이 중요하다는 결론",
-          "level": 1
+          "level": 0
         }
       ],
       "tags": [
@@ -685,15 +680,15 @@
       "bullets": [
         {
           "text": "Qwen3-Next-80B-A3B-Base: dense Qwen3-32B에 에 준하는 성능. 32K context window를 지원하는데 10배 높은 throughput 달성",
-          "level": 1
+          "level": 0
         },
         {
           "text": "Qwen3-Next-80B-A3B-Instruct, Thinking 두 모델도 공개. 256K context window",
-          "level": 1
+          "level": 0
         },
         {
           "text": "포스트 내에 아키텍쳐에 대한 자세한 설명 포함되어 있음",
-          "level": 1
+          "level": 0
         }
       ],
       "tags": [
@@ -713,20 +708,20 @@
       "bullets": [
         {
           "text": "text encoder를 제외 → contrastive loss는 오직 순수하게 generative training signal만 측정함",
-          "level": 1
+          "level": 0
         },
         {
           "text": "OpenVision 2",
-          "level": 2
+          "level": 1
         },
         {
           "text": "training time & memory consumption을 크게 줄이면서도 기존 모델 성능 유지",
-          "level": 1
+          "level": 0
         }
       ],
       "tags": [
-        "multimodal",
-        "AI/ML"
+        "AI/ML",
+        "multimodal"
       ]
     },
     {
@@ -742,16 +737,16 @@
       "bullets": [
         {
           "text": "reasoning-optimized models에 대한 continual reinforcement learning을 제안하여 reasoning ability를 보존하면서도 agentic skills를 강화하고자 함",
-          "level": 1
+          "level": 0
         },
         {
           "text": "Length-normalized RL Objective, Trajectory Filtering, Partial Rollouts 등",
-          "level": 2
+          "level": 1
         }
       ],
       "tags": [
-        "agent",
-        "reasoning"
+        "reasoning",
+        "agent"
       ]
     },
     {
@@ -767,7 +762,7 @@
       "bullets": [
         {
           "text": "Self-Improving Faithfulness-Aware Contrastive Tuning: self-instruct mechanism을 이용하여 base LLM이 자동적으로 고품질의 structured contrastive learning data를 생성하도록 만듦 (positive & negative samples)",
-          "level": 1
+          "level": 0
         }
       ],
       "tags": [
@@ -787,15 +782,15 @@
       "bullets": [
         {
           "text": "VLA-Adapter를 제시하여 large-scale VLMs & extensive pre-training에 대한 의존 낮춤",
-          "level": 1
+          "level": 0
         },
         {
           "text": "lightweight Policy module with Bridge Attention 제시: action space 내에 optimal condition을 자율적으로 injects",
-          "level": 1
+          "level": 0
         },
         {
           "text": "robotic data pre-training 없이, 단 0.5B parameter backbone으로 높은 퍼포먼스 달성",
-          "level": 1
+          "level": 0
         }
       ],
       "tags": [
@@ -815,19 +810,19 @@
       "bullets": [
         {
           "text": "(1) 현존 LLMs는 특정 종류의 의사 결정에 대한 internal process를 정확하게 기술할 수 있는 능력이 있음",
-          "level": 2
+          "level": 1
         },
         {
           "text": "(2) 이러한 능력은 학습을 통해 강화하는 것도 가능",
-          "level": 2
+          "level": 1
         },
         {
           "text": "(3) 학습된 능력은 어느정도 일반화 가능",
-          "level": 2
+          "level": 1
         },
         {
           "text": "GPT-4o, GPT-4o-mini 두 모델을 fine-tuning하여 실험한 결과를 제시",
-          "level": 1
+          "level": 0
         }
       ],
       "tags": [
@@ -847,7 +842,7 @@
       "bullets": [
         {
           "text": "mission economies를 도입하여 agents들이 공동의 목표를 달성할 수 있도록 함으로써 trust & safety 가 더 잘 보장되는 환경을 조성할 수 있었다고 설명",
-          "level": 1
+          "level": 0
         }
       ],
       "tags": [
@@ -867,21 +862,21 @@
       "bullets": [
         {
           "text": "Code review, Dynamic reasoning (task 난이도에 따라), Tool use 등의 핵심 features",
-          "level": 1
+          "level": 0
         },
         {
           "text": "CLI, IDE extension, Cloud 등 다양한 환경에서 지원",
-          "level": 1
+          "level": 0
         },
         {
           "text": "깃허브 코드 리뷰 자동화 [가이드](https://developers.openai.com/codex/cloud/code-review) by OpenAI",
-          "level": 1
+          "level": 0
         }
       ],
       "tags": [
+        "reasoning",
         "agent",
-        "AI/ML",
-        "reasoning"
+        "AI/ML"
       ]
     },
     {
@@ -897,11 +892,11 @@
       "bullets": [
         {
           "text": "1B도 되지 않는 사이즈의 모델 family로 Qwen3 0.6B를 능가하는 성능을 보여준다고 함",
-          "level": 1
+          "level": 0
         },
         {
           "text": "사전학습에는 2T, 총 5T 토큰 정도 학습했다고 밝힘",
-          "level": 1
+          "level": 0
         }
       ],
       "tags": []
@@ -919,20 +914,20 @@
       "bullets": [
         {
           "text": "Reconstruction Alignment (RecA): visual understanding encoder embeddings를 dense ‘text prompts’로 이용하여 captions 없이도 보다 풍부한 supervision을 제공하는 post-training method",
-          "level": 1
+          "level": 0
         },
         {
           "text": "visual understanding embeddings를 조건으로 input image를 reconstruct 하는 self-supervised reconstruction loss 근거로 학습",
-          "level": 1
+          "level": 0
         },
         {
           "text": "autoregressive, masked-autoregressive, diffusion-based 등 어떤 형태에도 적용 가능하면서도 뛰어난 성능을 보여줌",
-          "level": 1
+          "level": 0
         }
       ],
       "tags": [
-        "multimodal",
-        "AI/ML"
+        "AI/ML",
+        "multimodal"
       ]
     },
     {
@@ -948,11 +943,11 @@
       "bullets": [
         {
           "text": "DP: 학습 시 노이즈를 추가하여 학습 데이터가 모델로부터 추출되는 것을 방지하는 mathematical framework (민감 정보 보호)",
-          "level": 2
+          "level": 1
         },
         {
           "text": "모델 성능을 저해하지 않으면서도 privacy를 지킬 수 있도록 하는 새로운 scaling law 제시",
-          "level": 1
+          "level": 0
         }
       ],
       "tags": []
@@ -970,11 +965,11 @@
       "bullets": [
         {
           "text": "target LLM에 의해 생성되는 hidden representations만을 이용하여 난이도를 추정하는 방식을 제안",
-          "level": 1
+          "level": 0
         },
         {
           "text": "token-level generation process를 Markov chain으로 모델링하고, value function을 정의하여 hidden state 기반으로 output quality를 추정",
-          "level": 1
+          "level": 0
         }
       ],
       "tags": [
@@ -994,7 +989,7 @@
       "bullets": [
         {
           "text": "매 단계는 로그로 남아서 안전성과 신뢰성을 높임",
-          "level": 1
+          "level": 0
         }
       ],
       "tags": []
@@ -1012,11 +1007,11 @@
       "bullets": [
         {
           "text": "prompt engineering 없이 ReAct 방식으로 inference",
-          "level": 1
+          "level": 0
         },
         {
           "text": "30B 사이즈 모델로 OpenAI DeepResearch 급 성능 달성",
-          "level": 1
+          "level": 0
         }
       ],
       "tags": [
@@ -1036,16 +1031,16 @@
       "bullets": [
         {
           "text": "각 reasoning step마다 LLM이 현재 시점의 최종 답변을 생성토록 하고 이를 step answer로 명명",
-          "level": 1
+          "level": 0
         },
         {
           "text": "이 step answer가 연속적으로 동일한 답변이 나온 횟수를 answer convergence의 지표로 해석",
-          "level": 1
+          "level": 0
         }
       ],
       "tags": [
-        "reasoning",
-        "AI/ML"
+        "AI/ML",
+        "reasoning"
       ]
     },
     {
@@ -1058,20 +1053,8 @@
       "org": "Algoverse",
       "title": "FRIT: Using Causal Importance to Improve Chain-of-Thought Faithfulness",
       "url": "https://arxiv.org/abs/2509.13334",
-      "bullets": [
-        {
-          "text": "FRIT: 모델이 systematically corrupted examples로부터 causally consistent reasoning을 생성하는 방법을 배울 수 있도록 돕는 학습 scalable alignment",
-          "level": 1
-        },
-        {
-          "text": "reasoning 매 step에 대해 합성 데이터를 생성하여 faithful/unfaithful pairs 구축하고 DPO 학습",
-          "level": 1
-        }
-      ],
-      "tags": [
-        "AI/ML",
-        "reasoning"
-      ]
+      "bullets": [],
+      "tags": []
     },
     {
       "id": "OpenAI-introducing-study-mode",
@@ -1341,8 +1324,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -1685,8 +1668,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -1714,8 +1697,8 @@
         }
       ],
       "tags": [
-        "reasoning",
-        "AI/ML"
+        "AI/ML",
+        "reasoning"
       ]
     },
     {
@@ -2416,8 +2399,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -2548,8 +2531,8 @@
         }
       ],
       "tags": [
-        "reasoning",
-        "AI/ML"
+        "AI/ML",
+        "reasoning"
       ]
     },
     {
@@ -2590,10 +2573,6 @@
       "url": "https://arxiv.org/abs/2411.14257",
       "bullets": [
         {
-          "text": "sparse auto-encoder (SAE)를 interpretability tool로 사용하여 entity recognition",
-          "level": 0
-        },
-        {
           "text": "SAE는 representation space에서 meaningful direction을 알아낼 수 있는데, 이를 통해 모델이 특정 entity를 아는지 모르는지(self-knowledge)를 구분할 수 있음",
           "level": 0
         },
@@ -2602,9 +2581,7 @@
           "level": 0
         }
       ],
-      "tags": [
-        "agent"
-      ]
+      "tags": []
     },
     {
       "id": "Google-Gemini-gemini-cli",
@@ -2686,8 +2663,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -2812,8 +2789,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "reasoning"
+        "reasoning",
+        "AI/ML"
       ]
     },
     {
@@ -3187,10 +3164,6 @@
       "url": "https://arxiv.org/abs/2503.09573?utm_source=pytorchkr&ref=pytorchkr",
       "bullets": [
         {
-          "text": "diffusion LM의 likelihood modeling & fixed-length generation 한계를 지적",
-          "level": 0
-        },
-        {
           "text": "a class of block diffusion: discrete denoising diffusion & autoregressive models 사이를 interpolate",
           "level": 0
         },
@@ -3269,9 +3242,9 @@
         }
       ],
       "tags": [
-        "agent",
+        "reasoning",
         "multimodal",
-        "reasoning"
+        "agent"
       ]
     },
     {
@@ -3347,8 +3320,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "reasoning"
+        "reasoning",
+        "AI/ML"
       ]
     },
     {
@@ -3372,8 +3345,8 @@
         }
       ],
       "tags": [
-        "multimodal",
-        "AI/ML"
+        "AI/ML",
+        "multimodal"
       ]
     },
     {
@@ -3397,8 +3370,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -3444,8 +3417,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "reasoning"
+        "reasoning",
+        "agent"
       ]
     },
     {
@@ -3587,8 +3560,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "reasoning"
+        "reasoning",
+        "AI/ML"
       ]
     },
     {
@@ -3642,8 +3615,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "reasoning"
+        "reasoning",
+        "AI/ML"
       ]
     },
     {
@@ -3803,10 +3776,6 @@
       "url": "https://aclanthology.org/2025.findings-acl.232.pdf",
       "bullets": [
         {
-          "text": "현재 LLM들은 복잡한 many-hop reasoning 문제들에 집중하고 있음",
-          "level": 0
-        },
-        {
           "text": "그러나 오히려 훨씬 간단한 reasoning 문제들을 풀지 못한다는 것을 문제점으로 지적",
           "level": 0
         },
@@ -3816,8 +3785,7 @@
         }
       ],
       "tags": [
-        "reasoning",
-        "AI/ML"
+        "reasoning"
       ]
     },
     {
@@ -3831,10 +3799,6 @@
       "title": "Optimization before Evaluation: Evaluation with Unoptimized Prompts Can be Misleading",
       "url": "https://aclanthology.org/2025.acl-industry.44.pdf",
       "bullets": [
-        {
-          "text": "academic & internal industry 벤치마크에 대해 평가할 때 Prompt Optimization (PO)이 미치는 영향에 대한 연구",
-          "level": 0
-        },
         {
           "text": "대부분의 모델과 벤치마크가 PO에 심각한 영향을 받는다고 설명",
           "level": 0
@@ -3952,9 +3916,9 @@
         }
       ],
       "tags": [
+        "AI/ML",
         "agent",
-        "reasoning",
-        "AI/ML"
+        "reasoning"
       ]
     },
     {
@@ -4195,8 +4159,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -4335,8 +4299,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "reasoning"
+        "reasoning",
+        "AI/ML"
       ]
     },
     {
@@ -4392,8 +4356,8 @@
         }
       ],
       "tags": [
-        "reasoning",
-        "AI/ML"
+        "AI/ML",
+        "reasoning"
       ]
     },
     {
@@ -4507,10 +4471,6 @@
       "title": "Truly Self-Improving Agents Require Intrinsic Metacognitive Learning",
       "url": "https://arxiv.org/abs/2506.05109",
       "bullets": [
-        {
-          "text": "현재 self-improving agents는 self-improvement processes가 너무 rigid 하여 generalization & scaling 안된다는 문제가 있음",
-          "level": 0
-        },
         {
           "text": "인간의 metacognition에 착안하여 세 개의 components로 구성된 프레임워크 제안",
           "level": 0
@@ -4630,9 +4590,9 @@
         }
       ],
       "tags": [
-        "AI/ML",
+        "reasoning",
         "multimodal",
-        "reasoning"
+        "AI/ML"
       ]
     },
     {
@@ -4682,8 +4642,8 @@
         }
       ],
       "tags": [
-        "multimodal",
-        "AI/ML"
+        "AI/ML",
+        "multimodal"
       ]
     },
     {
@@ -4707,8 +4667,8 @@
         }
       ],
       "tags": [
-        "reasoning",
-        "AI/ML"
+        "AI/ML",
+        "reasoning"
       ]
     },
     {
@@ -4732,8 +4692,8 @@
         }
       ],
       "tags": [
-        "multimodal",
-        "reasoning"
+        "reasoning",
+        "multimodal"
       ]
     },
     {
@@ -4785,8 +4745,8 @@
         }
       ],
       "tags": [
-        "reasoning",
-        "AI/ML"
+        "AI/ML",
+        "reasoning"
       ]
     },
     {
@@ -4835,8 +4795,21 @@
         {
           "text": "512 H800 GPUs로 3주 동안 학습하여 $534,700 비용이 들었다고 강조함",
           "level": 0
-        },
-        "📜 [OpenAI] Persona Feature Control Emergent Misalignment",
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "OpenAI-persona-feature-control-emergent-misalignment",
+      "date": "2025-06-W03",
+      "year": "2025",
+      "month": "6",
+      "week": "3",
+      "type": "paper",
+      "org": "OpenAI",
+      "title": "Persona Feature Control Emergent Misalignment",
+      "url": "",
+      "bullets": [
         {
           "text": "Toward understanding and preventing misalignment generalization: [OpenAI 블로그](https://openai.com/index/emergent-misalignment)",
           "level": 0
@@ -4892,8 +4865,8 @@
         }
       ],
       "tags": [
-        "reasoning",
-        "AI/ML"
+        "AI/ML",
+        "reasoning"
       ]
     },
     {
@@ -4922,8 +4895,8 @@
         "https://magenta.tensorflow.org/magenta-realtime?utm_source=alphasignal"
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -4951,9 +4924,9 @@
         }
       ],
       "tags": [
+        "AI/ML",
         "agent",
-        "multimodal",
-        "AI/ML"
+        "multimodal"
       ]
     },
     {
@@ -5045,9 +5018,9 @@
         }
       ],
       "tags": [
+        "reasoning",
         "agent",
-        "AI/ML",
-        "reasoning"
+        "AI/ML"
       ]
     },
     {
@@ -5173,8 +5146,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "reasoning"
+        "reasoning",
+        "AI/ML"
       ]
     },
     {
@@ -5216,8 +5189,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -5265,9 +5238,9 @@
         }
       ],
       "tags": [
+        "AI/ML",
         "agent",
-        "reasoning",
-        "AI/ML"
+        "reasoning"
       ]
     },
     {
@@ -5487,8 +5460,8 @@
         }
       ],
       "tags": [
-        "reasoning",
-        "AI/ML"
+        "AI/ML",
+        "reasoning"
       ]
     },
     {
@@ -5553,8 +5526,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -5833,8 +5806,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -5862,9 +5835,9 @@
         }
       ],
       "tags": [
-        "agent",
+        "reasoning",
         "multimodal",
-        "reasoning"
+        "agent"
       ]
     },
     {
@@ -6071,8 +6044,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -6096,8 +6069,8 @@
         }
       ],
       "tags": [
-        "reasoning",
-        "AI/ML"
+        "AI/ML",
+        "reasoning"
       ]
     },
     {
@@ -6147,8 +6120,8 @@
         }
       ],
       "tags": [
-        "multimodal",
-        "AI/ML"
+        "AI/ML",
+        "multimodal"
       ]
     },
     {
@@ -6287,11 +6260,20 @@
       "org": "HuggingFace",
       "title": "Welcome to the 🤗 Model Context Protocol (MCP) Course",
       "url": "https://huggingface.co/learn/mcp-course/unit0/introduction",
+      "bullets": [],
+      "tags": []
+    },
+    {
+      "id": "Alibaba-qwen3-technical-report",
+      "date": "2025-06-W04",
+      "year": "2025",
+      "month": "6",
+      "week": "4",
+      "type": "dev",
+      "org": "Alibaba",
+      "title": "Qwen3 Technical Report",
+      "url": "https://arxiv.org/abs/2505.09388",
       "bullets": [
-        {
-          "text": "dense & MoE 아키텍쳐, 0.6B ~ 235B 파라미터 사이즈",
-          "level": 0
-        },
         {
           "text": "thinking mode & non-thinking mode 통합. 유저 쿼리나 chat template에 따른 dynamic mode swithcing",
           "level": 0
@@ -6334,8 +6316,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "reasoning"
+        "reasoning",
+        "AI/ML"
       ]
     },
     {
@@ -6461,8 +6443,8 @@
         }
       ],
       "tags": [
-        "multimodal",
-        "reasoning"
+        "reasoning",
+        "multimodal"
       ]
     },
     {
@@ -6486,8 +6468,8 @@
         }
       ],
       "tags": [
-        "reasoning",
-        "AI/ML"
+        "AI/ML",
+        "reasoning"
       ]
     },
     {
@@ -6696,8 +6678,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "reasoning"
+        "reasoning",
+        "AI/ML"
       ]
     },
     {
@@ -6767,9 +6749,9 @@
         }
       ],
       "tags": [
-        "AI/ML",
+        "reasoning",
         "multimodal",
-        "reasoning"
+        "AI/ML"
       ]
     },
     {
@@ -6912,10 +6894,6 @@
       "url": "https://arxiv.org/abs/2411.06037",
       "bullets": [
         {
-          "text": "sufficient context 개념을 사용하여 여러 모델과 데이터셋을 분석",
-          "level": 0
-        },
-        {
           "text": "성능이 뛰어난 모델들은 context가 충분할 때 답변을 잘하지만 그렇지 않을 때에 답변을 abstain 하지 않고 틀린 답변을 반환하는 경우가 있음",
           "level": 0
         },
@@ -7036,8 +7014,8 @@
         }
       ],
       "tags": [
-        "reasoning",
-        "AI/ML"
+        "AI/ML",
+        "reasoning"
       ]
     },
     {
@@ -7181,8 +7159,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -7278,8 +7256,8 @@
         }
       ],
       "tags": [
-        "reasoning",
-        "AI/ML"
+        "AI/ML",
+        "reasoning"
       ]
     },
     {
@@ -7394,9 +7372,9 @@
         }
       ],
       "tags": [
-        "agent",
+        "reasoning",
         "multimodal",
-        "reasoning"
+        "agent"
       ]
     },
     {
@@ -7424,9 +7402,9 @@
         }
       ],
       "tags": [
+        "reasoning",
         "agent",
-        "multimodal",
-        "reasoning"
+        "multimodal"
       ]
     },
     {
@@ -7474,8 +7452,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -7523,8 +7501,8 @@
         }
       ],
       "tags": [
-        "reasoning",
-        "AI/ML"
+        "AI/ML",
+        "reasoning"
       ]
     },
     {
@@ -7896,8 +7874,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -8081,8 +8059,8 @@
         }
       ],
       "tags": [
-        "multimodal",
-        "AI/ML"
+        "AI/ML",
+        "multimodal"
       ]
     },
     {
@@ -8110,8 +8088,8 @@
         }
       ],
       "tags": [
-        "reasoning",
-        "AI/ML"
+        "AI/ML",
+        "reasoning"
       ]
     },
     {
@@ -8157,8 +8135,8 @@
         }
       ],
       "tags": [
-        "multimodal",
-        "reasoning"
+        "reasoning",
+        "multimodal"
       ]
     },
     {
@@ -8350,8 +8328,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -8433,8 +8411,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "reasoning"
+        "reasoning",
+        "agent"
       ]
     },
     {
@@ -8658,8 +8636,21 @@
         {
           "text": "엄청 방대한 양을 커버하고 있지는 않음",
           "level": 0
-        },
-        "📜 [Tencent AI] The First Few Tokens Are All You Need: An Efficient and Effective Unsupervised Prefix Fine-Tuning Method for Reasoning Models",
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "Tencent-AI-the-first-few-tokens-are-all-you-need-an-efficient-and-effective-unsupervised-prefix-fine-tuning-method-for-reasoning-models",
+      "date": "2025-03-W01",
+      "year": "2025",
+      "month": "3",
+      "week": "1",
+      "type": "paper",
+      "org": "Tencent AI",
+      "title": "The First Few Tokens Are All You Need: An Efficient and Effective Unsupervised Prefix Fine-Tuning Method for Reasoning Models",
+      "url": "",
+      "bullets": [
         {
           "text": "Unsupervised Prefix Fine-Tuning (UPFT): Prefix Self-Consistency를 이용. 다양한 solution에 공통적으로 포함되는 initial reasoning steps를 학습 대상으로 삼음",
           "level": 0
@@ -8674,8 +8665,7 @@
         }
       ],
       "tags": [
-        "reasoning",
-        "AI/ML"
+        "reasoning"
       ]
     },
     {
@@ -8717,8 +8707,8 @@
         }
       ],
       "tags": [
-        "multimodal",
-        "AI/ML"
+        "AI/ML",
+        "multimodal"
       ]
     },
     {
@@ -8764,8 +8754,8 @@
         }
       ],
       "tags": [
-        "reasoning",
-        "AI/ML"
+        "AI/ML",
+        "reasoning"
       ]
     },
     {
@@ -8837,8 +8827,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "reasoning"
+        "reasoning",
+        "agent"
       ]
     },
     {
@@ -8894,8 +8884,8 @@
         }
       ],
       "tags": [
-        "multimodal",
-        "AI/ML"
+        "AI/ML",
+        "multimodal"
       ]
     },
     {
@@ -8951,8 +8941,8 @@
         }
       ],
       "tags": [
-        "reasoning",
-        "AI/ML"
+        "AI/ML",
+        "reasoning"
       ]
     },
     {
@@ -9235,8 +9225,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -9412,8 +9402,8 @@
         }
       ],
       "tags": [
-        "multimodal",
-        "AI/ML"
+        "AI/ML",
+        "multimodal"
       ]
     },
     {
@@ -9664,8 +9654,8 @@
         }
       ],
       "tags": [
-        "reasoning",
-        "AI/ML"
+        "AI/ML",
+        "reasoning"
       ]
     },
     {
@@ -9805,8 +9795,8 @@
         }
       ],
       "tags": [
-        "reasoning",
-        "AI/ML"
+        "AI/ML",
+        "reasoning"
       ]
     },
     {
@@ -9834,8 +9824,8 @@
         }
       ],
       "tags": [
-        "multimodal",
-        "AI/ML"
+        "AI/ML",
+        "multimodal"
       ]
     },
     {
@@ -9945,8 +9935,8 @@
         }
       ],
       "tags": [
-        "multimodal",
-        "AI/ML"
+        "AI/ML",
+        "multimodal"
       ]
     },
     {
@@ -10279,8 +10269,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -10332,8 +10322,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "reasoning"
+        "reasoning",
+        "AI/ML"
       ]
     },
     {
@@ -10760,8 +10750,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "reasoning"
+        "reasoning",
+        "AI/ML"
       ]
     },
     {
@@ -10775,10 +10765,6 @@
       "title": "Do LLMs Recognize Your Preferences? Evaluating Personalized Preference Following in LLMs",
       "url": "https://arxiv.org/abs/2502.09597",
       "bullets": [
-        {
-          "text": "PrefEval: long-context conversational setting에서 LLM이 user의 preference에 대한 일관된 추론이 가능한지 평가하는 벤치마크",
-          "level": 0
-        },
         {
           "text": "3,000개의 엄선된 preference & query pair, 20개 주제 커버",
           "level": 0
@@ -10843,8 +10829,8 @@
         }
       ],
       "tags": [
-        "multimodal",
-        "AI/ML"
+        "AI/ML",
+        "multimodal"
       ]
     },
     {
@@ -10912,8 +10898,8 @@
         }
       ],
       "tags": [
-        "reasoning",
-        "AI/ML"
+        "AI/ML",
+        "reasoning"
       ]
     },
     {
@@ -10963,8 +10949,8 @@
         }
       ],
       "tags": [
-        "reasoning",
-        "AI/ML"
+        "AI/ML",
+        "reasoning"
       ]
     },
     {
@@ -11058,8 +11044,8 @@
         }
       ],
       "tags": [
-        "reasoning",
-        "AI/ML"
+        "AI/ML",
+        "reasoning"
       ]
     },
     {
@@ -11420,8 +11406,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "reasoning"
+        "reasoning",
+        "AI/ML"
       ]
     },
     {
@@ -11825,10 +11811,6 @@
       "url": "https://arxiv.org/pdf/2412.19707",
       "bullets": [
         {
-          "text": "Thought Rollback (TR) 라는 reasoning framework를 제시하여 LLM이 adaptive 하게 thought structure를 bulid 하여 hallucination을 완화",
-          "level": 0
-        },
-        {
           "text": "TR의 core mechanism은 rolling back thoughts로 LLM이 thoughts에 대해 error analysis를 수행하여 이전에 mistaken 된 thought를 roll back 하도록 함",
           "level": 0
         },
@@ -11842,8 +11824,8 @@
         }
       ],
       "tags": [
-        "reasoning",
-        "AI/ML"
+        "AI/ML",
+        "reasoning"
       ]
     },
     {
@@ -12095,10 +12077,6 @@
       "url": "https://arxiv.org/pdf/2501.04899",
       "bullets": [
         {
-          "text": "Semantic Uncertainty Guided Adaptive Retrieval (SUGAR): context-based entropy로 single-/multi- step retrieval을 결정",
-          "level": 0
-        },
-        {
           "text": "external knowledge가 relevant 한 것인지 LLM이 알 수 없어 발생하는 hallucination을 최소화",
           "level": 0
         }
@@ -12249,9 +12227,9 @@
         }
       ],
       "tags": [
-        "AI/ML",
+        "reasoning",
         "multimodal",
-        "reasoning"
+        "AI/ML"
       ]
     },
     {
@@ -12347,8 +12325,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "reasoning"
+        "reasoning",
+        "AI/ML"
       ]
     },
     {
@@ -12544,8 +12522,8 @@
         }
       ],
       "tags": [
-        "reasoning",
-        "AI/ML"
+        "AI/ML",
+        "reasoning"
       ]
     },
     {
@@ -12683,10 +12661,6 @@
       "url": "https://arxiv.org/pdf/2410.09870v2",
       "bullets": [
         {
-          "text": "ChroKnowBench: chronologically 축적된 지식을 평가하기 위한 벤치마크 데이터셋",
-          "level": 0
-        },
-        {
           "text": "세 가지 핵심 요소: multiple domains, time dependency, temporal state",
           "level": 1
         },
@@ -12718,10 +12692,6 @@
       "title": "Probing-RAG: Self-Probing to Guide Language Models in Selective Document Retrieval",
       "url": "https://arxiv.org/pdf/2410.13339",
       "bullets": [
-        {
-          "text": "Probing-RAG: 언어 모델의 중간 layer의 hidden state representation을 사용하여 주어진 query의 additional retrieval 필요성을 adaptive하게 결정하는 방법론",
-          "level": 0
-        },
         {
           "text": "real-world 에서는 최적의 document를 찾기 위해 주로 multi-step을 거쳐야 하는 문제를 해결",
           "level": 1
@@ -12796,8 +12766,8 @@
         }
       ],
       "tags": [
-        "reasoning",
-        "AI/ML"
+        "AI/ML",
+        "reasoning"
       ]
     },
     {
@@ -12811,10 +12781,6 @@
       "title": "LLM-Rubric: A Multidimensional, Calibrated Approach to Automated Evaluation of Natural Language Texts",
       "url": "https://aclanthology.org/2024.acl-long.745.pdf",
       "bullets": [
-        {
-          "text": "자연어 텍스트를 자동으로 평가하기 위한 프레임워크 제시",
-          "level": 0
-        },
         {
           "text": "multiple LLM distribution을 combine 하여 인간 judge’s annotation을 predict",
           "level": 0
@@ -12857,9 +12823,9 @@
         }
       ],
       "tags": [
+        "AI/ML",
         "agent",
-        "multimodal",
-        "AI/ML"
+        "multimodal"
       ]
     },
     {
@@ -12916,10 +12882,6 @@
       "url": "https://openreview.net/pdf?id=LuCLf4BJsr",
       "bullets": [
         {
-          "text": "기존에는 LLM으로 long context를 처리하기 위해 1) 입력 길이를 줄이거나 2) context window를 확장하고자 함",
-          "level": 0
-        },
-        {
           "text": "Chain-of-Agents (CoA): multi-agent collaboration을 이용하여 information aggregation & context reasoning 가능하도록 만든 프레임워크",
           "level": 0
         },
@@ -12929,9 +12891,9 @@
         }
       ],
       "tags": [
+        "AI/ML",
         "agent",
-        "reasoning",
-        "AI/ML"
+        "reasoning"
       ]
     },
     {
@@ -12959,8 +12921,8 @@
         }
       ],
       "tags": [
-        "reasoning",
-        "AI/ML"
+        "AI/ML",
+        "reasoning"
       ]
     },
     {
@@ -13368,17 +13330,11 @@
       "url": "https://openreview.net/pdf/acc98f9552b7a433f16acd31392d1a7e00f1df35.pdf",
       "bullets": [
         {
-          "text": "기존 tokenizer는 통계 기반으로 형성된 static 방식 → 현재 LLM 아키텍쳐와 싱크 안됨 (?)",
-          "level": 0
-        },
-        {
           "text": "초기의 방대한 vocabulary로 시작, 학습 동안 모델의 perplexity를 관측하며 tokenizer를 refine",
           "level": 0
         }
       ],
-      "tags": [
-        "AI/ML"
-      ]
+      "tags": []
     },
     {
       "id": "Amazon-amazon-nova-foundation-models",
@@ -13468,10 +13424,6 @@
       "url": "https://arxiv.org/pdf/2411.16035",
       "bullets": [
         {
-          "text": "LLM의 downtream 능력에 대해서는 사전학습에 비해서 예측하기 더 어렵다는 문제 (emergent ability를 fine-tuning 단에서 수행한 연구는 처음 보긴 함)",
-          "level": 0
-        },
-        {
           "text": "현재 LLM의 random few-shot 정확도를 기반으로 다음 세대 모델의 정확도를 예측할 수 있을까?",
           "level": 0
         },
@@ -13548,10 +13500,6 @@
       "url": "https://arxiv.org/pdf/2411.10541",
       "bullets": [
         {
-          "text": "prompt template이 모델 성능에 미치는 영향을 연구",
-          "level": 0
-        },
-        {
           "text": "같은 내용을 일반 텍스트, 마크다운, JSON, YAML 형식 등으로 변환하여 GPT-3.5-turbo, GPT-4 모델을 테스트",
           "level": 0
         },
@@ -13573,10 +13521,6 @@
       "title": "GenCast predicts weather and the risks of extreme conditions with state-of-the-art accuracy",
       "url": "https://deepmind.google/discover/blog/gencast-predicts-weather-and-the-risks-of-extreme-conditions-with-sota-accuracy/",
       "bullets": [
-        {
-          "text": "15일까지 아주 정확하게 예측 가능한 일기 예보 모델을 개발",
-          "level": 0
-        },
         {
           "text": "new high resolution AI ensemble model 이라고 소개하고 있음 (diffusion 기반의 모델)",
           "level": 0
@@ -13601,10 +13545,6 @@
       "title": "Learning to Reason via Self-Iterative Process Feedback for Small Language Models",
       "url": "https://arxiv.org/pdf/2412.08393",
       "bullets": [
-        {
-          "text": "odds ratio preference optimization (ORPO)를 결합하여 SLM 스스로 positive & negative signal을 생성 및 활용할 수 있도록 함",
-          "level": 0
-        },
         {
           "text": "sampling-based inference simulation & process reward models 를 이용하는 process supervision 도입",
           "level": 0
@@ -13737,10 +13677,6 @@
       "url": "https://arxiv.org/abs/2412.00722",
       "bullets": [
         {
-          "text": "ALAMA: Adaptive Language Agent Mechanism Activation Learning with Self-Exploration",
-          "level": 1
-        },
-        {
           "text": "expert model에 대한 의존 없이 mechanism activation adaptability를 최적화하는 것에 집중",
           "level": 1
         },
@@ -13851,8 +13787,23 @@
         {
           "text": "현존 LLM들의 세 가지 주요 한계: (1) 비슷하지만 다른 규칙을 구분하지 못함 (2) 규칙을 정확히 이해했더라도 수학 문제에서 일관된 성능을 보이지 않음 (3) 전반적으로 이 벤치마크 점수가 다 낮음",
           "level": 1
-        },
-        "📜 [Univ. of Potsdam] [I Don't Know: Explicit Modeling of Uncertainty with an [IDK] Token](https://arxiv.org/pdf/2412.06676) (NeurIPS 2024)",
+        }
+      ],
+      "tags": [
+        "AI/ML"
+      ]
+    },
+    {
+      "id": "Univ.-of-Potsdam-i-dont-know-explicit-modeling-of-uncertainty-with-an-idk",
+      "date": "2024-12-W02",
+      "year": "2024",
+      "month": "12",
+      "week": "2",
+      "type": "paper",
+      "org": "Univ. of Potsdam",
+      "title": "I Don't Know: Explicit Modeling of Uncertainty with an [IDK",
+      "url": "",
+      "bullets": [
         {
           "text": "hallucination을 잡기 위한 novel calibration method를 제시",
           "level": 1
@@ -14109,10 +14060,6 @@
       "url": "https://arxiv.org/pdf/2406.10149",
       "bullets": [
         {
-          "text": "extremely long documents 전체에 걸쳐 퍼져있는 fact를 바탕으로 LLM의 추론 능력을 평가하는 벤치마크, BABILong 공개",
-          "level": 0
-        },
-        {
           "text": "fact chaining, simple induction, deduction, counting 등 20여 개의 reasoning task 포함",
           "level": 0
         },
@@ -14122,8 +14069,8 @@
         }
       ],
       "tags": [
-        "reasoning",
-        "AI/ML"
+        "AI/ML",
+        "reasoning"
       ]
     },
     {
@@ -14151,8 +14098,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -14286,10 +14233,6 @@
       "title": "Self-Instruct: Aligning Language Models with Self-Generated Instructions",
       "url": "https://arxiv.org/pdf/2212.10560",
       "bullets": [
-        {
-          "text": "2년 전 논문이지만 지금도 많이 활용되고 있는 좋은 방법론이라 기록",
-          "level": 0
-        },
         {
           "text": "언어 모델의 zero-shot 성능이 뛰어나더라도 human-written instruction data 자체는 확보하기 어렵다는 문제가 존재",
           "level": 0
@@ -14618,8 +14561,8 @@
         }
       ],
       "tags": [
-        "multimodal",
-        "AI/ML"
+        "AI/ML",
+        "multimodal"
       ]
     },
     {
@@ -14723,8 +14666,8 @@
         }
       ],
       "tags": [
-        "multimodal",
-        "reasoning"
+        "reasoning",
+        "multimodal"
       ]
     },
     {
@@ -14893,10 +14836,6 @@
       "url": "https://arxiv.org/abs/2309.08963",
       "bullets": [
         {
-          "text": "LLM이 text table, HTML, LaTeX 형식 등을 잘 다룰 수 있는지 평가하는 벤치마크, Struc-Bench",
-          "level": 0
-        },
-        {
           "text": "Prompting Score (P-Score) & Heuristical Score (H-Score) 를 제안",
           "level": 0
         },
@@ -14909,9 +14848,7 @@
           "level": 0
         }
       ],
-      "tags": [
-        "AI/ML"
-      ]
+      "tags": []
     },
     {
       "id": "Apple-scaling-smart-accelerating-large-language-model-pre-training-with-small-model-initialization",
@@ -15488,8 +15425,8 @@
         }
       ],
       "tags": [
-        "multimodal",
-        "AI/ML"
+        "AI/ML",
+        "multimodal"
       ]
     },
     {
@@ -15695,10 +15632,6 @@
       "url": "https://aclanthology.org/2024.emnlp-main.142.pdf",
       "bullets": [
         {
-          "text": "최근에는 Transformer 기반의 언어 모델들이 forward 하는 동안의 weight와 hidden state를 모델의 vocab에 project 함으로써 interpretailiby를 높이고자 하는 시도가 많았음",
-          "level": 0
-        },
-        {
           "text": "gradient matrix가 low-rank linear combination의 forward & backward pass의 입력으로 cast 될 수 있음을 입증 (?)",
           "level": 0
         },
@@ -15711,9 +15644,7 @@
           "level": 0
         }
       ],
-      "tags": [
-        "AI/ML"
-      ]
+      "tags": []
     },
     {
       "id": "Univ.-of-Tehran-cocop-enhancing-text-classification-with-llm-through-code-completion-prompt",
@@ -15733,8 +15664,23 @@
         {
           "text": "CodeLLaMA와 같은 코드 특화 모델을 사용하는 경우, few-shot learning 수준의 퍼포먼스 가능",
           "level": 0
-        },
-        "🧑🏻‍💻 [Together AI] Llama OCR",
+        }
+      ],
+      "tags": [
+        "AI/ML"
+      ]
+    },
+    {
+      "id": "Together-AI-llama-ocr",
+      "date": "2024-11-W04",
+      "year": "2024",
+      "month": "11",
+      "week": "4",
+      "type": "dev",
+      "org": "Together AI",
+      "title": "Llama OCR",
+      "url": "",
+      "bullets": [
         {
           "text": "Together AI가 학습한 Llama 3.2 모델의 endpoint를 사용하여 ocr 수행",
           "level": 0
@@ -15865,8 +15811,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "reasoning"
+        "reasoning",
+        "AI/ML"
       ]
     },
     {
@@ -16080,8 +16026,8 @@
         }
       ],
       "tags": [
-        "multimodal",
-        "AI/ML"
+        "AI/ML",
+        "multimodal"
       ]
     },
     {
@@ -16283,8 +16229,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -16312,8 +16258,8 @@
         }
       ],
       "tags": [
-        "multimodal",
-        "AI/ML"
+        "AI/ML",
+        "multimodal"
       ]
     },
     {
@@ -16369,10 +16315,6 @@
       "title": "Learning high-accuracy error decoding for quantum processors",
       "url": "https://www.nature.com/articles/s41586-024-08148-8",
       "bullets": [
-        {
-          "text": "recurrent, transformer-based neural network that learns to decode the surface code",
-          "level": 0
-        },
         {
           "text": "구글 딥마인드에서 인공지능을 활용한 quantum computer 연구를 수행하고 있음",
           "level": 0
@@ -16747,8 +16689,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "reasoning"
+        "reasoning",
+        "AI/ML"
       ]
     },
     {
@@ -17096,8 +17038,8 @@
         }
       ],
       "tags": [
-        "multimodal",
-        "reasoning"
+        "reasoning",
+        "multimodal"
       ]
     },
     {
@@ -17280,8 +17222,8 @@
         }
       ],
       "tags": [
-        "multimodal",
-        "AI/ML"
+        "AI/ML",
+        "multimodal"
       ]
     },
     {
@@ -17412,10 +17354,6 @@
       "url": "https://arxiv.org/abs/2410.05801",
       "bullets": [
         {
-          "text": "기존 RAG의 문제점: 1) original query가 retrieval에 부적합할 수 있음 2) 언어 모델의 지식 한계 때문에 inconsistent answer를 생성할 수 있음",
-          "level": 0
-        },
-        {
           "text": "이를 해결하기 위해 chain-of-verification (CoV-RAG)를 제안",
           "level": 0
         },
@@ -17433,8 +17371,8 @@
         }
       ],
       "tags": [
-        "reasoning",
-        "AI/ML"
+        "AI/ML",
+        "reasoning"
       ]
     },
     {
@@ -17562,8 +17500,8 @@
         }
       ],
       "tags": [
-        "reasoning",
-        "AI/ML"
+        "AI/ML",
+        "reasoning"
       ]
     },
     {
@@ -17747,8 +17685,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -18024,8 +17962,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -18053,8 +17991,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "reasoning"
+        "reasoning",
+        "AI/ML"
       ]
     },
     {
@@ -18068,10 +18006,6 @@
       "title": "How Does Vision-Language Adaptation Impact the Safety of Vision Language Models?",
       "url": "https://arxiv.org/abs/2410.07571",
       "bullets": [
-        {
-          "text": "Vison-Language adaptation (VL adaptation)은 LLM을 LVLM으로 transform 하는데, original LLM의 inherent safety capabilities를 손상시킬 수 있음",
-          "level": 0
-        },
         {
           "text": "training data가 safe 하더라도 VL adaptation 동안 safety degradation이 발생한다고 설명",
           "level": 0
@@ -18195,8 +18129,8 @@
         }
       ],
       "tags": [
-        "multimodal",
-        "reasoning"
+        "reasoning",
+        "multimodal"
       ]
     },
     {
@@ -18384,10 +18318,6 @@
       "url": "https://arxiv.org/abs/2410.17131",
       "bullets": [
         {
-          "text": "iterative training 동안 predefined principle 기반의 고품질 preference signal을 자동적으로 생성하는 알고리즘, Self-Steering Optimization (SSO) 제안",
-          "level": 0
-        },
-        {
           "text": "chosen & rejected response 간의 consistent gap을 보장하면서도 현재 policy 모델의 learning capacity에 적합한 학습이 진행될 수 있도록 함",
           "level": 0
         },
@@ -18400,9 +18330,7 @@
           "level": 0
         }
       ],
-      "tags": [
-        "AI/ML"
-      ]
+      "tags": []
     },
     {
       "id": "Yonsei,-SNU-large-language-models-still-exhibit-bias-in-long-text",
@@ -18678,8 +18606,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "reasoning"
+        "reasoning",
+        "agent"
       ]
     },
     {
@@ -18725,8 +18653,8 @@
         }
       ],
       "tags": [
-        "reasoning",
-        "AI/ML"
+        "AI/ML",
+        "reasoning"
       ]
     },
     {
@@ -18988,8 +18916,8 @@
         }
       ],
       "tags": [
-        "multimodal",
-        "AI/ML"
+        "AI/ML",
+        "multimodal"
       ]
     },
     {
@@ -19140,8 +19068,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "reasoning"
+        "reasoning",
+        "AI/ML"
       ]
     },
     {
@@ -19246,8 +19174,8 @@
         }
       ],
       "tags": [
-        "multimodal",
-        "AI/ML"
+        "AI/ML",
+        "multimodal"
       ]
     },
     {
@@ -19326,10 +19254,6 @@
       "url": "https://arxiv.org/abs/2405.12205",
       "bullets": [
         {
-          "text": "Meta cognitive knowledge: 자신의 thinking & reasoning process에 대한 직관적인 지식",
-          "level": 0
-        },
-        {
           "text": "→ 본 연구 결과에 따르면 LLM이 meta cognitive knowledge를 지닌 것으로 판단된다고 함",
           "level": 0
         },
@@ -19339,8 +19263,7 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "reasoning"
+        "AI/ML"
       ]
     },
     {
@@ -19354,10 +19277,6 @@
       "title": "Detecting hallucinations in large language models using semantic entropy",
       "url": "https://www.nature.com/articles/s41586-024-07421-0",
       "bullets": [
-        {
-          "text": "인간이 정답을 알지 못하는 unseen questions에 대해도 LLM이 working 해야 함",
-          "level": 0
-        },
         {
           "text": "→ entropy-based uncertainty estimator를 도입하여 LLM이 hallucinations-confabulations-를 탐지할 수 있도록 함",
           "level": 0
@@ -19496,8 +19415,23 @@
         {
           "text": "[허깅페이스 스페이스 링크](https://huggingface.co/spaces/ulab-ai/ArxivCopilot) 🔗",
           "level": 0
-        },
-        "🧑🏻‍💻 [Mistral] pixtral-12b-240910",
+        }
+      ],
+      "tags": [
+        "AI/ML"
+      ]
+    },
+    {
+      "id": "Mistral-pixtral-12b-240910",
+      "date": "2024-09-W02",
+      "year": "2024",
+      "month": "9",
+      "week": "2",
+      "type": "dev",
+      "org": "Mistral",
+      "title": "pixtral-12b-240910",
+      "url": "",
+      "bullets": [
         {
           "text": "text-based Nemo 12B에 400M vision adapter를 합친 모델",
           "level": 0
@@ -19520,8 +19454,7 @@
         }
       ],
       "tags": [
-        "multimodal",
-        "AI/ML"
+        "multimodal"
       ]
     },
     {
@@ -19746,8 +19679,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "reasoning"
+        "reasoning",
+        "agent"
       ]
     },
     {
@@ -20164,8 +20097,23 @@
         {
           "text": "Thought Validator agent를 동반한 ToT 기반의 Reasoner agent를 제시",
           "level": 0
-        },
-        "📜 [Qwen] Qwen2.5-Coder Technical Report",
+        }
+      ],
+      "tags": [
+        "agent"
+      ]
+    },
+    {
+      "id": "Qwen-qwen25-coder-technical-report",
+      "date": "2024-09-W03",
+      "year": "2024",
+      "month": "9",
+      "week": "3",
+      "type": "paper",
+      "org": "Qwen",
+      "title": "Qwen2.5-Coder Technical Report",
+      "url": "",
+      "bullets": [
         {
           "text": "CodeQwen1.5의 후속작 Qwen2.5-Coder-1.5B, 7B의 테크니컬 리포트",
           "level": 0
@@ -20179,9 +20127,7 @@
           "level": 0
         }
       ],
-      "tags": [
-        "agent"
-      ]
+      "tags": []
     },
     {
       "id": "GitHub-try-out-openai-o1-in-github-copilot-and-models",
@@ -20563,8 +20509,8 @@
         }
       ],
       "tags": [
-        "multimodal",
-        "AI/ML"
+        "AI/ML",
+        "multimodal"
       ]
     },
     {
@@ -20688,10 +20634,6 @@
       "url": "https://arxiv.org/abs/2409.17481",
       "bullets": [
         {
-          "text": "Gumbel Softmax sampling을 통해 모델의 N:M Semi-structured Sparsity를 establish하는 learnable pruning method, MaskLLM → 추론 시 computational overhead를 줄이는 것이 목표",
-          "level": 0
-        },
-        {
           "text": "(1) High-quality Masks (2) Transferability: from 843M to 15B 사이즈 모델까지 working",
           "level": 0
         },
@@ -20743,8 +20685,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -20854,8 +20796,21 @@
         {
           "text": "Word2Vec과 BERT와 같은 모델을 다양한 semantic search에 어떻게 활용하는지 학습",
           "level": 0
-        },
-        "📜 [Google] ShieldGemma: Generative AI Content Moderation Based on Gemma",
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "Google-shieldgemma-generative-ai-content-moderation-based-on-gemma",
+      "date": "2024-08-W01",
+      "year": "2024",
+      "month": "8",
+      "week": "1",
+      "type": "paper",
+      "org": "Google",
+      "title": "ShieldGemma: Generative AI Content Moderation Based on Gemma",
+      "url": "",
+      "bullets": [
         {
           "text": "Gemma2-2B 모델과 함께 공개한 LLM safety 관련 모델 (2B/9B/27B)",
           "level": 0
@@ -20986,10 +20941,6 @@
       "url": "https://arxiv.org/abs/2408.00103",
       "bullets": [
         {
-          "text": "Entity Linking (EL) 과 Relation Extraction (RE) 를 위한 Retriever-Reader 아키텍쳐",
-          "level": 0
-        },
-        {
           "text": "Retriever 모듈은 entity, relation 후보를 탐색 → Reader 모듈은 실제 관계를 파악",
           "level": 0
         }
@@ -21042,8 +20993,23 @@
         {
           "text": "OpenAI에서 공개했던 자연스러운 실시간 대화와 관련된 연구로 보임",
           "level": 0
-        },
-        "🧑🏻‍💻 [LG AI Research] EXAONE 3.0 7.8B Instruction Tuned Language Model",
+        }
+      ],
+      "tags": [
+        "AI/ML"
+      ]
+    },
+    {
+      "id": "LG-AI-Research-exaone-30-78b-instruction-tuned-language-model",
+      "date": "2024-08-W02",
+      "year": "2024",
+      "month": "8",
+      "week": "2",
+      "type": "dev",
+      "org": "LG AI Research",
+      "title": "EXAONE 3.0 7.8B Instruction Tuned Language Model",
+      "url": "",
+      "bullets": [
         {
           "text": "[technical report](https://www.lgresearch.ai/data/upload/tech_report/en/EXAONE_3.0_Technical_Report.pdf) 링크 🔗",
           "level": 0
@@ -21407,12 +21373,23 @@
         {
           "text": "Grok-2 & Grok-2 mini 를 X로 선공개. 추후 Grok에서 API 지원",
           "level": 0
-        },
-        "📜 [ACL 2024 Best Paper Award]",
-        {
-          "text": "[Cohere] [Aya Model: An Instruction Finetuned Open-Access Multilingual Language Model](https://arxiv.org/abs/2402.07827)",
-          "level": 0
-        },
+        }
+      ],
+      "tags": [
+        "AI/ML"
+      ]
+    },
+    {
+      "id": "ACL-2024-Best-Paper-Award-cohere-aya-model-an-instruction-finetuned-open-access-multilingual-language-modelhttpsarxivorgabs240207827",
+      "date": "2024-08-W03",
+      "year": "2024",
+      "month": "8",
+      "week": "3",
+      "type": "paper",
+      "org": "ACL 2024 Best Paper Award",
+      "title": "- [Cohere] [Aya Model: An Instruction Finetuned Open-Access Multilingual Language Model](https://arxiv.org/abs/2402.07827)",
+      "url": "",
+      "bullets": [
         {
           "text": "101개 언어를 지원하는 multilingual generative language model",
           "level": 1
@@ -22083,10 +22060,6 @@
       "url": "https://arxiv.org/abs/2408.08435",
       "bullets": [
         {
-          "text": "새로운 블록을 만들거나 이를 새로운 방식으로 결합하는 등 강의 개발을 모델이 자동적으로 수행할 수 있도록 하는 agentic system design을 만드는 것을 목표로 삼고 있음",
-          "level": 0
-        },
-        {
           "text": "Meta Agent Search: 이전의 발견들을 쌓아두어 점점 커지는 archive를 바탕으로 계속해서 새로운 agent를 프로그래밍 해나갈 수 있다는 아이디어",
           "level": 0
         },
@@ -22364,8 +22337,8 @@
         }
       ],
       "tags": [
-        "reasoning",
-        "AI/ML"
+        "AI/ML",
+        "reasoning"
       ]
     },
     {
@@ -22397,8 +22370,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -22584,10 +22557,6 @@
       "title": "CodecLM: Aligning Language Models with Tailored Synthetic Data",
       "url": "https://arxiv.org/abs/2404.05875",
       "bullets": [
-        {
-          "text": "LLM이 instruction following 능력을 더 잘 갖추도록 만들기 위한 ‘고품질’ 데이터셋이라는 것은 정의되어 있지 않은 상황",
-          "level": 0
-        },
         {
           "text": "여러 downstream instructoin distribution에 맞는 고품질 합성 데이터를 생성해주는 프레임워크, CodecLM을 제안",
           "level": 0
@@ -23001,17 +22970,12 @@
       "url": "https://arxiv.org/abs/2407.08029",
       "bullets": [
         {
-          "text": "LLM의 causality 벤치마크에 대한 comprehensive overview",
-          "level": 0
-        },
-        {
           "text": "interventional or counterfactual reasoning을 통합함으로써 causal reasoning을 정의",
           "level": 0
         }
       ],
       "tags": [
-        "reasoning",
-        "AI/ML"
+        "reasoning"
       ]
     },
     {
@@ -23202,10 +23166,6 @@
       "url": "https://openreview.net/pdf/3b225c0db299e43d4952d2b73d5576523cde6de2.pdf",
       "bullets": [
         {
-          "text": "hallucination을 최소화하기 위해 생각을 ‘rolling back’해야 한다고 주장.",
-          "level": 0
-        },
-        {
           "text": "LLM이 thought에 대해 error 분석을 수행. trial-and-error를 프롬프트에 포함.",
           "level": 0
         },
@@ -23357,8 +23317,8 @@
         }
       ],
       "tags": [
-        "multimodal",
-        "reasoning"
+        "reasoning",
+        "multimodal"
       ]
     },
     {
@@ -23860,10 +23820,6 @@
       "title": "AI models collapse when trained on recursively generated data",
       "url": "https://www.nature.com/articles/s41586-024-07566-y",
       "bullets": [
-        {
-          "text": "인공지능 모델이 생성한 데이터를 무분별하게 학습하는 경우 ‘모델 붕괴’ 현상이 나타날 수 있음",
-          "level": 0
-        },
         {
           "text": "LLM 생성 데이터가 점점 늘어나고 있는 상황에서 인간이 직접 만들어낸 데이터의 가치는 점점 높아질 것이라고 예측",
           "level": 0
@@ -24510,8 +24466,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -24555,8 +24511,8 @@
         }
       ],
       "tags": [
-        "reasoning",
-        "AI/ML"
+        "AI/ML",
+        "reasoning"
       ]
     },
     {
@@ -24576,8 +24532,8 @@
         }
       ],
       "tags": [
-        "multimodal",
-        "AI/ML"
+        "AI/ML",
+        "multimodal"
       ]
     },
     {
@@ -24605,8 +24561,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "reasoning"
+        "reasoning",
+        "agent"
       ]
     },
     {
@@ -24845,8 +24801,8 @@
         }
       ],
       "tags": [
-        "multimodal",
-        "reasoning"
+        "reasoning",
+        "multimodal"
       ]
     },
     {
@@ -24990,8 +24946,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "reasoning"
+        "reasoning",
+        "AI/ML"
       ]
     },
     {
@@ -25071,8 +25027,8 @@
         }
       ],
       "tags": [
-        "multimodal",
-        "AI/ML"
+        "AI/ML",
+        "multimodal"
       ]
     },
     {
@@ -25114,10 +25070,6 @@
       "title": "Generate-then-Ground in Retrieval-Augmented Generation for Multi-hop Question Answering",
       "url": "https://arxiv.org/abs/2406.14891",
       "bullets": [
-        {
-          "text": "RAG는 retriever 성능에 영향을 크게 받을 뿐만 아니라 retrieved documents에 존재하는 noise 이슈가 있음",
-          "level": 0
-        },
         {
           "text": "→ generate-then-ground (GenGround) 프레임워크를 제시: 최종 답변이 도출될 때까지 두 단락을 번갈아보는 방식",
           "level": 0
@@ -25185,8 +25137,21 @@
         {
           "text": "여러 언어 모델을 비교(base, instruction-tuned)한 결과를 제시: 작은 모델을 잘 학습하면 큰 모델보다 뛰어남",
           "level": 0
-        },
-        "🧑🏻‍💻 [Andrej Karpathy] https://github.com/karpathy/LLM101n",
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "Andrej-Karpathy-httpsgithubcomkarpathyllm101n",
+      "date": "2024-06-W05",
+      "year": "2024",
+      "month": "6",
+      "week": "5",
+      "type": "dev",
+      "org": "Andrej Karpathy",
+      "title": "https://github.com/karpathy/LLM101n",
+      "url": "",
+      "bullets": [
         {
           "text": "스토리텔링 AI LLM 구축 방법을 알려주는 강의를 담은 repo",
           "level": 0
@@ -25429,8 +25394,8 @@
         }
       ],
       "tags": [
-        "reasoning",
-        "AI/ML"
+        "AI/ML",
+        "reasoning"
       ]
     },
     {
@@ -26519,8 +26484,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -26576,8 +26541,8 @@
         }
       ],
       "tags": [
-        "reasoning",
-        "AI/ML"
+        "AI/ML",
+        "reasoning"
       ]
     },
     {
@@ -26721,11 +26686,20 @@
       "org": "Meta",
       "title": "An Introduction to Vision-Language Modeling",
       "url": "https://arxiv.org/abs/2405.17247",
+      "bullets": [],
+      "tags": []
+    },
+    {
+      "id": "Microsoft-matryoshka-multimodal-models",
+      "date": "2024-05-W05",
+      "year": "2024",
+      "month": "5",
+      "week": "5",
+      "type": "paper",
+      "org": "Microsoft",
+      "title": "Matryoshka Multimodal Models",
+      "url": "",
       "bullets": [
-        {
-          "text": "📜 [Microsoft] Matryoshka Multimodal Models",
-          "level": 0
-        },
         {
           "text": "Large Multimodal Models(LMMs)이 고해상도 이미지를 처리할 때 너무 많은 visual token을 학습해야 한다는 문제점이 존재",
           "level": 0
@@ -26776,8 +26750,8 @@
         }
       ],
       "tags": [
-        "reasoning",
-        "AI/ML"
+        "AI/ML",
+        "reasoning"
       ]
     },
     {
@@ -27824,16 +27798,20 @@
       "org": "DeepLearning.AI",
       "title": "Getting Started with Mistral",
       "url": "https://www.deeplearning.ai/short-courses/getting-started-with-mistral/",
-      "bullets": [
-        {
-          "text": "🧑🏻‍💻 <Cookbook> [Efficiently fine-tune Llama 3 with PyTorch FSDP and Q-Lora](https://www.philschmid.de/fsdp-qlora-llama3)",
-          "level": 0
-        },
-        {
-          "text": "FSDP와 Q-LoRA를 활용하여 Llama 3를 효율적으로 fine-tuning하는 방법을 알려주는 튜토리얼. 짧고 간결하게 작성되어 있음",
-          "level": 0
-        }
-      ],
+      "bullets": [],
+      "tags": []
+    },
+    {
+      "id": "Cookbook-efficiently-fine-tune-llama-3-with-pytorch-fsdp-and-q-lora",
+      "date": "2024-04-W04",
+      "year": "2024",
+      "month": "4",
+      "week": "4",
+      "type": "dev",
+      "org": "Cookbook",
+      "title": "Efficiently fine-tune Llama 3 with PyTorch FSDP and Q-Lora",
+      "url": "https://www.philschmid.de/fsdp-qlora-llama3",
+      "bullets": [],
       "tags": []
     },
     {
@@ -28054,15 +28032,8 @@
       "org": "China Unveils Vidu: A Powerful Text-to-Video Generator",
       "title": "China Unveils Vidu: A Powerful Text-to-Video Generator",
       "url": "https://www.maginative.com/article/china-unveils-vidu-a-powerful-text-to-video-generator/",
-      "bullets": [
-        {
-          "text": "🧑🏻‍💻 OpenAI API’s change on log probabilities from 5 to 20 return",
-          "level": 0
-        }
-      ],
-      "tags": [
-        "AI/ML"
-      ]
+      "bullets": [],
+      "tags": []
     },
     {
       "id": "Robotics-startup-Figure-raises-$675-mln-from-Microsoft,-Nvidia,-OpenAI-robotics-startup-figure-raises-675-mln-from-microsoft-nvidia-openai",
@@ -28217,11 +28188,20 @@
       "org": "PHAnToM: Personality Has An Effect on Theory-of-Mind Reasoning in Large Language Models",
       "title": "PHAnToM: Personality Has An Effect on Theory-of-Mind Reasoning in Large Language Models",
       "url": "https://arxiv.org/abs/2403.02246",
+      "bullets": [],
+      "tags": []
+    },
+    {
+      "id": "2024-오픈소스-컨트리뷰션-아카데미-[체험형-멘티-모집httpswwwcontributionac",
+      "date": "2024-04-W04",
+      "year": "2024",
+      "month": "4",
+      "week": "4",
+      "type": "dev",
+      "org": "2024 오픈소스 컨트리뷰션 아카데미 [체험형",
+      "title": "멘티 모집](https://www.contribution.ac/)",
+      "url": "",
       "bullets": [
-        {
-          "text": "🧑🏻‍💻 [2024 오픈소스 컨트리뷰션 아카데미 [체험형] 멘티 모집](https://www.contribution.ac/)",
-          "level": 0
-        },
         {
           "text": "‘Git 활용 및 Gemma를 이용한 LLM 앱 개발’",
           "level": 1
@@ -28358,19 +28338,21 @@
       "org": "Meta",
       "title": "Teaching Large Language Models to Reason with Reinforcement Learning",
       "url": "https://arxiv.org/abs/2403.04642",
-      "bullets": [
-        {
-          "text": "🧑🏻‍💻 🦁 [WildBench: Benchmarking LLMs with Challenging Tasks from Real Users in the Wild](https://huggingface.co/spaces/allenai/WildBench)",
-          "level": 0
-        },
-        {
-          "text": "보다 현실적이고 난이도가 높은, real-world에서 나올 법한 것들로 Benchmark를 구성. [깃허브](https://github.com/allenai/WildBench), [리더보드](https://huggingface.co/spaces/allenai/WildBench), [허깅페이스](https://huggingface.co/datasets/allenai/WildBench)",
-          "level": 1
-        }
-      ],
-      "tags": [
-        "AI/ML"
-      ]
+      "bullets": [],
+      "tags": []
+    },
+    {
+      "id": "WildBench:-Benchmarking-LLMs-with-Challenging-Tasks-from-Real-Users-in-the-Wild-wildbench-benchmarking-llms-with-challenging-tasks-from-real-users-in-the-wild",
+      "date": "2024-04-W04",
+      "year": "2024",
+      "month": "4",
+      "week": "4",
+      "type": "dev",
+      "org": "WildBench: Benchmarking LLMs with Challenging Tasks from Real Users in the Wild",
+      "title": "WildBench: Benchmarking LLMs with Challenging Tasks from Real Users in the Wild",
+      "url": "https://huggingface.co/spaces/allenai/WildBench",
+      "bullets": [],
+      "tags": []
     },
     {
       "id": "mamba_peft.py-on-HuggingFace-mamba_peftpy-on-huggingface",
@@ -28876,16 +28858,8 @@
       "org": "Google DeepMind",
       "title": "Take a Step Back: Evoking Reasoning via Abstraction in Large Language Models",
       "url": "https://arxiv.org/abs/2310.06117",
-      "bullets": [
-        {
-          "text": "LLM이 주어진 문제로부터 high-level concept과 원칙들을 추출해내고 이를 바탕으로 reasoning 하는 Step-Back Prompting을 제안. 간단히 말하자면 Abstraction → Reasoning 과정을 거침.",
-          "level": 1
-        }
-      ],
-      "tags": [
-        "reasoning",
-        "AI/ML"
-      ]
+      "bullets": [],
+      "tags": []
     },
     {
       "id": "AI2-rewardbench-evaluating-reward-models-for-language-modeling",
@@ -29227,12 +29201,20 @@
       "org": "OS-Copilot: Towards Generalist Computer Agents with Self-Improvement",
       "title": "OS-Copilot: Towards Generalist Computer Agents with Self-Improvement",
       "url": "https://arxiv.org/abs/2402.07456",
-      "bullets": [
-        {
-          "text": "ChatGPT를 이용할 때 과거의 채팅 내역을 현재 채팅에서의 memory로 활용하여 개인 맞춤으로 만들 수 있다. 아직 일부 유저 대상으로 테스트 중인 기능.",
-          "level": 0
-        }
-      ],
+      "bullets": [],
+      "tags": []
+    },
+    {
+      "id": "OpenAI-memory-and-new-controls-for-chatgpt",
+      "date": "2024-02-W05",
+      "year": "2024",
+      "month": "2",
+      "week": "5",
+      "type": "dev",
+      "org": "OpenAI",
+      "title": "Memory and new controls for ChatGPT",
+      "url": "https://openai.com/blog/memory-and-new-controls-for-chatgpt",
+      "bullets": [],
       "tags": []
     },
     {
@@ -29245,7 +29227,12 @@
       "org": "NVIDIA",
       "title": "Say What? Chat With RTX Brings Custom Chatbot to NVIDIA RTX AI PCs",
       "url": "https://blogs.nvidia.com/blog/chat-with-rtx-available-now/",
-      "bullets": [],
+      "bullets": [
+        {
+          "text": "NVIDIA의 성장세 기사",
+          "level": 0
+        }
+      ],
       "tags": []
     },
     {
@@ -29258,8 +29245,15 @@
       "org": "DeepLearning.AI",
       "title": "Serverless LLM apps with Amazon Bedrock",
       "url": "https://www.deeplearning.ai/short-courses/serverless-llm-apps-amazon-bedrock/",
-      "bullets": [],
-      "tags": []
+      "bullets": [
+        {
+          "text": "LLM의 sefl-verification 한계점",
+          "level": 0
+        }
+      ],
+      "tags": [
+        "AI/ML"
+      ]
     },
     {
       "id": "Google-DeepMind-transformers-can-achieve-length-generalization-but-not-robustly",
@@ -29336,12 +29330,20 @@
       "org": "Using Counterfactual Tasks to Evaluate the Generality of Analogical Reasoning in Large Language Models",
       "title": "Using Counterfactual Tasks to Evaluate the Generality of Analogical Reasoning in Large Language Models",
       "url": "https://arxiv.org/abs/2402.08955",
-      "bullets": [
-        {
-          "text": "읽지 않은 스레드 요약 기능. 아직 UK & US에서만 이용 가능",
-          "level": 0
-        }
-      ],
+      "bullets": [],
+      "tags": []
+    },
+    {
+      "id": "Slack-slack-ai-is-here-letting-you-catch-up-on-lengthy-threads-and-unread-messages",
+      "date": "2024-02-W05",
+      "year": "2024",
+      "month": "2",
+      "week": "5",
+      "type": "news",
+      "org": "Slack",
+      "title": "Slack AI is here, letting you catch up on lengthy threads and unread messages",
+      "url": "https://www.theverge.com/2024/2/14/24070590/slack-ai-launch-thread-summaries-search-recap",
+      "bullets": [],
       "tags": []
     },
     {
@@ -29696,6 +29698,19 @@
       "tags": []
     },
     {
+      "id": "Stability.ai-stable-diffusion-3",
+      "date": "2024-02-W04",
+      "year": "2024",
+      "month": "2",
+      "week": "4",
+      "type": "dev",
+      "org": "Stability.ai",
+      "title": "Stable Diffusion 3",
+      "url": "https://stability.ai/news/stable-diffusion-3?utm_source=www.theaivalley.com",
+      "bullets": [],
+      "tags": []
+    },
+    {
       "id": "UC-Berkely-lora-efficient-low-rank-adaptation-of-large-models",
       "date": "2024-02-W05",
       "year": "2024",
@@ -29775,11 +29790,20 @@
       "org": "tinyBenchmarks: evaluating LLMs with fewer examples",
       "title": "tinyBenchmarks: evaluating LLMs with fewer examples",
       "url": "https://arxiv.org/abs/2402.14992",
+      "bullets": [],
+      "tags": []
+    },
+    {
+      "id": "Google-DeepMind-genie-generative-interactive-environmentshttpssitesgooglecomviewgenie-2024",
+      "date": "2024-02-W05",
+      "year": "2024",
+      "month": "2",
+      "week": "5",
+      "type": "dev",
+      "org": "Google DeepMind",
+      "title": "🧞 [Genie: Generative Interactive Environments](https://sites.google.com/view/genie-2024)",
+      "url": "",
       "bullets": [
-        {
-          "text": "🧑🏻‍💻 [Google DeepMind] 🧞 [Genie: Generative Interactive Environments](https://sites.google.com/view/genie-2024)",
-          "level": 0
-        },
         {
           "text": "single image prompt로 게임 만들기..",
           "level": 1
@@ -29812,11 +29836,20 @@
       "org": "Mitral AI",
       "title": "Au Large",
       "url": "https://mistral.ai/news/mistral-large/",
+      "bullets": [],
+      "tags": []
+    },
+    {
+      "id": "Microsoft-Research-orca-math-unlocking-the-potential-of-slms-in-grade-school-mathhttpsarxivorgabs240214830",
+      "date": "2024-02-W05",
+      "year": "2024",
+      "month": "2",
+      "week": "5",
+      "type": "paper",
+      "org": "Microsoft Research",
+      "title": "🐳 [Orca-Math: Unlocking the potential of SLMs in Grade School Math](https://arxiv.org/abs/2402.14830)",
+      "url": "",
       "bullets": [
-        {
-          "text": "📜 [Microsoft Research] 🐳 [Orca-Math: Unlocking the potential of SLMs in Grade School Math](https://arxiv.org/abs/2402.14830)",
-          "level": 0
-        },
         {
           "text": "Mistral-7B 모델을 베이스로 학습한 7B 모델 Orca-Math. 200K 개의 고품질 합성 데이터, feedback을 통합시키는 학습 방식 등이 활용됨. Llama-2-70B, ChatGPT-3.5 등을 능가하는 퍼포먼스",
           "level": 1

@@ -27,79 +27,79 @@
   <summary>1st week</summary>
 
 - 📜 [Harvard University, Cambridge] [Lexical Hints of Accuracy in LLM Reasoning Chains](https://arxiv.org/abs/2508.15842)
-    - 세 가지 feature classes
-        - (1) CoT length (2) intra-CoT sentiment volatility (3) lexicographic hints
-    - Humanity's Last Exam (HLE), Omni-MATH 대상으로 DeepSeek-R1 & Claude 3.7 Sonnet 테스트
-    - guess, stuck, hard와 같은 어휘들이 uncertainty의 강한 지표로 확인되었고, sentiment는 보조 지표 정도로 활용 가능
+  - 세 가지 feature classes
+    - (1) CoT length (2) intra-CoT sentiment volatility (3) lexicographic hints
+  - Humanity's Last Exam (HLE), Omni-MATH 대상으로 DeepSeek-R1 & Claude 3.7 Sonnet 테스트
+  - guess, stuck, hard와 같은 어휘들이 uncertainty의 강한 지표로 확인되었고, sentiment는 보조 지표 정도로 활용 가능
 - 🧑🏻‍💻 [Ai2] [Asta: Accelerating science through trustworthy agentic AI](https://allenai.org/blog/asta)
-    - [Asta](https://asta.allen.ai/) agents: human researchers를 대체하는 것이 아니라 assist하는 tools 갖춤
-    - scientific AI의 지평을 넓히고 투명성을 증진하기 위한 [AstaBench](https://allenai.org/asta/bench)
-    - Asta resources: scientific AI agents를 build, test, refine 하기 위한 a set of softwoare components
+  - [Asta](https://asta.allen.ai/) agents: human researchers를 대체하는 것이 아니라 assist하는 tools 갖춤
+  - scientific AI의 지평을 넓히고 투명성을 증진하기 위한 [AstaBench](https://allenai.org/asta/bench)
+  - Asta resources: scientific AI agents를 build, test, refine 하기 위한 a set of softwoare components
 - 🧑🏻‍💻 [Microsoft] [MAI-Voice-1, MAI-1-preview](https://microsoft.ai/news/two-new-in-house-models)
-    - OpenAI system에 대한 의존을 줄이고 독자적인(in-house) speech generation model 구축
-    - MAI-Voice-1
-        - single GPU에서 구동 가능하며 일 초 내에 일 분 길이의 오디오 생성 가능
-        - single- / multi- speaker 시나리오에서 expressive, natural speech 지원
-    - MAI-1-preview
-        - 15,000 H100 hours로 pre- / post- trained MoE text 모델
-        - instruction following & everyday query responses에 집중했다고 밝힘
+  - OpenAI system에 대한 의존을 줄이고 독자적인(in-house) speech generation model 구축
+  - MAI-Voice-1
+    - single GPU에서 구동 가능하며 일 초 내에 일 분 길이의 오디오 생성 가능
+    - single- / multi- speaker 시나리오에서 expressive, natural speech 지원
+  - MAI-1-preview
+    - 15,000 H100 hours로 pre- / post- trained MoE text 모델
+    - instruction following & everyday query responses에 집중했다고 밝힘
 - 🧑🏻‍💻 [Apple] [FastVLM: Efficient Vision Encoding for Vision Language Models](https://machinelearning.apple.com/research/fast-vision-language-models) (CVPR 2025)
-    - high-resolution images에 대해 designed 된 hybrid architecture visual encoder를 이용하여 정확하면서도 빠르고 효율적인 visual query processing 가능
-    - 추론 코드, 모델 체크포인트, iOS/macOS demo는 깃허브 [링크](https://github.com/apple/ml-fastvlm/)에서 확인 가능
-    - 허깅페이스 데모 [링크](https://link.alphasignal.ai/CPaC4b)
+  - high-resolution images에 대해 designed 된 hybrid architecture visual encoder를 이용하여 정확하면서도 빠르고 효율적인 visual query processing 가능
+  - 추론 코드, 모델 체크포인트, iOS/macOS demo는 깃허브 [링크](https://github.com/apple/ml-fastvlm/)에서 확인 가능
+  - 허깅페이스 데모 [링크](https://link.alphasignal.ai/CPaC4b)
 - 🧑🏻‍💻 [Google] [Stop “vibe testing” your LLMs. It's time for real evals.](https://developers.googleblog.com/en/streamline-llm-evaluation-with-stax)
-    - csv 데이터 업로드, Autorater 선택 (커스텀 가능), 평가 실행, 분석 대시보드, 반복 개선
-    - 한 번의 평가로 다양한 조합의 성능을 확인
-    - The complete toolkit for AI evaluation
-    - 현재는 미국에서만 사용 가능
+  - csv 데이터 업로드, Autorater 선택 (커스텀 가능), 평가 실행, 분석 대시보드, 반복 개선
+  - 한 번의 평가로 다양한 조합의 성능을 확인
+  - The complete toolkit for AI evaluation
+  - 현재는 미국에서만 사용 가능
 - 🧑🏻‍💻 [Tencent] [Hunyuan-MT](https://github.com/Tencent-Hunyuan/Hunyuan-MT)
-    - translation model, Hunyuan-MT-7B, ensemble model, Hunyuan-MT-Chimera
-    - 중국의 5개 소수 민족 언어를 포함한 33개 언어 커버
-    - pretrain → CPT → SFT → translation rl → ensemble rl ([technical report](https://github.com/Tencent-Hunyuan/Hunyuan-MT/blob/main/Hunyuan_MT_Technical_Report.pdf) 참고 가능)
+  - translation model, Hunyuan-MT-7B, ensemble model, Hunyuan-MT-Chimera
+  - 중국의 5개 소수 민족 언어를 포함한 33개 언어 커버
+  - pretrain → CPT → SFT → translation rl → ensemble rl ([technical report](https://github.com/Tencent-Hunyuan/Hunyuan-MT/blob/main/Hunyuan_MT_Technical_Report.pdf) 참고 가능)
 - 🧑🏻‍💻 [Google] [Welcome EmbeddingGemma, Google's new efficient embedding model](https://huggingface.co/blog/embeddinggemma)
-    - 구글의 새로운 embedding 모델에 대한 허깅페이스 블로그 포스트
-    - 308M 사이즈 & 2K context window, 100개 이상 언어 지원
-    - Gemma3 모델을 backbone으로 삼고 있으나, bi-directional attention으로 modified
-    - Matroyshka Representation Learning (MRL)로 학습되어 768 차원의 ouput을 512, 256, 128 차원으로 truncate 할 수 있음
+  - 구글의 새로운 embedding 모델에 대한 허깅페이스 블로그 포스트
+  - 308M 사이즈 & 2K context window, 100개 이상 언어 지원
+  - Gemma3 모델을 backbone으로 삼고 있으나, bi-directional attention으로 modified
+  - Matroyshka Representation Learning (MRL)로 학습되어 768 차원의 ouput을 512, 256, 128 차원으로 truncate 할 수 있음
 - 🧑🏻‍💻 [Microsoft] [VibeVoice: A Frontier Open-Source Text-to-Speech Model](https://microsoft.github.io/VibeVoice)
-    - text로부터 expressive, long-form, multi-speaker conversational audio 생성 framework
-    - speaker consistency, natural turn-taking 등의 문제를 크게 해결
-    - ultra-low frame rate of 7.5Hz에서 operating 하는 continuous speech tokenizers 사용
-    - Context-Aware Expression 데모가 있어서 들어봤는데 엄~청 자연스럽지는 않은 느낌
+  - text로부터 expressive, long-form, multi-speaker conversational audio 생성 framework
+  - speaker consistency, natural turn-taking 등의 문제를 크게 해결
+  - ultra-low frame rate of 7.5Hz에서 operating 하는 continuous speech tokenizers 사용
+  - Context-Aware Expression 데모가 있어서 들어봤는데 엄~청 자연스럽지는 않은 느낌
 - 📜 [Oxford, Shanghai AI, NUS, UCL, …] [The Landscape of Agentic Reinforcement Learning for LLMs: A Survey](https://arxiv.org/abs/2509.02547)
-    - LLM-RL의 single-step Markov Decision Processes와 temporally extnded partially observable Markov decision process (POMDP)를 contrast
-    - 두 가지 taxonomy로 구분
-        - planning, tool use, memory 등을 포함하는 core agentic capabilities
-        - 다양한 태스크 도메인에 대한 applications
-    - reinforcement learning이 agents의 능력을 기존의 static, heuristic modules에서 adaptive, robust agentic behavior로 transform
+  - LLM-RL의 single-step Markov Decision Processes와 temporally extnded partially observable Markov decision process (POMDP)를 contrast
+  - 두 가지 taxonomy로 구분
+    - planning, tool use, memory 등을 포함하는 core agentic capabilities
+    - 다양한 태스크 도메인에 대한 applications
+  - reinforcement learning이 agents의 능력을 기존의 static, heuristic modules에서 adaptive, robust agentic behavior로 transform
 - 🧑🏻‍💻 [OpenAI] [Why language models hallucinate](https://openai.com/index/why-language-models-hallucinate/)
-    - 언어 모델이 hallucinate 하는 이유는 학습 및 평가 과정에서 uncertainty를 인정하는 것보다 guessing 하는 것이 더 큰 reward를 받기 때문이라고 주장
-    - modern training pipeline에서 hallucinations의 통계적 원인을 분석
-        - 이진 분류의 오류에 기인한다고 설명
-        - incorrect statements가 facts와 구별되지 않는다면, PLM은 natural statistical pressures를 기반으로 hallucinate 한다고 설명
-    - 또한 good test-takers로 optimized 되는 LM 특성상 불확실할 때 추측하는 것이 test performance가 높은 것으로 평가받게 되는 문제점을 지적
-    - 불확실한 응답을 penalizing하는 “전염병(epidemic)”은 misaligned scoring of exisiting benchmarks를 수정하는 방향으로 고쳐져야 한다고 주장
+  - 언어 모델이 hallucinate 하는 이유는 학습 및 평가 과정에서 uncertainty를 인정하는 것보다 guessing 하는 것이 더 큰 reward를 받기 때문이라고 주장
+  - modern training pipeline에서 hallucinations의 통계적 원인을 분석
+    - 이진 분류의 오류에 기인한다고 설명
+    - incorrect statements가 facts와 구별되지 않는다면, PLM은 natural statistical pressures를 기반으로 hallucinate 한다고 설명
+  - 또한 good test-takers로 optimized 되는 LM 특성상 불확실할 때 추측하는 것이 test performance가 높은 것으로 평가받게 되는 문제점을 지적
+  - 불확실한 응답을 penalizing하는 “전염병(epidemic)”은 misaligned scoring of exisiting benchmarks를 수정하는 방향으로 고쳐져야 한다고 주장
 - 📜 [Manchester] [Drivel-ology: Challenging LLMs with Interpreting Nonsense with Depth](https://arxiv.org/abs/2509.03867)
-    - Drivelology - “nonsense with depth”: syntactically coherent, yet pragmatically paradoxical, emotionally loaded, rhetorically subversive
-    - 겉으로 봤을 땐 non-sense이지만 contextual inference, moral reasoning, emotional interpretation을 통해 implicit meaning을 encoding 해야됨
-    - 현존 LLM들은 아직까지 Drivelological text를 온전히 이해하지 못한다고 설명
-        - English, Mandarin, Spanish, French, Japanese, Korean 등 언어에 대해 1,200여 개 데이터를 meticulously curate
+  - Drivelology - “nonsense with depth”: syntactically coherent, yet pragmatically paradoxical, emotionally loaded, rhetorically subversive
+  - 겉으로 봤을 땐 non-sense이지만 contextual inference, moral reasoning, emotional interpretation을 통해 implicit meaning을 encoding 해야됨
+  - 현존 LLM들은 아직까지 Drivelological text를 온전히 이해하지 못한다고 설명
+    - English, Mandarin, Spanish, French, Japanese, Korean 등 언어에 대해 1,200여 개 데이터를 meticulously curate
 - 📜 [Meta, NUS, Rice] [REFRAG: Rethinking RAG based Decoding](https://arxiv.org/abs/2509.01092)
-    - RAG 시나리오에서의 두 가지 문제를 지적
-        - 긴 입력을 처리하면서 발생하는 knowledge enrichment & system efficiency 간 trade-off
-        - 검색된 텍스트의 대부분은 query와 상관없음
-    - RAG context에서 decoding 할 때 대부분의 연산은 불필요하며, 제거하더라도 전체 성능에 크게 영향주지 않는다고 주장
-    - REFRAG 제안: RAG application에서 latency를 개선하기 위한 compress, sense, expand 할 수 있는 decoding framework (attention sparsity structure)
-    - perplexity를 높이지 않으면서 TTFT를 30.85x 상승 & LLM의 context size를 16x 상승
+  - RAG 시나리오에서의 두 가지 문제를 지적
+    - 긴 입력을 처리하면서 발생하는 knowledge enrichment & system efficiency 간 trade-off
+    - 검색된 텍스트의 대부분은 query와 상관없음
+  - RAG context에서 decoding 할 때 대부분의 연산은 불필요하며, 제거하더라도 전체 성능에 크게 영향주지 않는다고 주장
+  - REFRAG 제안: RAG application에서 latency를 개선하기 위한 compress, sense, expand 할 수 있는 decoding framework (attention sparsity structure)
+  - perplexity를 높이지 않으면서 TTFT를 30.85x 상승 & LLM의 context size를 16x 상승
 - 📜 [ByteDance] [UI-TARS-2 Technical Report: Advancing GUI Agent with Multi-Turn Reinforcement Learning](https://arxiv.org/abs/2509.02544)
-    - 데이터 플라이휠을 통해 스스로 데이터를 생성하고 학습
-    - GUI 에이전트가 단순한 조작을 넘어 복잡한 환경에도 적응할 수 있음
+  - 데이터 플라이휠을 통해 스스로 데이터를 생성하고 학습
+  - GUI 에이전트가 단순한 조작을 넘어 복잡한 환경에도 적응할 수 있음
 - 📜 [Stanford] [MachineLearningLM: Continued Pretraining Language Models on Millions of Synthetic Tabular Prediction Tasks Scales In-Context ML](https://arxiv.org/abs/2509.06806)
-    - general-purpose LLM에 robust in-context ML capability를 장착
-    - millions of structural causal models (SCMs) 로부터 ML tasks를 합성하여 1,024 shot 생성
-    - random-forest teacher로 시작하여 tree-based decision strategies를 LLM에 distill
-    - 모든 tasks는 token-efficient prompt로 serialized
-    - GPT-5-mini 모델보다도 Qwen-2.5-7B-Instruct를 tuning한 모델의 성능이 좋았다고 설명하면서 이를 many-shot scaling law라고 표현함
+  - general-purpose LLM에 robust in-context ML capability를 장착
+  - millions of structural causal models (SCMs) 로부터 ML tasks를 합성하여 1,024 shot 생성
+  - random-forest teacher로 시작하여 tree-based decision strategies를 LLM에 distill
+  - 모든 tasks는 token-efficient prompt로 serialized
+  - GPT-5-mini 모델보다도 Qwen-2.5-7B-Instruct를 tuning한 모델의 성능이 좋았다고 설명하면서 이를 many-shot scaling law라고 표현함
 
 </details>
 
@@ -107,59 +107,59 @@
   <summary>2nd week</summary>
 
 - 📜 [NVIDIA] [Universal Deep Research: Bring Your Own Model and Strategy](https://arxiv.org/abs/2509.00244)
-    - 현존하는 deep research agent는 고정된 tool choice 목록에 대해 hard-coded 되어 있는 것을 사용하는 수준에 그친다고 지적
-    - UDR: 어떤 언어 모델이든 사용할 수 있고, 유저가 스스로 deep research strategies를 추가적인 학습 없이도 custom 할 수 있도록 돕는 generalist agentic system
-    - Phase 1: skipped steps and drift를 줄이기 위한 strategy compiles → Phase 2: executes synchronous tool calls & yield-based notifications
+  - 현존하는 deep research agent는 고정된 tool choice 목록에 대해 hard-coded 되어 있는 것을 사용하는 수준에 그친다고 지적
+  - UDR: 어떤 언어 모델이든 사용할 수 있고, 유저가 스스로 deep research strategies를 추가적인 학습 없이도 custom 할 수 있도록 돕는 generalist agentic system
+  - Phase 1: skipped steps and drift를 줄이기 위한 strategy compiles → Phase 2: executes synchronous tool calls & yield-based notifications
 - 📜 [Emory Univ.] [Improving Factuality in LLMs via Inference-Time Knowledge Graph Construction](https://arxiv.org/abs/2509.03540)
-    - RAG 시나리오에서 knowledge가 unstructured text로 취급되는 것에 대해 지적
-    - knowledge graphs를 dynamically constructs & expands 하는 framework 제안
-    - question으로부터 seed KG를 추출하고, 이를 바탕으로 LLM’s latent knowledge를 이용하여 iterative expansion 수행
+  - RAG 시나리오에서 knowledge가 unstructured text로 취급되는 것에 대해 지적
+  - knowledge graphs를 dynamically constructs & expands 하는 framework 제안
+  - question으로부터 seed KG를 추출하고, 이를 바탕으로 LLM’s latent knowledge를 이용하여 iterative expansion 수행
 - 📜 [Arizona, Michigan] [Can Multiple Responses from an LLM Reveal the Sources of Its Uncertainty?](https://arxiv.org/abs/2509.04464)
-    - LLM이 uncertain 할 때, multiple generated response 간 불일치 패턴이 존재한다고 설명
-    - 한 LLM이 여러 개의 응답을 생성하고, 다른 LLM(auxiliary)이 disagreement patterns을 분석하도록 지시
+  - LLM이 uncertain 할 때, multiple generated response 간 불일치 패턴이 존재한다고 설명
+  - 한 LLM이 여러 개의 응답을 생성하고, 다른 LLM(auxiliary)이 disagreement patterns을 분석하도록 지시
 - 📜 [Univ. of Bamberg] [Are Humans as Brittle as Large Language Models?](https://arxiv.org/abs/2509.07869)
-    - LLM의 non-determinism 특성 뿐만 아니라 prompt brittleness 역시 output에 영향을 줌
-    - 이에 따라 human annotators도 instruction changes에 유사한 sensitivity를 보이는지 확인하고자 함
-    - 실험 결과에 따르면 human annotators & LLMs 모두 특정한 prompt 수정 유형에 대해 불안정(brittlenss)한 특성을 보임
+  - LLM의 non-determinism 특성 뿐만 아니라 prompt brittleness 역시 output에 영향을 줌
+  - 이에 따라 human annotators도 instruction changes에 유사한 sensitivity를 보이는지 확인하고자 함
+  - 실험 결과에 따르면 human annotators & LLMs 모두 특정한 prompt 수정 유형에 대해 불안정(brittlenss)한 특성을 보임
 - 📜 [ByteDance, HKUST, Peking, Tsinghua] [Reverse-Engineered Reasoning for Open-Ended Generation](https://arxiv.org/abs/2509.06160)
-    - deep reasoning이 수학과 같은 도메인에서 쓸모가 있으나, open-ended & creative generation에 대해서는 아직 탐구되지 않음
-    - REverse-Engineered Reasoning (REER): trial-and-error | imitation을 통해 reasoning process forwards를 building 하는 것 대신 known good solutions로부터 backwards works
-    - DeepWriting-20K: 20,000 deep reasoning trajectories 데이터를 오픈소스화
+  - deep reasoning이 수학과 같은 도메인에서 쓸모가 있으나, open-ended & creative generation에 대해서는 아직 탐구되지 않음
+  - REverse-Engineered Reasoning (REER): trial-and-error | imitation을 통해 reasoning process forwards를 building 하는 것 대신 known good solutions로부터 backwards works
+  - DeepWriting-20K: 20,000 deep reasoning trajectories 데이터를 오픈소스화
 - 📜 [Meta Superintelligence, UC Berkeley] [Language Self-Play For Data-Free Training](https://arxiv.org/abs/2509.07414v1)
-    - LLM 발전이 고품질 학습 데이터에 dependent 하다는 점을 문제로 지적
-    - 추가적인 데이터 없이 모델 성능을 개할 수 있는 강화학습 방식 제안
-    - Language Self-Play (LSP): 모델이 스스로 play하면서 stronger policies 형성
-    - Llama-3.2-3B-Instruct 모델로 실험한 결과 제시
+  - LLM 발전이 고품질 학습 데이터에 dependent 하다는 점을 문제로 지적
+  - 추가적인 데이터 없이 모델 성능을 개할 수 있는 강화학습 방식 제안
+  - Language Self-Play (LSP): 모델이 스스로 play하면서 stronger policies 형성
+  - Llama-3.2-3B-Instruct 모델로 실험한 결과 제시
 - 📜 [HKUSK, MiniMax, Waterloo] [WebExplorer: Explore and Evolve for Training Long-Horizon Web Agents](https://arxiv.org/abs/2509.06501)
-    - open-source web agents가 학습할 수 있는 높은 난이도의 information seeking 데이터 부족을 문제점으로 지적
-    - WebExplorer: model-based exploration & iterative, long-to-short query evolution 데이터 생성 방법론
-    - WebExplorer-8B: 128K, 100 tool calling turns
+  - open-source web agents가 학습할 수 있는 높은 난이도의 information seeking 데이터 부족을 문제점으로 지적
+  - WebExplorer: model-based exploration & iterative, long-to-short query evolution 데이터 생성 방법론
+  - WebExplorer-8B: 128K, 100 tool calling turns
 - 📜 [HKUST, Jilin Univ., CUHK] [Implicit Reasoning in Large Language Models: A Comprehensive Survey](https://arxiv.org/abs/2509.02350)
-    - multi-step으로 문제를 푸는 LLM reasoning paradigm에서 implicit reasoning에 대해 computation 관점에서 분석
-    - representational forms → computational strategies
-    - how & where internal computation unfolds: latent optimization, signal-guided control, layer-recurrent execution
+  - multi-step으로 문제를 푸는 LLM reasoning paradigm에서 implicit reasoning에 대해 computation 관점에서 분석
+  - representational forms → computational strategies
+  - how & where internal computation unfolds: latent optimization, signal-guided control, layer-recurrent execution
 - 🧑🏻‍💻 [Anthropic] [Claude can now create and edit files](https://www.anthropic.com/news/create-files)
-    - Claude 챗 UI 내에서 Excel spreadsheets, documents, PowerPoint slide decks, PDFs 등을 생성 및 편집 가능
-    - raw data를 input으로 주면 이를 분석한 결과 및 통계적 분석, 시각화 자료, 인사이트 등을 반환
+  - Claude 챗 UI 내에서 Excel spreadsheets, documents, PowerPoint slide decks, PDFs 등을 생성 및 편집 가능
+  - raw data를 input으로 주면 이를 분석한 결과 및 통계적 분석, 시각화 자료, 인사이트 등을 반환
 - 🧑🏻‍💻 [ByteDance] [Seedream 4.0](https://seed.bytedance.com/en/seedream4_0)
-    - 4K 해상도 이미지 까지 처리 가능한 이미지 생성 모델
-    - batch input & output, prompt-based editing, versatile styles, knowledge-driven generation 등을 특징으로 삼음
-    - 모델 성능은 MagicBench 기준으로 평가하여 공개 (Text-to-Image, Single-Image Editing)
+  - 4K 해상도 이미지 까지 처리 가능한 이미지 생성 모델
+  - batch input & output, prompt-based editing, versatile styles, knowledge-driven generation 등을 특징으로 삼음
+  - 모델 성능은 MagicBench 기준으로 평가하여 공개 (Text-to-Image, Single-Image Editing)
 - 📜 [Zurich, Gothenburg] [Large Language Model Hacking: Quantifying the Hidden Risks of Using LLMs for Text Annotation](https://arxiv.org/abs/2509.08825)
-    - data annotation 또는 text analysis 같은 태스크에 LLM을 활용하면서 발생하는 systematic biases & random errors 등을 지적
-    - 21편의 사회과학 연구에서 나온 37개 data annotation 태스크를 18개 LLM으로 재현
-    - 13M개의 LLM labels 생성 & 2,361개의 realistic hypotheses 검증 → SOTA 모델도 1/3 오류, 소형 모델은 1/2 오류
-    - 결국 false positive (1종 오류) 발생을 줄이기 위해서는 human annotation이 중요하다는 결론
+  - data annotation 또는 text analysis 같은 태스크에 LLM을 활용하면서 발생하는 systematic biases & random errors 등을 지적
+  - 21편의 사회과학 연구에서 나온 37개 data annotation 태스크를 18개 LLM으로 재현
+  - 13M개의 LLM labels 생성 & 2,361개의 realistic hypotheses 검증 → SOTA 모델도 1/3 오류, 소형 모델은 1/2 오류
+  - 결국 false positive (1종 오류) 발생을 줄이기 위해서는 human annotation이 중요하다는 결론
 - 🧑🏻‍💻 [Alibaba] [Qwen3-Next: Towards Ultimate Training & Inference Efficiency](https://qwen.ai/blog?id=4074cca80393150c248e508aa62983f9cb7d27cd&from=research.latest-advancements-list)
-    - hybrid attention mechanism, highly sparse MoE structure, training-stability-friendly optimization, multi-token prediction mechansim for faster inference
-    - Qwen3-Next-80B-A3B-Base: dense Qwen3-32B에 에 준하는 성능. 32K context window를 지원하는데 10배 높은 throughput 달성
-    - Qwen3-Next-80B-A3B-Instruct, Thinking 두 모델도 공개. 256K context window
-    - 포스트 내에 아키텍쳐에 대한 자세한 설명 포함되어 있음
+  - hybrid attention mechanism, highly sparse MoE structure, training-stability-friendly optimization, multi-token prediction mechansim for faster inference
+  - Qwen3-Next-80B-A3B-Base: dense Qwen3-32B에 에 준하는 성능. 32K context window를 지원하는데 10배 높은 throughput 달성
+  - Qwen3-Next-80B-A3B-Instruct, Thinking 두 모델도 공개. 256K context window
+  - 포스트 내에 아키텍쳐에 대한 자세한 설명 포함되어 있음
 - 📜 [Apple] [OpenVision 2: A Family of Generative Pretrained Visual Encoders for Multimodal Learning](https://arxiv.org/abs/2509.01644)
-    - OpenVision의 architecture를 간소화하고 학습 효율성을 높이기 위한 loss design을 제시
-    - text encoder를 제외 → contrastive loss는 오직 순수하게 generative training signal만 측정함
-        - OpenVision 2
-    - training time & memory consumption을 크게 줄이면서도 기존 모델 성능 유지
+  - OpenVision의 architecture를 간소화하고 학습 효율성을 높이기 위한 loss design을 제시
+  - text encoder를 제외 → contrastive loss는 오직 순수하게 generative training signal만 측정함
+    - OpenVision 2
+  - training time & memory consumption을 크게 줄이면서도 기존 모델 성능 유지
 
 </details>
 
@@ -167,63 +167,60 @@
   <summary>3rd week</summary>
 
 - 📜 [Salesforce] [SFR-DeepResearch: Towards Effective Reinforcement Learning for Autonomously Reasoning Single Agents](https://arxiv.org/abs/2509.06283)
-    - Autonomous Single-Agent: manual directive 없이도 context 기반으로 dynamically next action 선택 (여러 모델을 사용하는 multi-agent 시스템과 대비)
-    - reasoning-optimized models에 대한 continual reinforcement learning을 제안하여 reasoning ability를 보존하면서도 agentic skills를 강화하고자 함
-        - Length-normalized RL Objective, Trajectory Filtering, Partial Rollouts 등
+  - Autonomous Single-Agent: manual directive 없이도 context 기반으로 dynamically next action 선택 (여러 모델을 사용하는 multi-agent 시스템과 대비)
+  - reasoning-optimized models에 대한 continual reinforcement learning을 제안하여 reasoning ability를 보존하면서도 agentic skills를 강화하고자 함
+    - Length-normalized RL Objective, Trajectory Filtering, Partial Rollouts 등
 - 📜 [Individual] [SI-FACT: Mitigating Knowledge Conflict via Self-Improving Faithfulness-Aware Contrastive Tuning](https://arxiv.org/abs/2509.10208)
-    - internal parametric knowledge vs. provided context 충돌하는 상황을 문제로 지적
-    - Self-Improving Faithfulness-Aware Contrastive Tuning: self-instruct mechanism을 이용하여 base LLM이 자동적으로 고품질의 structured contrastive learning data를 생성하도록 만듦 (positive & negative samples)
+  - internal parametric knowledge vs. provided context 충돌하는 상황을 문제로 지적
+  - Self-Improving Faithfulness-Aware Contrastive Tuning: self-instruct mechanism을 이용하여 base LLM이 자동적으로 고품질의 structured contrastive learning data를 생성하도록 만듦 (positive & negative samples)
 - 📜 [HKUST] [VLA-Adapter: An Effective Paradigm for Tiny-Scale Vision-Language-Action Model](https://arxiv.org/abs/2509.09372)
-    - VLA 모델의 학습 비용이 크다는 점을 문제로 인식하여 vision-language representations를 action에 어떻게 효과적으로 연결할지에 대해 연구
-    - VLA-Adapter를 제시하여 large-scale VLMs & extensive pre-training에 대한 의존 낮춤
-    - lightweight Policy module with Bridge Attention 제시: action space 내에 optimal condition을 자율적으로 injects
-    - robotic data pre-training 없이, 단 0.5B parameter backbone으로 높은 퍼포먼스 달성
+  - VLA 모델의 학습 비용이 크다는 점을 문제로 인식하여 vision-language representations를 action에 어떻게 효과적으로 연결할지에 대해 연구
+  - VLA-Adapter를 제시하여 large-scale VLMs & extensive pre-training에 대한 의존 낮춤
+  - lightweight Policy module with Bridge Attention 제시: action space 내에 optimal condition을 자율적으로 injects
+  - robotic data pre-training 없이, 단 0.5B parameter backbone으로 높은 퍼포먼스 달성
 - 📜 [Princeton] [Self-Interpretability: LLMs Can Describe Complex Internal Processes that Drive Their Decisions, and Improve with Training](https://www.arxiv.org/abs/2505.17120)
-    - LLM 해석 관련 연구로 세 가지 결론을 내림
-        - (1) 현존 LLMs는 특정 종류의 의사 결정에 대한 internal process를 정확하게 기술할 수 있는 능력이 있음
-        - (2) 이러한 능력은 학습을 통해 강화하는 것도 가능
-        - (3) 학습된 능력은 어느정도 일반화 가능
-    - GPT-4o, GPT-4o-mini 두 모델을 fine-tuning하여 실험한 결과를 제시
+  - LLM 해석 관련 연구로 세 가지 결론을 내림
+    - (1) 현존 LLMs는 특정 종류의 의사 결정에 대한 internal process를 정확하게 기술할 수 있는 능력이 있음
+    - (2) 이러한 능력은 학습을 통해 강화하는 것도 가능
+    - (3) 학습된 능력은 어느정도 일반화 가능
+  - GPT-4o, GPT-4o-mini 두 모델을 fine-tuning하여 실험한 결과를 제시
 - 📜 [Google DeepMind, Toronto] [Virtual Agent Economies](https://arxiv.org/abs/2509.10147?asuniq=92d42c3f)
-    - sandbox economy: AI agents 간 발생하는 소통을 분석할 수 있는 프레임워크
-    - mission economies를 도입하여 agents들이 공동의 목표를 달성할 수 있도록 함으로써 trust & safety 가 더 잘 보장되는 환경을 조성할 수 있었다고 설명
+  - sandbox economy: AI agents 간 발생하는 소통을 분석할 수 있는 프레임워크
+  - mission economies를 도입하여 agents들이 공동의 목표를 달성할 수 있도록 함으로써 trust & safety 가 더 잘 보장되는 환경을 조성할 수 있었다고 설명
 - 🧑🏻‍💻 [OpenAI] [Introducing upgrades to Codex](https://openai.com/index/introducing-upgrades-to-codex)
-    - 7시간 넘게 실행되는 리팩토링 코드 작업을 실행하는 것도 가능하다는 바이럴 마케팅..?
-    - Code review, Dynamic reasoning (task 난이도에 따라), Tool use 등의 핵심 features
-    - CLI, IDE extension, Cloud 등 다양한 환경에서 지원
-    - 깃허브 코드 리뷰 자동화 [가이드](https://developers.openai.com/codex/cloud/code-review) by OpenAI
+  - 7시간 넘게 실행되는 리팩토링 코드 작업을 실행하는 것도 가능하다는 바이럴 마케팅..?
+  - Code review, Dynamic reasoning (task 난이도에 따라), Tool use 등의 핵심 features
+  - CLI, IDE extension, Cloud 등 다양한 환경에서 지원
+  - 깃허브 코드 리뷰 자동화 [가이드](https://developers.openai.com/codex/cloud/code-review) by OpenAI
 - 🧑🏻‍💻 [Meta] [MobileLLM-R1](https://huggingface.co/facebook/MobileLLM-R1-950M)
-    - mathematical, programming, and scientific problems만을 다룰 수 있는 reasoning 특화 모델
-    - 1B도 되지 않는 사이즈의 모델 family로 Qwen3 0.6B를 능가하는 성능을 보여준다고 함
-    - 사전학습에는 2T, 총 5T 토큰 정도 학습했다고 밝힘
+  - mathematical, programming, and scientific problems만을 다룰 수 있는 reasoning 특화 모델
+  - 1B도 되지 않는 사이즈의 모델 family로 Qwen3 0.6B를 능가하는 성능을 보여준다고 함
+  - 사전학습에는 2T, 총 5T 토큰 정도 학습했다고 밝힘
 - 📜 [Berkeley, Washington] [Reconstruction Alignment Improves Unified Multimodal Models](https://arxiv.org/abs/2509.07295)
-    - Unified multimodal models (UMMs) 학습을 위한 기존 image-text pairs는 주로 sparse한 데이터로 fine-grained visual details가 누락되어 있다는 문제를 지적
-    - Reconstruction Alignment (RecA): visual understanding encoder embeddings를 dense ‘text prompts’로 이용하여 captions 없이도 보다 풍부한 supervision을 제공하는 post-training method
-    - visual understanding embeddings를 조건으로 input image를 reconstruct 하는 self-supervised reconstruction loss 근거로 학습
-    - autoregressive, masked-autoregressive, diffusion-based 등 어떤 형태에도 적용 가능하면서도 뛰어난 성능을 보여줌
+  - Unified multimodal models (UMMs) 학습을 위한 기존 image-text pairs는 주로 sparse한 데이터로 fine-grained visual details가 누락되어 있다는 문제를 지적
+  - Reconstruction Alignment (RecA): visual understanding encoder embeddings를 dense ‘text prompts’로 이용하여 captions 없이도 보다 풍부한 supervision을 제공하는 post-training method
+  - visual understanding embeddings를 조건으로 input image를 reconstruct 하는 self-supervised reconstruction loss 근거로 학습
+  - autoregressive, masked-autoregressive, diffusion-based 등 어떤 형태에도 적용 가능하면서도 뛰어난 성능을 보여줌
 - 🧑🏻‍💻 [Google] [VaultGemma: The world's most capable differentially private LLM](https://research.google/blog/vaultgemma-the-worlds-most-capable-differentially-private-llm)
-    - differential privacy (DP)를 이용하여 scratch부터 학습한 가장 큰 사이즈의 언어 모델
-        - DP: 학습 시 노이즈를 추가하여 학습 데이터가 모델로부터 추출되는 것을 방지하는 mathematical framework (민감 정보 보호)
-    - 모델 성능을 저해하지 않으면서도 privacy를 지킬 수 있도록 하는 새로운 scaling law 제시
+  - differential privacy (DP)를 이용하여 scratch부터 학습한 가장 큰 사이즈의 언어 모델
+    - DP: 학습 시 노이즈를 추가하여 학습 데이터가 모델로부터 추출되는 것을 방지하는 mathematical framework (민감 정보 보호)
+  - 모델 성능을 저해하지 않으면서도 privacy를 지킬 수 있도록 하는 새로운 scaling law 제시
 - 📜 [Nanjing, Shanghai AI] [The LLM Already Knows: Estimating LLM-Perceived Question Difficulty via Hidden Representations](https://arxiv.org/abs/2509.12886)
-    - 현존하는 input questions의 난이도를 측정하는 방식은 repeated response sampling, auxiliary models, fine-tuning 등의 방식으로 비효율적이며 일반화되지 않는다는 점을 지적
-    - target LLM에 의해 생성되는 hidden representations만을 이용하여 난이도를 추정하는 방식을 제안
-    - token-level generation process를 Markov chain으로 모델링하고, value function을 정의하여 hidden state 기반으로 output quality를 추정
+  - 현존하는 input questions의 난이도를 측정하는 방식은 repeated response sampling, auxiliary models, fine-tuning 등의 방식으로 비효율적이며 일반화되지 않는다는 점을 지적
+  - target LLM에 의해 생성되는 hidden representations만을 이용하여 난이도를 추정하는 방식을 제안
+  - token-level generation process를 Markov chain으로 모델링하고, value function을 정의하여 hidden state 기반으로 output quality를 추정
 - 🧑🏻‍💻 [Google] [Powering AI commerce with the new Agent Payments Protocol (AP2)](https://cloud.google.com/blog/products/ai-machine-learning/announcing-agents-to-payments-ap2-protocol?hl=en)
-    - agent가 유저로부터 사전 승인된 권한들을 바탕으로 직접 결제까지 가능토록 하는 프로토콜을 구글에서 제시
-    - 매 단계는 로그로 남아서 안전성과 신뢰성을 높임
+  - agent가 유저로부터 사전 승인된 권한들을 바탕으로 직접 결제까지 가능토록 하는 프로토콜을 구글에서 제시
+  - 매 단계는 로그로 남아서 안전성과 신뢰성을 높임
 - 🧑🏻‍💻 [Alibaba] [Tongyi DeepResearch: A New Era of Open-Source AI Researchers](https://tongyi-agent.github.io/blog/introducing-tongyi-deep-research/)
-    - Agentic Continual Pre-training (CPT), SFT for cold-starting, final RL stage
-    - prompt engineering 없이 ReAct 방식으로 inference
-    - 30B 사이즈 모델로 OpenAI DeepResearch 급 성능 달성
+  - Agentic Continual Pre-training (CPT), SFT for cold-starting, final RL stage
+  - prompt engineering 없이 ReAct 방식으로 inference
+  - 30B 사이즈 모델로 OpenAI DeepResearch 급 성능 달성
 - 📜 [Peking] [Early Stopping Chain-of-thoughts in Large Language Models](https://arxiv.org/abs/2509.14004)
-    - ES-CoT: answer convergence를 탐지하여 최소한의 performance loss로 CoT generation을 stopping
-    - 각 reasoning step마다 LLM이 현재 시점의 최종 답변을 생성토록 하고 이를 step answer로 명명
-    - 이 step answer가 연속적으로 동일한 답변이 나온 횟수를 answer convergence의 지표로 해석
-- 📜 [Algoverse] [FRIT: Using Causal Importance to Improve Chain-of-Thought Faithfulness](https://arxiv.org/abs/2509.13334)
-    - 지금까지의 연구는 CoT의 faithfulness를 측정하는 것까지만 집중하고 이를 개선하는 연구는 이뤄지지 않았음을 지적
-    - FRIT: 모델이 systematically corrupted examples로부터 causally consistent reasoning을 생성하는 방법을 배울 수 있도록 돕는 학습 scalable alignment
-    - reasoning 매 step에 대해 합성 데이터를 생성하여 faithful/unfaithful pairs 구축하고 DPO 학습
+  - ES-CoT: answer convergence를 탐지하여 최소한의 performance loss로 CoT generation을 stopping
+  - 각 reasoning step마다 LLM이 현재 시점의 최종 답변을 생성토록 하고 이를 step answer로 명명
+  - 이 step answer가 연속적으로 동일한 답변이 나온 횟수를 answer convergence의 지표로 해석
+- 📜 [Algoverse] [FRIT: Using Causal Importance to Improve Chain-of-Thought Faithfulness](https://arxiv.org/abs/2509.13334) - 지금까지의 연구는 CoT의 faithfulness를 측정하는 것까지만 집중하고 이를 개선하는 연구는 이뤄지지 않았음을 지적 - FRIT: 모델이 systematically corrupted examples로부터 causally consistent reasoning을 생성하는 방법을 배울 수 있도록 돕는 학습 scalable alignment - reasoning 매 step에 대해 합성 데이터를 생성하여 faithful/unfaithful pairs 구축하고 DPO 학습
 </details>
 
 ## 🏝️ 8월
@@ -1206,6 +1203,7 @@
   - 다양한 user prompts에 robust 하고 unseen tasks에 transferable 한 system prompts를 디자인하는 것을 목표로 삼는 bilevel system 제안
   - meta-learning framework: system prompt 뿐만 아니라 user prompts도 업데이트
 - 🧑🏻‍💻 [HuggingFace] [Welcome to the 🤗 Model Context Protocol (MCP) Course](https://huggingface.co/learn/mcp-course/unit0/introduction)
+  - 허깅페이스 MCP 관련 강의
 - 🧑🏻‍💻 [Alibaba] [Qwen3 Technical Report](https://arxiv.org/abs/2505.09388)
   - dense & MoE 아키텍쳐, 0.6B ~ 235B 파라미터 사이즈
   - thinking mode & non-thinking mode 통합. 유저 쿼리나 chat template에 따른 dynamic mode swithcing
@@ -5229,7 +5227,7 @@
   - LLM에게 analogical reasoning 능력이 존재하는지 확인하는 연구. 무관한 예시로부터 관련 있는 예시를 LLM이 스스로 떠올리고 활용하는 self-generated 방식을 이용하면 실제로 추론 정확도가 향상되는 결과를 얻을 수 있음.
 - 🧑🏻‍💻 [DeepLearning.AI] [Getting Started with Mistral](https://www.deeplearning.ai/short-courses/getting-started-with-mistral/)
   - API를 이용하여 Mistral 모델에 접근하고 프롬프팅 하는 방법, Mistral의 native function calling, RAG 시스템 구축, chat interface 구축 등에 대한 short course
-- 🧑🏻‍💻 <Cookbook> [Efficiently fine-tune Llama 3 with PyTorch FSDP and Q-Lora](https://www.philschmid.de/fsdp-qlora-llama3)
+- 🧑🏻‍💻 [Cookbook] [Efficiently fine-tune Llama 3 with PyTorch FSDP and Q-Lora](https://www.philschmid.de/fsdp-qlora-llama3)
   - FSDP와 Q-LoRA를 활용하여 Llama 3를 효율적으로 fine-tuning하는 방법을 알려주는 튜토리얼. 짧고 간결하게 작성되어 있음
 - 📜 [Microsoft] [Phi-3 Technical Report: A Highly Capable Language Model Locally on Your Phone](https://arxiv.org/abs/2404.14219)
   - 3.8B 사이즈의 phi-3-mini 모델을 공개. 작은 사이즈임에도 불구하고 Mixtral 8x7B, GPT-3.5에 준하는 성능을 보임. 이는 phi-2를 학습할 때 사용했던 데이터셋의 scaled-up version을 사용한 덕분임. 또한 phi-3-small (7B), phi-3-medium (14B)를 공개.
@@ -5271,7 +5269,6 @@
 <details>
   <summary>1st ~ 2nd week</summary>
   
-- 🧑🏻‍💻 OpenAI API’s change on log probabilities from 5 to 20 return
 - 🗞️ [Robotics startup Figure raises $675 mln from Microsoft, Nvidia, OpenAI](https://www.reuters.com/technology/robotics-startup-figure-raises-675-mln-microsoft-nvidia-other-big-techs-2024-02-29/)
     - IT 공룡 기업들이 로봇 분야에도 적극적으로 투자하고 있다는 소식
 - 📜 [IIT] [How to think step-by-step: A mechanistic understanding of chain-of-thought reasoning](https://arxiv.org/abs/2402.18312)
@@ -5317,7 +5314,7 @@
     - 01.AI에서 출시한 LLM, Yi. 6B, 34B 사이즈의 사전학습 모델이며 200K의 context length, depth-upscaled model, vision-language model 이라는 특징을 지님
 - 📜 [Meta] [Teaching Large Language Models to Reason with Reinforcement Learning](https://arxiv.org/abs/2403.04642)
     - feedback으로부터 배우는 여러 알고리즘 (Expert Iteration, Proximal Policy Optimization, Return-Conditioned RL)에 대한 비교 연구
-- 🧑🏻‍💻 🦁 [WildBench: Benchmarking LLMs with Challenging Tasks from Real Users in the Wild](https://huggingface.co/spaces/allenai/WildBench)
+- 🧑🏻‍💻 [WildBench: Benchmarking LLMs with Challenging Tasks from Real Users in the Wild](https://huggingface.co/spaces/allenai/WildBench)
     - 보다 현실적이고 난이도가 높은, real-world에서 나올 법한 것들로 Benchmark를 구성. [깃허브](https://github.com/allenai/WildBench), [리더보드](https://huggingface.co/spaces/allenai/WildBench), [허깅페이스](https://huggingface.co/datasets/allenai/WildBench)
 - 🧑🏻‍💻 [mamba_peft.py on HuggingFace](https://gist.github.com/ArthurZucker/743dd7962f21b6ab4a21f692c82b9246)
     - mamba를 이제 transformers에서 이용할 수 있음. 위 링크는 PEFT example 코드.
@@ -5471,12 +5468,15 @@
 - 📜 [Cohere] [Aya Model: An Instruction Finetuned Open-Access Multilingual Language Model](https://arxiv.org/abs/2402.07827)
   - 119개국, 3,000여 명의 연구자가 참여한 다국어 모델 연구 프로젝트의 결과물. 데이터셋도 오픈소스로 제공 (513M 개 instruction fine-tuning 데이터셋)
 - 📜 [OS-Copilot: Towards Generalist Computer Agents with Self-Improvement](https://arxiv.org/abs/2402.07456)
+  - FRIDAY: a self-improving embodied agent for automating general computer tasks
 - 🧑🏻‍💻 [OpenAI] [Memory and new controls for ChatGPT](https://openai.com/blog/memory-and-new-controls-for-chatgpt)
   - ChatGPT를 이용할 때 과거의 채팅 내역을 현재 채팅에서의 memory로 활용하여 개인 맞춤으로 만들 수 있다. 아직 일부 유저 대상으로 테스트 중인 기능.
 - 🧑🏻‍💻 [NVIDIA] [Say What? Chat With RTX Brings Custom Chatbot to NVIDIA RTX AI PCs](https://blogs.nvidia.com/blog/chat-with-rtx-available-now/)
-- 🗞️ [Nvidia briefly beats Amazon and nears Alphabet’s market cap amid AI hype](https://aibeat.co/nvidia-briefly-beats-amazon-in-market-value/)
+- 🗞️ [NVIDIA] [Nvidia briefly beats Amazon and nears Alphabet’s market cap amid AI hype](https://aibeat.co/nvidia-briefly-beats-amazon-in-market-value/)
+  - NVIDIA의 성장세 기사
 - 🧑🏻‍💻 [DeepLearning.AI] [Serverless LLM apps with Amazon Bedrock](https://www.deeplearning.ai/short-courses/serverless-llm-apps-amazon-bedrock/)
-- 📜 [On the Self-Verification Limitations of Large Language Models on Reasoning and Planning Tasks](https://arxiv.org/abs/2402.08115)
+- 📜 [Arizona] [On the Self-Verification Limitations of Large Language Models on Reasoning and Planning Tasks](https://arxiv.org/abs/2402.08115)
+  - LLM의 sefl-verification 한계점
 - 📜 [Google DeepMind] [Transformers Can Achieve Length Generalization But Not Robustly](https://arxiv.org/abs/2402.09371)
   - 트랜스포머도 제한적으로 입력 길이를 늘릴(extrapolate) 수 있다. (약 2.5배). 하지만 일반화 가능한 세팅은 아님.
 - 📜 [Google DeepMind] [Chain-of-Thought Reasoning Without Prompting](https://arxiv.org/abs/2402.10200)
@@ -5488,7 +5488,8 @@
 - 📜 [Apple] [Guiding Instruction-based Image Editing via Multimodal Large Language Models](https://arxiv.org/abs/2309.17102)
   - 이미지 편집에 있어서 전문적인 지식 없이 텍스트만을 이용하는데 그 결과물이 아주 뛰어남. ICLR’24 Spotlight 논문.
 - 📜 [Using Counterfactual Tasks to Evaluate the Generality of Analogical Reasoning in Large Language Models](https://arxiv.org/abs/2402.08955)
-- 🗞️ [Slack AI is here, letting you catch up on lengthy threads and unread messages](https://www.theverge.com/2024/2/14/24070590/slack-ai-launch-thread-summaries-search-recap)
+  - reasoning 방법론
+- 🗞️ [Slack] [Slack AI is here, letting you catch up on lengthy threads and unread messages](https://www.theverge.com/2024/2/14/24070590/slack-ai-launch-thread-summaries-search-recap)
   - 읽지 않은 스레드 요약 기능. 아직 UK & US에서만 이용 가능
 - 📜 [Google DeepMind & Research] [A Human-Inspired Reading Agent with Gist Memory of Very Long Contexts](https://arxiv.org/abs/2402.09727)
   - [gist memories]에 에피소드를 저장하여 ReadAgent가 task와 관련 있는 정보를 빠르게 가져오도록 하는 방식. 사람이 긴 글을 읽는 방식에서 착안.
@@ -5547,7 +5548,9 @@
 - 📜 [CriticBench: Benchmarking LLMs for Critique-Correct Reasoning](https://arxiv.org/abs/2402.14809)
     - LLM의 critique and rectify their reasoning 능력을 평가할 수 있는 15개의 데이터셋으로 구성
 - 📜 [YOLOv9: Learning What You Want to Learn Using Programmable Gradient Information](https://arxiv.org/abs/2402.13616)
+  - YOLO 모델 신규 버전 출시
 - 🧑🏻‍💻 [Stability.ai] [Stable Diffusion 3](https://stability.ai/news/stable-diffusion-3?utm_source=www.theaivalley.com)
+  - stable diffusion 3 출시 포스트
 </details>
 
 <details>
