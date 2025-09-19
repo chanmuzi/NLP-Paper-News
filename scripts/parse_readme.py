@@ -22,9 +22,11 @@ def parse_readme_to_items(md_content: str) -> List[Dict[str, Any]]:
     """
     items = []
     
-    # 항목 헤더 패턴: "- [이모지] [Org] [Title](URL)"
+    # 항목 헤더 패턴: "- [이모지] [Org] [Title](URL)" - 더 유연한 패턴
+    # 1. 일반적인 형태: - 📜 [Org] [Title](URL)
+    # 2. 제목 없는 형태: - 🧑🏻‍💻 [Org](URL)
     header_pattern = re.compile(
-        r'^-+\s*([^\s]+)\s*\[([^\]]+)\]\s*\[([^\]]+)\]\((https?://[^\)]+)\)\s*$',
+        r'^-+\s*([^\s]+)\s*\[([^\]]+)\](?:\s*\[([^\]]+)\])?\s*\(([^)]+)\)\s*.*$',
         re.MULTILINE
     )
     # 이어지는 bullet 라인: "    - 내용" (들여쓰기 레벨 감지)
@@ -41,7 +43,11 @@ def parse_readme_to_items(md_content: str) -> List[Dict[str, Any]]:
     
     # 모든 항목을 찾기
     for header_match in header_pattern.finditer(md_content):
-        icon, org, title, url = header_match.groups()
+        groups = header_match.groups()
+        icon = groups[0]
+        org = groups[1]
+        title = groups[2] if groups[2] else org  # 제목이 없으면 org를 제목으로 사용
+        url = groups[3]
         item_pos = header_match.start()
         
         # 해당 항목의 위치를 기준으로 가장 가까운 연도/월/주차 찾기
@@ -64,26 +70,6 @@ def parse_readme_to_items(md_content: str) -> List[Dict[str, Any]]:
         if week_matches:
             current_week = week_matches[-1].group(1)
         
-        # 디버깅: 첫 번째 항목의 월 매칭 결과 출력
-        if len(items) == 0:
-            print(f"첫 번째 항목 디버깅:")
-            print(f"  항목 위치: {item_pos}")
-            print(f"  월 매칭 결과: {[m.group(1) for m in month_matches]}")
-            print(f"  월 패턴 테스트:")
-            test_content = md_content[:item_pos]
-            for match in month_pattern.finditer(test_content):
-                print(f"    {match.group(0)} -> {match.group(1)}")
-            print(f"  테스트 내용 (120-130): {repr(md_content[120:130])}")
-            print(f"  전체 월 패턴 찾기:")
-            all_month_matches = list(month_pattern.finditer(md_content))
-            for i, match in enumerate(all_month_matches[:5]):  # 처음 5개만
-                print(f"    {i+1}: {match.group(0)} -> {match.group(1)} (위치: {match.start()})")
-            print(f"  🏝️ 이모지 테스트:")
-            if '🏝️' in md_content:
-                print(f"    🏝️ 이모지 발견: {md_content.find('🏝️')}번째 문자")
-                print(f"    🏝️ 주변 내용: {repr(md_content[md_content.find('🏝️')-5:md_content.find('🏝️')+15])}")
-            else:
-                print(f"    🏝️ 이모지 없음")
         
         # 다음 헤더까지의 내용을 가져오기
         start_pos = header_match.end()
@@ -131,6 +117,14 @@ def parse_readme_to_items(md_content: str) -> List[Dict[str, Any]]:
             "🧑🏻‍💻": "dev", 
             "🗞️": "news"
         }
+        
+        # URL 정리 (프로토콜 추가, 괄호 내 추가 텍스트 제거)
+        clean_url = url.strip()
+        if not clean_url.startswith(('http://', 'https://')):
+            clean_url = 'https://' + clean_url
+        
+        # 괄호 내 추가 텍스트 제거 (예: (CVPR 2025) 제거)
+        clean_url = re.sub(r'\s*\([^)]*\)\s*$', '', clean_url)
         
         # ID 생성 (org-title 기반 slug)
         clean_title = re.sub(r'[^\w\s-]', '', title.lower())
@@ -180,7 +174,7 @@ def parse_readme_to_items(md_content: str) -> List[Dict[str, Any]]:
             "type": type_mapping.get(icon, "unknown"),
             "org": org.strip(),
             "title": title.strip(),
-            "url": url.strip(),
+            "url": clean_url,
             "bullets": bullets,
             "tags": tags
         }
