@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "last_updated": "2025-09-20T00:59:06.703820",
+  "last_updated": "2025-09-19T16:14:53.135150",
   "total_items": 1410,
   "items": [
     {
@@ -745,8 +745,8 @@
         }
       ],
       "tags": [
-        "reasoning",
-        "agent"
+        "agent",
+        "reasoning"
       ]
     },
     {
@@ -875,8 +875,8 @@
       ],
       "tags": [
         "AI/ML",
-        "reasoning",
-        "agent"
+        "agent",
+        "reasoning"
       ]
     },
     {
@@ -3243,8 +3243,8 @@
       ],
       "tags": [
         "multimodal",
-        "reasoning",
-        "agent"
+        "agent",
+        "reasoning"
       ]
     },
     {
@@ -3417,8 +3417,8 @@
         }
       ],
       "tags": [
-        "reasoning",
-        "agent"
+        "agent",
+        "reasoning"
       ]
     },
     {
@@ -3483,8 +3483,8 @@
         }
       ],
       "tags": [
-        "reasoning",
-        "agent"
+        "agent",
+        "reasoning"
       ]
     },
     {
@@ -3917,8 +3917,8 @@
       ],
       "tags": [
         "AI/ML",
-        "reasoning",
-        "agent"
+        "agent",
+        "reasoning"
       ]
     },
     {
@@ -5019,8 +5019,8 @@
       ],
       "tags": [
         "AI/ML",
-        "reasoning",
-        "agent"
+        "agent",
+        "reasoning"
       ]
     },
     {
@@ -5239,8 +5239,8 @@
       ],
       "tags": [
         "AI/ML",
-        "reasoning",
-        "agent"
+        "agent",
+        "reasoning"
       ]
     },
     {
@@ -5269,9 +5269,9 @@
     },
     {
       "id": "Google-dolphingemma-how-google-ai-is-helping-decode-dolphin-communication",
-      "date": "2025-06-W01",
+      "date": "2025-05-W01",
       "year": "2025",
-      "month": "6",
+      "month": "5",
       "week": "1",
       "type": "dev",
       "org": "Google",
@@ -5291,9 +5291,9 @@
     },
     {
       "id": "Google-introducing-txgemma-open-models-to-improve-therapeutics-development",
-      "date": "2025-06-W01",
+      "date": "2025-05-W01",
       "year": "2025",
-      "month": "6",
+      "month": "5",
       "week": "1",
       "type": "dev",
       "org": "Google",
@@ -5317,9 +5317,9 @@
     },
     {
       "id": "DeepSeek-AI-deepseek-prover-v2-671b",
-      "date": "2025-06-W01",
+      "date": "2025-05-W01",
       "year": "2025",
-      "month": "6",
+      "month": "5",
       "week": "1",
       "type": "dev",
       "org": "DeepSeek AI",
@@ -5369,9 +5369,9 @@
     },
     {
       "id": "Cohere,-Princeton,-Stanford,-Waterloo,-MIT,-Ai2,-Washington-the-leaderboard-illusion",
-      "date": "2025-06-W01",
+      "date": "2025-05-W01",
       "year": "2025",
-      "month": "6",
+      "month": "5",
       "week": "1",
       "type": "paper",
       "org": "Cohere, Princeton, Stanford, Waterloo, MIT, Ai2, Washington",
@@ -5405,9 +5405,9 @@
     },
     {
       "id": "Ai2-olmo-2-1b",
-      "date": "2025-06-W01",
+      "date": "2025-05-W01",
       "year": "2025",
-      "month": "6",
+      "month": "5",
       "week": "1",
       "type": "dev",
       "org": "Ai2",
@@ -5433,9 +5433,9 @@
     },
     {
       "id": "Renmin-Univ.-deepcritic-deliberate-critique-with-large-language-models",
-      "date": "2025-06-W01",
+      "date": "2025-05-W01",
       "year": "2025",
-      "month": "6",
+      "month": "5",
       "week": "1",
       "type": "paper",
       "org": "Renmin Univ.",
@@ -5466,9 +5466,9 @@
     },
     {
       "id": "Anthropic-claude-can-now-connect-to-your-world",
-      "date": "2025-06-W01",
+      "date": "2025-05-W01",
       "year": "2025",
-      "month": "6",
+      "month": "5",
       "week": "1",
       "type": "dev",
       "org": "Anthropic",
@@ -5491,9 +5491,9 @@
     },
     {
       "id": "KAIST,-DeepAuto.ai-paper2code-automating-code-generation-from-scientific-papers-in-machine-learning",
-      "date": "2025-06-W01",
+      "date": "2025-05-W01",
       "year": "2025",
-      "month": "6",
+      "month": "5",
       "week": "1",
       "type": "paper",
       "org": "KAIST, DeepAuto.ai",
@@ -5532,9 +5532,9 @@
     },
     {
       "id": "mem0.ai-mem0-building-production-ready-ai-agents-with-scalable-long-term-memory",
-      "date": "2025-06-W01",
+      "date": "2025-05-W01",
       "year": "2025",
-      "month": "6",
+      "month": "5",
       "week": "1",
       "type": "paper",
       "org": "mem0.ai",
@@ -5562,9 +5562,9 @@
     },
     {
       "id": "KAIST,-DeepAuto.ai-universalrag-retrieval-augmented-generation-over-multiple-corpora-with-diverse-modalities-and-granularities",
-      "date": "2025-06-W01",
+      "date": "2025-05-W01",
       "year": "2025",
-      "month": "6",
+      "month": "5",
       "week": "1",
       "type": "paper",
       "org": "KAIST, DeepAuto.ai",
@@ -5590,9 +5590,9 @@
     },
     {
       "id": "Amazon-slot-structuring-the-output-of-large-language-models",
-      "date": "2025-06-W01",
+      "date": "2025-05-W01",
       "year": "2025",
-      "month": "6",
+      "month": "5",
       "week": "1",
       "type": "paper",
       "org": "Amazon",
@@ -5603,9 +5603,9 @@
     },
     {
       "id": "Meta-perceptionlm-open-access-data-and-models-for-detailed-visual-understanding",
-      "date": "2025-06-W02",
+      "date": "2025-05-W02",
       "year": "2025",
-      "month": "6",
+      "month": "5",
       "week": "2",
       "type": "paper",
       "org": "Meta",
@@ -5631,9 +5631,9 @@
     },
     {
       "id": "NVIDIA-llama-nemotron-efficient-reasoning-models",
-      "date": "2025-06-W02",
+      "date": "2025-05-W02",
       "year": "2025",
-      "month": "6",
+      "month": "5",
       "week": "2",
       "type": "paper",
       "org": "NVIDIA",
@@ -5659,9 +5659,9 @@
     },
     {
       "id": "OpenAI-evolving-openais-structure",
-      "date": "2025-06-W02",
+      "date": "2025-05-W02",
       "year": "2025",
-      "month": "6",
+      "month": "5",
       "week": "2",
       "type": "dev",
       "org": "OpenAI",
@@ -5681,9 +5681,9 @@
     },
     {
       "id": "Alibaba-qwen-agent",
-      "date": "2025-06-W02",
+      "date": "2025-05-W02",
       "year": "2025",
-      "month": "6",
+      "month": "5",
       "week": "2",
       "type": "dev",
       "org": "Alibaba",
@@ -5699,9 +5699,9 @@
     },
     {
       "id": "Beijing-Univ.-rag-mcp-mitigating-prompt-bloat-in-llm-tool-selection-via-retrieval-augmented-generation",
-      "date": "2025-06-W02",
+      "date": "2025-05-W02",
       "year": "2025",
-      "month": "6",
+      "month": "5",
       "week": "2",
       "type": "paper",
       "org": "Beijing Univ.",
@@ -5723,9 +5723,9 @@
     },
     {
       "id": "Anthropic-reasoning-models-dont-always-say-what-they-think",
-      "date": "2025-06-W02",
+      "date": "2025-05-W02",
       "year": "2025",
-      "month": "6",
+      "month": "5",
       "week": "2",
       "type": "paper",
       "org": "Anthropic",
@@ -5747,9 +5747,9 @@
     },
     {
       "id": "Mistral-AI-medium-is-the-new-large",
-      "date": "2025-06-W02",
+      "date": "2025-05-W02",
       "year": "2025",
-      "month": "6",
+      "month": "5",
       "week": "2",
       "type": "dev",
       "org": "Mistral AI",
@@ -5779,9 +5779,9 @@
     },
     {
       "id": "Zed:-The-Fastest-AI-Code-Editor-zed-the-fastest-ai-code-editor",
-      "date": "2025-06-W02",
+      "date": "2025-05-W02",
       "year": "2025",
-      "month": "6",
+      "month": "5",
       "week": "2",
       "type": "dev",
       "org": "Zed: The Fastest AI Code Editor",
@@ -5812,9 +5812,9 @@
     },
     {
       "id": "Barbin-Institute-perception-reason-think-and-plan-a-survey-on-large-multimodal-reasoning-models",
-      "date": "2025-06-W02",
+      "date": "2025-05-W02",
       "year": "2025",
-      "month": "6",
+      "month": "5",
       "week": "2",
       "type": "paper",
       "org": "Barbin Institute",
@@ -5836,15 +5836,15 @@
       ],
       "tags": [
         "multimodal",
-        "reasoning",
-        "agent"
+        "agent",
+        "reasoning"
       ]
     },
     {
       "id": "Univ.-of-Chicago-mitigating-memorization-in-language-models",
-      "date": "2025-06-W02",
+      "date": "2025-05-W02",
       "year": "2025",
-      "month": "6",
+      "month": "5",
       "week": "2",
       "type": "paper",
       "org": "Univ. of Chicago",
@@ -5872,9 +5872,9 @@
     },
     {
       "id": "Alibaba-zerosearch-incentivize-the-search-capability-of-llms-without-searching",
-      "date": "2025-06-W02",
+      "date": "2025-05-W02",
       "year": "2025",
-      "month": "6",
+      "month": "5",
       "week": "2",
       "type": "paper",
       "org": "Alibaba",
@@ -5906,9 +5906,9 @@
     },
     {
       "id": "Shanghai-Jiao-Tong-Univ.-a-survey-of-ai-agent-protocols",
-      "date": "2025-06-W02",
+      "date": "2025-05-W02",
       "year": "2025",
-      "month": "6",
+      "month": "5",
       "week": "2",
       "type": "paper",
       "org": "Shanghai Jiao Tong Univ.",
@@ -5919,9 +5919,9 @@
     },
     {
       "id": "Microsoft,-Salesforce-llms-get-lost-in-multi-turn-conversation",
-      "date": "2025-06-W03",
+      "date": "2025-05-W03",
       "year": "2025",
-      "month": "6",
+      "month": "5",
       "week": "3",
       "type": "paper",
       "org": "Microsoft, Salesforce",
@@ -5947,9 +5947,9 @@
     },
     {
       "id": "Texas-A&M-Univ.-litelmguard-seamless-and-lightweight-on-device-prompt-filtering-for-safeguarding-small-language-models-against-quantization-induced-risks-and-vulnerabilities",
-      "date": "2025-06-W03",
+      "date": "2025-05-W03",
       "year": "2025",
-      "month": "6",
+      "month": "5",
       "week": "3",
       "type": "paper",
       "org": "Texas A&M Univ.",
@@ -5973,9 +5973,9 @@
     },
     {
       "id": "Sakana-AI-continuous-thought-machines",
-      "date": "2025-06-W03",
+      "date": "2025-05-W03",
       "year": "2025",
-      "month": "6",
+      "month": "5",
       "week": "3",
       "type": "dev",
       "org": "Sakana AI",
@@ -6001,9 +6001,9 @@
     },
     {
       "id": "CWI-how-well-do-llms-reason-over-tabular-data-really",
-      "date": "2025-06-W03",
+      "date": "2025-05-W03",
       "year": "2025",
-      "month": "6",
+      "month": "5",
       "week": "3",
       "type": "paper",
       "org": "CWI",
@@ -6025,9 +6025,9 @@
     },
     {
       "id": "ByteDance-seed15-vl-technical-report",
-      "date": "2025-06-W03",
+      "date": "2025-05-W03",
       "year": "2025",
-      "month": "6",
+      "month": "5",
       "week": "3",
       "type": "paper",
       "org": "ByteDance",
@@ -6050,9 +6050,9 @@
     },
     {
       "id": "Tsinghua-absolute-zero-reinforced-self-play-reasoning-with-zero-data",
-      "date": "2025-06-W03",
+      "date": "2025-05-W03",
       "year": "2025",
-      "month": "6",
+      "month": "5",
       "week": "3",
       "type": "paper",
       "org": "Tsinghua",
@@ -6075,9 +6075,9 @@
     },
     {
       "id": "OpenAI-introducing-healthbench",
-      "date": "2025-06-W03",
+      "date": "2025-05-W03",
       "year": "2025",
-      "month": "6",
+      "month": "5",
       "week": "3",
       "type": "dev",
       "org": "OpenAI",
@@ -6097,9 +6097,9 @@
     },
     {
       "id": "Salesforce-blip3-o-a-family-of-fully-open-unified-multimodal-models-architecture-training-and-dataset",
-      "date": "2025-06-W03",
+      "date": "2025-05-W03",
       "year": "2025",
-      "month": "6",
+      "month": "5",
       "week": "3",
       "type": "paper",
       "org": "Salesforce",
@@ -6126,9 +6126,9 @@
     },
     {
       "id": "ByteDance-deerflow",
-      "date": "2025-06-W03",
+      "date": "2025-05-W03",
       "year": "2025",
-      "month": "6",
+      "month": "5",
       "week": "3",
       "type": "dev",
       "org": "ByteDance",
@@ -6151,9 +6151,9 @@
     },
     {
       "id": "Google-alphaevolve-a-gemini-powered-coding-agent-for-designing-advanced-algorithms",
-      "date": "2025-06-W03",
+      "date": "2025-05-W03",
       "year": "2025",
-      "month": "6",
+      "month": "5",
       "week": "3",
       "type": "dev",
       "org": "Google",
@@ -6173,9 +6173,9 @@
     },
     {
       "id": "LangChain-open-agent-platform",
-      "date": "2025-06-W03",
+      "date": "2025-05-W03",
       "year": "2025",
-      "month": "6",
+      "month": "5",
       "week": "3",
       "type": "dev",
       "org": "LangChain",
@@ -6186,9 +6186,9 @@
     },
     {
       "id": "Chinese-Academy-of-sciences-learning-when-to-think-shaping-adaptive-reasoning-in-r1-style-models-via-multi-stage-rl",
-      "date": "2025-06-W04",
+      "date": "2025-05-W04",
       "year": "2025",
-      "month": "6",
+      "month": "5",
       "week": "4",
       "type": "paper",
       "org": "Chinese Academy of sciences",
@@ -6210,9 +6210,9 @@
     },
     {
       "id": "Singapore,-Tsinghua,-Salesforce-beyond-aha-toward-systematic-meta-abilities-alignment-in-large-reasoning-models",
-      "date": "2025-06-W04",
+      "date": "2025-05-W04",
       "year": "2025",
-      "month": "6",
+      "month": "5",
       "week": "4",
       "type": "paper",
       "org": "Singapore, Tsinghua, Salesforce",
@@ -6234,9 +6234,9 @@
     },
     {
       "id": "KAIST-system-prompt-optimization-with-meta-learning",
-      "date": "2025-06-W04",
+      "date": "2025-05-W04",
       "year": "2025",
-      "month": "6",
+      "month": "5",
       "week": "4",
       "type": "paper",
       "org": "KAIST",
@@ -6252,9 +6252,9 @@
     },
     {
       "id": "HuggingFace-welcome-to-the-model-context-protocol-mcp-course",
-      "date": "2025-06-W04",
+      "date": "2025-05-W04",
       "year": "2025",
-      "month": "6",
+      "month": "5",
       "week": "4",
       "type": "dev",
       "org": "HuggingFace",
@@ -6265,9 +6265,9 @@
     },
     {
       "id": "Alibaba-qwen3-technical-report",
-      "date": "2025-06-W04",
+      "date": "2025-05-W04",
       "year": "2025",
-      "month": "6",
+      "month": "5",
       "week": "4",
       "type": "dev",
       "org": "Alibaba",
@@ -6293,9 +6293,9 @@
     },
     {
       "id": "Tsinghua-adaptthink-reasoning-models-can-learn-when-to-think",
-      "date": "2025-06-W04",
+      "date": "2025-05-W04",
       "year": "2025",
-      "month": "6",
+      "month": "5",
       "week": "4",
       "type": "paper",
       "org": "Tsinghua",
@@ -6322,9 +6322,9 @@
     },
     {
       "id": "NUS-thinkless-llm-learns-when-to-think",
-      "date": "2025-06-W04",
+      "date": "2025-05-W04",
       "year": "2025",
-      "month": "6",
+      "month": "5",
       "week": "4",
       "type": "paper",
       "org": "NUS",
@@ -6348,9 +6348,9 @@
     },
     {
       "id": "Southern-California-mapping-the-minds-of-llms-a-graph-based-analysis-of-reasoning-llm",
-      "date": "2025-06-W04",
+      "date": "2025-05-W04",
       "year": "2025",
-      "month": "6",
+      "month": "5",
       "week": "4",
       "type": "paper",
       "org": "Southern California",
@@ -6380,9 +6380,9 @@
     },
     {
       "id": "Google-gemini-25-our-most-intelligent-models-are-getting-even-better",
-      "date": "2025-06-W04",
+      "date": "2025-05-W04",
       "year": "2025",
-      "month": "6",
+      "month": "5",
       "week": "4",
       "type": "dev",
       "org": "Google",
@@ -6402,9 +6402,9 @@
     },
     {
       "id": "Google-build-with-jules-your-asynchronous-coding-agent",
-      "date": "2025-06-W04",
+      "date": "2025-05-W04",
       "year": "2025",
-      "month": "6",
+      "month": "5",
       "week": "4",
       "type": "dev",
       "org": "Google",
@@ -6424,9 +6424,9 @@
     },
     {
       "id": "ByteDance-emerging-properties-in-unified-multimodal-pretraining",
-      "date": "2025-06-W04",
+      "date": "2025-05-W04",
       "year": "2025",
-      "month": "6",
+      "month": "5",
       "week": "4",
       "type": "paper",
       "org": "ByteDance",
@@ -6449,9 +6449,9 @@
     },
     {
       "id": "Jiaotong-University-deliberation-on-priors-trustworthy-reasoning-of-large-language-models-on-knowledge-graphs",
-      "date": "2025-06-W04",
+      "date": "2025-05-W04",
       "year": "2025",
-      "month": "6",
+      "month": "5",
       "week": "4",
       "type": "paper",
       "org": "Jiaotong University",
@@ -6474,9 +6474,9 @@
     },
     {
       "id": "Mistral-devstral",
-      "date": "2025-06-W04",
+      "date": "2025-05-W04",
       "year": "2025",
-      "month": "6",
+      "month": "5",
       "week": "4",
       "type": "dev",
       "org": "Mistral",
@@ -6496,9 +6496,9 @@
     },
     {
       "id": "Google-DeepMind-gemini-diffusion",
-      "date": "2025-06-W04",
+      "date": "2025-05-W04",
       "year": "2025",
-      "month": "6",
+      "month": "5",
       "week": "4",
       "type": "dev",
       "org": "Google DeepMind",
@@ -6518,9 +6518,9 @@
     },
     {
       "id": "Google-DeepMind-gemma-3n",
-      "date": "2025-06-W04",
+      "date": "2025-05-W04",
       "year": "2025",
-      "month": "6",
+      "month": "5",
       "week": "4",
       "type": "dev",
       "org": "Google DeepMind",
@@ -6544,9 +6544,9 @@
     },
     {
       "id": "ServiceNow-augmenting-llm-reasoning-with-dynamic-notes-writing-for-complex-qa",
-      "date": "2025-06-W04",
+      "date": "2025-05-W04",
       "year": "2025",
-      "month": "6",
+      "month": "5",
       "week": "4",
       "type": "paper",
       "org": "ServiceNow",
@@ -6572,9 +6572,9 @@
     },
     {
       "id": "Yonsei,-CMU-web-shepherd-advancing-prms-for-reinforcing-web-agents",
-      "date": "2025-06-W04",
+      "date": "2025-05-W04",
       "year": "2025",
-      "month": "6",
+      "month": "5",
       "week": "4",
       "type": "paper",
       "org": "Yonsei, CMU",
@@ -6596,9 +6596,9 @@
     },
     {
       "id": "HuggingFace-nanovlm-the-simplest-repository-to-train-your-vlm-in-pure-pytorch",
-      "date": "2025-06-W04",
+      "date": "2025-05-W04",
       "year": "2025",
-      "month": "6",
+      "month": "5",
       "week": "4",
       "type": "dev",
       "org": "HuggingFace",
@@ -6614,9 +6614,9 @@
     },
     {
       "id": "UIUC-language-specific-knowledge-do-models-know-better-in-x-than-in-english",
-      "date": "2025-06-W04",
+      "date": "2025-05-W04",
       "year": "2025",
-      "month": "6",
+      "month": "5",
       "week": "4",
       "type": "paper",
       "org": "UIUC",
@@ -6642,9 +6642,9 @@
     },
     {
       "id": "Meta-j1-incentivizing-thinking-in-llm-as-a-judge-via-reinforcement-learning",
-      "date": "2025-06-W04",
+      "date": "2025-05-W04",
       "year": "2025",
-      "month": "6",
+      "month": "5",
       "week": "4",
       "type": "paper",
       "org": "Meta",
@@ -6655,9 +6655,9 @@
     },
     {
       "id": "Anthropic-introducing-claude-4",
-      "date": "2025-06-W05",
+      "date": "2025-05-W05",
       "year": "2025",
-      "month": "6",
+      "month": "5",
       "week": "5",
       "type": "dev",
       "org": "Anthropic",
@@ -6684,9 +6684,9 @@
     },
     {
       "id": "ByteDance-bagel-the-open-source-unified-multimodal-model",
-      "date": "2025-06-W05",
+      "date": "2025-05-W05",
       "year": "2025",
-      "month": "6",
+      "month": "5",
       "week": "5",
       "type": "dev",
       "org": "ByteDance",
@@ -6708,9 +6708,9 @@
     },
     {
       "id": "Tokyo-mmlu-prox-a-multilingual-benchmark-for-advanced-large-language-model-evaluation",
-      "date": "2025-06-W05",
+      "date": "2025-05-W05",
       "year": "2025",
-      "month": "6",
+      "month": "5",
       "week": "5",
       "type": "paper",
       "org": "Tokyo",
@@ -6726,9 +6726,9 @@
     },
     {
       "id": "Cambridge,-UCL,-Google-visual-planning-lets-think-only-with-images",
-      "date": "2025-06-W05",
+      "date": "2025-05-W05",
       "year": "2025",
-      "month": "6",
+      "month": "5",
       "week": "5",
       "type": "paper",
       "org": "Cambridge, UCL, Google",
@@ -6750,15 +6750,15 @@
       ],
       "tags": [
         "multimodal",
-        "reasoning",
-        "AI/ML"
+        "AI/ML",
+        "reasoning"
       ]
     },
     {
       "id": "Mistral-AI-build-ai-agents-with-the-mistral-agents-api",
-      "date": "2025-06-W05",
+      "date": "2025-05-W05",
       "year": "2025",
-      "month": "6",
+      "month": "5",
       "week": "5",
       "type": "dev",
       "org": "Mistral AI",
@@ -6780,9 +6780,9 @@
     },
     {
       "id": "Mistral-AI-codestral-embed",
-      "date": "2025-06-W05",
+      "date": "2025-05-W05",
       "year": "2025",
-      "month": "6",
+      "month": "5",
       "week": "5",
       "type": "dev",
       "org": "Mistral AI",
@@ -6798,9 +6798,9 @@
     },
     {
       "id": "Resemble-AI-chatterbox",
-      "date": "2025-06-W05",
+      "date": "2025-05-W05",
       "year": "2025",
-      "month": "6",
+      "month": "5",
       "week": "5",
       "type": "dev",
       "org": "Resemble AI",
@@ -6826,9 +6826,9 @@
     },
     {
       "id": "Shanghai-AI-Lab,-Tsinghua,-UIUC-the-entropy-mechanism-of-reinforcement-learning-for-reasoning-language-models",
-      "date": "2025-06-W05",
+      "date": "2025-05-W05",
       "year": "2025",
-      "month": "6",
+      "month": "5",
       "week": "5",
       "type": "paper",
       "org": "Shanghai AI Lab, Tsinghua, UIUC",
@@ -6860,9 +6860,9 @@
     },
     {
       "id": "Utah,-Washington-what-has-been-lost-with-synthetic-evaluation",
-      "date": "2025-06-W05",
+      "date": "2025-05-W05",
       "year": "2025",
-      "month": "6",
+      "month": "5",
       "week": "5",
       "type": "paper",
       "org": "Utah, Washington",
@@ -6884,9 +6884,9 @@
     },
     {
       "id": "Google-sufficient-context-a-new-lens-on-retrieval-augmented-generation-systems",
-      "date": "2025-06-W05",
+      "date": "2025-05-W05",
       "year": "2025",
-      "month": "6",
+      "month": "5",
       "week": "5",
       "type": "paper",
       "org": "Google",
@@ -6912,9 +6912,9 @@
     },
     {
       "id": "Apple-interleaved-reasoning-for-large-language-models-via-reinforcement-learning",
-      "date": "2025-06-W05",
+      "date": "2025-05-W05",
       "year": "2025",
-      "month": "6",
+      "month": "5",
       "week": "5",
       "type": "paper",
       "org": "Apple",
@@ -7373,8 +7373,8 @@
       ],
       "tags": [
         "multimodal",
-        "reasoning",
-        "agent"
+        "agent",
+        "reasoning"
       ]
     },
     {
@@ -7403,8 +7403,8 @@
       ],
       "tags": [
         "multimodal",
-        "reasoning",
-        "agent"
+        "agent",
+        "reasoning"
       ]
     },
     {
@@ -8411,8 +8411,8 @@
         }
       ],
       "tags": [
-        "reasoning",
-        "agent"
+        "agent",
+        "reasoning"
       ]
     },
     {
@@ -8827,8 +8827,8 @@
         }
       ],
       "tags": [
-        "reasoning",
-        "agent"
+        "agent",
+        "reasoning"
       ]
     },
     {
@@ -12228,8 +12228,8 @@
       ],
       "tags": [
         "multimodal",
-        "reasoning",
-        "AI/ML"
+        "AI/ML",
+        "reasoning"
       ]
     },
     {
@@ -12892,8 +12892,8 @@
       ],
       "tags": [
         "AI/ML",
-        "reasoning",
-        "agent"
+        "agent",
+        "reasoning"
       ]
     },
     {
@@ -18606,8 +18606,8 @@
         }
       ],
       "tags": [
-        "reasoning",
-        "agent"
+        "agent",
+        "reasoning"
       ]
     },
     {
@@ -19679,8 +19679,8 @@
         }
       ],
       "tags": [
-        "reasoning",
-        "agent"
+        "agent",
+        "reasoning"
       ]
     },
     {
@@ -24561,8 +24561,8 @@
         }
       ],
       "tags": [
-        "reasoning",
-        "agent"
+        "agent",
+        "reasoning"
       ]
     },
     {
@@ -28037,9 +28037,9 @@
     },
     {
       "id": "Robotics-startup-Figure-raises-$675-mln-from-Microsoft,-Nvidia,-OpenAI-robotics-startup-figure-raises-675-mln-from-microsoft-nvidia-openai",
-      "date": "2024-04-W04",
+      "date": "2024-03-W04",
       "year": "2024",
-      "month": "4",
+      "month": "3",
       "week": "4",
       "type": "news",
       "org": "Robotics startup Figure raises $675 mln from Microsoft, Nvidia, OpenAI",
@@ -28050,9 +28050,9 @@
     },
     {
       "id": "IIT-how-to-think-step-by-step-a-mechanistic-understanding-of-chain-of-thought-reasoning",
-      "date": "2024-04-W04",
+      "date": "2024-03-W04",
       "year": "2024",
-      "month": "4",
+      "month": "3",
       "week": "4",
       "type": "paper",
       "org": "IIT",
@@ -28063,9 +28063,9 @@
     },
     {
       "id": "Rice-University-learning-to-compress-prompt-in-natural-language-formats",
-      "date": "2024-04-W04",
+      "date": "2024-03-W04",
       "year": "2024",
-      "month": "4",
+      "month": "3",
       "week": "4",
       "type": "paper",
       "org": "Rice University",
@@ -28076,9 +28076,9 @@
     },
     {
       "id": "Microsoft-reslora-identity-residual-mapping-in-low-rank-adaption",
-      "date": "2024-04-W04",
+      "date": "2024-03-W04",
       "year": "2024",
-      "month": "4",
+      "month": "3",
       "week": "4",
       "type": "paper",
       "org": "Microsoft",
@@ -28089,9 +28089,9 @@
     },
     {
       "id": "Datasets-for-Large-Language-Models:-A-Comprehensive-Survey-datasets-for-large-language-models-a-comprehensive-survey",
-      "date": "2024-04-W04",
+      "date": "2024-03-W04",
       "year": "2024",
-      "month": "4",
+      "month": "3",
       "week": "4",
       "type": "paper",
       "org": "Datasets for Large Language Models: A Comprehensive Survey",
@@ -28102,9 +28102,9 @@
     },
     {
       "id": "Apple-lucid-llm-generated-utterances-for-complex-and-interesting-dialogues",
-      "date": "2024-04-W04",
+      "date": "2024-03-W04",
       "year": "2024",
-      "month": "4",
+      "month": "3",
       "week": "4",
       "type": "paper",
       "org": "Apple",
@@ -28115,9 +28115,9 @@
     },
     {
       "id": "An-Empirical-Categorization-of-Prompting-Techniques-for-Large-Language-Models:-A-Practitioner's-Guide-an-empirical-categorization-of-prompting-techniques-for-large-language-models-a-practitioners-guide",
-      "date": "2024-04-W04",
+      "date": "2024-03-W04",
       "year": "2024",
-      "month": "4",
+      "month": "3",
       "week": "4",
       "type": "paper",
       "org": "An Empirical Categorization of Prompting Techniques for Large Language Models: A Practitioner's Guide",
@@ -28128,9 +28128,9 @@
     },
     {
       "id": "Meta-learning-and-leveraging-world-models-in-visual-representation-learning",
-      "date": "2024-04-W04",
+      "date": "2024-03-W04",
       "year": "2024",
-      "month": "4",
+      "month": "3",
       "week": "4",
       "type": "paper",
       "org": "Meta",
@@ -28141,9 +28141,9 @@
     },
     {
       "id": "Anthropic-introducing-the-next-generation-of-claude",
-      "date": "2024-04-W04",
+      "date": "2024-03-W04",
       "year": "2024",
-      "month": "4",
+      "month": "3",
       "week": "4",
       "type": "dev",
       "org": "Anthropic",
@@ -28154,9 +28154,9 @@
     },
     {
       "id": "Distilling-Text-Style-Transfer-With-Self-Explanation-From-LLMs-distilling-text-style-transfer-with-self-explanation-from-llms",
-      "date": "2024-04-W04",
+      "date": "2024-03-W04",
       "year": "2024",
-      "month": "4",
+      "month": "3",
       "week": "4",
       "type": "paper",
       "org": "Distilling Text Style Transfer With Self-Explanation From LLMs",
@@ -28167,9 +28167,9 @@
     },
     {
       "id": "Stanford,-Georgia-Tech,-Microsoft,-Google-DeepMind-design2code-how-far-are-we-from-automating-front-end-engineering",
-      "date": "2024-04-W04",
+      "date": "2024-03-W04",
       "year": "2024",
-      "month": "4",
+      "month": "3",
       "week": "4",
       "type": "paper",
       "org": "Stanford, Georgia Tech, Microsoft, Google DeepMind",
@@ -28180,9 +28180,9 @@
     },
     {
       "id": "PHAnToM:-Personality-Has-An-Effect-on-Theory-of-Mind-Reasoning-in-Large-Language-Models-phantom-personality-has-an-effect-on-theory-of-mind-reasoning-in-large-language-models",
-      "date": "2024-04-W04",
+      "date": "2024-03-W04",
       "year": "2024",
-      "month": "4",
+      "month": "3",
       "week": "4",
       "type": "paper",
       "org": "PHAnToM: Personality Has An Effect on Theory-of-Mind Reasoning in Large Language Models",
@@ -28193,9 +28193,9 @@
     },
     {
       "id": "2024-오픈소스-컨트리뷰션-아카데미-[체험형-멘티-모집httpswwwcontributionac",
-      "date": "2024-04-W04",
+      "date": "2024-03-W04",
       "year": "2024",
-      "month": "4",
+      "month": "3",
       "week": "4",
       "type": "dev",
       "org": "2024 오픈소스 컨트리뷰션 아카데미 [체험형",
@@ -28213,9 +28213,9 @@
     },
     {
       "id": "Elon-Musk-and-OpenAI’s-fiery-battle-elon-musk-and-openais-fiery-battle",
-      "date": "2024-04-W04",
+      "date": "2024-03-W04",
       "year": "2024",
-      "month": "4",
+      "month": "3",
       "week": "4",
       "type": "dev",
       "org": "Elon Musk and OpenAI’s fiery battle",
@@ -28226,9 +28226,9 @@
     },
     {
       "id": "Claude-3’s-system-prompt-claude-3s-system-prompt",
-      "date": "2024-04-W04",
+      "date": "2024-03-W04",
       "year": "2024",
-      "month": "4",
+      "month": "3",
       "week": "4",
       "type": "dev",
       "org": "Claude 3’s system prompt",
@@ -28239,9 +28239,9 @@
     },
     {
       "id": "Benchmarking-Hallucination-in-Large-Language-Models-based-on-Unanswerable-Math-Word-Problem-benchmarking-hallucination-in-large-language-models-based-on-unanswerable-math-word-problem",
-      "date": "2024-04-W04",
+      "date": "2024-03-W04",
       "year": "2024",
-      "month": "4",
+      "month": "3",
       "week": "4",
       "type": "paper",
       "org": "Benchmarking Hallucination in Large Language Models based on Unanswerable Math Word Problem",
@@ -28252,9 +28252,9 @@
     },
     {
       "id": "ShortGPT:-Layers-in-Large-Language-Models-are-More-Redundant-Than-You-Expect-shortgpt-layers-in-large-language-models-are-more-redundant-than-you-expect",
-      "date": "2024-04-W04",
+      "date": "2024-03-W04",
       "year": "2024",
-      "month": "4",
+      "month": "3",
       "week": "4",
       "type": "paper",
       "org": "ShortGPT: Layers in Large Language Models are More Redundant Than You Expect",
@@ -28265,9 +28265,9 @@
     },
     {
       "id": "GaLore:-Memory-Efficient-LLM-Training-by-Gradient-Low-Rank-Projection-galore-memory-efficient-llm-training-by-gradient-low-rank-projection",
-      "date": "2024-04-W04",
+      "date": "2024-03-W04",
       "year": "2024",
-      "month": "4",
+      "month": "3",
       "week": "4",
       "type": "paper",
       "org": "GaLore: Memory-Efficient LLM Training by Gradient Low-Rank Projection",
@@ -28278,9 +28278,9 @@
     },
     {
       "id": "SaulLM-7B:-A-pioneering-Large-Language-Model-for-Law-saullm-7b-a-pioneering-large-language-model-for-law",
-      "date": "2024-04-W04",
+      "date": "2024-03-W04",
       "year": "2024",
-      "month": "4",
+      "month": "3",
       "week": "4",
       "type": "paper",
       "org": "SaulLM-7B: A pioneering Large Language Model for Law",
@@ -28291,9 +28291,9 @@
     },
     {
       "id": "Salesforce-announces-new-AI-tools-for-doctors-salesforce-announces-new-ai-tools-for-doctors",
-      "date": "2024-04-W04",
+      "date": "2024-03-W04",
       "year": "2024",
-      "month": "4",
+      "month": "3",
       "week": "4",
       "type": "news",
       "org": "Salesforce announces new AI tools for doctors",
@@ -28304,9 +28304,9 @@
     },
     {
       "id": "Chatbot-Arena:-An-Open-Platform-for-Evaluating-LLMs-by-Human-Preference-chatbot-arena-an-open-platform-for-evaluating-llms-by-human-preference",
-      "date": "2024-04-W04",
+      "date": "2024-03-W04",
       "year": "2024",
-      "month": "4",
+      "month": "3",
       "week": "4",
       "type": "paper",
       "org": "Chatbot Arena: An Open Platform for Evaluating LLMs by Human Preference",
@@ -28317,9 +28317,9 @@
     },
     {
       "id": "Yi:-Open-Foundation-Models-by-01.AI-yi-open-foundation-models-by-01ai",
-      "date": "2024-04-W04",
+      "date": "2024-03-W04",
       "year": "2024",
-      "month": "4",
+      "month": "3",
       "week": "4",
       "type": "paper",
       "org": "Yi: Open Foundation Models by 01.AI",
@@ -28330,9 +28330,9 @@
     },
     {
       "id": "Meta-teaching-large-language-models-to-reason-with-reinforcement-learning",
-      "date": "2024-04-W04",
+      "date": "2024-03-W04",
       "year": "2024",
-      "month": "4",
+      "month": "3",
       "week": "4",
       "type": "paper",
       "org": "Meta",
@@ -28343,9 +28343,9 @@
     },
     {
       "id": "WildBench:-Benchmarking-LLMs-with-Challenging-Tasks-from-Real-Users-in-the-Wild-wildbench-benchmarking-llms-with-challenging-tasks-from-real-users-in-the-wild",
-      "date": "2024-04-W04",
+      "date": "2024-03-W04",
       "year": "2024",
-      "month": "4",
+      "month": "3",
       "week": "4",
       "type": "dev",
       "org": "WildBench: Benchmarking LLMs with Challenging Tasks from Real Users in the Wild",
@@ -28356,9 +28356,9 @@
     },
     {
       "id": "mamba_peft.py-on-HuggingFace-mamba_peftpy-on-huggingface",
-      "date": "2024-04-W04",
+      "date": "2024-03-W04",
       "year": "2024",
-      "month": "4",
+      "month": "3",
       "week": "4",
       "type": "dev",
       "org": "mamba_peft.py on HuggingFace",
@@ -28369,9 +28369,9 @@
     },
     {
       "id": "Foundation-Model-Development-Cheatsheet-foundation-model-development-cheatsheet",
-      "date": "2024-04-W04",
+      "date": "2024-03-W04",
       "year": "2024",
-      "month": "4",
+      "month": "3",
       "week": "4",
       "type": "dev",
       "org": "Foundation Model Development Cheatsheet",
@@ -28382,9 +28382,9 @@
     },
     {
       "id": "Learning-to-Generate-Instruction-Tuning-Datasets-for-Zero-Shot-Task-Adaptation-learning-to-generate-instruction-tuning-datasets-for-zero-shot-task-adaptation",
-      "date": "2024-04-W04",
+      "date": "2024-03-W04",
       "year": "2024",
-      "month": "4",
+      "month": "3",
       "week": "4",
       "type": "paper",
       "org": "Learning to Generate Instruction Tuning Datasets for Zero-Shot Task Adaptation",
@@ -28395,9 +28395,9 @@
     },
     {
       "id": "Gen-AI-Korea-2024-생성형-ai-레드팀-챌린지",
-      "date": "2024-04-W03",
+      "date": "2024-03-W03",
       "year": "2024",
-      "month": "4",
+      "month": "3",
       "week": "3",
       "type": "dev",
       "org": "Gen AI Korea 2024",
@@ -28408,9 +28408,9 @@
     },
     {
       "id": "Anthropic-the-claude-3-model-family-opus-sonnet-haiku",
-      "date": "2024-04-W03",
+      "date": "2024-03-W03",
       "year": "2024",
-      "month": "4",
+      "month": "3",
       "week": "3",
       "type": "paper",
       "org": "Anthropic",
@@ -28421,9 +28421,9 @@
     },
     {
       "id": "Microsoft-sora-a-review-on-background-technology-limitations-and-opportunities-of-large-vision-models",
-      "date": "2024-04-W03",
+      "date": "2024-03-W03",
       "year": "2024",
-      "month": "4",
+      "month": "3",
       "week": "3",
       "type": "paper",
       "org": "Microsoft",
@@ -28434,9 +28434,9 @@
     },
     {
       "id": "Google-Research-beyond-sparse-rewards-enhancing-reinforcement-learning-with-language-model-critique-in-text-generation",
-      "date": "2024-04-W03",
+      "date": "2024-03-W03",
       "year": "2024",
-      "month": "4",
+      "month": "3",
       "week": "3",
       "type": "paper",
       "org": "Google Research",
@@ -28447,9 +28447,9 @@
     },
     {
       "id": "Birbal:-An-efficient-7B-instruct-model-fine-tuned-with-curated-datasets-birbal-an-efficient-7b-instruct-model-fine-tuned-with-curated-datasets",
-      "date": "2024-04-W03",
+      "date": "2024-03-W03",
       "year": "2024",
-      "month": "4",
+      "month": "3",
       "week": "3",
       "type": "paper",
       "org": "Birbal: An efficient 7B instruct-model fine-tuned with curated datasets",
@@ -28460,9 +28460,9 @@
     },
     {
       "id": "Google-DeepMind-gemini-15-unlocking-multimodal-understanding-across-millions-of-tokens-of-context-1",
-      "date": "2024-04-W03",
+      "date": "2024-03-W03",
       "year": "2024",
-      "month": "4",
+      "month": "3",
       "week": "3",
       "type": "paper",
       "org": "Google DeepMind",
@@ -28473,9 +28473,9 @@
     },
     {
       "id": "MuseGraph:-Graph-oriented-Instruction-Tuning-of-Large-Language-Models-for-Generic-Graph-Mining-musegraph-graph-oriented-instruction-tuning-of-large-language-models-for-generic-graph-mining",
-      "date": "2024-04-W03",
+      "date": "2024-03-W03",
       "year": "2024",
-      "month": "4",
+      "month": "3",
       "week": "3",
       "type": "paper",
       "org": "MuseGraph: Graph-oriented Instruction Tuning of Large Language Models for Generic Graph Mining",
@@ -28486,9 +28486,9 @@
     },
     {
       "id": "Harnessing-Multi-Role-Capabilities-of-Large-Language-Models-for-Open-Domain-Question-Answering-harnessing-multi-role-capabilities-of-large-language-models-for-open-domain-question-answering",
-      "date": "2024-04-W03",
+      "date": "2024-03-W03",
       "year": "2024",
-      "month": "4",
+      "month": "3",
       "week": "3",
       "type": "paper",
       "org": "Harnessing Multi-Role Capabilities of Large Language Models for Open-Domain Question Answering",
@@ -28499,9 +28499,9 @@
     },
     {
       "id": "Cohere-command-r-retrieval-augmented-generation-at-production-scale",
-      "date": "2024-04-W03",
+      "date": "2024-03-W03",
       "year": "2024",
-      "month": "4",
+      "month": "3",
       "week": "3",
       "type": "dev",
       "org": "Cohere",
@@ -28512,9 +28512,9 @@
     },
     {
       "id": "MIT-ra-isf-learning-to-answer-and-understand-from-retrieval-augmentation-via-iterative-self-feedback",
-      "date": "2024-04-W03",
+      "date": "2024-03-W03",
       "year": "2024",
-      "month": "4",
+      "month": "3",
       "week": "3",
       "type": "paper",
       "org": "MIT",
@@ -28525,9 +28525,9 @@
     },
     {
       "id": "OpenAI-transfromer-debugger-tbd",
-      "date": "2024-04-W03",
+      "date": "2024-03-W03",
       "year": "2024",
-      "month": "4",
+      "month": "3",
       "week": "3",
       "type": "dev",
       "org": "OpenAI",
@@ -28538,9 +28538,9 @@
     },
     {
       "id": "Google-DeepMind,-OpenAI-stealing-part-of-a-production-language-model",
-      "date": "2024-04-W03",
+      "date": "2024-03-W03",
       "year": "2024",
-      "month": "4",
+      "month": "3",
       "week": "3",
       "type": "paper",
       "org": "Google DeepMind, OpenAI",
@@ -28551,9 +28551,9 @@
     },
     {
       "id": "Meta-branch-train-mix-mixing-expert-llms-into-a-mixture-of-experts-llm",
-      "date": "2024-04-W03",
+      "date": "2024-03-W03",
       "year": "2024",
-      "month": "4",
+      "month": "3",
       "week": "3",
       "type": "paper",
       "org": "Meta",
@@ -28564,9 +28564,9 @@
     },
     {
       "id": "DeepLearning.AI-knowledge-graph-for-rag",
-      "date": "2024-04-W03",
+      "date": "2024-03-W03",
       "year": "2024",
-      "month": "4",
+      "month": "3",
       "week": "3",
       "type": "dev",
       "org": "DeepLearning.AI",
@@ -28577,9 +28577,9 @@
     },
     {
       "id": "Google-DeepMind-a-generalist-ai-agent-for-3d-virtual-environments",
-      "date": "2024-04-W03",
+      "date": "2024-03-W03",
       "year": "2024",
-      "month": "4",
+      "month": "3",
       "week": "3",
       "type": "dev",
       "org": "Google DeepMind",
@@ -28590,9 +28590,9 @@
     },
     {
       "id": "Microsoft-Research-rethinking-generative-large-language-model-evaluation-for-semantic-comprehension",
-      "date": "2024-04-W03",
+      "date": "2024-03-W03",
       "year": "2024",
-      "month": "4",
+      "month": "3",
       "week": "3",
       "type": "dev",
       "org": "Microsoft Research",
@@ -28603,9 +28603,9 @@
     },
     {
       "id": "OpenAI-figure-status-update-openai-speech-to-speech-reasoning",
-      "date": "2024-04-W03",
+      "date": "2024-03-W03",
       "year": "2024",
-      "month": "4",
+      "month": "3",
       "week": "3",
       "type": "dev",
       "org": "OpenAI",
@@ -28616,9 +28616,9 @@
     },
     {
       "id": "Tancent-large-language-models-are-contrastive-reasoners",
-      "date": "2024-04-W03",
+      "date": "2024-03-W03",
       "year": "2024",
-      "month": "4",
+      "month": "3",
       "week": "3",
       "type": "paper",
       "org": "Tancent",
@@ -28629,9 +28629,9 @@
     },
     {
       "id": "Logits-of-API-Protected-LLMs-Leak-Proprietary-Information-logits-of-api-protected-llms-leak-proprietary-information",
-      "date": "2024-04-W03",
+      "date": "2024-03-W03",
       "year": "2024",
-      "month": "4",
+      "month": "3",
       "week": "3",
       "type": "paper",
       "org": "Logits of API-Protected LLMs Leak Proprietary Information",
@@ -28642,9 +28642,9 @@
     },
     {
       "id": "Apple-mm1-methods-analysis-insights-from-multimodal-llm-pre-training",
-      "date": "2024-04-W03",
+      "date": "2024-03-W03",
       "year": "2024",
-      "month": "4",
+      "month": "3",
       "week": "3",
       "type": "paper",
       "org": "Apple",
@@ -28655,9 +28655,9 @@
     },
     {
       "id": "Ex-Activision-CEO-Bobby-Kotick-pitched-buying-TikTok-to-potential-partners,-including-Sam-Altman:-report-ex-activision-ceo-bobby-kotick-pitched-buying-tiktok-to-potential-partners-including-sam-altman-report",
-      "date": "2024-04-W03",
+      "date": "2024-03-W03",
       "year": "2024",
-      "month": "4",
+      "month": "3",
       "week": "3",
       "type": "news",
       "org": "Ex-Activision CEO Bobby Kotick pitched buying TikTok to potential partners, including Sam Altman: report",
@@ -28668,9 +28668,9 @@
     },
     {
       "id": "xAI-open-release-of-grok-1",
-      "date": "2024-04-W03",
+      "date": "2024-03-W03",
       "year": "2024",
-      "month": "4",
+      "month": "3",
       "week": "3",
       "type": "dev",
       "org": "xAI",
@@ -28681,9 +28681,9 @@
     },
     {
       "id": "Cohere-c4ai-command-r-huggingface",
-      "date": "2024-04-W03",
+      "date": "2024-03-W03",
       "year": "2024",
-      "month": "4",
+      "month": "3",
       "week": "3",
       "type": "dev",
       "org": "Cohere",
@@ -28694,9 +28694,9 @@
     },
     {
       "id": "Stanford-University-quiet-star-language-models-can-teach-themselves-to-think-before-speaking",
-      "date": "2024-04-W03",
+      "date": "2024-03-W03",
       "year": "2024",
-      "month": "4",
+      "month": "3",
       "week": "3",
       "type": "paper",
       "org": "Stanford University",
@@ -28707,9 +28707,9 @@
     },
     {
       "id": "Peking-University-rat-retrieval-augmented-thoughts-elicit-context-aware-reasoning-in-long-horizon-generation",
-      "date": "2024-04-W03",
+      "date": "2024-03-W03",
       "year": "2024",
-      "month": "4",
+      "month": "3",
       "week": "3",
       "type": "paper",
       "org": "Peking University",
@@ -28720,9 +28720,9 @@
     },
     {
       "id": "Nvidia-nvidia-reveals-blackwell-b200-gpu-the-worlds-most-powerful-chip-for-ai",
-      "date": "2024-04-W04",
+      "date": "2024-03-W04",
       "year": "2024",
-      "month": "4",
+      "month": "3",
       "week": "4",
       "type": "news",
       "org": "Nvidia",
@@ -28733,9 +28733,9 @@
     },
     {
       "id": "Open-Sora-open-sora",
-      "date": "2024-04-W04",
+      "date": "2024-03-W04",
       "year": "2024",
-      "month": "4",
+      "month": "3",
       "week": "4",
       "type": "dev",
       "org": "Open-Sora",
@@ -28746,9 +28746,9 @@
     },
     {
       "id": "CMU-LTI-enhancing-llm-factual-accuracy-with-rag-to-counter-hallucinations-a-case-study-on-domain-specific-queries-in-private-knowledge-bases",
-      "date": "2024-04-W04",
+      "date": "2024-03-W04",
       "year": "2024",
-      "month": "4",
+      "month": "3",
       "week": "4",
       "type": "paper",
       "org": "CMU-LTI",
@@ -28759,9 +28759,9 @@
     },
     {
       "id": "UC-Berkeley-raft-adapting-language-model-to-domain-specific-rag",
-      "date": "2024-04-W04",
+      "date": "2024-03-W04",
       "year": "2024",
-      "month": "4",
+      "month": "3",
       "week": "4",
       "type": "paper",
       "org": "UC Berkeley",
@@ -28772,9 +28772,9 @@
     },
     {
       "id": "Google-Research-perl-parameter-efficient-reinforcement-learning-from-human-feedback",
-      "date": "2024-04-W04",
+      "date": "2024-03-W04",
       "year": "2024",
-      "month": "4",
+      "month": "3",
       "week": "4",
       "type": "paper",
       "org": "Google Research",
@@ -28785,9 +28785,9 @@
     },
     {
       "id": "EACL-2024-aligning-large-and-small-language-models-via-chain-of-thought-reasoning",
-      "date": "2024-04-W04",
+      "date": "2024-03-W04",
       "year": "2024",
-      "month": "4",
+      "month": "3",
       "week": "4",
       "type": "paper",
       "org": "EACL 2024",
@@ -28798,9 +28798,9 @@
     },
     {
       "id": "RankPrompt:-Step-by-Step-Comparisons-Make-Language-Models-Better-Reasoners-rankprompt-step-by-step-comparisons-make-language-models-better-reasoners",
-      "date": "2024-04-W04",
+      "date": "2024-03-W04",
       "year": "2024",
-      "month": "4",
+      "month": "3",
       "week": "4",
       "type": "paper",
       "org": "RankPrompt: Step-by-Step Comparisons Make Language Models Better Reasoners",
@@ -28811,9 +28811,9 @@
     },
     {
       "id": "KAIST-sure-summarizing-retrievals-using-answer-candidates-for-open-domain-qa-of-llms",
-      "date": "2024-04-W04",
+      "date": "2024-03-W04",
       "year": "2024",
-      "month": "4",
+      "month": "3",
       "week": "4",
       "type": "paper",
       "org": "KAIST",
@@ -28824,9 +28824,9 @@
     },
     {
       "id": "Microsoft-Corporation-llmlingua-2-data-distillation-for-efficient-and-faithful-task-agnostic-prompt-compression",
-      "date": "2024-04-W04",
+      "date": "2024-03-W04",
       "year": "2024",
-      "month": "4",
+      "month": "3",
       "week": "4",
       "type": "paper",
       "org": "Microsoft Corporation",
@@ -28837,9 +28837,9 @@
     },
     {
       "id": "Google-DeepMind-tacticai-an-ai-assistant-for-football-tactics",
-      "date": "2024-04-W04",
+      "date": "2024-03-W04",
       "year": "2024",
-      "month": "4",
+      "month": "3",
       "week": "4",
       "type": "dev",
       "org": "Google DeepMind",
@@ -28850,9 +28850,9 @@
     },
     {
       "id": "Google-DeepMind-take-a-step-back-evoking-reasoning-via-abstraction-in-large-language-models",
-      "date": "2024-04-W04",
+      "date": "2024-03-W04",
       "year": "2024",
-      "month": "4",
+      "month": "3",
       "week": "4",
       "type": "paper",
       "org": "Google DeepMind",
@@ -28863,9 +28863,9 @@
     },
     {
       "id": "AI2-rewardbench-evaluating-reward-models-for-language-modeling",
-      "date": "2024-04-W04",
+      "date": "2024-03-W04",
       "year": "2024",
-      "month": "4",
+      "month": "3",
       "week": "4",
       "type": "paper",
       "org": "AI2",
@@ -28876,9 +28876,9 @@
     },
     {
       "id": "LlamaFactory:-Unified-Efficient-Fine-Tuning-of-100+-Language-Models-llamafactory-unified-efficient-fine-tuning-of-100-language-models",
-      "date": "2024-04-W04",
+      "date": "2024-03-W04",
       "year": "2024",
-      "month": "4",
+      "month": "3",
       "week": "4",
       "type": "paper",
       "org": "LlamaFactory: Unified Efficient Fine-Tuning of 100+ Language Models",
@@ -28889,9 +28889,9 @@
     },
     {
       "id": "MathVerse:-Does-Your-Multi-modal-LLM-Truly-See-the-Diagrams-in-Visual-Math-Problems?-mathverse-does-your-multi-modal-llm-truly-see-the-diagrams-in-visual-math-problems",
-      "date": "2024-04-W04",
+      "date": "2024-03-W04",
       "year": "2024",
-      "month": "4",
+      "month": "3",
       "week": "4",
       "type": "paper",
       "org": "MathVerse: Does Your Multi-modal LLM Truly See the Diagrams in Visual Math Problems?",
@@ -28902,9 +28902,9 @@
     },
     {
       "id": "KAIST-adaptive-rag-learning-to-adapt-retrieval-augmented-large-language-models-through-question-complexity",
-      "date": "2024-04-W04",
+      "date": "2024-03-W04",
       "year": "2024",
-      "month": "4",
+      "month": "3",
       "week": "4",
       "type": "paper",
       "org": "KAIST",
@@ -28915,9 +28915,9 @@
     },
     {
       "id": "Sakana-AI-evolutionary-optimization-of-model-merging-recipes",
-      "date": "2024-04-W04",
+      "date": "2024-03-W04",
       "year": "2024",
-      "month": "4",
+      "month": "3",
       "week": "4",
       "type": "paper",
       "org": "Sakana AI",
@@ -28928,9 +28928,9 @@
     },
     {
       "id": "Instructing-Large-Language-Models-to-Identify-and-Ignore-Irrelevant-Conditions-instructing-large-language-models-to-identify-and-ignore-irrelevant-conditions",
-      "date": "2024-04-W05",
+      "date": "2024-03-W05",
       "year": "2024",
-      "month": "4",
+      "month": "3",
       "week": "5",
       "type": "paper",
       "org": "Instructing Large Language Models to Identify and Ignore Irrelevant Conditions",
@@ -28941,9 +28941,9 @@
     },
     {
       "id": "Microsoft-Research,-CMU-can-large-language-models-explore-in-context",
-      "date": "2024-04-W05",
+      "date": "2024-03-W05",
       "year": "2024",
-      "month": "4",
+      "month": "3",
       "week": "5",
       "type": "paper",
       "org": "Microsoft Research, CMU",
@@ -28954,9 +28954,9 @@
     },
     {
       "id": "Lightning-AI-lightning-thunder",
-      "date": "2024-04-W05",
+      "date": "2024-03-W05",
       "year": "2024",
-      "month": "4",
+      "month": "3",
       "week": "5",
       "type": "dev",
       "org": "Lightning AI",
@@ -28967,9 +28967,9 @@
     },
     {
       "id": "Johns-Hopkins,-Yale,-AI2-followir-evaluating-and-teaching-information-retrieval-models-to-follow-instructions",
-      "date": "2024-04-W05",
+      "date": "2024-03-W05",
       "year": "2024",
-      "month": "4",
+      "month": "3",
       "week": "5",
       "type": "paper",
       "org": "Johns Hopkins, Yale, AI2",
@@ -28980,9 +28980,9 @@
     },
     {
       "id": "UC-Berkeley-llm2llm-boosting-llms-with-novel-iterative-data-enhancement",
-      "date": "2024-04-W05",
+      "date": "2024-03-W05",
       "year": "2024",
-      "month": "4",
+      "month": "3",
       "week": "5",
       "type": "paper",
       "org": "UC Berkeley",
@@ -28993,9 +28993,9 @@
     },
     {
       "id": "Rutgers-University-aios-llm-agent-operating-system",
-      "date": "2024-04-W05",
+      "date": "2024-03-W05",
       "year": "2024",
-      "month": "4",
+      "month": "3",
       "week": "5",
       "type": "paper",
       "org": "Rutgers University",
@@ -29006,9 +29006,9 @@
     },
     {
       "id": "MIT,-Berkeley,-Chicago,-Texas-decoding-compressed-trust-scrutinizing-the-trustworthiness-of-efficient-llms-under-compression",
-      "date": "2024-04-W05",
+      "date": "2024-03-W05",
       "year": "2024",
-      "month": "4",
+      "month": "3",
       "week": "5",
       "type": "paper",
       "org": "MIT, Berkeley, Chicago, Texas",
@@ -29019,9 +29019,9 @@
     },
     {
       "id": "OpenAI-sora-first-impressions",
-      "date": "2024-04-W05",
+      "date": "2024-03-W05",
       "year": "2024",
-      "month": "4",
+      "month": "3",
       "week": "5",
       "type": "dev",
       "org": "OpenAI",
@@ -29032,9 +29032,9 @@
     },
     {
       "id": "Databricks-introducing-dbrx-a-new-state-of-the-art-open-llm",
-      "date": "2024-04-W05",
+      "date": "2024-03-W05",
       "year": "2024",
-      "month": "4",
+      "month": "3",
       "week": "5",
       "type": "dev",
       "org": "Databricks",
@@ -29050,9 +29050,9 @@
     },
     {
       "id": "Anthropic-claude-3-opus-vs-gpt-4",
-      "date": "2024-04-W05",
+      "date": "2024-03-W05",
       "year": "2024",
-      "month": "4",
+      "month": "3",
       "week": "5",
       "type": "dev",
       "org": "Anthropic",
@@ -29063,9 +29063,9 @@
     },
     {
       "id": "Meta,-MIT-the-unreasonable-ineffectiveness-of-the-deeper-layers",
-      "date": "2024-04-W05",
+      "date": "2024-03-W05",
       "year": "2024",
-      "month": "4",
+      "month": "3",
       "week": "5",
       "type": "paper",
       "org": "Meta, MIT",
@@ -29076,9 +29076,9 @@
     },
     {
       "id": "Univ.-of-Hong-Kong-mini-gemini-mining-the-potential-of-multi-modality-vision-language-models",
-      "date": "2024-04-W05",
+      "date": "2024-03-W05",
       "year": "2024",
-      "month": "4",
+      "month": "3",
       "week": "5",
       "type": "paper",
       "org": "Univ. of Hong Kong",
@@ -29089,9 +29089,9 @@
     },
     {
       "id": "Meta,-Mila,-McGil,-Montreal-improving-text-to-image-consistency-via-automatic-prompt-optimization",
-      "date": "2024-04-W05",
+      "date": "2024-03-W05",
       "year": "2024",
-      "month": "4",
+      "month": "3",
       "week": "5",
       "type": "paper",
       "org": "Meta, Mila, McGil, Montreal",
@@ -29102,9 +29102,9 @@
     },
     {
       "id": "MIT,-Microsoft-supervisory-prompt-training",
-      "date": "2024-04-W05",
+      "date": "2024-03-W05",
       "year": "2024",
-      "month": "4",
+      "month": "3",
       "week": "5",
       "type": "paper",
       "org": "MIT, Microsoft",
@@ -29115,9 +29115,9 @@
     },
     {
       "id": "Upstage-sdpo-dont-use-your-data-all-at-once",
-      "date": "2024-04-W05",
+      "date": "2024-03-W05",
       "year": "2024",
-      "month": "4",
+      "month": "3",
       "week": "5",
       "type": "paper",
       "org": "Upstage",
@@ -29128,9 +29128,9 @@
     },
     {
       "id": "HuggingFace-a-little-guide-to-building-large-language-models-in-2024",
-      "date": "2024-04-W05",
+      "date": "2024-03-W05",
       "year": "2024",
-      "month": "4",
+      "month": "3",
       "week": "5",
       "type": "dev",
       "org": "HuggingFace",
@@ -29141,9 +29141,9 @@
     },
     {
       "id": "AI21labs-introducing-jamba-ai21s-groundbreaking-ssm-transformer-model",
-      "date": "2024-04-W05",
+      "date": "2024-03-W05",
       "year": "2024",
-      "month": "4",
+      "month": "3",
       "week": "5",
       "type": "dev",
       "org": "AI21labs",
@@ -29154,9 +29154,9 @@
     },
     {
       "id": "Can-multiple-choice-questions-really-be-useful-in-detecting-the-abilities-of-LLMs?-can-multiple-choice-questions-really-be-useful-in-detecting-the-abilities-of-llms",
-      "date": "2024-04-W05",
+      "date": "2024-03-W05",
       "year": "2024",
-      "month": "4",
+      "month": "3",
       "week": "5",
       "type": "paper",
       "org": "Can multiple-choice questions really be useful in detecting the abilities of LLMs?",
@@ -29167,9 +29167,9 @@
     },
     {
       "id": "Understanding-Emergent-Abilities-of-Language-Models-from-the-Loss-Perspective-understanding-emergent-abilities-of-language-models-from-the-loss-perspective",
-      "date": "2024-04-W05",
+      "date": "2024-03-W05",
       "year": "2024",
-      "month": "4",
+      "month": "3",
       "week": "5",
       "type": "paper",
       "org": "Understanding Emergent Abilities of Language Models from the Loss Perspective",
