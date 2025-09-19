@@ -41,6 +41,14 @@ jobs:
         run: |
           python scripts/issue_router.py
 
+      - name: Parse README and update JSON
+        run: |
+          python scripts/parse_readme.py
+
+      - name: Sync to docs folder
+        run: |
+          cp data/items.json docs/data/items.json
+
       - name: Commit and push changes
         run: |
           git config user.name "github-actions[bot]"

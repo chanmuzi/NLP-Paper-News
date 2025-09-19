@@ -303,8 +303,13 @@ def main():
             success = remove_item_from_readme(item_id, item_title)
             if success:
                 print("항목 삭제 완료")
-                # TODO: 파싱 스크립트 실행하여 JSON 업데이트
-                # TODO: GitHub에 커밋 및 푸시
+                # 파싱 스크립트 실행하여 JSON 업데이트
+                import subprocess
+                try:
+                    subprocess.run(['python3', 'scripts/parse_readme.py'], check=True)
+                    print("JSON 업데이트 완료")
+                except subprocess.CalledProcessError as e:
+                    print(f"JSON 업데이트 실패: {e}")
             else:
                 print("항목 삭제 실패")
         else:
@@ -329,8 +334,13 @@ def main():
     
     if success:
         print("README.md 업데이트 완료")
-        # TODO: 파싱 스크립트 실행하여 JSON 업데이트
-        # TODO: GitHub에 커밋 및 푸시
+        # 파싱 스크립트 실행하여 JSON 업데이트
+        import subprocess
+        try:
+            subprocess.run(['python3', 'scripts/parse_readme.py'], check=True)
+            print("JSON 업데이트 완료")
+        except subprocess.CalledProcessError as e:
+            print(f"JSON 업데이트 실패: {e}")
     else:
         print("README.md 업데이트 실패")
 

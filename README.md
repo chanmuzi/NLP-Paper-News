@@ -21,7 +21,7 @@
 
 # 2025
 
-## 🫧 9월
+## 🙇🏻 9월
 
 <details>
   <summary>1st week</summary>
@@ -223,7 +223,7 @@
 - 📜 [Algoverse] [FRIT: Using Causal Importance to Improve Chain-of-Thought Faithfulness](https://arxiv.org/abs/2509.13334) - 지금까지의 연구는 CoT의 faithfulness를 측정하는 것까지만 집중하고 이를 개선하는 연구는 이뤄지지 않았음을 지적 - FRIT: 모델이 systematically corrupted examples로부터 causally consistent reasoning을 생성하는 방법을 배울 수 있도록 돕는 학습 scalable alignment - reasoning 매 step에 대해 합성 데이터를 생성하여 faithful/unfaithful pairs 구축하고 DPO 학습
 </details>
 
-## 🏝️ 8월
+## 🔥 8월
 
 <details>
   <summary>1st week</summary>
@@ -1005,7 +1005,7 @@
     - encoder 사용, sequence 길이 증가, 모델의 inherent uncertainty quantification 중요성 강조
 </details>
 
-## 🌹 May
+## 🏕️ 5월
 
 <details>
   <summary>1st week</summary>
@@ -1905,7 +1905,7 @@
 - 🧑🏻‍💻 [Tencent] [Reasoning Efficiency Redefined! Meet Tencent’s 'Hunyuan-T1'—The First Mamba-Powered Ultra-Large Model](https://llm.hunyuan.tencent.com/#/blog/hy-t1?lang=en) - 세계 최초 Mamba 아키텍쳐 기반 초거대모델 (Transformer-Mamba MoE) - TurboS 기반으로 in-depth reasoning에서 강점을 보이며 long-context capture 능력이 뛰어남 - curriculum learning & self-rewarding
 </details>
 
-## 🏔️ 2월
+## ☃ 2월
 
 <details>
   <summary>1st week</summary>
@@ -4242,7 +4242,7 @@
 - 📜 [Alibaba, Meta] [WavTokenizer: an Efficient Acoustic Discrete Codec Tokenizer for Audio Language Modeling](https://arxiv.org/abs/2408.16532) - audio 도메인에서 SOTA를 달성한 acoustic codec model, WavTokenizer - extreme compression, improved subjective quality를 특징으로 내세움 - [깃허브 링크](https://github.com/jishengpeng/WavTokenizer) 🔗
 </details>
 
-## ☔️ 7월
+## 🍉 7월
 
 <details>
   <summary>1st week</summary>
@@ -5264,7 +5264,7 @@
 - 🗞️ [China Unveils Vidu: A Powerful Text-to-Video Generator](https://www.maginative.com/article/china-unveils-vidu-a-powerful-text-to-video-generator/) - 중국의 Shengshu Technology와 Tsinghua University에서 Sora에 버금가는 text-to-video 모델, Vidu를 공개
 </details>
 
-## 🌱 March
+## 🌱 3월
 
 <details>
   <summary>1st ~ 2nd week</summary>
