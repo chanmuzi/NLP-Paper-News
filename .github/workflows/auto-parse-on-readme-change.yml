@@ -6,6 +6,10 @@ on:
     paths:
       - "README.md"
   workflow_dispatch: # 수동 실행 가능
+  # GitHub Pages와의 충돌 방지를 위해 concurrency 제어
+  concurrency:
+    group: "auto-parse-${{ github.ref }}"
+    cancel-in-progress: false
 
 jobs:
   auto-parse:
