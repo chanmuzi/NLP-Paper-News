@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "last_updated": "2025-09-19T16:14:53.135150",
-  "total_items": 1410,
+  "last_updated": "2025-09-20T10:20:16.127418",
+  "total_items": 1412,
   "items": [
     {
       "id": "Harvard-University,-Cambridge-lexical-hints-of-accuracy-in-llm-reasoning-chains",
@@ -745,8 +745,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "reasoning"
+        "reasoning",
+        "agent"
       ]
     },
     {
@@ -875,8 +875,8 @@
       ],
       "tags": [
         "AI/ML",
-        "agent",
-        "reasoning"
+        "reasoning",
+        "agent"
       ]
     },
     {
@@ -1053,7 +1053,63 @@
       "org": "Algoverse",
       "title": "FRIT: Using Causal Importance to Improve Chain-of-Thought Faithfulness",
       "url": "https://arxiv.org/abs/2509.13334",
-      "bullets": [],
+      "bullets": [
+        {
+          "text": "FRIT: 모델이 systematically corrupted examples로부터 causally consistent reasoning을 생성하는 방법을 배울 수 있도록 돕는 학습 scalable alignment",
+          "level": 0
+        },
+        {
+          "text": "reasoning 매 step에 대해 합성 데이터를 생성하여 faithful/unfaithful pairs 구축하고 DPO 학습",
+          "level": 0
+        }
+      ],
+      "tags": [
+        "AI/ML",
+        "reasoning"
+      ]
+    },
+    {
+      "id": "Thinking-Machines-Lab-defeating-nondeterminism-in-llm-inference",
+      "date": "2025-09-W03",
+      "year": "2025",
+      "month": "9",
+      "week": "3",
+      "type": "dev",
+      "org": "Thinking Machines Lab",
+      "title": "Defeating Nondeterminism in LLM Inference",
+      "url": "https://thinkingmachines.ai/blog/defeating-nondeterminism-in-llm-inference/",
+      "bullets": [
+        {
+          "text": "batch size 변동, normalization, multiplication, attention 등의 연산이 항상 동일한 결과를 반환할 수 있도록 함",
+          "level": 0
+        },
+        {
+          "text": "대신 실험에서 1,000개 시퀀스를 처리하는데 26초가 걸리던 것이 42초가 걸리는 정도의 trade off 발생 (62% slow down)",
+          "level": 0
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "Microsoft-is-in-context-learning-learning",
+      "date": "2025-09-W03",
+      "year": "2025",
+      "month": "9",
+      "week": "3",
+      "type": "paper",
+      "org": "Microsoft",
+      "title": "Is In-Context Learning Learning?",
+      "url": "https://arxiv.org/abs/2509.10414",
+      "bullets": [
+        {
+          "text": "오히려 모델은 prior knowledge & given exemplars 에 의존한다고 설명",
+          "level": 0
+        },
+        {
+          "text": "autoregression’s ad-hoc encoding is not a robust mechanism 그리고 제한된 all-purpose generalisabilty 제안",
+          "level": 0
+        }
+      ],
       "tags": []
     },
     {
@@ -3243,8 +3299,8 @@
       ],
       "tags": [
         "multimodal",
-        "agent",
-        "reasoning"
+        "reasoning",
+        "agent"
       ]
     },
     {
@@ -3417,8 +3473,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "reasoning"
+        "reasoning",
+        "agent"
       ]
     },
     {
@@ -3483,8 +3539,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "reasoning"
+        "reasoning",
+        "agent"
       ]
     },
     {
@@ -3917,8 +3973,8 @@
       ],
       "tags": [
         "AI/ML",
-        "agent",
-        "reasoning"
+        "reasoning",
+        "agent"
       ]
     },
     {
@@ -5019,8 +5075,8 @@
       ],
       "tags": [
         "AI/ML",
-        "agent",
-        "reasoning"
+        "reasoning",
+        "agent"
       ]
     },
     {
@@ -5239,8 +5295,8 @@
       ],
       "tags": [
         "AI/ML",
-        "agent",
-        "reasoning"
+        "reasoning",
+        "agent"
       ]
     },
     {
@@ -5836,8 +5892,8 @@
       ],
       "tags": [
         "multimodal",
-        "agent",
-        "reasoning"
+        "reasoning",
+        "agent"
       ]
     },
     {
@@ -7373,8 +7429,8 @@
       ],
       "tags": [
         "multimodal",
-        "agent",
-        "reasoning"
+        "reasoning",
+        "agent"
       ]
     },
     {
@@ -7403,8 +7459,8 @@
       ],
       "tags": [
         "multimodal",
-        "agent",
-        "reasoning"
+        "reasoning",
+        "agent"
       ]
     },
     {
@@ -8411,8 +8467,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "reasoning"
+        "reasoning",
+        "agent"
       ]
     },
     {
@@ -8827,8 +8883,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "reasoning"
+        "reasoning",
+        "agent"
       ]
     },
     {
@@ -12892,8 +12948,8 @@
       ],
       "tags": [
         "AI/ML",
-        "agent",
-        "reasoning"
+        "reasoning",
+        "agent"
       ]
     },
     {
@@ -18606,8 +18662,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "reasoning"
+        "reasoning",
+        "agent"
       ]
     },
     {
@@ -19679,8 +19735,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "reasoning"
+        "reasoning",
+        "agent"
       ]
     },
     {
@@ -24561,8 +24617,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "reasoning"
+        "reasoning",
+        "agent"
       ]
     },
     {
