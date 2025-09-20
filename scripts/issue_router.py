@@ -7,342 +7,188 @@ Issue 내용을 파싱하여 README.md에 항목을 추가하는 스크립트
 import os
 import re
 import json
-import yaml
+import subprocess
 from datetime import datetime
 from typing import Dict, Any, List
 
 def parse_issue_form_data(issue_body: str) -> Dict[str, Any]:
     """
-    GitHub Issue form 데이터를 파싱
-    """
-    # YAML 형식의 form 데이터 파싱
-    try:
-        # Issue body에서 YAML 부분 추출
-        yaml_match = re.search(r'```yaml\s*(.*?)\s*```', issue_body, re.DOTALL)
-        if yaml_match:
-            yaml_content = yaml_match.group(1)
-            form_data = yaml.safe_load(yaml_content)
-            return form_data
-    except Exception as e:
-        print(f"YAML 파싱 오류: {e}")
-    
-    # YAML 파싱 실패시 텍스트 파싱 시도
-    return parse_text_format(issue_body)
-
-def parse_text_format(issue_body: str) -> Dict[str, Any]:
-    """
-    텍스트 형식의 Issue 내용 파싱 (새로운 폼 형식 지원)
+    GitHub Issue form 데이터를 파싱 (새로운 템플릿 형식)
     """
     data = {}
     
-    # JSON 형식 파싱 시도
-    json_match = re.search(r'```json\s*(.*?)\s*```', issue_body, re.DOTALL)
-    if json_match:
-        try:
-            json_data = json.loads(json_match.group(1))
-            # JSON 키를 기존 키로 매핑
-            data = {
-                'emoji': json_data.get('emoji', '📄'),
-                'organization': json_data.get('org', 'Unknown'),
-                'title': json_data.get('title', 'Untitled'),
-                'url': json_data.get('url', '#'),
-                'summary': json_data.get('summary', ''),
-                'year': json_data.get('year', '2025'),
-                'month': json_data.get('month', '8'),
-                'week': json_data.get('week', '1')
-            }
-            return data
-        except json.JSONDecodeError:
-            print("JSON 파싱 실패, 텍스트 파싱으로 전환")
-    
-    # 마크다운 형식 파싱 시도
-    markdown_match = re.search(r'```markdown\s*(.*?)\s*```', issue_body, re.DOTALL)
-    if markdown_match:
-        markdown_content = markdown_match.group(1).strip()
-        # 첫 번째 항목에서 정보 추출
-        lines = markdown_content.split('\n')
-        for line in lines:
-            line = line.strip()
-            if line.startswith('- ') and '[' in line and '](' in line:
-                # 마크다운 항목 파싱: "- [이모지] [Org] [Title](URL)"
-                match = re.match(r'^-\s+([^\s]+)\s+\[([^\]]+)\]\s+\[([^\]]+)\]\(([^)]+)\)', line)
-                if match:
-                    data['emoji'] = match.group(1)
-                    data['organization'] = match.group(2)
-                    data['title'] = match.group(3)
-                    data['url'] = match.group(4)
-                    # 요약은 다음 줄들에서 추출
-                    summary_lines = []
-                    for i, next_line in enumerate(lines[lines.index(line)+1:], 1):
-                        if next_line.strip().startswith('- ') and '[' in next_line and '](' in next_line:
-                            break  # 다음 항목 시작
-                        if next_line.strip().startswith('  - '):
-                            summary_lines.append(next_line.strip()[4:])  # "  - " 제거
-                        elif next_line.strip() and not next_line.startswith('#'):
-                            summary_lines.append(next_line.strip())
-                    data['summary'] = '\n'.join(summary_lines)
-                break
-    
-    # 추가 정보에서 연도, 월, 주차 추출
-    info_patterns = {
-        'year': r'연도[:\s]*([^\n]+)',
-        'month': r'월[:\s]*([^\n]+)',
-        'week': r'주차[:\s]*([^\n]+)'
+    # 각 필드별로 파싱
+    patterns = {
+        'paper_type': r'### 논문 유형\s*\n\n(.*?)(?=\n###|\n\n---|\Z)',
+        'organization': r'### 기관/저자\s*\n\n(.*?)(?=\n###|\n\n---|\Z)',
+        'title': r'### 논문 제목\s*\n\n(.*?)(?=\n###|\n\n---|\Z)',
+        'url': r'### 논문 링크\s*\n\n(.*?)(?=\n###|\n\n---|\Z)',
+        'description': r'### 논문 설명 \(선택사항\)\s*\n\n(.*?)(?=\n###|\n\n---|\Z)',
+        'conference': r'### 학회/저널 \(선택사항\)\s*\n\n(.*?)(?=\n###|\n\n---|\Z)',
+        'additional_info': r'### 추가 정보 \(선택사항\)\s*\n\n(.*?)(?=\n###|\n\n---|\Z)'
     }
     
-    for key, pattern in info_patterns.items():
-        match = re.search(pattern, issue_body, re.DOTALL | re.IGNORECASE)
+    for field, pattern in patterns.items():
+        match = re.search(pattern, issue_body, re.DOTALL)
         if match:
-            data[key] = match.group(1).strip()
-    
-    # 기본값 설정
-    data.setdefault('year', '2025')
-    data.setdefault('month', '8')
-    data.setdefault('week', '1')
-    data.setdefault('emoji', '📄')
-    data.setdefault('organization', 'Unknown')
-    data.setdefault('title', 'Untitled')
-    data.setdefault('url', '#')
-    data.setdefault('summary', '')
+            value = match.group(1).strip()
+            if value and value != '_No response_':
+                data[field] = value
     
     return data
 
-def create_markdown_item(form_data: Dict[str, Any]) -> str:
+def format_paper_entry(data: Dict[str, Any]) -> str:
     """
-    Form 데이터로부터 마크다운 항목 생성
+    논문 데이터를 README.md 형식으로 변환
     """
-    emoji = form_data.get('emoji', '📄')
-    org = form_data.get('organization', 'Unknown')
-    title = form_data.get('title', 'Untitled')
-    url = form_data.get('url', '#')
-    summary = form_data.get('summary', '')
+    paper_type = data.get('paper_type', '📄 Paper')
+    organization = data.get('organization', 'Unknown')
+    title = data.get('title', 'Untitled')
+    url = data.get('url', '#')
+    description = data.get('description', '')
+    conference = data.get('conference', '')
+    additional_info = data.get('additional_info', '')
     
-    # ** 기호 제거
-    title = title.replace('**', '')
+    # URL 정리
+    if url and not url.startswith(('http://', 'https://')):
+        url = 'https://' + url
     
-    # 마크다운 항목 생성
-    item = f"- {emoji} [{org}] [{title}]({url})"
+    # 제목과 URL 조합
+    if url and url != '#':
+        title_with_link = f"[{title}]({url})"
+    else:
+        title_with_link = title
     
+    # 학회 정보 추가
+    if conference:
+        title_with_link += f" ({conference})"
+    
+    # 설명 조합
+    summary_parts = []
+    if description:
+        summary_parts.append(description)
+    if additional_info:
+        summary_parts.append(additional_info)
+    
+    summary = ' '.join(summary_parts) if summary_parts else ''
+    
+    # README.md 형식으로 포맷팅
+    entry = f"- {paper_type} **{organization}** {title_with_link}"
     if summary:
-        # 요약을 bullet points로 변환
-        summary_lines = summary.split('\n')
-        for line in summary_lines:
-            line = line.strip()
-            if line and not line.startswith('-'):
-                item += f"\n  - {line}"
-            elif line.startswith('-'):
-                item += f"\n  {line}"
+        entry += f" - {summary}"
     
-    return item
+    return entry
 
-def add_item_to_readme(item_markdown: str, year: str, month: str, week: str) -> bool:
+def find_insert_position(readme_content: str, paper_type: str) -> int:
     """
-    README.md에 항목 추가 (새로운 월/주차 자동 생성 지원)
+    README.md에서 적절한 삽입 위치 찾기
+    """
+    lines = readme_content.split('\n')
+    
+    # 논문 유형에 따른 섹션 찾기
+    section_patterns = {
+        '📜': '## 📜 Papers',
+        '🧑🏻‍💻': '## 🧑🏻‍💻 Code',
+        '🗞️': '## 🗞️ News'
+    }
+    
+    target_section = section_patterns.get(paper_type, '## 📜 Papers')
+    
+    for i, line in enumerate(lines):
+        if line.strip() == target_section:
+            # 섹션 헤더 다음 줄부터 찾기
+            for j in range(i + 1, len(lines)):
+                if lines[j].strip().startswith('## '):
+                    return j
+            return len(lines)
+    
+    # 기본적으로 Papers 섹션에 추가
+    for i, line in enumerate(lines):
+        if line.strip() == '## 📜 Papers':
+            for j in range(i + 1, len(lines)):
+                if lines[j].strip().startswith('## '):
+                    return j
+            return len(lines)
+    
+    return len(lines)
+
+def add_paper_to_readme(paper_entry: str, paper_type: str) -> bool:
+    """
+    README.md에 논문 항목 추가
     """
     try:
         # README.md 읽기
         with open('README.md', 'r', encoding='utf-8') as f:
             content = f.read()
         
-        # 숫자 월을 한국어로 변환
-        month_korean = f"{month}월"
-        week_korean = f"{week}주차"
+        # 삽입 위치 찾기
+        insert_pos = find_insert_position(content, paper_type)
         
-        # 패턴 정의
-        year_pattern = f"# {year}"
-        month_pattern = f"## 🏝️ {month_korean}"
-        week_pattern = f"<summary>{week_korean}</summary>"
-        
-        # 1. 연도 섹션이 없으면 생성
-        if not re.search(year_pattern, content):
-            # 맨 위에 연도 섹션 추가
-            content = f"{year_pattern}\n\n{content}"
-            print(f"새로운 연도 섹션 생성: {year}")
-        
-        # 2. 월 섹션이 없으면 생성
-        if not re.search(month_pattern, content):
-            # 연도 섹션 다음에 월 섹션 추가
-            year_match = re.search(year_pattern, content)
-            if year_match:
-                # 연도 섹션 다음 위치 찾기
-                year_end = year_match.end()
-                next_section = content.find('\n## ', year_end)
-                if next_section == -1:
-                    next_section = len(content)
-                
-                # 새로운 월 섹션 생성
-                month_section = f"\n\n{month_pattern}\n\n<details>\n  <summary>{week_korean}</summary>\n\n{item_markdown}\n\n</details>\n"
-                content = content[:next_section] + month_section + content[next_section:]
-                print(f"새로운 월 섹션 생성: {month_korean}")
-                with open('README.md', 'w', encoding='utf-8') as f:
-                    f.write(content)
-                return True
-        
-        # 3. 주차 섹션이 없으면 생성
-        if not re.search(week_pattern, content):
-            # 해당 월 섹션 내에 주차 섹션 추가
-            month_match = re.search(month_pattern, content)
-            if month_match:
-                # 월 섹션의 끝 찾기 (다음 월 섹션 또는 연도 섹션까지)
-                month_end = month_match.end()
-                next_month = content.find('\n## 🏝️ ', month_end)
-                next_year = content.find('\n# ', month_end)
-                
-                # 가장 가까운 다음 섹션 찾기
-                if next_month != -1 and next_year != -1:
-                    section_end = min(next_month, next_year)
-                elif next_month != -1:
-                    section_end = next_month
-                elif next_year != -1:
-                    section_end = next_year
-                else:
-                    section_end = len(content)
-                
-                # 새로운 주차 섹션 생성
-                week_section = f"\n<details>\n  <summary>{week_korean}</summary>\n\n{item_markdown}\n\n</details>\n"
-                content = content[:section_end] + week_section + content[section_end:]
-                print(f"새로운 주차 섹션 생성: {week_korean}")
-                with open('README.md', 'w', encoding='utf-8') as f:
-                    f.write(content)
-                return True
-        
-        # 4. 기존 주차 섹션에 항목 추가
-        week_match = re.search(week_pattern, content)
-        if week_match:
-            # 주차 섹션의 </details> 태그 찾기
-            details_end = content.find('</details>', week_match.end())
-            if details_end != -1:
-                # </details> 태그 앞에 항목 추가
-                insert_pos = details_end
-                content = content[:insert_pos] + f"\n{item_markdown}\n" + content[insert_pos:]
-                print(f"기존 주차 섹션에 항목 추가: {week_korean}")
-                with open('README.md', 'w', encoding='utf-8') as f:
-                    f.write(content)
-                return True
-        
-        print("항목 추가 실패: 적절한 위치를 찾을 수 없습니다.")
-        return False
-        
-    except Exception as e:
-        print(f"README.md 업데이트 오류: {e}")
-        return False
-
-def remove_item_from_readme(item_id: str, item_title: str) -> bool:
-    """
-    README.md에서 항목 삭제
-    """
-    try:
-        # README.md 읽기
-        with open('README.md', 'r', encoding='utf-8') as f:
-            content = f.read()
-        
-        # 항목 ID로 삭제할 항목 찾기
-        # ID는 보통 org-title 형태로 구성됨
+        # 내용 삽입
         lines = content.split('\n')
-        new_lines = []
-        skip_until_details = False
+        lines.insert(insert_pos, paper_entry)
         
-        for i, line in enumerate(lines):
-            if skip_until_details:
-                if '</details>' in line:
-                    skip_until_details = False
-                continue
-            
-            # 항목 헤더 라인 찾기 (제목이 포함된 라인)
-            if line.strip().startswith('- ') and item_title in line:
-                # 이 항목과 관련된 모든 라인 건너뛰기
-                skip_until_details = True
-                continue
-            
-            new_lines.append(line)
-        
-        # 파일 업데이트
-        new_content = '\n'.join(new_lines)
+        # 파일 저장
         with open('README.md', 'w', encoding='utf-8') as f:
-            f.write(new_content)
+            f.write('\n'.join(lines))
         
-        print(f"항목 삭제 완료: {item_title}")
+        print(f"논문이 README.md에 추가되었습니다: {paper_entry}")
         return True
         
     except Exception as e:
-        print(f"항목 삭제 오류: {e}")
+        print(f"README.md 업데이트 실패: {e}")
         return False
 
 def main():
-    """메인 함수"""
-    # 환경 변수에서 Issue 정보 가져오기
-    issue_number = os.getenv('ISSUE_NUMBER')
-    issue_title = os.getenv('ISSUE_TITLE', '')
-    issue_body = os.getenv('ISSUE_BODY', '')
-    issue_action = os.getenv('ISSUE_ACTION', 'opened')
+    """
+    메인 함수 - GitHub Actions에서 호출
+    """
+    # GitHub 환경 변수에서 이슈 정보 가져오기
+    issue_body = os.environ.get('ISSUE_BODY', '')
+    issue_title = os.environ.get('ISSUE_TITLE', '')
     
-    if not issue_number:
-        print("ISSUE_NUMBER 환경 변수가 설정되지 않았습니다.")
+    if not issue_body:
+        print("이슈 본문을 찾을 수 없습니다.")
         return
     
-    print(f"Issue #{issue_number} 처리 중... (Action: {issue_action})")
-    print(f"제목: {issue_title}")
-    
-    # Issue가 닫힌 경우에만 실제 처리 수행
-    if issue_action != 'closed':
-        print("Issue가 아직 열려있습니다. 닫힐 때까지 대기합니다.")
+    # 이슈가 닫힌 상태인지 확인
+    issue_state = os.environ.get('ISSUE_STATE', '')
+    if issue_state != 'closed':
+        print("이슈가 아직 열려있습니다.")
         return
     
-    print("Issue가 닫혔습니다. 승인 처리 시작...")
-    
-    # 삭제 요청인지 확인
-    if '[DELETE]' in issue_title:
-        # 삭제 요청 처리
-        item_id_match = re.search(r'삭제할 항목 ID[:\s]*`([^`]+)`', issue_body)
-        item_title_match = re.search(r'삭제할 항목 제목[:\s]*([^\n]+)', issue_body)
-        
-        if item_id_match and item_title_match:
-            item_id = item_id_match.group(1)
-            item_title = item_title_match.group(1).strip()
-            
-            success = remove_item_from_readme(item_id, item_title)
-            if success:
-                print("항목 삭제 완료")
-                # 파싱 스크립트 실행하여 JSON 업데이트
-                import subprocess
-                try:
-                    subprocess.run(['python3', 'scripts/parse_readme.py'], check=True)
-                    print("JSON 업데이트 완료")
-                except subprocess.CalledProcessError as e:
-                    print(f"JSON 업데이트 실패: {e}")
-            else:
-                print("항목 삭제 실패")
-        else:
-            print("삭제할 항목 정보를 찾을 수 없습니다.")
+    # 이슈 제목이 [ADD]로 시작하는지 확인
+    if not issue_title.startswith('[ADD]'):
+        print("추가 요청이 아닙니다.")
         return
     
-    # 일반 추가 요청 처리
-    # Issue 내용 파싱
-    form_data = parse_issue_form_data(issue_body)
-    print(f"파싱된 데이터: {form_data}")
+    print(f"이슈 처리 시작: {issue_title}")
+    print(f"이슈 본문: {issue_body[:200]}...")
     
-    # 마크다운 항목 생성
-    item_markdown = create_markdown_item(form_data)
-    print(f"생성된 마크다운:\n{item_markdown}")
+    # 이슈 데이터 파싱
+    data = parse_issue_form_data(issue_body)
+    print(f"파싱된 데이터: {data}")
+    
+    if not data.get('title') or not data.get('organization'):
+        print("필수 정보가 부족합니다.")
+        return
+    
+    # 논문 항목 생성
+    paper_entry = format_paper_entry(data)
+    print(f"생성된 항목: {paper_entry}")
     
     # README.md에 추가
-    year = form_data.get('year', '2025')
-    month = form_data.get('month', '8')
-    week = form_data.get('week', '1')
-    
-    success = add_item_to_readme(item_markdown, year, month, week)
-    
-    if success:
-        print("README.md 업데이트 완료")
+    if add_paper_to_readme(paper_entry, data.get('paper_type', '📜 Paper')):
+        print("논문 추가 완료!")
+        
         # 파싱 스크립트 실행하여 JSON 업데이트
-        import subprocess
         try:
             subprocess.run(['python3', 'scripts/parse_readme.py'], check=True)
             print("JSON 업데이트 완료")
         except subprocess.CalledProcessError as e:
             print(f"JSON 업데이트 실패: {e}")
     else:
-        print("README.md 업데이트 실패")
+        print("논문 추가 실패")
 
 if __name__ == "__main__":
     main()
