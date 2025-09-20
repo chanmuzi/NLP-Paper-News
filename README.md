@@ -221,6 +221,14 @@
   - 각 reasoning step마다 LLM이 현재 시점의 최종 답변을 생성토록 하고 이를 step answer로 명명
   - 이 step answer가 연속적으로 동일한 답변이 나온 횟수를 answer convergence의 지표로 해석
 - 📜 [Algoverse] [FRIT: Using Causal Importance to Improve Chain-of-Thought Faithfulness](https://arxiv.org/abs/2509.13334) - 지금까지의 연구는 CoT의 faithfulness를 측정하는 것까지만 집중하고 이를 개선하는 연구는 이뤄지지 않았음을 지적 - FRIT: 모델이 systematically corrupted examples로부터 causally consistent reasoning을 생성하는 방법을 배울 수 있도록 돕는 학습 scalable alignment - reasoning 매 step에 대해 합성 데이터를 생성하여 faithful/unfaithful pairs 구축하고 DPO 학습
+- 🧑🏻‍💻 [Thinking Machines Lab] [Defeating Nondeterminism in LLM Inference](https://thinkingmachines.ai/blog/defeating-nondeterminism-in-llm-inference/)
+    - LLM의 temperature가 0이더라도 다른 답변을 반환하던 문제점 해결
+    - batch size 변동, normalization, multiplication, attention 등의 연산이 항상 동일한 결과를 반환할 수 있도록 함
+    - 대신 실험에서 1,000개 시퀀스를 처리하는데 26초가 걸리던 것이 42초가 걸리는 정도의 trade off 발생 (62% slow down)
+- 📜 [Microsoft] [Is In-Context Learning Learning?](https://arxiv.org/abs/2509.10414)
+    - ICL이 given observation을 명시적으로 encode하는 것은 아니라고 지적
+    - 오히려 모델은 prior knowledge & given exemplars 에 의존한다고 설명
+    - autoregression’s ad-hoc encoding is not a robust mechanism 그리고 제한된 all-purpose generalisabilty 제안
 </details>
 
 ## 🔥 8월
