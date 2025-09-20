@@ -12,6 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+    if: github.event.head_commit.author.name != 'GitHub Action'
     
     steps:
       - name: Checkout repository
@@ -52,5 +53,5 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add data/items.json docs/data/items.json
-          git commit -m "Auto-parse: Update items.json from README.md"
+          git commit -m "Auto-parse: Update items.json from README.md [skip ci]"
           git push origin main
