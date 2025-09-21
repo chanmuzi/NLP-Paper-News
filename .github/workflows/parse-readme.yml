@@ -7,12 +7,19 @@ on:
       - "README.md"
   workflow_dispatch:
 
+concurrency:
+  group: "parse-readme-${{ github.ref }}"
+  cancel-in-progress: true
+
 jobs:
   parse-and-update:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-    if: github.event.head_commit.author.name != 'GitHub Action'
+    if: |
+      github.event.head_commit.author.name != 'GitHub Action' &&
+      github.event.head_commit.author.name != 'github-actions[bot]' &&
+      !contains(github.event.head_commit.message, 'Auto-parse:')
     
     steps:
       - name: Checkout repository
