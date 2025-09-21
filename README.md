@@ -232,6 +232,10 @@
   - ICL이 given observation을 명시적으로 encode하는 것은 아니라고 지적
   - 오히려 모델은 prior knowledge & given exemplars 에 의존한다고 설명
   - autoregression’s ad-hoc encoding is not a robust mechanism 그리고 제한된 all-purpose generalisabilty 제안
+- 🧑🏻‍💻 [OpenAI] [Detecting and reducing scheming in AI models](https://openai.com/index/detecting-and-reducing-scheming-in-ai-models)
+    - 모델이 align 되어 있으나 hidden objectives를 secretly 추구하는 것을 일컫는 scheming에 대한 연구
+    - 모델이 평가 상황을 탐지하면 scheming behavior를 바꾼다는 연구 결과
+    - reinforcement learning & targeted anti-scheming objectives를 적용하여 situational awareness를 높이고 scheming을 줄일 수 있음
   </details>
 
 ## 🔥 8월
