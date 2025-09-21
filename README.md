@@ -30,7 +30,7 @@
   - 세 가지 feature classes
     - (1) CoT length (2) intra-CoT sentiment volatility (3) lexicographic hints
   - Humanity's Last Exam (HLE), Omni-MATH 대상으로 DeepSeek-R1 & Claude 3.7 Sonnet 테스트
-  - guess, stuck, hard와 같은 어휘들이 uncertainty의 강한 지표로 확인되었고, sentiment는 보조 지표 정도로 활용 가능
+  - guess, stuck, hard와 같은 어휘들이 uncertainty의 강한 지표로 확인되었고, sentiment는 보조 지표 정도로 활용 가능 
 - 🧑🏻‍💻 [Ai2] [Asta: Accelerating science through trustworthy agentic AI](https://allenai.org/blog/asta)
   - [Asta](https://asta.allen.ai/) agents: human researchers를 대체하는 것이 아니라 assist하는 tools 갖춤
   - scientific AI의 지평을 넓히고 투명성을 증진하기 위한 [AstaBench](https://allenai.org/asta/bench)
