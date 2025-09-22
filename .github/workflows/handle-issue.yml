@@ -62,5 +62,5 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add README.md data/items.json docs/data/items.json
-          git commit -m "Auto-parse: Process issue and update items [skip ci]"
+          git commit -m "Auto-parse: Process issue and update items"
           git push origin main
