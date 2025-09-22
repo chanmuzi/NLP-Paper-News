@@ -238,6 +238,23 @@
     - reinforcement learning & targeted anti-scheming objectives를 적용하여 situational awareness를 높이고 scheming을 줄일 수 있음
   </details>
 
+<details>
+  <summary>3rd week</summary>
+
+- 📜 [Shanghai AI] [ScaleCUA: Scaling Open-Source Computer Use Agents with Cross-Platform Data](https://arxiv.org/abs/2509.15221)
+    - computer use agents (CUAs)를 위한 computer-use data는 확보하기도 어렵고 가격이 비쌈
+    - ScaleCUA: 6개의 운영체제와 3개의 task domains에 대한 large-scale 오픈소스 dataset
+- 📜 [Tsinghua, Northeastern] [DeepDive: Advancing Deep Search Agents with Knowledge Graphs and Multi-Turn RL](https://arxiv.org/abs/2509.10446)
+    - open knowledge graphs로부터 complex, difficult, hard-to-find questions를 자동적으로 합성하는 전략 제안
+    - end-to-end multi-turn RL을 적용하여 LLMs의 long-horizon reasoning with deep search 능력 향상 도모
+    - DeepDive-32B: BrowseComp에서 WebSailor, DeepSeek-R1-Browse 등을 outperform
+- 📜 [Zayed University] [K2-Think: A Parameter-Efficient Reasoning System](https://arxiv.org/abs/2509.07604)
+    - 32B 사이즈(Qwen2.5 base)로 프론티어급 성능을 달성한 reasoning system 소개. GPT-OSS 120B, DeepSeek v3.1 언급
+    - Long CoT SFT, RLVR, Agentic planning prior to reasoning, Test-time Scaling, Speculative Decoding, Inference-optimized Hardware
+    - 다른 reasoning 모델과 마찬가지로 수학, 과학, 코딩 영역에 특화되어 있다고 설명
+    - 각 요청마다 초당 2천 토큰씩 처리할 수 있는 서빙 환경으로 오픈소스 모델 이용 가능 ([허깅페이스 링크](https://huggingface.co/LLM360/K2-Think), [Chat UI 링크](https://www.k2think.ai/guest))
+  </details>
+  
 ## 🔥 8월
 
 <details>
