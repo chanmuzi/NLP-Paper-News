@@ -239,7 +239,7 @@
   </details>
 
 <details>
-  <summary>3rd week</summary>
+  <summary>4th week</summary>
 
 - 📜 [Shanghai AI] [ScaleCUA: Scaling Open-Source Computer Use Agents with Cross-Platform Data](https://arxiv.org/abs/2509.15221)
     - computer use agents (CUAs)를 위한 computer-use data는 확보하기도 어렵고 가격이 비쌈
@@ -253,6 +253,15 @@
     - Long CoT SFT, RLVR, Agentic planning prior to reasoning, Test-time Scaling, Speculative Decoding, Inference-optimized Hardware
     - 다른 reasoning 모델과 마찬가지로 수학, 과학, 코딩 영역에 특화되어 있다고 설명
     - 각 요청마다 초당 2천 토큰씩 처리할 수 있는 서빙 환경으로 오픈소스 모델 이용 가능 ([허깅페이스 링크](https://huggingface.co/LLM360/K2-Think), [Chat UI 링크](https://www.k2think.ai/guest))
+- 📜 [Apple] [AToken: A Unified Tokenizer for Vision](https://arxiv.org/abs/2509.14476?_bhlid=83047d32ee2c3b1328d35b28356e5dee4f18b61d)
+    - AToken: images, vidoes, 3D assets에 대해 high-fidelity reconstruction & semantic understanding을 보여준 최초의 unified visual tokenizer
+    - perceptual & Gram matrix losses를 결합한 adversarial-free training objective 제시
+    - curriculum training 방식을 택하여 single images에서부터 videos, 3D 처리할 수 있도록 학습
+    - continuous & discrete latent tokens 둘 다 처리 가능하다는 특징
+- 📜 [Cornell, CMU] [Predicting Language Models' Success at Zero-Shot Probabilistic Prediction](https://arxiv.org/abs/2509.15356)
+    - tabular prediction tasks에서 LLM의 zero-shot predictive capabilities를 측정하는 실험
+    - LLM이 base prediction task를 잘 수행할 때, 이것의 individual-level의 예측 능력은 훨씬 강해진다고 설명
+    - 이를 토대로 LLM의 성능을 task level에서 측정할 수 있는 metric을 제시하여 LLM이 잘하는 태스크와 그렇지 않은 것을 구분할 수 있도록 함
   </details>
   
 ## 🔥 8월
