@@ -262,6 +262,18 @@
     - tabular prediction tasks에서 LLM의 zero-shot predictive capabilities를 측정하는 실험
     - LLM이 base prediction task를 잘 수행할 때, 이것의 individual-level의 예측 능력은 훨씬 강해진다고 설명
     - 이를 토대로 LLM의 성능을 task level에서 측정할 수 있는 metric을 제시하여 LLM이 잘하는 태스크와 그렇지 않은 것을 구분할 수 있도록 함
+- 🧑🏻‍💻 [xAI] [Grok 4 Fast](https://x.ai/news/grok-4-fast)
+    - cost-efficient reasoning multi-model model. 40% 적은 thinking tokens 사용한다고 설명
+    - web & X search, 2M context window, reasoning & non-reasoning
+- 📜 [Microsoft, Tsinghua] [RPG: A Repository Planning Graph for Unified and Scalable Codebase Generation](https://arxiv.org/abs/2509.16198)
+    - 온전한 repo를 scratch부터 만들기 위해서는 일관성있고 신뢰도 높은 planning 필요
+    - Repository Planning Graph (RPG): 파일 구조, data flows, functions 등을 한 개의 graph 내에 encoding
+    - ZeroRepo: scratch부터 repo를 생성하는 graph-driven framework
+        - proposal-level planning, implemetation-level refinement, graph-guided code generation 순서로 실행
+    - RepoCraft: 현실 세계의 1,052개 태스크를 아우르는 6개의 프로젝트 벤치마크
+- 📜 [School of AI] [A State-Update Prompting Strategy for Efficient and Robust Multi-turn Dialogue](https://arxiv.org/abs/2509.17766)
+    - long-horizon, multi-turn 대화에서 대부분 LLM 성능이 낮다는 점을 문제로 지적
+    - State Reconstruction & History Remind 할 수 있는 prompt engineering method 소개
   </details>
   
 ## 🔥 8월
