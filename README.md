@@ -274,6 +274,21 @@
 - 📜 [School of AI] [A State-Update Prompting Strategy for Efficient and Robust Multi-turn Dialogue](https://arxiv.org/abs/2509.17766)
     - long-horizon, multi-turn 대화에서 대부분 LLM 성능이 낮다는 점을 문제로 지적
     - State Reconstruction & History Remind 할 수 있는 prompt engineering method 소개
+- 📜 [ASI] [LIMI: Less is More for Agency](https://arxiv.org/abs/2509.17567)
+    - sophisticated agentic intelligence는 minimal, but strategically curated demonstations of autonomous behavior로부터 나온다고 설명
+    - 78개의 training samples만으로 학습한 모델이 다른 SoTA급 모델들의 퍼포먼스를 상회
+    - 즉, 데이터 양치기가 좋은 agentic intelligence를 만드는데 도움이 되지 않는다는 것
+- 🧑🏻‍💻 [Alibaba] [Qwen3-Omni: Natively Omni-Modal Foundation Models!](https://qwen.ai/blog?id=fdfbaf2907a36b7659a470c77fb135e381302028&from=research.research-list)
+    - end-to-end omni-modal model로 text, images, audio, video를 single architecture에서 처리 가능
+    - 36개 벤치마크 중 32개 SoTA, 119개 텍스트 언어 & 19개 speech 언어 처리, 30분 길이의 audio input 처리 가능
+    - Thinker-Talker: Thinker는 텍스트를 생성하고 Talker는 speech를 실시간 stream
+    - 20M+ hours 학습한 AuT encoder, MoE, Joint pretraining 등의 특징
+- 🧑🏻‍💻 [DeepSeek AI] [DeepSeek-V3.1-Terminus](https://huggingface.co/deepseek-ai/DeepSeek-V3.1-Terminus)
+    - Code Agent & Search Agent 로 사용할 수 있는 모델 공개
+    - 최근 업데이트를 통해 language consistency 이슈도 해결
+- 🧑🏻‍💻 [Figma] [Connect Figma to top MCP clients](https://www.figma.com/mcp-catalog/)
+    - 피그마에서 remote MCP 서버를 제공
+    - VS Code, Cursor, Claude Code 등 다양한 서비스들에서 MCP 서버 연동 가능
   </details>
   
 ## 🔥 8월
