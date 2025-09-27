@@ -289,6 +289,11 @@
 - 🧑🏻‍💻 [Figma] [Connect Figma to top MCP clients](https://www.figma.com/mcp-catalog/)
     - 피그마에서 remote MCP 서버를 제공
     - VS Code, Cursor, Claude Code 등 다양한 서비스들에서 MCP 서버 연동 가능
+- 📜 [Michigan] [Benchmarking and Improving LLM Robustness for Personalized Generation](https://arxiv.org/abs/2509.19358)
+    - personalization 관점에서 factuality는 같이 고려되고 있지 않음을 문제로 지적
+    - robust LLM: factually accurate & align with user preferences
+    - PERG: PREGData를 이용한 모델의 preference 평가 프레임워크
+    - Pref-Aligner: 모델의 robustness를 크게 향상시켜주는 two-stage approach
   </details>
   
 ## 🔥 8월
