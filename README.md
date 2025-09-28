@@ -294,6 +294,13 @@
     - robust LLM: factually accurate & align with user preferences
     - PERG: PREGData를 이용한 모델의 preference 평가 프레임워크
     - Pref-Aligner: 모델의 robustness를 크게 향상시켜주는 two-stage approach
+- 🧑🏻‍💻 [Google Chrome] [Chrome DevTools (MCP) for your AI agent](https://developer.chrome.com/blog/chrome-devtools-mcp?hl=en)
+    - AI agents가 Chrome 내에서 직접 코드를 보고 테스트 할 수 있음
+    - 디버깅, 성능 추적 및 네트워크 분석 등을 위한 26개의 built-in tools
+    - Claude, Cursor, Copilot, Gemini CLI 등을 통해 사용 가능
+- 📜 [Meta] [CWM: An Open-Weights LLM for Research on Code Generation with World Models](https://ai.meta.com/research/publications/cwm-an-open-weights-llm-for-research-on-code-generation-with-world-models/)
+    - world models로 code generation에 대한 연구를 하기 위해 필요한 32B open-weights LLM (context size는 131k tokens)
+    - Python interpreter & agentic Docker environments로부터 observation-action trajectories를 대량으로 mid-train
   </details>
   
 ## 🔥 8월
