@@ -21,6 +21,23 @@
 
 # 2025
 
+## 🎃 10월
+
+<details>
+  <summary>1st week</summary>
+
+- 📜 [NVIDIA, MIT, HKUST] [LongLive: Real-time Interactive Long Video Generation](https://arxiv.org/abs/2509.22622)
+    - LongLive: frame-level AR framework for realtime & interactive long video generation
+    - KV-recache mechanism: new prompts을 통해 cached states를 refresh
+    - short window attention paired with a frame-level attention sink
+- 🧑🏻‍💻 [Anthropic] [Introducing Claude Sonnet 4.5](https://www.anthropic.com/news/claude-sonnet-4-5)
+    - 다양한 코드 벤치마크에서 새로운 SoTA 성능을 달성한 모델
+    - 30시간 넘게 처리해야 하는 코딩 태스크도 수행 가능하다고 설명
+- 🧑🏻‍💻 [Microsoft] [Vibe working: Introducing Agent Mode and Office Agent in Microsoft 365 Copilot](https://www.microsoft.com/en-us/microsoft-365/blog/2025/09/29/vibe-working-introducing-agent-mode-and-office-agent-in-microsoft-365-copilot/)
+    - Agent Mode in Office apps (엑셀, 워드) & Office Agent in Copilot chat
+    - [SpreadsheetBench](https://spreadsheetbench.github.io/)에서 SoTA
+</details>
+
 ## 🙇🏻 9월
 
 <details>
