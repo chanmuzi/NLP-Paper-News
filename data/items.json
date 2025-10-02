@@ -1,8 +1,68 @@
 {
   "version": 1,
-  "last_updated": "2025-09-29T01:44:37.886462",
-  "total_items": 1428,
+  "last_updated": "2025-10-02T08:02:40.346049",
+  "total_items": 1431,
   "items": [
+    {
+      "id": "NVIDIA,-MIT,-HKUST-longlive-real-time-interactive-long-video-generation",
+      "date": "2025-10-W01",
+      "year": "2025",
+      "month": "10",
+      "week": "1",
+      "type": "paper",
+      "org": "NVIDIA, MIT, HKUST",
+      "title": "LongLive: Real-time Interactive Long Video Generation",
+      "url": "https://arxiv.org/abs/2509.22622",
+      "bullets": [
+        {
+          "text": "KV-recache mechanism: new prompts을 통해 cached states를 refresh",
+          "level": 1
+        },
+        {
+          "text": "short window attention paired with a frame-level attention sink",
+          "level": 1
+        }
+      ],
+      "tags": [
+        "AI/ML"
+      ]
+    },
+    {
+      "id": "Anthropic-introducing-claude-sonnet-45",
+      "date": "2025-10-W01",
+      "year": "2025",
+      "month": "10",
+      "week": "1",
+      "type": "dev",
+      "org": "Anthropic",
+      "title": "Introducing Claude Sonnet 4.5",
+      "url": "https://www.anthropic.com/news/claude-sonnet-4-5",
+      "bullets": [
+        {
+          "text": "30시간 넘게 처리해야 하는 코딩 태스크도 수행 가능하다고 설명",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "Microsoft-vibe-working-introducing-agent-mode-and-office-agent-in-microsoft-365-copilot",
+      "date": "2025-10-W01",
+      "year": "2025",
+      "month": "10",
+      "week": "1",
+      "type": "dev",
+      "org": "Microsoft",
+      "title": "Vibe working: Introducing Agent Mode and Office Agent in Microsoft 365 Copilot",
+      "url": "https://www.microsoft.com/en-us/microsoft-365/blog/2025/09/29/vibe-working-introducing-agent-mode-and-office-agent-in-microsoft-365-copilot/",
+      "bullets": [
+        {
+          "text": "[SpreadsheetBench](https://spreadsheetbench.github.io/)에서 SoTA",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "Harvard-University,-Cambridge-lexical-hints-of-accuracy-in-llm-reasoning-chains",
       "date": "2025-09-W01",
@@ -745,8 +805,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "reasoning"
+        "reasoning",
+        "agent"
       ]
     },
     {
@@ -874,9 +934,9 @@
         }
       ],
       "tags": [
-        "agent",
         "reasoning",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -1204,9 +1264,9 @@
         }
       ],
       "tags": [
-        "agent",
         "reasoning",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -3680,9 +3740,9 @@
         }
       ],
       "tags": [
-        "agent",
         "reasoning",
-        "multimodal"
+        "multimodal",
+        "agent"
       ]
     },
     {
@@ -3855,8 +3915,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "reasoning"
+        "reasoning",
+        "agent"
       ]
     },
     {
@@ -4354,9 +4414,9 @@
         }
       ],
       "tags": [
-        "agent",
         "reasoning",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -5456,9 +5516,9 @@
         }
       ],
       "tags": [
-        "agent",
         "reasoning",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -5676,9 +5736,9 @@
         }
       ],
       "tags": [
-        "agent",
         "reasoning",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -6273,9 +6333,9 @@
         }
       ],
       "tags": [
-        "agent",
         "reasoning",
-        "multimodal"
+        "multimodal",
+        "agent"
       ]
     },
     {
@@ -6881,8 +6941,8 @@
         }
       ],
       "tags": [
-        "reasoning",
-        "multimodal"
+        "multimodal",
+        "reasoning"
       ]
     },
     {
@@ -7810,9 +7870,9 @@
         }
       ],
       "tags": [
-        "agent",
         "reasoning",
-        "multimodal"
+        "multimodal",
+        "agent"
       ]
     },
     {
@@ -7840,9 +7900,9 @@
         }
       ],
       "tags": [
-        "agent",
         "reasoning",
-        "multimodal"
+        "multimodal",
+        "agent"
       ]
     },
     {
@@ -8849,8 +8909,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "reasoning"
+        "reasoning",
+        "agent"
       ]
     },
     {
@@ -9265,8 +9325,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "reasoning"
+        "reasoning",
+        "agent"
       ]
     },
     {
@@ -13329,9 +13389,9 @@
         }
       ],
       "tags": [
-        "agent",
         "reasoning",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -15104,8 +15164,8 @@
         }
       ],
       "tags": [
-        "reasoning",
-        "multimodal"
+        "multimodal",
+        "reasoning"
       ]
     },
     {
@@ -18567,8 +18627,8 @@
         }
       ],
       "tags": [
-        "reasoning",
-        "multimodal"
+        "multimodal",
+        "reasoning"
       ]
     },
     {
@@ -19044,8 +19104,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "reasoning"
+        "reasoning",
+        "agent"
       ]
     },
     {
@@ -20117,8 +20177,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "reasoning"
+        "reasoning",
+        "agent"
       ]
     },
     {
@@ -24999,8 +25059,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "reasoning"
+        "reasoning",
+        "agent"
       ]
     },
     {
