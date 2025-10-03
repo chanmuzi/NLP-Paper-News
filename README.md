@@ -36,6 +36,19 @@
 - 🧑🏻‍💻 [Microsoft] [Vibe working: Introducing Agent Mode and Office Agent in Microsoft 365 Copilot](https://www.microsoft.com/en-us/microsoft-365/blog/2025/09/29/vibe-working-introducing-agent-mode-and-office-agent-in-microsoft-365-copilot/)
     - Agent Mode in Office apps (엑셀, 워드) & Office Agent in Copilot chat
     - [SpreadsheetBench](https://spreadsheetbench.github.io/)에서 SoTA
+- 🧑🏻‍💻 [Ai2] [Asta DataVoyager: Data-driven discovery and analysis](https://allenai.org/blog/asta-datavoyager)
+    - structured data를 다루는 연구자를 위한 scientific research agents의 ecosystem
+    - spreadsheet, csv와 같은 structured data에서 explainable answer 반환 (복사 가능한 코드, 시각적 자료 등과 함께)
+    - on-premise, private cloud에서 데이터 관리 (보안)
+- 🧑🏻‍💻 [OpenAI] [Sora 2 is here](https://openai.com/index/sora-2/)
+    - 뛰어난 성능으로 주목 받고 있는 video generation model
+    - physics-aware, synchronized audio, controllability 등 특징
+    - 5-10s output, 워터마크
+    - invite-only launch in U.S. & Canada
+- 📜 [NUS] [MCPMark: A Benchmark for Stress-Testing Realistic and Comprehensive MCP Use](https://arxiv.org/abs/2509.24002)
+    - domain experts & AI agents에 의해 제작된 127개의 고품질 MCP tasks 벤치마크
+    - richer & diverse interactions 필요. CRUD operations 포함.
+    - gpt-5-medium이 52.56% pass@1, 33.86% pass^4로 현재 기준 최고 성능
 </details>
 
 ## 🙇🏻 9월
