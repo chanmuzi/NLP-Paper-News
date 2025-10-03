@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "last_updated": "2025-10-02T08:02:40.346049",
-  "total_items": 1431,
+  "last_updated": "2025-10-03T06:24:28.316531",
+  "total_items": 1434,
   "items": [
     {
       "id": "NVIDIA,-MIT,-HKUST-longlive-real-time-interactive-long-video-generation",
@@ -58,6 +58,78 @@
       "bullets": [
         {
           "text": "[SpreadsheetBench](https://spreadsheetbench.github.io/)에서 SoTA",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "Ai2-asta-datavoyager-data-driven-discovery-and-analysis",
+      "date": "2025-10-W01",
+      "year": "2025",
+      "month": "10",
+      "week": "1",
+      "type": "dev",
+      "org": "Ai2",
+      "title": "Asta DataVoyager: Data-driven discovery and analysis",
+      "url": "https://allenai.org/blog/asta-datavoyager",
+      "bullets": [
+        {
+          "text": "spreadsheet, csv와 같은 structured data에서 explainable answer 반환 (복사 가능한 코드, 시각적 자료 등과 함께)",
+          "level": 1
+        },
+        {
+          "text": "on-premise, private cloud에서 데이터 관리 (보안)",
+          "level": 1
+        }
+      ],
+      "tags": [
+        "AI/ML"
+      ]
+    },
+    {
+      "id": "OpenAI-sora-2-is-here",
+      "date": "2025-10-W01",
+      "year": "2025",
+      "month": "10",
+      "week": "1",
+      "type": "dev",
+      "org": "OpenAI",
+      "title": "Sora 2 is here",
+      "url": "https://openai.com/index/sora-2/",
+      "bullets": [
+        {
+          "text": "physics-aware, synchronized audio, controllability 등 특징",
+          "level": 1
+        },
+        {
+          "text": "5-10s output, 워터마크",
+          "level": 1
+        },
+        {
+          "text": "invite-only launch in U.S. & Canada",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "NUS-mcpmark-a-benchmark-for-stress-testing-realistic-and-comprehensive-mcp-use",
+      "date": "2025-10-W01",
+      "year": "2025",
+      "month": "10",
+      "week": "1",
+      "type": "paper",
+      "org": "NUS",
+      "title": "MCPMark: A Benchmark for Stress-Testing Realistic and Comprehensive MCP Use",
+      "url": "https://arxiv.org/abs/2509.24002",
+      "bullets": [
+        {
+          "text": "richer & diverse interactions 필요. CRUD operations 포함.",
+          "level": 1
+        },
+        {
+          "text": "gpt-5-medium이 52.56% pass@1, 33.86% pass^4로 현재 기준 최고 성능",
           "level": 1
         }
       ],
@@ -780,8 +852,8 @@
         }
       ],
       "tags": [
-        "multimodal",
-        "AI/ML"
+        "AI/ML",
+        "multimodal"
       ]
     },
     {
@@ -935,8 +1007,8 @@
       ],
       "tags": [
         "reasoning",
-        "AI/ML",
-        "agent"
+        "agent",
+        "AI/ML"
       ]
     },
     {
@@ -986,8 +1058,8 @@
         }
       ],
       "tags": [
-        "multimodal",
-        "AI/ML"
+        "AI/ML",
+        "multimodal"
       ]
     },
     {
@@ -1265,8 +1337,8 @@
       ],
       "tags": [
         "reasoning",
-        "AI/ML",
-        "agent"
+        "agent",
+        "AI/ML"
       ]
     },
     {
@@ -1294,8 +1366,8 @@
         }
       ],
       "tags": [
-        "multimodal",
-        "AI/ML"
+        "AI/ML",
+        "multimodal"
       ]
     },
     {
@@ -3741,8 +3813,8 @@
       ],
       "tags": [
         "reasoning",
-        "multimodal",
-        "agent"
+        "agent",
+        "multimodal"
       ]
     },
     {
@@ -3843,8 +3915,8 @@
         }
       ],
       "tags": [
-        "multimodal",
-        "AI/ML"
+        "AI/ML",
+        "multimodal"
       ]
     },
     {
@@ -3981,8 +4053,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "reasoning"
+        "reasoning",
+        "agent"
       ]
     },
     {
@@ -4415,8 +4487,8 @@
       ],
       "tags": [
         "reasoning",
-        "AI/ML",
-        "agent"
+        "agent",
+        "AI/ML"
       ]
     },
     {
@@ -5089,8 +5161,8 @@
       ],
       "tags": [
         "reasoning",
-        "multimodal",
-        "AI/ML"
+        "AI/ML",
+        "multimodal"
       ]
     },
     {
@@ -5140,8 +5212,8 @@
         }
       ],
       "tags": [
-        "multimodal",
-        "AI/ML"
+        "AI/ML",
+        "multimodal"
       ]
     },
     {
@@ -5423,8 +5495,8 @@
       ],
       "tags": [
         "agent",
-        "multimodal",
-        "AI/ML"
+        "AI/ML",
+        "multimodal"
       ]
     },
     {
@@ -5517,8 +5589,8 @@
       ],
       "tags": [
         "reasoning",
-        "AI/ML",
-        "agent"
+        "agent",
+        "AI/ML"
       ]
     },
     {
@@ -5737,8 +5809,8 @@
       ],
       "tags": [
         "reasoning",
-        "AI/ML",
-        "agent"
+        "agent",
+        "AI/ML"
       ]
     },
     {
@@ -6334,8 +6406,8 @@
       ],
       "tags": [
         "reasoning",
-        "multimodal",
-        "agent"
+        "agent",
+        "multimodal"
       ]
     },
     {
@@ -6618,8 +6690,8 @@
         }
       ],
       "tags": [
-        "multimodal",
-        "AI/ML"
+        "AI/ML",
+        "multimodal"
       ]
     },
     {
@@ -6941,8 +7013,8 @@
         }
       ],
       "tags": [
-        "multimodal",
-        "reasoning"
+        "reasoning",
+        "multimodal"
       ]
     },
     {
@@ -7248,8 +7320,8 @@
       ],
       "tags": [
         "reasoning",
-        "multimodal",
-        "AI/ML"
+        "AI/ML",
+        "multimodal"
       ]
     },
     {
@@ -7871,8 +7943,8 @@
       ],
       "tags": [
         "reasoning",
-        "multimodal",
-        "agent"
+        "agent",
+        "multimodal"
       ]
     },
     {
@@ -7901,8 +7973,8 @@
       ],
       "tags": [
         "reasoning",
-        "multimodal",
-        "agent"
+        "agent",
+        "multimodal"
       ]
     },
     {
@@ -8557,8 +8629,8 @@
         }
       ],
       "tags": [
-        "multimodal",
-        "AI/ML"
+        "AI/ML",
+        "multimodal"
       ]
     },
     {
@@ -9205,8 +9277,8 @@
         }
       ],
       "tags": [
-        "multimodal",
-        "AI/ML"
+        "AI/ML",
+        "multimodal"
       ]
     },
     {
@@ -9382,8 +9454,8 @@
         }
       ],
       "tags": [
-        "multimodal",
-        "AI/ML"
+        "AI/ML",
+        "multimodal"
       ]
     },
     {
@@ -9900,8 +9972,8 @@
         }
       ],
       "tags": [
-        "multimodal",
-        "AI/ML"
+        "AI/ML",
+        "multimodal"
       ]
     },
     {
@@ -10322,8 +10394,8 @@
         }
       ],
       "tags": [
-        "multimodal",
-        "AI/ML"
+        "AI/ML",
+        "multimodal"
       ]
     },
     {
@@ -10433,8 +10505,8 @@
         }
       ],
       "tags": [
-        "multimodal",
-        "AI/ML"
+        "AI/ML",
+        "multimodal"
       ]
     },
     {
@@ -11327,8 +11399,8 @@
         }
       ],
       "tags": [
-        "multimodal",
-        "AI/ML"
+        "AI/ML",
+        "multimodal"
       ]
     },
     {
@@ -12726,8 +12798,8 @@
       ],
       "tags": [
         "reasoning",
-        "multimodal",
-        "AI/ML"
+        "AI/ML",
+        "multimodal"
       ]
     },
     {
@@ -13322,8 +13394,8 @@
       ],
       "tags": [
         "agent",
-        "multimodal",
-        "AI/ML"
+        "AI/ML",
+        "multimodal"
       ]
     },
     {
@@ -13390,8 +13462,8 @@
       ],
       "tags": [
         "reasoning",
-        "AI/ML",
-        "agent"
+        "agent",
+        "AI/ML"
       ]
     },
     {
@@ -15059,8 +15131,8 @@
         }
       ],
       "tags": [
-        "multimodal",
-        "AI/ML"
+        "AI/ML",
+        "multimodal"
       ]
     },
     {
@@ -15164,8 +15236,8 @@
         }
       ],
       "tags": [
-        "multimodal",
-        "reasoning"
+        "reasoning",
+        "multimodal"
       ]
     },
     {
@@ -15923,8 +15995,8 @@
         }
       ],
       "tags": [
-        "multimodal",
-        "AI/ML"
+        "AI/ML",
+        "multimodal"
       ]
     },
     {
@@ -16524,8 +16596,8 @@
         }
       ],
       "tags": [
-        "multimodal",
-        "AI/ML"
+        "AI/ML",
+        "multimodal"
       ]
     },
     {
@@ -16756,8 +16828,8 @@
         }
       ],
       "tags": [
-        "multimodal",
-        "AI/ML"
+        "AI/ML",
+        "multimodal"
       ]
     },
     {
@@ -17720,8 +17792,8 @@
         }
       ],
       "tags": [
-        "multimodal",
-        "AI/ML"
+        "AI/ML",
+        "multimodal"
       ]
     },
     {
@@ -18627,8 +18699,8 @@
         }
       ],
       "tags": [
-        "multimodal",
-        "reasoning"
+        "reasoning",
+        "multimodal"
       ]
     },
     {
@@ -19414,8 +19486,8 @@
         }
       ],
       "tags": [
-        "multimodal",
-        "AI/ML"
+        "AI/ML",
+        "multimodal"
       ]
     },
     {
@@ -19672,8 +19744,8 @@
         }
       ],
       "tags": [
-        "multimodal",
-        "AI/ML"
+        "AI/ML",
+        "multimodal"
       ]
     },
     {
@@ -21007,8 +21079,8 @@
         }
       ],
       "tags": [
-        "multimodal",
-        "AI/ML"
+        "AI/ML",
+        "multimodal"
       ]
     },
     {
@@ -25030,8 +25102,8 @@
         }
       ],
       "tags": [
-        "multimodal",
-        "AI/ML"
+        "AI/ML",
+        "multimodal"
       ]
     },
     {
@@ -25525,8 +25597,8 @@
         }
       ],
       "tags": [
-        "multimodal",
-        "AI/ML"
+        "AI/ML",
+        "multimodal"
       ]
     },
     {
