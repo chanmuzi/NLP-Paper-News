@@ -49,6 +49,16 @@
     - domain experts & AI agents에 의해 제작된 127개의 고품질 MCP tasks 벤치마크
     - richer & diverse interactions 필요. CRUD operations 포함.
     - gpt-5-medium이 52.56% pass@1, 33.86% pass^4로 현재 기준 최고 성능
+- 🧑🏻‍💻 [Thinking Machines] [Announcing Tinker](https://thinkingmachines.ai/blog/announcing-tinker/)
+    - LLM을 fine-tuning 할 수 있는 managed API를 첫 제품으로 공개 (Mira Murati)
+    - Llama-3.x ~ Qwen3 시리즈 모델 대상으로 학습 가능. 중간 체크포인트도 다운로드 가능
+- 🧑🏻‍💻 [Google] [AI as a research partner: Advancing theoretical computer science with AlphaEvolve](https://research.google/blog/ai-as-a-research-partner-advancing-theoretical-computer-science-with-alphaevolve/)
+    - optimization 문제를 풀 수 있는 LLM-based coding agent
+    - LLM을 통해 기존 연구 자료 요약, 새로운 이론과 관련된 연구 계획, 이를 위한 증거(proofs) 단계를 밟게 될텐데, 특히 proof 확보에 AlphaEvolve를 활용할 수 있을 것이라 설명
+- 📜 [NUS, Oxford, Stanford] [GEM: A Gym for Agentic LLMs](https://arxiv.org/abs/2510.01051)
+    - General Experience Maker (GEM): open-source environment simulator
+    - 기존 OpenAI-Gym이 제공하던 것들을 그대로 지원 - asynchronous vectorized execution for high throughput & flexible wrappers for easy extensibility
+    - 추가로, robust integrated tools & single-file example scripts with five popular RL training frameworks 지원
 </details>
 
 ## 🙇🏻 9월
