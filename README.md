@@ -59,6 +59,12 @@
     - General Experience Maker (GEM): open-source environment simulator
     - 기존 OpenAI-Gym이 제공하던 것들을 그대로 지원 - asynchronous vectorized execution for high throughput & flexible wrappers for easy extensibility
     - 추가로, robust integrated tools & single-file example scripts with five popular RL training frameworks 지원
+- 📜 [Imperial College London] [Fine-tuning with RAG for Improving LLM Learning of New Skills](https://arxiv.org/abs/2510.01375)
+    - inference-time retrieval을 learned competence through distillaion으로 변경
+    - (1) agent failures로부터 compact & reusable hints 추출
+    - (2) 이 hints를 episode start 시점에 one-shot retrieval에 사용하여 improved teacher trajectories 생성
+    - (3) hint strings를 제거하여 student 모델을 학습함으로써 memorization 대신 internalization 유도
+    - household tasks를 다루는 ALFWorld, online shopping tasks를 다루는 WebShop 벤치마크에서 뛰어난 성능 달성
 </details>
 
 ## 🙇🏻 9월
