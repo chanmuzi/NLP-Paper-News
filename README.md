@@ -65,6 +65,15 @@
     - (2) 이 hints를 episode start 시점에 one-shot retrieval에 사용하여 improved teacher trajectories 생성
     - (3) hint strings를 제거하여 student 모델을 학습함으로써 memorization 대신 internalization 유도
     - household tasks를 다루는 ALFWorld, online shopping tasks를 다루는 WebShop 벤치마크에서 뛰어난 성능 달성
+- 📜 [Meta, Johns Hopkins] [The Era of Real-World Human Interaction: RL from User Conversations](https://arxiv.org/abs/2509.25137)
+    - Reinforcement Learning from Human Interaction (RLHI): in-the-wild user conversations로부터 학습하는 paradigm 제시
+    - RLHI with User-Guided Rewrites: unsatisfactory model outputs를 유저의 natural-language follow-up response 기반으로 수정
+    - RLHI with User-Based Rewards: 유저의 long-term interaction history로 conditioned된 reward 모델을 통해 학습
+    - WildChat 데이터를 두 방식으로 학습한 모델이 personalization & instruction-following 관점에서 baseline outperform
+- 🧑🏻‍💻 [DeepSeek AI] [DeepSeek-V3.2-Exp](https://github.com/deepseek-ai/DeepSeek-V3.2-Exp/tree/main)
+    - V3.1-Terminus 모델에 DeepSeek Sparse Attention(DSA)을 도입한 차세대 모델 실험 버전
+        - 본 Sparse Attention은 long-context scenarios를 위해 설계된 디자인
+    - HuggingFace의 inference를 이용한 demo 시연 가능
 </details>
 
 ## 🙇🏻 9월
