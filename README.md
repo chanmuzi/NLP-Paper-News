@@ -76,6 +76,23 @@
     - HuggingFace의 inference를 이용한 demo 시연 가능
 </details>
 
+<details>
+  <summary>2nd week</summary>
+
+- 🧑🏻‍💻 [OpenAI] [OpenAI DevDay 2025](https://openai.com/devday/)
+    - Apps in ChatGPT & Apps SDK preview: ChatGPT 안에서 앱을 실행할 수 있도록 함으로써 ChatGPT를 대화형 OS로 확장
+    - AgentKit: Agent Builder, ChatKit, Evals (타사 모델 평가 지원), RFT, Guardrail 등
+    - Models & API update: GPT-5 Pro (API), Sora 2 (API), gpt-realtime-mini, gpt-image-1-mini
+    - Codex 일반 제공: Slack 연동, Codex SDK, 관리자 기능
+- 📜 [Maryland] [Uncertainty-Aware Answer Selection for Improved Reasoning in Multi-LLM Systems](https://arxiv.org/abs/2510.02377) (EMNLP 2025)
+    - calibrated log-likelihood score를 사용하여 multiple difference LLMs로부터 best response를 select 하는 방법론 제안
+    - 정확히는 모델들의 internal knowledge & confidence를 활용
+- 📜 [Anthropic, Oxford] [Eliciting Secret Knowledge from Language Models](https://arxiv.org/abs/2510.01070)
+    - elicitation: AI가 보유하고 있는 지식이지만 verbalize 하지 않는 것을 이끌어내고자 하는 연구
+    - 3개 model families로 black-box & white-box 스타일 둘 다 연구
+    - 가장 퍼포먼스가 좋았던 것은 black-box 스타일 중 하나인 prefill attacks: LLM이 predefinex prefix가 주어졌을 때 completion 하면서 secret reveal
+</details>
+
 ## 🙇🏻 9월
 
 <details>
