@@ -91,6 +91,7 @@
     - elicitation: AI가 보유하고 있는 지식이지만 verbalize 하지 않는 것을 이끌어내고자 하는 연구
     - 3개 model families로 black-box & white-box 스타일 둘 다 연구
     - 가장 퍼포먼스가 좋았던 것은 black-box 스타일 중 하나인 prefill attacks: LLM이 predefinex prefix가 주어졌을 때 completion 하면서 secret reveal
+https://arxiv.org/abs/2510.00866
 </details>
 
 ## 🙇🏻 9월
