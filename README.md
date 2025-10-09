@@ -91,7 +91,28 @@
     - elicitation: AI가 보유하고 있는 지식이지만 verbalize 하지 않는 것을 이끌어내고자 하는 연구
     - 3개 model families로 black-box & white-box 스타일 둘 다 연구
     - 가장 퍼포먼스가 좋았던 것은 black-box 스타일 중 하나인 prefill attacks: LLM이 predefinex prefix가 주어졌을 때 completion 하면서 secret reveal
-https://arxiv.org/abs/2510.00866
+- 📜 [Oxford, Apple] [The Data-Quality Illusion: Rethinking Classifier-Based Quality Filtering for LLM Pretraining](https://arxiv.org/abs/2510.00866)
+    - web-crawled datasets를 filtering할 때 가장 흔히 쓰이는 방법론은 Classifier-based Quality Filtering (CQF)
+        - 각 document에 quality score를 부여
+    - CQF가 downstream task 퍼포먼스는 향상시키지만, 반드시 high-quality dataset modeling으로 이어지는 것은 아니라고 지적
+        - 왜냐하면 CQF가 high-qaulity dataset 또한 filtering 하는 경우가 있기 때문
+    - CQF 기반으로 학습한 모델 vs. random token permutations 기반으로 학습한 모델
+- 🧑🏻‍💻 [Google] [Meet Jules Tools: A Command Line Companion for Google’s Async Coding Agent](https://developers.googleblog.com/en/meet-jules-tools-a-command-line-companion-for-googles-async-coding-agent/)
+    - 기존 자동화 내에 커맨드로 포함 가능
+    - 과거 수정 내역과 개발자의 preferences를 기억하는 context awareness
+    - dashboard-style tasks view를 terminal에서 지원
+- 📜 [CMU] [LLM Microscope: What Model Internals Reveal About Answer Correctness and Context Utilization](https://arxiv.org/abs/2510.04013)
+    - 모델의 activation만으로부터 model outputs의 정확도를 예측하는 방법론에 대한 연구
+    - retrieved context가 모델 답변에 필요할지에 대한 internal signal이 존재하는지 탐구
+        - correct, incorrect, irrelevant context로 비교 실험
+    - intermediate layer activations에 대해 trained simple classifier를 사용하는 것만으로도 첫 번째 토큰의 activation을 분석하여 75% 정확도를 달성함
+- 📜 [Meta, NYU] [A Single Character can Make or Break Your LLM Evals](https://arxiv.org/abs/2510.05152)
+    - in-context examples를 어떻게 formatting 해야 하는지에 대한 연구는 아직까지 많이 이뤄지지 않음을 지적
+        - comma? new line? semi-colon?, …
+    - Llama, Qwen, Gemma model family로 비교실험한 결과 the choice of delimiter가 MMLU에 대한 성능을 +- 23%까지 영향을 줬다고 설명
+    - 심지어 topics, models families 구분 없이 존재하는 현상이며 scale에 따른 개선도 없다고 함
+    - attentino head scores를 분석하여, good-performing delimiters가 입력의 핵심 토큰에 attention 할 수 있도록 돕는다는 것을 확인
+    - 또한 LLM의 robustness to the choice of delimiter를 강화하는 방법론 탐구
 </details>
 
 ## 🙇🏻 9월
