@@ -113,6 +113,19 @@
     - 심지어 topics, models families 구분 없이 존재하는 현상이며 scale에 따른 개선도 없다고 함
     - attentino head scores를 분석하여, good-performing delimiters가 입력의 핵심 토큰에 attention 할 수 있도록 돕는다는 것을 확인
     - 또한 LLM의 robustness to the choice of delimiter를 강화하는 방법론 탐구
+- 🧑🏻‍💻 [Google] [Introducing the Gemini 2.5 Computer Use model](https://blog.google/technology/google-deepmind/gemini-computer-use-model/)
+    - 유저 인터페이스에서 interact 가능한 agents를 build 할 수 있는 개발자용 Gemini API 공개
+        - Gemini 2.5 Pro의 visual understanding & reasoning capability 기반으로 specialized
+    - web & mobile control benchmarks에서 다른 모델들 outperform with lower latency
+    - Google AI Studio & Vertext AI 등에서 access 가능
+- 🧑🏻‍💻 [Google] [Speech-to-Retrieval (S2R): A new approach to voice search](https://research.google/blog/speech-to-retrieval-s2r-a-new-approach-to-voice-search/)
+    - voice를 text로 변환하지 않고 바로 검색에 활용하여 더 빠르게 검색할 수 있도록 함
+    - Simple Voice Questions (SVQ) dataset open-sourcing: 17개 언어, 27개 지역 대상으로 수집된 short audio questions. S2R 평가에 사용됨
+- 📜 [Samsung] [Less is More: Recursive Reasoning with Tiny Networks](https://arxiv.org/abs/2510.04871)
+    - Hierarchical Reasoning Model (HRM): 2개의 small neural network를 사용하는 방법론으로 복잡한 문제를 작은 사이즈로도 잘 풀어낸다고 알려짐
+        - 27M parameters trained on small data (~1000 examples)
+    - Tiny Recursive Model (TRM): 더 간단한 recursive reasoning approach로, HRM보다 뛰어난 일반화 성능을 지녔다고 설명
+        - only 2 layers. 7M parameters
 </details>
 
 ## 🙇🏻 9월
