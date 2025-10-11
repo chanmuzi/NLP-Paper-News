@@ -126,6 +126,14 @@
         - 27M parameters trained on small data (~1000 examples)
     - Tiny Recursive Model (TRM): 더 간단한 recursive reasoning approach로, HRM보다 뛰어난 일반화 성능을 지녔다고 설명
         - only 2 layers. 7M parameters
+- 🧑🏻‍💻 [Figure] [Introducing Figure 03](https://www.figure.ai/news/introducing-figure-03)
+    - designed for homes, factories, world sclae humanoid
+    - each fingertip은 high-fidelity tactile sensor를 통해 real-time perception & reasoning을 가능토록 함
+- 📜 [Tsinghua] [Cache-to-Cache: Direct Semantic Communication Between Large Language Models](https://arxiv.org/abs/2510.03215)
+    - enriching the KV-Cache semantics can improve response quality without increasing cache size
+    - 이를 통해 KV-Cache가 inter-model communication의 effective medium이라고 주장
+    - Cache-to-Cache (C2C): LLMs 간의 direct semantic communication을 위한 새로운 paradigm
+    - neural network를 사용하여 source model’s KV-cache를 project & fuse with that of target model
 </details>
 
 ## 🙇🏻 9월
