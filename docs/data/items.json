@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "last_updated": "2025-10-11T06:42:25.829828",
-  "total_items": 1452,
+  "last_updated": "2025-10-12T13:54:56.062236",
+  "total_items": 1453,
   "items": [
     {
       "id": "NVIDIA,-MIT,-HKUST-longlive-real-time-interactive-long-video-generation",
@@ -589,6 +589,35 @@
       ],
       "tags": [
         "AI/ML"
+      ]
+    },
+    {
+      "id": "Meta-agent-learning-via-early-experience",
+      "date": "2025-10-W02",
+      "year": "2025",
+      "month": "10",
+      "week": "2",
+      "type": "paper",
+      "org": "Meta",
+      "title": "Agent Learning via Early Experience",
+      "url": "https://arxiv.org/abs/2510.08558",
+      "bullets": [
+        {
+          "text": "현재는 expert data로 fine-tuning하고 있으나 이는 scale-up 할 수 없는 원인이 됨",
+          "level": 2
+        },
+        {
+          "text": "early experience: agent’s own actions로 생성된 interaction data로 future states는 reward signals 없이 supervision으로 serve",
+          "level": 1
+        },
+        {
+          "text": "→ Implicit world modeling, Self-refelction",
+          "level": 2
+        }
+      ],
+      "tags": [
+        "multimodal",
+        "agent"
       ]
     },
     {
@@ -4269,8 +4298,8 @@
       ],
       "tags": [
         "multimodal",
-        "reasoning",
-        "agent"
+        "agent",
+        "reasoning"
       ]
     },
     {
@@ -6862,8 +6891,8 @@
       ],
       "tags": [
         "multimodal",
-        "reasoning",
-        "agent"
+        "agent",
+        "reasoning"
       ]
     },
     {
@@ -8399,8 +8428,8 @@
       ],
       "tags": [
         "multimodal",
-        "reasoning",
-        "agent"
+        "agent",
+        "reasoning"
       ]
     },
     {
