@@ -134,6 +134,11 @@
     - 이를 통해 KV-Cache가 inter-model communication의 effective medium이라고 주장
     - Cache-to-Cache (C2C): LLMs 간의 direct semantic communication을 위한 새로운 paradigm
     - neural network를 사용하여 source model’s KV-cache를 project & fuse with that of target model
+- 📜 [Meta] [Agent Learning via Early Experience](https://arxiv.org/abs/2510.08558)
+    - agents를 학습할 땐 verifialbe rewards도 부족하고 long-horizon rollouts도 부족하다는 문제를 지적
+        - 현재는 expert data로 fine-tuning하고 있으나 이는 scale-up 할 수 없는 원인이 됨
+    - early experience: agent’s own actions로 생성된 interaction data로 future states는 reward signals 없이 supervision으로 serve
+        - → Implicit world modeling, Self-refelction
 </details>
 
 ## 🙇🏻 9월
