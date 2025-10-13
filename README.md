@@ -141,6 +141,17 @@
         - → Implicit world modeling, Self-refelction
 </details>
 
+<details>
+  <summary>3rd week</summary>
+
+- 🧑🏻‍💻 [Anthropic] [A small number of samples can poison LLMs of any size](https://www.anthropic.com/research/small-samples-poison)
+    - 모델 크기나 학습 데이터의 양과 상관 없이 250개의 malicious documents면 backdoor vulnerability 만들기에 충분하다고 설명
+    - 모델 사이즈에 비례하여 더 많은 데이터를 학습하게 되므로 이를 attack 하기 위해서는 training data의 비율을 조정해야 한다는 것이 관념이었으나 “고정된” 개수의 documents로 attack이 가능하다고 주장하는 것임
+- 📜 [Stanford] [Agentic Context Engineering: Evolving Contexts for Self-Improving Language Models](https://www.arxiv.org/abs/2510.04618)
+    - ACE: contexts를 evolving playbooks로 다루는 프레임워크
+    - agent, domain-specific benchmark에서 ACE가 context를 offline & online 둘 다 잘 optimize 한다는 실험 결과
+</details>
+
 ## 🙇🏻 9월
 
 <details>
