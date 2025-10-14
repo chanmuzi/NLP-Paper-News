@@ -150,6 +150,11 @@
 - 📜 [Stanford] [Agentic Context Engineering: Evolving Contexts for Self-Improving Language Models](https://www.arxiv.org/abs/2510.04618)
     - ACE: contexts를 evolving playbooks로 다루는 프레임워크
     - agent, domain-specific benchmark에서 ACE가 context를 offline & online 둘 다 잘 optimize 한다는 실험 결과
+- 📜 [KAIST] [KORMo: Korean Open Reasoning Model for Everyone](https://arxiv.org/abs/2510.09426)
+    - 완전한 오픈소스로 공개한 최초의 한국어 모델 (bilingual LLM, 10.8B)
+    - (1) synthetic data로 model collapse 없이 pre-training 가능
+        - synthetic data-driven fully open models (FOMs)
+    - (2) bilingual instruction tuning으로 near-native reasoning & coherence 달성 가능
 </details>
 
 ## 🙇🏻 9월
