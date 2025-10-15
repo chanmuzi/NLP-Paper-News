@@ -155,6 +155,11 @@
     - (1) synthetic data로 model collapse 없이 pre-training 가능
         - synthetic data-driven fully open models (FOMs)
     - (2) bilingual instruction tuning으로 near-native reasoning & coherence 달성 가능
+- 🧑🏻‍💻 [Adrej Karpathy] [Nanochat](https://github.com/karpathy/nanochat)
+    - 8XH100 node에서 돌아갈 수 있도록 설계된 full-stack implementation
+    - 학습 및 추론 돌리는데 $100 정도 비용
+- 🧑🏻‍💻 [MS] [Introducing MAI-Image-1, debuting in the top 10 on LMArena](https://microsoft.ai/news/introducing-mai-image-1-debuting-in-the-top-10-on-lmarena/)
+    - MS에서 최초로 fully in-house 개발된 image generation model
 </details>
 
 ## 🙇🏻 9월
