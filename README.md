@@ -160,6 +160,15 @@
     - 학습 및 추론 돌리는데 $100 정도 비용
 - 🧑🏻‍💻 [MS] [Introducing MAI-Image-1, debuting in the top 10 on LMArena](https://microsoft.ai/news/introducing-mai-image-1-debuting-in-the-top-10-on-lmarena/)
     - MS에서 최초로 fully in-house 개발된 image generation model
+- 📜 [Princeton] [Skill-Targeted Adaptive Training](https://arxiv.org/abs/2510.10023)
+    - STAT: teacher model의 metacognition ability를 이용한 fine-tuning strategy 제안
+    - teacher는 task dataset을 사용해서 list of skills를 만들고, 각 스킬에 필요한 data point에 labeling
+    - student’s answers를 monitoring하여 Missing-Skill-Profile를 생성
+        - STAT-Sel: 이에 따라 training examples를 adaptively reweights
+        - STAT-Syn: missing skills를 포함하는 additional examples를 synthesize
+- 📜 [NYU] [Diffusion Transformers with Representation Autoencoders](https://arxiv.org/abs/2510.11690)
+    - DiT에 사용되는 VAE를 pretrained representation encoders paired with decoders로 교체
+        - high-quality reconstructions & semnatically rich latent spaces 제공
 </details>
 
 ## 🙇🏻 9월
