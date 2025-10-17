@@ -169,6 +169,10 @@
 - 📜 [NYU] [Diffusion Transformers with Representation Autoencoders](https://arxiv.org/abs/2510.11690)
     - DiT에 사용되는 VAE를 pretrained representation encoders paired with decoders로 교체
         - high-quality reconstructions & semnatically rich latent spaces 제공
+- 🧑🏻‍💻 [Alibaba] [Qwen3-VL](https://huggingface.co/collections/Qwen/qwen3-vl-68d2a7c1b8a8afce4ebd2dbe)
+    - 4B, 8B 사이즈의 compact dense vision-language models (Instruct & Thinking)
+    - FP8 deployment 가능
+    - 일부 벤치마크에서 Gemini 2.5 Flash-Lite & GPT-5 Nano 능가
 </details>
 
 ## 🙇🏻 9월
