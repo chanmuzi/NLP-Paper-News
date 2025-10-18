@@ -173,6 +173,18 @@
     - 4B, 8B 사이즈의 compact dense vision-language models (Instruct & Thinking)
     - FP8 deployment 가능
     - 일부 벤치마크에서 Gemini 2.5 Flash-Lite & GPT-5 Nano 능가
+- 📜 [Shanghai Jiao Tong] [AI for Service: Proactive Assistance with AI Glasses](https://arxiv.org/abs/2510.14359)
+    - AI4Service: 일상에서 proactive & real-time assistance 가 가능하도록 만드는 paradigm
+    - Alpha-Service: 두 가지 challenges를 address (using AI Glasses)
+        - Know When to intervene by detecting service opportunities
+        - Know How to provide both generalized & personalized services
+    - 5개의 key components
+        - Input Unit, CPU, Arithmetic Logic Unit, Memory unit, Output Uni
+- 🧑🏻‍💻 [Anthropic] [Introducing Claude Haiku 4.5](https://www.anthropic.com/news/claude-haiku-4-5)
+    - coding 능력이 뛰어나지만 사이즈가 작은 최신 모델 공개
+    - Sonnet 모델과 유사한 아키텍쳐를 따르고 있으나 speed & cost efficiency를 최적화하는 것에 집중
+- 🧑🏻‍💻 [Alibaba] [Meet Your AI Memory](https://x.com/Alibaba_Qwen/status/1978466605249204512)
+    - Qwen Chat에서도 user context & history 기반으로 personal experience를 향상시키고자 함
 </details>
 
 ## 🙇🏻 9월
