@@ -185,6 +185,13 @@
     - Sonnet 모델과 유사한 아키텍쳐를 따르고 있으나 speed & cost efficiency를 최적화하는 것에 집중
 - 🧑🏻‍💻 [Alibaba] [Meet Your AI Memory](https://x.com/Alibaba_Qwen/status/1978466605249204512)
     - Qwen Chat에서도 user context & history 기반으로 personal experience를 향상시키고자 함
+- 📜 [Meta] [The Art of Scaling Reinforcement Learning Compute for LLMs](https://arxiv.org/abs/2510.13786)
+    - LLMs의 RL scaling에 관한 연구
+    - → ScaleRL 제시: 100,000 GPU hours까지 scale-up 가능한 best-practice recipe라는 점을 입증
+- 📜 [Stanford] [Verbalized Sampling: How to Mitigate Mode Collapse and Unlock LLM Diversity](https://arxiv.org/abs/2510.01171)
+    - typicality bias in preference data를 model collapse의 주된 원인으로 지적
+    - Verbalized Sampling (VS): model collapse를 피할 수 있는 training-free prompting strategy
+    - responses에 대한 probability distribution을 모델이 스스로 verbalize 하는 것만으로도 creative writing, dialogue simulation, open-ended QA 등 태스크에서 답변 다양성 크게 증가 (factual accuracy 감소 없이)
 </details>
 
 ## 🙇🏻 9월
