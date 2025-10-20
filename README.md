@@ -194,6 +194,17 @@
     - responses에 대한 probability distribution을 모델이 스스로 verbalize 하는 것만으로도 creative writing, dialogue simulation, open-ended QA 등 태스크에서 답변 다양성 크게 증가 (factual accuracy 감소 없이)
 </details>
 
+<details>
+  <summary>1st week</summary>
+
+- 📜 [Together, Stanford] [ReasonIF: Large Reasoning Models Fail to Follow Instructions During Reasoning](https://arxiv.org/abs/2510.15211)
+    - Large Reasoning Models (LRMs) 역시 user instruction을 따라 reasoning process를 만들어야 한다는 점을 지적
+    - ReasonIF: reasoning instruction following 능력을 평가하는 벤치마크 도입
+        - multilingual reasoning, formatting 등 6개의 카테고리로 구분
+    - 현존하는 open-source LRMs는 최대 0.25점을 기록하는 수준임
+    - 합성데이터를 이용한 multi-turn reasoning & Reasoning Instruction Finetuning (RIF) 강조
+</details>
+
 ## 🙇🏻 9월
 
 <details>
