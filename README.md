@@ -203,6 +203,14 @@
         - multilingual reasoning, formatting 등 6개의 카테고리로 구분
     - 현존하는 open-source LRMs는 최대 0.25점을 기록하는 수준임
     - 합성데이터를 이용한 multi-turn reasoning & Reasoning Instruction Finetuning (RIF) 강조
+- 📜 [Nanjing, ETH] [A Theoretical Study on Bridging Internal Probability and Self-Consistency for LLM Reasoning](https://arxiv.org/abs/2510.15444)
+    - confidence estimation 관점에서 sampling-based tes-time scaling methods를 분석하는 framework
+    - self-consistency는 high estimation error, perplexity는 modeling error 라는 한계점 지적
+    - 이를 해결하기 위해 RPC 제안: Perplexity Consistency & Reasoning Pruning을 이용하는 hybrid method
+- 📜 [PaddlePaddle] [PaddleOCR-VL: Boosting Multilingual Document Parsing via a 0.9B Ultra-Compact Vision-Language Model](https://arxiv.org/abs/2510.14528)
+    - NaViT-style dynamic visual encoder & ERNIE-4.5-0.3B language model
+    - 109개 언어를 지원하며 다양한 elements 인식 가능 (text, table, formula, chart 등)
+    - page-level parsing & element-level recognition에서 SoTA
 </details>
 
 ## 🙇🏻 9월
