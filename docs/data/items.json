@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "last_updated": "2025-10-21T05:44:04.774244",
-  "total_items": 1469,
+  "last_updated": "2025-10-22T05:16:09.904835",
+  "total_items": 1473,
   "items": [
     {
       "id": "NVIDIA,-MIT,-HKUST-longlive-real-time-interactive-long-video-generation",
@@ -304,8 +304,8 @@
         }
       ],
       "tags": [
-        "agent",
         "multimodal",
+        "agent",
         "AI/ML"
       ]
     },
@@ -616,8 +616,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "multimodal"
+        "multimodal",
+        "agent"
       ]
     },
     {
@@ -975,6 +975,77 @@
         },
         {
           "text": "page-level parsing & element-level recognition에서 SoTA",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "Google-grounding-with-google-maps-now-available-in-the-gemini-api",
+      "date": "2025-10-W01",
+      "year": "2025",
+      "month": "10",
+      "week": "1",
+      "type": "dev",
+      "org": "Google",
+      "title": "Grounding with Google Maps: Now available in the Gemini API",
+      "url": "https://blog.google/technology/developers/grounding-google-maps-gemini-api/",
+      "bullets": [
+        {
+          "text": "$25 / 1,000 location-enhanced prompts",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "HuggingFace-huggingchat",
+      "date": "2025-10-W01",
+      "year": "2025",
+      "month": "10",
+      "week": "1",
+      "type": "dev",
+      "org": "HuggingFace",
+      "title": "HuggingChat",
+      "url": "https://huggingface.co/chat/",
+      "bullets": [],
+      "tags": []
+    },
+    {
+      "id": "Anthropic-claude-code-on-the-web",
+      "date": "2025-10-W01",
+      "year": "2025",
+      "month": "10",
+      "week": "1",
+      "type": "dev",
+      "org": "Anthropic",
+      "title": "Claude Code on the web",
+      "url": "https://www.anthropic.com/news/claude-code-on-the-web",
+      "bullets": [
+        {
+          "text": "터미널 접속 없이 웹에서 처리하는 기능이 codex와 동일",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "OpenAI-introducing-chatgpt-atlas",
+      "date": "2025-10-W01",
+      "year": "2025",
+      "month": "10",
+      "week": "1",
+      "type": "dev",
+      "org": "OpenAI",
+      "title": "Introducing ChatGPT Atlas",
+      "url": "https://openai.com/index/introducing-chatgpt-atlas",
+      "bullets": [
+        {
+          "text": "이용 시작부터 7일 간 promotion. 더 많은 호출 가능. 현재는 mac os만 지원",
+          "level": 1
+        },
+        {
+          "text": "새로운 탭 화면이 검색창 같은데 ChatGPT 메인 화면이어서 대화 이력도 확인 가능",
           "level": 1
         }
       ],
@@ -4657,8 +4728,8 @@
         }
       ],
       "tags": [
-        "agent",
         "multimodal",
+        "agent",
         "reasoning"
       ]
     },
@@ -6339,8 +6410,8 @@
         }
       ],
       "tags": [
-        "agent",
         "multimodal",
+        "agent",
         "AI/ML"
       ]
     },
@@ -7250,8 +7321,8 @@
         }
       ],
       "tags": [
-        "agent",
         "multimodal",
+        "agent",
         "reasoning"
       ]
     },
@@ -8787,8 +8858,8 @@
         }
       ],
       "tags": [
-        "agent",
         "multimodal",
+        "agent",
         "reasoning"
       ]
     },
@@ -8817,8 +8888,8 @@
         }
       ],
       "tags": [
-        "agent",
         "multimodal",
+        "agent",
         "reasoning"
       ]
     },
@@ -14238,8 +14309,8 @@
         }
       ],
       "tags": [
-        "agent",
         "multimodal",
+        "agent",
         "AI/ML"
       ]
     },
