@@ -211,6 +211,18 @@
     - NaViT-style dynamic visual encoder & ERNIE-4.5-0.3B language model
     - 109개 언어를 지원하며 다양한 elements 인식 가능 (text, table, formula, chart 등)
     - page-level parsing & element-level recognition에서 SoTA
+- 🧑🏻‍💻 [Google] [Grounding with Google Maps: Now available in the Gemini API](https://blog.google/technology/developers/grounding-google-maps-gemini-api/)
+    - 250M개가 넘는 지역에 대한 real-world data에 대해 Gemini가 reasoning
+    - $25 / 1,000 location-enhanced prompts
+- 🧑🏻‍💻 [HuggingFace] [HuggingChat](https://huggingface.co/chat/)
+    - GPT-5-style model routing 적용해서 수백 개의 open-source models 중 적합한 것을 골라서 답변 생성
+- 🧑🏻‍💻 [Anthropic] [Claude Code on the web](https://www.anthropic.com/news/claude-code-on-the-web)
+    - GitHub 통해 연동된 repo에 대해 parallel 하게 coding tasks 수행 가능
+    - 터미널 접속 없이 웹에서 처리하는 기능이 codex와 동일
+- 🧑🏻‍💻 [OpenAI] [Introducing ChatGPT Atlas](https://openai.com/index/introducing-chatgpt-atlas)
+    - ChatGPT가 내장된 browser 출시
+    - 이용 시작부터 7일 간 promotion. 더 많은 호출 가능. 현재는 mac os만 지원
+    - 새로운 탭 화면이 검색창 같은데 ChatGPT 메인 화면이어서 대화 이력도 확인 가능
 </details>
 
 ## 🙇🏻 9월
