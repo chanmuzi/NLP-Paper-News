@@ -195,7 +195,7 @@
 </details>
 
 <details>
-  <summary>1st week</summary>
+  <summary>4th week</summary>
 
 - 📜 [Together, Stanford] [ReasonIF: Large Reasoning Models Fail to Follow Instructions During Reasoning](https://arxiv.org/abs/2510.15211)
     - Large Reasoning Models (LRMs) 역시 user instruction을 따라 reasoning process를 만들어야 한다는 점을 지적
@@ -223,6 +223,12 @@
     - ChatGPT가 내장된 browser 출시
     - 이용 시작부터 7일 간 promotion. 더 많은 호출 가능. 현재는 mac os만 지원
     - 새로운 탭 화면이 검색창 같은데 ChatGPT 메인 화면이어서 대화 이력도 확인 가능
+- 📜 [Spike Studio] [Automatic Prompt Generation via Adaptive Selection of Prompting Techniques](https://arxiv.org/abs/2510.18162)
+    - user의 abstract task descriptions 기반으로 task-appropriate prompting technique을 선정하고 high-quality prompts 생성
+    - 다양한 tasks 간의 semantic similarity를 기반으로 knowledge base를 constructs
+    - 유저가 task descriptions를 입력하면 system이 가장 관련성 높은 task cluster로 assign
+- 🧑🏻‍💻 [Google] [Google AI Studio](https://aistudio.google.com/apps)
+    - prompts로 vibe coding 할 수 있는 AI Studio 출시
 </details>
 
 ## 🙇🏻 9월
