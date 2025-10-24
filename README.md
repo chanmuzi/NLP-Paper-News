@@ -229,6 +229,22 @@
     - 유저가 task descriptions를 입력하면 system이 가장 관련성 높은 task cluster로 assign
 - 🧑🏻‍💻 [Google] [Google AI Studio](https://aistudio.google.com/apps)
     - prompts로 vibe coding 할 수 있는 AI Studio 출시
+- 📜 [Zhejiang, NUS] [LightMem: Lightweight and Efficient Memory-Augmented Generation](https://arxiv.org/abs/2510.18866)
+    - LightMem: 메모리를 3개의 complementary stages로 organizes
+        - (1) cognition-inspired sensory memory가 lightweight compression을 통해 무관한 데이터를 filter & 주제에 따라 그룹화
+        - (2) topic-aware short-term memory가 이런 topic-based groups를 consolidate
+        - (3) long-term memory가 이러한 정보를 활용
+- 📜 [JHU, PKU, Princeton, MIT, Harvard] [World-in-World: World Models in a Closed-Loop World](https://arxiv.org/abs/2510.18135)
+    - 현존하는 generative world models (WMs) 벤치마크는 open-loop protocol을 채택함으로써 visual quality는 강조하는 반면 agents가 embodied tasks를 성공하는지에 대해서는 집중하지 않고 있다고 지적
+    - World-in-World: real agent-environment를 반영하는 closed-loop에서 WM를 벤치마크하는 open platform
+        - 다양한 WMs를 평가하는 4개의 closed-loop environments를 curate
+    - 또한 embodied setting에서 WM에 대한 data scaling law를 제안
+- 📜 [HKUST, NYU] [DiffAdapt: Difficulty-Adaptive Reasoning for Token-Efficient LLM Inference](https://arxiv.org/abs/2510.19669)
+    - reasoning LLMs의 overthinking을 최소화하기 위한 연구
+    - reasoning traces의 토큰 확률의 entropy 계산 → U-shaped entropy pattern 발견
+        - 쉬운 문제에 대해서도 높은 entropy를 갖고 있음 (정확한 답변임에도 불구하고)
+    - DiffAdapt: 각 question의 난이도와 reasoning trace entropy를 근거로 Easy/Normal/Hard 추론 전략을 선택하는 프레임워크
+        - 각 전략마다 prompt, temperature, maximum token length 정해져 있음
 </details>
 
 ## 🙇🏻 9월
