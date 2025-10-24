@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "last_updated": "2025-10-23T02:54:31.900480",
-  "total_items": 1475,
+  "last_updated": "2025-10-24T03:10:46.431182",
+  "total_items": 1478,
   "items": [
     {
       "id": "NVIDIA,-MIT,-HKUST-longlive-real-time-interactive-long-video-generation",
@@ -1085,6 +1085,92 @@
       "url": "https://aistudio.google.com/apps",
       "bullets": [],
       "tags": []
+    },
+    {
+      "id": "Zhejiang,-NUS-lightmem-lightweight-and-efficient-memory-augmented-generation",
+      "date": "2025-10-W04",
+      "year": "2025",
+      "month": "10",
+      "week": "4",
+      "type": "paper",
+      "org": "Zhejiang, NUS",
+      "title": "LightMem: Lightweight and Efficient Memory-Augmented Generation",
+      "url": "https://arxiv.org/abs/2510.18866",
+      "bullets": [
+        {
+          "text": "(1) cognition-inspired sensory memory가 lightweight compression을 통해 무관한 데이터를 filter & 주제에 따라 그룹화",
+          "level": 2
+        },
+        {
+          "text": "(2) topic-aware short-term memory가 이런 topic-based groups를 consolidate",
+          "level": 2
+        },
+        {
+          "text": "(3) long-term memory가 이러한 정보를 활용",
+          "level": 2
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "JHU,-PKU,-Princeton,-MIT,-Harvard-world-in-world-world-models-in-a-closed-loop-world",
+      "date": "2025-10-W04",
+      "year": "2025",
+      "month": "10",
+      "week": "4",
+      "type": "paper",
+      "org": "JHU, PKU, Princeton, MIT, Harvard",
+      "title": "World-in-World: World Models in a Closed-Loop World",
+      "url": "https://arxiv.org/abs/2510.18135",
+      "bullets": [
+        {
+          "text": "World-in-World: real agent-environment를 반영하는 closed-loop에서 WM를 벤치마크하는 open platform",
+          "level": 1
+        },
+        {
+          "text": "다양한 WMs를 평가하는 4개의 closed-loop environments를 curate",
+          "level": 2
+        },
+        {
+          "text": "또한 embodied setting에서 WM에 대한 data scaling law를 제안",
+          "level": 1
+        }
+      ],
+      "tags": [
+        "agent"
+      ]
+    },
+    {
+      "id": "HKUST,-NYU-diffadapt-difficulty-adaptive-reasoning-for-token-efficient-llm-inference",
+      "date": "2025-10-W04",
+      "year": "2025",
+      "month": "10",
+      "week": "4",
+      "type": "paper",
+      "org": "HKUST, NYU",
+      "title": "DiffAdapt: Difficulty-Adaptive Reasoning for Token-Efficient LLM Inference",
+      "url": "https://arxiv.org/abs/2510.19669",
+      "bullets": [
+        {
+          "text": "reasoning traces의 토큰 확률의 entropy 계산 → U-shaped entropy pattern 발견",
+          "level": 1
+        },
+        {
+          "text": "쉬운 문제에 대해서도 높은 entropy를 갖고 있음 (정확한 답변임에도 불구하고)",
+          "level": 2
+        },
+        {
+          "text": "DiffAdapt: 각 question의 난이도와 reasoning trace entropy를 근거로 Easy/Normal/Hard 추론 전략을 선택하는 프레임워크",
+          "level": 1
+        },
+        {
+          "text": "각 전략마다 prompt, temperature, maximum token length 정해져 있음",
+          "level": 2
+        }
+      ],
+      "tags": [
+        "reasoning"
+      ]
     },
     {
       "id": "Harvard-University,-Cambridge-lexical-hints-of-accuracy-in-llm-reasoning-chains",
@@ -4764,8 +4850,8 @@
       ],
       "tags": [
         "agent",
-        "reasoning",
-        "multimodal"
+        "multimodal",
+        "reasoning"
       ]
     },
     {
@@ -6112,8 +6198,8 @@
       ],
       "tags": [
         "AI/ML",
-        "reasoning",
-        "multimodal"
+        "multimodal",
+        "reasoning"
       ]
     },
     {
@@ -6213,8 +6299,8 @@
         }
       ],
       "tags": [
-        "reasoning",
-        "multimodal"
+        "multimodal",
+        "reasoning"
       ]
     },
     {
@@ -7357,8 +7443,8 @@
       ],
       "tags": [
         "agent",
-        "reasoning",
-        "multimodal"
+        "multimodal",
+        "reasoning"
       ]
     },
     {
@@ -7964,8 +8050,8 @@
         }
       ],
       "tags": [
-        "reasoning",
-        "multimodal"
+        "multimodal",
+        "reasoning"
       ]
     },
     {
@@ -8271,8 +8357,8 @@
       ],
       "tags": [
         "AI/ML",
-        "reasoning",
-        "multimodal"
+        "multimodal",
+        "reasoning"
       ]
     },
     {
@@ -8894,8 +8980,8 @@
       ],
       "tags": [
         "agent",
-        "reasoning",
-        "multimodal"
+        "multimodal",
+        "reasoning"
       ]
     },
     {
@@ -9656,8 +9742,8 @@
         }
       ],
       "tags": [
-        "reasoning",
-        "multimodal"
+        "multimodal",
+        "reasoning"
       ]
     },
     {
@@ -13749,8 +13835,8 @@
       ],
       "tags": [
         "AI/ML",
-        "reasoning",
-        "multimodal"
+        "multimodal",
+        "reasoning"
       ]
     },
     {
@@ -16187,8 +16273,8 @@
         }
       ],
       "tags": [
-        "reasoning",
-        "multimodal"
+        "multimodal",
+        "reasoning"
       ]
     },
     {
@@ -18559,8 +18645,8 @@
         }
       ],
       "tags": [
-        "reasoning",
-        "multimodal"
+        "multimodal",
+        "reasoning"
       ]
     },
     {
@@ -19650,8 +19736,8 @@
         }
       ],
       "tags": [
-        "reasoning",
-        "multimodal"
+        "multimodal",
+        "reasoning"
       ]
     },
     {
@@ -24838,8 +24924,8 @@
         }
       ],
       "tags": [
-        "reasoning",
-        "multimodal"
+        "multimodal",
+        "reasoning"
       ]
     },
     {
@@ -26322,8 +26408,8 @@
         }
       ],
       "tags": [
-        "reasoning",
-        "multimodal"
+        "multimodal",
+        "reasoning"
       ]
     },
     {
