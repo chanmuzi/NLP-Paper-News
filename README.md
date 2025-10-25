@@ -245,6 +245,10 @@
         - 쉬운 문제에 대해서도 높은 entropy를 갖고 있음 (정확한 답변임에도 불구하고)
     - DiffAdapt: 각 question의 난이도와 reasoning trace entropy를 근거로 Easy/Normal/Hard 추론 전략을 선택하는 프레임워크
         - 각 전략마다 prompt, temperature, maximum token length 정해져 있음
+- 📜 [Tsinghua, GIT] [AdaSPEC: Selective Knowledge Distillation for Efficient Speculative Decoders](https://arxiv.org/abs/2510.19779)
+    - Speculative Decoding (SD) 에서 주로 사용되는 Knowledge Distillation (KD)은 SD의 진정한 목적인 token acceptance rate를 maxmize를 달성하지 못함을 문제로 지적
+    - AdaSPEC: KD process에 selective token filtering을 통합한 방법론 제시
+        - reference model을 사용하여 difficult-to-fit tokens를 filtering → simpler tokens에 대해 better align
 </details>
 
 ## 🙇🏻 9월
