@@ -249,6 +249,10 @@
     - Speculative Decoding (SD) 에서 주로 사용되는 Knowledge Distillation (KD)은 SD의 진정한 목적인 token acceptance rate를 maxmize를 달성하지 못함을 문제로 지적
     - AdaSPEC: KD process에 selective token filtering을 통합한 방법론 제시
         - reference model을 사용하여 difficult-to-fit tokens를 filtering → simpler tokens에 대해 better align
+- 📜 [DeepSeek AI] [DeepSeek-OCR: Contexts Optical Compression](https://arxiv.org/abs/2510.18234v1)
+    - optical 2D mapping을 통해 long contexts를 압축하는 기술 제시
+    - DeepEncoder & DeepSeek3B-MoE-A570M decoder
+    - 텍스트 토큰이 vison 토큰의 10배보다 적게 유지되는 경우 OCR 정확도는 97% 수준 (압축률이 10배 미만이면)
 </details>
 
 ## 🙇🏻 9월
