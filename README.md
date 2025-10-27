@@ -255,6 +255,14 @@
     - 텍스트 토큰이 vison 토큰의 10배보다 적게 유지되는 경우 OCR 정확도는 97% 수준 (압축률이 10배 미만이면)
 </details>
 
+<details>
+  <summary>5th week</summary>
+
+- 📜 [Sheffield] [Can Confidence Estimates Decide When Chain-of-thought is Necessary for Llms?](https://arxiv.org/abs/2510.21007)
+    - CoT gating에 대한 training-free confidence estimation methods 연구
+    - 4개의 방법론으로 비교 실험해본 결과 특정한 방법론이 특정한 데이터셋에 대해 무조건 좋다고 결론 내리기는 어렵다고 함
+</details>
+
 ## 🙇🏻 9월
 
 <details>
