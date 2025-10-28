@@ -261,6 +261,9 @@
 - 📜 [Sheffield] [Can Confidence Estimates Decide When Chain-of-thought is Necessary for Llms?](https://arxiv.org/abs/2510.21007)
     - CoT gating에 대한 training-free confidence estimation methods 연구
     - 4개의 방법론으로 비교 실험해본 결과 특정한 방법론이 특정한 데이터셋에 대해 무조건 좋다고 결론 내리기는 어렵다고 함
+- 📜 [Meta, Berkeley] [Continual Learning via Sparse Memory Finetuning](https://arxiv.org/abs/2510.15103)
+    - sparse parameter updates가 catastrophic forgetting 없이 새로운 지식을 습득할 수 있는 방법이라고 제시 → sparse memory finetuning
+    - 사전 학습에 사용되었던 데이터보다 새로운 데이터에 대해 높은 activation 값을 갖는 memory slots만 사용
 </details>
 
 ## 🙇🏻 9월
