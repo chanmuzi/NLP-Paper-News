@@ -264,6 +264,10 @@
 - 📜 [Meta, Berkeley] [Continual Learning via Sparse Memory Finetuning](https://arxiv.org/abs/2510.15103)
     - sparse parameter updates가 catastrophic forgetting 없이 새로운 지식을 습득할 수 있는 방법이라고 제시 → sparse memory finetuning
     - 사전 학습에 사용되었던 데이터보다 새로운 데이터에 대해 높은 activation 값을 갖는 memory slots만 사용
+- 🧑🏻‍💻  [open-notebook](https://github.com/lfnovo/open-notebook)
+    - 구글의 Notebook LM의 대안이 될 수 있는 open source로 privacy-foucused 특징
+    - 16개가 넘는 모델들을 선택할 수 있음
+    - docker를 이용하여 간편하게 설치할 수 있음
 </details>
 
 ## 🙇🏻 9월
