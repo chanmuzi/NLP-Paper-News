@@ -268,6 +268,15 @@
     - 구글의 Notebook LM의 대안이 될 수 있는 open source로 privacy-foucused 특징
     - 16개가 넘는 모델들을 선택할 수 있음
     - docker를 이용하여 간편하게 설치할 수 있음
+- 🧑🏻‍💻 [Anthropic] [Claude for Excel](https://claude.com/claude-for-excel)
+    - 엑셀 시트를 읽고 유저와 Q&A 가능한 LLM 베타 공개 (research preview)
+- 🧑🏻‍💻 [Mistral AI] [Introducing Mistral AI Studio.](https://mistral.ai/news/ai-studio)
+    - Enterprise향 모델 개발 플랫폼 제공
+    - Built-in evaluation, Treaceable feedback loops, Proveanance and versioning, Governance, Flexible deployment 등을 핵심 특징으로 제시
+- 🧑🏻‍💻 [Google] [Our Quantum Echoes algorithm is a big step toward real-world applications for quantum computing](https://blog.google/technology/research/quantum-echoes-willow-verifiable-quantum-advantage/)
+    - 새롭게 개발한 Quantum Echoes 알고리즘은 최초로 verifiable Quantum Advantage 달성
+    - 최고급 슈퍼컴퓨터 대비 13,000배 빠른 속도
+    - 동작 원리: 양자 시스템에 신호 보냄 → 하나의 큐비트를 perturb → reverse evolution을 이용한 echo 측정
 </details>
 
 ## 🙇🏻 9월
