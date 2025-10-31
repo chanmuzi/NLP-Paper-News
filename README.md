@@ -277,6 +277,12 @@
     - 새롭게 개발한 Quantum Echoes 알고리즘은 최초로 verifiable Quantum Advantage 달성
     - 최고급 슈퍼컴퓨터 대비 13,000배 빠른 속도
     - 동작 원리: 양자 시스템에 신호 보냄 → 하나의 큐비트를 perturb → reverse evolution을 이용한 echo 측정
+- 🧑🏻‍💻 [Ai2] [olmocr](https://github.com/allenai/olmocr)
+    - PDF, PNG, JPEG 기반 문서를 MD로 변환해주는 오픈소스 OCR
+- 📜 [Shanghai AI, Nanjing, CMU] [JanusCoder: Towards a Foundational Visual-Programmatic Interface for Code Intelligence](https://arxiv.org/abs/2510.23538)
+    - visual 정보도 활용하는 코드 모델의 발전은 고품질의 multi-modal code data 확보의 어려움으로 인해 병목
+    - standard charts부터 complex interactive web UI에 이르는 large-scale, high-quality corpus를 생성하는 toolkit 제안
+    - 위 toolkit을 이용하여 JanusCode-800K 구축
 </details>
 
 ## 🙇🏻 9월
