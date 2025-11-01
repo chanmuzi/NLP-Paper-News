@@ -21,6 +21,24 @@
 
 # 2025
 
+## 🍁 11월
+
+<details>
+  <summary>1st week</summary>
+
+- 🧑🏻‍💻 [MiniMax] [MiniMax M2 & Agent: Ingenious in Simplicity](https://www.minimax.io/news/minimax-m2)
+    - Top-tier 코딩 능력, 강력한 Agentic performance, Cost-Effectiveness & Speed 강조
+    - 모델 가중치를 허깅페이스에 오픈소스로 공개 (오픈소스 모델 중 1위라고 함)
+- 🧑🏻‍💻 [OpenAI] Introducing Aardvark: OpenAI’s agentic security researcher
+    - GPT-5로 실행되는 agentic security researcher, Aardvark 출시
+    - 파이프라인: 커밋 단위의 변화 모니터링 → Threat Model 수립 → 취약점 탐지 → 샌드박스 검증 → 패치 제안 with codex → Human Review → PR 생성
+- 📜 [MoonShot AI] [Kimi Linear: An Expressive, Efficient Attention Architecture](https://arxiv.org/abs/2510.26692)
+    - Kimi Linear: hybrid linear attention architecture - short- & long- context, RL scaling에서 full attention 대비 우위라고 설명
+    - Kimi Delta Attention (KDA): Gated DeltaNet을 finer-grained gating mechanism과 함께 extend
+    - 이를 Multi-Head Latent Attention (MLA)와 교차하여 3B activated & 48B total parameters 모델 학습
+    - 맞춤형 chunk-wise algorithm은 Diagonal-Plus-Low-Rank (DPLR) transition matrices의 variant로 뛰어난 하드웨어 효율성을 보여줌
+</details>
+
 ## 🎃 10월
 
 <details>
