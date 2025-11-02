@@ -37,6 +37,13 @@
     - Kimi Delta Attention (KDA): Gated DeltaNet을 finer-grained gating mechanism과 함께 extend
     - 이를 Multi-Head Latent Attention (MLA)와 교차하여 3B activated & 48B total parameters 모델 학습
     - 맞춤형 chunk-wise algorithm은 Diagonal-Plus-Low-Rank (DPLR) transition matrices의 variant로 뛰어난 하드웨어 효율성을 보여줌
+- 📜 [BAAI] [Emu3.5: Native Multimodal Models are World Learners](https://arxiv.org/abs/2510.26583)
+    - vision & language를 통해 next state를 예측하는 large-scale multimodal world model (open-source)
+    - 10T 토큰 이상의 vision-language interleaved data에 대해 unified next-token prediction 하도록 end-to-end pretrained
+        - multi-modal reasoning & generation을 위한 post-training & RL
+    - 추론 효율성 향상을 위해서 Discrete Diffusion Adaptation (DiDA) 제안
+        - token-by-token decoding → bidirectional parallel prediction
+        - 성능 하락 없이 이미지당 약 20배 추론 속도 향상
 </details>
 
 ## 🎃 10월
