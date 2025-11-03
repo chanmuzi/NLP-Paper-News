@@ -44,6 +44,19 @@
     - 추론 효율성 향상을 위해서 Discrete Diffusion Adaptation (DiDA) 제안
         - token-by-token decoding → bidirectional parallel prediction
         - 성능 하락 없이 이미지당 약 20배 추론 속도 향상
+- 📜 [Meta] [Collaborative Reasoner: Self-Improving Social Agents with Synthetic Conversations (NeurIPS 2025)](https://openreview.net/pdf/42a338bca40ea896002753679729eb2240bf62b3.pdf)
+    - Collaborative Reasoner (Coral): 언어 모델의 collaborative reasoning abilities를 평가하고 개선하는 프레임워크 제시
+    - 잘못된 solutions에는 동의하지 않고, 올바른 solution은 상대방에게 설득할 수 있는 능력 등을 확인할 있는 tasks & metrics
+    - 현존 모델들은 undesirable socia behavior로 인해 혼자서 풀 수 있는 문제도 틀리는 경향이 있다고 설명
+    - 이를 해결하기 위해 synthetic multi-turn preference data를 생성하는 self-play method 제안
+- 📜 [Alibaba] [AgentFold: Long-Horizon Web Agents with Proactive Context Management](https://arxiv.org/abs/2510.24699)
+    - proactive context management: human cognitive process of retrospective consolidation에 영감을 받았다고 설명
+    - context를 dynamic cognitive workspace로 treat
+        - 각 step이서 folding operation 실행: historical trajectory를 multiple sacles에서 관리
+        - 전체 대화의 흐름을 추상화 하면서도 세부 디테일들을 보존
+- 🧑🏻‍💻 [Anthropic] [Emergent Introspective Awareness in Large Language Models](https://transformer-circuits.pub/2025/introspection/index.html)
+    - known concepts의 representations를 injecting 한 뒤 model의 self-reported states를 측정
+    - 특정 시나리오에서 모델은 injected concepts의 존재를 정확하게 알아차릴 수 있다고 보고 → introspective awareness
 </details>
 
 ## 🎃 10월
