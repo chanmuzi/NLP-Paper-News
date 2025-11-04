@@ -57,6 +57,20 @@
 - 🧑🏻‍💻 [Anthropic] [Emergent Introspective Awareness in Large Language Models](https://transformer-circuits.pub/2025/introspection/index.html)
     - known concepts의 representations를 injecting 한 뒤 model의 self-reported states를 측정
     - 특정 시나리오에서 모델은 injected concepts의 존재를 정확하게 알아차릴 수 있다고 보고 → introspective awareness
+- 📜 [Google DeepMind] [Encoder-Decoder or Decoder-Only? Revisiting Encoder-Decoder Large Language Model](https://arxiv.org/abs/2510.26622?_bhlid=d46b09dce3c182a2e068aab7adfe2c336ac960d4)
+    - RedLLM: encoder-decoder vs. DecLLM: decoder-only LLM
+        - 각각 prefix language modeling (LM), causal LM으로 pretrained
+    - Redpajama V1 (1.6T) 로 pretrain & FLAN 으로 instruction tuning
+        - 150M ~ 8B 사이즈 모델 학습
+    - RedLLM이 강력한 scaling properties를 보였을 뿐만 아니라 instruction tuning 효과가 DecLLM보다 좋은 영역들이 존재했다고 설명
+- 📜 [Google Cloud, UCLA] [Supervised Reinforcement Learning: From Expert Trajectories to Step-wise Reasoning](https://arxiv.org/abs/2510.25992)
+    - 문제점
+        - 작은 사이즈의 open-source models는 여러 시도에도 correct solutions를 반환하는 일이 적어서 RLVR 적용이 어렵다
+        - SFT의 경우 rigid token-by-token을 통해 long demonstration에 overfit 된다
+    - Supervised Reinforcement Learning (SRL): 각 action을 commit 하기 전에 internal reasoning monologue를 생성하도록 모델 학습
+        - 모델의 action과 데이터셋으로부터 추출된 expert action의 유사도를 기반으로 smoother reward 제공
+        - 학습중인 모델의 모든 rollouts가 틀린 상황에도 learning signals을 제공할 수 있음
+    - RLVR 이전에 SRL을 적용하는 것이 전반적인 성능 향상에 도움이 된다는 설명
 </details>
 
 ## 🎃 10월
