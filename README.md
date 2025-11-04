@@ -57,7 +57,7 @@
 - 🧑🏻‍💻 [Anthropic] [Emergent Introspective Awareness in Large Language Models](https://transformer-circuits.pub/2025/introspection/index.html)
     - known concepts의 representations를 injecting 한 뒤 model의 self-reported states를 측정
     - 특정 시나리오에서 모델은 injected concepts의 존재를 정확하게 알아차릴 수 있다고 보고 → introspective awareness
-- 📜 [Google DeepMind] [Encoder-Decoder or Decoder-Only? Revisiting Encoder-Decoder Large Language Model](https://arxiv.org/abs/2510.26622?_bhlid=d46b09dce3c182a2e068aab7adfe2c336ac960d4)
+- 📜 [Google DeepMind] [Encoder-Decoder or Decoder-Only? Revisiting Encoder-Decoder Large Language Model](https://arxiv.org/abs/2510.26622)
     - RedLLM: encoder-decoder vs. DecLLM: decoder-only LLM
         - 각각 prefix language modeling (LM), causal LM으로 pretrained
     - Redpajama V1 (1.6T) 로 pretrain & FLAN 으로 instruction tuning
