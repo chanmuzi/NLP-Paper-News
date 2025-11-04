@@ -71,6 +71,15 @@
         - 모델의 action과 데이터셋으로부터 추출된 expert action의 유사도를 기반으로 smoother reward 제공
         - 학습중인 모델의 모든 rollouts가 틀린 상황에도 learning signals을 제공할 수 있음
     - RLVR 이전에 SRL을 적용하는 것이 전반적인 성능 향상에 도움이 된다는 설명
+- 🧑🏻‍💻 [Generalist] [GEN-0 / Embodied Foundation Models That Scale with Physical Interaction](https://generalistai.com/blog/nov-04-2025-GEN-0)
+    - embodied foundation model을 위한 multi-modal model scaling에 관한 성과를 공개
+    - Harmonic Reasoning: 모델이 think & act 를 동시에 할 수 있도록 학습시키는 방법으로 GEN-0의 핵심 feature라고 설명
+    - 7B 사이즈를 넘어가면서 작은 모델들에서 나타나던 ossification 문제가 개선됨 관측
+- 🧑🏻‍💻 [Ai2] [Introducing OlmoEarth Platform: Powerful open infrastructure for planetary insights](https://allenai.org/blog/olmoearth)
+    - Earth observation 업무를 하나의 foundation으로 커버하는 end-to-end 오픈 인프라
+        - 기존에는 crop mapping, deforestation, land use classification 등 태스크별로 개별 모델이 필요했음
+    - 데이터 수집, 라벨링, 학습, 추론, 배포까지 한 번에 처리
+    - OlmoEarth: 10 테라바이트가 넘는 양의 데이터로 pretrained model family
 </details>
 
 ## 🎃 10월
