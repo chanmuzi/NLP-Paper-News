@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "last_updated": "2025-11-04T00:21:49.650820",
-  "total_items": 1497,
+  "last_updated": "2025-11-04T23:06:29.932364",
+  "total_items": 1499,
   "items": [
     {
       "id": "MiniMax-minimax-m2-agent-ingenious-in-simplicity",
@@ -251,6 +251,58 @@
       ],
       "tags": [
         "reasoning"
+      ]
+    },
+    {
+      "id": "Generalist-gen-0-embodied-foundation-models-that-scale-with-physical-interaction",
+      "date": "2025-11-W01",
+      "year": "2025",
+      "month": "11",
+      "week": "1",
+      "type": "dev",
+      "org": "Generalist",
+      "title": "GEN-0 / Embodied Foundation Models That Scale with Physical Interaction",
+      "url": "https://generalistai.com/blog/nov-04-2025-GEN-0",
+      "bullets": [
+        {
+          "text": "Harmonic Reasoning: 모델이 think & act 를 동시에 할 수 있도록 학습시키는 방법으로 GEN-0의 핵심 feature라고 설명",
+          "level": 1
+        },
+        {
+          "text": "7B 사이즈를 넘어가면서 작은 모델들에서 나타나던 ossification 문제가 개선됨 관측",
+          "level": 1
+        }
+      ],
+      "tags": [
+        "reasoning"
+      ]
+    },
+    {
+      "id": "Ai2-introducing-olmoearth-platform-powerful-open-infrastructure-for-planetary-insights",
+      "date": "2025-11-W01",
+      "year": "2025",
+      "month": "11",
+      "week": "1",
+      "type": "dev",
+      "org": "Ai2",
+      "title": "Introducing OlmoEarth Platform: Powerful open infrastructure for planetary insights",
+      "url": "https://allenai.org/blog/olmoearth",
+      "bullets": [
+        {
+          "text": "기존에는 crop mapping, deforestation, land use classification 등 태스크별로 개별 모델이 필요했음",
+          "level": 2
+        },
+        {
+          "text": "데이터 수집, 라벨링, 학습, 추론, 배포까지 한 번에 처리",
+          "level": 1
+        },
+        {
+          "text": "OlmoEarth: 10 테라바이트가 넘는 양의 데이터로 pretrained model family",
+          "level": 1
+        }
+      ],
+      "tags": [
+        "AI/ML"
       ]
     },
     {
@@ -5291,9 +5343,9 @@
         }
       ],
       "tags": [
-        "multimodal",
         "reasoning",
-        "agent"
+        "agent",
+        "multimodal"
       ]
     },
     {
@@ -6639,9 +6691,9 @@
         }
       ],
       "tags": [
-        "multimodal",
         "reasoning",
-        "AI/ML"
+        "AI/ML",
+        "multimodal"
       ]
     },
     {
@@ -6741,8 +6793,8 @@
         }
       ],
       "tags": [
-        "multimodal",
-        "reasoning"
+        "reasoning",
+        "multimodal"
       ]
     },
     {
@@ -7884,9 +7936,9 @@
         }
       ],
       "tags": [
-        "multimodal",
         "reasoning",
-        "agent"
+        "agent",
+        "multimodal"
       ]
     },
     {
@@ -8798,9 +8850,9 @@
         }
       ],
       "tags": [
-        "multimodal",
         "reasoning",
-        "AI/ML"
+        "AI/ML",
+        "multimodal"
       ]
     },
     {
@@ -9421,9 +9473,9 @@
         }
       ],
       "tags": [
-        "multimodal",
         "reasoning",
-        "agent"
+        "agent",
+        "multimodal"
       ]
     },
     {
@@ -9451,9 +9503,9 @@
         }
       ],
       "tags": [
-        "multimodal",
         "reasoning",
-        "agent"
+        "agent",
+        "multimodal"
       ]
     },
     {
@@ -10184,8 +10236,8 @@
         }
       ],
       "tags": [
-        "multimodal",
-        "reasoning"
+        "reasoning",
+        "multimodal"
       ]
     },
     {
@@ -14276,9 +14328,9 @@
         }
       ],
       "tags": [
-        "multimodal",
         "reasoning",
-        "AI/ML"
+        "AI/ML",
+        "multimodal"
       ]
     },
     {
@@ -19087,8 +19139,8 @@
         }
       ],
       "tags": [
-        "multimodal",
-        "reasoning"
+        "reasoning",
+        "multimodal"
       ]
     },
     {
@@ -25366,8 +25418,8 @@
         }
       ],
       "tags": [
-        "multimodal",
-        "reasoning"
+        "reasoning",
+        "multimodal"
       ]
     },
     {
@@ -26850,8 +26902,8 @@
         }
       ],
       "tags": [
-        "multimodal",
-        "reasoning"
+        "reasoning",
+        "multimodal"
       ]
     },
     {
