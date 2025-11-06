@@ -80,6 +80,14 @@
         - 기존에는 crop mapping, deforestation, land use classification 등 태스크별로 개별 모델이 필요했음
     - 데이터 수집, 라벨링, 학습, 추론, 배포까지 한 번에 처리
     - OlmoEarth: 10 테라바이트가 넘는 양의 데이터로 pretrained model family
+- 🧑🏻‍💻 [Microsoft] [Agent Lightning](https://github.com/microsoft/agent-lightning)
+    - 코드 변경 하나 없이 agent를 최적화해주는 프레임워크
+    - agent 코드에 `agl.emit_xxx()`를 넣거나 tracer를 켜면 각 프롬프트 툴 호출 및 보상 신호가 구조화된 이벤트로 수집 → LightningStore → 작업, 리소스, 트레이스 동기화
+    - 선택된 알고리즘이 저장소의 스팬을 읽고 학습 → 학습 결과로 리소스를 저장소에 다시 게시
+- 📜 [Tisnghua] [Towards Agentic RAG with Deep Reasoning: A Survey of RAG-Reasoning Systems in LLMs](https://aclanthology.org/2025.findings-emnlp.648.pdf) (EMNLP 2025 Findings)
+    - 기존 RAG와 reasoning의 한계를 극복하기 위해 둘을 통합된 관점에서 연구
+    - 다음 세 가지를 제시
+        - Reasoning-Enhanced RAG, RAG-Enhanced Reasoning, Synergized RAG-Reasoning framework
 </details>
 
 ## 🎃 10월
