@@ -88,6 +88,18 @@
     - 기존 RAG와 reasoning의 한계를 극복하기 위해 둘을 통합된 관점에서 연구
     - 다음 세 가지를 제시
         - Reasoning-Enhanced RAG, RAG-Enhanced Reasoning, Synergized RAG-Reasoning framework
+- 🧑🏻‍💻 [Google] [Exploring a space-based, scalable AI infrastructure system design](https://research.google/blog/exploring-a-space-based-scalable-ai-infrastructure-system-design/)
+    - 태양광 위성 cluster + Google TPU + free-space optical links 데이터센터를 우주에 지을 계획
+    - 태양광이 우주에서 지상 대비 최대 8배 효율이라고 함
+    - 로켓 발사비가 2030년대 중반에 이르렀을 때 에너지 단가가 지상에서와 근접할 가능성이 있다고 보고 2027년도 초 프로토타입을 목표로 진행하는 프로젝트
+- 🧑🏻‍💻 [Cognition] [Windsurf Codemaps: Understand Code, Before You Vibe It](https://cognition.ai/blog/codemaps#why-codemaps)
+    - vibe coding만으로는 어려운 문제를 해결할 수 없고 코드에 대한 이해가 필수적이라고 주장
+    - 거대하고 복잡한 코드 베이스를 이해할 수 있도록 Codemap 생성
+    - Fast (SWE-1.5) &  Smart (Sonnet 4.5) 방식을 Windsurf 내에서 선택 가능
+- 📜 [Univ. of Milano-Bicocca] [Can Role Vectors Affect LLM Behaviour?](https://aclanthology.org/2025.findings-emnlp.963.pdf) (EMNLP 2025 Findings)
+    - persona-based prompting 대신 role vector를 사용하는 방식에 대한 연구
+    - model activations로부터 29개의 role vectors를 만들고 다양한 도메인에 대해 벤치마크 성능을 평가
+    - (1) activation addition: role-specific directions로 강화할 수 있는가 (2) directional ablation: 이를 제거할 수 있는가
 </details>
 
 ## 🎃 10월
