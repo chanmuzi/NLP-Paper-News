@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "last_updated": "2025-11-07T02:42:40.730698",
-  "total_items": 1504,
+  "last_updated": "2025-11-08T07:08:48.978845",
+  "total_items": 1506,
   "items": [
     {
       "id": "MiniMax-minimax-m2-agent-ingenious-in-simplicity",
@@ -414,6 +414,72 @@
         },
         {
           "text": "(1) activation addition: role-specific directions로 강화할 수 있는가 (2) directional ablation: 이를 제거할 수 있는가",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "Moonshot-AI-introducing-kimi-k2-thinking",
+      "date": "2025-11-W01",
+      "year": "2025",
+      "month": "11",
+      "week": "1",
+      "type": "dev",
+      "org": "Moonshot AI",
+      "title": "Introducing Kimi K2 Thinking",
+      "url": "https://moonshotai.github.io/Kimi-K2/thinking.html",
+      "bullets": [
+        {
+          "text": "다수의 reasoning, coding 벤치마크에서 GPT-5, Sonnet 4.5 상회하는 성능으로 SoTA 달성",
+          "level": 1
+        },
+        {
+          "text": "추론 비용은 이 모델들보다 10x - 20x 저렴",
+          "level": 2
+        },
+        {
+          "text": "100M 이상 유저 | 20M$/a month 의 경우에만 Kimi K2를 명시하는 라이센스로 오픈소스임",
+          "level": 1
+        },
+        {
+          "text": "근데 API 말고 활용하는 방법에 대해서는 알려진 바가 딱히 없어 보임",
+          "level": 2
+        }
+      ],
+      "tags": [
+        "reasoning"
+      ]
+    },
+    {
+      "id": "MDGA-diffusion-language-models-are-super-data-learners",
+      "date": "2025-11-W01",
+      "year": "2025",
+      "month": "11",
+      "week": "1",
+      "type": "paper",
+      "org": "MDGA",
+      "title": "Diffusion Language Models are Super Data Learners",
+      "url": "https://arxiv.org/abs/2511.03276",
+      "bullets": [
+        {
+          "text": "데이터가 많거나 품질이 좋으면 늦게, 모델 사이즈가 클수록 빨리 나타남",
+          "level": 2
+        },
+        {
+          "text": "dense & sparse 아키텍쳐 공통적으로 확인",
+          "level": 2
+        },
+        {
+          "text": "세 가지 compounding factors",
+          "level": 1
+        },
+        {
+          "text": "(1) any-order modeling (2) super-dense compute from iterative bidirectional denoising (3) built-in Monte Carlo augmentation",
+          "level": 2
+        },
+        {
+          "text": "1B - 8B 사이즈의 모델로 실험한 결과를 제시",
           "level": 1
         }
       ],
@@ -5458,8 +5524,8 @@
       ],
       "tags": [
         "multimodal",
-        "agent",
-        "reasoning"
+        "reasoning",
+        "agent"
       ]
     },
     {
@@ -8051,8 +8117,8 @@
       ],
       "tags": [
         "multimodal",
-        "agent",
-        "reasoning"
+        "reasoning",
+        "agent"
       ]
     },
     {
@@ -9588,8 +9654,8 @@
       ],
       "tags": [
         "multimodal",
-        "agent",
-        "reasoning"
+        "reasoning",
+        "agent"
       ]
     },
     {
