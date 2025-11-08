@@ -100,6 +100,19 @@
     - persona-based prompting 대신 role vector를 사용하는 방식에 대한 연구
     - model activations로부터 29개의 role vectors를 만들고 다양한 도메인에 대해 벤치마크 성능을 평가
     - (1) activation addition: role-specific directions로 강화할 수 있는가 (2) directional ablation: 이를 제거할 수 있는가
+- 🧑🏻‍💻 [Moonshot AI] [Introducing Kimi K2 Thinking](https://moonshotai.github.io/Kimi-K2/thinking.html)
+    - 추론시 32B activation, 256K context window, 200-300개 연속적인 tool calls 가능
+    - 다수의 reasoning, coding 벤치마크에서 GPT-5, Sonnet 4.5 상회하는 성능으로 SoTA 달성
+        - 추론 비용은 이 모델들보다 10x - 20x 저렴
+    - 100M 이상 유저 | 20M$/a month 의 경우에만 Kimi K2를 명시하는 라이센스로 오픈소스임
+        - 근데 API 말고 활용하는 방법에 대해서는 알려진 바가 딱히 없어 보임
+- 📜 [MDGA] [Diffusion Language Models are Super Data Learners](https://arxiv.org/abs/2511.03276)
+    - Crossover: unique data가 제한된 상황에서 DLM이 AR 모델 대비 더 학습 결과가 좋다고 설명 (for more epochs)
+        - 데이터가 많거나 품질이 좋으면 늦게, 모델 사이즈가 클수록 빨리 나타남
+        - dense & sparse 아키텍쳐 공통적으로 확인
+    - 세 가지 compounding factors
+        - (1) any-order modeling (2) super-dense compute from iterative bidirectional denoising (3) built-in Monte Carlo augmentation
+    - 1B - 8B 사이즈의 모델로 실험한 결과를 제시
 </details>
 
 ## 🎃 10월
