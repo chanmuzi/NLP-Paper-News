@@ -113,6 +113,15 @@
     - 세 가지 compounding factors
         - (1) any-order modeling (2) super-dense compute from iterative bidirectional denoising (3) built-in Monte Carlo augmentation
     - 1B - 8B 사이즈의 모델로 실험한 결과를 제시
+- 🧑🏻‍💻 [Edison] [Kosmos: An AI Scientist for Autonomous Discovery](https://edisonscientific.com/articles/announcing-kosmos)
+    - structured world model을 통해 수백 개의 Agent 경로에서 추출된 정보를 통합하고 특정 연구를 수행
+    - 사람이 6개월 동안 처리할 일을 하루만에 끝낼 수 있는 것으로 보고
+    - 1,500개의 papers를 읽고 42,000 lines of analysis code를 실행할 수 있다고 함
+- 📜 [Tencent, Tsinghua] [Continuous Autoregressive Language Models](https://arxiv.org/abs/2510.27688)
+    - CALM: 기존의 discrete next-token prediction을 continuous next-vector prediction으로 paradigm shift
+    - K개 tokens로 구성된 chunk를 single continuous vector로 압축하는 high-fidelity autoencoder 사용
+        - the number of generative steps를 K 값에 비례하여 줄일 수 있게 됨
+    - robust training, evaluation, controllable sampling을 가능토록 하는 likelihood-free framework 개발
 </details>
 
 ## 🎃 10월
