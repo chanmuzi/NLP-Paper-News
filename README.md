@@ -124,6 +124,20 @@
     - robust training, evaluation, controllable sampling을 가능토록 하는 likelihood-free framework 개발
 </details>
 
+<details>
+  <summary>2nd week</summary>
+
+- 📜 [OpenMOSS] [Thinking with Video: Video Generation as a Promising Multimodal Reasoning Paradigm](https://arxiv.org/abs/2511.04570)
+    - Thinking with Text & Thinking with Images 패러다임의 한계를 지적
+    - Thinking with Video: Sora-2와 같은 video generation 모델을 이용하여 unified framework에서 visual & textual reasoning
+    - Video Thinking Benchmark 개발: (1) vision-centric tasks (2) text-centric tasks
+    - self-consistency & in-context learning이 Sora-2 performance 향상에 기여할 수 있다고 설명
+- 📜 [GAIR] [Context Engineering 2.0: The Context of Context Engineering](https://arxiv.org/abs/2510.26493)
+    - context engineering: high-entropy contexts를 low-entropy machine-understandable representations로 전처리하는 것으로 정의
+    - 20여년에 걸친 발전 동향을 설명: sensor 정보 및 GUI 사용 시작 (1.0) → GPT-3 등장 (2.0) → human-level with social cues (3.0) → proactive superhuman intelligence (4.0)
+
+</details>
+
 ## 🎃 10월
 
 <details>
