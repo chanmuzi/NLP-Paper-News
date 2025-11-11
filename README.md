@@ -135,6 +135,15 @@
 - 📜 [GAIR] [Context Engineering 2.0: The Context of Context Engineering](https://arxiv.org/abs/2510.26493)
     - context engineering: high-entropy contexts를 low-entropy machine-understandable representations로 전처리하는 것으로 정의
     - 20여년에 걸친 발전 동향을 설명: sensor 정보 및 GUI 사용 시작 (1.0) → GPT-3 등장 (2.0) → human-level with social cues (3.0) → proactive superhuman intelligence (4.0)
+- 📜 [Oxford, Microsoft] [VCode: a Multimodal Coding Benchmark with SVG as Symbolic Visual Representation](https://arxiv.org/abs/2511.02778)
+    - VCode: 이미지가 주어지면 모델은 symbolic meaning을 보존한 SVG를 생성해야 함
+    - general commonsense, professional disciplines, visual-centric perception 등 영역을 cover
+    - CodeVQA: policy model이 rendered SVG에 관한 질문에 답변함으로써 symbolic fidelity를 평가
+    - 현재 frontier VLMs도 language-centric & visual-centric 태스크 간 gap을 보임
+- 🧑🏻‍💻 [Google] [Introducing Nested Learning: A new ML paradigm for continual learning](https://research.google/blog/introducing-nested-learning-a-new-ml-paradigm-for-continual-learning/)
+    - deep learning의 고질적인 문제인 catastrophic forgetting 이슈를 해결하고자 함
+    - Hope 아키텍쳐: self-modifying recurrent & context-aware learning. 이를 통해 Nested Learning이라는 패러다임 제시
+    - Key Components: Deep Optimizers, Continuum Memory System (CMS), Self-Modifying Architecture
 
 </details>
 
