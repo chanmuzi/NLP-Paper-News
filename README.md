@@ -144,6 +144,11 @@
     - deep learning의 고질적인 문제인 catastrophic forgetting 이슈를 해결하고자 함
     - Hope 아키텍쳐: self-modifying recurrent & context-aware learning. 이를 통해 Nested Learning이라는 패러다임 제시
     - Key Components: Deep Optimizers, Continuum Memory System (CMS), Self-Modifying Architecture
+- 🧑🏻‍💻 [Skyvern AI] [Skyvern](https://github.com/Skyvern-AI/skyvern)
+    - LLMs & computer vision을 이용하여 브라우저 기반의 워크플로우를 자동화
+    - AGPL-3.0 라이센스: 네트워크 이용시 소스 공개, 고지 필수 / 상업적 이용 가능
+    - Task-Driven autonomous agent design + Playwright (browser automation library)
+    - 이러한 웹 기반 에이전트를 이용하여 학습용 데이터 크롤링에 활용하고자 하는 니즈 높음 (최근)
 
 </details>
 
