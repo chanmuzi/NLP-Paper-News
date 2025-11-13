@@ -149,6 +149,15 @@
     - AGPL-3.0 라이센스: 네트워크 이용시 소스 공개, 고지 필수 / 상업적 이용 가능
     - Task-Driven autonomous agent design + Playwright (browser automation library)
     - 이러한 웹 기반 에이전트를 이용하여 학습용 데이터 크롤링에 활용하고자 하는 니즈 높음 (최근)
+- 📜 [Mila, McGill] [Grounding Computer Use Agents on Human Demonstrations](https://arxiv.org/abs/2511.07332)
+    - reliable computer-use agent를 만들기 위해서는 natural language instructions를 correct on-screen elements에 grounding 필수
+    - GroundCUA: expert human demonstraions로 제작된 large-scale desktop grounding dataset 공개
+        - 12개 카테고리의 87개 어플리케이션 포함, 56K 스크린샷에 3.56M human-verified elements
+    - GroundNext: instructions를 target UI elements에 map 할 수 있는 모델 패밀리 (3B & 7B)
+- 📜 [Zhejiang Univ.] [Last Layer Logits to Logic: Empowering LLMs with Logic-Consistent Structured Knowledge Reasoning](https://arxiv.org/abs/2511.07910)
+    - Logic Drift challenges: structured knowledge reasoning tasks를 잘 처리하지 못하는데, 이는 unstructured & sturctured knowledge에 대한 representational differences에 기인하는 것으로 해석
+    - 이를 해결하기 위한 기존 방법론들은 복잡한 workflow 구성 위주로 되어 있어 문제를 근본적으로 해결하지 못한다고 지적 (inflexible)
+    - Logits-to-Logic: logits strengthening & logits filtering을 LLM outputs의 logical defects를 교정하는 핵심 모듈로 사용하는 프레임워크
 
 </details>
 
