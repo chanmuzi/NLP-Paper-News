@@ -158,6 +158,14 @@
     - Logic Drift challenges: structured knowledge reasoning tasks를 잘 처리하지 못하는데, 이는 unstructured & sturctured knowledge에 대한 representational differences에 기인하는 것으로 해석
     - 이를 해결하기 위한 기존 방법론들은 복잡한 workflow 구성 위주로 되어 있어 문제를 근본적으로 해결하지 못한다고 지적 (inflexible)
     - Logits-to-Logic: logits strengthening & logits filtering을 LLM outputs의 logical defects를 교정하는 핵심 모듈로 사용하는 프레임워크
+- 🧑🏻‍💻 [OpenAI] [GPT-5.1: A smarter, more conversational ChatGPT](https://openai.com/index/gpt-5-1/)
+    - GPT-5.1 Instant & Thinking
+        - Instant 모델의 경우 Intelligence 뿐만 아니라 communication style 개선도 많이 이뤄졌다고 설명
+        - 또한 쉬운 질문은 빠르게, 어려운 질문은 오랜 시간을 들여 처리하는 adaptive reasoning 적용
+    - Preset 업데이트
+        - Default, Friendly, Efficient 유지
+        - 새 옵션 Professional, Candid, Quirky 추가
+    - GPT-5.1 Auto가 요청에 맞는 모델로 자동 routing
 
 </details>
 
