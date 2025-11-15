@@ -166,6 +166,17 @@
         - Default, Friendly, Efficient 유지
         - 새 옵션 Professional, Candid, Quirky 추가
     - GPT-5.1 Auto가 요청에 맞는 모델로 자동 routing
+- 🧑🏻‍💻 [Google DeepMind] [SIMA 2: An Agent that Plays, Reasons, and Learns With You in Virtual 3D Worlds](https://deepmind.google/blog/sima-2-an-agent-that-plays-reasons-and-learns-with-you-in-virtual-3d-worlds)
+    - Scalable Instructable Multiworld Agent 2: Gemini models를 이용하여 interactive gaming companion으로 발전
+    - 단순히 instruction을 따르는 것 외에도 think & reason 할 수 있다고 설명
+    - human demonstration videos with language labels & Gemini-generated labels를 혼합하여 학습 데이터로 활용
+    - multi-modal 정보나 다양한 언어, 이모지 등을 이해할 수 있음
+- 📜 [NVIDIA] [TiDAR: Think in Diffusion, Talk in Autoregression](https://arxiv.org/abs/2511.08923)
+    - Diffusion: fast parallel generation, AR: quality → 둘의 장점을 합침
+    - TiDAR: (Thinking) in Diffusion and sampels final outputs (Talking) AutoRegressively
+        - specially designed structured attention masks를 이용하여 single forward pass 내에서 처리 가능
+    - AR 모델들의 성능에 견주면서도 초당 4.71 ~ 5.91배의 토큰을 출력할 수 있었다고 보고
+        - 1.5B & 8B 사이즈 모델로 실험한 결과 제시
 
 </details>
 
