@@ -177,6 +177,11 @@
         - specially designed structured attention masks를 이용하여 single forward pass 내에서 처리 가능
     - AR 모델들의 성능에 견주면서도 초당 4.71 ~ 5.91배의 토큰을 출력할 수 있었다고 보고
         - 1.5B & 8B 사이즈 모델로 실험한 결과 제시
+- 📜 [Beijing Jiaotong Univ.] [Beyond Pipelines: A Survey of the Paradigm Shift toward Model-Native Agentic AI](https://arxiv.org/abs/2510.16720)
+    - from Pipeline-based systems → to Model-native paradigm
+    - planning, tool use, memory와 같은 기능들이 외부 시스템에 의해 동작하는 게 아니라 모델의 internalized 능력으로 처리되는 추세
+    - outcome-driven exploration RL을 넘어서 LLM + RL + Task 조합이 중요함을 역설
+        - language, vision, embodied domains 모두 해당되는 내용
 
 </details>
 
