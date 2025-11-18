@@ -185,6 +185,21 @@
 
 </details>
 
+<details>
+  <summary>1st week</summary>
+
+- 🧑🏻‍💻 [Anthropic] [Measuring political bias in Claude](https://www.anthropic.com/news/political-even-handedness)
+    - political bias를 평가하는 방법을 제안. 1,350개의 paired prompts로 구성
+    - prompts, grader rubrics, scripts 모두 오픈소스로 공개
+- 📜 [ByteDance] [Depth Anything 3: Recovering the Visual Space from Any Views](https://arxiv.org/abs/2511.10647?_bhlid=2c6d8e3975ed6ec3546dde73eeece5cf31c3f0bf)
+    - DA3: arbitrary number of visual inputs로부터 spatially consistent geometry를 예측하는 모델로, camera poses를 필요로 하지 않음
+    - 2개의 key insights
+        - a single plain transformer (vanilla DINO encoder)
+        - a singular depth-ray prediction target
+    - teacher-student training paradigm을 통해 Depth Anything 2 (DA2)급 성능 달성
+
+</details>
+
 ## 🎃 10월
 
 <details>
