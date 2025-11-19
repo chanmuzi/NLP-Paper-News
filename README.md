@@ -197,6 +197,17 @@
         - a single plain transformer (vanilla DINO encoder)
         - a singular depth-ray prediction target
     - teacher-student training paradigm을 통해 Depth Anything 2 (DA2)급 성능 달성
+- 📜 [Beihang Univ.] [Fine-Tuned LLMs Know They Don't Know: A Parameter-Efficient Approach to Recovering Honesty](https://arxiv.org/abs/2511.12991)
+    - fine-tuned LLMs이 knowledge boundaries를 모르는 것이 아니라 이를 표현하는 능력이 부족한 것이라고 주장
+    - Honesty-Critical Neurons Restoration (HCNR): key expression-governing neurons를 찾아 pre-trained state로 복구. Hessian-guided compensation 이용
+- 🧑🏻‍💻 [xAI] [Grok 4.1](https://x.ai/news/grok-4-1)
+    - non-verifiable reward signals을 통해 style & intent 최저고하
+    - reasoning architecture 변경 없이 dialogue behavior를 조정
+    - reasoning-mode 기준으로 EQ-Bench3에서 Elo 점수 최고점 기록
+- 🧑🏻‍💻 [Google] [A new era of intelligence with Gemini 3](https://blog.google/products/gemini/gemini-3/#note-from-ceo)
+    - reasoning에서 SoTA 성능을 달성한 Gemini 3 모델 공개
+    - 텍스트, 이미지, 비디오, 오디오, 코드 등을 이해할 수 있으면서 1M token context window 지원
+    - Google Antigravity: agent-first 개발 플랫폼으로 현재는 free 티어만 열려 있음
 
 </details>
 
