@@ -182,6 +182,10 @@
     - planning, tool use, memory와 같은 기능들이 외부 시스템에 의해 동작하는 게 아니라 모델의 internalized 능력으로 처리되는 추세
     - outcome-driven exploration RL을 넘어서 LLM + RL + Task 조합이 중요함을 역설
         - language, vision, embodied domains 모두 해당되는 내용
+- 🧑🏻‍💻 [Ai2] [DR Tulu: An open, end-to-end training recipe for long-form deep research](https://allenai.org/blog/dr-tulu)
+    - Deep Research Tulu: long-form deep research tasks에 특화된 open-model
+    - SFT & Reinforcement Learning with Evolving Rubrics (RLER, online)
+    - DR Tulu 8B checkpoint, RLER rubric generation & training framework, dr-agetn-lib 등 오픈소스로 공개
 
 </details>
 
