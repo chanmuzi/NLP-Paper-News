@@ -216,6 +216,15 @@
     - RL 기반의 open-source reasoning models family P1 공개
     - P1-235B-A22B 모델은 International Physics (IPhO 2025)에서 금메달 성적
     - math, coding 등의 벤치마크에서도 우수한 성능을 보인다고 설명
+- 📜 [Duke] [It's LIT! Reliability-Optimized LLMs with Inspectable Tools](https://arxiv.org/abs/2511.14903)
+    - LLM이 문제를 풀기 위해서 (필요한 경우) 외부 도구를 사용하도록 강제함으로써 좀 더 신뢰도 높은 reasoning process를 갖도록 함
+    - LIT (LLMs with Inspectable Tools): LLM의 tool-calling 능력을 이용해서 the most reliable & easy-to-trouble shoot solution을 선택하도록 함
+    - 이를 검증하기 위해 커스텀 가능한 1,300개의 datasets 구축
+        - Harvard USPTO Patent Dataset & NeurIPS 2023 papers 기반으로 수학, 코딩, 모데링 문제들을 포함
+- 🧑🏻‍💻 [Ai2] [Olmo 3: Charting a path through the model flow to lead open-source AI](https://allenai.org/blog/olmo3)
+    - Olmo 3-Base (7B, 32B), Olmo 3-Think (7B, 32B), Olmo 3-Instruct (7B), Olmo 3-RL Zero (7B)
+    - Base 모델은 Qwen 2.5와 유사한 수준의 성능이며, post-training을 통해 기존 오픈소스 모델들보다 뛰어난 성능을 지닌 것으로 보고
+    - data, code, model weights & checkpoints를 Apache 2.0로 공개
 
 </details>
 
