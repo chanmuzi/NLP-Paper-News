@@ -225,6 +225,24 @@
     - Olmo 3-Base (7B, 32B), Olmo 3-Think (7B, 32B), Olmo 3-Instruct (7B), Olmo 3-RL Zero (7B)
     - Base 모델은 Qwen 2.5와 유사한 수준의 성능이며, post-training을 통해 기존 오픈소스 모델들보다 뛰어난 성능을 지닌 것으로 보고
     - data, code, model weights & checkpoints를 Apache 2.0로 공개
+- 🧑🏻‍💻 [topoteretes] [Cognee](https://github.com/topoteretes/cognee)
+    - 단 6줄의 코드만으로 에이전트의 메모리를 관리할 수 있도록 돕는 오픈소스 프레임워크
+    - 셀프 호스팅 또는 Cognee Cloud를 통해 메모리를 관리할 수 있음
+    - 벡터 & 그래프 하이브리드 검색 파이프라인
+    - CLI & Web UI 제공
+- 🧑🏻‍💻 [Google] [Introducing Nano Banana Pro](https://blog.google/technology/ai/nano-banana-pro)
+    - Gemini 3 Pro 기반의 Gemini 3 Pro Image 모델
+    - 아이디어 시각화 품질이 엄청 뛰어남. 글자(영어) 표현이나 장표 구성.
+        - inforgraphics, slide decks, memes, mockups, storyboards 등
+- 🧑🏻‍💻 [OpenAI] [A free version of ChatGPT built for teachers](https://openai.com/index/chatgpt-for-teachers/)
+    - 2027년 6월까지 교사들을 위한 ChatGPT를 무료로 공개 (U.S. k-12 educators)
+    - GPT-5.1 Auto 모델의 무제한 메세지, 검색, 파일 업로드, connectors 등 다양한 기능 지원
+    - 교사 개인화된 학습 지원과 동시에 데이터를 학습에 사용하지 않는 보안까지 보장
+- 🧑🏻‍💻 [Meta] [Introducing Meta Segment Anything Model 3 and Segment Anything Playground](https://ai.meta.com/blog/segment-anything-model-3/)
+    - detection, segmentation, tracking 등을 지원하는 unified model
+    - SAM 3 model checkpoints, evaluation datasets, fine-tuning code 공개
+        - Segment Anything Playground 플랫폼을 제공하여 모델의 특성과 능력을 이해할 수 있도록 보조
+    - 또한 3D objects & human reconstruction from a single image 관련 SAM 3D 모델, 코드 및 데이터 역시 공개
 
 </details>
 
