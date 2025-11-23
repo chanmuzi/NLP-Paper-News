@@ -243,6 +243,11 @@
     - SAM 3 model checkpoints, evaluation datasets, fine-tuning code 공개
         - Segment Anything Playground 플랫폼을 제공하여 모델의 특성과 능력을 이해할 수 있도록 보조
     - 또한 3D objects & human reconstruction from a single image 관련 SAM 3D 모델, 코드 및 데이터 역시 공개
+- 📜 [Kandinsky Lab] [Kandinsky 5.0: A Family of Foundation Models for Image and Video Generation](https://arxiv.org/abs/2511.14993)
+    - high-resolution image & 10-second video synthesis가 가능한 SoTA foundation model family
+    - 5.0 Image Lite (6B image generation), 5.0 Video Lite (2B text-to-video), 5.0 Video Pro (19B video generation)
+    - code, model check-point 오픈소스로 공개
+    - Diffusion Transformer with cross-attention (CrossDiT) for multimodal fusion of visual and textual information를 핵심 아키텍쳐로 설명
 
 </details>
 
