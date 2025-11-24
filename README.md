@@ -251,6 +251,17 @@
 
 </details>
 
+<details>
+  <summary>4th week</summary>
+
+- 📜 [OpenAI] [Early science acceleration experiments with GPT-5](https://cdn.openai.com/pdf/4a25f921-e4e0-479a-9b38-5367b47e8fd0/early-science-acceleration-experiments-with-gpt-5.pdf)
+    - GPT-5를 수학, 물리, 천문학, 컴퓨터 공학, 생물학, 재료공학 연구에 활용해보는 연구
+    - 이를 통해 연구 내에서 사람의 시간을 아낄 수 있는 영역과, 여전히 사람의 손이 많이 필요한 영역을 구분해냄
+    - 특히나 수학 분야에서 풀리지 않았던 문제를 푸는 데 GPT-5가 어떻게 도움을 줄 수 있었는지에 대해 다룸
+
+
+</details>
+
 ## 🎃 10월
 
 <details>
