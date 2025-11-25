@@ -258,7 +258,11 @@
     - GPT-5를 수학, 물리, 천문학, 컴퓨터 공학, 생물학, 재료공학 연구에 활용해보는 연구
     - 이를 통해 연구 내에서 사람의 시간을 아낄 수 있는 영역과, 여전히 사람의 손이 많이 필요한 영역을 구분해냄
     - 특히나 수학 분야에서 풀리지 않았던 문제를 푸는 데 GPT-5가 어떻게 도움을 줄 수 있었는지에 대해 다룸
-
+- 📜 [NVIDIA] [Nemotron Elastic: Towards Efficient Many-in-One Reasoning LLMs](https://arxiv.org/abs/2511.16664)
+    - Nemotron Elastic: hybrid Mamba-Attention Architecture를 포함하여 reasoning-oriented LLM을 만드는 framework 개발
+        - single parent model에 여러 개의 nested submodels을 embed하고 각각 다른 configurations & budgets에 optimize
+    - 각 submodel은 parent model과 weight를 공유하고, 추가적인 학습 없이도 zero-shot extration 가능하다고 설명
+    - group-aware SSM elastification, heterogeneous MLP elastification, normalized MSE-based layer importance 등을 통해 Mamba의 구조적 제약을 보존
 
 </details>
 
