@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "last_updated": "2025-11-24T01:37:08.287813",
-  "total_items": 1534,
+  "last_updated": "2025-11-25T00:24:02.936488",
+  "total_items": 1535,
   "items": [
     {
       "id": "MiniMax-minimax-m2-agent-ingenious-in-simplicity",
@@ -1198,6 +1198,32 @@
         },
         {
           "text": "특히나 수학 분야에서 풀리지 않았던 문제를 푸는 데 GPT-5가 어떻게 도움을 줄 수 있었는지에 대해 다룸",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "NVIDIA-nemotron-elastic-towards-efficient-many-in-one-reasoning-llms",
+      "date": "2025-11-W04",
+      "year": "2025",
+      "month": "11",
+      "week": "4",
+      "type": "paper",
+      "org": "NVIDIA",
+      "title": "Nemotron Elastic: Towards Efficient Many-in-One Reasoning LLMs",
+      "url": "https://arxiv.org/abs/2511.16664",
+      "bullets": [
+        {
+          "text": "single parent model에 여러 개의 nested submodels을 embed하고 각각 다른 configurations & budgets에 optimize",
+          "level": 2
+        },
+        {
+          "text": "각 submodel은 parent model과 weight를 공유하고, 추가적인 학습 없이도 zero-shot extration 가능하다고 설명",
+          "level": 1
+        },
+        {
+          "text": "group-aware SSM elastification, heterogeneous MLP elastification, normalized MSE-based layer importance 등을 통해 Mamba의 구조적 제약을 보존",
           "level": 1
         }
       ],
@@ -7589,8 +7615,8 @@
         }
       ],
       "tags": [
-        "multimodal",
         "AI/ML",
+        "multimodal",
         "reasoning"
       ]
     },
@@ -9748,8 +9774,8 @@
         }
       ],
       "tags": [
-        "multimodal",
         "AI/ML",
+        "multimodal",
         "reasoning"
       ]
     },
@@ -15226,8 +15252,8 @@
         }
       ],
       "tags": [
-        "multimodal",
         "AI/ML",
+        "multimodal",
         "reasoning"
       ]
     },
