@@ -263,6 +263,16 @@
         - single parent model에 여러 개의 nested submodels을 embed하고 각각 다른 configurations & budgets에 optimize
     - 각 submodel은 parent model과 weight를 공유하고, 추가적인 학습 없이도 zero-shot extration 가능하다고 설명
     - group-aware SSM elastification, heterogeneous MLP elastification, normalized MSE-based layer importance 등을 통해 Mamba의 구조적 제약을 보존
+- 🧑🏻‍💻 [Anthropic] [Introducing Claude Opus 4.5](https://www.anthropic.com/news/claude-opus-4-5)
+    - 인간 엔지니어보다 코딩을 잘하는 첫 번째 AI라며 소개된 모델. coding, agents, computer use에서 SoTA급 성능
+    - prompt injection에 업계 최고 수준으로 robust 하다고 설명
+    - 153 페이지 분량의 [system card](https://assets.anthropic.com/m/64823ba7485345a7/Claude-Opus-4-5-System-Card.pdf) 🔗
+- 📜 [Salesforce, Stanford] [Agent0: Unleashing Self-Evolving Agents from Zero Data via Tool-Integrated Reasoning](https://arxiv.org/abs/2511.16043)
+    - multi-step co-evolution & seamless tool integration을 통해 외부 데이터 없이도 모델 스스로 발전할 수 있도록 만든 프레임워크
+    - 같은 모델로부터 만든 두 개의 agents가 공생하는 구조
+        - curriculum agent & executor agent
+        - executor agent에게 external tools를 붙여줌으로써, curriculum agent가 더 어렵고 복잡한 문제를 내게끔 압박
+    - Qwen3-8B-Base 모델의 추론 능력 향상에 대해 리포트
 
 </details>
 
