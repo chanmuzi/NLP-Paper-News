@@ -273,6 +273,22 @@
         - curriculum agent & executor agent
         - executor agent에게 external tools를 붙여줌으로써, curriculum agent가 더 어렵고 복잡한 문제를 내게끔 압박
     - Qwen3-8B-Base 모델의 추론 능력 향상에 대해 리포트
+- 📜 [Peking] [General Agentic Memory Via Deep Research](https://arxiv.org/abs/2511.18423)
+    - 정적 메모리 문제를 해결하기 위해 general agentic memory (GAM) 제안
+    - just-in- time (JIT) compilation 원칙 준수
+        - runtime에 simple, but useful memory만을 생성하도록 함 (offline stage)
+    - duo-design
+        - Memorizer: universal page-store 내에서 complete historical information을 유지하면서도 key historical information 하이라이트
+        - Researcher: page-store에서 필요한 정보를 retrieve & integrate
+- 🧑🏻‍💻 [Tecent] [HunyuanOCR](https://github.com/Tencent-Hunyuan/HunyuanOCR)
+    - multimodal architecture로 동작하는 OCR expert VLM
+    - 1B 파라미터로 다양한 벤치마크에서 SoTA 달성
+    - complex multilingual document parsing, text spotting, open-field information extraction 등 다양한 태스크 커버 가능
+    - 100개 이상의 언어 처리할 수 있다고 주장
+- 🧑🏻‍💻 [Andrew Ng] [Stanford Agentic Reviewer](https://paperreview.ai/tech-overview)
+    - 논문 PDF를 분석하고 최신 관련 연구(arXiv)로 근거를 붙여 빠르고 구체적인 피드백 제공하는 agentic system
+    - PDF → MD 변환 후 제목/학술문서 여부 체크 → 논문에서 검색 쿼리 생성하여 arXiv 검색 → 상위 논문 요약 → 원 논문 MD + 관련 연구 요약 합쳐 템플릿 리뷰 생성
+    - ICLR 2025 데이터 대상으로 테스트 한 결과, Human-Human 간 Spearman 점수보다 높음
 
 </details>
 
