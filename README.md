@@ -289,6 +289,11 @@
     - 논문 PDF를 분석하고 최신 관련 연구(arXiv)로 근거를 붙여 빠르고 구체적인 피드백 제공하는 agentic system
     - PDF → MD 변환 후 제목/학술문서 여부 체크 → 논문에서 검색 쿼리 생성하여 arXiv 검색 → 상위 논문 요약 → 원 논문 MD + 관련 연구 요약 합쳐 템플릿 리뷰 생성
     - ICLR 2025 데이터 대상으로 테스트 한 결과, Human-Human 간 Spearman 점수보다 높음
+- 📜 [UCL] [Memento: Fine-tuning LLM Agents without Fine-tuning LLMs](https://arxiv.org/abs/2508.16153)
+    - memory-based online RL을 통해 low-cost continual adaptation 적용하는 방법론
+    - Memory-augmented Markov Decision Process (M-MDP) with neural case-selection policy
+    - policy는 memory rewriting mechanism을 통해 environmental feedback 기반으로 업데이트
+    - memory reading (retrieval)을 통해 policy improvement
 
 </details>
 
