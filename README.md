@@ -294,6 +294,22 @@
     - Memory-augmented Markov Decision Process (M-MDP) with neural case-selection policy
     - policy는 memory rewriting mechanism을 통해 environmental feedback 기반으로 업데이트
     - memory reading (retrieval)을 통해 policy improvement
+- 🧑🏻‍💻 [DeepSeek AI] [DeepSeekMath-V2: Towards Self-Verifiable Mathematical Reasoning](https://github.com/deepseek-ai/DeepSeek-Math-V2)
+    - final-answer accuracy가 correct reasoning을 보장하지 않는다는 문제점을 지적
+    - two-part training system으로 모델의 full proofs를 생성, 체크, 교정
+    - generator with a dedicated verifier
+        - verifier는 각 스템에 대해 scores
+        - generator는 verifier가 accepts 할 때까지 rewrites its proofs
+    - 685B 사이즈 모델로 받은 높은 성적을 공개
+- 📜 [Qwen, Edinburgh, Stanford, MIT] [Gated Attention for Large Language Models: Non-linearity, Sparsity, and Attention-Sink-Free](https://openreview.net/pdf?id=1b7whO4SfY) (NerIPS 2025 Best Paper)
+    - 아직까지도 gating의 구체적인 영향에 대해 연구가 제대로 이뤄지지 않았다고 지적
+    - gating-augmented softmax attention variants에 대한 연구
+        - 30개 종류의 15B MoE models, 1.6B dense 모델에 대해 조사 (3.5T 토큰 학습)
+    - head-specific sigmod gate를 Scaled Dot-Product Attention (SDPA) 이후에 적용하는 것이 모델 성능을 확실히 향상시킬 수 있는 방법이었다고 설명
+    - 두 가지 key factors
+        - softmax attention 내에서 low-rank mapping 사이에 non-linearity 추가
+        - SDPA 출력을 조절하기 위해 query-dependent sparse gating scores를 적용
+    - sparse gating mechanism이 massive activation, attention sink와 같은 이슈들을 mitigate 한다고 보고
 
 </details>
 
