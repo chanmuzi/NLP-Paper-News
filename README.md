@@ -21,6 +21,31 @@
 
 # 2025
 
+## 🎄 12월
+
+<details>
+  <summary>1st week</summary>
+
+- 🧑🏻‍💻 [Karpathy] [LLM Council](https://github.com/karpathy/llm-council)
+    - 다양한 LLM들을 모아서 각 모델의 답변과 결과물을 취합하고 평가할 수 있도록 만든 프레임워크
+    - 쿼리를 제출하면 1) First Options 2) Review 3) Final Response 단계를 거치게 됨
+- 🧑🏻‍💻 [DeepSeek AI] [DeepSeek-V3.2: Efficient Reasoning & Agentic AI](https://huggingface.co/deepseek-ai/DeepSeek-V3.2)
+    - 685B 사이즈의 DeepSeek-V3.2-Speciale 모델은 Gemini-3.0-Pro에 준하는 reasoning 능력을 보여준다고 설명
+    - 세 가지 keys
+        - DeepSeek Sparse Attention (DSA)
+        - Scalable Reinforcement Learning Framework
+        - Large-Scale Agentic Task Synthesis Pipeline
+    - 이전 버전 대비 chat template의 변화가 크다고 설명
+- 🧑🏻‍💻 [Microsoft] [Fara-7B: An Efficient Agentic Model for Computer Use](https://www.microsoft.com/en-us/research/blog/fara-7b-an-efficient-agentic-model-for-computer-use)
+    - 7B 사이즈의 모델로 여러 모델에 의존하는 복잡한 타시스템 대비 뛰어난 성능을 가졌다고 설명
+    - 웹 페이지를 인식하여 scrolling, typing, clicking 등 actions 수행 가능
+    - 이전 연구인 AgentInstruct 기반으로 synthetic data generation pipeline 개발
+- 🧑🏻‍💻 [ByteDance] [Vidi2: AI Video Understanding & Creation in Seconds](https://www.vidi2.app/)
+    - Temporal Retrieval, Spatio-Temporal Grounding, VQA, Video Editing 등을 강점으로 설명
+    - VUE-TR-V2 벤치마크에서 GPT-5, Gemini-3-Pro 모델 능가하는 수준으로 리포트
+    - 10-30초 정도의 long-context video support
+</details>
+
 ## 🍁 11월
 
 <details>
