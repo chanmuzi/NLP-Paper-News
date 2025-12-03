@@ -44,6 +44,15 @@
     - Temporal Retrieval, Spatio-Temporal Grounding, VQA, Video Editing 등을 강점으로 설명
     - VUE-TR-V2 벤치마크에서 GPT-5, Gemini-3-Pro 모델 능가하는 수준으로 리포트
     - 10-30초 정도의 long-context video support
+- 📜 [MiroMind] [LongVT: Incentivizing "Thinking with Long Videos" via Native Tool Calling](https://arxiv.org/abs/2511.20785)
+    - LMMs가 evidence가 sparse & temporally dispersed 한 경우에 long-form vidoe에서 할루시네이션을 일으키는 현상을 문제로 지적
+    - LMMs의 temporal grounding 능력을 video cropping tool로 이용하여 특정 video clip에 zoom in하고 finer-grained video frames를 resample 하도록 함
+        - global-to-local reasoning loop
+    - VideoLIAH를 공개하여 training & evaluation 촉진
+        - 247.9K samples for tool-integrated cold-start supervised fine-tuning
+- 📜 [Alibaba] [From Code Foundation Models to Agents and Applications: A Practical Guide to Code Intelligence](https://arxiv.org/abs/2511.18538)
+    - code LLMs에 대한 synthesis & practical guide 제공
+    - code pretraining, supervised fine-tuning, RL, scaling law, framework selection, hyperparameter sensitivity, model architectures, dataset comparisons 등 포함
 </details>
 
 ## 🍁 11월
