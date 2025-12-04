@@ -53,6 +53,10 @@
 - 📜 [Alibaba] [From Code Foundation Models to Agents and Applications: A Practical Guide to Code Intelligence](https://arxiv.org/abs/2511.18538)
     - code LLMs에 대한 synthesis & practical guide 제공
     - code pretraining, supervised fine-tuning, RL, scaling law, framework selection, hyperparameter sensitivity, model architectures, dataset comparisons 등 포함
+- 🧑🏻‍💻 [HuggingFace] [Transformers v5: Simple model definitions powering the AI ecosystem](https://huggingface.co/blog/transformers-v5)
+    - transformers v4 버전을 2020년 출시 이후 대규모 업데이트하여 v5 버전 공개
+    - AttentionInterface, 토크나이저 단일화, PyTorch 단일화 등
+    - 대규묘 pre-training 지원 강화, fine-tuning/post-training 생태계 연동
 </details>
 
 ## 🍁 11월
