@@ -57,6 +57,11 @@
     - transformers v4 버전을 2020년 출시 이후 대규모 업데이트하여 v5 버전 공개
     - AttentionInterface, 토크나이저 단일화, PyTorch 단일화 등
     - 대규묘 pre-training 지원 강화, fine-tuning/post-training 생태계 연동
+- 🧑🏻‍💻 [Mistral AI] [Introducing Mistral 3](https://mistral.ai/news/mistral-3)
+    - small & desne models (14B, 8B, 3B) & Mistral Large 3 (activated 41B-675B, MoE) Apache 2.0 라이센스로 공개
+    - 오픈소스 모델 중 SoTA라고 설명
+    - non-reasoning 모델 중 LMArena에서 2위 달성
+    - text, images, multilingual inputs 처리 가능
 </details>
 
 ## 🍁 11월
