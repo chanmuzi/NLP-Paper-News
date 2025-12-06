@@ -62,6 +62,17 @@
     - 오픈소스 모델 중 SoTA라고 설명
     - non-reasoning 모델 중 LMArena에서 2위 달성
     - text, images, multilingual inputs 처리 가능
+- 🧑🏻‍💻 [Google] [Now available: Create AI agents to automate work with Google Workspace Studio](https://workspaceupdates.googleblog.com/2025/12/workspace-studio.html)
+    - Gmail, Docs, Sheets 등 구글 제품을 위한 IA agents를 만들 수 있는 no-code tool
+    - Asana, Jira, Mailchimp, Salesforce 등과 연결 가능
+- 🧑🏻‍💻 [OpenAI] [How confessions can keep language models honest](https://openai.com/index/how-confessions-can-keep-language-models-honest)
+    - GPT-5 Thinking 모델이 실제로 instructions를 잘 따르고 있는지를 분석한 연구 결과
+    - main answer & separate ‘confession’을 출력하도록 지시하여 confession channel을 관측
+    - confession channel에서는 main answer가 올바를 때에조차 hidden failure를 보임
+        - hallucination, 지름길 이용, 부적절한 보상 신호 악용 확인됨
+- 📜 [NUS] [PaperDebugger: A Plugin-Based Multi-Agent System for In-Editor Academic Writing, Review, and Editing](https://arxiv.org/abs/2512.02589)
+    - Overleaf에서 LLM agents가 직접 글쓰기를 도와주는 in-editor system 공개 (크롬 plugin 기반)
+    - 문서 변화 히스토리를 직접 알 수 있고 fine-grained patches 관리 가능
 </details>
 
 ## 🍁 11월
