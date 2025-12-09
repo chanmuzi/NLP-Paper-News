@@ -26,6 +26,23 @@
 <details>
   <summary>1st week</summary>
 
+- 📜 [ByteDance] [DAComp: Benchmarking Data Agents across the Full Data Intelligence Lifecycle](https://arxiv.org/abs/2512.04324)
+    - DAComp: 복잡한 워크플로우를 반영하는 210개의 data engineering & data analysis tasks
+    - open-ended tasks는 LLM-judge로 평가 (meticulously crafted rubrics)
+- 🧑🏻‍💻 [Poetiq] [Poetiq Shatters ARC-AGI-2 State of the Art at Half the Cost](https://poetiq.ai/posts/arcagi_verified)
+    - Gemini-3을 이용해서 ARC-AGI-2 벤치마크에서 SoTA 달성
+        - Gemini 3 Deep Think 대비 더 높은 정확도와 절반 이하의 비용
+    - 모델을 직접 만드는 게 아니라 froniter models들이 문제를 더 잘 풀 수 있도록 meta-system을 개발
+- 🧑🏻‍💻 [Alibaba] [Qwen3-TTS Update! 49 Timbres + 10 Languages + 9 Dialects](https://qwen.ai/blog?id=qwen3-tts-1128)
+    - Richer Timbres Support: 49개의 high-quality timbre(음색) 지원. 다양한 성별, 나이, 지역적 특성 고려
+    - Enhanced Multilingual & Dialect Capabilities: 영어, 중국어, 독일어, 한국어 등 주요 10개 언어 지원
+        - 한국어, 일본어 등 그렇게까지 자연스러운지 모르겠음
+    - More Natural & Human-like Prosody/Speech Rates: 전작 대비 훨씬 자연스러운 발화
+</details>
+
+<details>
+  <summary>1st week</summary>
+
 - 🧑🏻‍💻 [Karpathy] [LLM Council](https://github.com/karpathy/llm-council)
     - 다양한 LLM들을 모아서 각 모델의 답변과 결과물을 취합하고 평가할 수 있도록 만든 프레임워크
     - 쿼리를 제출하면 1) First Options 2) Review 3) Final Response 단계를 거치게 됨
