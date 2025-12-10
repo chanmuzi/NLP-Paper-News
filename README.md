@@ -38,6 +38,20 @@
     - Enhanced Multilingual & Dialect Capabilities: 영어, 중국어, 독일어, 한국어 등 주요 10개 언어 지원
         - 한국어, 일본어 등 그렇게까지 자연스러운지 모르겠음
     - More Natural & Human-like Prosody/Speech Rates: 전작 대비 훨씬 자연스러운 발화
+- 📜 [Anthropic] [Beyond Data Filtering: Knowledge Localization for Capability Removal in LLMs](https://arxiv.org/abs/2512.05648)
+    - pretraining 단계에 data filtering을 적용하는 것만으로는 LLMs 위험성 제거가 충분하지 않음
+    - → 기존 Gradient Routing을 개선하여 Selective GradienT Masking (SGTM) 개발
+    - 두 개의 지식 제거 실험
+        - (1) bilingual synthetic dataset으로 학습된 모델의 한 언어를 제거
+        - (2) English Wikipedia로 학습된 모델의 biology knowledge 제거
+- 🧑🏻‍💻 [Google] [Titans + MIRAS: Helping AI have long-term memory](https://research.google/blog/titans-miras-helping-ai-have-long-term-memory/)
+    - Titans (구현)
+        - MLP 기반의 long-term memory module을 사용하여 대량의 정보를 손실 없이 저장하도록 함
+        - 여기에 surprise metric을 사용하여 새로운 입력이 기존의 정보와 큰 차이가 있는지 detect
+    - MIRAS (이론)
+        - lightning-fast linear RNNs - highly complex associative memory module
+        - Memory architecture, Attentional bias, Retention gate, Memory algorithm
+        - Huber loss, generalized norms, strict probability map을 통해 MSE 한계 극복
 </details>
 
 <details>
