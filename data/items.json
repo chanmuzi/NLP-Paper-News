@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "last_updated": "2025-12-09T12:49:59.066375",
-  "total_items": 1557,
+  "last_updated": "2025-12-10T11:42:32.834231",
+  "total_items": 1559,
   "items": [
     {
       "id": "ByteDance-dacomp-benchmarking-data-agents-across-the-full-data-intelligence-lifecycle",
@@ -67,6 +67,74 @@
         {
           "text": "More Natural & Human-like Prosody/Speech Rates: 전작 대비 훨씬 자연스러운 발화",
           "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "Anthropic-beyond-data-filtering-knowledge-localization-for-capability-removal-in-llms",
+      "date": "2025-12-W01",
+      "year": "2025",
+      "month": "12",
+      "week": "1",
+      "type": "paper",
+      "org": "Anthropic",
+      "title": "Beyond Data Filtering: Knowledge Localization for Capability Removal in LLMs",
+      "url": "https://arxiv.org/abs/2512.05648",
+      "bullets": [
+        {
+          "text": "→ 기존 Gradient Routing을 개선하여 Selective GradienT Masking (SGTM) 개발",
+          "level": 1
+        },
+        {
+          "text": "두 개의 지식 제거 실험",
+          "level": 1
+        },
+        {
+          "text": "(1) bilingual synthetic dataset으로 학습된 모델의 한 언어를 제거",
+          "level": 2
+        },
+        {
+          "text": "(2) English Wikipedia로 학습된 모델의 biology knowledge 제거",
+          "level": 2
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "Google-titans-miras-helping-ai-have-long-term-memory",
+      "date": "2025-12-W01",
+      "year": "2025",
+      "month": "12",
+      "week": "1",
+      "type": "dev",
+      "org": "Google",
+      "title": "Titans + MIRAS: Helping AI have long-term memory",
+      "url": "https://research.google/blog/titans-miras-helping-ai-have-long-term-memory/",
+      "bullets": [
+        {
+          "text": "MLP 기반의 long-term memory module을 사용하여 대량의 정보를 손실 없이 저장하도록 함",
+          "level": 2
+        },
+        {
+          "text": "여기에 surprise metric을 사용하여 새로운 입력이 기존의 정보와 큰 차이가 있는지 detect",
+          "level": 2
+        },
+        {
+          "text": "MIRAS (이론)",
+          "level": 1
+        },
+        {
+          "text": "lightning-fast linear RNNs - highly complex associative memory module",
+          "level": 2
+        },
+        {
+          "text": "Memory architecture, Attentional bias, Retention gate, Memory algorithm",
+          "level": 2
+        },
+        {
+          "text": "Huber loss, generalized norms, strict probability map을 통해 MSE 한계 극복",
+          "level": 2
         }
       ],
       "tags": []
@@ -274,8 +342,8 @@
         }
       ],
       "tags": [
-        "reasoning",
-        "multimodal"
+        "multimodal",
+        "reasoning"
       ]
     },
     {
@@ -449,9 +517,9 @@
         }
       ],
       "tags": [
+        "multimodal",
         "AI/ML",
-        "reasoning",
-        "multimodal"
+        "reasoning"
       ]
     },
     {
@@ -903,8 +971,8 @@
         }
       ],
       "tags": [
-        "reasoning",
-        "multimodal"
+        "multimodal",
+        "reasoning"
       ]
     },
     {
@@ -3890,8 +3958,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "multimodal"
+        "multimodal",
+        "AI/ML"
       ]
     },
     {
@@ -4096,8 +4164,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "multimodal"
+        "multimodal",
+        "AI/ML"
       ]
     },
     {
@@ -4404,8 +4472,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "multimodal"
+        "multimodal",
+        "AI/ML"
       ]
     },
     {
@@ -6850,8 +6918,8 @@
         }
       ],
       "tags": [
-        "reasoning",
         "multimodal",
+        "reasoning",
         "agent"
       ]
     },
@@ -6953,8 +7021,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "multimodal"
+        "multimodal",
+        "AI/ML"
       ]
     },
     {
@@ -8198,9 +8266,9 @@
         }
       ],
       "tags": [
+        "multimodal",
         "AI/ML",
-        "reasoning",
-        "multimodal"
+        "reasoning"
       ]
     },
     {
@@ -8250,8 +8318,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "multimodal"
+        "multimodal",
+        "AI/ML"
       ]
     },
     {
@@ -8300,8 +8368,8 @@
         }
       ],
       "tags": [
-        "reasoning",
-        "multimodal"
+        "multimodal",
+        "reasoning"
       ]
     },
     {
@@ -9443,8 +9511,8 @@
         }
       ],
       "tags": [
-        "reasoning",
         "multimodal",
+        "reasoning",
         "agent"
       ]
     },
@@ -9728,8 +9796,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "multimodal"
+        "multimodal",
+        "AI/ML"
       ]
     },
     {
@@ -10051,8 +10119,8 @@
         }
       ],
       "tags": [
-        "reasoning",
-        "multimodal"
+        "multimodal",
+        "reasoning"
       ]
     },
     {
@@ -10358,8 +10426,8 @@
       ],
       "tags": [
         "AI/ML",
-        "reasoning",
-        "multimodal"
+        "multimodal",
+        "reasoning"
       ]
     },
     {
@@ -10980,8 +11048,8 @@
         }
       ],
       "tags": [
-        "reasoning",
         "multimodal",
+        "reasoning",
         "agent"
       ]
     },
@@ -11743,8 +11811,8 @@
         }
       ],
       "tags": [
-        "reasoning",
-        "multimodal"
+        "multimodal",
+        "reasoning"
       ]
     },
     {
@@ -12315,8 +12383,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "multimodal"
+        "multimodal",
+        "AI/ML"
       ]
     },
     {
@@ -12492,8 +12560,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "multimodal"
+        "multimodal",
+        "AI/ML"
       ]
     },
     {
@@ -13432,8 +13500,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "multimodal"
+        "multimodal",
+        "AI/ML"
       ]
     },
     {
@@ -14437,8 +14505,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "multimodal"
+        "multimodal",
+        "AI/ML"
       ]
     },
     {
@@ -15836,8 +15904,8 @@
       ],
       "tags": [
         "AI/ML",
-        "reasoning",
-        "multimodal"
+        "multimodal",
+        "reasoning"
       ]
     },
     {
@@ -18169,8 +18237,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "multimodal"
+        "multimodal",
+        "AI/ML"
       ]
     },
     {
@@ -18274,8 +18342,8 @@
         }
       ],
       "tags": [
-        "reasoning",
-        "multimodal"
+        "multimodal",
+        "reasoning"
       ]
     },
     {
@@ -19033,8 +19101,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "multimodal"
+        "multimodal",
+        "AI/ML"
       ]
     },
     {
@@ -19634,8 +19702,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "multimodal"
+        "multimodal",
+        "AI/ML"
       ]
     },
     {
@@ -19866,8 +19934,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "multimodal"
+        "multimodal",
+        "AI/ML"
       ]
     },
     {
@@ -20646,8 +20714,8 @@
         }
       ],
       "tags": [
-        "reasoning",
-        "multimodal"
+        "multimodal",
+        "reasoning"
       ]
     },
     {
@@ -20830,8 +20898,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "multimodal"
+        "multimodal",
+        "AI/ML"
       ]
     },
     {
@@ -21737,8 +21805,8 @@
         }
       ],
       "tags": [
-        "reasoning",
-        "multimodal"
+        "multimodal",
+        "reasoning"
       ]
     },
     {
@@ -22782,8 +22850,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "multimodal"
+        "multimodal",
+        "AI/ML"
       ]
     },
     {
@@ -24117,8 +24185,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "multimodal"
+        "multimodal",
+        "AI/ML"
       ]
     },
     {
@@ -26925,8 +26993,8 @@
         }
       ],
       "tags": [
-        "reasoning",
-        "multimodal"
+        "multimodal",
+        "reasoning"
       ]
     },
     {
@@ -28140,8 +28208,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "multimodal"
+        "multimodal",
+        "AI/ML"
       ]
     },
     {
@@ -28409,8 +28477,8 @@
         }
       ],
       "tags": [
-        "reasoning",
-        "multimodal"
+        "multimodal",
+        "reasoning"
       ]
     },
     {
@@ -28635,8 +28703,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "multimodal"
+        "multimodal",
+        "AI/ML"
       ]
     },
     {
