@@ -52,6 +52,7 @@
         - lightning-fast linear RNNs - highly complex associative memory module
         - Memory architecture, Attentional bias, Retention gate, Memory algorithm
         - Huber loss, generalized norms, strict probability map을 통해 MSE 한계 극복
+https://qwen.ai/blog?id=sapo
 </details>
 
 <details>
