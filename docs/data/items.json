@@ -1,144 +1,8 @@
 {
   "version": 1,
-  "last_updated": "2025-12-11T09:30:57.728976",
-  "total_items": 1559,
+  "last_updated": "2025-12-12T07:03:18.351449",
+  "total_items": 1562,
   "items": [
-    {
-      "id": "ByteDance-dacomp-benchmarking-data-agents-across-the-full-data-intelligence-lifecycle",
-      "date": "2025-12-W01",
-      "year": "2025",
-      "month": "12",
-      "week": "1",
-      "type": "paper",
-      "org": "ByteDance",
-      "title": "DAComp: Benchmarking Data Agents across the Full Data Intelligence Lifecycle",
-      "url": "https://arxiv.org/abs/2512.04324",
-      "bullets": [
-        {
-          "text": "open-ended tasks는 LLM-judge로 평가 (meticulously crafted rubrics)",
-          "level": 1
-        }
-      ],
-      "tags": [
-        "AI/ML"
-      ]
-    },
-    {
-      "id": "Poetiq-poetiq-shatters-arc-agi-2-state-of-the-art-at-half-the-cost",
-      "date": "2025-12-W01",
-      "year": "2025",
-      "month": "12",
-      "week": "1",
-      "type": "dev",
-      "org": "Poetiq",
-      "title": "Poetiq Shatters ARC-AGI-2 State of the Art at Half the Cost",
-      "url": "https://poetiq.ai/posts/arcagi_verified",
-      "bullets": [
-        {
-          "text": "Gemini 3 Deep Think 대비 더 높은 정확도와 절반 이하의 비용",
-          "level": 2
-        },
-        {
-          "text": "모델을 직접 만드는 게 아니라 froniter models들이 문제를 더 잘 풀 수 있도록 meta-system을 개발",
-          "level": 1
-        }
-      ],
-      "tags": []
-    },
-    {
-      "id": "Alibaba-qwen3-tts-update-49-timbres-10-languages-9-dialects",
-      "date": "2025-12-W01",
-      "year": "2025",
-      "month": "12",
-      "week": "1",
-      "type": "dev",
-      "org": "Alibaba",
-      "title": "Qwen3-TTS Update! 49 Timbres + 10 Languages + 9 Dialects",
-      "url": "https://qwen.ai/blog?id=qwen3-tts-1128",
-      "bullets": [
-        {
-          "text": "Enhanced Multilingual & Dialect Capabilities: 영어, 중국어, 독일어, 한국어 등 주요 10개 언어 지원",
-          "level": 1
-        },
-        {
-          "text": "한국어, 일본어 등 그렇게까지 자연스러운지 모르겠음",
-          "level": 2
-        },
-        {
-          "text": "More Natural & Human-like Prosody/Speech Rates: 전작 대비 훨씬 자연스러운 발화",
-          "level": 1
-        }
-      ],
-      "tags": []
-    },
-    {
-      "id": "Anthropic-beyond-data-filtering-knowledge-localization-for-capability-removal-in-llms",
-      "date": "2025-12-W01",
-      "year": "2025",
-      "month": "12",
-      "week": "1",
-      "type": "paper",
-      "org": "Anthropic",
-      "title": "Beyond Data Filtering: Knowledge Localization for Capability Removal in LLMs",
-      "url": "https://arxiv.org/abs/2512.05648",
-      "bullets": [
-        {
-          "text": "→ 기존 Gradient Routing을 개선하여 Selective GradienT Masking (SGTM) 개발",
-          "level": 1
-        },
-        {
-          "text": "두 개의 지식 제거 실험",
-          "level": 1
-        },
-        {
-          "text": "(1) bilingual synthetic dataset으로 학습된 모델의 한 언어를 제거",
-          "level": 2
-        },
-        {
-          "text": "(2) English Wikipedia로 학습된 모델의 biology knowledge 제거",
-          "level": 2
-        }
-      ],
-      "tags": []
-    },
-    {
-      "id": "Google-titans-miras-helping-ai-have-long-term-memory",
-      "date": "2025-12-W01",
-      "year": "2025",
-      "month": "12",
-      "week": "1",
-      "type": "dev",
-      "org": "Google",
-      "title": "Titans + MIRAS: Helping AI have long-term memory",
-      "url": "https://research.google/blog/titans-miras-helping-ai-have-long-term-memory/",
-      "bullets": [
-        {
-          "text": "MLP 기반의 long-term memory module을 사용하여 대량의 정보를 손실 없이 저장하도록 함",
-          "level": 2
-        },
-        {
-          "text": "여기에 surprise metric을 사용하여 새로운 입력이 기존의 정보와 큰 차이가 있는지 detect",
-          "level": 2
-        },
-        {
-          "text": "MIRAS (이론)",
-          "level": 1
-        },
-        {
-          "text": "lightning-fast linear RNNs - highly complex associative memory module",
-          "level": 2
-        },
-        {
-          "text": "Memory architecture, Attentional bias, Retention gate, Memory algorithm",
-          "level": 2
-        },
-        {
-          "text": "Huber loss, generalized norms, strict probability map을 통해 MSE 한계 극복",
-          "level": 2
-        }
-      ],
-      "tags": []
-    },
     {
       "id": "Karpathy-llm-council",
       "date": "2025-12-W01",
@@ -268,8 +132,8 @@
         }
       ],
       "tags": [
-        "reasoning",
         "agent",
+        "reasoning",
         "AI/ML"
       ]
     },
@@ -415,6 +279,206 @@
       ]
     },
     {
+      "id": "ByteDance-dacomp-benchmarking-data-agents-across-the-full-data-intelligence-lifecycle",
+      "date": "2025-12-W02",
+      "year": "2025",
+      "month": "12",
+      "week": "2",
+      "type": "paper",
+      "org": "ByteDance",
+      "title": "DAComp: Benchmarking Data Agents across the Full Data Intelligence Lifecycle",
+      "url": "https://arxiv.org/abs/2512.04324",
+      "bullets": [
+        {
+          "text": "open-ended tasks는 LLM-judge로 평가 (meticulously crafted rubrics)",
+          "level": 1
+        }
+      ],
+      "tags": [
+        "AI/ML"
+      ]
+    },
+    {
+      "id": "Poetiq-poetiq-shatters-arc-agi-2-state-of-the-art-at-half-the-cost",
+      "date": "2025-12-W02",
+      "year": "2025",
+      "month": "12",
+      "week": "2",
+      "type": "dev",
+      "org": "Poetiq",
+      "title": "Poetiq Shatters ARC-AGI-2 State of the Art at Half the Cost",
+      "url": "https://poetiq.ai/posts/arcagi_verified",
+      "bullets": [
+        {
+          "text": "Gemini 3 Deep Think 대비 더 높은 정확도와 절반 이하의 비용",
+          "level": 2
+        },
+        {
+          "text": "모델을 직접 만드는 게 아니라 froniter models들이 문제를 더 잘 풀 수 있도록 meta-system을 개발",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "Alibaba-qwen3-tts-update-49-timbres-10-languages-9-dialects",
+      "date": "2025-12-W02",
+      "year": "2025",
+      "month": "12",
+      "week": "2",
+      "type": "dev",
+      "org": "Alibaba",
+      "title": "Qwen3-TTS Update! 49 Timbres + 10 Languages + 9 Dialects",
+      "url": "https://qwen.ai/blog?id=qwen3-tts-1128",
+      "bullets": [
+        {
+          "text": "Enhanced Multilingual & Dialect Capabilities: 영어, 중국어, 독일어, 한국어 등 주요 10개 언어 지원",
+          "level": 1
+        },
+        {
+          "text": "한국어, 일본어 등 그렇게까지 자연스러운지 모르겠음",
+          "level": 2
+        },
+        {
+          "text": "More Natural & Human-like Prosody/Speech Rates: 전작 대비 훨씬 자연스러운 발화",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "Anthropic-beyond-data-filtering-knowledge-localization-for-capability-removal-in-llms",
+      "date": "2025-12-W02",
+      "year": "2025",
+      "month": "12",
+      "week": "2",
+      "type": "paper",
+      "org": "Anthropic",
+      "title": "Beyond Data Filtering: Knowledge Localization for Capability Removal in LLMs",
+      "url": "https://arxiv.org/abs/2512.05648",
+      "bullets": [
+        {
+          "text": "→ 기존 Gradient Routing을 개선하여 Selective GradienT Masking (SGTM) 개발",
+          "level": 1
+        },
+        {
+          "text": "두 개의 지식 제거 실험",
+          "level": 1
+        },
+        {
+          "text": "(1) bilingual synthetic dataset으로 학습된 모델의 한 언어를 제거",
+          "level": 2
+        },
+        {
+          "text": "(2) English Wikipedia로 학습된 모델의 biology knowledge 제거",
+          "level": 2
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "Google-titans-miras-helping-ai-have-long-term-memory",
+      "date": "2025-12-W02",
+      "year": "2025",
+      "month": "12",
+      "week": "2",
+      "type": "dev",
+      "org": "Google",
+      "title": "Titans + MIRAS: Helping AI have long-term memory",
+      "url": "https://research.google/blog/titans-miras-helping-ai-have-long-term-memory/",
+      "bullets": [
+        {
+          "text": "MLP 기반의 long-term memory module을 사용하여 대량의 정보를 손실 없이 저장하도록 함",
+          "level": 2
+        },
+        {
+          "text": "여기에 surprise metric을 사용하여 새로운 입력이 기존의 정보와 큰 차이가 있는지 detect",
+          "level": 2
+        },
+        {
+          "text": "MIRAS (이론)",
+          "level": 1
+        },
+        {
+          "text": "lightning-fast linear RNNs - highly complex associative memory module",
+          "level": 2
+        },
+        {
+          "text": "Memory architecture, Attentional bias, Retention gate, Memory algorithm",
+          "level": 2
+        },
+        {
+          "text": "Huber loss, generalized norms, strict probability map을 통해 MSE 한계 극복",
+          "level": 2
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "Qwen-sapo-a-stable-and-performant-reinforcement-learning-method-for-training-large-language-models",
+      "date": "2025-12-W02",
+      "year": "2025",
+      "month": "12",
+      "week": "2",
+      "type": "dev",
+      "org": "Qwen",
+      "title": "SAPO: A Stable and Performant Reinforcement Learning Method for Training Large Language Models",
+      "url": "https://qwen.ai/blog?id=sapo",
+      "bullets": [
+        {
+          "text": "sequence-level coherence를 유지하면서도 off-policy 토큰만 선택적으로 억제해 sample efficiency 개선",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "OpenAI-introducing-gpt-52",
+      "date": "2025-12-W02",
+      "year": "2025",
+      "month": "12",
+      "week": "2",
+      "type": "dev",
+      "org": "OpenAI",
+      "title": "Introducing GPT-5.2",
+      "url": "https://openai.com/index/introducing-gpt-5-2/",
+      "bullets": [
+        {
+          "text": "이를 뒷받침하는 GDPval 벤치 결과를 언급",
+          "level": 2
+        },
+        {
+          "text": "ChatGPT - Instant/Thinking/Pro, API - 5.2/5.2-chat-latest/5.2-pro",
+          "level": 1
+        }
+      ],
+      "tags": [
+        "reasoning"
+      ]
+    },
+    {
+      "id": "Cursor-a-visual-editor-for-the-cursor-browser",
+      "date": "2025-12-W02",
+      "year": "2025",
+      "month": "12",
+      "week": "2",
+      "type": "dev",
+      "org": "Cursor",
+      "title": "A visual editor for the Cursor Browser",
+      "url": "https://cursor.com/blog/browser-visual-editor",
+      "bullets": [
+        {
+          "text": "각 element의 설정을 사이드 패널에서 직접 컨트롤 할 수 있음 (폰트 사이즈, 서체 등등)",
+          "level": 1
+        },
+        {
+          "text": "element를 클릭하고 그걸 대상으로 prompt 작성해서 코딩하는 것도 가능",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
       "id": "MiniMax-minimax-m2-agent-ingenious-in-simplicity",
       "date": "2025-11-W01",
       "year": "2025",
@@ -517,9 +581,9 @@
         }
       ],
       "tags": [
+        "reasoning",
         "multimodal",
-        "AI/ML",
-        "reasoning"
+        "AI/ML"
       ]
     },
     {
@@ -1244,8 +1308,8 @@
         }
       ],
       "tags": [
-        "multimodal",
         "agent",
+        "multimodal",
         "AI/ML"
       ]
     },
@@ -2181,8 +2245,8 @@
         }
       ],
       "tags": [
-        "multimodal",
         "agent",
+        "multimodal",
         "AI/ML"
       ]
     },
@@ -3983,8 +4047,8 @@
         }
       ],
       "tags": [
-        "reasoning",
-        "agent"
+        "agent",
+        "reasoning"
       ]
     },
     {
@@ -4112,8 +4176,8 @@
         }
       ],
       "tags": [
-        "reasoning",
         "agent",
+        "reasoning",
         "AI/ML"
       ]
     },
@@ -4442,8 +4506,8 @@
         }
       ],
       "tags": [
-        "reasoning",
         "agent",
+        "reasoning",
         "AI/ML"
       ]
     },
@@ -6918,8 +6982,8 @@
         }
       ],
       "tags": [
-        "reasoning",
         "agent",
+        "reasoning",
         "multimodal"
       ]
     },
@@ -7093,8 +7157,8 @@
         }
       ],
       "tags": [
-        "reasoning",
-        "agent"
+        "agent",
+        "reasoning"
       ]
     },
     {
@@ -7159,8 +7223,8 @@
         }
       ],
       "tags": [
-        "reasoning",
-        "agent"
+        "agent",
+        "reasoning"
       ]
     },
     {
@@ -7592,8 +7656,8 @@
         }
       ],
       "tags": [
-        "reasoning",
         "agent",
+        "reasoning",
         "AI/ML"
       ]
     },
@@ -8600,8 +8664,8 @@
         }
       ],
       "tags": [
-        "multimodal",
         "agent",
+        "multimodal",
         "AI/ML"
       ]
     },
@@ -8694,8 +8758,8 @@
         }
       ],
       "tags": [
-        "reasoning",
         "agent",
+        "reasoning",
         "AI/ML"
       ]
     },
@@ -8914,8 +8978,8 @@
         }
       ],
       "tags": [
-        "reasoning",
         "agent",
+        "reasoning",
         "AI/ML"
       ]
     },
@@ -9511,8 +9575,8 @@
         }
       ],
       "tags": [
-        "reasoning",
         "agent",
+        "reasoning",
         "multimodal"
       ]
     },
@@ -10426,8 +10490,8 @@
       ],
       "tags": [
         "reasoning",
-        "AI/ML",
-        "multimodal"
+        "multimodal",
+        "AI/ML"
       ]
     },
     {
@@ -11048,8 +11112,8 @@
         }
       ],
       "tags": [
-        "reasoning",
         "agent",
+        "reasoning",
         "multimodal"
       ]
     },
@@ -11078,8 +11142,8 @@
         }
       ],
       "tags": [
-        "reasoning",
         "agent",
+        "reasoning",
         "multimodal"
       ]
     },
@@ -11735,8 +11799,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "multimodal"
+        "multimodal",
+        "AI/ML"
       ]
     },
     {
@@ -12087,8 +12151,8 @@
         }
       ],
       "tags": [
-        "reasoning",
-        "agent"
+        "agent",
+        "reasoning"
       ]
     },
     {
@@ -12503,8 +12567,8 @@
         }
       ],
       "tags": [
-        "reasoning",
-        "agent"
+        "agent",
+        "reasoning"
       ]
     },
     {
@@ -13078,8 +13142,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "multimodal"
+        "multimodal",
+        "AI/ML"
       ]
     },
     {
@@ -13611,8 +13675,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "multimodal"
+        "multimodal",
+        "AI/ML"
       ]
     },
     {
@@ -15904,8 +15968,8 @@
       ],
       "tags": [
         "reasoning",
-        "AI/ML",
-        "multimodal"
+        "multimodal",
+        "AI/ML"
       ]
     },
     {
@@ -16499,8 +16563,8 @@
         }
       ],
       "tags": [
-        "multimodal",
         "agent",
+        "multimodal",
         "AI/ML"
       ]
     },
@@ -16567,8 +16631,8 @@
         }
       ],
       "tags": [
-        "reasoning",
         "agent",
+        "reasoning",
         "AI/ML"
       ]
     },
@@ -22282,8 +22346,8 @@
         }
       ],
       "tags": [
-        "reasoning",
-        "agent"
+        "agent",
+        "reasoning"
       ]
     },
     {
@@ -22592,8 +22656,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "multimodal"
+        "multimodal",
+        "AI/ML"
       ]
     },
     {
@@ -23355,8 +23419,8 @@
         }
       ],
       "tags": [
-        "reasoning",
-        "agent"
+        "agent",
+        "reasoning"
       ]
     },
     {
@@ -28237,8 +28301,8 @@
         }
       ],
       "tags": [
-        "reasoning",
-        "agent"
+        "agent",
+        "reasoning"
       ]
     },
     {
