@@ -26,38 +26,6 @@
 <details>
   <summary>1st week</summary>
 
-- 📜 [ByteDance] [DAComp: Benchmarking Data Agents across the Full Data Intelligence Lifecycle](https://arxiv.org/abs/2512.04324)
-    - DAComp: 복잡한 워크플로우를 반영하는 210개의 data engineering & data analysis tasks
-    - open-ended tasks는 LLM-judge로 평가 (meticulously crafted rubrics)
-- 🧑🏻‍💻 [Poetiq] [Poetiq Shatters ARC-AGI-2 State of the Art at Half the Cost](https://poetiq.ai/posts/arcagi_verified)
-    - Gemini-3을 이용해서 ARC-AGI-2 벤치마크에서 SoTA 달성
-        - Gemini 3 Deep Think 대비 더 높은 정확도와 절반 이하의 비용
-    - 모델을 직접 만드는 게 아니라 froniter models들이 문제를 더 잘 풀 수 있도록 meta-system을 개발
-- 🧑🏻‍💻 [Alibaba] [Qwen3-TTS Update! 49 Timbres + 10 Languages + 9 Dialects](https://qwen.ai/blog?id=qwen3-tts-1128)
-    - Richer Timbres Support: 49개의 high-quality timbre(음색) 지원. 다양한 성별, 나이, 지역적 특성 고려
-    - Enhanced Multilingual & Dialect Capabilities: 영어, 중국어, 독일어, 한국어 등 주요 10개 언어 지원
-        - 한국어, 일본어 등 그렇게까지 자연스러운지 모르겠음
-    - More Natural & Human-like Prosody/Speech Rates: 전작 대비 훨씬 자연스러운 발화
-- 📜 [Anthropic] [Beyond Data Filtering: Knowledge Localization for Capability Removal in LLMs](https://arxiv.org/abs/2512.05648)
-    - pretraining 단계에 data filtering을 적용하는 것만으로는 LLMs 위험성 제거가 충분하지 않음
-    - → 기존 Gradient Routing을 개선하여 Selective GradienT Masking (SGTM) 개발
-    - 두 개의 지식 제거 실험
-        - (1) bilingual synthetic dataset으로 학습된 모델의 한 언어를 제거
-        - (2) English Wikipedia로 학습된 모델의 biology knowledge 제거
-- 🧑🏻‍💻 [Google] [Titans + MIRAS: Helping AI have long-term memory](https://research.google/blog/titans-miras-helping-ai-have-long-term-memory/)
-    - Titans (구현)
-        - MLP 기반의 long-term memory module을 사용하여 대량의 정보를 손실 없이 저장하도록 함
-        - 여기에 surprise metric을 사용하여 새로운 입력이 기존의 정보와 큰 차이가 있는지 detect
-    - MIRAS (이론)
-        - lightning-fast linear RNNs - highly complex associative memory module
-        - Memory architecture, Attentional bias, Retention gate, Memory algorithm
-        - Huber loss, generalized norms, strict probability map을 통해 MSE 한계 극복
-https://qwen.ai/blog?id=sapo
-</details>
-
-<details>
-  <summary>1st week</summary>
-
 - 🧑🏻‍💻 [Karpathy] [LLM Council](https://github.com/karpathy/llm-council)
     - 다양한 LLM들을 모아서 각 모델의 답변과 결과물을 취합하고 평가할 수 있도록 만든 프레임워크
     - 쿼리를 제출하면 1) First Options 2) Review 3) Final Response 단계를 거치게 됨
@@ -105,6 +73,49 @@ https://qwen.ai/blog?id=sapo
 - 📜 [NUS] [PaperDebugger: A Plugin-Based Multi-Agent System for In-Editor Academic Writing, Review, and Editing](https://arxiv.org/abs/2512.02589)
     - Overleaf에서 LLM agents가 직접 글쓰기를 도와주는 in-editor system 공개 (크롬 plugin 기반)
     - 문서 변화 히스토리를 직접 알 수 있고 fine-grained patches 관리 가능
+</details>
+
+<details>
+  <summary>2nd week</summary>
+
+- 📜 [ByteDance] [DAComp: Benchmarking Data Agents across the Full Data Intelligence Lifecycle](https://arxiv.org/abs/2512.04324)
+    - DAComp: 복잡한 워크플로우를 반영하는 210개의 data engineering & data analysis tasks
+    - open-ended tasks는 LLM-judge로 평가 (meticulously crafted rubrics)
+- 🧑🏻‍💻 [Poetiq] [Poetiq Shatters ARC-AGI-2 State of the Art at Half the Cost](https://poetiq.ai/posts/arcagi_verified)
+    - Gemini-3을 이용해서 ARC-AGI-2 벤치마크에서 SoTA 달성
+        - Gemini 3 Deep Think 대비 더 높은 정확도와 절반 이하의 비용
+    - 모델을 직접 만드는 게 아니라 froniter models들이 문제를 더 잘 풀 수 있도록 meta-system을 개발
+- 🧑🏻‍💻 [Alibaba] [Qwen3-TTS Update! 49 Timbres + 10 Languages + 9 Dialects](https://qwen.ai/blog?id=qwen3-tts-1128)
+    - Richer Timbres Support: 49개의 high-quality timbre(음색) 지원. 다양한 성별, 나이, 지역적 특성 고려
+    - Enhanced Multilingual & Dialect Capabilities: 영어, 중국어, 독일어, 한국어 등 주요 10개 언어 지원
+        - 한국어, 일본어 등 그렇게까지 자연스러운지 모르겠음
+    - More Natural & Human-like Prosody/Speech Rates: 전작 대비 훨씬 자연스러운 발화
+- 📜 [Anthropic] [Beyond Data Filtering: Knowledge Localization for Capability Removal in LLMs](https://arxiv.org/abs/2512.05648)
+    - pretraining 단계에 data filtering을 적용하는 것만으로는 LLMs 위험성 제거가 충분하지 않음
+    - → 기존 Gradient Routing을 개선하여 Selective GradienT Masking (SGTM) 개발
+    - 두 개의 지식 제거 실험
+        - (1) bilingual synthetic dataset으로 학습된 모델의 한 언어를 제거
+        - (2) English Wikipedia로 학습된 모델의 biology knowledge 제거
+- 🧑🏻‍💻 [Google] [Titans + MIRAS: Helping AI have long-term memory](https://research.google/blog/titans-miras-helping-ai-have-long-term-memory/)
+    - Titans (구현)
+        - MLP 기반의 long-term memory module을 사용하여 대량의 정보를 손실 없이 저장하도록 함
+        - 여기에 surprise metric을 사용하여 새로운 입력이 기존의 정보와 큰 차이가 있는지 detect
+    - MIRAS (이론)
+        - lightning-fast linear RNNs - highly complex associative memory module
+        - Memory architecture, Attentional bias, Retention gate, Memory algorithm
+        - Huber loss, generalized norms, strict probability map을 통해 MSE 한계 극복
+- 🧑🏻‍💻 [Qwen] [SAPO: A Stable and Performant Reinforcement Learning Method for Training Large Language Models](https://qwen.ai/blog?id=sapo)
+    - 기존 GRPO/GSPO의 hard clipping 대신 smooth & temperature-controlled gating function을 사용하는 Soft Adaptive Policy Optimization (SAPO) 도입
+    - sequence-level coherence를 유지하면서도 off-policy 토큰만 선택적으로 억제해 sample efficiency 개선
+- 🧑🏻‍💻 [OpenAI] [Introducing GPT-5.2](https://openai.com/index/introducing-gpt-5-2/)
+    - spreadsheets 생성, presentations building, 코드 작성, 이미지 인식 등 다양한 Enterprise 니즈를 충족할 수 있다고 설명
+        - 이를 뒷받침하는 GDPval 벤치 결과를 언급
+    - ChatGPT - Instant/Thinking/Pro, API - 5.2/5.2-chat-latest/5.2-pro
+- 🧑🏻‍💻 [Cursor] [A visual editor for the Cursor Browser](https://cursor.com/blog/browser-visual-editor)
+    - Cursor Browser에서 화면 구성 요소를 직접 drag & drop 하면 모델이 차이를 인식하고 코드를 변경
+    - 각 element의 설정을 사이드 패널에서 직접 컨트롤 할 수 있음 (폰트 사이즈, 서체 등등)
+    - element를 클릭하고 그걸 대상으로 prompt 작성해서 코딩하는 것도 가능
+
 </details>
 
 ## 🍁 11월
