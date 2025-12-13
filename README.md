@@ -115,6 +115,10 @@
     - Cursor Browser에서 화면 구성 요소를 직접 drag & drop 하면 모델이 차이를 인식하고 코드를 변경
     - 각 element의 설정을 사이드 패널에서 직접 컨트롤 할 수 있음 (폰트 사이즈, 서체 등등)
     - element를 클릭하고 그걸 대상으로 prompt 작성해서 코딩하는 것도 가능
+- 📜 [Stanford] [The Missing Layer of AGI: From Pattern Alchemy to Coordination Physics](https://arxiv.org/abs/2512.05765)
+    - LLM은 단순한 pattern matchers로, reasoning 또는 planning을 할 수 없다는 주장에 정면으로 반박
+    - reasoning을 phase transition으로 modeling하는 theory of semantic anchoring formalize (UCCT)
+    - AGI에 필요한 것은 더 큰 모델, 더 많은 데이터, 더 복잡한 아키텍쳐가 아닌, 모델 패턴을 목표에 align 시키는 executive function이라고 주장
 
 </details>
 
