@@ -119,6 +119,11 @@
     - LLM은 단순한 pattern matchers로, reasoning 또는 planning을 할 수 없다는 주장에 정면으로 반박
     - reasoning을 phase transition으로 modeling하는 theory of semantic anchoring formalize (UCCT)
     - AGI에 필요한 것은 더 큰 모델, 더 많은 데이터, 더 복잡한 아키텍쳐가 아닌, 모델 패턴을 목표에 align 시키는 executive function이라고 주장
+- 📜 [Berkeley, UIUC, Stanford, IBM] [Measuring Agents in Production](https://arxiv.org/abs/2512.04123)
+    - 26개 도메인에서 306명의 전문가 대상으로 in-depth case studies 진행
+        - 정형적인 벤치마크 대신 현업 맥락에 맞춘 인간 검증을 통해 평가
+    - production agent가 일반적으로 simple & controllable approaches를 갖고 있다고 설명
+        - 사람 개입 전에 최대 10개 steps 68%, prompting off-the-shelf models 의존 70%
 
 </details>
 
