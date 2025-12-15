@@ -124,6 +124,11 @@
         - 정형적인 벤치마크 대신 현업 맥락에 맞춘 인간 검증을 통해 평가
     - production agent가 일반적으로 simple & controllable approaches를 갖고 있다고 설명
         - 사람 개입 전에 최대 10개 steps 68%, prompting off-the-shelf models 의존 70%
+- 📜 [National Taiwan Uinv.] [AdaSD: Adaptive Speculative Decoding for Efficient Language Model Inference](https://arxiv.org/abs/2512.11280)
+    - 현존 speculative decoding은 추가적인 학습, 하이퍼파라미터 튜닝, 모델 분석 등이 필요하다는 단점이 있다고 지적
+    - 추론 시 generation length & acceptance rate 를 dynamically adjust 하는 방식 제안
+        - token entropy & Jensen-Shannon distance 기준으로 결정
+    - 성능 2% 하락 정도로 49% 속도 향상을 이끌어낼 수 있었음
 
 </details>
 
