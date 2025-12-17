@@ -129,6 +129,14 @@
     - 추론 시 generation length & acceptance rate 를 dynamically adjust 하는 방식 제안
         - token entropy & Jensen-Shannon distance 기준으로 결정
     - 성능 2% 하락 정도로 49% 속도 향상을 이끌어낼 수 있었음
+- 📜 [Meta] [Exploring MLLM-Diffusion Information Transfer with MetaCanvas](https://arxiv.org/abs/2512.11464)
+    - 현존 multimodal LLMs는 이미지나 비디오를 precise & structured control 해서 생성할 수 없다는 한계를 지적
+    - Meta Canvas: MLLMs가 직접 spatial & spatiotemporal latent spaces를 reason & plan하고 diffusion generators로 interface하는 lightweight framework
+- 🧑🏻‍💻 [NVIDIA] [NVIDIA Nemotron 3 Family of Models](https://research.nvidia.com/labs/nemotron/Nemotron-3/)
+    - [model](https://huggingface.co/collections/nvidia/nvidia-nemotron-v3), [technical report](https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3-Nano-Technical-Report.pdf)
+    - Nano, Super, Ultra, 강력한 agentic 능력을 가진 세 개 모델 공개
+        - 체크 포인트 및 학습 데이터까지 공개
+    - Hybrid MoE, LatentMoE, Multi-Token Prediction, NVFP4, Long Context (1M), Multi-environment Reinforcement Learning Post-training, Granular Reasoning Budge Control at Inference Time
 
 </details>
 
