@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "last_updated": "2025-12-17T13:00:36.739876",
-  "total_items": 1567,
+  "last_updated": "2025-12-18T00:35:39.500587",
+  "total_items": 1569,
   "items": [
     {
       "id": "Karpathy-llm-council",
@@ -132,9 +132,9 @@
         }
       ],
       "tags": [
+        "reasoning",
         "agent",
-        "AI/ML",
-        "reasoning"
+        "AI/ML"
       ]
     },
     {
@@ -206,8 +206,8 @@
         }
       ],
       "tags": [
-        "multimodal",
-        "reasoning"
+        "reasoning",
+        "multimodal"
       ]
     },
     {
@@ -532,10 +532,10 @@
     },
     {
       "id": "National-Taiwan-Uinv.-adasd-adaptive-speculative-decoding-for-efficient-language-model-inference",
-      "date": "2025-12-W02",
+      "date": "2025-12-W03",
       "year": "2025",
       "month": "12",
-      "week": "2",
+      "week": "3",
       "type": "paper",
       "org": "National Taiwan Uinv.",
       "title": "AdaSD: Adaptive Speculative Decoding for Efficient Language Model Inference",
@@ -558,10 +558,10 @@
     },
     {
       "id": "Meta-exploring-mllm-diffusion-information-transfer-with-metacanvas",
-      "date": "2025-12-W02",
+      "date": "2025-12-W03",
       "year": "2025",
       "month": "12",
-      "week": "2",
+      "week": "3",
       "type": "paper",
       "org": "Meta",
       "title": "Exploring MLLM-Diffusion Information Transfer with MetaCanvas",
@@ -578,10 +578,10 @@
     },
     {
       "id": "NVIDIA-nvidia-nemotron-3-family-of-models",
-      "date": "2025-12-W02",
+      "date": "2025-12-W03",
       "year": "2025",
       "month": "12",
-      "week": "2",
+      "week": "3",
       "type": "dev",
       "org": "NVIDIA",
       "title": "NVIDIA Nemotron 3 Family of Models",
@@ -601,10 +601,62 @@
         }
       ],
       "tags": [
+        "reasoning",
         "agent",
-        "AI/ML",
-        "reasoning"
+        "AI/ML"
       ]
+    },
+    {
+      "id": "Ai2-molmo-2-state-of-the-art-video-understanding-pointing-and-tracking",
+      "date": "2025-12-W03",
+      "year": "2025",
+      "month": "12",
+      "week": "3",
+      "type": "dev",
+      "org": "Ai2",
+      "title": "Molmo 2: State-of-the-art video understanding, pointing, and tracking",
+      "url": "https://allenai.org/blog/molmo2",
+      "bullets": [
+        {
+          "text": "Video tracking에서 Gemini 3 Pro 성능을 상회하기도 함",
+          "level": 2
+        },
+        {
+          "text": "molmo 2-O (7B): Olmo 기반의 for researcher 모델",
+          "level": 1
+        },
+        {
+          "text": "학습 데이터의 양은 Meta의 PerceptionLM 대비 1/8 수준임에도 뛰어난 성능 달성",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "Ai2-introducing-bolmo-byteifying-the-next-generation-of-language-models",
+      "date": "2025-12-W03",
+      "year": "2025",
+      "month": "12",
+      "week": "3",
+      "type": "dev",
+      "org": "Ai2",
+      "title": "Introducing Bolmo: Byteifying the next generation of language models",
+      "url": "https://allenai.org/blog/bolmo",
+      "bullets": [
+        {
+          "text": "transformer 아키텍쳐는 그대로 두고 small byte encoders, decoders 추가",
+          "level": 2
+        },
+        {
+          "text": "Olmo 3 모델과 유사한 수준의 성능을 보이면서도 character 벤치마크에서 높은 점수 달성",
+          "level": 1
+        },
+        {
+          "text": "UTF-8 bytes를 fixed vocab 없이 처리, dynamic byte patches 사용",
+          "level": 1
+        }
+      ],
+      "tags": []
     },
     {
       "id": "MiniMax-minimax-m2-agent-ingenious-in-simplicity",
@@ -709,9 +761,9 @@
         }
       ],
       "tags": [
+        "reasoning",
         "multimodal",
-        "AI/ML",
-        "reasoning"
+        "AI/ML"
       ]
     },
     {
@@ -1163,8 +1215,8 @@
         }
       ],
       "tags": [
-        "multimodal",
-        "reasoning"
+        "reasoning",
+        "multimodal"
       ]
     },
     {
@@ -2561,8 +2613,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "reasoning"
+        "reasoning",
+        "AI/ML"
       ]
     },
     {
@@ -2608,8 +2660,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "reasoning"
+        "reasoning",
+        "AI/ML"
       ]
     },
     {
@@ -2755,8 +2807,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "reasoning"
+        "reasoning",
+        "AI/ML"
       ]
     },
     {
@@ -3458,8 +3510,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "reasoning"
+        "reasoning",
+        "AI/ML"
       ]
     },
     {
@@ -3749,8 +3801,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "reasoning"
+        "reasoning",
+        "AI/ML"
       ]
     },
     {
@@ -4175,8 +4227,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "reasoning"
+        "reasoning",
+        "agent"
       ]
     },
     {
@@ -4304,9 +4356,9 @@
         }
       ],
       "tags": [
+        "reasoning",
         "agent",
-        "AI/ML",
-        "reasoning"
+        "AI/ML"
       ]
     },
     {
@@ -4469,8 +4521,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "reasoning"
+        "reasoning",
+        "AI/ML"
       ]
     },
     {
@@ -4494,8 +4546,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "reasoning"
+        "reasoning",
+        "AI/ML"
       ]
     },
     {
@@ -4605,8 +4657,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "reasoning"
+        "reasoning",
+        "AI/ML"
       ]
     },
     {
@@ -4634,9 +4686,9 @@
         }
       ],
       "tags": [
+        "reasoning",
         "agent",
-        "AI/ML",
-        "reasoning"
+        "AI/ML"
       ]
     },
     {
@@ -5565,8 +5617,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "reasoning"
+        "reasoning",
+        "AI/ML"
       ]
     },
     {
@@ -6399,8 +6451,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "reasoning"
+        "reasoning",
+        "AI/ML"
       ]
     },
     {
@@ -6657,8 +6709,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "reasoning"
+        "reasoning",
+        "AI/ML"
       ]
     },
     {
@@ -7110,9 +7162,9 @@
         }
       ],
       "tags": [
-        "multimodal",
+        "reasoning",
         "agent",
-        "reasoning"
+        "multimodal"
       ]
     },
     {
@@ -7188,8 +7240,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "reasoning"
+        "reasoning",
+        "AI/ML"
       ]
     },
     {
@@ -7285,8 +7337,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "reasoning"
+        "reasoning",
+        "agent"
       ]
     },
     {
@@ -7351,8 +7403,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "reasoning"
+        "reasoning",
+        "agent"
       ]
     },
     {
@@ -7428,8 +7480,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "reasoning"
+        "reasoning",
+        "AI/ML"
       ]
     },
     {
@@ -7483,8 +7535,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "reasoning"
+        "reasoning",
+        "AI/ML"
       ]
     },
     {
@@ -7784,9 +7836,9 @@
         }
       ],
       "tags": [
+        "reasoning",
         "agent",
-        "AI/ML",
-        "reasoning"
+        "AI/ML"
       ]
     },
     {
@@ -8167,8 +8219,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "reasoning"
+        "reasoning",
+        "AI/ML"
       ]
     },
     {
@@ -8224,8 +8276,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "reasoning"
+        "reasoning",
+        "AI/ML"
       ]
     },
     {
@@ -8458,9 +8510,9 @@
         }
       ],
       "tags": [
+        "reasoning",
         "multimodal",
-        "AI/ML",
-        "reasoning"
+        "AI/ML"
       ]
     },
     {
@@ -8535,8 +8587,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "reasoning"
+        "reasoning",
+        "AI/ML"
       ]
     },
     {
@@ -8560,8 +8612,8 @@
         }
       ],
       "tags": [
-        "multimodal",
-        "reasoning"
+        "reasoning",
+        "multimodal"
       ]
     },
     {
@@ -8613,8 +8665,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "reasoning"
+        "reasoning",
+        "AI/ML"
       ]
     },
     {
@@ -8733,8 +8785,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "reasoning"
+        "reasoning",
+        "AI/ML"
       ]
     },
     {
@@ -8886,9 +8938,9 @@
         }
       ],
       "tags": [
+        "reasoning",
         "agent",
-        "AI/ML",
-        "reasoning"
+        "AI/ML"
       ]
     },
     {
@@ -9014,8 +9066,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "reasoning"
+        "reasoning",
+        "AI/ML"
       ]
     },
     {
@@ -9106,9 +9158,9 @@
         }
       ],
       "tags": [
+        "reasoning",
         "agent",
-        "AI/ML",
-        "reasoning"
+        "AI/ML"
       ]
     },
     {
@@ -9328,8 +9380,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "reasoning"
+        "reasoning",
+        "AI/ML"
       ]
     },
     {
@@ -9703,9 +9755,9 @@
         }
       ],
       "tags": [
-        "multimodal",
+        "reasoning",
         "agent",
-        "reasoning"
+        "multimodal"
       ]
     },
     {
@@ -9937,8 +9989,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "reasoning"
+        "reasoning",
+        "AI/ML"
       ]
     },
     {
@@ -10184,8 +10236,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "reasoning"
+        "reasoning",
+        "AI/ML"
       ]
     },
     {
@@ -10311,8 +10363,8 @@
         }
       ],
       "tags": [
-        "multimodal",
-        "reasoning"
+        "reasoning",
+        "multimodal"
       ]
     },
     {
@@ -10336,8 +10388,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "reasoning"
+        "reasoning",
+        "AI/ML"
       ]
     },
     {
@@ -10546,8 +10598,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "reasoning"
+        "reasoning",
+        "AI/ML"
       ]
     },
     {
@@ -10617,9 +10669,9 @@
         }
       ],
       "tags": [
+        "reasoning",
         "multimodal",
-        "AI/ML",
-        "reasoning"
+        "AI/ML"
       ]
     },
     {
@@ -10882,8 +10934,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "reasoning"
+        "reasoning",
+        "AI/ML"
       ]
     },
     {
@@ -11124,8 +11176,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "reasoning"
+        "reasoning",
+        "AI/ML"
       ]
     },
     {
@@ -11240,9 +11292,9 @@
         }
       ],
       "tags": [
-        "multimodal",
+        "reasoning",
         "agent",
-        "reasoning"
+        "multimodal"
       ]
     },
     {
@@ -11270,9 +11322,9 @@
         }
       ],
       "tags": [
+        "reasoning",
         "agent",
-        "multimodal",
-        "reasoning"
+        "multimodal"
       ]
     },
     {
@@ -11369,8 +11421,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "reasoning"
+        "reasoning",
+        "AI/ML"
       ]
     },
     {
@@ -11956,8 +12008,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "reasoning"
+        "reasoning",
+        "AI/ML"
       ]
     },
     {
@@ -12003,8 +12055,8 @@
         }
       ],
       "tags": [
-        "multimodal",
-        "reasoning"
+        "reasoning",
+        "multimodal"
       ]
     },
     {
@@ -12279,8 +12331,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "reasoning"
+        "reasoning",
+        "agent"
       ]
     },
     {
@@ -12622,8 +12674,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "reasoning"
+        "reasoning",
+        "AI/ML"
       ]
     },
     {
@@ -12695,8 +12747,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "reasoning"
+        "reasoning",
+        "agent"
       ]
     },
     {
@@ -12809,8 +12861,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "reasoning"
+        "reasoning",
+        "AI/ML"
       ]
     },
     {
@@ -13522,8 +13574,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "reasoning"
+        "reasoning",
+        "AI/ML"
       ]
     },
     {
@@ -13663,8 +13715,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "reasoning"
+        "reasoning",
+        "AI/ML"
       ]
     },
     {
@@ -14190,8 +14242,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "reasoning"
+        "reasoning",
+        "AI/ML"
       ]
     },
     {
@@ -14618,8 +14670,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "reasoning"
+        "reasoning",
+        "AI/ML"
       ]
     },
     {
@@ -14766,8 +14818,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "reasoning"
+        "reasoning",
+        "AI/ML"
       ]
     },
     {
@@ -14817,8 +14869,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "reasoning"
+        "reasoning",
+        "AI/ML"
       ]
     },
     {
@@ -14912,8 +14964,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "reasoning"
+        "reasoning",
+        "AI/ML"
       ]
     },
     {
@@ -15274,8 +15326,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "reasoning"
+        "reasoning",
+        "AI/ML"
       ]
     },
     {
@@ -15692,8 +15744,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "reasoning"
+        "reasoning",
+        "AI/ML"
       ]
     },
     {
@@ -16095,9 +16147,9 @@
         }
       ],
       "tags": [
+        "reasoning",
         "multimodal",
-        "AI/ML",
-        "reasoning"
+        "AI/ML"
       ]
     },
     {
@@ -16193,8 +16245,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "reasoning"
+        "reasoning",
+        "AI/ML"
       ]
     },
     {
@@ -16390,8 +16442,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "reasoning"
+        "reasoning",
+        "AI/ML"
       ]
     },
     {
@@ -16634,8 +16686,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "reasoning"
+        "reasoning",
+        "AI/ML"
       ]
     },
     {
@@ -16759,9 +16811,9 @@
         }
       ],
       "tags": [
+        "reasoning",
         "agent",
-        "AI/ML",
-        "reasoning"
+        "AI/ML"
       ]
     },
     {
@@ -16789,8 +16841,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "reasoning"
+        "reasoning",
+        "AI/ML"
       ]
     },
     {
@@ -17937,8 +17989,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "reasoning"
+        "reasoning",
+        "AI/ML"
       ]
     },
     {
@@ -18534,8 +18586,8 @@
         }
       ],
       "tags": [
-        "multimodal",
-        "reasoning"
+        "reasoning",
+        "multimodal"
       ]
     },
     {
@@ -19679,8 +19731,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "reasoning"
+        "reasoning",
+        "AI/ML"
       ]
     },
     {
@@ -20557,8 +20609,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "reasoning"
+        "reasoning",
+        "AI/ML"
       ]
     },
     {
@@ -20906,8 +20958,8 @@
         }
       ],
       "tags": [
-        "multimodal",
-        "reasoning"
+        "reasoning",
+        "multimodal"
       ]
     },
     {
@@ -21239,8 +21291,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "reasoning"
+        "reasoning",
+        "AI/ML"
       ]
     },
     {
@@ -21368,8 +21420,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "reasoning"
+        "reasoning",
+        "AI/ML"
       ]
     },
     {
@@ -21859,8 +21911,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "reasoning"
+        "reasoning",
+        "AI/ML"
       ]
     },
     {
@@ -21997,8 +22049,8 @@
         }
       ],
       "tags": [
-        "multimodal",
-        "reasoning"
+        "reasoning",
+        "multimodal"
       ]
     },
     {
@@ -22474,8 +22526,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "reasoning"
+        "reasoning",
+        "agent"
       ]
     },
     {
@@ -22521,8 +22573,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "reasoning"
+        "reasoning",
+        "AI/ML"
       ]
     },
     {
@@ -22936,8 +22988,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "reasoning"
+        "reasoning",
+        "AI/ML"
       ]
     },
     {
@@ -23547,8 +23599,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "reasoning"
+        "reasoning",
+        "agent"
       ]
     },
     {
@@ -26205,8 +26257,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "reasoning"
+        "reasoning",
+        "AI/ML"
       ]
     },
     {
@@ -27185,8 +27237,8 @@
         }
       ],
       "tags": [
-        "multimodal",
-        "reasoning"
+        "reasoning",
+        "multimodal"
       ]
     },
     {
@@ -28379,8 +28431,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "reasoning"
+        "reasoning",
+        "AI/ML"
       ]
     },
     {
@@ -28429,8 +28481,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "reasoning"
+        "reasoning",
+        "agent"
       ]
     },
     {
@@ -28669,8 +28721,8 @@
         }
       ],
       "tags": [
-        "multimodal",
-        "reasoning"
+        "reasoning",
+        "multimodal"
       ]
     },
     {
@@ -28814,8 +28866,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "reasoning"
+        "reasoning",
+        "AI/ML"
       ]
     },
     {
@@ -29262,8 +29314,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "reasoning"
+        "reasoning",
+        "AI/ML"
       ]
     },
     {
@@ -30409,8 +30461,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "reasoning"
+        "reasoning",
+        "AI/ML"
       ]
     },
     {
@@ -30618,8 +30670,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "reasoning"
+        "reasoning",
+        "AI/ML"
       ]
     },
     {
