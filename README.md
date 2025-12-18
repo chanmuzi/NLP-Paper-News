@@ -124,6 +124,11 @@
         - 정형적인 벤치마크 대신 현업 맥락에 맞춘 인간 검증을 통해 평가
     - production agent가 일반적으로 simple & controllable approaches를 갖고 있다고 설명
         - 사람 개입 전에 최대 10개 steps 68%, prompting off-the-shelf models 의존 70%
+
+</details>
+
+<details>
+  <summary>3rd week</summary>
 - 📜 [National Taiwan Uinv.] [AdaSD: Adaptive Speculative Decoding for Efficient Language Model Inference](https://arxiv.org/abs/2512.11280)
     - 현존 speculative decoding은 추가적인 학습, 하이퍼파라미터 튜닝, 모델 분석 등이 필요하다는 단점이 있다고 지적
     - 추론 시 generation length & acceptance rate 를 dynamically adjust 하는 방식 제안
@@ -137,6 +142,16 @@
     - Nano, Super, Ultra, 강력한 agentic 능력을 가진 세 개 모델 공개
         - 체크 포인트 및 학습 데이터까지 공개
     - Hybrid MoE, LatentMoE, Multi-Token Prediction, NVFP4, Long Context (1M), Multi-environment Reinforcement Learning Post-training, Granular Reasoning Budge Control at Inference Time
+- 🧑🏻‍💻 [Ai2] [Molmo 2: State-of-the-art video understanding, pointing, and tracking](https://allenai.org/blog/molmo2)
+    - Molmo 2 (8B, 4B): Qwen 3 기반의 video grounding & QA 모델
+        - Video tracking에서 Gemini 3 Pro 성능을 상회하기도 함
+    - molmo 2-O (7B): Olmo 기반의 for researcher 모델
+    - 학습 데이터의 양은 Meta의 PerceptionLM 대비 1/8 수준임에도 뛰어난 성능 달성
+- 🧑🏻‍💻 [Ai2] [Introducing Bolmo: Byteifying the next generation of language models](https://allenai.org/blog/bolmo)
+    - Olmo 3 기반의 byte-level language models
+        - transformer 아키텍쳐는 그대로 두고 small byte encoders, decoders 추가
+    - Olmo 3 모델과 유사한 수준의 성능을 보이면서도 character 벤치마크에서 높은 점수 달성
+    - UTF-8 bytes를 fixed vocab 없이 처리, dynamic byte patches 사용
 
 </details>
 
