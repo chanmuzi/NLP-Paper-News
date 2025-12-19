@@ -152,6 +152,19 @@
         - transformer 아키텍쳐는 그대로 두고 small byte encoders, decoders 추가
     - Olmo 3 모델과 유사한 수준의 성능을 보이면서도 character 벤치마크에서 높은 점수 달성
     - UTF-8 bytes를 fixed vocab 없이 처리, dynamic byte patches 사용
+- 📜 [Google] [DeepSearchQA: Bridging the Comprehensiveness Gap for Deep Research
+Agents](https://storage.googleapis.com/deepmind-media/DeepSearchQA/DeepSearchQA_benchmark_paper.pdf)
+    - 17개 분야의 900개 프롬프트 벤치마크로 multi-step information-seeking tasks 평가
+    - 세 개의 능력을 평가
+        - (1) 이질적인 sources로부터 파편화된 정보의 systematic collation
+        - (2) precision을 확보하기 위한 de-duplication & entity resolution
+        - (3) open-ended search space 내의 stopping criteria를 추론하는 능력
+    - fully correct 점수 중 가장 높은 것을 기록한 것은 Gemini Deep Research Agent로 66.09
+    - [캐글](https://www.kaggle.com/benchmarks/google/dsqa/leaderboard)에서 데이터셋 및 리더보드 공개
+- 📜 [NUS, GIT 등] [Memory in the Age of AI Agents](https://arxiv.org/abs/2512.13564)
+    - 현재 agent memory는 용어 통일도 되어 있지 않음 → agent에 관한 memory 개념을 LLM memory로부터 구분
+    - forms, functions, dynamics를 기준으로 agent memory 분석
+    - agent memory는 token-level, parametric, latent memory로 크게 구분
 
 </details>
 
