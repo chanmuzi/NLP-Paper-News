@@ -165,6 +165,20 @@ Agents](https://storage.googleapis.com/deepmind-media/DeepSearchQA/DeepSearchQA_
     - 현재 agent memory는 용어 통일도 되어 있지 않음 → agent에 관한 memory 개념을 LLM memory로부터 구분
     - forms, functions, dynamics를 기준으로 agent memory 분석
     - agent memory는 token-level, parametric, latent memory로 크게 구분
+- 📜 [Tsinghua] [DEER: Draft with Diffusion, Verify with Autoregressive Models](https://arxiv.org/abs/2512.15176)
+    - Speculative decoding 문제점 지적
+        - (1) step-wise uncertainty가 계속해서 누적
+        - (2) 본질적으로 AR (autoregressive) drafters의 sequential decoding임
+    - dLLM이 이와 같은 문제를 해결할 수 있다고 보며 DEER라는 decoding framework 제안
+        - drafts with diffusion & verifies with AR models
+    - two-stage training pipeline, single-step decoding
+- 🧑🏻‍💻 [Mistral] [Mistral OCR 3](https://mistral.ai/news/mistral-ocr-3)
+    - form, scanned documents, complex tables, handwriting에서 Mistral OCR 2 대비 74% win rate 기록
+    - [Mistral AI Studio](https://console.mistral.ai/build/document-ai/ocr-playground) 또는 API 통해 이용 가능
+- 🧑🏻‍💻 [Google] [FunctionGemma: Bringing bespoke function calling to the edge](https://blog.google/technology/developers/functiongemma)
+    - Gemma 3 270M 모델을 function calling 특화 학습한 FunctionGemma 공개
+    - on-device & agent 수요에 맞춘 결과물
+    - unified action & chat, built for customization, engineered for the edge, broad ecosystem support 등을 특징으로 삼음
 
 </details>
 
