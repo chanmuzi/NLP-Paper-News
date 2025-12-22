@@ -182,6 +182,24 @@ Agents](https://storage.googleapis.com/deepmind-media/DeepSearchQA/DeepSearchQA_
 
 </details>
 
+<details>
+  <summary>4th week</summary>
+
+- 📜 [KlingAI] [Kling-Omni Technical Report](https://arxiv.org/abs/2512.16776)
+    - multimodal visual language inputs으로부터 high-fidelity vidoes를 직접 합성할 수 있는 generative framework 공개
+    - video generation, editing, intelligent reasoning 등을 end-to-end로 다룸
+    - 이에 따라 text instructions, reference images, video context 등을 입력으로 받을 수 있음
+- 📜 [Google] [The FACTS Leaderboard: A Comprehensive Benchmark for Large Language Model Factuality](https://arxiv.org/abs/2512.10791)
+    - LLMs의 factually accurate text 생성 능력을 평가하기 위한 comprehnesive benchmarks
+    - 4개의 sub-leaderboards의 performance를 aggregate
+        - (1) FACTS Multimodal (2) FACTS Parametric (3) FACTS Search (4) FACTS Grounding
+        - 각 리더보드는 모델 responses를 평가하기 위한 judge models 세팅되어 있음
+- 📜 [Google, UC Santa Barbara] [Budget-Aware Tool-Use Enables Effective Agent Scaling](https://arxiv.org/abs/2511.17006)
+    - web search agents에 한하여 agents가 tool-call budgets 내에서 작업할 수 있도록 하고자 함
+    - Budget Tracker: agent에게 continuous budget awareness를 제공하는 plug-in
+    - BATS (Budget Aware Test-time Scaling): budget awareness를 이용하여 dig deepr | pivot to new paths를 dynamically decide
+</details>
+
 ## 🍁 11월
 
 <details>
