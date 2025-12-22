@@ -198,6 +198,10 @@ Agents](https://storage.googleapis.com/deepmind-media/DeepSearchQA/DeepSearchQA_
     - web search agents에 한하여 agents가 tool-call budgets 내에서 작업할 수 있도록 하고자 함
     - Budget Tracker: agent에게 continuous budget awareness를 제공하는 plug-in
     - BATS (Budget Aware Test-time Scaling): budget awareness를 이용하여 dig deepr | pivot to new paths를 dynamically decide
+- 📜 [Ant Group] [LLaDA2.0: Scaling Up Diffusion Language Models to 100B](https://arxiv.org/abs/2512.15745)
+    - diffusion large language models (dLLM)를 100B까지 scaling-up
+    - from-scratch 학습 대신 pre-trained AR 모델을 3-phase block-level WSD based training scheme을 통해 dLLM으로 전환
+    - post-training alignment (SFT & DPO)를 통해 MoE 아키텍쳐의 LLaDA2.0-mini (16B) & LLaDA2.0-flash (100B) 모델 획득
 </details>
 
 ## 🍁 11월
