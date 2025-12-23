@@ -202,6 +202,17 @@ Agents](https://storage.googleapis.com/deepmind-media/DeepSearchQA/DeepSearchQA_
     - diffusion large language models (dLLM)를 100B까지 scaling-up
     - from-scratch 학습 대신 pre-trained AR 모델을 3-phase block-level WSD based training scheme을 통해 dLLM으로 전환
     - post-training alignment (SFT & DPO)를 통해 MoE 아키텍쳐의 LLaDA2.0-mini (16B) & LLaDA2.0-flash (100B) 모델 획득
+- 🧑🏻‍💻 [Alibaba] [Qwen-Image-Layered: Layered Decomposition for Inherent Editablity](https://qwen.ai/blog?id=qwen-image-layered)
+    - image를 multi RGB layer로 decompose 할 수 있는 모델
+    - 각 layer는 다른 content에 영향을 주지 않도록 manipulated 되어 resizing, reposition, recoloring 등이 가능함
+    - 즉, semantic 또는 structure components를 distinct layers로 isolate
+- 🧑🏻‍💻 [OpenAI] [Evaluating chain-of-thought monitorability](https://openai.com/index/evaluating-chain-of-thought-monitorability)
+    - reasoning 모델의 CoT monitorability를 평가하기 위한 프레임워크
+    - 평가는 3개 타입으로 구분: intervention, process, outcome-property
+- 🧑🏻‍💻 [Anthropic] [Introducing Bloom: an open source tool for automated behavioral evaluations](https://www.anthropic.com/research/bloom)
+    - frontier AI models의 behavioral evaluations를 생성하기 위한 agentic framework
+    - hand-labeled judgements와 strongly correlate된 평가
+    - 최근 AI 모델의 behavioral profiles를 자동으로 explore 하는 오픈소스 프레임워크 [Petri](https://www.anthropic.com/research/petri-open-source-auditing)도 공개
 </details>
 
 ## 🍁 11월
