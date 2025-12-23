@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "last_updated": "2025-12-22T02:04:53.426901",
-  "total_items": 1578,
+  "last_updated": "2025-12-23T01:36:55.034053",
+  "total_items": 1581,
   "items": [
     {
       "id": "Karpathy-llm-council",
@@ -133,8 +133,8 @@
       ],
       "tags": [
         "AI/ML",
-        "agent",
-        "reasoning"
+        "reasoning",
+        "agent"
       ]
     },
     {
@@ -602,8 +602,8 @@
       ],
       "tags": [
         "AI/ML",
-        "agent",
-        "reasoning"
+        "reasoning",
+        "agent"
       ]
     },
     {
@@ -896,6 +896,70 @@
         },
         {
           "text": "post-training alignment (SFT & DPO)를 통해 MoE 아키텍쳐의 LLaDA2.0-mini (16B) & LLaDA2.0-flash (100B) 모델 획득",
+          "level": 1
+        }
+      ],
+      "tags": [
+        "AI/ML"
+      ]
+    },
+    {
+      "id": "Alibaba-qwen-image-layered-layered-decomposition-for-inherent-editablity",
+      "date": "2025-12-W04",
+      "year": "2025",
+      "month": "12",
+      "week": "4",
+      "type": "dev",
+      "org": "Alibaba",
+      "title": "Qwen-Image-Layered: Layered Decomposition for Inherent Editablity",
+      "url": "https://qwen.ai/blog?id=qwen-image-layered",
+      "bullets": [
+        {
+          "text": "각 layer는 다른 content에 영향을 주지 않도록 manipulated 되어 resizing, reposition, recoloring 등이 가능함",
+          "level": 1
+        },
+        {
+          "text": "즉, semantic 또는 structure components를 distinct layers로 isolate",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "OpenAI-evaluating-chain-of-thought-monitorability",
+      "date": "2025-12-W04",
+      "year": "2025",
+      "month": "12",
+      "week": "4",
+      "type": "dev",
+      "org": "OpenAI",
+      "title": "Evaluating chain-of-thought monitorability",
+      "url": "https://openai.com/index/evaluating-chain-of-thought-monitorability",
+      "bullets": [
+        {
+          "text": "평가는 3개 타입으로 구분: intervention, process, outcome-property",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "Anthropic-introducing-bloom-an-open-source-tool-for-automated-behavioral-evaluations",
+      "date": "2025-12-W04",
+      "year": "2025",
+      "month": "12",
+      "week": "4",
+      "type": "dev",
+      "org": "Anthropic",
+      "title": "Introducing Bloom: an open source tool for automated behavioral evaluations",
+      "url": "https://www.anthropic.com/research/bloom",
+      "bullets": [
+        {
+          "text": "hand-labeled judgements와 strongly correlate된 평가",
+          "level": 1
+        },
+        {
+          "text": "최근 AI 모델의 behavioral profiles를 자동으로 explore 하는 오픈소스 프레임워크 [Petri](https://www.anthropic.com/research/petri-open-source-auditing)도 공개",
           "level": 1
         }
       ],
@@ -1734,8 +1798,8 @@
       ],
       "tags": [
         "AI/ML",
-        "agent",
-        "multimodal"
+        "multimodal",
+        "agent"
       ]
     },
     {
@@ -2671,8 +2735,8 @@
       ],
       "tags": [
         "AI/ML",
-        "agent",
-        "multimodal"
+        "multimodal",
+        "agent"
       ]
     },
     {
@@ -2982,8 +3046,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "multimodal"
+        "multimodal",
+        "agent"
       ]
     },
     {
@@ -4472,8 +4536,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "reasoning"
+        "reasoning",
+        "agent"
       ]
     },
     {
@@ -4602,8 +4666,8 @@
       ],
       "tags": [
         "AI/ML",
-        "agent",
-        "reasoning"
+        "reasoning",
+        "agent"
       ]
     },
     {
@@ -4932,8 +4996,8 @@
       ],
       "tags": [
         "AI/ML",
-        "agent",
-        "reasoning"
+        "reasoning",
+        "agent"
       ]
     },
     {
@@ -7407,9 +7471,9 @@
         }
       ],
       "tags": [
-        "agent",
         "multimodal",
-        "reasoning"
+        "reasoning",
+        "agent"
       ]
     },
     {
@@ -7582,8 +7646,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "reasoning"
+        "reasoning",
+        "agent"
       ]
     },
     {
@@ -7648,8 +7712,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "reasoning"
+        "reasoning",
+        "agent"
       ]
     },
     {
@@ -8082,8 +8146,8 @@
       ],
       "tags": [
         "AI/ML",
-        "agent",
-        "reasoning"
+        "reasoning",
+        "agent"
       ]
     },
     {
@@ -9090,8 +9154,8 @@
       ],
       "tags": [
         "AI/ML",
-        "agent",
-        "multimodal"
+        "multimodal",
+        "agent"
       ]
     },
     {
@@ -9184,8 +9248,8 @@
       ],
       "tags": [
         "AI/ML",
-        "agent",
-        "reasoning"
+        "reasoning",
+        "agent"
       ]
     },
     {
@@ -9404,8 +9468,8 @@
       ],
       "tags": [
         "AI/ML",
-        "agent",
-        "reasoning"
+        "reasoning",
+        "agent"
       ]
     },
     {
@@ -10000,9 +10064,9 @@
         }
       ],
       "tags": [
-        "agent",
         "multimodal",
-        "reasoning"
+        "reasoning",
+        "agent"
       ]
     },
     {
@@ -11537,9 +11601,9 @@
         }
       ],
       "tags": [
-        "agent",
         "multimodal",
-        "reasoning"
+        "reasoning",
+        "agent"
       ]
     },
     {
@@ -11567,9 +11631,9 @@
         }
       ],
       "tags": [
-        "agent",
         "multimodal",
-        "reasoning"
+        "reasoning",
+        "agent"
       ]
     },
     {
@@ -12576,8 +12640,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "reasoning"
+        "reasoning",
+        "agent"
       ]
     },
     {
@@ -12992,8 +13056,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "reasoning"
+        "reasoning",
+        "agent"
       ]
     },
     {
@@ -16989,8 +17053,8 @@
       ],
       "tags": [
         "AI/ML",
-        "agent",
-        "multimodal"
+        "multimodal",
+        "agent"
       ]
     },
     {
@@ -17057,8 +17121,8 @@
       ],
       "tags": [
         "AI/ML",
-        "agent",
-        "reasoning"
+        "reasoning",
+        "agent"
       ]
     },
     {
@@ -22771,8 +22835,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "reasoning"
+        "reasoning",
+        "agent"
       ]
     },
     {
@@ -23844,8 +23908,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "reasoning"
+        "reasoning",
+        "agent"
       ]
     },
     {
@@ -28726,8 +28790,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "reasoning"
+        "reasoning",
+        "agent"
       ]
     },
     {
