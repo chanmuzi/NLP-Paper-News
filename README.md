@@ -213,6 +213,11 @@ Agents](https://storage.googleapis.com/deepmind-media/DeepSearchQA/DeepSearchQA_
     - frontier AI models의 behavioral evaluations를 생성하기 위한 agentic framework
     - hand-labeled judgements와 strongly correlate된 평가
     - 최근 AI 모델의 behavioral profiles를 자동으로 explore 하는 오픈소스 프레임워크 [Petri](https://www.anthropic.com/research/petri-open-source-auditing)도 공개
+- 🧑🏻‍💻 [Google DeepMind] [Gemma Scope 2: helping the AI safety community deepen understanding of complex language model behavior](https://deepmind.google/blog/gemma-scope-2-helping-the-ai-safety-community-deepen-understanding-of-complex-language-model-behavior/)
+    - 270M ~ 27B 사이즈에 이르는 Gemma 3 모델의 잠재적 위험을 탐지하기 위한 해석 도구
+    - 총 1T 파라미터에 대해 110 Petabytes 데이터를 학습
+    - SAE와 transcoder 결합하여 모델 내부를 들여다 봄
+    - Matryoshka training technique이 적용되었고 chat usecase를 위해서도 학습되었다고 설명
 </details>
 
 ## 🍁 11월
