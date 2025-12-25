@@ -218,6 +218,10 @@ Agents](https://storage.googleapis.com/deepmind-media/DeepSearchQA/DeepSearchQA_
     - 총 1T 파라미터에 대해 110 Petabytes 데이터를 학습
     - SAE와 transcoder 결합하여 모델 내부를 들여다 봄
     - Matryoshka training technique이 적용되었고 chat usecase를 위해서도 학습되었다고 설명
+- 📜 [Southwest Univ.] [LIR3AG: A Lightweight Rerank Reasoning Strategy Framework for Retrieval-Augmented Generation](https://arxiv.org/abs/2512.18329)
+    - reasoning 모델이 retrieved & internal knowledge를 integrate 하기 위해 sturctured strategies를 취한다고 설명
+        - Context-Grounded Reasoning, Knowlege-Reconciled Reasoning 두 개의 모드로 해석
+    - LIR3AG: retrieved evidence를 coherent reasoning chains로 reconstruct 함으로써 non-reasoning 모델도 reasoning strategies를 transfer 할 수 있도록 함
 </details>
 
 ## 🍁 11월
