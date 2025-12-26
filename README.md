@@ -222,6 +222,11 @@ Agents](https://storage.googleapis.com/deepmind-media/DeepSearchQA/DeepSearchQA_
     - reasoning 모델이 retrieved & internal knowledge를 integrate 하기 위해 sturctured strategies를 취한다고 설명
         - Context-Grounded Reasoning, Knowlege-Reconciled Reasoning 두 개의 모드로 해석
     - LIR3AG: retrieved evidence를 coherent reasoning chains로 reconstruct 함으로써 non-reasoning 모델도 reasoning strategies를 transfer 할 수 있도록 함
+- 📜 [Tsinghua] [TurboDiffusion: Accelerating Video Diffusion Models by 100-200 Times](https://arxiv.org/abs/2512.16093)
+    - video quality는 유지하면서 end-to-end diffusion 생성 속도를 100-200x 끌어올리는 video generation acceleration framework
+    - (1) Attention acceleration: low-bit SageAttention & trainable Sparse-Linear Attention (SLA)
+    - (2) Step distillation: rCM
+    - (3) W8A8 quantization
 </details>
 
 ## 🍁 11월
