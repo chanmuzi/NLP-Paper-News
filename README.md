@@ -227,6 +227,10 @@ Agents](https://storage.googleapis.com/deepmind-media/DeepSearchQA/DeepSearchQA_
     - (1) Attention acceleration: low-bit SageAttention & trainable Sparse-Linear Attention (SLA)
     - (2) Step distillation: rCM
     - (3) W8A8 quantization
+- 📜 [Google] [Prompt Repetition Improves Non-Reasoning LLMs](https://arxiv.org/abs/2512.14982)
+    - 일반 모델을 사용할 때, 입력 프롬프트를 반복하는 것만으로도 생성 토큰 수나 latency 증가 없이 성능 향상이 있다고 보고한 short paper
+    - Gemini, GPT, Claude, DeepSeek 같은 플래그십 모델들에 대해 실험한 결과 보고
+    - 또한 RL로 학습된 reasoning 모델들이 유저의 요청을 반복하는 경항이 있는데 이를 역시 prompt repetition이라고 표현하고 이것이 아주 효율적이라고 설명함
 </details>
 
 ## 🍁 11월
