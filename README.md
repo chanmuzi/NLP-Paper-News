@@ -231,6 +231,11 @@ Agents](https://storage.googleapis.com/deepmind-media/DeepSearchQA/DeepSearchQA_
     - 일반 모델을 사용할 때, 입력 프롬프트를 반복하는 것만으로도 생성 토큰 수나 latency 증가 없이 성능 향상이 있다고 보고한 short paper
     - Gemini, GPT, Claude, DeepSeek 같은 플래그십 모델들에 대해 실험한 결과 보고
     - 또한 RL로 학습된 reasoning 모델들이 유저의 요청을 반복하는 경항이 있는데 이를 역시 prompt repetition이라고 표현하고 이것이 아주 효율적이라고 설명함
+- 🧑🏻‍💻 [Minimax] [MiniMax M2.1: Significantly Enhanced Multi-Language Programming, Built for Real-World Complex Tasks](https://www.minimax.io/news/minimax-m21)
+    - M2가 model cost & accessbility 문제에 집중했다면, M2.1은 real-world complex tasks에 집중
+    - 특히 코딩 능력 향상에 힘을 많이 들인 것으로 보임 (공식 포스트에서는 코딩 능력만 언급하고 있음)
+        - Multi-Promgramming Language Capabilities
+        - 웹 개발 뿐만 아니라 앱 개발도 잘할 수 있게 되었다고 설명
 </details>
 
 ## 🍁 11월
