@@ -236,6 +236,13 @@ Agents](https://storage.googleapis.com/deepmind-media/DeepSearchQA/DeepSearchQA_
     - 특히 코딩 능력 향상에 힘을 많이 들인 것으로 보임 (공식 포스트에서는 코딩 능력만 언급하고 있음)
         - Multi-Promgramming Language Capabilities
         - 웹 개발 뿐만 아니라 앱 개발도 잘할 수 있게 되었다고 설명
+- 📜 [Sapienza Univ.] [Epistemological Fault Lines Between Human and Artificial Intelligence](https://arxiv.org/abs/2512.19466)
+    - LLM은 인식론적 존재가 아니고 stochastic pattern-completion systems 뿐임을 지적
+    - 이를 위해 LLM이 답변을 생성하기까지(판단을 내리기까지)의 과정을 인간의 사고 과정과 비교 분석
+- 📜 [Meta, UIUC, CMU] [Toward Training Superintelligent Software Agents through Self-Play SWE-RL](https://arxiv.org/abs/2512.18552)
+    - 현존 software agents에 필요한 학습 데이터와 환경은 human knowledge & curation에 크게 의존중이라는 문제점을 지적
+    - Self-play SWE-RL (SSR): human-labeled issue or tests 없이 sandboxed repositories with source code에 대한 접근 권한만 제공
+    - LLM agent는 self-play 세팅에서 softwar bugs를 고치도록 강화 학습 반복
 </details>
 
 ## 🍁 11월
