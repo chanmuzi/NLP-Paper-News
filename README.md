@@ -243,6 +243,11 @@ Agents](https://storage.googleapis.com/deepmind-media/DeepSearchQA/DeepSearchQA_
     - 현존 software agents에 필요한 학습 데이터와 환경은 human knowledge & curation에 크게 의존중이라는 문제점을 지적
     - Self-play SWE-RL (SSR): human-labeled issue or tests 없이 sandboxed repositories with source code에 대한 접근 권한만 제공
     - LLM agent는 self-play 세팅에서 softwar bugs를 고치도록 강화 학습 반복
+- 📜 [Tencent] [Mindscape-Aware Retrieval Augmented Generation for Improved Long Context Understanding](https://arxiv.org/abs/2512.17220)
+    - 사람이 길고 복잡한 텍스트를 holistic semantic representation에 근거하여 처리(global view)하는 것과 달리 LLM은 이게 부족한 상황
+        - 사람의 이러한 능력을 심리학에서 Mindscape-Aware Capability 라고 부름
+    - Mindscape-Aware RAG (MiA-RAG): LLM-based RAG system에 explicit global context awareness를 제공
+    - hierarchical summarization을 build → retrieval & generation 둘 다 global semnatic representation에 condition
 </details>
 
 ## 🍁 11월
