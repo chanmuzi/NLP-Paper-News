@@ -248,6 +248,20 @@ Agents](https://storage.googleapis.com/deepmind-media/DeepSearchQA/DeepSearchQA_
         - 사람의 이러한 능력을 심리학에서 Mindscape-Aware Capability 라고 부름
     - Mindscape-Aware RAG (MiA-RAG): LLM-based RAG system에 explicit global context awareness를 제공
     - hierarchical summarization을 build → retrieval & generation 둘 다 global semnatic representation에 condition
+- 📜 [HKUST, Waterloo, Tsinghua, ICL] [Emergent Hierarchical Reasoning in LLMs through Reinforcement Learning](https://arxiv.org/abs/2509.03646)
+    - ‘aha moments’, ‘length-scaling’, entropy dynamics 같은 현상들이 서로 다른 현상이 아니라 emergent reasoning hierarchy의 특징이라고 주장
+    - two-phase dynamic: procedural correctness의 제약을 받으며 low-level skills 개선 → high-level strategic planning 고도화로 이어짐
+    - 이 관점에서 GRPO 같은 RL 알고리즘은 토큰으로부터의 learning signal을 무시한채로 무작위 optimzation 한다는 한계를 지적
+    - Hierarchy-Aware Credit Assignment (HICRA): 영향이 큰 planning tokens 대상으로 opimization efforts 집중
+- 📜 [Oxford] [Shared sensitivity to data distribution during learning in humans and transformer networks](https://www.nature.com/articles/s41562-025-02359-3) (Nature Human Behaviour 2025)
+    - 인간과 transformers 모델의 ‘in-context’ learning & ‘in-weights’ learning 비교
+    - redundancy & diversity 는 in-weights & in-context learning 둘 다에서 상충 관계에 있다는 공통점 확인
+    - 그러나 dynamic training shcedules이 인간에게는 영향을 줄 수 있던 것과 달리 network는 아님
+- 📜 [MIT] [Self-Adapting Language Models](https://arxiv.org/abs/2506.10943)
+    - LLM은 static 하기 때문에 새로운 지식을 기반으로 가중치 업데이트하지 못한다는 문제를 지적
+    - SEAL: 새로운 입력이 주어지면 모델이 학습하기 좋은 형태의 self-edit 데이터를 생성
+    - 이렇게 생성된 self-edit를 SFT하여 새로운 지식에 adapt
+    - updated model의 downstream performance를 reward signal로 사용하여 RL 함으로써 effective self-edits를 생성할 수 있도록 모델을 학습
 </details>
 
 ## 🍁 11월
