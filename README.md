@@ -19,6 +19,22 @@
 
 ---
 
+# 2026
+
+## 🙇🏻 1월
+
+<details>
+  <summary>1st week</summary>
+
+- 📜 [UIUC, Stanford, … ] [Adaptation of Agentic AI](https://arxiv.org/abs/2512.16301)
+    - agentic AI가 현실의 복잡한 문제를 잘 풀지 못하는 이유를 adaptation 불가능에서 찾음
+    - agent adaptations & tool adaptations를 다루는 systematic framework
+        - tool-execution-signaled & agent-output-signaled forms
+        - offline data를 이용해 각 weight를 업데이트 하는 것으로 보임
+</details>
+
+---
+
 # 2025
 
 ## 🎄 12월
