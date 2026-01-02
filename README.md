@@ -31,6 +31,11 @@
     - agent adaptations & tool adaptations를 다루는 systematic framework
         - tool-execution-signaled & agent-output-signaled forms
         - offline data를 이용해 각 weight를 업데이트 하는 것으로 보임
+- 🧑🏻‍💻 [IQuestLab] [IQuest-Coder-V1](https://github.com/IQuestLab/IQuest-Coder-V1)
+    - code-flow multi-stage training paradigm을 통해 코딩 벤치마크(SWE Bench)에서 Sonnet 4.5를 제치고 SoTA를 달성
+    - Dual Specialization Paths: 두 갈래의 post-training을 통해 thinking model & instruct model 개발
+    - recurrent mechanism을 이용하여 model capability와 deployment footpring 간의 trade-off 최적화한 Efficient Archiecture
+    - 추가적인 scaling 없이 native 128K 지원
 </details>
 
 ---
