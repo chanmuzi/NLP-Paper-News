@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "last_updated": "2026-01-01T02:45:58.632792",
-  "total_items": 1593,
+  "last_updated": "2026-01-02T05:22:27.338820",
+  "total_items": 1594,
   "items": [
     {
       "id": "UIUC,-Stanford,-…-adaptation-of-agentic-ai",
@@ -29,6 +29,35 @@
       ],
       "tags": [
         "agent"
+      ]
+    },
+    {
+      "id": "IQuestLab-iquest-coder-v1",
+      "date": "2026-01-W01",
+      "year": "2026",
+      "month": "1",
+      "week": "1",
+      "type": "dev",
+      "org": "IQuestLab",
+      "title": "IQuest-Coder-V1",
+      "url": "https://github.com/IQuestLab/IQuest-Coder-V1",
+      "bullets": [
+        {
+          "text": "Dual Specialization Paths: 두 갈래의 post-training을 통해 thinking model & instruct model 개발",
+          "level": 1
+        },
+        {
+          "text": "recurrent mechanism을 이용하여 model capability와 deployment footpring 간의 trade-off 최적화한 Efficient Archiecture",
+          "level": 1
+        },
+        {
+          "text": "추가적인 scaling 없이 native 128K 지원",
+          "level": 1
+        }
+      ],
+      "tags": [
+        "AI/ML",
+        "reasoning"
       ]
     },
     {
