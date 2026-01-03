@@ -36,6 +36,11 @@
     - Dual Specialization Paths: 두 갈래의 post-training을 통해 thinking model & instruct model 개발
     - recurrent mechanism을 이용하여 model capability와 deployment footpring 간의 trade-off 최적화한 Efficient Archiecture
     - 추가적인 scaling 없이 native 128K 지원
+- 📜 [WeChat] [Improving Multi-step RAG with Hypergraph-based Memory for Long-Context Complex Relational Modeling](https://arxiv.org/abs/2512.23959)
+    - 현재 Multi-step RAG의 memory module은 정적인, passive storage라는 점을 문제로 지적
+    - HGMem: memory 개념을 dynamic, expressive structure로 extend 하는 hypergraph-based memory mechanism
+    - hyperedges는 각 distinct memory units에 해당하며 메모리 내에서 higher-order interaction로 progressive formation 가능해짐
+        - 일반적인 edge와 달리 둘 이상의 정점을 한 번에 연결하는 개념
 </details>
 
 ---
