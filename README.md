@@ -41,6 +41,10 @@
     - HGMem: memory 개념을 dynamic, expressive structure로 extend 하는 hypergraph-based memory mechanism
     - hyperedges는 각 distinct memory units에 해당하며 메모리 내에서 higher-order interaction로 progressive formation 가능해짐
         - 일반적인 edge와 달리 둘 이상의 정점을 한 번에 연결하는 개념
+- 🧑🏻‍💻 [OpenCode AI] [OpenCode](https://github.com/code-yeongyu/oh-my-opencode/tree/dev)
+    - 백그라운드에서 에이전트들을 쉽게 돌릴 수 있는 오픈소스로 큰 화제를 일으키고 있음
+    - TUI 지원되면서도 시각적으로 보기 편리하게 구성되어 있음
+    - Claude Code를 그대로 쓸 수도 있고 다른 모델들을 필요한 곳에 override 해서 사용하는 것도 가능
 </details>
 
 ---
