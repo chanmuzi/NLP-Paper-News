@@ -45,6 +45,14 @@
     - 백그라운드에서 에이전트들을 쉽게 돌릴 수 있는 오픈소스로 큰 화제를 일으키고 있음
     - TUI 지원되면서도 시각적으로 보기 편리하게 구성되어 있음
     - Claude Code를 그대로 쓸 수도 있고 다른 모델들을 필요한 곳에 override 해서 사용하는 것도 가능
+- 📜 [NVIDIA, Stanford, UC Berkeley] [End-to-End Test-Time Training for Long Context](https://test-time-training.github.io/e2e.pdf)
+    - long-context language modeling을 architecture design이 아닌 continual learning 문제로 정의
+        - standard architecture: Transformer with sliding-window attention
+    - test time의 next-token prediction 상황에서 context를 compress하여 weight에 반영
+    - training time에 test-time에서 습득한 meta-learning을 통해 model initialization
+- 📜 [US San Diego] [Professional Software Developers Don't Vibe, They Control: AI Agent Use for Coding in 2025](https://arxiv.org/abs/2512.14012)
+    - 3년차 이상의 softward developers 대상으로 조사한 결과, 숙련된 개발자들은 vibe code 하지 않고 planning & supervision을 통해 agents를 control 하고 있다고 보고
+    - agents가 코드 생성, 디버깅, boilerplate 등에는 적합하지만, architectural decisions에는 약하다는 주장
 </details>
 
 ---
