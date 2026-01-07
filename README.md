@@ -53,6 +53,14 @@
 - 📜 [US San Diego] [Professional Software Developers Don't Vibe, They Control: AI Agent Use for Coding in 2025](https://arxiv.org/abs/2512.14012)
     - 3년차 이상의 softward developers 대상으로 조사한 결과, 숙련된 개발자들은 vibe code 하지 않고 planning & supervision을 통해 agents를 control 하고 있다고 보고
     - agents가 코드 생성, 디버깅, boilerplate 등에는 적합하지만, architectural decisions에는 약하다는 주장
+- 📜 [MIT] [Recursive Language Models](https://arxiv.org/abs/2512.24601)
+    - long prompts를 external environment로 간주하고, LLM이 prompt snippet을 programmatically examine, decompose, recursively call 할 수 있도록 하는 추론 전략
+    - 모델의 컨텍스트 윈도우를 두 자릿수 이상 넘어서는 경우도 잘 처리할 수 있음 (100배 이상)
+    - long-context tasks에서 base LLM, 그리고 common long-context scaffolds를 크게 앞선 결과
+- 📜 [Google] [Nested Learning: The Illusion of Deep Learning Architectures](https://arxiv.org/abs/2512.24695)
+    - NL: 모델을 여러 “level”로 중첩된 최적화 문제로 표현하고, 각 level이 고유한 “context flow”를 갖는 학습 패러다임
+    - 이를 통해 higher-order in-context learning을 구현함으로써 continual learning 능력을 잠재적으로 강화
+    - Expressive Optimizers, Self-Modifying Learning Moduel, Continuum Memory System
 </details>
 
 ---
