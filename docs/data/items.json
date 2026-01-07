@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "last_updated": "2026-01-05T02:35:14.775550",
-  "total_items": 1598,
+  "last_updated": "2026-01-07T00:01:18.686375",
+  "total_items": 1600,
   "items": [
     {
       "id": "UIUC,-Stanford,-…-adaptation-of-agentic-ai",
@@ -155,6 +155,52 @@
       "tags": [
         "agent"
       ]
+    },
+    {
+      "id": "MIT-recursive-language-models",
+      "date": "2026-01-W01",
+      "year": "2026",
+      "month": "1",
+      "week": "1",
+      "type": "paper",
+      "org": "MIT",
+      "title": "Recursive Language Models",
+      "url": "https://arxiv.org/abs/2512.24601",
+      "bullets": [
+        {
+          "text": "모델의 컨텍스트 윈도우를 두 자릿수 이상 넘어서는 경우도 잘 처리할 수 있음 (100배 이상)",
+          "level": 1
+        },
+        {
+          "text": "long-context tasks에서 base LLM, 그리고 common long-context scaffolds를 크게 앞선 결과",
+          "level": 1
+        }
+      ],
+      "tags": [
+        "AI/ML"
+      ]
+    },
+    {
+      "id": "Google-nested-learning-the-illusion-of-deep-learning-architectures",
+      "date": "2026-01-W01",
+      "year": "2026",
+      "month": "1",
+      "week": "1",
+      "type": "paper",
+      "org": "Google",
+      "title": "Nested Learning: The Illusion of Deep Learning Architectures",
+      "url": "https://arxiv.org/abs/2512.24695",
+      "bullets": [
+        {
+          "text": "이를 통해 higher-order in-context learning을 구현함으로써 continual learning 능력을 잠재적으로 강화",
+          "level": 1
+        },
+        {
+          "text": "Expressive Optimizers, Self-Modifying Learning Moduel, Continuum Memory System",
+          "level": 1
+        }
+      ],
+      "tags": []
     },
     {
       "id": "Karpathy-llm-council",
@@ -1503,8 +1549,8 @@
         }
       ],
       "tags": [
-        "reasoning",
         "multimodal",
+        "reasoning",
         "AI/ML"
       ]
     },
@@ -12721,8 +12767,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "multimodal"
+        "multimodal",
+        "AI/ML"
       ]
     },
     {
@@ -14064,8 +14110,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "multimodal"
+        "multimodal",
+        "AI/ML"
       ]
     },
     {
@@ -14597,8 +14643,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "multimodal"
+        "multimodal",
+        "AI/ML"
       ]
     },
     {
@@ -23578,8 +23624,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "multimodal"
+        "multimodal",
+        "AI/ML"
       ]
     },
     {
