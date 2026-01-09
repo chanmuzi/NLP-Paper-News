@@ -61,6 +61,23 @@
     - NL: 모델을 여러 “level”로 중첩된 최적화 문제로 표현하고, 각 level이 고유한 “context flow”를 갖는 학습 패러다임
     - 이를 통해 higher-order in-context learning을 구현함으로써 continual learning 능력을 잠재적으로 강화
     - Expressive Optimizers, Self-Modifying Learning Moduel, Continuum Memory System
+- 📜 [DeepSeek AI] [mHC: Manifold-Constrained Hyper-Connections](https://www.arxiv.org/abs/2512.24880)
+    - 기존 Hyper-Connections(HC)는 residual connection에 내재하는 identity mapping property를 손상시키는 한계 존재
+    - mHC: HC의 residual connection space를 특정 manifold에 project하여 identity mapping property를 복구하는 framework
+        - Sknkhorn-Knopp alogrithm 사용됨
+- 📜 [Alberta] [Can LLMs Predict Their Own Failures? Self-Awareness via Internal Circuits](https://arxiv.org/abs/2512.20578)
+    - Gnosis: frozen LLMs이 hidden states와 attention patterns으로부터 signals를 decoding 하여 intrinsic self-verification 하도록 하는 self-awareness mechanism
+    - internal traces를 관찰하여 fixed-budget descriptors로 압축
+    - external judges, multi-sample consistency 등에 의존하지 않아도 되며 5M 정도의 추가 파라미터만 발생하는 정도
+- 📜 [Duke, ByteDance] [Batch-of-Thought: Cross-Instance Learning for Enhanced LLM Reasoning](https://arxiv.org/abs/2601.02950)
+    - query pool에서 유사한 것들을 batch로 묶어 한 번에 responses 생성
+    - reflector가 이를 보고 답변을 끝내도 될지 업데이트 해야될지 판단 (Multi-agent reflection architecture)
+        - 여러 response를 한 번에 보고 비교 분석하기 때문에 cross-instance learning이라고 표현한 듯
+- 📜 [Stanford] [A multimodal sleep foundation model for disease prediction](https://www.nature.com/articles/s41591-025-04133-4) (Nature Medicine)
+    - SleepFM: multiple PSG configurations를 수용하는 multimodal sleep foundation model
+        - PSG: Polysomnography - the gold standard for sleep analysis
+    - 65,000명의 참가자들로부터 585,000 시간 분량의 PSG recording을 확보하여 모델 학습
+    - 130개 conditions를 예측할 수 있을 뿐만 아니라 뛰어난 transfer learning 성능을 보였다고 언급
 </details>
 
 ---
