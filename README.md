@@ -78,6 +78,17 @@
         - PSG: Polysomnography - the gold standard for sleep analysis
     - 65,000명의 참가자들로부터 585,000 시간 분량의 PSG recording을 확보하여 모델 학습
     - 130개 conditions를 예측할 수 있을 뿐만 아니라 뛰어난 transfer learning 성능을 보였다고 언급
+- 🧑🏻‍💻 [NVIDIA] [NVIDIA Announces Alpamayo Family of Open-Source AI Models and Tools to Accelerate Safe, Reasoning-Based Autonomous Vehicle Development](https://nvidianews.nvidia.com/news/alpamayo-autonomous-vehicle-development)
+    - long-tail 자율주행 challenges를 다루는 VLA reasoning model 공개
+    - reasoning traces와 trajectories를 output으로 반환
+    - AlpaSim: closed-loop autonomous driving evaluation을 위한 open-source simulator
+    - Physical AI Open Datasets: 1700+ hours의 real-world driving data
+- 🧑🏻‍💻 [OpenAI] [Introducing ChatGPT Health](https://openai.com/index/introducing-chatgpt-health)
+    - medical records, Apple Health, 기타 wellness app 등에 저장된 건강 데이터 연동
+        - 현재 US만 가능
+    - 독립된 샌드박스 환경에 데이터 저장 및 관리하여 학습 데이터로 활용되지 않는다고 함
+    - 건강 데이터를 바탕으로 상황 진단 또는 추적 관리 등 가능
+    - 현재 타국가 유저들은 waitlist 등록 필요
 </details>
 
 ---
