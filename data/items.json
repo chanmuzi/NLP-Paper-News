@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "last_updated": "2026-01-09T02:33:09.135750",
-  "total_items": 1604,
+  "last_updated": "2026-01-10T06:28:50.622363",
+  "total_items": 1606,
   "items": [
     {
       "id": "UIUC,-Stanford,-…-adaptation-of-agentic-ai",
@@ -297,6 +297,67 @@
       "tags": []
     },
     {
+      "id": "NVIDIA-nvidia-announces-alpamayo-family-of-open-source-ai-models-and-tools-to-accelerate-safe-reasoning-based-autonomous-vehicle-development",
+      "date": "2026-01-W01",
+      "year": "2026",
+      "month": "1",
+      "week": "1",
+      "type": "dev",
+      "org": "NVIDIA",
+      "title": "NVIDIA Announces Alpamayo Family of Open-Source AI Models and Tools to Accelerate Safe, Reasoning-Based Autonomous Vehicle Development",
+      "url": "https://nvidianews.nvidia.com/news/alpamayo-autonomous-vehicle-development",
+      "bullets": [
+        {
+          "text": "reasoning traces와 trajectories를 output으로 반환",
+          "level": 1
+        },
+        {
+          "text": "AlpaSim: closed-loop autonomous driving evaluation을 위한 open-source simulator",
+          "level": 1
+        },
+        {
+          "text": "Physical AI Open Datasets: 1700+ hours의 real-world driving data",
+          "level": 1
+        }
+      ],
+      "tags": [
+        "AI/ML",
+        "reasoning"
+      ]
+    },
+    {
+      "id": "OpenAI-introducing-chatgpt-health",
+      "date": "2026-01-W01",
+      "year": "2026",
+      "month": "1",
+      "week": "1",
+      "type": "dev",
+      "org": "OpenAI",
+      "title": "Introducing ChatGPT Health",
+      "url": "https://openai.com/index/introducing-chatgpt-health",
+      "bullets": [
+        {
+          "text": "현재 US만 가능",
+          "level": 2
+        },
+        {
+          "text": "독립된 샌드박스 환경에 데이터 저장 및 관리하여 학습 데이터로 활용되지 않는다고 함",
+          "level": 1
+        },
+        {
+          "text": "건강 데이터를 바탕으로 상황 진단 또는 추적 관리 등 가능",
+          "level": 1
+        },
+        {
+          "text": "현재 타국가 유저들은 waitlist 등록 필요",
+          "level": 1
+        }
+      ],
+      "tags": [
+        "AI/ML"
+      ]
+    },
+    {
       "id": "Karpathy-llm-council",
       "date": "2025-12-W01",
       "year": "2025",
@@ -425,8 +486,8 @@
         }
       ],
       "tags": [
-        "agent",
         "AI/ML",
+        "agent",
         "reasoning"
       ]
     },
@@ -499,8 +560,8 @@
         }
       ],
       "tags": [
-        "reasoning",
-        "multimodal"
+        "multimodal",
+        "reasoning"
       ]
     },
     {
@@ -894,9 +955,9 @@
         }
       ],
       "tags": [
-        "reasoning",
+        "AI/ML",
         "agent",
-        "AI/ML"
+        "reasoning"
       ]
     },
     {
@@ -1116,8 +1177,8 @@
         }
       ],
       "tags": [
-        "reasoning",
-        "multimodal"
+        "multimodal",
+        "reasoning"
       ]
     },
     {
@@ -1432,8 +1493,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -1643,9 +1704,9 @@
         }
       ],
       "tags": [
+        "multimodal",
         "AI/ML",
-        "reasoning",
-        "multimodal"
+        "reasoning"
       ]
     },
     {
@@ -2097,8 +2158,8 @@
         }
       ],
       "tags": [
-        "reasoning",
-        "multimodal"
+        "multimodal",
+        "reasoning"
       ]
     },
     {
@@ -2370,9 +2431,9 @@
         }
       ],
       "tags": [
-        "agent",
+        "multimodal",
         "AI/ML",
-        "multimodal"
+        "agent"
       ]
     },
     {
@@ -2564,8 +2625,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -3197,8 +3258,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -3230,8 +3291,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -3307,9 +3368,9 @@
         }
       ],
       "tags": [
-        "agent",
+        "multimodal",
         "AI/ML",
-        "multimodal"
+        "agent"
       ]
     },
     {
@@ -3619,8 +3680,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "multimodal"
+        "multimodal",
+        "agent"
       ]
     },
     {
@@ -3660,8 +3721,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -4417,8 +4478,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -4510,8 +4571,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -5084,8 +5145,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "multimodal"
+        "multimodal",
+        "AI/ML"
       ]
     },
     {
@@ -5238,9 +5299,9 @@
         }
       ],
       "tags": [
+        "AI/ML",
         "agent",
-        "reasoning",
-        "AI/ML"
+        "reasoning"
       ]
     },
     {
@@ -5290,8 +5351,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "multimodal"
+        "multimodal",
+        "AI/ML"
       ]
     },
     {
@@ -5568,9 +5629,9 @@
         }
       ],
       "tags": [
+        "AI/ML",
         "agent",
-        "reasoning",
-        "AI/ML"
+        "reasoning"
       ]
     },
     {
@@ -5598,8 +5659,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "multimodal"
+        "multimodal",
+        "AI/ML"
       ]
     },
     {
@@ -5715,8 +5776,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -5854,8 +5915,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -6126,8 +6187,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -6470,8 +6531,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -7201,8 +7262,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -7465,8 +7526,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -8044,9 +8105,9 @@
         }
       ],
       "tags": [
+        "multimodal",
         "agent",
-        "reasoning",
-        "multimodal"
+        "reasoning"
       ]
     },
     {
@@ -8147,8 +8208,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "multimodal"
+        "multimodal",
+        "AI/ML"
       ]
     },
     {
@@ -8172,8 +8233,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -8718,8 +8779,8 @@
         }
       ],
       "tags": [
-        "agent",
         "AI/ML",
+        "agent",
         "reasoning"
       ]
     },
@@ -8961,8 +9022,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -9367,8 +9428,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -9392,9 +9453,9 @@
         }
       ],
       "tags": [
+        "multimodal",
         "AI/ML",
-        "reasoning",
-        "multimodal"
+        "reasoning"
       ]
     },
     {
@@ -9444,8 +9505,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "multimodal"
+        "multimodal",
+        "AI/ML"
       ]
     },
     {
@@ -9494,8 +9555,8 @@
         }
       ],
       "tags": [
-        "reasoning",
-        "multimodal"
+        "multimodal",
+        "reasoning"
       ]
     },
     {
@@ -9697,8 +9758,8 @@
         "https://magenta.tensorflow.org/magenta-realtime?utm_source=alphasignal"
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -9726,9 +9787,9 @@
         }
       ],
       "tags": [
-        "agent",
+        "multimodal",
         "AI/ML",
-        "multimodal"
+        "agent"
       ]
     },
     {
@@ -9820,9 +9881,9 @@
         }
       ],
       "tags": [
+        "AI/ML",
         "agent",
-        "reasoning",
-        "AI/ML"
+        "reasoning"
       ]
     },
     {
@@ -9991,8 +10052,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -10040,8 +10101,8 @@
         }
       ],
       "tags": [
-        "agent",
         "AI/ML",
+        "agent",
         "reasoning"
       ]
     },
@@ -10287,8 +10348,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -10328,8 +10389,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -10608,8 +10669,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -10637,9 +10698,9 @@
         }
       ],
       "tags": [
+        "multimodal",
         "agent",
-        "reasoning",
-        "multimodal"
+        "reasoning"
       ]
     },
     {
@@ -10846,8 +10907,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -10922,8 +10983,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "multimodal"
+        "multimodal",
+        "AI/ML"
       ]
     },
     {
@@ -10947,8 +11008,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -11245,8 +11306,8 @@
         }
       ],
       "tags": [
-        "reasoning",
-        "multimodal"
+        "multimodal",
+        "reasoning"
       ]
     },
     {
@@ -11551,9 +11612,9 @@
         }
       ],
       "tags": [
+        "multimodal",
         "AI/ML",
-        "reasoning",
-        "multimodal"
+        "reasoning"
       ]
     },
     {
@@ -11961,8 +12022,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -12087,8 +12148,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -12174,9 +12235,9 @@
         }
       ],
       "tags": [
+        "multimodal",
         "agent",
-        "reasoning",
-        "multimodal"
+        "reasoning"
       ]
     },
     {
@@ -12204,9 +12265,9 @@
         }
       ],
       "tags": [
+        "multimodal",
         "agent",
-        "reasoning",
-        "multimodal"
+        "reasoning"
       ]
     },
     {
@@ -12254,8 +12315,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -12676,8 +12737,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -12861,8 +12922,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "multimodal"
+        "multimodal",
+        "AI/ML"
       ]
     },
     {
@@ -12937,8 +12998,8 @@
         }
       ],
       "tags": [
-        "reasoning",
-        "multimodal"
+        "multimodal",
+        "reasoning"
       ]
     },
     {
@@ -13130,8 +13191,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -13509,8 +13570,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "multimodal"
+        "multimodal",
+        "AI/ML"
       ]
     },
     {
@@ -13686,8 +13747,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "multimodal"
+        "multimodal",
+        "AI/ML"
       ]
     },
     {
@@ -14027,8 +14088,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -14204,8 +14265,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "multimodal"
+        "multimodal",
+        "AI/ML"
       ]
     },
     {
@@ -14626,8 +14687,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "multimodal"
+        "multimodal",
+        "AI/ML"
       ]
     },
     {
@@ -14737,8 +14798,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "multimodal"
+        "multimodal",
+        "AI/ML"
       ]
     },
     {
@@ -15071,8 +15132,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -15631,8 +15692,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "multimodal"
+        "multimodal",
+        "AI/ML"
       ]
     },
     {
@@ -16003,8 +16064,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -17029,9 +17090,9 @@
         }
       ],
       "tags": [
+        "multimodal",
         "AI/ML",
-        "reasoning",
-        "multimodal"
+        "reasoning"
       ]
     },
     {
@@ -17625,9 +17686,9 @@
         }
       ],
       "tags": [
-        "agent",
+        "multimodal",
         "AI/ML",
-        "multimodal"
+        "agent"
       ]
     },
     {
@@ -17693,8 +17754,8 @@
         }
       ],
       "tags": [
-        "agent",
         "AI/ML",
+        "agent",
         "reasoning"
       ]
     },
@@ -18824,8 +18885,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -18900,8 +18961,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -19363,8 +19424,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "multimodal"
+        "multimodal",
+        "AI/ML"
       ]
     },
     {
@@ -19468,8 +19529,8 @@
         }
       ],
       "tags": [
-        "reasoning",
-        "multimodal"
+        "multimodal",
+        "reasoning"
       ]
     },
     {
@@ -20227,8 +20288,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "multimodal"
+        "multimodal",
+        "AI/ML"
       ]
     },
     {
@@ -20828,8 +20889,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "multimodal"
+        "multimodal",
+        "AI/ML"
       ]
     },
     {
@@ -21031,8 +21092,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -21060,8 +21121,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "multimodal"
+        "multimodal",
+        "AI/ML"
       ]
     },
     {
@@ -21840,8 +21901,8 @@
         }
       ],
       "tags": [
-        "reasoning",
-        "multimodal"
+        "multimodal",
+        "reasoning"
       ]
     },
     {
@@ -22024,8 +22085,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "multimodal"
+        "multimodal",
+        "AI/ML"
       ]
     },
     {
@@ -22487,8 +22548,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -22764,8 +22825,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -22931,8 +22992,8 @@
         }
       ],
       "tags": [
-        "reasoning",
-        "multimodal"
+        "multimodal",
+        "reasoning"
       ]
     },
     {
@@ -23718,8 +23779,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "multimodal"
+        "multimodal",
+        "AI/ML"
       ]
     },
     {
@@ -23976,8 +24037,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "multimodal"
+        "multimodal",
+        "AI/ML"
       ]
     },
     {
@@ -25311,8 +25372,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "multimodal"
+        "multimodal",
+        "AI/ML"
       ]
     },
     {
@@ -25336,8 +25397,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -25487,8 +25548,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -27172,8 +27233,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -28119,8 +28180,8 @@
         }
       ],
       "tags": [
-        "reasoning",
-        "multimodal"
+        "multimodal",
+        "reasoning"
       ]
     },
     {
@@ -29268,8 +29329,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -29334,8 +29395,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "multimodal"
+        "multimodal",
+        "AI/ML"
       ]
     },
     {
@@ -29603,8 +29664,8 @@
         }
       ],
       "tags": [
-        "reasoning",
-        "multimodal"
+        "multimodal",
+        "reasoning"
       ]
     },
     {
@@ -29829,8 +29890,8 @@
         }
       ],
       "tags": [
-        "AI/ML",
-        "multimodal"
+        "multimodal",
+        "AI/ML"
       ]
     },
     {
@@ -31286,8 +31347,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
