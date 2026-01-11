@@ -89,6 +89,16 @@
     - 독립된 샌드박스 환경에 데이터 저장 및 관리하여 학습 데이터로 활용되지 않는다고 함
     - 건강 데이터를 바탕으로 상황 진단 또는 추적 관리 등 가능
     - 현재 타국가 유저들은 waitlist 등록 필요
+- 📜 [Beijing Univ.] [Entropy-Adaptive Fine-Tuning: Resolving Confident Conflicts to Mitigate Forgetting](https://arxiv.org/abs/2601.02151)
+    - internal belief에 align하는 RL과 external supervision에 fit하는 SFT 간의 mismatch를 문제점으로 지적 → Confident Conflicts
+        - 모델이 own prediction에 highly confident 하지만 divergent ground truth를 배우도록 강제됨
+    - Entropy-Adaptive Fine-Tuning (EAFT): prediction probability에만 의존하지 않고, token-level entropy를 gating mechanism으로 사용
+        - epistemic uncertainty & knowledge confict 를 구분하는 데 사용
+- 🧑🏻‍💻 [MIT, Sakana] [Digital Red Queen:Adversarial Program Evolution in Core War with LLMs](https://pub.sakana.ai/drq)
+    - Core War의 warriors를 evolve 하도록 self-play algorithm, DQR 제안
+        - static objective → changing objective에 대해 continual adaptation
+    - targeted bombing, self-replication, massive multhreading 등을 포함한 다양한 전략으로 이어짐
+    - convergence pressure toward a general-purpose behavioral strategy → convergent evolution
 </details>
 
 ---
