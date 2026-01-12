@@ -101,6 +101,19 @@
     - convergence pressure toward a general-purpose behavioral strategy → convergent evolution
 </details>
 
+<details>
+  <summary>2nd week</summary>
+  
+- 🧑🏻‍💻 [NVIDIA] [NVIDIA Cosmos Reason 2 Brings Advanced Reasoning To Physical AI](https://huggingface.co/blog/nvidia/nvidia-cosmos-reason-2-brings-advanced-reasoning)
+    - physical AI를 위한 reasoning vision language models 공개 (2B & 8B)
+    - Physical AI Bench & Physical Reasoning 벤치마크에서 SoTA 달성
+    - 기존 모델들은 불확실성을 처리하거나 새로운 상황에 적응하는데 필요한 planning several steps ahead 능력 등이 부족했었음
+- 📜 [NVIDIA] [GDPO: Group reward-Decoupled Normalization Policy Optimization for Multi-reward RL Optimization](https://arxiv.org/abs/2601.05242)
+    - distinct rollout reward combinations를 normalize 하기 위해 GRPO를 직접 적용하는 것은 identical advantage values로 이어져 학습 신호의 해상도를 낮추고 suboptimal convergaence를 야기한다고 문제점을 지적함
+    - GDPO: individual rewards의 normalization의 decoupling 함으로써 rewards 간의 상대적인 차이를 보존하여 보다 정확한 multi-reward optimization이 가능하도록 함
+    - tool calling, math reasoning, coding reasoning 태스크에 대해 accuracy, bug ratio를 측정하여 GRPO와 성능 비교
+</details>
+
 ---
 
 # 2025
