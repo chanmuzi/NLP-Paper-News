@@ -112,6 +112,21 @@
     - distinct rollout reward combinations를 normalize 하기 위해 GRPO를 직접 적용하는 것은 identical advantage values로 이어져 학습 신호의 해상도를 낮추고 suboptimal convergaence를 야기한다고 문제점을 지적함
     - GDPO: individual rewards의 normalization의 decoupling 함으로써 rewards 간의 상대적인 차이를 보존하여 보다 정확한 multi-reward optimization이 가능하도록 함
     - tool calling, math reasoning, coding reasoning 태스크에 대해 accuracy, bug ratio를 측정하여 GRPO와 성능 비교
+- 🧑🏻‍💻 [Anthropic] [Cowork: Claude Code for the rest of your work](https://claude.com/blog/cowork-research-preview)
+    - 폴더 접근 기반의 에이전트형 작업 모드로 파일 읽기, 편집, 생성까지 자동 수행
+        - Mac 앱에서 특정 로컬 폴더에 권한 부여
+    - 컨텍스트를 유지하면서도 병렬로 처리할 수 있음
+    - Claude Max 구독자 대상으로 Mac에서 동작하는 App에 preview 형태로 제공중
+- 📜 [Zhejiang, Edinburgh, NUS] [Illusions of Confidence? Diagnosing LLM Truthfulness via Neighborhood Consistency](https://arxiv.org/abs/2601.05905)
+    - 기존 LLM 평가는 Self-Consistency와 같은 point-wise confidence에 의존하기 때문에 mild contextual interference에 취약하다고 문제 지적
+        - 같은 질문을 받더라도 주변 문맥이 살짝 바뀌면 출력이 달라지는 현상
+    - 이를 해결하기 위한 Neighbor-Consistency Belief (NCB): conceptual neighborhood 간 response coherence를 평가하는 belief robustness를 구조적으로 측정
+    - 이것의 효용을 입증하기 위해 contextual interference에 대한 outputs stability를 측정하는 cognitive stress-testing protocol 제시
+    - Structure-Aware Training (SAT): context-invariant belief에 optimize 하고 long-tail knowledge brittleness를 줄이는 학습 방식
+- 🧑🏻‍💻 [Sakana AI] [Extending the Context of Pretrained LLMs by Dropping their Positional Embeddings](https://pub.sakana.ai/DroPE)
+    - RoPE가 학습엔 유리하지만 long-context에서는 성능이 저하되는 현상에 대해 지적
+    - DroPE: 학습 후 위치 임베딩을 제거하고 짧게 재보정하는 방식(continued pretraining)으로 문맥 확장 제안
+        - RoPE가 non-uniform attention에 대해 갖는 bias(특정 상대 위치나 구조에 강하게 치우친 분포)를 학습 시 scaffold로 활용
 </details>
 
 ---
