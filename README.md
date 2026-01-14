@@ -127,6 +127,16 @@
     - RoPE가 학습엔 유리하지만 long-context에서는 성능이 저하되는 현상에 대해 지적
     - DroPE: 학습 후 위치 임베딩을 제거하고 짧게 재보정하는 방식(continued pretraining)으로 문맥 확장 제안
         - RoPE가 non-uniform attention에 대해 갖는 bias(특정 상대 위치나 구조에 강하게 치우친 분포)를 학습 시 scaffold로 활용
+- 📜 [Alibaba] [Qwen3-VL-Embedding and Qwen3-VL-Reranker: A Unified Framework for State-of-the-Art Multimodal Retrieval and Ranking](https://arxiv.org/abs/2601.04720)
+    - Qwen3-VL foundation model로 학습된 Embedding & Reranker 모델 공개
+    - unified representation space 내에서 text, images, document images, video 등을 multimodal search 하도록 하는 end-to-end pipeline
+    - Embedding: 32k tokens까지 입력으로 받을 수 있으며 MRL 지원
+    - Reranker: cross-encoder with cross-attention을 이용한 fine-grained relevance estimation
+- 📜 [Alibaba, Wuhan] [Agentic Memory: Learning Unified Long-Term and Short-Term Memory Management for Large Language Model Agents](https://arxiv.org/abs/2601.01885)
+    - 기존에는 long-term memory (LTM) & short-term memory (STM)을 heuristics or auxiliary controllers로 관리하는 문제점
+    - AgeMem: LTM & STM 관리를 agent’s policy로 직접 관리
+        - memory operation을 tool-based actions로 expose하여 LLM agent가 정보를 retrieve, update, summarize, discard 할지를 자율적으로 결정하도록 함
+    - 이런 행동을 학습시키기 위해 three-stage progressive RL & step-wise GRPO 제시
 </details>
 
 ---
