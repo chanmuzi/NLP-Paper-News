@@ -137,6 +137,16 @@
     - AgeMem: LTM & STM 관리를 agent’s policy로 직접 관리
         - memory operation을 tool-based actions로 expose하여 LLM agent가 정보를 retrieve, update, summarize, discard 할지를 자율적으로 결정하도록 함
     - 이런 행동을 학습시키기 위해 three-stage progressive RL & step-wise GRPO 제시
+- 🧑🏻‍💻 [Manus] [Introducing Meeting Minutes](https://manus.im/blog/manus-meeting-minutes)
+    - 대화를 자동 녹음하여 핵심 요약, 참석자별 할일 등을 구조화해 산출물 제작까지 제공하는 서비스
+    - 화자 인식, Seamless End-to-End Execution, Collaborative Execution 등을 핵심 특징으로 강조
+    - 면대면 미팅에 특화됨. 온라인 미팅 상황은 대상이 아님
+- 📜 [Quanta Alpah] [Watching, Reasoning, and Searching: A Video Deep Research Benchmark on Open Web for Agentic Video Reasoning](https://arxiv.org/abs/2601.06943)
+    - 최초의 video deep research benchmark, VideoDR 구축
+    - video-conditioned open-domain video question answering
+        - cross-frame visual anchor extraction, interactive web retrieval, multi-hop reasoning 등을 커버
+    - Workflow & Agentic paradigm에 맞춰 평가 진행
+    - 이를 통해 goal drift & long-horizon consistency 가 이 분야의 핵심 병목이었음을 파악
 </details>
 
 ---
