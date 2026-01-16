@@ -147,6 +147,13 @@
         - cross-frame visual anchor extraction, interactive web retrieval, multi-hop reasoning 등을 커버
     - Workflow & Agentic paradigm에 맞춰 평가 진행
     - 이를 통해 goal drift & long-horizon consistency 가 이 분야의 핵심 병목이었음을 파악
+- 🧑🏻‍💻 [Tencent] [WeKnora - LLM-Powered Document Understanding & Retrieval Framework](https://github.com/Tencent/WeKnora)
+    - 지식베이스, 웹 검색, MCP 조합한 답변을 반환할 수 있는 오픈소스 올인원 RAG 프레임워크
+    - 다양한 문서 파싱, 임베딩, 검색, reasoning model 과의 integration 등 다양한 기능 지원
+- 📜 [Nanyang] [DeepResearchEval: An Automated Framework for Deep Research Task Construction and Agentic Evaluation](https://arxiv.org/abs/2601.09688)
+    - 유저의 다양한 프로필을 고려하여 복잡한 research tasks를 생성할 수 있는 persona-driven pipeline을 통해 task construction
+    - 이를 통해 multi-source evidence integration & external retrieval 이 필요한 task만 남김
+    - 평가 시 Adaptive Point-wise Quality Evaluation & Active Fact Checking 을 적용하여 기존의 정적 벤치마크의 한계를 극복
 </details>
 
 ---
