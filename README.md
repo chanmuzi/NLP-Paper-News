@@ -154,6 +154,17 @@
     - 유저의 다양한 프로필을 고려하여 복잡한 research tasks를 생성할 수 있는 persona-driven pipeline을 통해 task construction
     - 이를 통해 multi-source evidence integration & external retrieval 이 필요한 task만 남김
     - 평가 시 Adaptive Point-wise Quality Evaluation & Active Fact Checking 을 적용하여 기존의 정적 벤치마크의 한계를 극복
+- 🧑🏻‍💻 [Google] [TranslateGemma: A new suite of open translation models](https://blog.google/innovation-and-ai/technology/developers-tools/translategemma)
+    - Gemma 3 기반으로 학습된 open translation models로 4B, 12B, 27B 사이즈
+    - 55개 언어를 지원하면서 device를 가리지 않는다고 설명
+    - 이미지 내 텍스트를 인식하는 multimodal 능력도 뛰어나다고 언급
+- 🧑🏻‍💻 [Cursor] [Scaling long-running autonomous coding](https://cursor.com/blog/scaling-agents)
+    - 브라우저를 만드는 대형 프로젝트를 scratch부터 병렬 agent로 처리
+        - 일주일 동안 interrupt 없이 실행되며 1,000개 파일에 100만+ 라인 작성
+    - Solid → React 마이그레이션
+        - 3주 이상걸리며 +266K/-193K 수정
+    - planner가 코드베이스 탐색 후 작업 생성 → sub-planner spawn
+    - GPT-5.2는 instruction following 등 능력이 좋았으나, Opus 4.5는 일찍 중단되는 경향이 있었다고 설명
 </details>
 
 ---
