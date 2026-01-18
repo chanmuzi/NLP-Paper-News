@@ -165,6 +165,15 @@
         - 3주 이상걸리며 +266K/-193K 수정
     - planner가 코드베이스 탐색 후 작업 생성 → sub-planner spawn
     - GPT-5.2는 instruction following 등 능력이 좋았으나, Opus 4.5는 일찍 중단되는 경향이 있었다고 설명
+- 🧑🏻‍💻 [Google] [Gemini introduces Personal Intelligence](https://blog.google/innovation-and-ai/products/gemini-app/personal-intelligence)
+    - Gemini가 여러 구글 apps로부터 정보를 획득해 개인화된 응답을 반환할 수 있음
+        - Gmail, Google Photos, YouTube, Workspace, Search
+    - 필요할 때만 context에 추가하는 방식으로 one reasoning window에서 커버
+    - U.S. Google AI Pro & Ultra 유저 대상으로 beta 오픈
+- 🧑🏻‍💻 [Replit] [Mobile Apps on Replit: Idea to App Store in Minutes](https://blog.replit.com/mobile-apps)
+    - 자연어를 이용해서 App Store에 출시 가능한 모바일 앱을 만드는 기능 공개
+    - 모바일 게임, AI 앱, 생산성 향상 앱 등 다양한 개발 가능
+    - [링크](https://replit.com/mobile-apps) 🔗
 </details>
 
 ---
