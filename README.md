@@ -176,6 +176,21 @@
     - [링크](https://replit.com/mobile-apps) 🔗
 </details>
 
+<details>
+  <summary>3rd week</summary>
+
+- 📜 [StepFun] [STEP3-VL-10B Technical Report](https://arxiv.org/abs/2601.09668)
+    - compact efficiency & frontier-level multimodal intelligence 간 trade-off를 재정의한 lightweight open-source foundation model
+    - two strategic shifts
+        - (1) unified, fully unfrozen pre-training strategy on 1.2T multimodal tokens
+        - (2) scaled post-training pipeline featuring over 1k iterations of RL
+    - test-time compute를 scale 하기 위해 Parallel Coordinated Reasoning (PaCoRe)
+- 📜 [Independent] [Active Context Compression: Autonomous Memory Management in LLM Agents](https://arxiv.org/abs/2601.07190)
+    - Focus Agent: 어떤 정보를 persistent Knowledge로 저장할지 혹은 raw interaction history로 prune 할지 자율적으로 결정
+    - SWE Bench Lite에서 토큰 사용량을 22.7% 줄이면서도 기존과 동일한 수준의 정확도(60%) 달성
+        - Claude Haiku 4.5
+</details>
+
 ---
 
 # 2025
