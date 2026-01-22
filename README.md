@@ -189,6 +189,18 @@
     - Focus Agent: 어떤 정보를 persistent Knowledge로 저장할지 혹은 raw interaction history로 prune 할지 자율적으로 결정
     - SWE Bench Lite에서 토큰 사용량을 22.7% 줄이면서도 기존과 동일한 수준의 정확도(60%) 달성
         - Claude Haiku 4.5
+- 📜 [CMU, Meta] [STEM: Scaling Transformers with Embedding Modules](https://arxiv.org/abs/2601.10639)
+    - FFN up-projection을 layer-local embedding lookup으로 대체하는 STEM 제안
+    - runtime routing을 제거함으로써 CPU offload with asynchronous prefetch를 가능하게 함
+    - 또한 극도로 sparse 함에도 불구하고 안정적으로 학습되는 모습 관측됨
+- 🧑🏻‍💻 [Anthropic] [The assistant axis: situating and stabilizing the character of large language models](https://www.anthropic.com/research/assistant-axis)
+    - 모델 내부 activation pattern을 부석해 다채로운 persona가 놓인 공간을 구성하고, 그 변동의 축이 되는 방향을 발견 → Assistant Axis
+        - 한쪽 끝은 분석가/컨설턴트, 반대쪽은 환상적/비어시스턴트적 역할 위치
+    - 분석을 위해 275개의 서로 다른 캐릭터 타입에 상응하는 vectors 추출
+        - 실험에는 Gemma 2 27B, Qwen 3 32B, Llama 3.3 70B 모델 사용
+- 🧑🏻‍💻 [xAI] [X For You Feed Algorithm](https://github.com/xai-org/x-algorithm)
+    - X의 피드 데이터를 이용하여 개인화된 추천을 해주는 X 추천 알고리즘을 오픈소스로 공개
+    - 두 가지 소스로 후보를 모아 Phoneix(Grok-based transformer model)로 다중 행동 확률을 예측하고 가중합 점수로 정렬하여 상위 K개 선택
 </details>
 
 ---
