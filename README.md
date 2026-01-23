@@ -201,6 +201,14 @@
 - 🧑🏻‍💻 [xAI] [X For You Feed Algorithm](https://github.com/xai-org/x-algorithm)
     - X의 피드 데이터를 이용하여 개인화된 추천을 해주는 X 추천 알고리즘을 오픈소스로 공개
     - 두 가지 소스로 후보를 모아 Phoneix(Grok-based transformer model)로 다중 행동 확률을 예측하고 가중합 점수로 정렬하여 상위 K개 선택
+- 🧑🏻‍💻 [Liquid AI] [LFM2.5-1.2B-Thinking: On-Device Reasoning Under 1GB](https://www.liquid.ai/blog/lfm2-5-1-2b-thinking-on-device-reasoning-under-1gb)
+    - 1GB 메모리도 사용하지 않는 on-device용 reasoning model release
+    - 1.2B 사이즈의 LFM2.5 family 기반으로 학습된 모델
+    - 허깅페이스 등에서 weight 다운로드 가능
+- 🧑🏻‍💻 [Anthropic] [Claude's new constitution](https://www.anthropic.com/news/claude-new-constitution)
+    - Anthropic의 vision과 Claude의 values & behavior를 담은 constitution publish
+    - Claude의 어떤 행동이 의도된 것인지 사람이 판단할 수 있게 함으로서 투명성을 높이려는 목적
+    - 단순 규칙 나열 → 이유가 포함된 서술형, hard constraint + 유연한 원칙, 학습 파이프라인에서 더 핵심적인 역할
 </details>
 
 ---
