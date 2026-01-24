@@ -209,6 +209,13 @@
     - Anthropic의 vision과 Claude의 values & behavior를 담은 constitution publish
     - Claude의 어떤 행동이 의도된 것인지 사람이 판단할 수 있게 함으로서 투명성을 높이려는 목적
     - 단순 규칙 나열 → 이유가 포함된 서술형, hard constraint + 유연한 원칙, 학습 파이프라인에서 더 핵심적인 역할
+- 📜 [UIUC, Meta, … ] [Agentic Reasoning for Large Language Models](https://arxiv.org/abs/2601.12538)
+    - environmental dynamics를 3개 layer로 characterize: foundational agentic reasoning, self-evolving agentic reasoning, collective multi-agent reasoning
+    - Agentic Reasoning 서베이 페이퍼
+- 📜 [NVIDIA] [KVzap: Fast, Adaptive, and Faithful KV Cache Pruning](https://arxiv.org/abs/2601.07891)
+    - 현존 KV cache pruning 전략은 speed-accuracy trade-off로 인해 주요한 추론 엔진에 adopt 되지 않음
+    - KVzap: fast, input-adaptive approximation of KVzip. prefilling & decoding 둘 다 적용
+    - 학습된 LLM위에 작은 surrogate를 학습해서 붙이는 post-hoc KV pruning 방식
 </details>
 
 ---
