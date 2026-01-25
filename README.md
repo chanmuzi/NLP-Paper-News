@@ -223,6 +223,23 @@
     - extreme bidirectional streaming generation speed 달성
 </details>
 
+<details>
+  <summary>4th week</summary>
+
+- 📜 [Stanford, NVIDIA, … ] [Learning to Discover at Test Time](https://test-time-training.github.io/discover.pdf)
+    - TTT-Discover: test-time training for scientific discovery
+        - 어려운 문제를 풀기 위해 모델 스스로 해결을 시도하고 개선하는 것이 가능하도록 학습
+    - attempts 간 평균 reward를 maximize 하는 것보다는 the most promising solutions를 prioritize 하도록 design
+    - Erdo’s minimum overlap problem, autocorrelation inequality, GPUMode kernel competitions 등 다양한 도메인에서 SoTA 달성
+    - gpt-oss-120b와 같은 open model로도 재현 가능
+- 📜 [Chicago] [AI Agents Need Memory Control Over More Context](https://arxiv.org/abs/2601.11653)
+    - Agent Cognitive Compressor (ACC): long multi-turn workflows에서 성능이 저하되는 agent behavior를 바로잡기 위한 bio-inspired mechanism
+        - transcript retention을 bounded internal state로 대체하여 각 턴마다 점진적 업데이트가 가능하도록 함
+    - 기존에는 unbounded context growth 문제가 있어 context 관리가 되지 않았던 것을 문제점으로 지적
+        - ever-expanding transcripts라고 표현
+    - task success와 memory-related anomalies 둘 다 평가하기 위한 agent-judge evaluation framework 제안
+</details>
+
 ---
 
 # 2025
