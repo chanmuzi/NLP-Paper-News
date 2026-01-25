@@ -216,6 +216,11 @@
     - 현존 KV cache pruning 전략은 speed-accuracy trade-off로 인해 주요한 추론 엔진에 adopt 되지 않음
     - KVzap: fast, input-adaptive approximation of KVzip. prefilling & decoding 둘 다 적용
     - 학습된 LLM위에 작은 surrogate를 학습해서 붙이는 post-hoc KV pruning 방식
+- 🧑🏻‍💻 [Qwen] [Qwen3-TTS Family is Now Open Sourced: Voice Design, Clone, and Generation!](https://qwen.ai/blog?id=qwen3tts-0115)
+    - voice clone, voice design, human-like speech generation, natural langauage-based voice control 등 support
+    - Qwen3-TTS-Tokenizer-12Hz multi-codebook speech encoder 사용
+        - paralinguisitc information & acoustic environmental features 보존 & high-speed, high-fidelity speech reconstruction 가능
+    - extreme bidirectional streaming generation speed 달성
 </details>
 
 ---
