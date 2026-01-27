@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "last_updated": "2026-01-25T17:23:53.539735",
-  "total_items": 1635,
+  "last_updated": "2026-01-27T05:32:08.448760",
+  "total_items": 1636,
   "items": [
     {
       "id": "UIUC,-Stanford,-…-adaptation-of-agentic-ai",
@@ -839,8 +839,8 @@
         }
       ],
       "tags": [
-        "reasoning",
         "multimodal",
+        "reasoning",
         "AI/ML"
       ]
     },
@@ -1114,6 +1114,36 @@
       ]
     },
     {
+      "id": "Google-Research-small-models-big-results-achieving-superior-intent-extraction-through-decomposition",
+      "date": "2026-01-W04",
+      "year": "2026",
+      "month": "1",
+      "week": "4",
+      "type": "dev",
+      "org": "Google Research",
+      "title": "Small models, big results: Achieving superior intent extraction through decomposition",
+      "url": "https://research.google/blog/small-models-big-results-achieving-superior-intent-extraction-through-decomposition/",
+      "bullets": [
+        {
+          "text": "이를 위한 decomposed workflow 제시",
+          "level": 1
+        },
+        {
+          "text": "(1) single screen에서의 개별 interaction과 UI element가 summarized",
+          "level": 2
+        },
+        {
+          "text": "(2) 전체 UI trajectory의 일반적 의도를 이해하기 위한 a series of events로 사용됨",
+          "level": 2
+        },
+        {
+          "text": "summaries로부터 intent extraction을 잘하기 위해서 Fine-tuning, Label Preparation, Dropping speculations 등 기법 적용",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
       "id": "Karpathy-llm-council",
       "date": "2025-12-W01",
       "year": "2025",
@@ -1316,8 +1346,8 @@
         }
       ],
       "tags": [
-        "reasoning",
-        "multimodal"
+        "multimodal",
+        "reasoning"
       ]
     },
     {
@@ -1933,8 +1963,8 @@
         }
       ],
       "tags": [
-        "reasoning",
-        "multimodal"
+        "multimodal",
+        "reasoning"
       ]
     },
     {
@@ -2460,8 +2490,8 @@
         }
       ],
       "tags": [
-        "reasoning",
         "multimodal",
+        "reasoning",
         "AI/ML"
       ]
     },
@@ -2914,8 +2944,8 @@
         }
       ],
       "tags": [
-        "reasoning",
-        "multimodal"
+        "multimodal",
+        "reasoning"
       ]
     },
     {
@@ -8861,8 +8891,8 @@
         }
       ],
       "tags": [
-        "reasoning",
         "multimodal",
+        "reasoning",
         "agent"
       ]
     },
@@ -10209,8 +10239,8 @@
         }
       ],
       "tags": [
-        "reasoning",
         "multimodal",
+        "reasoning",
         "AI/ML"
       ]
     },
@@ -10311,8 +10341,8 @@
         }
       ],
       "tags": [
-        "reasoning",
-        "multimodal"
+        "multimodal",
+        "reasoning"
       ]
     },
     {
@@ -11454,8 +11484,8 @@
         }
       ],
       "tags": [
-        "reasoning",
         "multimodal",
+        "reasoning",
         "agent"
       ]
     },
@@ -12062,8 +12092,8 @@
         }
       ],
       "tags": [
-        "reasoning",
-        "multimodal"
+        "multimodal",
+        "reasoning"
       ]
     },
     {
@@ -12368,8 +12398,8 @@
         }
       ],
       "tags": [
-        "reasoning",
         "multimodal",
+        "reasoning",
         "AI/ML"
       ]
     },
@@ -12991,8 +13021,8 @@
         }
       ],
       "tags": [
-        "reasoning",
         "multimodal",
+        "reasoning",
         "agent"
       ]
     },
@@ -13021,8 +13051,8 @@
         }
       ],
       "tags": [
-        "reasoning",
         "multimodal",
+        "reasoning",
         "agent"
       ]
     },
@@ -13754,8 +13784,8 @@
         }
       ],
       "tags": [
-        "reasoning",
-        "multimodal"
+        "multimodal",
+        "reasoning"
       ]
     },
     {
@@ -17846,8 +17876,8 @@
         }
       ],
       "tags": [
-        "reasoning",
         "multimodal",
+        "reasoning",
         "AI/ML"
       ]
     },
@@ -20285,8 +20315,8 @@
         }
       ],
       "tags": [
-        "reasoning",
-        "multimodal"
+        "multimodal",
+        "reasoning"
       ]
     },
     {
@@ -22657,8 +22687,8 @@
         }
       ],
       "tags": [
-        "reasoning",
-        "multimodal"
+        "multimodal",
+        "reasoning"
       ]
     },
     {
@@ -23748,8 +23778,8 @@
         }
       ],
       "tags": [
-        "reasoning",
-        "multimodal"
+        "multimodal",
+        "reasoning"
       ]
     },
     {
@@ -28936,8 +28966,8 @@
         }
       ],
       "tags": [
-        "reasoning",
-        "multimodal"
+        "multimodal",
+        "reasoning"
       ]
     },
     {
@@ -30420,8 +30450,8 @@
         }
       ],
       "tags": [
-        "reasoning",
-        "multimodal"
+        "multimodal",
+        "reasoning"
       ]
     },
     {
