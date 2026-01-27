@@ -244,6 +244,16 @@
         - (1) single screen에서의 개별 interaction과 UI element가 summarized
         - (2) 전체 UI trajectory의 일반적 의도를 이해하기 위한 a series of events로 사용됨
     - summaries로부터 intent extraction을 잘하기 위해서 Fine-tuning, Label Preparation, Dropping speculations 등 기법 적용
+- 🧑🏻‍💻 [Moonshot AI] [Kimi K2.5: Visual Agentic Intelligence](https://www.kimi.com/blog/kimi-k2-5.html)
+    - Kimi K2에 15T mixed visual & text tokens를 continued pretraining한 native multimodal model로 coding & vision 태스크에서 오픈소스 중 SoTA 달성했다고 설명
+    - 복잡한 태스크에 대해 100개의 sub-agents를 담고 있는 agent swarm을 컨트롤 할 수 있으며 1,500 개의 tool calls를 병렬 실행할 수 있다고 함
+        - sinlge-agent setup과 비교하면 4.5x 빠른 처리 속도
+    - 간단한 대화를 완벽한 반응형 layout을 갖춘 front-end interfaces로 변환하는 능력 소개
+- 📜 [Naver AI Lab] [Oops, Wait: Token-Level Signals as a Lens into LLM Reasoning](https://arxiv.org/abs/2601.17421)
+    - “wait”, “therefore”과 같은 discourse-like token들 기반으로 reasoning 연구
+    - 다양한 모델들의 token probabilities를 token-level로 조사
+    - 특정한 토큰들이 reasoning correctness와 강한 상관관계를 보인다고 설명
+    - 작은 데이터셋으로 fine-tuning 한 모델은 reasoning abiilty를 얻지만 부분적으로 이용하는 수준이라고 언급
 </details>
 
 ---
