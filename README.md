@@ -238,6 +238,12 @@
     - 기존에는 unbounded context growth 문제가 있어 context 관리가 되지 않았던 것을 문제점으로 지적
         - ever-expanding transcripts라고 표현
     - task success와 memory-related anomalies 둘 다 평가하기 위한 agent-judge evaluation framework 제안
+- 🧑🏻‍💻 [Google Research] [Small models, big results: Achieving superior intent extraction through decomposition](https://research.google/blog/small-models-big-results-achieving-superior-intent-extraction-through-decomposition/)
+    - UI interaction trajectories로부터 유저 의도 파악하는 태스크를 기존 대비 훨씬 작은 모델로도 잘 처리할 수 있었음 보고
+    - 이를 위한 decomposed workflow 제시
+        - (1) single screen에서의 개별 interaction과 UI element가 summarized
+        - (2) 전체 UI trajectory의 일반적 의도를 이해하기 위한 a series of events로 사용됨
+    - summaries로부터 intent extraction을 잘하기 위해서 Fine-tuning, Label Preparation, Dropping speculations 등 기법 적용
 </details>
 
 ---
