@@ -254,6 +254,12 @@
     - 다양한 모델들의 token probabilities를 token-level로 조사
     - 특정한 토큰들이 reasoning correctness와 강한 상관관계를 보인다고 설명
     - 작은 데이터셋으로 fine-tuning 한 모델은 reasoning abiilty를 얻지만 부분적으로 이용하는 수준이라고 언급
+- 📜 [Meituan] [LongCat-Flash-Thinking-2601 Technical Report](https://arxiv.org/abs/2601.16725)
+    - 560B open-source MoE reasoning 모델 공개
+    - agentic search, agentic tool use, tool-integrated reasoning 벤치마크에서 오픈소스 중 SoTA 달성했다고 설명
+    - domain-parallel expert training with subsequent fusion 기반의 unified training framework 언급
+    - stable & efficient large-scale multi-environment training을 위한 asynchronous RL framework, DORA 언급
+    - 더 어려운 문제를 풀기 위한 test-time scaling이 적용된 Heavy Thinking 제시
 </details>
 
 ---
