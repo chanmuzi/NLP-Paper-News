@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "last_updated": "2026-01-28T10:55:44.800484",
-  "total_items": 1639,
+  "last_updated": "2026-01-29T02:41:01.040995",
+  "total_items": 1643,
   "items": [
     {
       "id": "UIUC,-Stanford,-…-adaptation-of-agentic-ai",
@@ -457,8 +457,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "reasoning"
+        "reasoning",
+        "agent"
       ]
     },
     {
@@ -652,9 +652,9 @@
         }
       ],
       "tags": [
-        "agent",
         "reasoning",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -839,9 +839,9 @@
         }
       ],
       "tags": [
-        "reasoning",
         "multimodal",
-        "AI/ML"
+        "AI/ML",
+        "reasoning"
       ]
     },
     {
@@ -997,8 +997,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "reasoning"
+        "reasoning",
+        "agent"
       ]
     },
     {
@@ -1228,9 +1228,111 @@
         }
       ],
       "tags": [
-        "agent",
         "reasoning",
-        "AI/ML"
+        "AI/ML",
+        "agent"
+      ]
+    },
+    {
+      "id": "Salesforce-agentic-confidence-calibration",
+      "date": "2026-01-W04",
+      "year": "2026",
+      "month": "1",
+      "week": "4",
+      "type": "paper",
+      "org": "Salesforce",
+      "title": "Agentic Confidence Calibration",
+      "url": "https://arxiv.org/abs/2601.15778",
+      "bullets": [
+        {
+          "text": "Holistic Trajectory Calibration (HTC): process-level features를 충분히 추출하여 평가",
+          "level": 1
+        },
+        {
+          "text": "interpretability, transferability, generalization 특징을 강점으로 소개",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "OpenAI-introducing-prism",
+      "date": "2026-01-W04",
+      "year": "2026",
+      "month": "1",
+      "week": "4",
+      "type": "dev",
+      "org": "OpenAI",
+      "title": "Introducing Prism",
+      "url": "https://openai.com/index/introducing-prism",
+      "bullets": [
+        {
+          "text": "LaTeX-native editor with live preview",
+          "level": 2
+        },
+        {
+          "text": "citation insertion을 위한 built-in literature search 기능",
+          "level": 1
+        },
+        {
+          "text": "handwritten or whiteboard equations를 Image-to-LaTeX conversion",
+          "level": 1
+        }
+      ],
+      "tags": [
+        "multimodal"
+      ]
+    },
+    {
+      "id": "DeepSeek-AI-deepseek-ocr-2-visual-causal-flow",
+      "date": "2026-01-W04",
+      "year": "2026",
+      "month": "1",
+      "week": "4",
+      "type": "dev",
+      "org": "DeepSeek AI",
+      "title": "DeepSeek-OCR 2: Visual Causal Flow",
+      "url": "https://github.com/deepseek-ai/DeepSeek-OCR-2/",
+      "bullets": [
+        {
+          "text": "사람이 문서를 읽는 방식으로 모델 학습한 3B 사이즈의 vision-language architecture 모델",
+          "level": 1
+        },
+        {
+          "text": "encoder로 먼저 page에 대한 global understanding 후 → 어떤 순서로 글을 읽을 것인지 결정",
+          "level": 1
+        }
+      ],
+      "tags": [
+        "multimodal"
+      ]
+    },
+    {
+      "id": "Ai2-open-coding-agents-fast-accessible-coding-agents-that-adapt-to-any-repo",
+      "date": "2026-01-W04",
+      "year": "2026",
+      "month": "1",
+      "week": "4",
+      "type": "dev",
+      "org": "Ai2",
+      "title": "Open Coding Agents: Fast, accessible coding agents that adapt to any repo",
+      "url": "https://allenai.org/blog/open-coding-agents",
+      "bullets": [
+        {
+          "text": "SERA lowers the barrier to fine-tuning coding agents",
+          "level": 2
+        },
+        {
+          "text": "이전 방식들대비 cost-effective 하다는 특징을 엄청난 강점으로 강조",
+          "level": 1
+        },
+        {
+          "text": "Soft-verified generation (SVG), Scaling with a bug-type menu, High simulated workflow fidelity 등을 innovations로 언급",
+          "level": 1
+        }
+      ],
+      "tags": [
+        "agent"
       ]
     },
     {
@@ -1363,8 +1465,8 @@
       ],
       "tags": [
         "agent",
-        "reasoning",
-        "AI/ML"
+        "AI/ML",
+        "reasoning"
       ]
     },
     {
@@ -1832,8 +1934,8 @@
       ],
       "tags": [
         "agent",
-        "reasoning",
-        "AI/ML"
+        "AI/ML",
+        "reasoning"
       ]
     },
     {
@@ -2580,9 +2682,9 @@
         }
       ],
       "tags": [
-        "reasoning",
         "multimodal",
-        "AI/ML"
+        "AI/ML",
+        "reasoning"
       ]
     },
     {
@@ -3307,8 +3409,8 @@
         }
       ],
       "tags": [
-        "agent",
         "multimodal",
+        "agent",
         "AI/ML"
       ]
     },
@@ -4244,8 +4346,8 @@
         }
       ],
       "tags": [
-        "agent",
         "multimodal",
+        "agent",
         "AI/ML"
       ]
     },
@@ -6046,8 +6148,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "reasoning"
+        "reasoning",
+        "agent"
       ]
     },
     {
@@ -6175,9 +6277,9 @@
         }
       ],
       "tags": [
-        "agent",
         "reasoning",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -6505,9 +6607,9 @@
         }
       ],
       "tags": [
-        "agent",
         "reasoning",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -8981,9 +9083,9 @@
         }
       ],
       "tags": [
-        "agent",
         "reasoning",
-        "multimodal"
+        "multimodal",
+        "agent"
       ]
     },
     {
@@ -9156,8 +9258,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "reasoning"
+        "reasoning",
+        "agent"
       ]
     },
     {
@@ -9655,9 +9757,9 @@
         }
       ],
       "tags": [
-        "agent",
         "reasoning",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -10329,8 +10431,8 @@
         }
       ],
       "tags": [
-        "reasoning",
         "multimodal",
+        "reasoning",
         "AI/ML"
       ]
     },
@@ -10663,8 +10765,8 @@
         }
       ],
       "tags": [
-        "agent",
         "multimodal",
+        "agent",
         "AI/ML"
       ]
     },
@@ -10757,9 +10859,9 @@
         }
       ],
       "tags": [
-        "agent",
         "reasoning",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -10977,9 +11079,9 @@
         }
       ],
       "tags": [
-        "agent",
         "reasoning",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -11574,9 +11676,9 @@
         }
       ],
       "tags": [
-        "agent",
         "reasoning",
-        "multimodal"
+        "multimodal",
+        "agent"
       ]
     },
     {
@@ -12182,8 +12284,8 @@
         }
       ],
       "tags": [
-        "reasoning",
-        "multimodal"
+        "multimodal",
+        "reasoning"
       ]
     },
     {
@@ -13111,9 +13213,9 @@
         }
       ],
       "tags": [
-        "agent",
         "reasoning",
-        "multimodal"
+        "multimodal",
+        "agent"
       ]
     },
     {
@@ -13141,9 +13243,9 @@
         }
       ],
       "tags": [
-        "agent",
         "reasoning",
-        "multimodal"
+        "multimodal",
+        "agent"
       ]
     },
     {
@@ -14150,8 +14252,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "reasoning"
+        "reasoning",
+        "agent"
       ]
     },
     {
@@ -14566,8 +14668,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "reasoning"
+        "reasoning",
+        "agent"
       ]
     },
     {
@@ -18562,8 +18664,8 @@
         }
       ],
       "tags": [
-        "agent",
         "multimodal",
+        "agent",
         "AI/ML"
       ]
     },
@@ -18630,9 +18732,9 @@
         }
       ],
       "tags": [
-        "agent",
         "reasoning",
-        "AI/ML"
+        "AI/ML",
+        "agent"
       ]
     },
     {
@@ -20405,8 +20507,8 @@
         }
       ],
       "tags": [
-        "reasoning",
-        "multimodal"
+        "multimodal",
+        "reasoning"
       ]
     },
     {
@@ -23868,8 +23970,8 @@
         }
       ],
       "tags": [
-        "reasoning",
-        "multimodal"
+        "multimodal",
+        "reasoning"
       ]
     },
     {
@@ -24345,8 +24447,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "reasoning"
+        "reasoning",
+        "agent"
       ]
     },
     {
@@ -25418,8 +25520,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "reasoning"
+        "reasoning",
+        "agent"
       ]
     },
     {
@@ -30300,8 +30402,8 @@
         }
       ],
       "tags": [
-        "agent",
-        "reasoning"
+        "reasoning",
+        "agent"
       ]
     },
     {
