@@ -260,6 +260,24 @@
     - domain-parallel expert training with subsequent fusion 기반의 unified training framework 언급
     - stable & efficient large-scale multi-environment training을 위한 asynchronous RL framework, DORA 언급
     - 더 어려운 문제를 풀기 위한 test-time scaling이 적용된 Heavy Thinking 제시
+- 📜 [Salesforce] [Agentic Confidence Calibration](https://arxiv.org/abs/2601.15778)
+    - single-turn outputs를 평가하는 방식으로는 agentic system의 능력을 제대로 판단할 수 없음 지적
+    - Holistic Trajectory Calibration (HTC): process-level features를 충분히 추출하여 평가
+    - interpretability, transferability, generalization 특징을 강점으로 소개
+- 🧑🏻‍💻 [OpenAI] [Introducing Prism](https://openai.com/index/introducing-prism)
+    - cloud 기반 LaTeX platform인 Crixet 위에서 동작
+        - LaTeX-native editor with live preview
+    - citation insertion을 위한 built-in literature search 기능
+    - handwritten or whiteboard equations를 Image-to-LaTeX conversion
+- 🧑🏻‍💻 [DeepSeek AI] [DeepSeek-OCR 2: Visual Causal Flow](https://github.com/deepseek-ai/DeepSeek-OCR-2/)
+    - 복잡한 문서를 잘못된 순서로 읽는 OCR system의 한계를 문제로 지적
+    - 사람이 문서를 읽는 방식으로 모델 학습한 3B 사이즈의 vision-language architecture 모델
+    - encoder로 먼저 page에 대한 global understanding 후 → 어떤 순서로 글을 읽을 것인지 결정
+- 🧑🏻‍💻 [Ai2] [Open Coding Agents: Fast, accessible coding agents that adapt to any repo](https://allenai.org/blog/open-coding-agents)
+    - coding agent를 위한 training method도 함께 공개
+        - SERA lowers the barrier to fine-tuning coding agents
+    - 이전 방식들대비 cost-effective 하다는 특징을 엄청난 강점으로 강조
+    - Soft-verified generation (SVG), Scaling with a bug-type menu, High simulated workflow fidelity 등을 innovations로 언급
 </details>
 
 ---
