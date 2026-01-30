@@ -278,6 +278,20 @@
         - SERA lowers the barrier to fine-tuning coding agents
     - 이전 방식들대비 cost-effective 하다는 특징을 엄청난 강점으로 강조
     - Soft-verified generation (SVG), Scaling with a bug-type menu, High simulated workflow fidelity 등을 innovations로 언급
+- 📜 [Ant Group] [Advancing Open-source World Models](https://arxiv.org/abs/2601.20540)
+    - LingBot-World: open-source world model simulator stemming from video generation
+    - 세 가지 주요한 특징
+        - (1) high fidelity & robust dynamics
+        - (2) contextual consistency를 보존하면서도 minute-level horizon 가능
+        - (3) real-time interactivity: 초당 16 프레임 생성하는 데 1초 미만의 latency 달성
+- 🧑🏻‍💻 [Google DeepMind] [AlphaGenome: AI for better understanding the genome](https://deepmind.google/blog/alphagenome-ai-for-better-understanding-the-genome/)
+    - 인간 DNA의 98%를 이해할 수 있는 모델
+    - 100만 bp 길이의 DNA 서열을 입력으로 받아 수천 개의 조절 관련 분자 특성을 한 번에 예측
+    - 모델 구조
+        - 초반: CNN으로 로컬 모티프(짧은 패턴) 탐지
+        - 중간: Transformer로 서열 전 위치 간 long-range 상호작용 학습
+        - 후반: modality별 예측 헤드
+        - TPU 여러 개를 묶어 긴 서열 하나를 병렬 처리하며 학습
 </details>
 
 ---
