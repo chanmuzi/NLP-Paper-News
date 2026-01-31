@@ -21,6 +21,21 @@
 
 # 2026
 
+## ☃ 2월
+
+<details>
+  <summary>1st week</summary>
+
+- 🧑🏻‍💻 [Kaggle] [[Product launch] Introducing Community Benchmarks](https://www.kaggle.com/discussions/product-announcements/667898?lid=12bMxisocGkOdWw67)
+    - custom benchmarks를 build, run, share 할 수 있는 기능 공개
+    - kaggle-benchmarks SDK
+    - multi-turn conversations, multimodal capabilities 도 측정 가능
+- 📜 [MIT, ETH] [Self-Distillation Enables Continual Learning](https://self-distillation.github.io/SDFT.html)
+    - demonstrations로부터 직접 on-policy learning이 가능하도록 만든 Self-Distillation Fine-Tuning 제시
+    - demonstration-condition model을 own teacher로 사용해서 on-policy training signals 생성
+    - 이를 통해 catastrophic forgetting 이슈를 해소하면서도 새로운 태스크에 대한 정확도를 높게 챙길 수 있음
+</details>
+
 ## 🙇🏻 1월
 
 <details>
