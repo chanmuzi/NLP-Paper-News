@@ -292,6 +292,14 @@
         - 중간: Transformer로 서열 전 위치 간 long-range 상호작용 학습
         - 후반: modality별 예측 헤드
         - TPU 여러 개를 묶어 긴 서열 하나를 병렬 처리하며 학습
+- 🧑🏻‍💻 [Ai2] [Theorizer: Turning thousands of papers into scientific laws](https://allenai.org/blog/theorizer)
+    - query와 관련된 scientific literature를 읽고 structured claims를 생성해주는 multi-LLM 프레임워크
+        - 한 쿼리당 논문을 100개까지 볼 수 있음
+    - AI, NLP 분야와 관련된 3,000개의 theories를 함께 공개
+    - 한 쿼리당 15-30분 소요
+- 📜 [NUS] [Parametric Knowledge is Not All You Need: Toward Honest Large Language Models via Retrieval of Pretraining Data](https://arxiv.org/abs/2601.21218)
+    - LLM honesty를 평가하기 위한 Pythia 기반 벤치마크 제시
+    - pretraining data를 이용하여 보다 신뢰성 높은 LLM 이용이 가능할 것이라고 주장
 </details>
 
 ---
