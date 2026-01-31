@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "last_updated": "2026-01-30T05:21:40.091001",
-  "total_items": 1645,
+  "last_updated": "2026-01-31T08:41:05.516032",
+  "total_items": 1647,
   "items": [
     {
       "id": "UIUC,-Stanford,-…-adaptation-of-agentic-ai",
@@ -840,8 +840,8 @@
       ],
       "tags": [
         "AI/ML",
-        "multimodal",
-        "reasoning"
+        "reasoning",
+        "multimodal"
       ]
     },
     {
@@ -1404,6 +1404,54 @@
       "tags": []
     },
     {
+      "id": "Ai2-theorizer-turning-thousands-of-papers-into-scientific-laws",
+      "date": "2026-01-W04",
+      "year": "2026",
+      "month": "1",
+      "week": "4",
+      "type": "dev",
+      "org": "Ai2",
+      "title": "Theorizer: Turning thousands of papers into scientific laws",
+      "url": "https://allenai.org/blog/theorizer",
+      "bullets": [
+        {
+          "text": "한 쿼리당 논문을 100개까지 볼 수 있음",
+          "level": 2
+        },
+        {
+          "text": "AI, NLP 분야와 관련된 3,000개의 theories를 함께 공개",
+          "level": 1
+        },
+        {
+          "text": "한 쿼리당 15-30분 소요",
+          "level": 1
+        }
+      ],
+      "tags": [
+        "AI/ML"
+      ]
+    },
+    {
+      "id": "NUS-parametric-knowledge-is-not-all-you-need-toward-honest-large-language-models-via-retrieval-of-pretraining-data",
+      "date": "2026-01-W04",
+      "year": "2026",
+      "month": "1",
+      "week": "4",
+      "type": "paper",
+      "org": "NUS",
+      "title": "Parametric Knowledge is Not All You Need: Toward Honest Large Language Models via Retrieval of Pretraining Data",
+      "url": "https://arxiv.org/abs/2601.21218",
+      "bullets": [
+        {
+          "text": "pretraining data를 이용하여 보다 신뢰성 높은 LLM 이용이 가능할 것이라고 주장",
+          "level": 1
+        }
+      ],
+      "tags": [
+        "AI/ML"
+      ]
+    },
+    {
       "id": "Karpathy-llm-council",
       "date": "2025-12-W01",
       "year": "2025",
@@ -1606,8 +1654,8 @@
         }
       ],
       "tags": [
-        "multimodal",
-        "reasoning"
+        "reasoning",
+        "multimodal"
       ]
     },
     {
@@ -2223,8 +2271,8 @@
         }
       ],
       "tags": [
-        "multimodal",
-        "reasoning"
+        "reasoning",
+        "multimodal"
       ]
     },
     {
@@ -2751,8 +2799,8 @@
       ],
       "tags": [
         "AI/ML",
-        "multimodal",
-        "reasoning"
+        "reasoning",
+        "multimodal"
       ]
     },
     {
@@ -3204,8 +3252,8 @@
         }
       ],
       "tags": [
-        "multimodal",
-        "reasoning"
+        "reasoning",
+        "multimodal"
       ]
     },
     {
@@ -9151,8 +9199,8 @@
         }
       ],
       "tags": [
-        "multimodal",
         "reasoning",
+        "multimodal",
         "agent"
       ]
     },
@@ -10500,8 +10548,8 @@
       ],
       "tags": [
         "AI/ML",
-        "multimodal",
-        "reasoning"
+        "reasoning",
+        "multimodal"
       ]
     },
     {
@@ -10601,8 +10649,8 @@
         }
       ],
       "tags": [
-        "multimodal",
-        "reasoning"
+        "reasoning",
+        "multimodal"
       ]
     },
     {
@@ -11744,8 +11792,8 @@
         }
       ],
       "tags": [
-        "multimodal",
         "reasoning",
+        "multimodal",
         "agent"
       ]
     },
@@ -12352,8 +12400,8 @@
         }
       ],
       "tags": [
-        "multimodal",
-        "reasoning"
+        "reasoning",
+        "multimodal"
       ]
     },
     {
@@ -12659,8 +12707,8 @@
       ],
       "tags": [
         "AI/ML",
-        "multimodal",
-        "reasoning"
+        "reasoning",
+        "multimodal"
       ]
     },
     {
@@ -13281,8 +13329,8 @@
         }
       ],
       "tags": [
-        "multimodal",
         "reasoning",
+        "multimodal",
         "agent"
       ]
     },
@@ -13311,8 +13359,8 @@
         }
       ],
       "tags": [
-        "multimodal",
         "reasoning",
+        "multimodal",
         "agent"
       ]
     },
@@ -14044,8 +14092,8 @@
         }
       ],
       "tags": [
-        "multimodal",
-        "reasoning"
+        "reasoning",
+        "multimodal"
       ]
     },
     {
@@ -18137,8 +18185,8 @@
       ],
       "tags": [
         "AI/ML",
-        "multimodal",
-        "reasoning"
+        "reasoning",
+        "multimodal"
       ]
     },
     {
@@ -20575,8 +20623,8 @@
         }
       ],
       "tags": [
-        "multimodal",
-        "reasoning"
+        "reasoning",
+        "multimodal"
       ]
     },
     {
@@ -22947,8 +22995,8 @@
         }
       ],
       "tags": [
-        "multimodal",
-        "reasoning"
+        "reasoning",
+        "multimodal"
       ]
     },
     {
@@ -24038,8 +24086,8 @@
         }
       ],
       "tags": [
-        "multimodal",
-        "reasoning"
+        "reasoning",
+        "multimodal"
       ]
     },
     {
@@ -29226,8 +29274,8 @@
         }
       ],
       "tags": [
-        "multimodal",
-        "reasoning"
+        "reasoning",
+        "multimodal"
       ]
     },
     {
@@ -30710,8 +30758,8 @@
         }
       ],
       "tags": [
-        "multimodal",
-        "reasoning"
+        "reasoning",
+        "multimodal"
       ]
     },
     {
