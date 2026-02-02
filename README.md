@@ -34,6 +34,17 @@
     - demonstrations로부터 직접 on-policy learning이 가능하도록 만든 Self-Distillation Fine-Tuning 제시
     - demonstration-condition model을 own teacher로 사용해서 on-policy training signals 생성
     - 이를 통해 catastrophic forgetting 이슈를 해소하면서도 새로운 태스크에 대한 정확도를 높게 챙길 수 있음
+- 📜 [AgentAlpha] [Idea2Story: An Automated Pipeline for Transforming Research Concepts into Complete Scientific Narratives](https://arxiv.org/abs/2601.20833)
+    - autonomous scientific discovery를 위한 pre-computation-driven framework
+    - peer-reviewed papers를 스스로 생성한 feedback과 함께 지속적으로 수집하고 핵심 methodological unites를 추출하여 resuable research patterns를 축적
+        - → methodological knowledge graph 구축
+    - 기존의 open-ended generation & trial-and-error를 최소화할 수 있다고 설명
+- 📜 [Anthropic, Stanford] [Shaping capabilities with token-level data filtering](https://arxiv.org/abs/2601.21571)
+    - 언어 모델의 undesired capabilities를 줄이는 대부분의 방식은 post hoc 스타일임을 문제점으로 지적
+        - → 대신 pretraining 동안에 해결되어야 하는 것으로 대안 제시
+    - 의료 도메인을 대상으로 documents filtering보다 tokens filtering이 훨씬 더 효과적이었음을 입증
+        - scaling 관점에서도 그렇다고 함
+        - 특정 도메인을 ‘잊게’ 만드는 데 필요한 비용이 7000배 이하라고 설명
 </details>
 
 ## 🙇🏻 1월
