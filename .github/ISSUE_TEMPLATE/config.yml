@@ -1,5 +1,0 @@
-blank_issues_enabled: false
-contact_links:
-  - name: 📄 Add New Paper
-    url: https://github.com/chanmuzi/NLP-Paper-News/issues/new?template=add-paper.yml
-    about: 새로운 논문을 추가하려면 이 템플릿을 사용해주세요
