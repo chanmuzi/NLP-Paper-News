@@ -1,0 +1,236 @@
+---
+interface Bullet {
+  text: string;
+  level: number;
+}
+
+interface Props {
+  id: string;
+  type: string;
+  org: string;
+  title: string;
+  url: string;
+  bullets: Bullet[];
+  date: string;
+  year?: string;
+  month?: string;
+  week?: string;
+  tags?: string[];
+  showWeek?: boolean;
+}
+
+const { id, type, org, title, url, bullets, date, year, month, week, tags = [], showWeek = false } = Astro.props;
+
+const typeInfo: Record<string, { icon: string; label: string; color: string; bgLight: string; bgDark: string; accent: string }> = {
+  paper: {
+    icon: '📜',
+    label: 'Paper',
+    color: 'text-blue-800 dark:text-blue-300',
+    bgLight: 'bg-white border-blue-200/60 shadow-card',
+    bgDark: 'dark:bg-anthro-darkSurface dark:border-blue-800/40 dark:shadow-card-dark',
+    accent: 'bg-blue-500',
+  },
+  dev: {
+    icon: '🧑🏻‍💻',
+    label: 'Dev',
+    color: 'text-emerald-800 dark:text-emerald-300',
+    bgLight: 'bg-white border-emerald-200/60 shadow-card',
+    bgDark: 'dark:bg-anthro-darkSurface dark:border-emerald-800/40 dark:shadow-card-dark',
+    accent: 'bg-emerald-500',
+  },
+  news: {
+    icon: '🗞️',
+    label: 'News',
+    color: 'text-violet-800 dark:text-violet-300',
+    bgLight: 'bg-white border-violet-200/60 shadow-card',
+    bgDark: 'dark:bg-anthro-darkSurface dark:border-violet-800/40 dark:shadow-card-dark',
+    accent: 'bg-violet-500',
+  },
+};
+
+const info = typeInfo[type] || typeInfo.paper;
+const weekLabel = week ? `${week}주차` : '';
+const dateDisplay = showWeek && year && month ? `${year}.${String(month).padStart(2, '0')} ${weekLabel}` : '';
+const hasMoreBullets = bullets.length > 3;
+---
+
+<article
+  class={`item-card group relative rounded-xl border transition-all duration-200 hover:shadow-card-hover dark:hover:shadow-card-dark-hover hover:-translate-y-0.5 ${info.bgLight} ${info.bgDark}`}
+  data-type={type}
+  data-org={org.toLowerCase()}
+  data-title={title.toLowerCase()}
+  data-id={id}
+>
+  <div class={`absolute top-0 left-0 w-1 h-full rounded-l-xl ${info.accent}`}></div>
+
+  <div class="pl-5 pr-4 py-4">
+    <div class="flex items-center justify-between gap-2 mb-2">
+      <div class="flex items-center gap-2 min-w-0">
+        <span class={`inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-xs font-bold ${info.color} bg-gray-50 dark:bg-white/5`}>
+          {info.icon} {info.label}
+        </span>
+        <span class="text-xs font-semibold text-gray-700 dark:text-gray-300 bg-gray-100 dark:bg-white/10 px-2 py-0.5 rounded-md truncate">
+          {org}
+        </span>
+      </div>
+      {dateDisplay && (
+        <span class="text-xs text-gray-400 dark:text-gray-500 font-mono flex-shrink-0">
+          {dateDisplay}
+        </span>
+      )}
+    </div>
+
+    {url ? (
+      <a
+        href={url}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="block text-[15px] font-bold text-gray-900 dark:text-gray-100 hover:text-claude-600 dark:hover:text-claude-400 transition-colors mb-2 leading-snug"
+      >
+        {title}
+        <svg class="inline-block w-3.5 h-3.5 ml-1 opacity-0 group-hover:opacity-50 transition-opacity -translate-y-px" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+      </a>
+    ) : (
+      <h3 class="text-[15px] font-bold text-gray-900 dark:text-gray-100 mb-2 leading-snug">
+        {title}
+      </h3>
+    )}
+
+    {bullets.length > 0 && (
+      <div class="bullets-container">
+        <ul class="space-y-1 text-[13px] leading-relaxed">
+          {bullets.slice(0, 3).map((bullet) => (
+            <li class={`flex items-start gap-2 ${bullet.level > 1 ? 'ml-4 text-gray-500 dark:text-gray-500' : 'text-gray-700 dark:text-gray-300'}`}>
+              <span class={`mt-[7px] w-1 h-1 rounded-full flex-shrink-0 ${bullet.level > 1 ? 'bg-gray-400 dark:bg-gray-600' : info.accent}`}></span>
+              <span>{bullet.text}</span>
+            </li>
+          ))}
+        </ul>
+        {hasMoreBullets && (
+          <div class="bullets-extra hidden">
+            <ul class="space-y-1 text-[13px] leading-relaxed mt-1">
+              {bullets.slice(3).map((bullet) => (
+                <li class={`flex items-start gap-2 ${bullet.level > 1 ? 'ml-4 text-gray-500 dark:text-gray-500' : 'text-gray-700 dark:text-gray-300'}`}>
+                  <span class={`mt-[7px] w-1 h-1 rounded-full flex-shrink-0 ${bullet.level > 1 ? 'bg-gray-400 dark:bg-gray-600' : info.accent}`}></span>
+                  <span>{bullet.text}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </div>
+    )}
+
+    <div class="flex items-center justify-between mt-2.5 pt-2 border-t border-gray-100 dark:border-gray-800/50">
+      <div>
+        {hasMoreBullets && (
+          <button
+            class="expand-btn text-xs font-medium text-claude-600 hover:text-claude-700 dark:text-claude-400 dark:hover:text-claude-300 transition-colors"
+            data-id={id}
+          >
+            +{bullets.length - 3}개 더 보기
+          </button>
+        )}
+      </div>
+      <div class="flex items-center gap-0.5">
+        <button
+          class="bookmark-btn p-1.5 rounded-md text-gray-300 hover:text-claude-500 dark:text-gray-600 dark:hover:text-claude-400 transition-colors"
+          data-id={id}
+          title="북마크"
+        >
+          <svg class="w-4 h-4 bookmark-icon-empty" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"/></svg>
+          <svg class="w-4 h-4 bookmark-icon-filled hidden" fill="currentColor" viewBox="0 0 24 24"><path d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"/></svg>
+        </button>
+        <button
+          class="share-btn p-1.5 rounded-md text-gray-300 hover:text-claude-500 dark:text-gray-600 dark:hover:text-claude-400 transition-colors"
+          data-title={title}
+          data-url={url}
+          data-org={org}
+          title="공유"
+        >
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</article>
+
+<script>
+  document.querySelectorAll('.expand-btn').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const card = btn.closest('.item-card');
+      const extra = card?.querySelector('.bullets-extra');
+      if (!extra) return;
+      const isHidden = extra.classList.contains('hidden');
+      extra.classList.toggle('hidden');
+      btn.textContent = isHidden ? '접기' : `+${extra.querySelectorAll('li').length}개 더 보기`;
+    });
+  });
+
+  function getBookmarks(): string[] {
+    try { return JSON.parse(localStorage.getItem('bookmarks') || '[]'); } catch { return []; }
+  }
+
+  function updateBookmarkUI(btn: Element, isBookmarked: boolean) {
+    const empty = btn.querySelector('.bookmark-icon-empty');
+    const filled = btn.querySelector('.bookmark-icon-filled');
+    if (isBookmarked) {
+      empty?.classList.add('hidden');
+      filled?.classList.remove('hidden');
+      btn.classList.add('text-claude-500', 'dark:text-claude-400');
+      btn.classList.remove('text-gray-300', 'dark:text-gray-600');
+    } else {
+      empty?.classList.remove('hidden');
+      filled?.classList.add('hidden');
+      btn.classList.remove('text-claude-500', 'dark:text-claude-400');
+      btn.classList.add('text-gray-300', 'dark:text-gray-600');
+    }
+  }
+
+  const bookmarks = getBookmarks();
+  document.querySelectorAll('.bookmark-btn').forEach((btn) => {
+    const id = (btn as HTMLElement).dataset.id || '';
+    if (bookmarks.includes(id)) updateBookmarkUI(btn, true);
+
+    btn.addEventListener('click', () => {
+      const cur = getBookmarks();
+      const itemId = (btn as HTMLElement).dataset.id || '';
+      const idx = cur.indexOf(itemId);
+      if (idx >= 0) {
+        cur.splice(idx, 1);
+        updateBookmarkUI(btn, false);
+        showToast('북마크에서 제거되었습니다');
+      } else {
+        cur.push(itemId);
+        updateBookmarkUI(btn, true);
+        showToast('북마크에 추가되었습니다');
+      }
+      localStorage.setItem('bookmarks', JSON.stringify(cur));
+    });
+  });
+
+  document.querySelectorAll('.share-btn').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const el = btn as HTMLElement;
+      const title = el.dataset.title || '';
+      const url = el.dataset.url || '';
+      const org = el.dataset.org || '';
+      const text = `${title} (${org})`;
+      if (navigator.share) {
+        navigator.share({ title: text, url }).catch(() => {});
+      } else {
+        navigator.clipboard.writeText(`${text}\n${url}`).then(() => showToast('클립보드에 복사되었습니다'));
+      }
+    });
+  });
+
+  function showToast(message: string) {
+    const existing = document.querySelector('.toast');
+    if (existing) existing.remove();
+    const toast = document.createElement('div');
+    toast.className = 'toast';
+    toast.textContent = message;
+    document.body.appendChild(toast);
+    setTimeout(() => toast.remove(), 3000);
+  }
+</script>

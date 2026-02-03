@@ -1,0 +1,839 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+// Get current date info for defaults
+const now = new Date();
+const currentYear = now.getFullYear().toString();
+const currentMonth = (now.getMonth() + 1).toString();
+// ISO week: calculate week of month
+const firstDay = new Date(now.getFullYear(), now.getMonth(), 1).getDay();
+const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
+---
+
+<Layout title="항목 추가 - chanmuzi AI 큐레이션">
+  <section class="max-w-3xl mx-auto">
+    <!-- Header -->
+    <div class="flex items-center gap-3 mb-4">
+      <a href={`${import.meta.env.BASE_URL}`} class="text-gray-400 hover:text-claude-500 transition-colors text-sm">
+        <svg class="w-4 h-4 inline mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+        홈
+      </a>
+    </div>
+
+    <div class="flex items-center justify-between mb-6">
+      <div>
+        <h1 class="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-1">새 항목 추가</h1>
+        <p class="text-sm text-gray-500 dark:text-gray-400">간편하게 또는 마크다운으로 항목을 추가하세요</p>
+      </div>
+      <!-- GitHub Token -->
+      <button id="toggle-settings" class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-gray-200 dark:border-gray-700 text-xs text-gray-500 hover:border-claude-400 hover:text-claude-500 transition-all">
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+        GitHub
+        <span id="token-status" class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full text-xs"></span>
+      </button>
+    </div>
+
+    <!-- GitHub Settings Panel -->
+    <div id="settings-panel" class="hidden mb-6 p-4 bg-white dark:bg-anthro-darkSurface rounded-xl border border-gray-200 dark:border-gray-800">
+      <p class="text-xs text-gray-500 mb-3">
+        GitHub Personal Access Token을 입력하면 브라우저에서 직접 항목을 추가할 수 있습니다.<br/>
+        토큰은 브라우저 localStorage에만 저장됩니다.
+      </p>
+      <div class="flex gap-2">
+        <input type="password" id="github-token" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx"
+          class="flex-1 px-3 py-2 rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-anthro-darkMid text-sm text-gray-900 dark:text-gray-100 outline-none focus:border-claude-500 transition-all font-mono" />
+        <button id="save-token" class="px-4 py-2 rounded-lg bg-claude-500 text-white text-sm font-medium hover:bg-claude-600 transition-all">저장</button>
+        <button id="clear-token" class="px-3 py-2 rounded-lg border border-gray-200 dark:border-gray-700 text-sm text-gray-500 hover:text-red-500 hover:border-red-300 transition-all">삭제</button>
+      </div>
+      <div class="mt-3">
+        <label class="block text-xs text-gray-500 mb-1">Repository (owner/repo)</label>
+        <input type="text" id="github-repo" value="chanmuzi/temp-news-moltbot"
+          class="w-full px-3 py-2 rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-anthro-darkMid text-sm text-gray-900 dark:text-gray-100 outline-none focus:border-claude-500 transition-all font-mono" />
+      </div>
+    </div>
+
+    <!-- Date (shared) -->
+    <div class="flex items-center gap-3 mb-5 bg-white dark:bg-anthro-darkSurface rounded-xl border border-gray-200 dark:border-gray-800 px-4 py-3">
+      <span class="text-xs font-semibold text-gray-500 uppercase tracking-wider">날짜</span>
+      <div class="flex items-center gap-2">
+        <input type="number" id="input-year" value={currentYear} min="2020" max="2030"
+          class="w-[4.5rem] px-2 py-1 rounded-md border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-anthro-darkMid text-sm text-gray-900 dark:text-gray-100 outline-none focus:border-claude-500 transition-all font-mono text-center" />
+        <span class="text-gray-400 text-xs">년</span>
+        <input type="number" id="input-month" value={currentMonth} min="1" max="12"
+          class="w-14 px-2 py-1 rounded-md border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-anthro-darkMid text-sm text-gray-900 dark:text-gray-100 outline-none focus:border-claude-500 transition-all font-mono text-center" />
+        <span class="text-gray-400 text-xs">월</span>
+        <input type="number" id="input-week" value={currentWeek} min="1" max="5"
+          class="w-14 px-2 py-1 rounded-md border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-anthro-darkMid text-sm text-gray-900 dark:text-gray-100 outline-none focus:border-claude-500 transition-all font-mono text-center" />
+        <span class="text-gray-400 text-xs">주차</span>
+      </div>
+      <span class="ml-auto text-xs text-gray-400">자동 설정됨</span>
+    </div>
+
+    <!-- Mode Tabs -->
+    <div class="flex mb-5 bg-gray-100 dark:bg-anthro-darkMid rounded-lg p-0.5">
+      <button id="tab-markdown" class="tab-btn flex-1 py-2 rounded-md text-sm font-semibold transition-all bg-white dark:bg-anthro-darkSurface text-gray-900 dark:text-gray-100 shadow-sm">
+        마크다운 붙여넣기
+      </button>
+      <button id="tab-simple" class="tab-btn flex-1 py-2 rounded-md text-sm font-semibold transition-all text-gray-500 dark:text-gray-400">
+        간편 추가
+      </button>
+    </div>
+
+    <!-- Simple Mode -->
+    <div id="panel-simple" class="hidden bg-white dark:bg-anthro-darkSurface rounded-xl border border-gray-200 dark:border-gray-800 p-5 mb-5">
+      <!-- Type Selector -->
+      <div class="mb-4">
+        <label class="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">유형</label>
+        <div class="flex gap-2" id="type-selector">
+          <button data-type="paper" class="type-btn active flex-1 py-2.5 rounded-lg border-2 border-blue-400 bg-blue-50 dark:bg-blue-950/20 text-sm font-semibold text-blue-700 dark:text-blue-300 transition-all">
+            📜 Paper
+          </button>
+          <button data-type="dev" class="type-btn flex-1 py-2.5 rounded-lg border-2 border-gray-200 dark:border-gray-700 text-sm font-semibold text-gray-500 dark:text-gray-400 transition-all hover:border-emerald-300">
+            🧑🏻‍💻 Dev
+          </button>
+          <button data-type="news" class="type-btn flex-1 py-2.5 rounded-lg border-2 border-gray-200 dark:border-gray-700 text-sm font-semibold text-gray-500 dark:text-gray-400 transition-all hover:border-violet-300">
+            🗞️ News
+          </button>
+        </div>
+      </div>
+
+      <!-- Org -->
+      <div class="mb-3">
+        <label class="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1.5">기관명</label>
+        <input type="text" id="simple-org" placeholder="예: Anthropic, Google DeepMind"
+          class="w-full px-3 py-2.5 rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-anthro-darkMid text-sm text-gray-900 dark:text-gray-100 placeholder-gray-400 outline-none focus:border-claude-500 transition-all" />
+      </div>
+
+      <!-- Title -->
+      <div class="mb-3">
+        <label class="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1.5">제목</label>
+        <input type="text" id="simple-title" placeholder="예: Constitutional AI: Harmlessness from AI Feedback"
+          class="w-full px-3 py-2.5 rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-anthro-darkMid text-sm text-gray-900 dark:text-gray-100 placeholder-gray-400 outline-none focus:border-claude-500 transition-all" />
+      </div>
+
+      <!-- URL -->
+      <div class="mb-3">
+        <label class="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1.5">URL</label>
+        <input type="url" id="simple-url" placeholder="https://arxiv.org/abs/..."
+          class="w-full px-3 py-2.5 rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-anthro-darkMid text-sm text-gray-900 dark:text-gray-100 placeholder-gray-400 outline-none focus:border-claude-500 transition-all font-mono" />
+      </div>
+
+      <!-- Bullets -->
+      <div class="mb-4">
+        <label class="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1.5">
+          설명 <span class="font-normal normal-case tracking-normal text-gray-400">(줄마다 하나씩, 탭 또는 4칸으로 하위 설명)</span>
+        </label>
+        <textarea id="simple-bullets" rows="5"
+          placeholder="주요 내용 첫 번째 줄
+하위 설명은 탭 또는 4칸 들여쓰기
+    이런 식으로 하위 설명 추가"
+          class="w-full px-3 py-2.5 rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-anthro-darkMid text-sm text-gray-900 dark:text-gray-100 placeholder-gray-400 outline-none focus:border-claude-500 transition-all font-mono leading-relaxed"></textarea>
+      </div>
+
+      <button id="simple-add-btn" class="w-full px-5 py-2.5 bg-claude-500 text-white rounded-lg text-sm font-semibold hover:bg-claude-600 transition-all shadow-sm">
+        미리보기에 추가
+      </button>
+    </div>
+
+    <!-- Markdown Mode -->
+    <div id="panel-markdown" class="bg-white dark:bg-anthro-darkSurface rounded-xl border border-gray-200 dark:border-gray-800 p-5 mb-5">
+      <div class="flex items-center justify-between mb-3">
+        <label class="text-xs font-semibold text-gray-500 uppercase tracking-wider">마크다운 입력</label>
+        <span class="text-xs text-gray-400">이모지 없이 붙여넣어도 됩니다</span>
+      </div>
+
+      <!-- Fallback type for markdown without emoji -->
+      <div class="flex items-center gap-2 mb-3">
+        <span class="text-xs text-gray-500">이모지 없는 항목의 기본 유형:</span>
+        <select id="md-fallback-type" class="px-2 py-1 rounded-md border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-anthro-darkMid text-xs text-gray-700 dark:text-gray-300 outline-none focus:border-claude-500">
+          <option value="paper">📜 Paper</option>
+          <option value="dev">🧑🏻‍💻 Dev</option>
+          <option value="news">🗞️ News</option>
+        </select>
+      </div>
+
+      <textarea
+        id="markdown-input"
+        rows="12"
+        placeholder="여러 항목을 한번에 붙여넣으세요:
+
+- 📜 [Anthropic] [**논문 제목**](https://arxiv.org/abs/...)
+    - 설명 첫 번째 줄
+        - 하위 설명
+
+- [Google] [다른 논문 제목](https://...) ← 이모지 없어도 OK
+    - 설명"
+        class="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-anthro-darkMid text-sm text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-500 outline-none focus:border-claude-500 transition-all font-mono leading-relaxed"
+      ></textarea>
+
+      <div class="mt-3 flex gap-2">
+        <button id="parse-btn" class="flex-1 px-5 py-2.5 bg-claude-500 text-white rounded-lg text-sm font-semibold hover:bg-claude-600 transition-all shadow-sm">
+          파싱 미리보기
+        </button>
+        <button id="clear-md-btn" class="px-4 py-2.5 rounded-lg border border-gray-200 dark:border-gray-700 text-sm text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 transition-all">
+          지우기
+        </button>
+      </div>
+
+      <!-- Parse errors -->
+      <div id="parse-errors" class="hidden mt-3 p-3 rounded-lg bg-amber-50 dark:bg-amber-950/20 border border-amber-200 dark:border-amber-800 text-xs text-amber-700 dark:text-amber-300"></div>
+    </div>
+
+    <!-- Preview -->
+    <div id="preview-section" class="hidden mb-6">
+      <div class="flex items-center justify-between mb-3">
+        <h2 class="text-sm font-semibold text-gray-500 uppercase tracking-wider">
+          미리보기 <span id="preview-count" class="text-claude-500 font-mono">0</span>건
+        </h2>
+        <button id="clear-preview" class="text-xs text-gray-400 hover:text-red-500 transition-colors">전체 삭제</button>
+      </div>
+      <div id="preview-container" class="space-y-3"></div>
+
+      <!-- Actions -->
+      <div class="mt-5 flex gap-2">
+        <button id="submit-btn" class="flex-1 px-5 py-2.5 bg-claude-500 text-white rounded-lg text-sm font-semibold hover:bg-claude-600 transition-all shadow-sm disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+          GitHub에 추가
+        </button>
+        <button id="copy-json" class="px-4 py-2.5 rounded-lg border border-gray-200 dark:border-gray-700 text-sm text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 transition-all">
+          JSON 복사
+        </button>
+      </div>
+
+      <div id="submit-status" class="hidden mt-4 p-4 rounded-xl text-sm"></div>
+
+      <details class="mt-4">
+        <summary class="text-xs text-gray-400 cursor-pointer hover:text-gray-600 transition-colors">JSON 출력 보기</summary>
+        <pre id="json-output" class="mt-2 bg-gray-950 text-claude-300 p-4 rounded-lg overflow-x-auto text-xs font-mono"></pre>
+      </details>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  // ─── State ─────────────────────────────
+  let parsedItems: any[] = [];
+  let selectedType = 'paper';
+
+  // ─── Type colors ───────────────────────
+  const TYPE_COLORS: Record<string, { border: string; bg: string; text: string }> = {
+    paper: { border: 'border-blue-400', bg: 'bg-blue-50 dark:bg-blue-950/20', text: 'text-blue-700 dark:text-blue-300' },
+    dev: { border: 'border-emerald-400', bg: 'bg-emerald-50 dark:bg-emerald-950/20', text: 'text-emerald-700 dark:text-emerald-300' },
+    news: { border: 'border-violet-400', bg: 'bg-violet-50 dark:bg-violet-950/20', text: 'text-violet-700 dark:text-violet-300' },
+  };
+
+  const TYPE_ICONS: Record<string, string> = { paper: '📜', dev: '🧑🏻‍💻', news: '🗞️' };
+
+  const TYPE_MAP: Record<string, string> = {
+    '📜': 'paper', '🧑🏻‍💻': 'dev', '🧑🏻💻': 'dev', '🗞️': 'news', '🗞': 'news',
+  };
+
+  // ─── Tab switching ─────────────────────
+  const tabSimple = document.getElementById('tab-simple')!;
+  const tabMarkdown = document.getElementById('tab-markdown')!;
+  const panelSimple = document.getElementById('panel-simple')!;
+  const panelMarkdown = document.getElementById('panel-markdown')!;
+
+  function switchTab(tab: 'simple' | 'markdown') {
+    if (tab === 'simple') {
+      tabSimple.classList.add('bg-white', 'dark:bg-anthro-darkSurface', 'text-gray-900', 'dark:text-gray-100', 'shadow-sm');
+      tabSimple.classList.remove('text-gray-500', 'dark:text-gray-400');
+      tabMarkdown.classList.remove('bg-white', 'dark:bg-anthro-darkSurface', 'text-gray-900', 'dark:text-gray-100', 'shadow-sm');
+      tabMarkdown.classList.add('text-gray-500', 'dark:text-gray-400');
+      panelSimple.classList.remove('hidden');
+      panelMarkdown.classList.add('hidden');
+    } else {
+      tabMarkdown.classList.add('bg-white', 'dark:bg-anthro-darkSurface', 'text-gray-900', 'dark:text-gray-100', 'shadow-sm');
+      tabMarkdown.classList.remove('text-gray-500', 'dark:text-gray-400');
+      tabSimple.classList.remove('bg-white', 'dark:bg-anthro-darkSurface', 'text-gray-900', 'dark:text-gray-100', 'shadow-sm');
+      tabSimple.classList.add('text-gray-500', 'dark:text-gray-400');
+      panelMarkdown.classList.remove('hidden');
+      panelSimple.classList.add('hidden');
+    }
+  }
+
+  tabSimple.addEventListener('click', () => switchTab('simple'));
+  tabMarkdown.addEventListener('click', () => switchTab('markdown'));
+
+  // ─── Type selector ─────────────────────
+  document.querySelectorAll('.type-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const type = (btn as HTMLElement).dataset.type || 'paper';
+      selectedType = type;
+      const colors = TYPE_COLORS[type];
+
+      document.querySelectorAll('.type-btn').forEach(b => {
+        b.classList.remove('border-blue-400', 'bg-blue-50', 'dark:bg-blue-950/20', 'text-blue-700', 'dark:text-blue-300');
+        b.classList.remove('border-emerald-400', 'bg-emerald-50', 'dark:bg-emerald-950/20', 'text-emerald-700', 'dark:text-emerald-300');
+        b.classList.remove('border-violet-400', 'bg-violet-50', 'dark:bg-violet-950/20', 'text-violet-700', 'dark:text-violet-300');
+        b.classList.add('border-gray-200', 'dark:border-gray-700', 'text-gray-500', 'dark:text-gray-400');
+        b.classList.remove('active');
+      });
+
+      btn.classList.remove('border-gray-200', 'dark:border-gray-700', 'text-gray-500', 'dark:text-gray-400');
+      btn.classList.add(...colors.border.split(' '), ...colors.bg.split(' '), ...colors.text.split(' '));
+      btn.classList.add('active');
+    });
+  });
+
+  // ─── Utility ───────────────────────────
+  function getDateValues() {
+    return {
+      year: (document.getElementById('input-year') as HTMLInputElement).value,
+      month: (document.getElementById('input-month') as HTMLInputElement).value,
+      week: (document.getElementById('input-week') as HTMLInputElement).value,
+    };
+  }
+
+  function makeId(org: string, title: string) {
+    return `${org}-${title}`
+      .toLowerCase()
+      .replace(/[^a-z0-9가-힣\s-]/g, '')
+      .replace(/\s+/g, '-')
+      .slice(0, 100);
+  }
+
+  function parseBulletsText(text: string): { text: string; level: number }[] {
+    if (!text.trim()) return [];
+    return text.split('\n').filter(l => l.trim()).map(line => {
+      const leadingSpaces = line.match(/^(\s*)/)?.[1]?.length || 0;
+      const hasTabs = line.match(/^\t/);
+      const level = hasTabs ? 2 : (leadingSpaces >= 4 ? 2 : leadingSpaces >= 8 ? 3 : 1);
+      return { text: line.trim(), level };
+    });
+  }
+
+  function escapeHtml(s: string) {
+    return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  }
+
+  // ─── Simple Mode: Add ──────────────────
+  document.getElementById('simple-add-btn')?.addEventListener('click', () => {
+    const org = (document.getElementById('simple-org') as HTMLInputElement).value.trim();
+    const title = (document.getElementById('simple-title') as HTMLInputElement).value.trim();
+    const url = (document.getElementById('simple-url') as HTMLInputElement).value.trim();
+    const bulletsText = (document.getElementById('simple-bullets') as HTMLTextAreaElement).value;
+
+    if (!org || !title) {
+      showToast('기관명과 제목은 필수입니다.');
+      return;
+    }
+
+    const { year, month, week } = getDateValues();
+    const item = {
+      id: makeId(org, title),
+      type: selectedType,
+      org, title, url,
+      date: `${year}-${month.padStart(2, '0')}-W${week.padStart(2, '0')}`,
+      year, month, week,
+      bullets: parseBulletsText(bulletsText),
+      tags: [],
+    };
+
+    parsedItems.push(item);
+    renderPreview();
+    showToast('항목이 추가되었습니다');
+
+    // Clear simple fields (keep org and type)
+    (document.getElementById('simple-title') as HTMLInputElement).value = '';
+    (document.getElementById('simple-url') as HTMLInputElement).value = '';
+    (document.getElementById('simple-bullets') as HTMLTextAreaElement).value = '';
+  });
+
+  // ─── Markdown Parser (improved) ────────
+  function parseMarkdownItems(text: string, year: string, month: string, week: string, fallbackType: string): { items: any[]; errors: string[] } {
+    const lines = text.split('\n');
+    const items: any[] = [];
+    const errors: string[] = [];
+    let currentItem: any = null;
+    let lineNum = 0;
+
+    for (const line of lines) {
+      lineNum++;
+      if (!line.trim()) continue;
+
+      // Match line starting with "- " (with optional emoji)
+      const iconMatch = line.match(/^-\s*(📜|🧑🏻‍💻|🧑🏻💻|🗞️|🗞)\s*/);
+      const plainMatch = !iconMatch && line.match(/^-\s+\[/);
+
+      if (iconMatch || plainMatch) {
+        if (currentItem) items.push(currentItem);
+
+        let type = fallbackType;
+        let rest = '';
+
+        if (iconMatch) {
+          type = TYPE_MAP[iconMatch[1]] || fallbackType;
+          rest = line.slice(iconMatch[0].length).trim();
+        } else {
+          // Plain format: - [Org] [Title](URL)
+          rest = line.replace(/^-\s+/, '').trim();
+        }
+
+        // Parse [Org]
+        const orgMatch = rest.match(/^\[([^\]]+)\]\s*/);
+        if (!orgMatch) {
+          errors.push(`${lineNum}행: 기관명 [Org] 형식을 찾을 수 없습니다`);
+          currentItem = null;
+          continue;
+        }
+
+        const org = orgMatch[1];
+        const afterOrg = rest.slice(orgMatch[0].length);
+
+        let title = '';
+        let url = '';
+
+        if (afterOrg.startsWith('[')) {
+          // [Title](URL) or [**Title**](URL)
+          let bracketCount = 0;
+          let titleEnd = -1;
+          for (let i = 0; i < afterOrg.length; i++) {
+            if (afterOrg[i] === '[') bracketCount++;
+            else if (afterOrg[i] === ']') {
+              bracketCount--;
+              if (bracketCount === 0) { titleEnd = i; break; }
+            }
+          }
+          if (titleEnd > 0) {
+            title = afterOrg.slice(1, titleEnd).replace(/\*\*/g, '').trim();
+            const afterTitle = afterOrg.slice(titleEnd + 1).trim();
+            const urlMatch = afterTitle.match(/^\(([^)]+)\)/);
+            if (urlMatch) url = urlMatch[1];
+          }
+        } else {
+          // Fallback: treat rest as title
+          title = afterOrg.replace(/\*\*/g, '').trim();
+        }
+
+        if (!title) {
+          errors.push(`${lineNum}행: 제목을 파싱할 수 없습니다`);
+          currentItem = null;
+          continue;
+        }
+
+        currentItem = {
+          id: makeId(org, title),
+          type, org, title, url,
+          date: `${year}-${month.padStart(2, '0')}-W${week.padStart(2, '0')}`,
+          year, month, week,
+          bullets: [], tags: [],
+        };
+        continue;
+      }
+
+      // Bullet lines: any indented line starting with -
+      if (currentItem && line.match(/^[\s\t]+-/)) {
+        const match = line.match(/^([\s\t]*)-\s+(.+)$/);
+        if (match) {
+          const rawIndent = match[1];
+          const bulletText = match[2].trim();
+          // Support both tabs and spaces
+          const tabCount = (rawIndent.match(/\t/g) || []).length;
+          const spaceCount = rawIndent.replace(/\t/g, '').length;
+          const effectiveIndent = tabCount * 4 + spaceCount;
+          const level = effectiveIndent < 6 ? 1 : effectiveIndent < 12 ? 2 : 3;
+          currentItem.bullets.push({ text: bulletText, level });
+        }
+      } else if (currentItem && line.match(/^\s+[^-\s]/)) {
+        // Continuation line (indented but no dash) - treat as bullet
+        const text = line.trim();
+        if (text) {
+          const rawIndent = line.match(/^(\s*)/)?.[1] || '';
+          const level = rawIndent.length >= 8 ? 2 : 1;
+          currentItem.bullets.push({ text, level });
+        }
+      }
+    }
+
+    if (currentItem) items.push(currentItem);
+
+    if (items.length === 0 && errors.length === 0) {
+      errors.push('파싱된 항목이 없습니다. "- [기관명] [제목](URL)" 형식으로 입력하세요.');
+    }
+
+    return { items, errors };
+  }
+
+  // ─── Parse button ──────────────────────
+  document.getElementById('parse-btn')?.addEventListener('click', () => {
+    const textarea = document.getElementById('markdown-input') as HTMLTextAreaElement;
+    const fallbackType = (document.getElementById('md-fallback-type') as HTMLSelectElement).value;
+    const { year, month, week } = getDateValues();
+    const errorsEl = document.getElementById('parse-errors')!;
+
+    const result = parseMarkdownItems(textarea.value, year, month, week, fallbackType);
+
+    if (result.errors.length > 0) {
+      errorsEl.innerHTML = result.errors.map(e => `<div>⚠️ ${escapeHtml(e)}</div>`).join('');
+      errorsEl.classList.remove('hidden');
+    } else {
+      errorsEl.classList.add('hidden');
+    }
+
+    if (result.items.length > 0) {
+      // Deduplicate: skip items that already exist in preview
+      const existingIds = new Set(parsedItems.map(i => i.id));
+      const newItems = result.items.filter(i => !existingIds.has(i.id));
+      const duplicateCount = result.items.length - newItems.length;
+
+      if (newItems.length > 0) {
+        parsedItems = [...parsedItems, ...newItems];
+        renderPreview();
+      }
+
+      if (duplicateCount > 0 && newItems.length > 0) {
+        showToast(`${newItems.length}개 추가, ${duplicateCount}개 중복 건너뜀`);
+      } else if (duplicateCount > 0 && newItems.length === 0) {
+        showToast('이미 추가된 항목입니다 (중복)');
+      } else {
+        showToast(`${newItems.length}개 항목이 파싱되었습니다`);
+      }
+    }
+  });
+
+  document.getElementById('clear-md-btn')?.addEventListener('click', () => {
+    (document.getElementById('markdown-input') as HTMLTextAreaElement).value = '';
+    document.getElementById('parse-errors')?.classList.add('hidden');
+  });
+
+  // ─── Preview rendering ─────────────────
+  function renderPreview() {
+    const container = document.getElementById('preview-container')!;
+    const section = document.getElementById('preview-section')!;
+    const countEl = document.getElementById('preview-count')!;
+    const jsonOutput = document.getElementById('json-output');
+
+    if (parsedItems.length === 0) {
+      section.classList.add('hidden');
+      return;
+    }
+
+    section.classList.remove('hidden');
+    countEl.textContent = parsedItems.length.toString();
+
+    container.innerHTML = parsedItems.map((item, idx) => {
+      const icon = TYPE_ICONS[item.type] || '📜';
+      const colors = TYPE_COLORS[item.type] || TYPE_COLORS.paper;
+      const dateDisplay = `${item.year}.${String(item.month).padStart(2, '0')} ${item.week}주차`;
+      const urlDomain = item.url ? (() => { try { return new URL(item.url).hostname.replace('www.', ''); } catch { return ''; } })() : '';
+      return `
+        <div class="p-4 rounded-xl border ${colors.bg} ${colors.border}/30 relative group">
+          <button class="remove-item absolute top-2 right-2 p-1 rounded-md text-gray-300 hover:text-red-500 opacity-0 group-hover:opacity-100 transition-all" data-idx="${idx}">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+          </button>
+          <div class="flex items-center gap-2 mb-2">
+            <span class="text-xs font-bold ${colors.text}">${icon} ${item.type.toUpperCase()}</span>
+            <span class="text-xs font-semibold text-gray-700 dark:text-gray-300 bg-gray-100 dark:bg-white/10 px-2 py-0.5 rounded-md">${escapeHtml(item.org)}</span>
+            <span class="text-xs text-gray-400 font-mono ml-auto">${dateDisplay}</span>
+          </div>
+          ${item.url
+            ? `<a href="${item.url}" target="_blank" class="block text-[15px] font-bold text-gray-900 dark:text-gray-100 hover:text-claude-600 dark:hover:text-claude-400 transition-colors mb-1.5 leading-snug">${escapeHtml(item.title)} <svg class="inline w-3.5 h-3.5 ml-0.5 opacity-40" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg></a>`
+            : `<h3 class="text-[15px] font-bold text-gray-900 dark:text-gray-100 mb-1.5 leading-snug">${escapeHtml(item.title)}</h3>`
+          }
+          ${urlDomain ? `<span class="text-xs text-gray-400 mb-1 block">${urlDomain}</span>` : ''}
+          ${item.bullets.length > 0 ? `
+            <ul class="text-sm text-gray-700 dark:text-gray-300 space-y-1 mt-2">
+              ${item.bullets.map((b: any) => `
+                <li class="${b.level > 1 ? 'ml-4 text-xs text-gray-500' : ''} flex items-start gap-2">
+                  <span class="mt-[7px] w-1 h-1 rounded-full bg-gray-400 flex-shrink-0"></span>
+                  <span>${escapeHtml(b.text)}</span>
+                </li>
+              `).join('')}
+            </ul>
+          ` : ''}
+        </div>
+      `;
+    }).join('');
+
+    // Attach remove handlers
+    container.querySelectorAll('.remove-item').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const idx = parseInt((btn as HTMLElement).dataset.idx || '0');
+        parsedItems.splice(idx, 1);
+        renderPreview();
+      });
+    });
+
+    if (jsonOutput) {
+      jsonOutput.textContent = JSON.stringify(parsedItems, null, 2);
+    }
+  }
+
+  // Clear preview
+  document.getElementById('clear-preview')?.addEventListener('click', () => {
+    parsedItems = [];
+    renderPreview();
+    document.getElementById('preview-section')?.classList.add('hidden');
+    document.getElementById('submit-status')?.classList.add('hidden');
+  });
+
+  // ─── GitHub API ────────────────────────
+  async function submitToGitHub(items: any[]) {
+    const token = localStorage.getItem('github_token');
+    const repo = (document.getElementById('github-repo') as HTMLInputElement)?.value || 'chanmuzi/temp-news-moltbot';
+    const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement;
+
+    if (!token) {
+      showStatus('GitHub 토큰이 설정되지 않았습니다. 상단 GitHub 버튼에서 토큰을 입력하세요.', 'error');
+      return;
+    }
+
+    submitBtn.disabled = true;
+    showStatus('GitHub에서 현재 데이터를 가져오는 중...', 'info');
+
+    try {
+      const getRes = await fetch(`https://api.github.com/repos/${repo}/contents/data/items.json`, {
+        headers: { 'Authorization': `token ${token}`, 'Accept': 'application/vnd.github.v3+json' }
+      });
+
+      if (!getRes.ok) {
+        const errText = await getRes.text();
+        throw new Error(`GitHub API 오류 (${getRes.status}): ${getRes.statusText}. ${errText}`);
+      }
+
+      const fileData = await getRes.json();
+
+      // Decode file content - use Blobs API for large files (>1MB)
+      let rawContent: string;
+      try {
+        let base64Content: string;
+        if (fileData.content) {
+          // Small file: content available directly from Contents API
+          base64Content = fileData.content.replace(/\n/g, '');
+        } else {
+          // Large file (>1MB): Contents API omits content, use Git Blobs API
+          showStatus('파일이 큽니다. Blob API로 읽는 중...', 'info');
+          const blobRes = await fetch(`https://api.github.com/repos/${repo}/git/blobs/${fileData.sha}`, {
+            headers: { 'Authorization': `token ${token}`, 'Accept': 'application/vnd.github.v3+json' }
+          });
+          if (!blobRes.ok) {
+            throw new Error(`Blob API 오류 (${blobRes.status}): 파일을 읽을 수 없습니다.`);
+          }
+          const blobData = await blobRes.json();
+          base64Content = blobData.content.replace(/\n/g, '');
+        }
+        const binaryStr = atob(base64Content);
+        const bytes = new Uint8Array(binaryStr.length);
+        for (let i = 0; i < binaryStr.length; i++) {
+          bytes[i] = binaryStr.charCodeAt(i);
+        }
+        rawContent = new TextDecoder('utf-8').decode(bytes);
+      } catch (e: any) {
+        if (e.message.includes('Blob API')) throw e;
+        throw new Error('items.json 디코딩 실패. 파일이 너무 크거나 형식이 올바르지 않을 수 있습니다.');
+      }
+
+      let currentContent: any;
+      try {
+        currentContent = JSON.parse(rawContent);
+      } catch (e) {
+        throw new Error('items.json JSON 파싱 실패. 파일 형식을 확인하세요.');
+      }
+
+      const existingIds = new Set(currentContent.items.map((i: any) => i.id));
+      const newItems = items.filter(i => !existingIds.has(i.id));
+      const skippedCount = items.length - newItems.length;
+
+      if (newItems.length === 0) {
+        showStatus(`추가할 새 항목이 없습니다. ${skippedCount}개 항목이 이미 존재합니다.`, 'warn');
+        submitBtn.disabled = false;
+        return;
+      }
+
+      currentContent.items = [...newItems, ...currentContent.items];
+      currentContent.total_items = currentContent.items.length;
+      currentContent.last_updated = new Date().toISOString();
+      currentContent.stats = {
+        total: currentContent.items.length,
+        paper: currentContent.items.filter((i: any) => i.type === 'paper').length,
+        dev: currentContent.items.filter((i: any) => i.type === 'dev').length,
+        news: currentContent.items.filter((i: any) => i.type === 'news').length,
+      };
+
+      showStatus('커밋 중...', 'info');
+
+      // Encode with proper UTF-8 handling
+      const jsonStr = JSON.stringify(currentContent, null, 2);
+      const encoder = new TextEncoder();
+      const uint8 = encoder.encode(jsonStr);
+      let binary = '';
+      for (let i = 0; i < uint8.length; i++) {
+        binary += String.fromCharCode(uint8[i]);
+      }
+      const newBase64 = btoa(binary);
+
+      const titles = newItems.map((i: any) => i.title).slice(0, 3).join(', ');
+      const commitMessage = `Add ${newItems.length} item(s): ${titles}`;
+
+      // Use Git Data API for reliable large file commits
+      // Step 1: Create a new blob with the updated content
+      const blobRes = await fetch(`https://api.github.com/repos/${repo}/git/blobs`, {
+        method: 'POST',
+        headers: {
+          'Authorization': `token ${token}`,
+          'Accept': 'application/vnd.github.v3+json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ content: newBase64, encoding: 'base64' }),
+      });
+      if (!blobRes.ok) {
+        const errData = await blobRes.json().catch(() => ({ message: blobRes.statusText }));
+        throw new Error(`Blob 생성 실패 (${blobRes.status}): ${errData.message}`);
+      }
+      const newBlob = await blobRes.json();
+
+      // Step 2: Get the current branch reference
+      const refRes = await fetch(`https://api.github.com/repos/${repo}/git/ref/heads/main`, {
+        headers: { 'Authorization': `token ${token}`, 'Accept': 'application/vnd.github.v3+json' }
+      });
+      if (!refRes.ok) throw new Error('브랜치 참조를 가져올 수 없습니다.');
+      const refData = await refRes.json();
+      const latestCommitSha = refData.object.sha;
+
+      // Step 3: Get the current commit's tree
+      const commitRes = await fetch(`https://api.github.com/repos/${repo}/git/commits/${latestCommitSha}`, {
+        headers: { 'Authorization': `token ${token}`, 'Accept': 'application/vnd.github.v3+json' }
+      });
+      if (!commitRes.ok) throw new Error('커밋 정보를 가져올 수 없습니다.');
+      const commitData = await commitRes.json();
+
+      // Step 4: Create a new tree with the updated file
+      const treeRes = await fetch(`https://api.github.com/repos/${repo}/git/trees`, {
+        method: 'POST',
+        headers: {
+          'Authorization': `token ${token}`,
+          'Accept': 'application/vnd.github.v3+json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          base_tree: commitData.tree.sha,
+          tree: [{ path: 'data/items.json', mode: '100644', type: 'blob', sha: newBlob.sha }],
+        }),
+      });
+      if (!treeRes.ok) throw new Error('트리 생성에 실패했습니다.');
+      const newTree = await treeRes.json();
+
+      // Step 5: Create a new commit
+      const newCommitRes = await fetch(`https://api.github.com/repos/${repo}/git/commits`, {
+        method: 'POST',
+        headers: {
+          'Authorization': `token ${token}`,
+          'Accept': 'application/vnd.github.v3+json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          message: commitMessage,
+          tree: newTree.sha,
+          parents: [latestCommitSha],
+        }),
+      });
+      if (!newCommitRes.ok) throw new Error('커밋 생성에 실패했습니다.');
+      const newCommit = await newCommitRes.json();
+
+      // Step 6: Update the branch reference
+      const updateRefRes = await fetch(`https://api.github.com/repos/${repo}/git/refs/heads/main`, {
+        method: 'PATCH',
+        headers: {
+          'Authorization': `token ${token}`,
+          'Accept': 'application/vnd.github.v3+json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ sha: newCommit.sha }),
+      });
+      if (!updateRefRes.ok) {
+        const errData = await updateRefRes.json().catch(() => ({ message: updateRefRes.statusText }));
+        throw new Error(`브랜치 업데이트 실패 (${updateRefRes.status}): ${errData.message}`);
+      }
+
+      const skippedMsg = skippedCount > 0 ? ` (${skippedCount}개 중복 건너뜀)` : '';
+      showStatus(`✓ ${newItems.length}개 항목이 성공적으로 추가되었습니다!${skippedMsg} GitHub Actions가 자동으로 사이트를 빌드합니다.`, 'success');
+      parsedItems = [];
+      renderPreview();
+    } catch (err: any) {
+      showStatus(`오류: ${err.message}`, 'error');
+    } finally {
+      submitBtn.disabled = false;
+    }
+  }
+
+  function showStatus(message: string, type: 'info' | 'success' | 'error' | 'warn') {
+    const el = document.getElementById('submit-status');
+    if (!el) return;
+    el.classList.remove('hidden');
+    const colors: Record<string, string> = {
+      info: 'bg-blue-50 dark:bg-blue-950/30 text-blue-700 dark:text-blue-300 border border-blue-200 dark:border-blue-800',
+      success: 'bg-emerald-50 dark:bg-emerald-950/30 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800',
+      error: 'bg-red-50 dark:bg-red-950/30 text-red-700 dark:text-red-300 border border-red-200 dark:border-red-800',
+      warn: 'bg-amber-50 dark:bg-amber-950/30 text-amber-700 dark:text-amber-300 border border-amber-200 dark:border-amber-800',
+    };
+    el.className = `mt-4 p-4 rounded-xl text-sm ${colors[type]}`;
+    el.textContent = message;
+  }
+
+  // ─── Submit & Copy ─────────────────────
+  document.getElementById('submit-btn')?.addEventListener('click', () => {
+    if (parsedItems.length > 0) submitToGitHub(parsedItems);
+  });
+
+  document.getElementById('copy-json')?.addEventListener('click', () => {
+    const jsonOutput = document.getElementById('json-output');
+    if (jsonOutput) {
+      navigator.clipboard.writeText(jsonOutput.textContent || '');
+      showToast('JSON이 클립보드에 복사되었습니다');
+    }
+  });
+
+  // ─── GitHub token ──────────────────────
+  function updateTokenStatus() {
+    const statusEl = document.getElementById('token-status');
+    const token = localStorage.getItem('github_token');
+    if (statusEl) {
+      if (token) {
+        statusEl.textContent = '연결됨';
+        statusEl.className = 'inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full text-xs bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400';
+      } else {
+        statusEl.textContent = '미연결';
+        statusEl.className = 'inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-400';
+      }
+    }
+  }
+
+  document.getElementById('toggle-settings')?.addEventListener('click', () => {
+    document.getElementById('settings-panel')?.classList.toggle('hidden');
+  });
+  document.getElementById('save-token')?.addEventListener('click', () => {
+    const input = document.getElementById('github-token') as HTMLInputElement;
+    if (input.value.trim()) {
+      localStorage.setItem('github_token', input.value.trim());
+      input.value = '';
+      updateTokenStatus();
+      showToast('토큰이 저장되었습니다');
+    }
+  });
+  document.getElementById('clear-token')?.addEventListener('click', () => {
+    localStorage.removeItem('github_token');
+    updateTokenStatus();
+    showToast('토큰이 삭제되었습니다');
+  });
+
+  function showToast(message: string) {
+    const existing = document.querySelector('.toast');
+    if (existing) existing.remove();
+    const toast = document.createElement('div');
+    toast.className = 'toast';
+    toast.textContent = message;
+    document.body.appendChild(toast);
+    setTimeout(() => toast.remove(), 3000);
+  }
+
+  // ─── Init ──────────────────────────────
+  updateTokenStatus();
+  const savedRepo = localStorage.getItem('github_repo');
+  if (savedRepo) {
+    (document.getElementById('github-repo') as HTMLInputElement).value = savedRepo;
+  }
+  document.getElementById('github-repo')?.addEventListener('change', (e) => {
+    localStorage.setItem('github_repo', (e.target as HTMLInputElement).value);
+  });
+</script>

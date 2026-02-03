@@ -1,0 +1,443 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ItemCard from '../components/ItemCard.astro';
+import itemsData from '../../../data/items.json';
+
+// Sort items by date (newest first)
+const sortedItems = [...itemsData.items].sort((a, b) => {
+  const parseDate = (d: string) => {
+    const parts = d.split('-');
+    const year = parseInt(parts[0]) || 0;
+    const month = parseInt(parts[1]) || 0;
+    const week = parseInt(parts[2]?.replace('W', '')) || 0;
+    return year * 10000 + month * 100 + week;
+  };
+  return parseDate(b.date) - parseDate(a.date);
+});
+
+// Get latest 2 weeks of items
+const latestDate = sortedItems[0]?.date || '';
+const latestParts = latestDate.split('-');
+const latestYear = parseInt(latestParts[0]) || 2026;
+const latestMonth = parseInt(latestParts[1]) || 1;
+const latestWeek = parseInt(latestParts[2]?.replace('W', '')) || 1;
+
+const getWeeksBack = (year: number, month: number, week: number, weeksBack: number) => {
+  let w = week - weeksBack;
+  let m = month;
+  let y = year;
+  while (w < 1) {
+    m--;
+    if (m < 1) { m = 12; y--; }
+    w += 4;
+  }
+  return { year: y, month: m, week: Math.max(1, w) };
+};
+
+const twoWeeksBack = getWeeksBack(latestYear, latestMonth, latestWeek, 2);
+const cutoffValue = twoWeeksBack.year * 10000 + twoWeeksBack.month * 100 + twoWeeksBack.week;
+
+const latestItems = sortedItems.filter(item => {
+  const parts = item.date.split('-');
+  const y = parseInt(parts[0]) || 0;
+  const m = parseInt(parts[1]) || 0;
+  const w = parseInt(parts[2]?.replace('W', '')) || 0;
+  return y * 10000 + m * 100 + w >= cutoffValue;
+});
+
+// Group items by year-month
+const grouped = sortedItems.reduce((acc, item) => {
+  const key = `${item.year}-${item.month}`;
+  if (!acc[key]) {
+    acc[key] = { year: item.year, month: item.month, items: [] };
+  }
+  acc[key].items.push(item);
+  return acc;
+}, {} as Record<string, { year: string; month: string; items: typeof sortedItems }>);
+
+const groups = Object.values(grouped).sort((a, b) => {
+  const aVal = parseInt(a.year) * 100 + parseInt(a.month);
+  const bVal = parseInt(b.year) * 100 + parseInt(b.month);
+  return bVal - aVal;
+});
+
+// Stats
+const stats = itemsData.stats || {
+  paper: sortedItems.filter(i => i.type === 'paper').length,
+  dev: sortedItems.filter(i => i.type === 'dev').length,
+  news: sortedItems.filter(i => i.type === 'news').length,
+};
+
+// Top orgs
+const orgCounts: Record<string, number> = {};
+sortedItems.forEach(i => { orgCounts[i.org] = (orgCounts[i.org] || 0) + 1; });
+const topOrgs = Object.entries(orgCounts).sort((a, b) => b[1] - a[1]).slice(0, 8);
+
+const monthNames: Record<string, string> = {
+  '1': '1월', '2': '2월', '3': '3월', '4': '4월',
+  '5': '5월', '6': '6월', '7': '7월', '8': '8월',
+  '9': '9월', '10': '10월', '11': '11월', '12': '12월',
+};
+
+const MONTHS_PER_PAGE = 3;
+---
+
+<Layout title="chanmuzi - AI 논문 & 뉴스 큐레이션">
+  <!-- Hero Section -->
+  <section class="mb-10">
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
+      <div class="flex items-start gap-4">
+        <img src={`${import.meta.env.BASE_URL}logo.png`} alt="chanmuzi" class="w-16 h-16 md:w-20 md:h-20 rounded-2xl object-cover shadow-md flex-shrink-0" />
+        <div>
+          <h1 class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-gray-100 mb-1 leading-tight">
+            chanmuzi의
+            <span class="text-gradient-claude">AI 큐레이션</span>
+          </h1>
+          <p class="text-gray-500 dark:text-gray-400 text-base">
+            AI 논문 & 뉴스를 매주 정리합니다
+          </p>
+        </div>
+      </div>
+      <div class="flex gap-2">
+        <a href={`${import.meta.env.BASE_URL}search/`} class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-gray-200 dark:border-gray-700 text-sm font-medium text-gray-700 dark:text-gray-300 hover:border-claude-400 hover:text-claude-500 transition-all">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+          상세 검색
+        </a>
+        <a href={`${import.meta.env.BASE_URL}admin/`} class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-claude-500 text-white text-sm font-medium hover:bg-claude-600 transition-all shadow-sm">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+          추가
+        </a>
+      </div>
+    </div>
+
+    <!-- Stats strip -->
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+      <div class="bg-white dark:bg-anthro-darkSurface rounded-xl border border-gray-200 dark:border-gray-800 px-4 py-3">
+        <div class="text-2xl font-bold text-gray-900 dark:text-gray-100">{itemsData.total_items.toLocaleString()}</div>
+        <div class="text-xs text-gray-400 dark:text-gray-500 mt-0.5">전체 항목</div>
+      </div>
+      <div class="bg-white dark:bg-anthro-darkSurface rounded-xl border border-gray-200 dark:border-gray-800 px-4 py-3">
+        <div class="text-2xl font-bold text-blue-600 dark:text-blue-400">{stats.paper.toLocaleString()}</div>
+        <div class="text-xs text-gray-400 dark:text-gray-500 mt-0.5">📜 Papers</div>
+      </div>
+      <div class="bg-white dark:bg-anthro-darkSurface rounded-xl border border-gray-200 dark:border-gray-800 px-4 py-3">
+        <div class="text-2xl font-bold text-emerald-600 dark:text-emerald-400">{stats.dev.toLocaleString()}</div>
+        <div class="text-xs text-gray-400 dark:text-gray-500 mt-0.5">🧑🏻‍💻 Dev</div>
+      </div>
+      <div class="bg-white dark:bg-anthro-darkSurface rounded-xl border border-gray-200 dark:border-gray-800 px-4 py-3">
+        <div class="text-2xl font-bold text-violet-600 dark:text-violet-400">{stats.news.toLocaleString()}</div>
+        <div class="text-xs text-gray-400 dark:text-gray-500 mt-0.5">🗞️ News</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Top Orgs -->
+  <section class="mb-10">
+    <div class="flex items-center gap-2 mb-3">
+      <h2 class="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider">Top 기관</h2>
+    </div>
+    <div class="flex flex-wrap gap-2">
+      {topOrgs.map(([name, count]) => (
+        <a
+          href={`${import.meta.env.BASE_URL}search/?org=${encodeURIComponent(name)}`}
+          class="org-chip inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white dark:bg-anthro-darkSurface border border-gray-200 dark:border-gray-700 text-sm font-medium text-gray-700 dark:text-gray-300 hover:border-claude-400 hover:text-claude-600 dark:hover:text-claude-400 hover:shadow-sm transition-all cursor-pointer"
+        >
+          {name}
+          <span class="text-xs text-gray-400 dark:text-gray-500 font-normal">({count})</span>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <!-- Quick Search -->
+  <section class="mb-10">
+    <div class="relative max-w-xl">
+      <svg class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+      <input
+        type="text"
+        id="quick-search"
+        placeholder="빠른 검색..."
+        class="w-full pl-12 pr-4 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-anthro-darkSurface text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-500 focus:border-claude-500 outline-none transition-all shadow-sm"
+      />
+      <span id="search-count" class="absolute right-4 top-1/2 -translate-y-1/2 text-xs text-gray-500 font-mono hidden"></span>
+    </div>
+  </section>
+
+  <!-- Type Filter Tabs -->
+  <section class="mb-6">
+    <div class="flex gap-2" id="type-filters">
+      <button data-filter="all" class="filter-btn active px-3 py-1.5 rounded-lg text-sm font-medium transition-all bg-claude-500 text-white">
+        전체
+      </button>
+      <button data-filter="paper" class="filter-btn px-3 py-1.5 rounded-lg text-sm font-medium transition-all text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800">
+        📜 Paper
+      </button>
+      <button data-filter="dev" class="filter-btn px-3 py-1.5 rounded-lg text-sm font-medium transition-all text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800">
+        🧑🏻‍💻 Dev
+      </button>
+      <button data-filter="news" class="filter-btn px-3 py-1.5 rounded-lg text-sm font-medium transition-all text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800">
+        🗞️ News
+      </button>
+    </div>
+  </section>
+
+  <!-- Latest Section -->
+  <section id="latest" class="mb-12">
+    <div class="rounded-2xl p-6 -mx-2 bg-gray-50/80 dark:bg-anthro-darkSurface/50 border border-gray-200/60 dark:border-gray-800/40">
+      <div class="flex items-center gap-3 mb-5">
+        <div class="flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-claude-500 animate-pulse"></span>
+          <h2 class="text-lg font-bold text-gray-900 dark:text-gray-100">최신 항목</h2>
+        </div>
+        <span class="text-xs text-claude-600 dark:text-claude-400 bg-claude-100/60 dark:bg-claude-900/30 px-2.5 py-0.5 rounded-full font-semibold">
+          최근 2주 · {latestItems.length}건
+        </span>
+      </div>
+      <div class="grid gap-3 md:grid-cols-2" id="latest-grid">
+        {latestItems.slice(0, 12).map((item) => (
+          <ItemCard {...item} showWeek={true} />
+        ))}
+      </div>
+      {latestItems.length > 12 && (
+        <div class="text-center mt-5">
+          <button id="show-more-latest" class="text-sm font-medium text-claude-600 dark:text-claude-400 hover:text-claude-700 dark:hover:text-claude-300 transition-colors">
+            +{latestItems.length - 12}건 더 보기 →
+          </button>
+        </div>
+      )}
+    </div>
+  </section>
+
+  <!-- All Items with Month Groups -->
+  <section id="all-items">
+    <div class="flex items-center justify-between mb-4">
+      <h2 class="text-lg font-bold text-gray-900 dark:text-gray-100">전체 아카이브</h2>
+      <span class="text-xs text-gray-400 dark:text-gray-500 font-mono">{sortedItems.length.toLocaleString()}건</span>
+    </div>
+
+    <div id="items-container">
+      {groups.map((group, groupIndex) => (
+        <div
+          class="mb-10 month-section"
+          data-year={group.year}
+          data-month={group.month}
+          data-page={Math.floor(groupIndex / MONTHS_PER_PAGE)}
+        >
+          <h3 class="flex items-center gap-2 text-sm font-semibold text-gray-500 dark:text-gray-400 mb-3 sticky top-14 bg-anthro-bg/95 dark:bg-anthro-dark/95 backdrop-blur-sm py-2 z-10 border-b border-gray-200/50 dark:border-gray-800/50 uppercase tracking-wider">
+            {group.year}년 {monthNames[group.month] || group.month}
+            <span class="text-xs font-normal text-gray-400 dark:text-gray-500 bg-gray-100 dark:bg-gray-800 px-1.5 py-0.5 rounded normal-case tracking-normal">
+              {group.items.length}건
+            </span>
+          </h3>
+          <div class="grid gap-3 md:grid-cols-2 items-grid">
+            {group.items.map((item) => (
+              <ItemCard {...item} showWeek={true} />
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Pagination -->
+    <div id="pagination" class="flex justify-center items-center gap-3 mt-8 mb-12">
+      <button id="prev-page" class="px-4 py-2 rounded-lg border border-gray-200 dark:border-gray-700 text-sm font-medium text-gray-700 dark:text-gray-300 disabled:opacity-30 disabled:cursor-not-allowed hover:border-claude-400 hover:text-claude-500 transition-all">
+        ← 이전
+      </button>
+      <span id="page-info" class="text-sm text-gray-400 dark:text-gray-500 font-mono"></span>
+      <button id="next-page" class="px-4 py-2 rounded-lg border border-gray-200 dark:border-gray-700 text-sm font-medium text-gray-700 dark:text-gray-300 disabled:opacity-30 disabled:cursor-not-allowed hover:border-claude-400 hover:text-claude-500 transition-all">
+        다음 →
+      </button>
+    </div>
+  </section>
+
+  <!-- Back to top -->
+  <button
+    id="back-to-top"
+    class="fixed bottom-6 right-6 p-3 bg-claude-500 text-white rounded-xl shadow-lg opacity-0 pointer-events-none transition-all hover:bg-claude-600 hover:scale-105 z-50"
+  >
+    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/></svg>
+  </button>
+</Layout>
+
+<script>
+  // Pagination state
+  let currentPage = 0;
+  let currentFilter = 'all';
+  const monthSections = document.querySelectorAll('.month-section');
+  const cards = document.querySelectorAll('.item-card');
+  const pageInfo = document.getElementById('page-info');
+  const prevBtn = document.getElementById('prev-page') as HTMLButtonElement;
+  const nextBtn = document.getElementById('next-page') as HTMLButtonElement;
+
+  const MONTHS_PER_PAGE = 3;
+  const maxPage = Math.ceil(monthSections.length / MONTHS_PER_PAGE) - 1;
+
+  function updatePagination() {
+    monthSections.forEach((section, index) => {
+      const sectionPage = Math.floor(index / MONTHS_PER_PAGE);
+      const shouldShow = sectionPage === currentPage;
+
+      if (shouldShow && currentFilter !== 'all') {
+        const items = section.querySelectorAll('.item-card');
+        let hasVisible = false;
+        items.forEach((card) => {
+          const cardType = card.getAttribute('data-type');
+          const show = cardType === currentFilter;
+          (card as HTMLElement).style.display = show ? '' : 'none';
+          if (show) hasVisible = true;
+        });
+        (section as HTMLElement).style.display = hasVisible ? '' : 'none';
+      } else if (shouldShow) {
+        (section as HTMLElement).style.display = '';
+        section.querySelectorAll('.item-card').forEach((card) => {
+          (card as HTMLElement).style.display = '';
+        });
+      } else {
+        (section as HTMLElement).style.display = 'none';
+      }
+    });
+
+    if (pageInfo) pageInfo.textContent = `${currentPage + 1} / ${maxPage + 1}`;
+    if (prevBtn) prevBtn.disabled = currentPage === 0;
+    if (nextBtn) nextBtn.disabled = currentPage >= maxPage;
+  }
+
+  prevBtn?.addEventListener('click', () => {
+    if (currentPage > 0) {
+      currentPage--;
+      updatePagination();
+      document.getElementById('all-items')?.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+
+  nextBtn?.addEventListener('click', () => {
+    if (currentPage < maxPage) {
+      currentPage++;
+      updatePagination();
+      document.getElementById('all-items')?.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+
+  // Type filtering
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  filterBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const filter = (btn as HTMLElement).dataset.filter || 'all';
+      currentFilter = filter;
+      currentPage = 0;
+
+      // Update active states
+      filterBtns.forEach((b) => {
+        b.classList.remove('bg-claude-500', 'text-white');
+        b.classList.add('text-gray-600', 'dark:text-gray-400');
+      });
+      btn.classList.add('bg-claude-500', 'text-white');
+      btn.classList.remove('text-gray-600', 'dark:text-gray-400');
+
+      // Also filter latest section
+      const latestCards = document.querySelectorAll('#latest-grid .item-card');
+      latestCards.forEach((card) => {
+        const cardType = card.getAttribute('data-type');
+        (card as HTMLElement).style.display = (filter === 'all' || cardType === filter) ? '' : 'none';
+      });
+
+      updatePagination();
+    });
+  });
+
+  // Quick search
+  const searchInput = document.getElementById('quick-search') as HTMLInputElement;
+  const searchCount = document.getElementById('search-count');
+  const latestSection = document.getElementById('latest');
+  const paginationEl = document.getElementById('pagination');
+
+  // Store original HTML for highlight reset
+  const originalCardHTML = new Map<Element, Map<Element, string>>();
+  cards.forEach((card) => {
+    const textEls = card.querySelectorAll('a, h3, .bullets-container span');
+    const map = new Map<Element, string>();
+    textEls.forEach(el => map.set(el, el.innerHTML));
+    originalCardHTML.set(card, map);
+  });
+
+  function highlightInCard(card: Element, query: string) {
+    const origMap = originalCardHTML.get(card);
+    if (!origMap) return;
+    origMap.forEach((origHTML, el) => {
+      if (!query) {
+        el.innerHTML = origHTML;
+        return;
+      }
+      const escapedQuery = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      const regex = new RegExp(`(${escapedQuery})`, 'gi');
+      el.innerHTML = origHTML.replace(regex, '<mark class="search-highlight">$1</mark>');
+    });
+  }
+
+  searchInput?.addEventListener('input', () => {
+    const query = searchInput.value.trim();
+    const lowerQuery = query.toLowerCase();
+
+    if (!query) {
+      cards.forEach(card => {
+        (card as HTMLElement).style.display = '';
+        highlightInCard(card, '');
+      });
+      searchCount?.classList.add('hidden');
+      if (latestSection) latestSection.style.display = '';
+      if (paginationEl) paginationEl.style.display = '';
+      currentPage = 0;
+      updatePagination();
+      return;
+    }
+
+    // Hide latest section and pagination during search
+    if (latestSection) latestSection.style.display = 'none';
+    if (paginationEl) paginationEl.style.display = 'none';
+
+    // Show all months
+    monthSections.forEach(s => (s as HTMLElement).style.display = '');
+
+    let visibleCount = 0;
+    cards.forEach((card) => {
+      const text = (card.textContent || '').toLowerCase();
+      const matches = text.includes(lowerQuery);
+      (card as HTMLElement).style.display = matches ? '' : 'none';
+      highlightInCard(card, matches ? query : '');
+      if (matches) visibleCount++;
+    });
+
+    // Hide empty sections
+    monthSections.forEach((section) => {
+      const visible = section.querySelectorAll('.item-card:not([style*="display: none"])');
+      (section as HTMLElement).style.display = visible.length > 0 ? '' : 'none';
+    });
+
+    if (searchCount) {
+      searchCount.textContent = `${visibleCount}건`;
+      searchCount.classList.remove('hidden');
+    }
+  });
+
+  // Show more latest
+  document.getElementById('show-more-latest')?.addEventListener('click', () => {
+    document.getElementById('all-items')?.scrollIntoView({ behavior: 'smooth' });
+  });
+
+  // Back to top
+  const backToTop = document.getElementById('back-to-top');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 400) {
+      backToTop?.classList.remove('opacity-0', 'pointer-events-none');
+    } else {
+      backToTop?.classList.add('opacity-0', 'pointer-events-none');
+    }
+  });
+
+  backToTop?.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  // Initialize
+  updatePagination();
+</script>

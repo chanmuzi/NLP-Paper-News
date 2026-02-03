@@ -1,0 +1,228 @@
+---
+import Layout from '../layouts/Layout.astro';
+import itemsData from '../../../data/items.json';
+
+// Sort items by date (newest first)
+const sortedItems = [...itemsData.items].sort((a, b) => {
+  const parseDate = (d: string) => {
+    const parts = d.split('-');
+    return (parseInt(parts[0]) || 0) * 10000 + (parseInt(parts[1]) || 0) * 100 + (parseInt(parts[2]?.replace('W', '')) || 0);
+  };
+  return parseDate(b.date) - parseDate(a.date);
+});
+---
+
+<Layout title="북마크 - chanmuzi AI 큐레이션">
+  <section class="max-w-4xl mx-auto">
+    <!-- Header -->
+    <div class="flex items-center gap-3 mb-4">
+      <a href={`${import.meta.env.BASE_URL}`} class="text-gray-400 hover:text-claude-500 transition-colors text-sm">
+        <svg class="w-4 h-4 inline mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+        홈
+      </a>
+    </div>
+
+    <div class="flex items-center justify-between mb-6">
+      <div>
+        <h1 class="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-1">북마크</h1>
+        <p class="text-sm text-gray-500 dark:text-gray-400">
+          저장한 항목 <span id="bookmark-count" class="font-semibold text-claude-600 dark:text-claude-400">0</span>개
+        </p>
+      </div>
+      <button id="clear-all-btn" class="hidden px-3 py-1.5 rounded-lg border border-gray-200 dark:border-gray-700 text-xs font-medium text-gray-500 dark:text-gray-400 hover:text-red-500 hover:border-red-300 dark:hover:text-red-400 dark:hover:border-red-800 transition-all">
+        전체 삭제
+      </button>
+    </div>
+
+    <!-- Bookmarked Items Grid -->
+    <div id="bookmarks-grid" class="grid gap-3 md:grid-cols-2"></div>
+
+    <!-- Empty State -->
+    <div id="empty-state" class="hidden text-center py-20">
+      <div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gray-100 dark:bg-gray-800 flex items-center justify-center">
+        <svg class="w-8 h-8 text-gray-300 dark:text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"/></svg>
+      </div>
+      <p class="text-gray-500 dark:text-gray-400 font-medium mb-1">저장된 북마크가 없습니다</p>
+      <p class="text-xs text-gray-400 dark:text-gray-500">카드의 북마크 아이콘을 클릭하여 저장하세요</p>
+      <a href={`${import.meta.env.BASE_URL}`} class="inline-flex items-center gap-1.5 mt-4 px-4 py-2 rounded-lg bg-claude-500 text-white text-sm font-medium hover:bg-claude-600 transition-all">
+        홈으로 이동
+      </a>
+    </div>
+  </section>
+</Layout>
+
+<script define:vars={{ allItems: JSON.stringify(sortedItems) }}>
+  const items = JSON.parse(allItems);
+
+  function getBookmarks() {
+    try { return JSON.parse(localStorage.getItem('bookmarks') || '[]'); }
+    catch { return []; }
+  }
+
+  function escapeHtml(str) {
+    return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  }
+
+  function renderCard(item) {
+    const typeInfo = {
+      paper: { icon: '📜', label: 'Paper', color: 'text-blue-800 dark:text-blue-300', bgLight: 'bg-white border-blue-200/60 shadow-card', bgDark: 'dark:bg-anthro-darkSurface dark:border-blue-800/40 dark:shadow-card-dark', accent: 'bg-blue-500' },
+      dev: { icon: '🧑🏻‍💻', label: 'Dev', color: 'text-emerald-800 dark:text-emerald-300', bgLight: 'bg-white border-emerald-200/60 shadow-card', bgDark: 'dark:bg-anthro-darkSurface dark:border-emerald-800/40 dark:shadow-card-dark', accent: 'bg-emerald-500' },
+      news: { icon: '🗞️', label: 'News', color: 'text-violet-800 dark:text-violet-300', bgLight: 'bg-white border-violet-200/60 shadow-card', bgDark: 'dark:bg-anthro-darkSurface dark:border-violet-800/40 dark:shadow-card-dark', accent: 'bg-violet-500' },
+    };
+    const info = typeInfo[item.type] || typeInfo.paper;
+    const dateStr = item.year && item.month ? `${item.year}.${String(item.month).padStart(2, '0')} ${item.week ? item.week + '주차' : ''}` : '';
+
+    const bulletsHtml = item.bullets.slice(0, 3).map(b => {
+      const cls = b.level > 1 ? 'ml-4 text-gray-500 dark:text-gray-500' : 'text-gray-700 dark:text-gray-300';
+      const dotCls = b.level > 1 ? 'bg-gray-400 dark:bg-gray-600' : info.accent;
+      return `<li class="flex items-start gap-2 ${cls}"><span class="mt-[7px] w-1 h-1 rounded-full flex-shrink-0 ${dotCls}"></span><span>${escapeHtml(b.text)}</span></li>`;
+    }).join('');
+
+    const extraBullets = item.bullets.slice(3);
+    const extraHtml = extraBullets.length > 0 ? `
+      <div class="bullets-extra hidden">
+        <ul class="space-y-1 text-[13px] leading-relaxed mt-1">
+          ${extraBullets.map(b => {
+            const cls = b.level > 1 ? 'ml-4 text-gray-500 dark:text-gray-500' : 'text-gray-700 dark:text-gray-300';
+            const dotCls = b.level > 1 ? 'bg-gray-400 dark:bg-gray-600' : info.accent;
+            return `<li class="flex items-start gap-2 ${cls}"><span class="mt-[7px] w-1 h-1 rounded-full flex-shrink-0 ${dotCls}"></span><span>${escapeHtml(b.text)}</span></li>`;
+          }).join('')}
+        </ul>
+      </div>` : '';
+
+    const expandBtn = extraBullets.length > 0 ? `<button class="expand-btn text-xs font-medium text-claude-600 hover:text-claude-700 dark:text-claude-400 dark:hover:text-claude-300 transition-colors">+${extraBullets.length}개 더 보기</button>` : '';
+
+    return `
+    <article class="item-card group relative rounded-xl border transition-all duration-200 hover:shadow-card-hover dark:hover:shadow-card-dark-hover hover:-translate-y-0.5 ${info.bgLight} ${info.bgDark}" data-id="${item.id}">
+      <div class="absolute top-0 left-0 w-1 h-full rounded-l-xl ${info.accent}"></div>
+      <div class="pl-5 pr-4 py-4">
+        <div class="flex items-center justify-between gap-2 mb-2">
+          <div class="flex items-center gap-2 min-w-0">
+            <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-xs font-bold ${info.color} bg-gray-50 dark:bg-white/5">${info.icon} ${info.label}</span>
+            <span class="text-sm font-semibold text-gray-600 dark:text-gray-400 truncate">${escapeHtml(item.org)}</span>
+          </div>
+          <span class="text-xs text-gray-400 dark:text-gray-500 font-mono flex-shrink-0">${dateStr}</span>
+        </div>
+        ${item.url
+          ? `<a href="${item.url}" target="_blank" rel="noopener noreferrer" class="block text-[15px] font-bold text-gray-900 dark:text-gray-100 hover:text-claude-600 dark:hover:text-claude-400 transition-colors mb-2 leading-snug">${escapeHtml(item.title)}<svg class="inline-block w-3.5 h-3.5 ml-1 opacity-0 group-hover:opacity-50 transition-opacity -translate-y-px" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg></a>`
+          : `<h3 class="text-[15px] font-bold text-gray-900 dark:text-gray-100 mb-2 leading-snug">${escapeHtml(item.title)}</h3>`
+        }
+        ${item.bullets.length > 0 ? `<div class="bullets-container"><ul class="space-y-1 text-[13px] leading-relaxed">${bulletsHtml}</ul>${extraHtml}</div>` : ''}
+        <div class="flex items-center justify-between mt-2.5 pt-2 border-t border-gray-100 dark:border-gray-800/50">
+          <div>${expandBtn}</div>
+          <div class="flex items-center gap-0.5">
+            <button class="remove-bookmark-btn p-1.5 rounded-md text-claude-500 dark:text-claude-400 hover:text-red-500 dark:hover:text-red-400 transition-colors" data-id="${item.id}" title="북마크 제거">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"/></svg>
+            </button>
+            <button class="share-btn p-1.5 rounded-md text-gray-300 hover:text-claude-500 dark:text-gray-600 dark:hover:text-claude-400 transition-colors" data-title="${escapeHtml(item.title)}" data-url="${item.url}" data-org="${escapeHtml(item.org)}" title="공유">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </article>`;
+  }
+
+  function render() {
+    const bookmarks = getBookmarks();
+    const grid = document.getElementById('bookmarks-grid');
+    const emptyState = document.getElementById('empty-state');
+    const countEl = document.getElementById('bookmark-count');
+    const clearBtn = document.getElementById('clear-all-btn');
+
+    // Filter items that are bookmarked, maintain order from items (newest first)
+    const bookmarkedItems = items.filter(item => bookmarks.includes(item.id));
+
+    if (countEl) countEl.textContent = bookmarkedItems.length.toString();
+
+    if (bookmarkedItems.length === 0) {
+      grid.innerHTML = '';
+      grid.classList.add('hidden');
+      emptyState.classList.remove('hidden');
+      clearBtn.classList.add('hidden');
+      return;
+    }
+
+    grid.classList.remove('hidden');
+    emptyState.classList.add('hidden');
+    clearBtn.classList.remove('hidden');
+
+    grid.innerHTML = bookmarkedItems.map(item => renderCard(item)).join('');
+    attachListeners();
+  }
+
+  function attachListeners() {
+    const grid = document.getElementById('bookmarks-grid');
+
+    // Expand buttons
+    grid.querySelectorAll('.expand-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const card = btn.closest('.item-card');
+        const extra = card?.querySelector('.bullets-extra');
+        if (!extra) return;
+        const isHidden = extra.classList.contains('hidden');
+        extra.classList.toggle('hidden');
+        btn.textContent = isHidden ? '접기' : `+${extra.querySelectorAll('li').length}개 더 보기`;
+      });
+    });
+
+    // Remove bookmark buttons
+    grid.querySelectorAll('.remove-bookmark-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const id = btn.dataset.id;
+        let bk = getBookmarks();
+        const idx = bk.indexOf(id);
+        if (idx >= 0) {
+          bk.splice(idx, 1);
+          localStorage.setItem('bookmarks', JSON.stringify(bk));
+          showToast('북마크에서 제거되었습니다');
+          // Animate out the card
+          const card = btn.closest('.item-card');
+          if (card) {
+            card.style.transition = 'opacity 0.3s, transform 0.3s';
+            card.style.opacity = '0';
+            card.style.transform = 'scale(0.95)';
+            setTimeout(() => render(), 300);
+          }
+        }
+      });
+    });
+
+    // Share buttons
+    grid.querySelectorAll('.share-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const title = btn.dataset.title;
+        const url = btn.dataset.url;
+        const org = btn.dataset.org;
+        const text = `${title} (${org})`;
+        if (navigator.share) {
+          navigator.share({ title: text, url }).catch(() => {});
+        } else {
+          navigator.clipboard.writeText(`${text}\n${url}`).then(() => showToast('클립보드에 복사되었습니다'));
+        }
+      });
+    });
+  }
+
+  // Clear all bookmarks
+  document.getElementById('clear-all-btn')?.addEventListener('click', () => {
+    if (confirm('모든 북마크를 삭제하시겠습니까?')) {
+      localStorage.setItem('bookmarks', '[]');
+      showToast('모든 북마크가 삭제되었습니다');
+      render();
+    }
+  });
+
+  function showToast(msg) {
+    const existing = document.querySelector('.toast');
+    if (existing) existing.remove();
+    const t = document.createElement('div');
+    t.className = 'toast';
+    t.textContent = msg;
+    document.body.appendChild(t);
+    setTimeout(() => t.remove(), 3000);
+  }
+
+  // Initial render
+  render();
+</script>

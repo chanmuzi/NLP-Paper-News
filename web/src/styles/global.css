@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-anthro-bg text-gray-800;
+    font-weight: 430;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  .dark body,
+  body.dark {
+    background-color: #1A1915;
+    color: #E8E6E0;
+  }
+
+  :root {
+    --claude-500: #D97757;
+    --claude-600: #C4623F;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-sand-300 dark:bg-sand-700 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-sand-400 dark:bg-sand-600;
+  }
+}
+
+@layer components {
+  mark.search-highlight {
+    background-color: #FBBF24;
+    color: #1a1a1a;
+    border-radius: 2px;
+    padding: 0 2px;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .dark mark.search-highlight {
+    background-color: #D97757;
+    color: #fff;
+  }
+
+  button:active:not(:disabled) {
+    transform: scale(0.98);
+  }
+
+  .toast {
+    @apply fixed bottom-6 left-1/2 -translate-x-1/2 px-5 py-3 rounded-xl text-sm font-medium z-[100];
+    background: #302E28;
+    color: #fff;
+    box-shadow: 0 10px 25px -5px rgba(0,0,0,0.2);
+    animation: toastIn 0.3s ease-out, toastOut 0.3s ease-in 2.7s;
+  }
+
+  .dark .toast {
+    background: #F5F4F0;
+    color: #302E28;
+  }
+
+  @keyframes toastIn {
+    from { opacity: 0; transform: translate(-50%, 16px); }
+    to { opacity: 1; transform: translate(-50%, 0); }
+  }
+
+  @keyframes toastOut {
+    from { opacity: 1; transform: translate(-50%, 0); }
+    to { opacity: 0; transform: translate(-50%, 16px); }
+  }
+}
+
+@layer utilities {
+  .text-gradient-claude {
+    @apply bg-gradient-to-r from-claude-500 to-claude-700 bg-clip-text text-transparent;
+  }
+}
+
+::selection {
+  background: #FFD9B8;
+}
+
+.dark ::selection {
+  background: #7D3A24;
+}
