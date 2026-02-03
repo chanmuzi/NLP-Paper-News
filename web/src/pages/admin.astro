@@ -47,7 +47,7 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
       </div>
       <div class="mt-3">
         <label class="block text-xs text-gray-500 mb-1">Repository (owner/repo)</label>
-        <input type="text" id="github-repo" value="chanmuzi/temp-news-moltbot"
+        <input type="text" id="github-repo" value="chanmuzi/NLP-Paper-News"
           class="w-full px-3 py-2 rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-anthro-darkMid text-sm text-gray-900 dark:text-gray-100 outline-none focus:border-claude-500 transition-all font-mono" />
       </div>
     </div>
@@ -571,7 +571,7 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
   // ─── GitHub API ────────────────────────
   async function submitToGitHub(items: any[]) {
     const token = localStorage.getItem('github_token');
-    const repo = (document.getElementById('github-repo') as HTMLInputElement)?.value || 'chanmuzi/temp-news-moltbot';
+    const repo = (document.getElementById('github-repo') as HTMLInputElement)?.value || 'chanmuzi/NLP-Paper-News';
     const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement;
 
     if (!token) {

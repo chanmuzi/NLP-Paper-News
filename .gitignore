@@ -1,33 +1,13 @@
-# GitHub API 토큰 설정 파일 (보안상 공개하지 않음)
-docs/config.js
+# Dependencies
+node_modules/
 
-# Python
-__pycache__/
-*.py[cod]
-*$py.class
-*.so
-.Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
-MANIFEST
+# Build output
+web/dist/
+web/.astro/
 
-# Virtual environments
-venv/
-env/
-ENV/
+# Environment
+.env
+.env.*
 
 # IDE
 .vscode/
@@ -38,3 +18,7 @@ ENV/
 # OS
 .DS_Store
 Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*

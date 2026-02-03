@@ -3,7 +3,7 @@ import tailwind from '@astrojs/tailwind';
 
 export default defineConfig({
   site: 'https://chanmuzi.github.io',
-  base: '/temp-news-moltbot',
+  base: '/NLP-Paper-News',
   integrations: [tailwind()],
   output: 'static',
   trailingSlash: 'always',
