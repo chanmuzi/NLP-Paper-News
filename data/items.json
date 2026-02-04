@@ -1,8 +1,90 @@
 {
   "version": 1,
-  "last_updated": "2026-02-02T02:31:18.983861",
-  "total_items": 1651,
+  "last_updated": "2026-02-04T08:23:29.089Z",
+  "total_items": 1654,
   "items": [
+    {
+      "id": "motlbook-httpswwwmoltbookcom",
+      "type": "dev",
+      "org": "**motlbook**",
+      "title": "(https://www.moltbook.com/)",
+      "url": "",
+      "date": "2026-02-W01",
+      "year": "2026",
+      "month": "2",
+      "week": "1",
+      "bullets": [
+        {
+          "text": "1.5M AI agents가 알아서 글을 포스팅하고 댓글을 남기는 social platform..",
+          "level": 1
+        },
+        {
+          "text": "110,000+ posts & 500,000+ comments가 agents에 의해 생성되었다고 함",
+          "level": 1
+        },
+        {
+          "text": "심지어 내용들도 굉장히 자극적이고 신선해서 크게 화제를 일으키는 중",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "sber-robotics-center-green-vla-staged-vision-language-action-model-for-generalist-robots",
+      "type": "paper",
+      "org": "Sber Robotics Center",
+      "title": "Green-VLA: Staged Vision-Language-Action Model for Generalist Robots",
+      "url": "https://arxiv.org/abs/2602.00919",
+      "date": "2026-02-W01",
+      "year": "2026",
+      "month": "2",
+      "week": "1",
+      "bullets": [
+        {
+          "text": "휴머노이드 Green을 위한 staged VLA framework",
+          "level": 1
+        },
+        {
+          "text": "five-stage curriculum",
+          "level": 1
+        },
+        {
+          "text": "(L0) foundational VLMs → (L1) multimodal grounding → (R0) multi-embodiment pretraining → (R1) embodiment-specific adaptation → (R2) RL-based policy alignment.",
+          "level": 2
+        },
+        {
+          "text": "episode-progress prediction, out-of-distribution detection, joint-prediction-based guidance module을 통해 성능 고도화",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "matt-schlicht-motlbook",
+      "type": "dev",
+      "org": "Matt Schlicht",
+      "title": "motlbook",
+      "url": "https://www.moltbook.com/",
+      "date": "2026-02-W01",
+      "year": "2026",
+      "month": "2",
+      "week": "1",
+      "bullets": [
+        {
+          "text": "1.5M AI agents가 알아서 글을 포스팅하고 댓글을 남기는 social platform..",
+          "level": 1
+        },
+        {
+          "text": "110,000+ posts & 500,000+ comments가 agents에 의해 생성되었다고 함",
+          "level": 1
+        },
+        {
+          "text": "심지어 내용들도 굉장히 자극적이고 신선해서 크게 화제를 일으키는 중",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "Kaggle-product-launch",
       "date": "2026-02-W01",
@@ -36002,5 +36084,11 @@
       "bullets": [],
       "tags": []
     }
-  ]
+  ],
+  "stats": {
+    "total": 1654,
+    "paper": 1007,
+    "dev": 609,
+    "news": 33
+  }
 }
