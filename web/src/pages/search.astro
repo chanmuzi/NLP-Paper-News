@@ -115,6 +115,7 @@ const stats = itemsData.stats || {};
   const yearSelect = document.getElementById('year-select');
   const orgSelect = document.getElementById('org-select');
   const bookmarkFilter = document.getElementById('bookmark-filter');
+  const hasToken = !!localStorage.getItem('github_token');
 
   function getBookmarks() {
     try { return JSON.parse(localStorage.getItem('bookmarks') || '[]'); }
@@ -211,6 +212,9 @@ const stats = itemsData.stats || {};
             <button class="share-btn p-1.5 rounded-md text-gray-300 hover:text-claude-500 dark:text-gray-600 dark:hover:text-claude-400 transition-colors" data-title="${escapeHtml(item.title)}" data-url="${item.url}" data-org="${escapeHtml(item.org)}" title="공유">
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"/></svg>
             </button>
+            ${hasToken ? `<button class="delete-btn p-1.5 rounded-md text-gray-300 hover:text-red-500 dark:text-gray-600 dark:hover:text-red-400 transition-colors" data-id="${item.id}" data-title="${escapeHtml(item.title)}" title="삭제">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
+            </button>` : ''}
           </div>
         </div>
       </div>
@@ -306,6 +310,111 @@ const stats = itemsData.stats || {};
         }
       });
     });
+
+    // Delete buttons
+    grid.querySelectorAll('.delete-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const id = btn.dataset.id;
+        const title = btn.dataset.title;
+        if (confirm(`"${title}" 항목을 삭제하시겠습니까?`)) {
+          deleteFromGitHub(id, title);
+        }
+      });
+    });
+  }
+
+  async function deleteFromGitHub(itemId, itemTitle) {
+    const token = localStorage.getItem('github_token');
+    const repo = localStorage.getItem('github_repo') || 'chanmuzi/NLP-Paper-News';
+    if (!token) { showToast('GitHub 토큰이 설정되지 않았습니다'); return; }
+
+    showToast('삭제 처리 중...');
+
+    try {
+      const headers = { 'Authorization': `token ${token}`, 'Accept': 'application/vnd.github.v3+json' };
+      const postHeaders = { ...headers, 'Content-Type': 'application/json' };
+
+      // Fetch current items.json
+      const getRes = await fetch(`https://api.github.com/repos/${repo}/contents/data/items.json`, { headers });
+      if (!getRes.ok) throw new Error(`GitHub API 오류 (${getRes.status})`);
+      const fileData = await getRes.json();
+
+      // Decode content (handle large files via Blob API)
+      let base64Content;
+      if (fileData.content) {
+        base64Content = fileData.content.replace(/\n/g, '');
+      } else {
+        const blobRes = await fetch(`https://api.github.com/repos/${repo}/git/blobs/${fileData.sha}`, { headers });
+        if (!blobRes.ok) throw new Error('Blob API 오류');
+        base64Content = (await blobRes.json()).content.replace(/\n/g, '');
+      }
+      const bin = atob(base64Content);
+      const bytes = new Uint8Array(bin.length);
+      for (let i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
+      const currentContent = JSON.parse(new TextDecoder('utf-8').decode(bytes));
+
+      // Remove item
+      const beforeCount = currentContent.items.length;
+      currentContent.items = currentContent.items.filter(i => i.id !== itemId);
+      if (currentContent.items.length === beforeCount) { showToast('해당 항목을 찾을 수 없습니다'); return; }
+
+      currentContent.total_items = currentContent.items.length;
+      currentContent.last_updated = new Date().toISOString();
+      currentContent.stats = {
+        total: currentContent.items.length,
+        paper: currentContent.items.filter(i => i.type === 'paper').length,
+        dev: currentContent.items.filter(i => i.type === 'dev').length,
+        news: currentContent.items.filter(i => i.type === 'news').length,
+      };
+
+      // Encode
+      const uint8 = new TextEncoder().encode(JSON.stringify(currentContent, null, 2));
+      let binary = '';
+      for (let i = 0; i < uint8.length; i++) binary += String.fromCharCode(uint8[i]);
+      const newBase64 = btoa(binary);
+
+      // Git Data API: blob → ref → commit → tree → new commit → update ref
+      const blobRes = await fetch(`https://api.github.com/repos/${repo}/git/blobs`, {
+        method: 'POST', headers: postHeaders,
+        body: JSON.stringify({ content: newBase64, encoding: 'base64' }),
+      });
+      if (!blobRes.ok) throw new Error('Blob 생성 실패');
+      const newBlob = await blobRes.json();
+
+      const refRes = await fetch(`https://api.github.com/repos/${repo}/git/ref/heads/main`, { headers });
+      if (!refRes.ok) throw new Error('브랜치 참조 실패');
+      const latestSha = (await refRes.json()).object.sha;
+
+      const commitRes = await fetch(`https://api.github.com/repos/${repo}/git/commits/${latestSha}`, { headers });
+      if (!commitRes.ok) throw new Error('커밋 정보 실패');
+      const treeSha = (await commitRes.json()).tree.sha;
+
+      const treeRes = await fetch(`https://api.github.com/repos/${repo}/git/trees`, {
+        method: 'POST', headers: postHeaders,
+        body: JSON.stringify({ base_tree: treeSha, tree: [{ path: 'data/items.json', mode: '100644', type: 'blob', sha: newBlob.sha }] }),
+      });
+      if (!treeRes.ok) throw new Error('트리 생성 실패');
+
+      const newCommitRes = await fetch(`https://api.github.com/repos/${repo}/git/commits`, {
+        method: 'POST', headers: postHeaders,
+        body: JSON.stringify({ message: `Delete item: ${itemTitle}`, tree: (await treeRes.json()).sha, parents: [latestSha] }),
+      });
+      if (!newCommitRes.ok) throw new Error('커밋 생성 실패');
+
+      const updateRes = await fetch(`https://api.github.com/repos/${repo}/git/refs/heads/main`, {
+        method: 'PATCH', headers: postHeaders,
+        body: JSON.stringify({ sha: (await newCommitRes.json()).sha }),
+      });
+      if (!updateRes.ok) throw new Error('브랜치 업데이트 실패');
+
+      // Remove from local array and re-render
+      const idx = items.findIndex(i => i.id === itemId);
+      if (idx >= 0) items.splice(idx, 1);
+      render();
+      showToast(`"${itemTitle}" 항목이 삭제되었습니다`);
+    } catch (err) {
+      showToast(`삭제 실패: ${err.message}`);
+    }
   }
 
   function showToast(msg) {
