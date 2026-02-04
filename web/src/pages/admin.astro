@@ -472,23 +472,9 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
     }
 
     if (result.items.length > 0) {
-      // Deduplicate: skip items that already exist in preview
-      const existingIds = new Set(parsedItems.map(i => i.id));
-      const newItems = result.items.filter(i => !existingIds.has(i.id));
-      const duplicateCount = result.items.length - newItems.length;
-
-      if (newItems.length > 0) {
-        parsedItems = [...parsedItems, ...newItems];
-        renderPreview();
-      }
-
-      if (duplicateCount > 0 && newItems.length > 0) {
-        showToast(`${newItems.length}개 추가, ${duplicateCount}개 중복 건너뜀`);
-      } else if (duplicateCount > 0 && newItems.length === 0) {
-        showToast('이미 추가된 항목입니다 (중복)');
-      } else {
-        showToast(`${newItems.length}개 항목이 파싱되었습니다`);
-      }
+      parsedItems = result.items;
+      renderPreview();
+      showToast(`${result.items.length}개 항목이 파싱되었습니다`);
     }
   });
 
