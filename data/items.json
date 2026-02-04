@@ -1,34 +1,8 @@
 {
   "version": 1,
-  "last_updated": "2026-02-04T08:23:29.089Z",
-  "total_items": 1654,
+  "last_updated": "2026-02-04T16:27:02.015Z",
+  "total_items": 1653,
   "items": [
-    {
-      "id": "motlbook-httpswwwmoltbookcom",
-      "type": "dev",
-      "org": "**motlbook**",
-      "title": "(https://www.moltbook.com/)",
-      "url": "",
-      "date": "2026-02-W01",
-      "year": "2026",
-      "month": "2",
-      "week": "1",
-      "bullets": [
-        {
-          "text": "1.5M AI agents가 알아서 글을 포스팅하고 댓글을 남기는 social platform..",
-          "level": 1
-        },
-        {
-          "text": "110,000+ posts & 500,000+ comments가 agents에 의해 생성되었다고 함",
-          "level": 1
-        },
-        {
-          "text": "심지어 내용들도 굉장히 자극적이고 신선해서 크게 화제를 일으키는 중",
-          "level": 1
-        }
-      ],
-      "tags": []
-    },
     {
       "id": "sber-robotics-center-green-vla-staged-vision-language-action-model-for-generalist-robots",
       "type": "paper",
@@ -36086,9 +36060,9 @@
     }
   ],
   "stats": {
-    "total": 1654,
+    "total": 1653,
     "paper": 1007,
-    "dev": 609,
+    "dev": 608,
     "news": 33
   }
 }
