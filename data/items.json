@@ -1,8 +1,68 @@
 {
   "version": 1,
-  "last_updated": "2026-02-04T16:27:02.015Z",
-  "total_items": 1653,
+  "last_updated": "2026-02-05T05:36:35.051Z",
+  "total_items": 1655,
   "items": [
+    {
+      "id": "google-peking-paperbanana-automating-academic-illustration-for-ai-scientists",
+      "type": "paper",
+      "org": "Google, Peking",
+      "title": "PaperBanana: Automating Academic Illustration for AI Scientists",
+      "url": "https://arxiv.org/abs/2601.23265",
+      "date": "2026-02-W01",
+      "year": "2026",
+      "month": "2",
+      "week": "1",
+      "bullets": [
+        {
+          "text": "LLM 기반의 AI scientist를 이용하더라도 publication ready illustration을 만드는 것이 큰 bottleneck이 됨",
+          "level": 1
+        },
+        {
+          "text": "self-critique를 통해 specialized agents를 orchestrate",
+          "level": 1
+        },
+        {
+          "text": "retrieve references, plan content & style, redner images, iteratively refine",
+          "level": 2
+        },
+        {
+          "text": "PaperBananaBench: NeurIPS 2025 논문 대상의 292개 methodology diagrams 테스트 케이스로 구성",
+          "level": 1
+        },
+        {
+          "text": "논문 내 예시들 퀄리티 굉장히 좋아보임",
+          "level": 2
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "zai-glm-ocr",
+      "type": "dev",
+      "org": "Z.ai",
+      "title": "GLM-OCR",
+      "url": "https://huggingface.co/zai-org/GLM-OCR",
+      "date": "2026-02-W01",
+      "year": "2026",
+      "month": "2",
+      "week": "1",
+      "bullets": [
+        {
+          "text": "GLM-V encoder-decoder 아키텍쳐를 따르는 0.8B 사이즈의 multimodal OCR model",
+          "level": 1
+        },
+        {
+          "text": "Multi-Token Prediction loss (MTP loss) & stable full-task RL 적용",
+          "level": 1
+        },
+        {
+          "text": "two-stage pipeline: layout analysis & parallel recognition (PP-DocLayout-V3 기반)",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "sber-robotics-center-green-vla-staged-vision-language-action-model-for-generalist-robots",
       "type": "paper",
@@ -36060,9 +36120,9 @@
     }
   ],
   "stats": {
-    "total": 1653,
-    "paper": 1007,
-    "dev": 608,
+    "total": 1655,
+    "paper": 1008,
+    "dev": 609,
     "news": 33
   }
 }
