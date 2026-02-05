@@ -370,40 +370,54 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
           rest = line.replace(/^-\s+/, '').trim();
         }
 
-        // Parse [Org]
-        const orgMatch = rest.match(/^\[([^\]]+)\]\s*/);
-        if (!orgMatch) {
-          errors.push(`${lineNum}행: 기관명 [Org] 형식을 찾을 수 없습니다`);
+        // Parse first bracket [...]
+        const firstBracket = rest.match(/^\[([^\]]+)\]/);
+        if (!firstBracket) {
+          errors.push(`${lineNum}행: [기관명] 또는 [제목] 형식을 찾을 수 없습니다`);
           currentItem = null;
           continue;
         }
 
-        const org = orgMatch[1];
-        const afterOrg = rest.slice(orgMatch[0].length);
+        const firstContent = firstBracket[1];
+        const afterFirst = rest.slice(firstBracket[0].length);
 
+        let org = '';
         let title = '';
         let url = '';
 
-        if (afterOrg.startsWith('[')) {
-          // [Title](URL) or [**Title**](URL)
+        if (afterFirst.match(/^\s*\[/)) {
+          // [Org] [Title](URL) or [Org] [Title]
+          org = firstContent;
+          const titlePart = afterFirst.trimStart();
           let bracketCount = 0;
           let titleEnd = -1;
-          for (let i = 0; i < afterOrg.length; i++) {
-            if (afterOrg[i] === '[') bracketCount++;
-            else if (afterOrg[i] === ']') {
+          for (let i = 0; i < titlePart.length; i++) {
+            if (titlePart[i] === '[') bracketCount++;
+            else if (titlePart[i] === ']') {
               bracketCount--;
               if (bracketCount === 0) { titleEnd = i; break; }
             }
           }
           if (titleEnd > 0) {
-            title = afterOrg.slice(1, titleEnd).replace(/\*\*/g, '').trim();
-            const afterTitle = afterOrg.slice(titleEnd + 1).trim();
+            title = titlePart.slice(1, titleEnd).replace(/\*\*/g, '').trim();
+            const afterTitle = titlePart.slice(titleEnd + 1).trim();
             const urlMatch = afterTitle.match(/^\(([^)]+)\)/);
             if (urlMatch) url = urlMatch[1];
           }
+        } else if (afterFirst.match(/^\(/)) {
+          // [Title](URL) — org 생략, 마크다운 링크
+          title = firstContent.replace(/\*\*/g, '').trim();
+          org = title;
+          const urlMatch = afterFirst.match(/^\(([^)]+)\)/);
+          if (urlMatch) url = urlMatch[1];
+        } else if (afterFirst.trim()) {
+          // [Org] plain text title
+          org = firstContent;
+          title = afterFirst.replace(/\*\*/g, '').trim();
         } else {
-          // Fallback: treat rest as title
-          title = afterOrg.replace(/\*\*/g, '').trim();
+          // [Title] only
+          title = firstContent.replace(/\*\*/g, '').trim();
+          org = title;
         }
 
         if (!title) {
@@ -449,7 +463,7 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
     if (currentItem) items.push(currentItem);
 
     if (items.length === 0 && errors.length === 0) {
-      errors.push('파싱된 항목이 없습니다. "- [기관명] [제목](URL)" 형식으로 입력하세요.');
+      errors.push('파싱된 항목이 없습니다. "- [기관명] [제목](URL)" 또는 "- [제목](URL)" 형식으로 입력하세요.');
     }
 
     return { items, errors };
