@@ -1,8 +1,98 @@
 {
   "version": 1,
-  "last_updated": "2026-02-05T05:36:35.051Z",
-  "total_items": 1655,
+  "last_updated": "2026-02-06T04:25:46.262Z",
+  "total_items": 1658,
   "items": [
+    {
+      "id": "anthropic-introducing-claude-opus-46",
+      "type": "dev",
+      "org": "Anthropic",
+      "title": "Introducing Claude Opus 4.6",
+      "url": "https://www.anthropic.com/news/claude-opus-4-6",
+      "date": "2026-02-W01",
+      "year": "2026",
+      "month": "2",
+      "week": "1",
+      "bullets": [
+        {
+          "text": "더욱 향상된 코딩 능력을 강점으로 내세워 신규 모델 공개",
+          "level": 1
+        },
+        {
+          "text": "Adaptive Thinking, 1M context (beta), context compaction (자동 요약)",
+          "level": 1
+        },
+        {
+          "text": "GDPval-AA에서 전작 Opus 4.5 대비 200점이나 높은 elo score를 기록한 점이 눈에 띔",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "openai-introducing-gpt-53-codex",
+      "type": "dev",
+      "org": "OpenAI",
+      "title": "Introducing GPT-5.3-Codex",
+      "url": "https://openai.com/index/introducing-gpt-5-3-codex/",
+      "date": "2026-02-W01",
+      "year": "2026",
+      "month": "2",
+      "week": "1",
+      "bullets": [
+        {
+          "text": "GPT-5.2-Codex와 GPT-5.2 모델을 합친 버전의 모델",
+          "level": 1
+        },
+        {
+          "text": "OSWorld-Verified 벤치마크에서 높은 점수를 기록한 것이 눈에 띔",
+          "level": 1
+        },
+        {
+          "text": "초기 버전의 GPT‑5.3‑Codex를 이용해서 GPT‑5.3‑Codex 본인의 트레이닝을 모니터링/디버깅하고, 배포를 관리하고, 평가 로그를 분석",
+          "level": 1
+        },
+        {
+          "text": "Cursor 개발 포스팅에 영감을 얻었나 싶은 내용..",
+          "level": 2
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "arizona-pennsylvania-decomposed-prompting-does-not-fix-knowledge-gaps-but-helps-models-say-i-dont-kn",
+      "type": "paper",
+      "org": "Arizona, Pennsylvania",
+      "title": "Decomposed Prompting Does Not Fix Knowledge Gaps, But Helps Models Say \"I Don't Know\"",
+      "url": "https://arxiv.org/abs/2602.04853",
+      "date": "2026-02-W01",
+      "year": "2026",
+      "month": "2",
+      "week": "1",
+      "bullets": [
+        {
+          "text": "three task-equivalent prompting regimes: Direct, Assistive, and Incremental",
+          "level": 1
+        },
+        {
+          "text": "multi-hop QA 벤치마크 대상으로 테스트",
+          "level": 2
+        },
+        {
+          "text": "regimes 간 일치 정도를 internal uncertainty signal로 해석",
+          "level": 1
+        },
+        {
+          "text": "disagreement-based abstention이 다른 baseline 대비 좋은 결과를 보인다고 설명",
+          "level": 1
+        },
+        {
+          "text": "decomposed prompting이 단순히 성능(정확도)을 높이는 것 외에도 신뢰성을 높이는 데 쓰일 수 있음을 보여준 연구",
+          "level": 2
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "google-peking-paperbanana-automating-academic-illustration-for-ai-scientists",
       "type": "paper",
@@ -36120,9 +36210,9 @@
     }
   ],
   "stats": {
-    "total": 1655,
-    "paper": 1008,
-    "dev": 609,
+    "total": 1658,
+    "paper": 1009,
+    "dev": 611,
     "news": 33
   }
 }
