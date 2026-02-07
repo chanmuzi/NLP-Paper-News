@@ -1,8 +1,60 @@
 {
   "version": 1,
-  "last_updated": "2026-02-07T09:37:17.784Z",
-  "total_items": 1660,
+  "last_updated": "2026-02-07T16:17:50.593Z",
+  "total_items": 1662,
   "items": [
+    {
+      "id": "perplexity-introducing-model-council",
+      "type": "dev",
+      "org": "Perplexity",
+      "title": "Introducing Model Council",
+      "url": "https://www.perplexity.ai/hub/blog/introducing-model-council",
+      "date": "2026-02-W01",
+      "year": "2026",
+      "month": "2",
+      "week": "1",
+      "bullets": [
+        {
+          "text": "모델마다 잘 처리할 수 있는 태스크가 다르므로 한 개 쿼리를 여러 모델로 처리한 뒤 outputs를 combine 하는 방식",
+          "level": 1
+        },
+        {
+          "text": "3개의 frontier models를 병렬적으로 run → synthesizer model이 outputs를 비교하여 최종 결과 산출",
+          "level": 1
+        },
+        {
+          "text": "Perplexity Max 구독자만 이용 가능",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "meta-icl-cambridge-scaling-small-agents-through-strategy-auctions",
+      "type": "paper",
+      "org": "Meta, ICL, Cambridge",
+      "title": "Scaling Small Agents Through Strategy Auctions",
+      "url": "https://arxiv.org/abs/2602.02751",
+      "date": "2026-02-W01",
+      "year": "2026",
+      "month": "2",
+      "week": "1",
+      "bullets": [
+        {
+          "text": "small agents가 deep research, coding tasks에서 큰 agents와 보이는 gap을 최소화하기 위한 연구",
+          "level": 1
+        },
+        {
+          "text": "Strategy Auctions for Workload Efficiency (SALE): agents는 짧은 strategic plans를 입착하는 프리랜서 마켓 스타일의 agent 프레임워크",
+          "level": 1
+        },
+        {
+          "text": "작은 모델들을 적합한 태스크에 배치하고 test-time self-improve 할 수 있도록 세팅해주면 “scaled up” 가능하다고 설명",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "perplexity-evaluating-deep-research-performance-in-the-wild-with-the-draco-benchmark",
       "type": "dev",
@@ -36262,9 +36314,9 @@
     }
   ],
   "stats": {
-    "total": 1660,
-    "paper": 1010,
-    "dev": 612,
+    "total": 1662,
+    "paper": 1011,
+    "dev": 613,
     "news": 33
   }
 }
