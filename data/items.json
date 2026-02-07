@@ -1,8 +1,60 @@
 {
   "version": 1,
-  "last_updated": "2026-02-06T04:25:46.262Z",
-  "total_items": 1658,
+  "last_updated": "2026-02-07T09:37:17.784Z",
+  "total_items": 1660,
   "items": [
+    {
+      "id": "perplexity-evaluating-deep-research-performance-in-the-wild-with-the-draco-benchmark",
+      "type": "dev",
+      "org": "Perplexity",
+      "title": "Evaluating Deep Research Performance in the Wild with the DRACO Benchmark",
+      "url": "https://research.perplexity.ai/articles/evaluating-deep-research-performance-in-the-wild-with-the-draco-benchmark",
+      "date": "2026-02-W01",
+      "year": "2026",
+      "month": "2",
+      "week": "1",
+      "bullets": [
+        {
+          "text": "Deep Research Accuracy, Completness, Objectivity를 평가할 수 있는 DRACO 벤치마크 오픈소스로 공개",
+          "level": 1
+        },
+        {
+          "text": "포스팅에 따르면 Perplexity의 Deep Research가 SoTA로 기록되어 있음",
+          "level": 1
+        },
+        {
+          "text": "데이터 제작 시 철저한 rubric 개발에 힘을 썼는데, 이는 Rubric Creation → Iterative review and revision → Saturation Test → Final Review 프로세스를 거친다고 함",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "baidu-ernie-50-technical-report",
+      "type": "paper",
+      "org": "Baidu",
+      "title": "ERNIE 5.0 Technical Report",
+      "url": "https://arxiv.org/abs/2602.04705",
+      "date": "2026-02-W01",
+      "year": "2026",
+      "month": "2",
+      "week": "1",
+      "bullets": [
+        {
+          "text": "text, image, vidoe, audio를 이해할 수 있는 autoregressive foundation model",
+          "level": 1
+        },
+        {
+          "text": "modality-agnositc expert routing을 탑재한 ultra-sparse MoE 아키텍쳐를 따르며 unified next-group-of-tokens prediction으로 학습",
+          "level": 1
+        },
+        {
+          "text": "한 번의 사전학습만으로도 서로 다른 depth의 sub-models를 학습하여 메모리 시간 제약 등을 고려한 유연한 trade-off 가능",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "anthropic-introducing-claude-opus-46",
       "type": "dev",
@@ -36210,9 +36262,9 @@
     }
   ],
   "stats": {
-    "total": 1658,
-    "paper": 1009,
-    "dev": 611,
+    "total": 1660,
+    "paper": 1010,
+    "dev": 612,
     "news": 33
   }
 }
