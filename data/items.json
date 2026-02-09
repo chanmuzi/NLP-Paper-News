@@ -1,8 +1,86 @@
 {
   "version": 1,
-  "last_updated": "2026-02-07T16:17:50.593Z",
-  "total_items": 1662,
+  "last_updated": "2026-02-09T08:13:18.467Z",
+  "total_items": 1665,
   "items": [
+    {
+      "id": "kings-college-beyond-rag-for-agent-memory-retrieval-by-decoupling-and-aggregation",
+      "type": "paper",
+      "org": "King’s College",
+      "title": "Beyond RAG for Agent Memory: Retrieval by Decoupling and Aggregation",
+      "url": "https://arxiv.org/abs/2602.02007",
+      "date": "2026-02-W01",
+      "year": "2026",
+      "month": "2",
+      "week": "1",
+      "bullets": [
+        {
+          "text": "RAG는 방대한 이질적 문서 집합에서 서로 다른 문서들을 가져오는 것을 전제로 하지만, 에이전트 메모리는 서로 강하게 연관되고 중복이 많은 대화 스트림이라는 차별성 존재",
+          "level": 1
+        },
+        {
+          "text": "→ top-k 유사도 기반 검색이 잘 working하지 않는 상황임",
+          "level": 2
+        },
+        {
+          "text": "memory stream은 latent components로 분해하고 다시 조직하는 구조적 과정이어야 한다고 주장",
+          "level": 1
+        },
+        {
+          "text": "xMemory: 메모리를 의미 단위로 decoupling하고 이를 다시 상위 수준의 구조로 aggregation",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "meta-learning-to-reason-in-13-parameters",
+      "type": "paper",
+      "org": "Meta",
+      "title": "Learning to Reason in 13 Parameters",
+      "url": "https://arxiv.org/abs/2602.04118",
+      "date": "2026-02-W01",
+      "year": "2026",
+      "month": "2",
+      "week": "1",
+      "bullets": [
+        {
+          "text": "TinyLora: rank가 1인 LoRA 세팅으로도 reasoning 학습",
+          "level": 1
+        },
+        {
+          "text": "Qwen 2.5 8B 모델을 13개의 bf16 파라미터로 학습해 GSM8K에서 91% 정확도를 보였다고 설명",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "google-deepmind-semi-autonomous-mathematics-discovery-with-gemini-a-case-study-on-the-erds-problems",
+      "type": "paper",
+      "org": "Google DeepMind",
+      "title": "Semi-Autonomous Mathematics Discovery with Gemini: A Case Study on the Erdős Problems",
+      "url": "https://arxiv.org/abs/2601.22401",
+      "date": "2026-02-W01",
+      "year": "2026",
+      "month": "2",
+      "week": "1",
+      "bullets": [
+        {
+          "text": "Bloom의 Erdős Problems 데이터베이스에서 ‘Open’으로 표시된 700개의 추측을 체계적으로 검토 → Gemini의 반자율적인 수학적 발견",
+          "level": 1
+        },
+        {
+          "text": "hybrid methodology: search space를 좁히기 위한 AI-driven natural language verification & correctness와 novelty를 측정하기 위한 human expert evaluation",
+          "level": 1
+        },
+        {
+          "text": "math conjectures에 AI를 활용할 수 있음과 동시에 subconscious plagiarism의 위험성 지적",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "perplexity-introducing-model-council",
       "type": "dev",
@@ -36314,8 +36392,8 @@
     }
   ],
   "stats": {
-    "total": 1662,
-    "paper": 1011,
+    "total": 1665,
+    "paper": 1014,
     "dev": 613,
     "news": 33
   }
