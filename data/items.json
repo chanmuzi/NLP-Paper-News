@@ -1,8 +1,42 @@
 {
   "version": 1,
-  "last_updated": "2026-02-09T08:13:18.467Z",
-  "total_items": 1665,
+  "last_updated": "2026-02-10T02:16:24.442Z",
+  "total_items": 1666,
   "items": [
+    {
+      "id": "huggingface-community-evals-because-were-done-trusting-black-box-leaderboards-over-the-community",
+      "type": "dev",
+      "org": "HuggingFace",
+      "title": "Community Evals: Because we're done trusting black-box leaderboards over the community",
+      "url": "https://huggingface.co/blog/community-evals",
+      "date": "2026-02-W02",
+      "year": "2026",
+      "month": "2",
+      "week": "2",
+      "bullets": [
+        {
+          "text": "benchmark 점수와 real-world performance 간의 갭, 일관성 없는 평가 결과 등을 문제점으로 지적",
+          "level": 1
+        },
+        {
+          "text": "Dataset repo에 주요 벤치마크(MMLU-Pro, GPQA, HLE 등) 등록 가능 → Hub에서 자동적으로 aggregate해서 dataset card의 leaderboard에 바로 display",
+          "level": 1
+        },
+        {
+          "text": "Model repo 내에 `.eval_results/*.yaml` 파일을 토대로 모델 카드에 표시되고 벤치마크 datasets에도 반영됨",
+          "level": 1
+        },
+        {
+          "text": "다른 유저들은 PR을 통해 새로운 평가 결과를 제출할 수 있음",
+          "level": 1
+        },
+        {
+          "text": "모델 저저가 PR 승인하기 전까지 결과는 community로 표시됨",
+          "level": 2
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "kings-college-beyond-rag-for-agent-memory-retrieval-by-decoupling-and-aggregation",
       "type": "paper",
@@ -36392,9 +36426,9 @@
     }
   ],
   "stats": {
-    "total": 1665,
+    "total": 1666,
     "paper": 1014,
-    "dev": 613,
+    "dev": 614,
     "news": 33
   }
 }
