@@ -1,8 +1,34 @@
 {
   "version": 1,
-  "last_updated": "2026-02-10T02:16:24.442Z",
-  "total_items": 1666,
+  "last_updated": "2026-02-12T05:20:35.506Z",
+  "total_items": 1667,
   "items": [
+    {
+      "id": "stanford-quantaalpha-an-evolutionary-framework-for-llm-driven-alpha-mining",
+      "type": "paper",
+      "org": "Stanford",
+      "title": "QuantaAlpha: An Evolutionary Framework for LLM-Driven Alpha Mining",
+      "url": "https://arxiv.org/abs/2602.07085",
+      "date": "2026-02-W02",
+      "year": "2026",
+      "month": "2",
+      "week": "2",
+      "bullets": [
+        {
+          "text": "alpha mining은 backtesting results & sudden market regime shift에 굉장히 민감",
+          "level": 1
+        },
+        {
+          "text": "alpha mining: 초과 수익을 예측하는 신호를 기반으로 쓸 만한 factor를 찾아내는 과정",
+          "level": 2
+        },
+        {
+          "text": "각 end-to-end mining run 과정을 trajectory로 취급하여 trajectory-level mutation & crossover operation을 통해 improve",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "huggingface-community-evals-because-were-done-trusting-black-box-leaderboards-over-the-community",
       "type": "dev",
@@ -36426,8 +36452,8 @@
     }
   ],
   "stats": {
-    "total": 1666,
-    "paper": 1014,
+    "total": 1667,
+    "paper": 1015,
     "dev": 614,
     "news": 33
   }
