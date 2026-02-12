@@ -1,8 +1,56 @@
 {
   "version": 1,
-  "last_updated": "2026-02-12T05:20:35.506Z",
-  "total_items": 1667,
+  "last_updated": "2026-02-12T05:43:03.376Z",
+  "total_items": 1669,
   "items": [
+    {
+      "id": "bostondynamics-boston-dynamics-google-deepmind-form-new-ai-partnership-to-bring-foundational-intelli",
+      "type": "dev",
+      "org": "BostonDynamics",
+      "title": "Boston Dynamics & Google DeepMind Form New AI Partnership to Bring Foundational Intelligence to Humanoid Robots",
+      "url": "https://bostondynamics.com/blog/boston-dynamics-google-deepmind-form-new-ai-partnership",
+      "date": "2026-02-W02",
+      "year": "2026",
+      "month": "2",
+      "week": "2",
+      "bullets": [
+        {
+          "text": "Atlas 휴머노이드 로봇에 Gemini Robotics 기반 AI를 적용하는 장기 파트너십을 맺음",
+          "level": 1
+        },
+        {
+          "text": "로봇이 다양한 형태와 크기와 상관 없이 주변을 인지, 추론하며 도구를 사용하며 사람과 상호작용할 수 있도록 하는 것이 목표",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "anthropic-sabotage-risk-report-claude-opus-46",
+      "type": "paper",
+      "org": "Anthropic",
+      "title": "Sabotage Risk Report: Claude Opus 4.6",
+      "url": "https://www-cdn.anthropic.com/f21d93f21602ead5cdbecb8c8e1c765759d9e232.pdf",
+      "date": "2026-02-W02",
+      "year": "2026",
+      "month": "2",
+      "week": "2",
+      "bullets": [
+        {
+          "text": "Claude Opus 4.6 모델이 자율적으로 sabotage를 일으켜 재난적 상황을 발생시킬 가능성이 있는지를 평가",
+          "level": 1
+        },
+        {
+          "text": "지금까지의 경험으로 볼 때 이런 모델이 misaligned oal을 가질 확률은 낮음. 하지만 그 위험이 완전이 0이라고 볼 수 없음",
+          "level": 1
+        },
+        {
+          "text": "Anthropic에서는 이런 것들을 탐지할 수 있는 모니터링 체계를 갖추고 있음",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "stanford-quantaalpha-an-evolutionary-framework-for-llm-driven-alpha-mining",
       "type": "paper",
@@ -36452,9 +36500,9 @@
     }
   ],
   "stats": {
-    "total": 1667,
-    "paper": 1015,
-    "dev": 614,
+    "total": 1669,
+    "paper": 1016,
+    "dev": 615,
     "news": 33
   }
 }
