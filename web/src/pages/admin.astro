@@ -88,10 +88,10 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
           <button data-type="paper" class="type-btn active flex-1 py-2.5 rounded-lg border-2 border-claude-400 bg-claude-50 dark:bg-claude-950/20 text-sm font-semibold text-claude-700 dark:text-claude-300 transition-all">
             📜 Paper
           </button>
-          <button data-type="dev" class="type-btn flex-1 py-2.5 rounded-lg border-2 border-gray-200 dark:border-gray-700 text-sm font-semibold text-gray-500 dark:text-gray-400 transition-all hover:border-amber-300">
+          <button data-type="dev" class="type-btn flex-1 py-2.5 rounded-lg border-2 border-gray-200 dark:border-gray-700 text-sm font-semibold text-gray-500 dark:text-gray-400 transition-all hover:border-anthro-green-500">
             🧑🏻‍💻 Dev
           </button>
-          <button data-type="news" class="type-btn flex-1 py-2.5 rounded-lg border-2 border-gray-200 dark:border-gray-700 text-sm font-semibold text-gray-500 dark:text-gray-400 transition-all hover:border-stone-400">
+          <button data-type="news" class="type-btn flex-1 py-2.5 rounded-lg border-2 border-gray-200 dark:border-gray-700 text-sm font-semibold text-gray-500 dark:text-gray-400 transition-all hover:border-anthro-blue-500">
             🗞️ News
           </button>
         </div>
@@ -240,8 +240,8 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
   // ─── Type colors ───────────────────────
   const TYPE_COLORS: Record<string, { border: string; bg: string; text: string }> = {
     paper: { border: 'border-claude-400', bg: 'bg-claude-50 dark:bg-claude-950/20', text: 'text-claude-700 dark:text-claude-300' },
-    dev: { border: 'border-amber-400', bg: 'bg-amber-50 dark:bg-amber-950/20', text: 'text-amber-700 dark:text-amber-300' },
-    news: { border: 'border-stone-400', bg: 'bg-stone-100 dark:bg-stone-900/20', text: 'text-stone-600 dark:text-stone-300' },
+    dev: { border: 'border-anthro-green-500', bg: 'bg-anthro-green-200/30 dark:bg-anthro-green-800/20', text: 'text-anthro-green-700 dark:text-anthro-green-300' },
+    news: { border: 'border-anthro-blue-500', bg: 'bg-anthro-blue-200/30 dark:bg-anthro-blue-800/20', text: 'text-anthro-blue-700 dark:text-anthro-blue-300' },
   };
 
   const TYPE_ICONS: Record<string, string> = { paper: '📜', dev: '🧑🏻‍💻', news: '🗞️' };
@@ -286,8 +286,8 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
 
       document.querySelectorAll('.type-btn').forEach(b => {
         b.classList.remove('border-claude-400', 'bg-claude-50', 'dark:bg-claude-950/20', 'text-claude-700', 'dark:text-claude-300');
-        b.classList.remove('border-amber-400', 'bg-amber-50', 'dark:bg-amber-950/20', 'text-amber-700', 'dark:text-amber-300');
-        b.classList.remove('border-stone-400', 'bg-stone-100', 'dark:bg-stone-900/20', 'text-stone-600', 'dark:text-stone-300');
+        b.classList.remove('border-anthro-green-500', 'bg-anthro-green-200/30', 'dark:bg-anthro-green-800/20', 'text-anthro-green-700', 'dark:text-anthro-green-300');
+        b.classList.remove('border-anthro-blue-500', 'bg-anthro-blue-200/30', 'dark:bg-anthro-blue-800/20', 'text-anthro-blue-700', 'dark:text-anthro-blue-300');
         b.classList.add('border-gray-200', 'dark:border-gray-700', 'text-gray-500', 'dark:text-gray-400');
         b.classList.remove('active');
       });

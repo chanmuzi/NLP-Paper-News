@@ -52,6 +52,24 @@ export default {
           darkSurface: '#25241F',
           darkMid: '#2F2E28',
         },
+        // Anthropic official accent: Sage green (for Dev)
+        'anthro-green': {
+          200: '#cdd7c2',
+          300: '#adbf9a',
+          500: '#788c5d',
+          600: '#5f7148',
+          700: '#4a5838',
+          800: '#3c472e',
+        },
+        // Anthropic official accent: Muted blue (for News)
+        'anthro-blue': {
+          200: '#c5dced',
+          300: '#9dc3df',
+          500: '#6a9bcc',
+          600: '#5480ad',
+          700: '#46698e',
+          800: '#3c5775',
+        },
       },
       fontFamily: {
         sans: ['"Inter"', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', 'sans-serif'],
