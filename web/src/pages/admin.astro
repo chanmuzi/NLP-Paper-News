@@ -177,7 +177,11 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
 
       <!-- Parse errors -->
       <div id="parse-errors" class="hidden mt-3 p-3 rounded-lg bg-amber-50 dark:bg-amber-950/20 border border-amber-200 dark:border-amber-800 text-xs text-amber-700 dark:text-amber-300"></div>
+      <div id="parse-summary" class="hidden mt-3 p-3 rounded-lg bg-gray-50 dark:bg-anthro-darkMid border border-gray-200 dark:border-gray-700 text-xs text-gray-600 dark:text-gray-300"></div>
     </div>
+
+    <!-- Submit Status (always visible) -->
+    <div id="submit-status" class="hidden mb-5 p-4 rounded-xl text-sm"></div>
 
     <!-- Preview -->
     <div id="preview-section" class="hidden mb-6">
@@ -192,20 +196,35 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
       <!-- Actions -->
       <div class="mt-5 flex gap-2">
         <button id="submit-btn" class="flex-1 px-5 py-2.5 bg-claude-500 text-white rounded-lg text-sm font-semibold hover:bg-claude-600 transition-all shadow-sm disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
-          GitHub에 추가
+          <svg class="submit-icon w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+          <svg class="submit-spinner hidden w-4 h-4 animate-spin" fill="none" viewBox="0 0 24 24">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path>
+          </svg>
+          <span id="submit-btn-label">확인하고 추가</span>
         </button>
         <button id="copy-json" class="px-4 py-2.5 rounded-lg border border-gray-200 dark:border-gray-700 text-sm text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 transition-all">
           JSON 복사
         </button>
       </div>
 
-      <div id="submit-status" class="hidden mt-4 p-4 rounded-xl text-sm"></div>
-
       <details class="mt-4">
         <summary class="text-xs text-gray-400 cursor-pointer hover:text-gray-600 transition-colors">JSON 출력 보기</summary>
         <pre id="json-output" class="mt-2 bg-gray-950 text-claude-300 p-4 rounded-lg overflow-x-auto text-xs font-mono"></pre>
       </details>
+    </div>
+
+    <!-- Confirm Modal -->
+    <div id="confirm-modal" class="hidden fixed inset-0 z-50">
+      <div id="confirm-backdrop" class="absolute inset-0 bg-black/40"></div>
+      <div class="relative max-w-md mx-auto mt-32 bg-white dark:bg-anthro-darkSurface rounded-2xl border border-gray-200 dark:border-gray-800 shadow-xl p-5">
+        <h3 class="text-lg font-bold text-gray-900 dark:text-gray-100 mb-2">항목 추가 확인</h3>
+        <p id="confirm-message" class="text-sm text-gray-600 dark:text-gray-300 mb-4"></p>
+        <div class="flex gap-2">
+          <button id="confirm-cancel" class="flex-1 px-4 py-2.5 rounded-lg border border-gray-200 dark:border-gray-700 text-sm text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 transition-all">취소</button>
+          <button id="confirm-submit" class="flex-1 px-4 py-2.5 rounded-lg bg-claude-500 text-white text-sm font-semibold hover:bg-claude-600 transition-all">추가 실행</button>
+        </div>
+      </div>
     </div>
   </section>
 </Layout>
@@ -214,6 +233,7 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
   // ─── State ─────────────────────────────
   let parsedItems: any[] = [];
   let selectedType = 'paper';
+  let pendingSubmitItems: any[] = [];
 
   // ─── Type colors ───────────────────────
   const TYPE_COLORS: Record<string, { border: string; bg: string; text: string }> = {
@@ -305,6 +325,38 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
 
   function escapeHtml(s: string) {
     return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  }
+
+  function getLocalDuplicateCount(items: any[]) {
+    const ids = new Set<string>();
+    let duplicateCount = 0;
+    for (const item of items) {
+      if (ids.has(item.id)) duplicateCount++;
+      ids.add(item.id);
+    }
+    return duplicateCount;
+  }
+
+  function setSubmitLoading(isLoading: boolean) {
+    const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement | null;
+    if (!submitBtn) return;
+    const label = document.getElementById('submit-btn-label');
+    const icon = submitBtn.querySelector('.submit-icon');
+    const spinner = submitBtn.querySelector('.submit-spinner');
+    submitBtn.disabled = isLoading;
+    if (label) label.textContent = isLoading ? '처리중...' : '확인하고 추가';
+    if (icon) icon.classList.toggle('hidden', isLoading);
+    if (spinner) spinner.classList.toggle('hidden', !isLoading);
+  }
+
+  function clearInputFields() {
+    (document.getElementById('markdown-input') as HTMLTextAreaElement).value = '';
+    (document.getElementById('simple-org') as HTMLInputElement).value = '';
+    (document.getElementById('simple-title') as HTMLInputElement).value = '';
+    (document.getElementById('simple-url') as HTMLInputElement).value = '';
+    (document.getElementById('simple-bullets') as HTMLTextAreaElement).value = '';
+    document.getElementById('parse-errors')?.classList.add('hidden');
+    document.getElementById('parse-summary')?.classList.add('hidden');
   }
 
   // ─── Simple Mode: Add ──────────────────
@@ -475,6 +527,7 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
     const fallbackType = (document.getElementById('md-fallback-type') as HTMLSelectElement).value;
     const { year, month, week } = getDateValues();
     const errorsEl = document.getElementById('parse-errors')!;
+    const summaryEl = document.getElementById('parse-summary')!;
 
     const result = parseMarkdownItems(textarea.value, year, month, week, fallbackType);
 
@@ -488,13 +541,24 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
     if (result.items.length > 0) {
       parsedItems = result.items;
       renderPreview();
+      const localDuplicateCount = getLocalDuplicateCount(result.items);
+      summaryEl.innerHTML = `
+        <div class="font-semibold text-gray-700 dark:text-gray-200 mb-1">파싱 테스트 완료</div>
+        <div>추가 후보: <span class="font-mono font-semibold">${result.items.length}</span>건</div>
+        <div>형식 오류: <span class="font-mono font-semibold">${result.errors.length}</span>건</div>
+        <div>입력 내부 중복(id): <span class="font-mono font-semibold">${localDuplicateCount}</span>건</div>
+      `;
+      summaryEl.classList.remove('hidden');
       showToast(`${result.items.length}개 항목이 파싱되었습니다`);
+    } else {
+      summaryEl.classList.add('hidden');
     }
   });
 
   document.getElementById('clear-md-btn')?.addEventListener('click', () => {
     (document.getElementById('markdown-input') as HTMLTextAreaElement).value = '';
     document.getElementById('parse-errors')?.classList.add('hidden');
+    document.getElementById('parse-summary')?.classList.add('hidden');
   });
 
   // ─── Preview rendering ─────────────────
@@ -565,22 +629,20 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
     parsedItems = [];
     renderPreview();
     document.getElementById('preview-section')?.classList.add('hidden');
-    document.getElementById('submit-status')?.classList.add('hidden');
   });
 
   // ─── GitHub API ────────────────────────
   async function submitToGitHub(items: any[]) {
     const token = localStorage.getItem('github_token');
     const repo = (document.getElementById('github-repo') as HTMLInputElement)?.value || 'chanmuzi/NLP-Paper-News';
-    const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement;
 
     if (!token) {
       showStatus('GitHub 토큰이 설정되지 않았습니다. 상단 GitHub 버튼에서 토큰을 입력하세요.', 'error');
       return;
     }
 
-    submitBtn.disabled = true;
-    showStatus('GitHub에서 현재 데이터를 가져오는 중...', 'info');
+    setSubmitLoading(true);
+    showStatus('1/4 기존 데이터 조회 중...', 'info');
 
     try {
       const getRes = await fetch(`https://api.github.com/repos/${repo}/contents/data/items.json`, {
@@ -603,7 +665,7 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
           base64Content = fileData.content.replace(/\n/g, '');
         } else {
           // Large file (>1MB): Contents API omits content, use Git Blobs API
-          showStatus('파일이 큽니다. Blob API로 읽는 중...', 'info');
+          showStatus('1/4 대용량 파일 Blob API로 조회 중...', 'info');
           const blobRes = await fetch(`https://api.github.com/repos/${repo}/git/blobs/${fileData.sha}`, {
             headers: { 'Authorization': `token ${token}`, 'Accept': 'application/vnd.github.v3+json' }
           });
@@ -631,13 +693,13 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
         throw new Error('items.json JSON 파싱 실패. 파일 형식을 확인하세요.');
       }
 
+      showStatus('2/4 중복 검사 중...', 'info');
       const existingIds = new Set(currentContent.items.map((i: any) => i.id));
       const newItems = items.filter(i => !existingIds.has(i.id));
       const skippedCount = items.length - newItems.length;
 
       if (newItems.length === 0) {
         showStatus(`추가할 새 항목이 없습니다. ${skippedCount}개 항목이 이미 존재합니다.`, 'warn');
-        submitBtn.disabled = false;
         return;
       }
 
@@ -651,7 +713,7 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
         news: currentContent.items.filter((i: any) => i.type === 'news').length,
       };
 
-      showStatus('커밋 중...', 'info');
+      showStatus('3/4 커밋 객체 생성 중...', 'info');
 
       // Encode with proper UTF-8 handling
       const jsonStr = JSON.stringify(currentContent, null, 2);
@@ -732,6 +794,7 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
       const newCommit = await newCommitRes.json();
 
       // Step 6: Update the branch reference
+      showStatus('4/4 main 브랜치 반영 중...', 'info');
       const updateRefRes = await fetch(`https://api.github.com/repos/${repo}/git/refs/heads/main`, {
         method: 'PATCH',
         headers: {
@@ -747,13 +810,16 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
       }
 
       const skippedMsg = skippedCount > 0 ? ` (${skippedCount}개 중복 건너뜀)` : '';
-      showStatus(`✓ ${newItems.length}개 항목이 성공적으로 추가되었습니다!${skippedMsg} GitHub Actions가 자동으로 사이트를 빌드합니다.`, 'success');
+      const shortSha = (newCommit.sha || '').slice(0, 7);
+      const commitUrl = `https://github.com/${repo}/commit/${newCommit.sha}`;
+      showStatus(`✅ ${newItems.length}개 항목 추가 완료${skippedMsg}\n커밋: ${shortSha} · ${commitUrl}\n입력창을 초기화했습니다.`, 'success');
       parsedItems = [];
       renderPreview();
+      clearInputFields();
     } catch (err: any) {
       showStatus(`오류: ${err.message}`, 'error');
     } finally {
-      submitBtn.disabled = false;
+      setSubmitLoading(false);
     }
   }
 
@@ -767,13 +833,49 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
       error: 'bg-red-50 dark:bg-red-950/30 text-red-700 dark:text-red-300 border border-red-200 dark:border-red-800',
       warn: 'bg-amber-50 dark:bg-amber-950/30 text-amber-700 dark:text-amber-300 border border-amber-200 dark:border-amber-800',
     };
-    el.className = `mt-4 p-4 rounded-xl text-sm ${colors[type]}`;
+    el.className = `mb-5 p-4 rounded-xl text-sm whitespace-pre-line ${colors[type]}`;
     el.textContent = message;
+  }
+
+  function openConfirmModal() {
+    const modal = document.getElementById('confirm-modal');
+    const msgEl = document.getElementById('confirm-message');
+    if (!modal || !msgEl) return;
+    const repo = (document.getElementById('github-repo') as HTMLInputElement)?.value || 'chanmuzi/NLP-Paper-News';
+    msgEl.innerHTML = `<span class="font-semibold">${parsedItems.length}개</span> 항목을 <span class="font-mono">${escapeHtml(repo)}</span>에 추가할까요?`;
+    modal.classList.remove('hidden');
+  }
+
+  function closeConfirmModal() {
+    document.getElementById('confirm-modal')?.classList.add('hidden');
   }
 
   // ─── Submit & Copy ─────────────────────
   document.getElementById('submit-btn')?.addEventListener('click', () => {
-    if (parsedItems.length > 0) submitToGitHub(parsedItems);
+    if (parsedItems.length === 0) {
+      showToast('먼저 파싱 또는 미리보기 추가를 진행해주세요.');
+      return;
+    }
+    const token = localStorage.getItem('github_token');
+    if (!token) {
+      showStatus('GitHub 토큰이 설정되지 않았습니다. 상단 GitHub 버튼에서 토큰을 입력하세요.', 'error');
+      return;
+    }
+    pendingSubmitItems = [...parsedItems];
+    openConfirmModal();
+  });
+
+  document.getElementById('confirm-submit')?.addEventListener('click', () => {
+    closeConfirmModal();
+    if (pendingSubmitItems.length > 0) {
+      submitToGitHub(pendingSubmitItems);
+      pendingSubmitItems = [];
+    }
+  });
+  document.getElementById('confirm-cancel')?.addEventListener('click', closeConfirmModal);
+  document.getElementById('confirm-backdrop')?.addEventListener('click', closeConfirmModal);
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeConfirmModal();
   });
 
   document.getElementById('copy-json')?.addEventListener('click', () => {
