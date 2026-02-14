@@ -1,0 +1,31 @@
+{
+  "cli_version": "0.4.4",
+  "checkpoint_id": "09e4cf1c71c0",
+  "session_id": "302031ef-f53d-4b89-bc5e-1f80dd7933b1",
+  "strategy": "manual-commit",
+  "created_at": "2026-02-14T19:15:39.298403Z",
+  "branch": "main",
+  "checkpoints_count": 1,
+  "files_touched": [
+    ".claude/settings.local.json"
+  ],
+  "agent": "Claude Code",
+  "transcript_identifier_at_start": "d856b25e-ebf6-4459-859b-be9a5e901169",
+  "token_usage": {
+    "input_tokens": 59,
+    "cache_creation_tokens": 52367,
+    "cache_read_tokens": 842677,
+    "output_tokens": 3823,
+    "api_call_count": 21
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-02-14T19:15:39.137126Z",
+    "agent_lines": 0,
+    "human_added": 136,
+    "human_modified": 9,
+    "human_removed": 0,
+    "total_committed": 145,
+    "agent_percentage": 0
+  },
+  "transcript_path": ".claude/projects/-Users-chanmuzi-coding-workspace-NLP-Paper-News/302031ef-f53d-4b89-bc5e-1f80dd7933b1.jsonl"
+}
