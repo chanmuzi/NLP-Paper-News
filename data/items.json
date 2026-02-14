@@ -1,8 +1,38 @@
 {
   "version": 1,
-  "last_updated": "2026-02-14T01:51:41.956Z",
-  "total_items": 1672,
+  "last_updated": "2026-02-14T18:03:46.074Z",
+  "total_items": 1673,
   "items": [
+    {
+      "id": "stepfun-step-35-flash-open-frontier-level-intelligence-with-11b-active-parameters",
+      "type": "paper",
+      "org": "StepFun",
+      "title": "Step 3.5 Flash: Open Frontier-Level Intelligence with 11B Active Parameters",
+      "url": "https://arxiv.org/abs/2602.10604",
+      "date": "2026-02-W02",
+      "year": "2026",
+      "month": "2",
+      "week": "2",
+      "bullets": [
+        {
+          "text": "196B, 11B active 파라미터 사이즈의 MoE 모델로 frontier급 agentic intelligence & computational efficiency를 갖춤",
+          "level": 1
+        },
+        {
+          "text": "3:1 비율의 Sliding Window/Full Attention 구조, Multi-Token Prediction (MTP-3)",
+          "level": 1
+        },
+        {
+          "text": "보도된 벤치마크 결과에 의하면 DeepSeek V3.2 성능을 크게 상회하며 기타 frontier proprietary models를 능가하는 경우도 많음",
+          "level": 1
+        },
+        {
+          "text": "cheating이 불가능한 MathArena에서 1위 달성",
+          "level": 2
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "alibaba-uiuc-mila-opus-towards-efficient-and-principled-data-selection-in-large-language-model-pre-t",
       "type": "paper",
@@ -36582,8 +36612,8 @@
     }
   ],
   "stats": {
-    "total": 1672,
-    "paper": 1017,
+    "total": 1673,
+    "paper": 1018,
     "dev": 617,
     "news": 33
   }
