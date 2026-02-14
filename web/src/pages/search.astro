@@ -157,9 +157,9 @@ const stats = itemsData.stats || {};
 
   function renderCard(item, query) {
     const typeInfo = {
-      paper: { icon: '📜', label: 'Paper', color: 'text-blue-800 dark:text-blue-300', bgLight: 'bg-white border-blue-200/60 shadow-card', bgDark: 'dark:bg-anthro-darkSurface dark:border-blue-800/40 dark:shadow-card-dark', accent: 'bg-blue-500' },
-      dev: { icon: '🧑🏻‍💻', label: 'Dev', color: 'text-emerald-800 dark:text-emerald-300', bgLight: 'bg-white border-emerald-200/60 shadow-card', bgDark: 'dark:bg-anthro-darkSurface dark:border-emerald-800/40 dark:shadow-card-dark', accent: 'bg-emerald-500' },
-      news: { icon: '🗞️', label: 'News', color: 'text-violet-800 dark:text-violet-300', bgLight: 'bg-white border-violet-200/60 shadow-card', bgDark: 'dark:bg-anthro-darkSurface dark:border-violet-800/40 dark:shadow-card-dark', accent: 'bg-violet-500' },
+      paper: { icon: '📜', label: 'Paper', color: 'text-claude-800 dark:text-claude-300', bgLight: 'bg-white border-claude-200/60 shadow-card', bgDark: 'dark:bg-anthro-darkSurface dark:border-claude-800/40 dark:shadow-card-dark', accent: 'bg-claude-500' },
+      dev: { icon: '🧑🏻‍💻', label: 'Dev', color: 'text-amber-800 dark:text-amber-300', bgLight: 'bg-white border-amber-200/60 shadow-card', bgDark: 'dark:bg-anthro-darkSurface dark:border-amber-800/40 dark:shadow-card-dark', accent: 'bg-amber-600' },
+      news: { icon: '🗞️', label: 'News', color: 'text-stone-700 dark:text-stone-300', bgLight: 'bg-white border-stone-200/60 shadow-card', bgDark: 'dark:bg-anthro-darkSurface dark:border-stone-700/40 dark:shadow-card-dark', accent: 'bg-stone-500' },
     };
     const info = typeInfo[item.type] || typeInfo.paper;
     const dateStr = item.year && item.month ? `${item.year}.${String(item.month).padStart(2, '0')} ${item.week ? item.week + '주차' : ''}` : '';
@@ -187,9 +187,9 @@ const stats = itemsData.stats || {};
     const expandBtn = extraBullets.length > 0 ? `<button class="expand-btn text-xs font-medium text-claude-600 hover:text-claude-700 dark:text-claude-400 dark:hover:text-claude-300 transition-colors">+${extraBullets.length}개 더 보기</button>` : '';
 
     return `
-    <article class="item-card group relative rounded-xl border transition-all duration-200 hover:shadow-card-hover dark:hover:shadow-card-dark-hover ${info.bgLight} ${info.bgDark} animate-fade-in-up" data-id="${item.id}">
+    <article class="item-card group relative flex flex-col rounded-xl border transition-all duration-200 hover:shadow-card-hover dark:hover:shadow-card-dark-hover ${info.bgLight} ${info.bgDark} animate-fade-in-up" data-id="${item.id}">
       <div class="absolute top-0 left-0 w-1 h-full rounded-l-xl ${info.accent}"></div>
-      <div class="pl-4 pr-4 py-4">
+      <div class="pl-4 pr-4 py-4 flex-1 flex flex-col">
         <div class="flex items-center justify-between gap-2 mb-2.5">
           <div class="flex items-center gap-2 min-w-0">
             <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-xs font-semibold ${info.color} bg-white/60 dark:bg-white/5">${info.icon} ${info.label}</span>
@@ -202,7 +202,7 @@ const stats = itemsData.stats || {};
           : `<h3 class="text-[15px] font-bold text-gray-900 dark:text-gray-100 mb-2 leading-snug">${highlightText(item.title, query)}</h3>`
         }
         ${item.bullets.length > 0 ? `<div class="bullets-container"><ul class="space-y-1 text-[13px] leading-relaxed">${bulletsHtml}</ul>${extraHtml}</div>` : ''}
-        <div class="flex items-center justify-between mt-3 pt-2.5 border-t border-gray-200/50 dark:border-gray-800/30">
+        <div class="flex items-center justify-between mt-auto pt-2 border-t border-gray-200/50 dark:border-gray-800/30">
           <div>${expandBtn}</div>
           <div class="flex items-center gap-0.5">
             <button class="bookmark-btn p-1.5 rounded-md ${isBookmarked ? 'text-claude-500 dark:text-claude-400' : 'text-gray-300 dark:text-gray-600'} hover:text-claude-500 dark:hover:text-claude-400 transition-colors" data-id="${item.id}" title="북마크">

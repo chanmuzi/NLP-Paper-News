@@ -85,13 +85,13 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
       <div class="mb-4">
         <label class="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">유형</label>
         <div class="flex gap-2" id="type-selector">
-          <button data-type="paper" class="type-btn active flex-1 py-2.5 rounded-lg border-2 border-blue-400 bg-blue-50 dark:bg-blue-950/20 text-sm font-semibold text-blue-700 dark:text-blue-300 transition-all">
+          <button data-type="paper" class="type-btn active flex-1 py-2.5 rounded-lg border-2 border-claude-400 bg-claude-50 dark:bg-claude-950/20 text-sm font-semibold text-claude-700 dark:text-claude-300 transition-all">
             📜 Paper
           </button>
-          <button data-type="dev" class="type-btn flex-1 py-2.5 rounded-lg border-2 border-gray-200 dark:border-gray-700 text-sm font-semibold text-gray-500 dark:text-gray-400 transition-all hover:border-emerald-300">
+          <button data-type="dev" class="type-btn flex-1 py-2.5 rounded-lg border-2 border-gray-200 dark:border-gray-700 text-sm font-semibold text-gray-500 dark:text-gray-400 transition-all hover:border-amber-300">
             🧑🏻‍💻 Dev
           </button>
-          <button data-type="news" class="type-btn flex-1 py-2.5 rounded-lg border-2 border-gray-200 dark:border-gray-700 text-sm font-semibold text-gray-500 dark:text-gray-400 transition-all hover:border-violet-300">
+          <button data-type="news" class="type-btn flex-1 py-2.5 rounded-lg border-2 border-gray-200 dark:border-gray-700 text-sm font-semibold text-gray-500 dark:text-gray-400 transition-all hover:border-stone-400">
             🗞️ News
           </button>
         </div>
@@ -137,9 +137,8 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
 
     <!-- Markdown Mode -->
     <div id="panel-markdown" class="bg-white dark:bg-anthro-darkSurface rounded-xl border border-gray-200 dark:border-gray-800 p-5 mb-5">
-      <div class="flex items-center justify-between mb-3">
+      <div class="mb-3">
         <label class="text-xs font-semibold text-gray-500 uppercase tracking-wider">마크다운 입력</label>
-        <span class="text-xs text-gray-400">이모지 없이 붙여넣어도 됩니다</span>
       </div>
 
       <!-- Fallback type for markdown without emoji -->
@@ -155,14 +154,13 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
       <textarea
         id="markdown-input"
         rows="12"
-        placeholder="여러 항목을 한번에 붙여넣으세요:
-
-- 📜 [Anthropic] [**논문 제목**](https://arxiv.org/abs/...)
-    - 설명 첫 번째 줄
-        - 하위 설명
-
-- [Google] [다른 논문 제목](https://...) ← 이모지 없어도 OK
-    - 설명"
+        placeholder="- 📜 [Anthropic] [Constitutional AI: Harmlessness from AI Feedback](https://arxiv.org/abs/2212.08073)
+    - RLHF 대신 AI 피드백으로 헌법 원칙을 학습하는 방법 제안
+        - 기존 RLHF의 인간 피드백 의존도를 줄이면서 안전성 향상
+- 🧑🏻‍💻 [Google DeepMind] [Gemma 3 Released](https://blog.google/gemma-3)
+    - 오픈 웨이트 모델 Gemma 3 공개, 다국어 지원 강화
+- 🗞️ [OpenAI] [GPT-5 발표](https://openai.com/gpt-5)
+    - 차세대 모델 GPT-5 공식 발표"
         class="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-anthro-darkMid text-sm text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-500 outline-none focus:border-claude-500 transition-all font-mono leading-relaxed"
       ></textarea>
 
@@ -216,13 +214,16 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
 
     <!-- Confirm Modal -->
     <div id="confirm-modal" class="hidden fixed inset-0 z-50">
-      <div id="confirm-backdrop" class="absolute inset-0 bg-black/40"></div>
-      <div class="relative max-w-md mx-auto mt-32 bg-white dark:bg-anthro-darkSurface rounded-2xl border border-gray-200 dark:border-gray-800 shadow-xl p-5">
-        <h3 class="text-lg font-bold text-gray-900 dark:text-gray-100 mb-2">항목 추가 확인</h3>
-        <p id="confirm-message" class="text-sm text-gray-600 dark:text-gray-300 mb-4"></p>
-        <div class="flex gap-2">
-          <button id="confirm-cancel" class="flex-1 px-4 py-2.5 rounded-lg border border-gray-200 dark:border-gray-700 text-sm text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 transition-all">취소</button>
-          <button id="confirm-submit" class="flex-1 px-4 py-2.5 rounded-lg bg-claude-500 text-white text-sm font-semibold hover:bg-claude-600 transition-all">추가 실행</button>
+      <div id="confirm-backdrop" class="absolute inset-0 bg-black/40 animate-fade-in"></div>
+      <div class="flex items-center justify-center min-h-full p-4">
+        <div class="animate-fade-in-up relative max-w-md w-full bg-white dark:bg-anthro-darkSurface rounded-2xl border border-gray-200 dark:border-gray-800 shadow-xl p-6">
+          <h3 class="text-lg font-bold text-gray-900 dark:text-gray-100 mb-3">항목 추가 확인</h3>
+          <p id="confirm-message" class="text-sm text-gray-600 dark:text-gray-300 mb-2"></p>
+          <div id="confirm-item-list" class="mb-4 max-h-40 overflow-y-auto text-xs text-gray-500 dark:text-gray-400 space-y-1"></div>
+          <div class="flex gap-2">
+            <button id="confirm-cancel" class="flex-1 px-4 py-2.5 rounded-lg border border-gray-200 dark:border-gray-700 text-sm text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 transition-all">취소</button>
+            <button id="confirm-submit" class="flex-1 px-4 py-2.5 rounded-lg bg-claude-500 text-white text-sm font-semibold hover:bg-claude-600 transition-all">추가 실행</button>
+          </div>
         </div>
       </div>
     </div>
@@ -234,12 +235,13 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
   let parsedItems: any[] = [];
   let selectedType = 'paper';
   let pendingSubmitItems: any[] = [];
+  let submittedIds = new Set<string>();
 
   // ─── Type colors ───────────────────────
   const TYPE_COLORS: Record<string, { border: string; bg: string; text: string }> = {
-    paper: { border: 'border-blue-400', bg: 'bg-blue-50 dark:bg-blue-950/20', text: 'text-blue-700 dark:text-blue-300' },
-    dev: { border: 'border-emerald-400', bg: 'bg-emerald-50 dark:bg-emerald-950/20', text: 'text-emerald-700 dark:text-emerald-300' },
-    news: { border: 'border-violet-400', bg: 'bg-violet-50 dark:bg-violet-950/20', text: 'text-violet-700 dark:text-violet-300' },
+    paper: { border: 'border-claude-400', bg: 'bg-claude-50 dark:bg-claude-950/20', text: 'text-claude-700 dark:text-claude-300' },
+    dev: { border: 'border-amber-400', bg: 'bg-amber-50 dark:bg-amber-950/20', text: 'text-amber-700 dark:text-amber-300' },
+    news: { border: 'border-stone-400', bg: 'bg-stone-100 dark:bg-stone-900/20', text: 'text-stone-600 dark:text-stone-300' },
   };
 
   const TYPE_ICONS: Record<string, string> = { paper: '📜', dev: '🧑🏻‍💻', news: '🗞️' };
@@ -283,9 +285,9 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
       const colors = TYPE_COLORS[type];
 
       document.querySelectorAll('.type-btn').forEach(b => {
-        b.classList.remove('border-blue-400', 'bg-blue-50', 'dark:bg-blue-950/20', 'text-blue-700', 'dark:text-blue-300');
-        b.classList.remove('border-emerald-400', 'bg-emerald-50', 'dark:bg-emerald-950/20', 'text-emerald-700', 'dark:text-emerald-300');
-        b.classList.remove('border-violet-400', 'bg-violet-50', 'dark:bg-violet-950/20', 'text-violet-700', 'dark:text-violet-300');
+        b.classList.remove('border-claude-400', 'bg-claude-50', 'dark:bg-claude-950/20', 'text-claude-700', 'dark:text-claude-300');
+        b.classList.remove('border-amber-400', 'bg-amber-50', 'dark:bg-amber-950/20', 'text-amber-700', 'dark:text-amber-300');
+        b.classList.remove('border-stone-400', 'bg-stone-100', 'dark:bg-stone-900/20', 'text-stone-600', 'dark:text-stone-300');
         b.classList.add('border-gray-200', 'dark:border-gray-700', 'text-gray-500', 'dark:text-gray-400');
         b.classList.remove('active');
       });
@@ -542,12 +544,17 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
       parsedItems = result.items;
       renderPreview();
       const localDuplicateCount = getLocalDuplicateCount(result.items);
-      summaryEl.innerHTML = `
+      const alreadySubmitted = result.items.filter(i => submittedIds.has(i.id));
+      let summaryHtml = `
         <div class="font-semibold text-gray-700 dark:text-gray-200 mb-1">파싱 테스트 완료</div>
         <div>추가 후보: <span class="font-mono font-semibold">${result.items.length}</span>건</div>
         <div>형식 오류: <span class="font-mono font-semibold">${result.errors.length}</span>건</div>
         <div>입력 내부 중복(id): <span class="font-mono font-semibold">${localDuplicateCount}</span>건</div>
       `;
+      if (alreadySubmitted.length > 0) {
+        summaryHtml += `<div class="mt-1 text-amber-600 dark:text-amber-400 font-semibold">이미 제출된 항목 ${alreadySubmitted.length}건 포함 (서버에서 중복 제거됨)</div>`;
+      }
+      summaryEl.innerHTML = summaryHtml;
       summaryEl.classList.remove('hidden');
       showToast(`${result.items.length}개 항목이 파싱되었습니다`);
     } else {
@@ -811,11 +818,19 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
 
       const skippedMsg = skippedCount > 0 ? ` (${skippedCount}개 중복 건너뜀)` : '';
       const shortSha = (newCommit.sha || '').slice(0, 7);
-      const commitUrl = `https://github.com/${repo}/commit/${newCommit.sha}`;
-      showStatus(`✅ ${newItems.length}개 항목 추가 완료${skippedMsg}\n커밋: ${shortSha} · ${commitUrl}\n입력창을 초기화했습니다.`, 'success');
+      items.forEach(i => submittedIds.add(i.id));
+      showStatus(`${newItems.length}개 항목 추가 완료${skippedMsg} · ${shortSha}`, 'success');
       parsedItems = [];
       renderPreview();
       clearInputFields();
+      setTimeout(() => {
+        const statusEl = document.getElementById('submit-status');
+        if (statusEl && !statusEl.classList.contains('hidden')) {
+          statusEl.style.transition = 'opacity 0.3s';
+          statusEl.style.opacity = '0';
+          setTimeout(() => { statusEl.classList.add('hidden'); statusEl.style.opacity = ''; statusEl.style.transition = ''; }, 300);
+        }
+      }, 5000);
     } catch (err: any) {
       showStatus(`오류: ${err.message}`, 'error');
     } finally {
@@ -827,22 +842,32 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
     const el = document.getElementById('submit-status');
     if (!el) return;
     el.classList.remove('hidden');
+    el.style.opacity = '1';
+    el.style.transition = '';
     const colors: Record<string, string> = {
-      info: 'bg-blue-50 dark:bg-blue-950/30 text-blue-700 dark:text-blue-300 border border-blue-200 dark:border-blue-800',
+      info: 'bg-claude-50 dark:bg-claude-950/30 text-claude-700 dark:text-claude-300 border border-claude-200 dark:border-claude-800',
       success: 'bg-emerald-50 dark:bg-emerald-950/30 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800',
       error: 'bg-red-50 dark:bg-red-950/30 text-red-700 dark:text-red-300 border border-red-200 dark:border-red-800',
       warn: 'bg-amber-50 dark:bg-amber-950/30 text-amber-700 dark:text-amber-300 border border-amber-200 dark:border-amber-800',
     };
-    el.className = `mb-5 p-4 rounded-xl text-sm whitespace-pre-line ${colors[type]}`;
+    el.className = `mb-5 p-4 rounded-xl text-sm whitespace-pre-line animate-fade-in ${colors[type]}`;
     el.textContent = message;
+    el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }
 
   function openConfirmModal() {
     const modal = document.getElementById('confirm-modal');
     const msgEl = document.getElementById('confirm-message');
+    const listEl = document.getElementById('confirm-item-list');
     if (!modal || !msgEl) return;
     const repo = (document.getElementById('github-repo') as HTMLInputElement)?.value || 'chanmuzi/NLP-Paper-News';
-    msgEl.innerHTML = `<span class="font-semibold">${parsedItems.length}개</span> 항목을 <span class="font-mono">${escapeHtml(repo)}</span>에 추가할까요?`;
+    msgEl.innerHTML = `<span class="font-semibold">${parsedItems.length}개</span> 항목을 <span class="font-mono text-xs">${escapeHtml(repo)}</span>에 추가합니다.`;
+    if (listEl) {
+      listEl.innerHTML = parsedItems.map(item => {
+        const icon = TYPE_ICONS[item.type] || '📜';
+        return `<div class="flex items-center gap-1.5"><span>${icon}</span><span class="truncate">${escapeHtml(item.title)}</span></div>`;
+      }).join('');
+    }
     modal.classList.remove('hidden');
   }
 

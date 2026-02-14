@@ -25,26 +25,26 @@ const typeInfo: Record<string, { icon: string; label: string; color: string; bgL
   paper: {
     icon: '📜',
     label: 'Paper',
-    color: 'text-blue-800 dark:text-blue-300',
-    bgLight: 'bg-white border-blue-200/60 shadow-card',
-    bgDark: 'dark:bg-anthro-darkSurface dark:border-blue-800/40 dark:shadow-card-dark',
-    accent: 'bg-blue-500',
+    color: 'text-claude-800 dark:text-claude-300',
+    bgLight: 'bg-white border-claude-200/60 shadow-card',
+    bgDark: 'dark:bg-anthro-darkSurface dark:border-claude-800/40 dark:shadow-card-dark',
+    accent: 'bg-claude-500',
   },
   dev: {
     icon: '🧑🏻‍💻',
     label: 'Dev',
-    color: 'text-emerald-800 dark:text-emerald-300',
-    bgLight: 'bg-white border-emerald-200/60 shadow-card',
-    bgDark: 'dark:bg-anthro-darkSurface dark:border-emerald-800/40 dark:shadow-card-dark',
-    accent: 'bg-emerald-500',
+    color: 'text-amber-800 dark:text-amber-300',
+    bgLight: 'bg-white border-amber-200/60 shadow-card',
+    bgDark: 'dark:bg-anthro-darkSurface dark:border-amber-800/40 dark:shadow-card-dark',
+    accent: 'bg-amber-600',
   },
   news: {
     icon: '🗞️',
     label: 'News',
-    color: 'text-violet-800 dark:text-violet-300',
-    bgLight: 'bg-white border-violet-200/60 shadow-card',
-    bgDark: 'dark:bg-anthro-darkSurface dark:border-violet-800/40 dark:shadow-card-dark',
-    accent: 'bg-violet-500',
+    color: 'text-stone-700 dark:text-stone-300',
+    bgLight: 'bg-white border-stone-200/60 shadow-card',
+    bgDark: 'dark:bg-anthro-darkSurface dark:border-stone-700/40 dark:shadow-card-dark',
+    accent: 'bg-stone-500',
   },
 };
 
@@ -55,7 +55,7 @@ const hasMoreBullets = bullets.length > 3;
 ---
 
 <article
-  class={`item-card group relative rounded-xl border transition-all duration-200 hover:shadow-card-hover dark:hover:shadow-card-dark-hover hover:-translate-y-0.5 ${info.bgLight} ${info.bgDark}`}
+  class={`item-card group relative flex flex-col rounded-xl border transition-all duration-200 hover:shadow-card-hover dark:hover:shadow-card-dark-hover hover:-translate-y-0.5 ${info.bgLight} ${info.bgDark}`}
   data-type={type}
   data-org={org.toLowerCase()}
   data-title={title.toLowerCase()}
@@ -63,7 +63,7 @@ const hasMoreBullets = bullets.length > 3;
 >
   <div class={`absolute top-0 left-0 w-1 h-full rounded-l-xl ${info.accent}`}></div>
 
-  <div class="pl-5 pr-4 py-4">
+  <div class="pl-5 pr-4 py-4 flex-1 flex flex-col">
     <div class="flex items-center justify-between gap-2 mb-2">
       <div class="flex items-center gap-2 min-w-0">
         <span class={`inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-xs font-bold ${info.color} bg-gray-50 dark:bg-white/5`}>
@@ -121,7 +121,7 @@ const hasMoreBullets = bullets.length > 3;
       </div>
     )}
 
-    <div class="flex items-center justify-between mt-2.5 pt-2 border-t border-gray-100 dark:border-gray-800/50">
+    <div class="flex items-center justify-between mt-auto pt-2 border-t border-gray-100 dark:border-gray-800/50">
       <div>
         {hasMoreBullets && (
           <button
