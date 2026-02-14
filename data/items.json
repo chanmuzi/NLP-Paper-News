@@ -1,8 +1,90 @@
 {
   "version": 1,
-  "last_updated": "2026-02-12T05:43:03.376Z",
-  "total_items": 1669,
+  "last_updated": "2026-02-14T01:51:41.956Z",
+  "total_items": 1672,
   "items": [
+    {
+      "id": "alibaba-uiuc-mila-opus-towards-efficient-and-principled-data-selection-in-large-language-model-pre-t",
+      "type": "paper",
+      "org": "Alibaba, UIUC, Mila",
+      "title": "OPUS: Towards Efficient and Principled Data Selection in Large Language Model Pre-training in Every Iteration",
+      "url": "https://arxiv.org/abs/2602.05400",
+      "date": "2026-02-W02",
+      "year": "2026",
+      "month": "2",
+      "week": "2",
+      "bullets": [
+        {
+          "text": "Optimizer-induced Projected Utility Selection (OPUS): optimizer-induced update space에서의 dynamic data selection 프레임워크",
+          "level": 1
+        },
+        {
+          "text": "effective updates를 projecting 함으로써 candidates를 점수 매김",
+          "level": 1
+        },
+        {
+          "text": "scalability를 위해 Ghost technique with CountSketch & Boltzmann sampling 적용",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "zai-glm-5-from-vibe-coding-to-agentic-engineering",
+      "type": "dev",
+      "org": "Z.ai",
+      "title": "GLM-5: From Vibe Coding to Agentic Engineering",
+      "url": "https://z.ai/blog/glm-5",
+      "date": "2026-02-W02",
+      "year": "2026",
+      "month": "2",
+      "week": "2",
+      "bullets": [
+        {
+          "text": "complex system engineering & long-horizon agentic tasks에 특화된 GLM-5 공개",
+          "level": 1
+        },
+        {
+          "text": "전작 4.5 버전 355B (32B active) → 744B (40B), pre-training data도 23T → 28.5T",
+          "level": 1
+        },
+        {
+          "text": "DeepSeek Sparse Attention (DSA) 사용하여 추론 효율성 챙김",
+          "level": 1
+        },
+        {
+          "text": "[slime](https://github.com/THUDM/slime): asynchronous RL infrastructure. 이를 통해 more fine-grained post training iterations 가능했다고 설명.",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "ai2-molmospaces-an-open-ecosystem-for-embodied-ai",
+      "type": "dev",
+      "org": "Ai2",
+      "title": "MolmoSpaces, an open ecosystem for embodied AI",
+      "url": "https://allenai.org/blog/molmospaces",
+      "date": "2026-02-W02",
+      "year": "2026",
+      "month": "2",
+      "week": "2",
+      "bullets": [
+        {
+          "text": "large scale, fully open platform for studying embodied learning",
+          "level": 1
+        },
+        {
+          "text": "230,000개 이상의 indoor scenes, 130,000개 이상의 object models를 포함",
+          "level": 1
+        },
+        {
+          "text": "scene conversation을 위한 tooling, grasp integration, benchmarking 등을 포함하고 있는데 이를 통해 systematic evaluation 가능",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "bostondynamics-boston-dynamics-google-deepmind-form-new-ai-partnership-to-bring-foundational-intelli",
       "type": "dev",
@@ -36500,9 +36582,9 @@
     }
   ],
   "stats": {
-    "total": 1669,
-    "paper": 1016,
-    "dev": 615,
+    "total": 1672,
+    "paper": 1017,
+    "dev": 617,
     "news": 33
   }
 }
