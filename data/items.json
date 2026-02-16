@@ -1,8 +1,86 @@
 {
   "version": 1,
-  "last_updated": "2026-02-14T18:03:46.074Z",
-  "total_items": 1673,
+  "last_updated": "2026-02-16T05:33:42.150Z",
+  "total_items": 1676,
   "items": [
+    {
+      "id": "meta-gaia2-benchmarking-llm-agents-on-dynamic-and-asynchronous-environments",
+      "type": "paper",
+      "org": "Meta",
+      "title": "Gaia2: Benchmarking LLM Agents on Dynamic and Asynchronous Environments",
+      "url": "https://arxiv.org/abs/2602.11964",
+      "date": "2026-02-W02",
+      "year": "2026",
+      "month": "2",
+      "week": "2",
+      "bullets": [
+        {
+          "text": "agent actions와 독립적으로 진화하는 환경 시나리오. temporal constraints & dynamic events에 대한 적응 필요",
+          "level": 1
+        },
+        {
+          "text": "각 시나리오는 write-action verifier와 쌍을 이루어 fine-grained, action-elvel evaluation을 가능하도록 함",
+          "level": 1
+        },
+        {
+          "text": "아직까지 모든 모델들이 낮은 성적을 기록하지만 오픈소스 모델 중에는 Kimi-K2가 선두를 달림",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "british-columbia-learning-to-continually-learn-via-meta-learning-agentic-memory-designs",
+      "type": "paper",
+      "org": "British Columbia",
+      "title": "Learning to Continually Learn via Meta-learning Agentic Memory Designs",
+      "url": "https://arxiv.org/abs/2602.07755",
+      "date": "2026-02-W02",
+      "year": "2026",
+      "month": "2",
+      "week": "2",
+      "bullets": [
+        {
+          "text": "현존 memory designs는 human-crafted & fixed 한계를 지님 → diversity & non-stationarity of real world tasks에 adapt 하기 어려움",
+          "level": 1
+        },
+        {
+          "text": "ALMA: hand-engineered memory designs를 meta-learns memory designs로 대체 → 다양한 도메인에서 human effort를 최소화하고 continual learners가 될 수 있도록 함",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "ant-llada21-speeding-up-text-diffusion-via-token-editing",
+      "type": "paper",
+      "org": "Ant",
+      "title": "LLaDA2.1: Speeding Up Text Diffusion via Token Editing",
+      "url": "https://arxiv.org/abs/2602.08676",
+      "date": "2026-02-W02",
+      "year": "2026",
+      "month": "2",
+      "week": "2",
+      "bullets": [
+        {
+          "text": "Token-to-Token (T2T) editing을 conventional Mask-to-Token (M2T) scheme에 엮음으로써 joint, configurable threshold-decoding scheme 도입",
+          "level": 1
+        },
+        {
+          "text": "2개의 distinct personas: Speedy Mode (S Mode), Quality Mode (Q Mode)",
+          "level": 1
+        },
+        {
+          "text": "dLLM을 위한 최초의 large-scale RL framework 제시",
+          "level": 1
+        },
+        {
+          "text": "LLaDA2.1-Mini (16B) & LLaDA2.1-Flash (100B)",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "stepfun-step-35-flash-open-frontier-level-intelligence-with-11b-active-parameters",
       "type": "paper",
@@ -36612,8 +36690,8 @@
     }
   ],
   "stats": {
-    "total": 1673,
-    "paper": 1018,
+    "total": 1676,
+    "paper": 1021,
     "dev": 617,
     "news": 33
   }
