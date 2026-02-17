@@ -88,7 +88,7 @@ jobs:
   send_email:
     runs-on: ubuntu-latest
     needs: prepare
-    if: needs.prepare.outputs.has_new == 'true' && vars.ENABLE_EMAIL == 'true'
+    if: needs.prepare.outputs.has_new == 'true' && vars.ENABLE_EMAIL == 'true' && github.event_name != 'pull_request'
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -108,7 +108,7 @@ jobs:
   post_x:
     runs-on: ubuntu-latest
     needs: prepare
-    if: needs.prepare.outputs.has_new == 'true' && vars.ENABLE_X_POST == 'true'
+    if: needs.prepare.outputs.has_new == 'true' && vars.ENABLE_X_POST == 'true' && github.event_name != 'pull_request'
     continue-on-error: true
     steps:
       - uses: actions/checkout@v4
@@ -127,8 +127,8 @@ jobs:
           X_ACCESS_TOKEN_SECRET: ${{ secrets.X_ACCESS_TOKEN_SECRET }}
           X_API_BASE: ${{ vars.X_API_BASE }}
         run: |
-          DRY_RUN_FLAG="--dry-run"
-          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.dry_run }}" = "false" ]; then
-            DRY_RUN_FLAG=""
+          DRY_RUN_FLAG=""
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.dry_run }}" = "true" ]; then
+            DRY_RUN_FLAG="--dry-run"
           fi
           node scripts/post-x.mjs --digest artifacts/digest.json $DRY_RUN_FLAG
