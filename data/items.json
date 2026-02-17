@@ -1,8 +1,60 @@
 {
   "version": 1,
-  "last_updated": "2026-02-17T14:20:57.777Z",
-  "total_items": 1681,
+  "last_updated": "2026-02-17T16:07:52.274Z",
+  "total_items": 1683,
   "items": [
+    {
+      "id": "hong-kong-tsinghua-tokyo-squtr-a-robustness-benchmark-for-spoken-query-to-text-retrieval-under-acous",
+      "type": "paper",
+      "org": "Hong Kong, Tsinghua, Tokyo",
+      "title": "SQuTR: A Robustness Benchmark for Spoken Query to Text Retrieval under Acoustic Noise",
+      "url": "",
+      "date": "2026-02-W03",
+      "year": "2026",
+      "month": "2",
+      "week": "3",
+      "bullets": [
+        {
+          "text": "37,317개의 unique queries로 구성되어 다양한 도메인과 질문 유형을 커버",
+          "level": 1
+        },
+        {
+          "text": "200명의 real speakers로부터 speech를 합성하고 17개의 real-world 환경의 노이즈를 섞음",
+          "level": 1
+        },
+        {
+          "text": "이를 통해 현실적인(noise를 포함하는) spoken query retrieval 성능을 평가하고자 함",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "meta-manus-introducing-manus-in-your-chat-your-personal-agent-everywhere-you-are",
+      "type": "dev",
+      "org": "Meta, Manus",
+      "title": "Introducing Manus in Your Chat : Your Personal Agent, Everywhere You Are",
+      "url": "https://manus.im/blog/manus-agents-telegram",
+      "date": "2026-02-W03",
+      "year": "2026",
+      "month": "2",
+      "week": "3",
+      "bullets": [
+        {
+          "text": "자체 message 앱에서 동작하는 Manus Agents 소개. Telegram support.",
+          "level": 1
+        },
+        {
+          "text": "open claw 영향이 아닐까..",
+          "level": 2
+        },
+        {
+          "text": "Manus의 모든 subscribers 대상으로 제공되는 기능으로 소개",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "openai-detecting-and-reducing-scheming-in-ai-models---테스트",
       "type": "dev",
@@ -36824,9 +36876,9 @@
     }
   ],
   "stats": {
-    "total": 1681,
-    "paper": 1022,
-    "dev": 619,
+    "total": 1683,
+    "paper": 1023,
+    "dev": 620,
     "news": 35
   }
 }
