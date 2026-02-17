@@ -2,6 +2,9 @@
 import fs from 'fs';
 import crypto from 'crypto';
 
+const X_HARD_LIMIT = 280;
+const URL_REGEX = /https?:\/\/[^\s)]+/gi;
+
 function parseArgs(argv) {
   const args = { digest: '', result: '', dryRun: false, testSuffix: '' };
   for (let i = 2; i < argv.length; i++) {
@@ -28,16 +31,113 @@ function limitText(text, max = 600) {
   return `${s.slice(0, max)}…`;
 }
 
-function appendSuffix(text, suffix, maxLen = 280) {
+function isWideChar(ch) {
+  const cp = ch.codePointAt(0);
+  if (!cp) return false;
+  return (
+    (cp >= 0x1100 && cp <= 0x11FF) ||
+    (cp >= 0x2E80 && cp <= 0xA4CF) ||
+    (cp >= 0xAC00 && cp <= 0xD7A3) ||
+    (cp >= 0xF900 && cp <= 0xFAFF) ||
+    (cp >= 0xFE10 && cp <= 0xFE6F) ||
+    (cp >= 0xFF01 && cp <= 0xFF60) ||
+    (cp >= 0xFFE0 && cp <= 0xFFE6)
+  );
+}
+
+function isEmoji(ch) {
+  try {
+    return /\p{Extended_Pictographic}/u.test(ch);
+  } catch {
+    return false;
+  }
+}
+function graphemeSegments(text) {
+  const src = String(text || '');
+  try {
+    if (typeof Intl !== 'undefined' && Intl.Segmenter) {
+      const seg = new Intl.Segmenter('en', { granularity: 'grapheme' });
+      return Array.from(seg.segment(src), (x) => x.segment);
+    }
+  } catch {}
+  return [...src];
+}
+
+
+function countXCharsCodepoint(text) {
+  const normalized = String(text || '').replace(URL_REGEX, 'x'.repeat(23));
+  let total = 0;
+  for (const ch of [...normalized]) {
+    if (isEmoji(ch) || isWideChar(ch)) total += 2;
+    else total += 1;
+  }
+  return total;
+}
+
+function countXCharsGrapheme(text) {
+  const normalized = String(text || '').replace(URL_REGEX, 'x'.repeat(23));
+  let total = 0;
+  for (const g of graphemeSegments(normalized)) {
+    if (isEmoji(g) || isWideChar(g)) total += 2;
+    else total += 1;
+  }
+  return total;
+}
+
+function countXChars(text) {
+  const codepoint = countXCharsCodepoint(text);
+  const grapheme = countXCharsGrapheme(text);
+  return Math.max(codepoint, grapheme);
+}
+
+function countXCharsDetail(text) {
+  const codepoint = countXCharsCodepoint(text);
+  const grapheme = countXCharsGrapheme(text);
+  return {
+    codepoint,
+    grapheme,
+    used: Math.max(codepoint, grapheme),
+  };
+}
+
+function isWithinXLimit(text, limit = X_HARD_LIMIT) {
+  return countXChars(text) <= limit;
+}
+
+function getLocalGuardLimit() {
+  const raw = Number(process.env.X_LOCAL_GUARD_LIMIT || 278);
+  if (!Number.isFinite(raw)) return 278;
+  return Math.max(250, Math.min(X_HARD_LIMIT, Math.floor(raw)));
+}
+
+function clipToXLimit(text, limit = X_HARD_LIMIT) {
+  const src = String(text || '');
+  if (isWithinXLimit(src, limit)) return src;
+  const chars = [...src];
+  const ellipsis = '…';
+  while (chars.length > 0) {
+    const candidate = chars.join('') + ellipsis;
+    if (isWithinXLimit(candidate, limit)) return candidate;
+    chars.pop();
+  }
+  return '';
+}
+
+function appendSuffix(text, suffix, limit = X_HARD_LIMIT) {
   const base = String(text || '');
   const sfx = String(suffix || '');
   if (!sfx) return base;
 
-  if (base.length + sfx.length <= maxLen) return `${base}${sfx}`;
+  if (isWithinXLimit(`${base}${sfx}`, limit)) return `${base}${sfx}`;
 
   const ellipsis = '…';
-  const keepLen = Math.max(0, maxLen - sfx.length - ellipsis.length);
-  return `${base.slice(0, keepLen)}${ellipsis}${sfx}`;
+  const chars = [...base];
+  while (chars.length > 0) {
+    const candidate = `${chars.join('')}${ellipsis}${sfx}`;
+    if (isWithinXLimit(candidate, limit)) return candidate;
+    chars.pop();
+  }
+  return clipToXLimit(sfx, limit);
 }
 
 function buildThreadWithSuffix(thread, suffix) {
@@ -178,7 +278,18 @@ function asXPostError(err) {
 
 // --- Tweet posting ---
 
-async function postTweet({ text, replyToId, url, credentials, maxAttempts = 3 }) {
+async function postTweet({ text, replyToId, url, credentials, guardLimit = getLocalGuardLimit(), maxAttempts = 3 }) {
+  const detail = countXCharsDetail(text);
+  if (detail.used > guardLimit) {
+    throw new XPostError({
+      message: `Local hard guard rejected over-limit text (${detail.used} > ${guardLimit})`,
+      httpStatus: null,
+      errorCode: 'local_length_guard',
+      errorDetail: `local_hard_guard: used=${detail.used}, codepoint=${detail.codepoint}, grapheme=${detail.grapheme}, guard=${guardLimit}`,
+      attempts: 0,
+    });
+  }
+
   for (let attempt = 1; attempt <= maxAttempts; attempt++) {
     try {
       const authorization = buildOAuthHeader({ method: 'POST', url, ...credentials });
@@ -345,12 +456,12 @@ async function main() {
 
     console.log('\n=== MAIN TWEET ===');
     console.log(thread.main);
-    console.log(`(${thread.main.length} chars)`);
+    console.log(`(${countXChars(thread.main)} weighted chars)`);
 
     (thread.replies || []).forEach((reply, i) => {
       console.log(`\n=== REPLY ${i + 1} ===`);
       console.log(reply);
-      console.log(`(${reply.length} chars)`);
+      console.log(`(${countXChars(reply)} weighted chars)`);
     });
 
     console.log(`\nTotal: 1 main + ${(thread.replies || []).length} replies`);
@@ -375,12 +486,49 @@ async function main() {
 
   const posted = [];
   const attempts = { main: 0, replies: [] };
+  const localGuardLimit = getLocalGuardLimit();
+
+  const tooLong = [];
+  const mainCount = countXCharsDetail(thread.main);
+  if (mainCount.used > localGuardLimit) {
+    tooLong.push({ phase: 'main', used: mainCount.used, codepoint: mainCount.codepoint, grapheme: mainCount.grapheme, guard: localGuardLimit });
+  }
+  const replyCountDetails = (thread.replies || []).map((r) => countXCharsDetail(r));
+  (thread.replies || []).forEach((r, i) => {
+    const c = replyCountDetails[i];
+    if (c.used > localGuardLimit) {
+      tooLong.push({ phase: `reply_${i + 1}`, used: c.used, codepoint: c.codepoint, grapheme: c.grapheme, guard: localGuardLimit });
+    }
+  });
+  if (tooLong.length > 0) {
+    writeResult(resultPath, {
+      success: false,
+      failurePhase: 'validation',
+      error: 'tweet_length_over_limit',
+      errorCode: 'local_length_guard',
+      errorDetail: JSON.stringify(tooLong),
+      httpStatus: null,
+      attempts,
+      posted,
+      rolledBack: 0,
+      rollbackDeleted: 0,
+      degradedMode: null,
+      hardLimit: X_HARD_LIMIT,
+      localGuardLimit,
+      measuredChars: {
+        main: mainCount,
+        replies: replyCountDetails,
+      },
+    });
+    console.error(`Length validation failed: ${JSON.stringify(tooLong)}`);
+    process.exit(1);
+  }
 
   // Post main tweet
   let mainId = null;
   console.log('Posting main tweet...');
   try {
-    const mainResult = await postTweet({ text: thread.main, url, credentials });
+    const mainResult = await postTweet({ text: thread.main, url, credentials, guardLimit: localGuardLimit });
     mainId = mainResult.id;
     attempts.main = mainResult.attempts;
     posted.push({ type: 'main', id: mainId });
@@ -401,6 +549,7 @@ async function main() {
       rollbackDeleted: 0,
       degradedMode: null,
       response: err.response || null,
+      localGuardLimit,
     });
 
     console.error(`Main tweet FAILED: ${err.message}`);
@@ -418,7 +567,7 @@ async function main() {
 
     console.log(`Posting reply ${i + 1}/${replies.length}...`);
     try {
-      const replyResult = await postTweet({ text: replies[i], replyToId: parentId, url, credentials });
+      const replyResult = await postTweet({ text: replies[i], replyToId: parentId, url, credentials, guardLimit: localGuardLimit });
       parentId = replyResult.id;
       posted.push({ type: `reply ${i + 1}`, id: parentId });
       attempts.replies.push({ index: i + 1, attempts: replyResult.attempts, success: true });
@@ -440,6 +589,7 @@ async function main() {
         httpStatus: err.httpStatus,
         attempts: err.attempts,
         response: err.response || null,
+      localGuardLimit,
         isDegradable: degradeReply403429 && (err.httpStatus === 403 || err.httpStatus === 429),
       };
       console.error(`Reply ${i + 1} FAILED: ${err.message}`);
@@ -455,6 +605,7 @@ async function main() {
       failurePhase: 'reply',
       failedAt: failedReply.index,
       totalReplies: replies.length,
+      localGuardLimit,
       error: failedReply.error,
       errorDetail: failedReply.errorDetail,
       errorCode: failedReply.errorCode,
@@ -465,6 +616,7 @@ async function main() {
       rollbackDeleted: 0,
       manualAction: 'reply_followup_recommended',
       response: failedReply.response,
+      localGuardLimit,
     });
 
     console.log(`\nMain tweet kept. Please add remaining replies manually if needed.`);
@@ -484,6 +636,7 @@ async function main() {
       failurePhase: 'reply',
       failedAt: failedReply.index,
       totalReplies: replies.length,
+      localGuardLimit,
       error: failedReply.error,
       errorDetail: failedReply.errorDetail,
       errorCode: failedReply.errorCode,
@@ -495,6 +648,7 @@ async function main() {
       rollbackFailures: rollback.failures,
       degradedMode: null,
       response: failedReply.response,
+      localGuardLimit,
     });
 
     console.error('\nExiting with error — thread rolled back. Re-trigger workflow to retry.');
@@ -507,6 +661,7 @@ async function main() {
     attempts,
     posted,
     totalReplies: replies.length,
+      localGuardLimit,
   });
 
   console.log(`\nThread complete: 1 main + ${replies.length} replies (all successful)`);
