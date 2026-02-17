@@ -17,6 +17,12 @@
 
 기본 권장: PR/초기 운영에서는 `false`, 검증 후 `true`로 전환.
 
+## 선택 변수 (안정화 권장)
+- `X_POST_COOLDOWN_SECONDS`: 최근 notify 실행 직후 재포스팅 방지를 위한 대기 시간(초). 기본 `180`.
+- `X_DEGRADE_REPLY_403_429`: `true`/`false` (기본 `true`)
+  - `true`: reply가 403/429로 막히면 main tweet은 유지하고 **degraded(main_only)** 처리
+  - `false`: 기존처럼 reply 실패 시 전체 롤백
+
 ## 필수 시크릿 (GitHub Secrets)
 
 ### X (OAuth 1.0a)
@@ -36,3 +42,9 @@
 - Actions `notify-artifacts`에서 `social-draft.md` 다운로드
 - X에 수동으로 복사 게시
 - 에러코드(권한/토큰/레이트리밋) 확인 후 토큰 재발급
+- `post_x` Job Summary에서 `failurePhase`, `httpStatus`, `errorCode`, `attempts`, `rollbackDeleted` 확인
+
+## 운영 정책 (현재 기본)
+- 목표는 스레드 완전성보다 **신규 업데이트 전달 안정성**입니다.
+- reply가 403/429로 차단되면 main tweet을 우선 유지합니다(`degradedMode=main_only`).
+- `workflow_dispatch` 테스트 실행 시에는 트윗 끝에 테스트 suffix가 자동으로 붙어 중복 차단 가능성을 낮춥니다.
