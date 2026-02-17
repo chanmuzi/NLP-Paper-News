@@ -1,8 +1,78 @@
 {
   "version": 1,
-  "last_updated": "2026-02-17T12:49:57.551Z",
-  "total_items": 1678,
+  "last_updated": "2026-02-17T14:20:57.777Z",
+  "total_items": 1681,
   "items": [
+    {
+      "id": "openai-detecting-and-reducing-scheming-in-ai-models---테스트",
+      "type": "dev",
+      "org": "OpenAI",
+      "title": "Detecting and reducing scheming in AI models - 테스트",
+      "url": "https://openai.com/index/detecting-and-reducing-scheming-in-ai-models",
+      "date": "2026-02-W03",
+      "year": "2026",
+      "month": "2",
+      "week": "3",
+      "bullets": [
+        {
+          "text": "모델이 평가 상황을 탐지하면 scheming behavior를 바꾼다는 연구 결과",
+          "level": 1
+        },
+        {
+          "text": "reinforcement learning & targeted anti-scheming objectives를 적용하여 situational awareness를 높이고 scheming을 줄일 수 있음",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "shanghai-ai-scalecua-scaling-open-source-computer-use-agents-with-cross-platform-data---테스트",
+      "type": "paper",
+      "org": "Shanghai AI",
+      "title": "ScaleCUA: Scaling Open-Source Computer Use Agents with Cross-Platform Data - 테스트",
+      "url": "https://arxiv.org/abs/2509.15221",
+      "date": "2026-02-W03",
+      "year": "2026",
+      "month": "2",
+      "week": "3",
+      "bullets": [
+        {
+          "text": "ScaleCUA: 6개의 운영체제와 3개의 task domains에 대한 large-scale 오픈소스 dataset",
+          "level": 1
+        },
+        {
+          "text": "테스트 계층",
+          "level": 2
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "meta-introducing-oakley-meta-glasses-a-new-category-of-performance-ai-glasses---테스트",
+      "type": "news",
+      "org": "Meta",
+      "title": "Introducing Oakley Meta Glasses, a New Category of Performance AI Glasses - 테스트",
+      "url": "https://about.fb.com/news/2025/06/introducing-oakley-meta-glasses-a-new-category-of-performance-ai-glasses/",
+      "date": "2026-02-W03",
+      "year": "2026",
+      "month": "2",
+      "week": "3",
+      "bullets": [
+        {
+          "text": "풀충전 기준 일반적인 사용으로 8시간, stanby 기준 19시간 지속되는 배터리",
+          "level": 1
+        },
+        {
+          "text": "Ultra HD (3K) video를 담을 수 있는 high resolution camera",
+          "level": 1
+        },
+        {
+          "text": "built-in, personal AI assistant. 스포츠 활용성 높음",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "openai-openclaw-창립자-peter-steinberger-openai-합류-발표",
       "type": "news",
@@ -36754,9 +36824,9 @@
     }
   ],
   "stats": {
-    "total": 1678,
-    "paper": 1021,
-    "dev": 618,
-    "news": 34
+    "total": 1681,
+    "paper": 1022,
+    "dev": 619,
+    "news": 35
   }
 }
