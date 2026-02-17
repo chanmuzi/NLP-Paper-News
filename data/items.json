@@ -1,8 +1,42 @@
 {
   "version": 1,
-  "last_updated": "2026-02-16T05:33:42.150Z",
-  "total_items": 1676,
+  "last_updated": "2026-02-17T10:07:17.111Z",
+  "total_items": 1677,
   "items": [
+    {
+      "id": "alibaba-qwen35-towards-native-multimodal-agents",
+      "type": "dev",
+      "org": "Alibaba",
+      "title": "Qwen3.5: Towards Native Multimodal Agents",
+      "url": "https://qwen.ai/blog?id=qwen3.5",
+      "date": "2026-02-W03",
+      "year": "2026",
+      "month": "2",
+      "week": "3",
+      "bullets": [
+        {
+          "text": "Qwen3.5의 첫 번째 open-weight model, Qwen3.5-397B-A17B 공개",
+          "level": 1
+        },
+        {
+          "text": "single native multimodal system에서 text, image, video를 입력으로 받음",
+          "level": 2
+        },
+        {
+          "text": "Qwen3-Max보다 19배 빠른 decoding 속도",
+          "level": 1
+        },
+        {
+          "text": "linear attention (Gated DeltaNet)을 standard attention layers와 결합하여 long context lengths에서 memory growth를 control",
+          "level": 1
+        },
+        {
+          "text": "250k token vocab으로 201개 언어 & 방언 지원한다고 설명",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "meta-gaia2-benchmarking-llm-agents-on-dynamic-and-asynchronous-environments",
       "type": "paper",
@@ -36690,9 +36724,9 @@
     }
   ],
   "stats": {
-    "total": 1676,
+    "total": 1677,
     "paper": 1021,
-    "dev": 617,
+    "dev": 618,
     "news": 33
   }
 }
