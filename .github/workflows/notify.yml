@@ -22,6 +22,7 @@ on:
 
 permissions:
   contents: read
+  actions: write
 
 jobs:
   prepare:
@@ -33,7 +34,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          fetch-depth: 2
+          fetch-depth: 50
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -89,7 +90,6 @@ jobs:
     runs-on: ubuntu-latest
     needs: prepare
     if: needs.prepare.outputs.has_new == 'true' && vars.ENABLE_X_POST == 'true' && github.event_name != 'pull_request'
-    continue-on-error: true
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -112,14 +112,42 @@ jobs:
           if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.dry_run }}" = "true" ]; then
             DRY_RUN_FLAG="--dry-run"
           fi
-          node scripts/post-x.mjs --digest artifacts/digest.json $DRY_RUN_FLAG
+          node scripts/post-x.mjs --digest artifacts/digest.json --result artifacts/post-result.json $DRY_RUN_FLAG
       - name: Post to X summary
         if: always()
         run: |
           echo "## X Post Result" >> "$GITHUB_STEP_SUMMARY"
-          if [ "${{ steps.post.outcome }}" = "success" ]; then
-            echo "Thread posted successfully" >> "$GITHUB_STEP_SUMMARY"
+          if [ -f artifacts/post-result.json ]; then
+            node -e "
+              const r = JSON.parse(require('fs').readFileSync('artifacts/post-result.json','utf8'));
+              const lines = [];
+              if (r.success) {
+                lines.push('✅ **Thread posted successfully**');
+                lines.push('');
+                lines.push('| # | Type | Tweet ID |');
+                lines.push('|---|------|----------|');
+                r.posted.forEach((t,i) => lines.push('| ' + (i+1) + ' | ' + t.type + ' | [' + t.id + '](https://x.com/i/status/' + t.id + ') |'));
+              } else {
+                lines.push('❌ **Thread posting failed** (reply ' + r.failedAt + '/' + r.totalReplies + ')');
+                lines.push('');
+                lines.push('**Error:** \`' + r.error + '\`');
+                lines.push('');
+                if (r.rolledBack > 0) {
+                  lines.push('🔄 Rolled back ' + r.rolledBack + '/' + r.posted.length + ' tweet(s)');
+                }
+                lines.push('');
+                lines.push('Re-trigger this workflow to retry.');
+              }
+              process.stdout.write(lines.join('\n'));
+            " >> "$GITHUB_STEP_SUMMARY"
+          elif [ "${{ steps.post.outcome }}" = "success" ]; then
+            echo "✅ Thread posted successfully" >> "$GITHUB_STEP_SUMMARY"
           else
-            echo "**Thread posting failed** — replies were rolled back automatically." >> "$GITHUB_STEP_SUMMARY"
+            echo "❌ **Thread posting failed**" >> "$GITHUB_STEP_SUMMARY"
             echo "Re-trigger this workflow to retry." >> "$GITHUB_STEP_SUMMARY"
           fi
+      - name: Trigger deploy on success
+        if: steps.post.outcome == 'success'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run deploy.yml --ref main

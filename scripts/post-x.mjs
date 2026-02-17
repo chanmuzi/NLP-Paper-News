@@ -3,10 +3,11 @@ import fs from 'fs';
 import crypto from 'crypto';
 
 function parseArgs(argv) {
-  const args = { digest: '', dryRun: false };
+  const args = { digest: '', result: '', dryRun: false };
   for (let i = 2; i < argv.length; i++) {
     const cur = argv[i];
     if (cur === '--digest') args.digest = argv[++i];
+    else if (cur === '--result') args.result = argv[++i];
     else if (cur === '--dry-run') args.dryRun = true;
   }
   return args;
@@ -145,8 +146,14 @@ async function rollbackThread(postedIds, apiBase, credentials) {
   console.log(`Rollback complete: ${deleted}/${postedIds.length} deleted`);
 }
 
+function writeResult(resultPath, data) {
+  if (resultPath) {
+    fs.writeFileSync(resultPath, JSON.stringify(data, null, 2));
+  }
+}
+
 async function main() {
-  const { digest: digestPath, dryRun } = parseArgs(process.argv);
+  const { digest: digestPath, result: resultPath, dryRun } = parseArgs(process.argv);
   if (!digestPath) {
     console.error('Usage: node scripts/post-x.mjs --digest <digest.json> [--dry-run]');
     process.exit(1);
@@ -187,13 +194,13 @@ async function main() {
   const url = `${apiBase}/2/tweets`;
   const credentials = { consumerKey, consumerSecret, tokenKey, tokenSecret };
 
-  // Track all posted tweet IDs for potential rollback
-  const postedIds = [];
+  // Track all posted tweets for potential rollback and result reporting
+  const posted = [];
 
   // Post main tweet
   console.log('Posting main tweet...');
   const mainId = await postTweet({ text: thread.main, url, credentials });
-  postedIds.push(mainId);
+  posted.push({ type: 'main', id: mainId });
   console.log(`Main tweet posted: ${mainId}`);
 
   // Post replies as a chain
@@ -209,7 +216,7 @@ async function main() {
     console.log(`Posting reply ${i + 1}/${replies.length}...`);
     try {
       parentId = await postTweet({ text: replies[i], replyToId: parentId, url, credentials });
-      postedIds.push(parentId);
+      posted.push({ type: `reply ${i + 1}`, id: parentId });
       console.log(`Reply ${i + 1} posted: ${parentId}`);
     } catch (err) {
       console.error(`Reply ${i + 1} FAILED: ${err.message}`);
@@ -222,11 +229,21 @@ async function main() {
   if (failedReply) {
     console.error(`\nThread incomplete: reply ${failedReply.index}/${replies.length} failed`);
     console.error(`Reason: ${failedReply.error}`);
+    const postedIds = posted.map((p) => p.id);
     await rollbackThread(postedIds, apiBase, credentials);
+    writeResult(resultPath, {
+      success: false,
+      failedAt: failedReply.index,
+      totalReplies: replies.length,
+      error: failedReply.error,
+      posted,
+      rolledBack: postedIds.length,
+    });
     console.error('\nExiting with error — thread rolled back. Re-trigger workflow to retry.');
     process.exit(1);
   }
 
+  writeResult(resultPath, { success: true, posted });
   console.log(`\nThread complete: 1 main + ${replies.length} replies (all successful)`);
 }
 
