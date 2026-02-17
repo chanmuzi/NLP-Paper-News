@@ -892,23 +892,123 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
       const skippedMsg = skippedCount > 0 ? ` (${skippedCount}개 중복 건너뜀)` : '';
       const shortSha = (newCommit.sha || '').slice(0, 7);
       items.forEach(i => { submittedIds.add(i.id); existingIds.add(i.id); });
-      showStatus(`${newItems.length}개 항목 추가 완료${skippedMsg} · ${shortSha}`, 'success');
       parsedItems = [];
       renderPreview();
       clearInputFields();
-      setTimeout(() => {
-        const statusEl = document.getElementById('submit-status');
-        if (statusEl && !statusEl.classList.contains('hidden')) {
-          statusEl.style.transition = 'opacity 0.3s';
-          statusEl.style.opacity = '0';
-          setTimeout(() => { statusEl.classList.add('hidden'); statusEl.style.opacity = ''; statusEl.style.transition = ''; }, 300);
-        }
-      }, 5000);
+      setSubmitLoading(false);
+
+      // Start workflow polling
+      showStatus(`✅ 커밋 완료${skippedMsg} · ${shortSha}\n⏳ X 포스팅 워크플로 대기 중...`, 'info');
+      pollWorkflowStatus(repo, token, newCommit.sha);
     } catch (err: any) {
       showStatus(`오류: ${err.message}`, 'error');
-    } finally {
       setSubmitLoading(false);
     }
+  }
+
+  // ─── Workflow Polling ─────────────────
+  let pollTimer: ReturnType<typeof setTimeout> | null = null;
+
+  async function pollWorkflowStatus(repo: string, token: string, commitSha: string) {
+    const shortSha = commitSha.slice(0, 7);
+    const POLL_INTERVAL = 5000;
+    const MAX_POLLS = 60; // 5min max
+    let polls = 0;
+
+    async function ghApi(endpoint: string) {
+      const res = await fetch(`https://api.github.com/repos/${repo}/actions/${endpoint}`, {
+        headers: { 'Authorization': `token ${token}`, 'Accept': 'application/vnd.github.v3+json' }
+      });
+      if (!res.ok) return null;
+      return res.json();
+    }
+
+    async function poll() {
+      polls++;
+      if (polls > MAX_POLLS) {
+        showStatus(`✅ 커밋 완료 · ${shortSha}\n⚠️ 워크플로 상태 확인 시간 초과 — Actions 페이지에서 직접 확인하세요.`, 'warn');
+        return;
+      }
+
+      try {
+        // Find the workflow run triggered by this commit
+        const data = await ghApi(`runs?head_sha=${commitSha}&per_page=5`);
+        if (!data?.workflow_runs?.length) {
+          showStatus(`✅ 커밋 완료 · ${shortSha}\n⏳ 워크플로 트리거 대기 중... (${polls * POLL_INTERVAL / 1000}s)`, 'info');
+          pollTimer = setTimeout(poll, POLL_INTERVAL);
+          return;
+        }
+
+        const run = data.workflow_runs.find((r: any) => r.name === 'Notify & Post to X') || data.workflow_runs[0];
+        const runStatus = run.status;
+        const runConclusion = run.conclusion;
+
+        if (runStatus === 'completed') {
+          // Check jobs for detail
+          const jobsData = await ghApi(`runs/${run.id}/jobs`);
+          const postJob = jobsData?.jobs?.find((j: any) => j.name === 'post_x');
+          const prepareJob = jobsData?.jobs?.find((j: any) => j.name === 'prepare');
+
+          if (runConclusion === 'success') {
+            if (postJob?.conclusion === 'success') {
+              showStatus(`✅ 커밋 완료 · ${shortSha}\n✅ X 포스팅 성공! 스레드가 게시되었습니다.`, 'success');
+            } else if (postJob?.conclusion === 'skipped') {
+              showStatus(`✅ 커밋 완료 · ${shortSha}\n⏭️ X 포스팅 건너뜀 (ENABLE_X_POST 미설정 또는 새 항목 없음)`, 'info');
+              fadeStatusAfter(8000);
+            } else {
+              showStatus(`✅ 커밋 완료 · ${shortSha}\n✅ 워크플로 완료`, 'success');
+              fadeStatusAfter(8000);
+            }
+          } else {
+            // failure or cancelled
+            const failMsg = postJob?.conclusion === 'failure'
+              ? 'X 포스팅 실패 — 자동 롤백됨. Actions에서 상세 내용을 확인하세요.'
+              : `워크플로 ${runConclusion || '실패'}`;
+            showStatus(`✅ 커밋 완료 · ${shortSha}\n❌ ${failMsg}`, 'error');
+          }
+          return;
+        }
+
+        // Still in progress — show current step
+        const jobsData = await ghApi(`runs/${run.id}/jobs`);
+        const jobs = jobsData?.jobs || [];
+        const activeJob = jobs.find((j: any) => j.status === 'in_progress');
+        const activeStep = activeJob?.steps?.find((s: any) => s.status === 'in_progress');
+
+        let progressMsg = '';
+        if (activeJob?.name === 'prepare') {
+          progressMsg = '📦 데이터 준비 중...';
+          if (activeStep?.name?.includes('Build digest')) progressMsg = '📦 포스트 생성 중...';
+          else if (activeStep?.name?.includes('Extract')) progressMsg = '📦 새 항목 추출 중...';
+        } else if (activeJob?.name === 'post_x') {
+          progressMsg = '🐦 X에 포스팅 중...';
+          if (activeStep?.name?.includes('Post to X')) progressMsg = '🐦 X에 스레드 게시 중...';
+        } else if (jobs.every((j: any) => j.status === 'queued')) {
+          progressMsg = '⏳ 워크플로 실행 대기 중...';
+        } else {
+          progressMsg = `⏳ ${runStatus}...`;
+        }
+
+        showStatus(`✅ 커밋 완료 · ${shortSha}\n${progressMsg}`, 'info');
+        pollTimer = setTimeout(poll, POLL_INTERVAL);
+      } catch (e) {
+        // Network error — silently retry
+        pollTimer = setTimeout(poll, POLL_INTERVAL);
+      }
+    }
+
+    poll();
+  }
+
+  function fadeStatusAfter(ms: number) {
+    setTimeout(() => {
+      const statusEl = document.getElementById('submit-status');
+      if (statusEl && !statusEl.classList.contains('hidden')) {
+        statusEl.style.transition = 'opacity 0.3s';
+        statusEl.style.opacity = '0';
+        setTimeout(() => { statusEl.classList.add('hidden'); statusEl.style.opacity = ''; statusEl.style.transition = ''; }, 300);
+      }
+    }, ms);
   }
 
   function showStatus(message: string, type: 'info' | 'success' | 'error' | 'warn') {
