@@ -22,6 +22,21 @@
 - `X_DEGRADE_REPLY_403_429`: `true`/`false` (기본 `true`)
   - `true`: reply가 403/429로 막히면 main tweet은 유지하고 **degraded(main_only)** 처리
   - `false`: 기존처럼 reply 실패 시 전체 롤백
+- `X_SAFE_LIMIT`: X 글자수 안전 상한(기본 `275`, 최대 `280`)
+
+## AI 카피 생성(선택)
+- `ENABLE_AI_X_COPY`: `true`/`false` (기본 `false`)
+  - `true`면 OpenAI 모델로 main/reply 초안을 생성하고, 길이 검증 실패 시 재시도 후 규칙 기반으로 자동 fallback
+- `OPENAI_MODEL`: 기본 권장 `gpt-4.1-mini`
+- `OPENAI_API_BASE`: 기본 `https://api.openai.com/v1` (대부분 미설정)
+
+필수 시크릿:
+- `OPENAI_API_KEY`
+
+> 추천 세팅
+> - `ENABLE_AI_X_COPY=true`
+> - `OPENAI_MODEL=gpt-4.1-mini`
+> - `X_SAFE_LIMIT=275`
 
 ## 필수 시크릿 (GitHub Secrets)
 

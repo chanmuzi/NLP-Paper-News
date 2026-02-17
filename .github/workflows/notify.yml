@@ -66,6 +66,12 @@ jobs:
 
       - name: Build digest
         if: steps.delta.outputs.has_new == 'true'
+        env:
+          ENABLE_AI_X_COPY: ${{ vars.ENABLE_AI_X_COPY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_MODEL: ${{ vars.OPENAI_MODEL }}
+          OPENAI_API_BASE: ${{ vars.OPENAI_API_BASE }}
+          X_SAFE_LIMIT: ${{ vars.X_SAFE_LIMIT }}
         run: node scripts/build-digest.mjs --input artifacts/new-items.json --out-dir artifacts --site-base-url "https://chanmuzi.github.io/NLP-Paper-News/"
 
       - name: Job summary
@@ -192,7 +198,7 @@ jobs:
                   lines.push('- failedAt: ' + (r.failedAt || '-') + '/' + (r.totalReplies || '-'));
                   lines.push('- httpStatus: ' + (r.httpStatus ?? '-'));
                   lines.push('- errorCode: ' + (r.errorCode || '-'));
-                  lines.push('- errorDetail: `' + (r.errorDetail || r.error || '-') + '`');
+                  lines.push('- errorDetail: ' + (r.errorDetail || r.error || '-'));
                 } else {
                   lines.push('✅ **Thread posted successfully**');
                 }
@@ -202,9 +208,7 @@ jobs:
                 r.posted.forEach((t,i) => lines.push('| ' + (i+1) + ' | ' + t.type + ' | [' + t.id + '](https://x.com/i/status/' + t.id + ') |'));
                 if (r.attempts) {
                   lines.push('');
-                  lines.push('```json');
-                  lines.push(JSON.stringify(r.attempts, null, 2));
-                  lines.push('```');
+                  lines.push('- attempts: ' + JSON.stringify(r.attempts));
                 }
               } else {
                 lines.push('❌ **Thread posting failed**');
@@ -214,7 +218,7 @@ jobs:
                 lines.push('- failedAt: ' + (r.failedAt || '-') + '/' + (r.totalReplies || '-'));
                 lines.push('- httpStatus: ' + (r.httpStatus ?? '-'));
                 lines.push('- errorCode: ' + (r.errorCode || '-'));
-                lines.push('- errorDetail: `' + (r.errorDetail || r.error || '-') + '`');
+                lines.push('- errorDetail: ' + (r.errorDetail || r.error || '-'));
                 lines.push('');
                 if (r.rolledBack > 0) {
                   lines.push('🔄 Rollback attempted: ' + r.rolledBack + ' tweet(s)');
@@ -222,9 +226,7 @@ jobs:
                 }
                 if (r.attempts) {
                   lines.push('');
-                  lines.push('```json');
-                  lines.push(JSON.stringify(r.attempts, null, 2));
-                  lines.push('```');
+                  lines.push('- attempts: ' + JSON.stringify(r.attempts));
                 }
                 lines.push('');
                 lines.push('Re-trigger this workflow to retry.');
