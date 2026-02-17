@@ -261,11 +261,12 @@ function forceMainWithinLimit({ limit, dateStr, updateLabel, totalCount, entries
   return isWithinXLimit(minimal, limit) ? compactLines(minimal) : clipToXLimit(minimal, limit);
 }
 
-function renderReplyText({ index, total, titleShort, summaryLine, titleMaxLen = 46, summaryMaxLen = 96 }) {
+function renderReplyText({ index, total, titleShort, summaryLine, url, titleMaxLen = 46, summaryMaxLen = 96 }) {
   const title = limitPlain(titleShort, titleMaxLen) || '요약';
   const summary = limitPlain(sanitizeReplySummary(summaryLine || ''), summaryMaxLen) || '핵심 업데이트입니다.';
   const line1 = `[${index}/${total}] ${title}`;
-  return compactLines(`${line1}\n${summary}`);
+  // 카드 preview 유도를 위해 URL은 라벨 없이 마지막 줄에만 추가
+  return url ? compactLines(`${line1}\n${summary}\n${url}`) : compactLines(`${line1}\n${summary}`);
 }
 
 function forceReplyWithinLimit({ limit, item, index, total, titleShort, summaryLine, baseReply }) {
@@ -282,6 +283,7 @@ function forceReplyWithinLimit({ limit, item, index, total, titleShort, summaryL
         total,
         titleShort: title,
         summaryLine: fallbackSummary,
+        url: item.url || '',
         titleMaxLen: title.length > 24 ? 34 : 24,
         summaryMaxLen,
       });
@@ -315,7 +317,8 @@ function buildDeterministicXThread(items, siteBaseUrl, safeLimit) {
       index: idx + 1,
       total: items.length,
       titleShort,
-      summaryLine
+      summaryLine,
+      url: item.url || '',
     });
     return forceReplyWithinLimit({
       limit: safeLimit,
@@ -352,6 +355,7 @@ function buildAiContext(items, generationLimit, siteBaseUrl) {
       reply_format: [
         '[i/N] 짧은 제목',
         '설명 문장 1개(줄글)',
+        'URL(카드 preview용, 라벨/이모지 없이)',
       ],
       no_bullet_in_reply: true,
     },
@@ -509,12 +513,13 @@ async function buildAiXThread(items, siteBaseUrl, safeLimit, debug) {
     '형식 기준:',
     '[i/N] 짧은 제목',
     '설명 문장 1개(줄글)',
+    'URL(카드 preview용, 라벨/이모지 없이)',
     '제약:',
     '- 한국어 중심(고유명사는 원문 유지 가능)',
     '- 과장/홍보/해시태그 금지',
     '- title_short는 짧게',
     '- summary_line은 깔끔한 문장 1개',
-    '- summary_line에 번호/아이콘/기관을 넣지 말 것',
+    '- summary_line에 번호/아이콘/기관/URL을 넣지 말 것(링크는 시스템이 별도 부착)',
     '- 줄글 형식, bullet 금지',
     '반드시 schema JSON만 출력합니다.',
   ].join('\n');
@@ -554,7 +559,8 @@ async function buildAiXThread(items, siteBaseUrl, safeLimit, debug) {
             index: idx,
             total: items.length,
             titleShort: src.title_short || item.title,
-            summaryLine: src.summary_line || cleanInline(item?.bullets?.[0]?.text || '핵심 업데이트')
+            summaryLine: src.summary_line || cleanInline(item?.bullets?.[0]?.text || '핵심 업데이트'),
+            url: item.url || '',
           });
           const chars = countXChars(candidate);
           if (chars > generationLimit) tooLong.push({ index: idx, chars });
@@ -596,7 +602,8 @@ async function buildAiXThread(items, siteBaseUrl, safeLimit, debug) {
       index: idx,
       total: items.length,
       titleShort,
-      summaryLine
+      summaryLine,
+      url: item.url || '',
     });
 
     return forceReplyWithinLimit({
