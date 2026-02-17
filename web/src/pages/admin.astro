@@ -203,14 +203,14 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
         </button>
       </div>
 
-      <!-- Submit Status (below the button) -->
-      <div id="submit-status" class="hidden mt-3 p-4 rounded-xl text-sm"></div>
-
       <details class="mt-4">
         <summary class="text-xs text-gray-400 cursor-pointer hover:text-gray-600 transition-colors">JSON 출력 보기</summary>
         <pre id="json-output" class="mt-2 bg-gray-950 text-claude-300 p-4 rounded-lg overflow-x-auto text-xs font-mono"></pre>
       </details>
     </div>
+
+    <!-- Submit Status (outside preview-section so it stays visible after submit clears items) -->
+    <div id="submit-status" class="hidden mt-3 p-4 rounded-xl text-sm"></div>
 
     <!-- Confirm Modal -->
     <div id="confirm-modal" class="hidden fixed inset-0 z-50">
@@ -1008,6 +1008,7 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
       localStorage.setItem('github_token', input.value.trim());
       input.value = '';
       updateTokenStatus();
+      loadExistingIds(); // Reload with new token
       showToast('토큰이 저장되었습니다');
     }
   });
@@ -1029,12 +1030,13 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
 
   // ─── Init ──────────────────────────────
   updateTokenStatus();
-  loadExistingIds(); // Load existing item IDs from GitHub on page load
   const savedRepo = localStorage.getItem('github_repo');
   if (savedRepo) {
     (document.getElementById('github-repo') as HTMLInputElement).value = savedRepo;
   }
+  loadExistingIds(); // Load after repo value is restored
   document.getElementById('github-repo')?.addEventListener('change', (e) => {
     localStorage.setItem('github_repo', (e.target as HTMLInputElement).value);
+    loadExistingIds(); // Reload for new repo
   });
 </script>
