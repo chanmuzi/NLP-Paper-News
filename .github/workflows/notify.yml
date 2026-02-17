@@ -1,4 +1,4 @@
-name: Notify Subscribers & Social
+name: Notify & Post to X
 
 on:
   push:
@@ -84,26 +84,6 @@ jobs:
         with:
           name: notify-artifacts
           path: artifacts/
-
-  send_email:
-    runs-on: ubuntu-latest
-    needs: prepare
-    if: needs.prepare.outputs.has_new == 'true' && vars.ENABLE_EMAIL == 'true' && github.event_name != 'pull_request'
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: "20"
-      - uses: actions/download-artifact@v4
-        with:
-          name: notify-artifacts
-          path: artifacts
-      - name: Send email via Resend
-        env:
-          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
-          NEWSLETTER_FROM: ${{ secrets.NEWSLETTER_FROM }}
-          NEWSLETTER_SUBSCRIBERS: ${{ secrets.NEWSLETTER_SUBSCRIBERS }}
-        run: node scripts/send-email-resend.mjs --digest artifacts/digest.json
 
   post_x:
     runs-on: ubuntu-latest

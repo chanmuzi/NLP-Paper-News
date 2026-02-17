@@ -2,7 +2,7 @@
 
 ## 목표
 - `data/items.json` 업데이트 시 신규 항목을 자동 감지합니다.
-- 이메일 발송, X 게시를 조건부 자동화합니다.
+- X 게시를 조건부 자동화합니다.
 - 게시 실패 시 수동 포스팅용 초안(`social-draft.md`)을 항상 남깁니다.
 
 ## 워크플로우
@@ -13,17 +13,11 @@
   - `workflow_dispatch` (수동 실행, `dry_run` 선택)
 
 ## 필수 스위치 (GitHub Variables)
-- `ENABLE_EMAIL`: `true` / `false`
 - `ENABLE_X_POST`: `true` / `false`
 
-기본 권장: PR/초기 운영에서는 모두 `false`, 검증 후 단계적으로 `true`.
+기본 권장: PR/초기 운영에서는 `false`, 검증 후 `true`로 전환.
 
 ## 필수 시크릿 (GitHub Secrets)
-
-### 이메일(Resend)
-- `RESEND_API_KEY`
-- `NEWSLETTER_FROM` (예: `updates@yourdomain.com`)
-- `NEWSLETTER_SUBSCRIBERS` (콤마 구분 이메일 목록)
 
 ### X (OAuth 1.0a)
 - `X_API_KEY` (Consumer Key)

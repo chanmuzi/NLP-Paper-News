@@ -13,14 +13,6 @@ function parseArgs(argv) {
   return args;
 }
 
-function domainOf(url) {
-  try {
-    return new URL(url).hostname.replace(/^www\./, '');
-  } catch {
-    return '';
-  }
-}
-
 /**
  * Build X thread data: main tweet + reply per item.
  *
@@ -34,10 +26,9 @@ function domainOf(url) {
  *   👉 https://site-url
  *
  * Each reply:
- *   📜 Gaia2
- *   🏢 Meta
- *   ▸ bullet level 1
- *     ◦ bullet level 2
+ *   [1/6] 📜 Gaia2 (Meta)
+ *   • bullet level 1
+ *      ↳ bullet level 2
  *   🔗 https://arxiv.org/abs/...
  */
 function buildXThread(items, siteBaseUrl) {
@@ -111,34 +102,6 @@ function main() {
   const items = payload.added_items || [];
   fs.mkdirSync(outDir, { recursive: true });
 
-  // --- Email text ---
-  const shortLines = items.slice(0, 8).map((item, idx) => {
-    const host = domainOf(item.url);
-    const hostPart = host ? ` · ${host}` : '';
-    return `${idx + 1}. [${item.type}] ${item.title}${hostPart}`;
-  });
-
-  const txtBody = [
-    `[NLP-Paper-News] 신규 항목 ${items.length}건`,
-    '',
-    ...shortLines,
-    '',
-    siteBaseUrl ? `사이트: ${siteBaseUrl}` : '',
-  ].filter(Boolean).join('\n');
-
-  const htmlItems = items.slice(0, 12).map((item) => {
-    const link = item.url ? `<a href="${item.url}">${item.title}</a>` : item.title;
-    return `<li><strong>[${item.type}]</strong> ${link} <span style="color:#666">(${item.org})</span></li>`;
-  }).join('\n');
-
-  const htmlBody = `
-<h2>[NLP-Paper-News] 신규 항목 ${items.length}건</h2>
-<ul>
-${htmlItems}
-</ul>
-${siteBaseUrl ? `<p><a href="${siteBaseUrl}">사이트에서 전체 보기</a></p>` : ''}
-`.trim();
-
   // --- X thread ---
   const xThread = buildXThread(items, siteBaseUrl);
 
@@ -160,19 +123,12 @@ ${siteBaseUrl ? `<p><a href="${siteBaseUrl}">사이트에서 전체 보기</a></
     generated_at: new Date().toISOString(),
     added_count: items.length,
     items,
-    email: {
-      subject: `[NLP-Paper-News] 신규 항목 ${items.length}건 업데이트`,
-      text: txtBody,
-      html: htmlBody,
-    },
     social: {
       x_thread: xThread,
     },
   };
 
   fs.writeFileSync(path.join(outDir, 'digest.json'), JSON.stringify(digest, null, 2), 'utf-8');
-  fs.writeFileSync(path.join(outDir, 'email.txt'), txtBody, 'utf-8');
-  fs.writeFileSync(path.join(outDir, 'email.html'), htmlBody, 'utf-8');
   fs.writeFileSync(path.join(outDir, 'social-draft.md'), socialDraftMd, 'utf-8');
 
   console.log(`digest_saved=${path.join(outDir, 'digest.json')}`);
