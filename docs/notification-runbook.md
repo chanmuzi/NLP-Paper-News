@@ -27,15 +27,18 @@
 ## AI 카피 생성(선택)
 - `ENABLE_AI_X_COPY`: `true`/`false` (기본 `false`)
   - `true`면 OpenAI 모델로 main/reply 초안을 생성하고, 길이 검증 실패 시 재시도 후 규칙 기반으로 자동 fallback
-- `OPENAI_MODEL`: 기본 권장 `gpt-4.1-mini`
+- `OPENAI_MODEL`: 공통 모델 (미설정 시 기본 후보 자동 사용)
+- `OPENAI_MODEL_MAIN`: 메인 포스트 전용 모델 (선택)
+- `OPENAI_MODEL_REPLY`: reply 전용 모델 (선택)
 - `OPENAI_API_BASE`: 기본 `https://api.openai.com/v1` (대부분 미설정)
+- `OPENAI_X_DEBUG`: `true`면 프롬프트/입출력 디버그를 `artifacts/openai-x-copy-debug.json`으로 저장
 
 필수 시크릿:
 - `OPENAI_API_KEY`
 
 > 추천 세팅
 > - `ENABLE_AI_X_COPY=true`
-> - `OPENAI_MODEL=gpt-4.1-mini`
+> - `OPENAI_MODEL=gpt-4.1-mini` (또는 원하는 모델)
 > - `X_SAFE_LIMIT=275`
 
 ## 필수 시크릿 (GitHub Secrets)

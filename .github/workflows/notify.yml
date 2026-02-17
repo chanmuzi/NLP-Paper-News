@@ -70,7 +70,10 @@ jobs:
           ENABLE_AI_X_COPY: ${{ vars.ENABLE_AI_X_COPY }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           OPENAI_MODEL: ${{ vars.OPENAI_MODEL }}
+          OPENAI_MODEL_MAIN: ${{ vars.OPENAI_MODEL_MAIN }}
+          OPENAI_MODEL_REPLY: ${{ vars.OPENAI_MODEL_REPLY }}
           OPENAI_API_BASE: ${{ vars.OPENAI_API_BASE }}
+          OPENAI_X_DEBUG: ${{ vars.OPENAI_X_DEBUG }}
           X_SAFE_LIMIT: ${{ vars.X_SAFE_LIMIT }}
         run: node scripts/build-digest.mjs --input artifacts/new-items.json --out-dir artifacts --site-base-url "https://chanmuzi.github.io/NLP-Paper-News/"
 
