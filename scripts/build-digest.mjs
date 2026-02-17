@@ -266,7 +266,7 @@ function renderReplyText({ index, total, titleShort, summaryLine, url, titleMaxL
   const summary = limitPlain(sanitizeReplySummary(summaryLine || ''), summaryMaxLen) || '핵심 업데이트입니다.';
   const line1 = `[${index}/${total}] ${title}`;
   // 카드 preview 유도를 위해 URL은 라벨 없이 마지막 줄에만 추가
-  return url ? compactLines(`${line1}\n${summary}\n${url}`) : compactLines(`${line1}\n${summary}`);
+  return url ? compactLines(`${line1}\n\n${summary}\n\n${url}`) : compactLines(`${line1}\n\n${summary}`);
 }
 
 function forceReplyWithinLimit({ limit, item, index, total, titleShort, summaryLine, baseReply }) {
