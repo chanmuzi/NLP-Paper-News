@@ -209,8 +209,8 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
       </details>
     </div>
 
-    <!-- Submit Status (outside preview-section so it survives clear) -->
-    <div id="submit-status" class="hidden mb-5 p-4 rounded-xl text-sm"></div>
+    <!-- Submit Status (outside preview-section so it stays visible after submit clears items) -->
+    <div id="submit-status" class="hidden mt-3 p-4 rounded-xl text-sm"></div>
 
     <!-- Confirm Modal -->
     <div id="confirm-modal" class="hidden fixed inset-0 z-50">
@@ -236,6 +236,7 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
   let selectedType = 'paper';
   let pendingSubmitItems: any[] = [];
   let submittedIds = new Set<string>();
+  let existingIds = new Set<string>();  // IDs already committed to items.json
 
   // ─── Type colors ───────────────────────
   const TYPE_COLORS: Record<string, { border: string; bg: string; text: string }> = {
@@ -249,6 +250,40 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
   const TYPE_MAP: Record<string, string> = {
     '📜': 'paper', '🧑🏻‍💻': 'dev', '🧑🏻💻': 'dev', '🗞️': 'news', '🗞': 'news',
   };
+
+  // ─── Load existing IDs from GitHub ─────
+  async function loadExistingIds() {
+    const token = localStorage.getItem('github_token');
+    if (!token) return;
+    const repo = (document.getElementById('github-repo') as HTMLInputElement)?.value || 'chanmuzi/NLP-Paper-News';
+    try {
+      const getRes = await fetch(`https://api.github.com/repos/${repo}/contents/data/items.json`, {
+        headers: { 'Authorization': `token ${token}`, 'Accept': 'application/vnd.github.v3+json' }
+      });
+      if (!getRes.ok) return;
+      const fileData = await getRes.json();
+
+      let base64Content: string;
+      if (fileData.content) {
+        base64Content = fileData.content.replace(/\n/g, '');
+      } else {
+        const blobRes = await fetch(`https://api.github.com/repos/${repo}/git/blobs/${fileData.sha}`, {
+          headers: { 'Authorization': `token ${token}`, 'Accept': 'application/vnd.github.v3+json' }
+        });
+        if (!blobRes.ok) return;
+        const blobData = await blobRes.json();
+        base64Content = blobData.content.replace(/\n/g, '');
+      }
+      const binaryStr = atob(base64Content);
+      const bytes = new Uint8Array(binaryStr.length);
+      for (let i = 0; i < binaryStr.length; i++) {
+        bytes[i] = binaryStr.charCodeAt(i);
+      }
+      const rawContent = new TextDecoder('utf-8').decode(bytes);
+      const data = JSON.parse(rawContent);
+      existingIds = new Set((data.items || []).map((i: any) => i.id));
+    } catch { /* silently fail — graceful degradation */ }
+  }
 
   // ─── Tab switching ─────────────────────
   const tabSimple = document.getElementById('tab-simple')!;
@@ -545,14 +580,19 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
       renderPreview();
       const localDuplicateCount = getLocalDuplicateCount(result.items);
       const alreadySubmitted = result.items.filter(i => submittedIds.has(i.id));
+      const alreadyCommitted = result.items.filter(i => existingIds.has(i.id));
+      const realNewCount = result.items.filter(i => !submittedIds.has(i.id) && !existingIds.has(i.id)).length;
       let summaryHtml = `
         <div class="font-semibold text-gray-700 dark:text-gray-200 mb-1">파싱 테스트 완료</div>
-        <div>추가 후보: <span class="font-mono font-semibold">${result.items.length}</span>건</div>
+        <div>추가 후보: <span class="font-mono font-semibold">${realNewCount}</span>건${alreadyCommitted.length > 0 ? ` <span class="text-gray-400">(이미 커밋됨: ${alreadyCommitted.length}건)</span>` : ''}</div>
         <div>형식 오류: <span class="font-mono font-semibold">${result.errors.length}</span>건</div>
         <div>입력 내부 중복(id): <span class="font-mono font-semibold">${localDuplicateCount}</span>건</div>
       `;
+      if (alreadyCommitted.length > 0) {
+        summaryHtml += `<div class="mt-1 text-amber-600 dark:text-amber-400 font-semibold">이미 커밋된 항목 ${alreadyCommitted.length}건 포함 — 미리보기에서 제거하거나 그대로 두면 자동 건너뜁니다</div>`;
+      }
       if (alreadySubmitted.length > 0) {
-        summaryHtml += `<div class="mt-1 text-red-600 dark:text-red-400 font-semibold">⚠️ 이미 제출된 항목 ${alreadySubmitted.length}건 포함 — 미리보기에서 중복 항목을 제거해야 제출할 수 있습니다</div>`;
+        summaryHtml += `<div class="mt-1 text-red-600 dark:text-red-400 font-semibold">이미 제출된 항목 ${alreadySubmitted.length}건 포함 — 미리보기에서 중복 항목을 제거해야 제출할 수 있습니다</div>`;
       }
       summaryEl.innerHTML = summaryHtml;
       summaryEl.classList.remove('hidden');
@@ -588,9 +628,15 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
       const colors = TYPE_COLORS[item.type] || TYPE_COLORS.paper;
       const dateDisplay = `${item.year}.${String(item.month).padStart(2, '0')} ${item.week}주차`;
       const urlDomain = item.url ? (() => { try { return new URL(item.url).hostname.replace('www.', ''); } catch { return ''; } })() : '';
-      const isDuplicate = submittedIds.has(item.id);
+      const isSessionDup = submittedIds.has(item.id);
+      const isExistingDup = existingIds.has(item.id);
+      const isDuplicate = isSessionDup || isExistingDup;
       const dupBorder = isDuplicate ? 'border-red-300 dark:border-red-800 opacity-60' : `${colors.border}/30`;
-      const dupBadge = isDuplicate ? '<span class="text-xs font-semibold text-red-500 dark:text-red-400 bg-red-50 dark:bg-red-950/30 px-2 py-0.5 rounded-md">중복</span>' : '';
+      const dupBadge = isExistingDup
+        ? '<span class="text-xs font-semibold text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-800 px-2 py-0.5 rounded-md">커밋 완료</span>'
+        : isSessionDup
+        ? '<span class="text-xs font-semibold text-red-500 dark:text-red-400 bg-red-50 dark:bg-red-950/30 px-2 py-0.5 rounded-md">중복</span>'
+        : '';
       return `
         <div class="p-4 rounded-xl border ${colors.bg} ${dupBorder} relative group">
           <button class="remove-item absolute top-2 right-2 p-1 rounded-md text-gray-300 hover:text-red-500 opacity-0 group-hover:opacity-100 transition-all" data-idx="${idx}">
@@ -643,15 +689,13 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
     const label = document.getElementById('submit-btn-label');
     if (!submitBtn || !label) return;
 
-    const newItems = parsedItems.filter(i => !submittedIds.has(i.id));
+    const newItems = parsedItems.filter(i => !submittedIds.has(i.id) && !existingIds.has(i.id));
     const duplicateCount = parsedItems.length - newItems.length;
 
     if (parsedItems.length > 0 && newItems.length === 0) {
-      // All items are duplicates
       submitBtn.disabled = true;
       label.textContent = `제출 불가 (${duplicateCount}건 중복)`;
     } else if (duplicateCount > 0) {
-      // Some duplicates — allow submit but warn
       submitBtn.disabled = true;
       label.textContent = `제출 불가 (${duplicateCount}건 중복 포함)`;
     } else {
@@ -847,7 +891,7 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
 
       const skippedMsg = skippedCount > 0 ? ` (${skippedCount}개 중복 건너뜀)` : '';
       const shortSha = (newCommit.sha || '').slice(0, 7);
-      items.forEach(i => submittedIds.add(i.id));
+      items.forEach(i => { submittedIds.add(i.id); existingIds.add(i.id); });
       showStatus(`${newItems.length}개 항목 추가 완료${skippedMsg} · ${shortSha}`, 'success');
       parsedItems = [];
       renderPreview();
@@ -964,6 +1008,7 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
       localStorage.setItem('github_token', input.value.trim());
       input.value = '';
       updateTokenStatus();
+      loadExistingIds(); // Reload with new token
       showToast('토큰이 저장되었습니다');
     }
   });
@@ -989,7 +1034,9 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
   if (savedRepo) {
     (document.getElementById('github-repo') as HTMLInputElement).value = savedRepo;
   }
+  loadExistingIds(); // Load after repo value is restored
   document.getElementById('github-repo')?.addEventListener('change', (e) => {
     localStorage.setItem('github_repo', (e.target as HTMLInputElement).value);
+    loadExistingIds(); // Reload for new repo
   });
 </script>

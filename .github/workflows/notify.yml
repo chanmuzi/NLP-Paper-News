@@ -100,6 +100,7 @@ jobs:
           name: notify-artifacts
           path: artifacts
       - name: Post to X
+        id: post
         env:
           X_API_KEY: ${{ secrets.X_API_KEY }}
           X_API_SECRET: ${{ secrets.X_API_SECRET }}
@@ -112,3 +113,13 @@ jobs:
             DRY_RUN_FLAG="--dry-run"
           fi
           node scripts/post-x.mjs --digest artifacts/digest.json $DRY_RUN_FLAG
+      - name: Post to X summary
+        if: always()
+        run: |
+          echo "## X Post Result" >> "$GITHUB_STEP_SUMMARY"
+          if [ "${{ steps.post.outcome }}" = "success" ]; then
+            echo "Thread posted successfully" >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "**Thread posting failed** — replies were rolled back automatically." >> "$GITHUB_STEP_SUMMARY"
+            echo "Re-trigger this workflow to retry." >> "$GITHUB_STEP_SUMMARY"
+          fi

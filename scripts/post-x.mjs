@@ -49,6 +49,17 @@ function buildOAuthHeader({ method, url, consumerKey, consumerSecret, tokenKey, 
   return `OAuth ${headerValue}`;
 }
 
+// --- Parse error detail from X API response ---
+
+function parseErrorDetail(resBody) {
+  try {
+    const json = JSON.parse(resBody);
+    return json.detail || json.title || resBody;
+  } catch {
+    return resBody;
+  }
+}
+
 // --- Tweet posting ---
 
 async function postTweet({ text, replyToId, url, credentials, retries = 3 }) {
@@ -83,16 +94,55 @@ async function postTweet({ text, replyToId, url, credentials, retries = 3 }) {
       console.warn(`Rate limit remaining: ${rlRemaining}, reset: ${rlReset}`);
     }
 
+    const errorDetail = parseErrorDetail(resBody);
+    console.warn(`Attempt ${attempt}/${retries} failed (${res.status}): ${errorDetail}`);
+
     // Retry on 403 (duplicate/spam detection) or 429 (rate limit)
     if ((res.status === 403 || res.status === 429) && attempt < retries) {
-      const wait = attempt * 5000 + Math.floor(Math.random() * 3000); // 5-8s, 10-13s
-      console.warn(`Attempt ${attempt} failed (${res.status}), retrying in ${(wait / 1000).toFixed(1)}s...`);
+      const wait = attempt * 8000 + Math.floor(Math.random() * 5000); // 8-13s, 16-21s
+      console.warn(`Retrying in ${(wait / 1000).toFixed(1)}s...`);
       await new Promise((r) => setTimeout(r, wait));
       continue;
     }
 
-    throw new Error(`X post failed (${res.status}): ${resBody}`);
+    throw new Error(`X post failed (${res.status}): ${errorDetail}`);
   }
+}
+
+// --- Tweet deletion (for rollback) ---
+
+async function deleteTweet({ tweetId, apiBase, credentials }) {
+  const url = `${apiBase}/2/tweets/${tweetId}`;
+  const authorization = buildOAuthHeader({ method: 'DELETE', url, ...credentials });
+
+  const res = await fetch(url, {
+    method: 'DELETE',
+    headers: { 'Authorization': authorization },
+  });
+
+  if (res.ok) {
+    console.log(`Deleted tweet: ${tweetId}`);
+    return true;
+  }
+
+  const resBody = await res.text();
+  console.warn(`Failed to delete tweet ${tweetId} (${res.status}): ${parseErrorDetail(resBody)}`);
+  return false;
+}
+
+// --- Rollback: delete all posted tweets ---
+
+async function rollbackThread(postedIds, apiBase, credentials) {
+  console.log(`\nRolling back ${postedIds.length} posted tweet(s)...`);
+  let deleted = 0;
+  // Delete in reverse order (replies first, then main)
+  for (let i = postedIds.length - 1; i >= 0; i--) {
+    const ok = await deleteTweet({ tweetId: postedIds[i], apiBase, credentials });
+    if (ok) deleted++;
+    // Small delay between deletions
+    if (i > 0) await new Promise((r) => setTimeout(r, 1000));
+  }
+  console.log(`Rollback complete: ${deleted}/${postedIds.length} deleted`);
 }
 
 async function main() {
@@ -137,30 +187,47 @@ async function main() {
   const url = `${apiBase}/2/tweets`;
   const credentials = { consumerKey, consumerSecret, tokenKey, tokenSecret };
 
+  // Track all posted tweet IDs for potential rollback
+  const postedIds = [];
+
   // Post main tweet
   console.log('Posting main tweet...');
   const mainId = await postTweet({ text: thread.main, url, credentials });
+  postedIds.push(mainId);
   console.log(`Main tweet posted: ${mainId}`);
 
   // Post replies as a chain
   let parentId = mainId;
   const replies = thread.replies || [];
+  let failedReply = null;
+
   for (let i = 0; i < replies.length; i++) {
-    // Randomized delay between replies to avoid spam detection
-    const delay = 4000 + Math.floor(Math.random() * 3000); // 4-7s
+    // Longer delay between replies to avoid spam detection (6-10s)
+    const delay = 6000 + Math.floor(Math.random() * 4000);
     await new Promise((r) => setTimeout(r, delay));
 
     console.log(`Posting reply ${i + 1}/${replies.length}...`);
     try {
       parentId = await postTweet({ text: replies[i], replyToId: parentId, url, credentials });
+      postedIds.push(parentId);
       console.log(`Reply ${i + 1} posted: ${parentId}`);
     } catch (err) {
-      console.error(`Reply ${i + 1} failed: ${err.message}`);
-      // Continue with remaining replies using last successful parent
+      console.error(`Reply ${i + 1} FAILED: ${err.message}`);
+      failedReply = { index: i + 1, error: err.message };
+      break; // Stop posting further replies
     }
   }
 
-  console.log(`Thread complete: 1 main + ${replies.length} replies`);
+  // If any reply failed, rollback all posted tweets
+  if (failedReply) {
+    console.error(`\nThread incomplete: reply ${failedReply.index}/${replies.length} failed`);
+    console.error(`Reason: ${failedReply.error}`);
+    await rollbackThread(postedIds, apiBase, credentials);
+    console.error('\nExiting with error — thread rolled back. Re-trigger workflow to retry.');
+    process.exit(1);
+  }
+
+  console.log(`\nThread complete: 1 main + ${replies.length} replies (all successful)`);
 }
 
 main();
