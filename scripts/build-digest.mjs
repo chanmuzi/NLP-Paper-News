@@ -45,12 +45,12 @@ function buildXThread(items, siteBaseUrl) {
   const day = dayNames[now.getDay()];
   const dateStr = `${yyyy}.${mm}.${dd} (${day})`;
 
-  // Check if there was already a push to data/items.json today (KST)
+  // Check if there was already an item-adding push to data/items.json today (KST)
   let isAdditional = false;
   try {
     const todayKST = `${yyyy}-${mm}-${dd}`;
     const log = execSync(
-      `git log --since="${todayKST}T00:00:00+09:00" --until="${todayKST}T23:59:59+09:00" --oneline -- data/items.json`,
+      `git log --since="${todayKST}T00:00:00+09:00" --until="${todayKST}T23:59:59+09:00" --oneline --grep="^Add " -- data/items.json`,
       { encoding: 'utf-8', timeout: 5000 }
     ).trim();
     // In CI, current commit is already checked out, so log includes it; >=2 means a previous one exists
@@ -60,13 +60,13 @@ function buildXThread(items, siteBaseUrl) {
   } catch { /* git not available or not in repo — default to normal */ }
 
   const updateLabel = isAdditional ? '추가 업데이트' : '업데이트';
-  const header = `📌 NLP-Paper-News · ${dateStr} ${updateLabel} (${items.length}건)\n\n`;
+  const header = `📌 ${dateStr} ${updateLabel} (${items.length}건)\n\n`;
   const footer = siteBaseUrl ? `\n\n👉 ${siteBaseUrl}` : '';
 
   // Fit as many items as possible into 280 chars, show "외 N건" for the rest
   let mainText = '';
   for (let count = Math.min(items.length, 10); count >= 1; count--) {
-    const lines = items.slice(0, count).map((item) => `• ${item.title} (${item.org})`);
+    const lines = items.slice(0, count).map((item) => `• [${item.org}] ${item.title}`);
     const remaining = items.length - count;
     const moreLine = remaining > 0 ? `\n외 ${remaining}건` : '';
     const candidate = header + lines.join('\n') + moreLine + footer;
@@ -76,7 +76,7 @@ function buildXThread(items, siteBaseUrl) {
     }
   }
   if (!mainText) {
-    mainText = header + `• ${items[0].title} (${items[0].org})` +
+    mainText = header + `• [${items[0].org}] ${items[0].title}` +
       (items.length > 1 ? `\n외 ${items.length - 1}건` : '') + footer;
   }
 
@@ -86,7 +86,7 @@ function buildXThread(items, siteBaseUrl) {
   const replies = items.map((item, idx) => {
     const icon = typeIcon[item.type] || '📄';
     const num = `[${idx + 1}/${total}]`;
-    const titleLine = `${num} ${icon} ${item.title} (${item.org})`;
+    const titleLine = `${num} ${icon} [${item.org}] ${item.title}`;
     const headerPart = titleLine;
     const urlLine = item.url ? `\n🔗 ${item.url}` : '';
 
