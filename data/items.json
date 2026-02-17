@@ -1,8 +1,38 @@
 {
   "version": 1,
-  "last_updated": "2026-02-17T12:10:07.714Z",
-  "total_items": 1677,
+  "last_updated": "2026-02-17T12:49:57.551Z",
+  "total_items": 1678,
   "items": [
+    {
+      "id": "openai-openclaw-창립자-peter-steinberger-openai-합류-발표",
+      "type": "news",
+      "org": "OpenAI",
+      "title": "OpenClaw 창립자 Peter Steinberger, OpenAI 합류 발표",
+      "url": "",
+      "date": "2026-02-W03",
+      "year": "2026",
+      "month": "2",
+      "week": "3",
+      "bullets": [
+        {
+          "text": "PSPDFKit 창립자이자 OpenClaw 개발자인 Peter Steinberger가 OpenAI에 합류하여 AI agent 개발에 참여",
+          "level": 1
+        },
+        {
+          "text": "AI agent를 누구나 활용할 수 있도록 접근성을 높이는 데 집중할 예정",
+          "level": 2
+        },
+        {
+          "text": "OpenClaw는 재단 구조로 전환되며 오픈소스 독립성은 유지, OpenAI가 스폰서로 지원",
+          "level": 1
+        },
+        {
+          "text": "주요 AI 연구소들을 방문하고 미공개 연구에 접근한 후 OpenAI를 최종 선택했다고 밝힘",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "alibaba-qwen35-towards-native-multimodal-agents",
       "type": "dev",
@@ -36724,9 +36754,9 @@
     }
   ],
   "stats": {
-    "total": 1677,
+    "total": 1678,
     "paper": 1021,
     "dev": 618,
-    "news": 33
+    "news": 34
   }
 }
