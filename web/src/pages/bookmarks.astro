@@ -29,9 +29,14 @@ const sortedItems = [...itemsData.items].sort((a, b) => {
           저장한 항목 <span id="bookmark-count" class="font-semibold text-claude-600 dark:text-claude-400">0</span>개
         </p>
       </div>
-      <button id="clear-all-btn" class="hidden px-3 py-1.5 rounded-lg border border-gray-200 dark:border-gray-700 text-xs font-medium text-gray-500 dark:text-gray-400 hover:text-red-500 hover:border-red-300 dark:hover:text-red-400 dark:hover:border-red-800 transition-all">
-        전체 삭제
-      </button>
+      <div class="flex items-center gap-2">
+        <button id="copy-share-link-btn" class="hidden px-3 py-1.5 rounded-lg border border-gray-200 dark:border-gray-700 text-xs font-medium text-gray-500 dark:text-gray-400 hover:text-claude-500 hover:border-claude-300 dark:hover:text-claude-400 dark:hover:border-claude-800 transition-all">
+          공유 링크 복사
+        </button>
+        <button id="clear-all-btn" class="hidden px-3 py-1.5 rounded-lg border border-gray-200 dark:border-gray-700 text-xs font-medium text-gray-500 dark:text-gray-400 hover:text-red-500 hover:border-red-300 dark:hover:text-red-400 dark:hover:border-red-800 transition-all">
+          전체 삭제
+        </button>
+      </div>
     </div>
 
     <!-- Bookmarked Items Grid -->
@@ -53,6 +58,7 @@ const sortedItems = [...itemsData.items].sort((a, b) => {
 
 <script define:vars={{ allItems: JSON.stringify(sortedItems) }}>
   const items = JSON.parse(allItems);
+  const VALID_IDS = new Set(items.map(item => item.id));
 
   function getBookmarks() {
     try { return JSON.parse(localStorage.getItem('bookmarks') || '[]'); }
@@ -129,6 +135,7 @@ const sortedItems = [...itemsData.items].sort((a, b) => {
     const emptyState = document.getElementById('empty-state');
     const countEl = document.getElementById('bookmark-count');
     const clearBtn = document.getElementById('clear-all-btn');
+    const shareBtn = document.getElementById('copy-share-link-btn');
 
     // Filter items that are bookmarked, maintain order from items (newest first)
     const bookmarkedItems = items.filter(item => bookmarks.includes(item.id));
@@ -140,12 +147,14 @@ const sortedItems = [...itemsData.items].sort((a, b) => {
       grid.classList.add('hidden');
       emptyState.classList.remove('hidden');
       clearBtn.classList.add('hidden');
+      shareBtn?.classList.add('hidden');
       return;
     }
 
     grid.classList.remove('hidden');
     emptyState.classList.add('hidden');
     clearBtn.classList.remove('hidden');
+    shareBtn?.classList.remove('hidden');
 
     grid.innerHTML = bookmarkedItems.map(item => renderCard(item)).join('');
     attachListeners();
@@ -223,6 +232,62 @@ const sortedItems = [...itemsData.items].sort((a, b) => {
     setTimeout(() => t.remove(), 3000);
   }
 
+  function encodeIds(ids) {
+    const json = JSON.stringify(ids);
+    const bytes = new TextEncoder().encode(json);
+    let binary = '';
+    bytes.forEach(b => { binary += String.fromCharCode(b); });
+    const b64 = btoa(binary);
+    return b64.replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+  }
+
+  function decodeIds(token) {
+    try {
+      const b64 = token.replace(/-/g, '+').replace(/_/g, '/');
+      const pad = '='.repeat((4 - (b64.length % 4)) % 4);
+      const binary = atob(b64 + pad);
+      const bytes = Uint8Array.from(binary, c => c.charCodeAt(0));
+      const json = new TextDecoder().decode(bytes);
+      const parsed = JSON.parse(json);
+      if (!Array.isArray(parsed)) return [];
+      return parsed.filter(id => typeof id === 'string' && VALID_IDS.has(id));
+    } catch {
+      return [];
+    }
+  }
+
+  function buildShareUrl(ids) {
+    const url = new URL(window.location.href);
+    url.searchParams.set('b', encodeIds(ids));
+    return url.toString();
+  }
+
+  function applyBookmarksFromUrl() {
+    const url = new URL(window.location.href);
+    const token = url.searchParams.get('b');
+    if (!token) return false;
+    const ids = decodeIds(token);
+    if (ids.length === 0) return false;
+    localStorage.setItem('bookmarks', JSON.stringify(ids));
+    showToast(`공유 링크에서 북마크 ${ids.length}개를 불러왔습니다`);
+    return true;
+  }
+
   // Initial render
+  applyBookmarksFromUrl();
   render();
+
+  document.getElementById('copy-share-link-btn')?.addEventListener('click', async () => {
+    const bookmarks = getBookmarks().filter(id => VALID_IDS.has(id));
+    if (bookmarks.length === 0) {
+      showToast('공유할 북마크가 없습니다');
+      return;
+    }
+    try {
+      await navigator.clipboard.writeText(buildShareUrl(bookmarks));
+      showToast('공유 링크가 복사되었습니다');
+    } catch {
+      showToast('클립보드 복사에 실패했습니다');
+    }
+  });
 </script>
