@@ -15,23 +15,23 @@
       "week": "3",
       "bullets": [
         {
-          "text": "현존 task decomposition & delegation methods는 simple heuristics에 의존하고 있다고 문제 제기",
+          "text": "기존 task decomposition & delegation 방식이 단순 heuristics에 머물러 있다는 한계를 지적",
           "level": 1
         },
         {
-          "text": "AI agent가 manageable sub-components로 문제를 쪼개고 이걸 잘 delegate 해야 한다고 주장 (최근 가장 중요한 요소인 듯)",
+          "text": "AI agent가 문제를 manageable sub-components로 분할하고 효과적으로 위임하는 능력이 핵심이라 주장",
           "level": 2
         },
         {
-          "text": "intelligent AI delegation framework 제안",
+          "text": "intelligent AI delegation을 위한 통합 프레임워크 제시",
           "level": 1
         },
         {
-          "text": "task allocation, transfer of authority, responsibility, accountability 등",
+          "text": "task allocation, authority transfer, responsibility & accountability 메커니즘 포함",
           "level": 2
         },
         {
-          "text": "이 프레임워크는 human & AI delegators 둘 다에 적용 가능 → agentic web 프로토콜 개발에 기여하는 걸 목표로 삼고 있음",
+          "text": "human 및 AI delegators 모두에 적용 가능하며, agentic web protocol 발전에 기여하는 것을 목표로 함",
           "level": 1
         }
       ],
@@ -36758,8 +36758,8 @@
     }
   ],
   "stats": {
-    "total": 1678,
-    "paper": 1022,
+    "total": 1677,
+    "paper": 1021,
     "dev": 618,
     "news": 33
   }
