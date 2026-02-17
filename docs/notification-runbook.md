@@ -23,6 +23,7 @@
   - `true`: reply가 403/429로 막히면 main tweet은 유지하고 **degraded(main_only)** 처리
   - `false`: 기존처럼 reply 실패 시 전체 롤백
 - `X_SAFE_LIMIT`: X 글자수 안전 상한(기본 `275`, 최대 `280`)
+- `X_GEN_MARGIN`: 생성 단계 추가 여유(기본 `16`). 실제 생성 목표는 `X_SAFE_LIMIT - X_GEN_MARGIN`.
 
 ## AI 카피 생성(선택)
 - `ENABLE_AI_X_COPY`: `true`/`false` (기본 `false`)
@@ -38,8 +39,18 @@
 
 > 추천 세팅
 > - `ENABLE_AI_X_COPY=true`
-> - `OPENAI_MODEL=gpt-4.1-mini` (또는 원하는 모델)
+> - `OPENAI_MODEL=gpt-5.2` (또는 원하는 모델)
 > - `X_SAFE_LIMIT=275`
+> - `X_GEN_MARGIN=16`
+
+모델 선택 우선순위:
+1) `OPENAI_MODEL_MAIN`/`OPENAI_MODEL_REPLY`  
+2) `OPENAI_MODEL`  
+3) 기본 후보(`gpt-5.2` → `gpt-4.1-mini` → `gpt-4o-mini`)
+
+디버그 확인 팁:
+- `openai-x-copy-debug.json`에서 `requests[0]`만 보면 첫 호출만 보입니다.
+- 전체 확인: `jq '.requests[].model, .responses[].model' artifacts/openai-x-copy-debug.json`
 
 ## 필수 시크릿 (GitHub Secrets)
 
@@ -55,6 +66,31 @@
 2. `workflow_dispatch`로 `dry_run=true` 실행
 3. 테스트 계정 토큰 설정 후 `workflow_dispatch` + `dry_run=false`로 1회 게시 검증
 4. 문제 없으면 `ENABLE_X_POST`를 `true`로 전환
+
+
+### 로컬 검증 커맨드 (필수)
+1) digest 생성
+```bash
+node scripts/build-digest.mjs \
+  --input artifacts/new-items.json \
+  --out-dir artifacts \
+  --site-base-url "https://chanmuzi.github.io/NLP-Paper-News/"
+```
+
+2) 모델 요청/응답 확인 (`OPENAI_X_DEBUG=true`일 때)
+```bash
+jq '.requests[].model, .responses[].model' artifacts/openai-x-copy-debug.json
+jq '.requests[0], .responses[0]' artifacts/openai-x-copy-debug.json
+```
+
+3) 최종 게시 텍스트 확인 (dry-run)
+```bash
+node scripts/post-x.mjs --digest artifacts/digest.json --dry-run
+```
+
+4) 길이 하드 가드 확인
+- `scripts/post-x.mjs`는 게시 직전 280자(가중치) 초과를 검사하고, 초과 시 즉시 실패합니다.
+- `local_length_guard`가 발생하면 생성 프롬프트/요약 길이를 줄인 뒤 재시도하세요.
 
 ## 실패 시 운영
 - Actions `notify-artifacts`에서 `social-draft.md` 다운로드

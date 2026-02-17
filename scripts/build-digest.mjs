@@ -4,7 +4,8 @@ import path from 'path';
 import { execSync } from 'child_process';
 
 const X_HARD_LIMIT = 280;
-const DEFAULT_X_SAFE_LIMIT = 275;
+const DEFAULT_X_SAFE_LIMIT = 260; // 비프리미엄/가중치 보수 대응
+const DEFAULT_GEN_MARGIN = 16;
 const URL_REGEX = /https?:\/\/[^\s)]+/gi;
 
 function parseArgs(argv) {
@@ -26,12 +27,45 @@ function toBool(value, defaultValue = false) {
 function getSafeLimit() {
   const raw = Number(process.env.X_SAFE_LIMIT || DEFAULT_X_SAFE_LIMIT);
   if (!Number.isFinite(raw)) return DEFAULT_X_SAFE_LIMIT;
-  return Math.max(240, Math.min(X_HARD_LIMIT, Math.floor(raw)));
+  return Math.max(220, Math.min(X_HARD_LIMIT, Math.floor(raw)));
+}
+
+function getGenerationLimit(safeLimit) {
+  const raw = Number(process.env.X_GEN_MARGIN || DEFAULT_GEN_MARGIN);
+  const margin = Number.isFinite(raw) ? Math.max(0, Math.floor(raw)) : DEFAULT_GEN_MARGIN;
+  return Math.max(210, Math.min(safeLimit, safeLimit - margin));
+}
+
+function isWideChar(ch) {
+  const cp = ch.codePointAt(0);
+  if (!cp) return false;
+  return (
+    (cp >= 0x1100 && cp <= 0x11FF) ||
+    (cp >= 0x2E80 && cp <= 0xA4CF) ||
+    (cp >= 0xAC00 && cp <= 0xD7A3) ||
+    (cp >= 0xF900 && cp <= 0xFAFF) ||
+    (cp >= 0xFE10 && cp <= 0xFE6F) ||
+    (cp >= 0xFF01 && cp <= 0xFF60) ||
+    (cp >= 0xFFE0 && cp <= 0xFFE6)
+  );
+}
+
+function isEmoji(ch) {
+  try {
+    return /\p{Extended_Pictographic}/u.test(ch);
+  } catch {
+    return false;
+  }
 }
 
 function countXChars(text) {
   const normalized = String(text || '').replace(URL_REGEX, 'x'.repeat(23));
-  return [...normalized].length;
+  let total = 0;
+  for (const ch of [...normalized]) {
+    if (isEmoji(ch) || isWideChar(ch)) total += 2;
+    else total += 1;
+  }
+  return total;
 }
 
 function isWithinXLimit(text, limit = X_HARD_LIMIT) {
@@ -41,7 +75,6 @@ function isWithinXLimit(text, limit = X_HARD_LIMIT) {
 function clipToXLimit(text, limit = X_HARD_LIMIT) {
   const src = String(text || '');
   if (isWithinXLimit(src, limit)) return src;
-
   const chars = [...src];
   const ellipsis = '…';
   while (chars.length > 0) {
@@ -62,6 +95,20 @@ function compactLines(text) {
     .trim();
 }
 
+function cleanInline(text) {
+  return String(text || '')
+    .replace(/\s+/g, ' ')
+    .replace(/^[•\-\d.)\s]+/, '')
+    .replace(/["“”]/g, '')
+    .trim();
+}
+
+function limitPlain(text, maxLen) {
+  const src = cleanInline(text);
+  if (!src || src.length <= maxLen) return src;
+  return `${src.slice(0, Math.max(1, maxLen - 1)).trim()}…`;
+}
+
 function inferUpdateLabel() {
   const dayNames = ['일', '월', '화', '수', '목', '금', '토'];
   const now = new Date(new Date().toLocaleString('en-US', { timeZone: 'Asia/Seoul' }));
@@ -79,91 +126,11 @@ function inferUpdateLabel() {
       { encoding: 'utf-8', timeout: 5000 }
     ).trim();
     if (log && log.split('\n').filter(Boolean).length >= 2) isAdditional = true;
-  } catch {
-    // ignore
-  }
+  } catch {}
 
-  return {
-    dateStr,
-    updateLabel: isAdditional ? '추가 업데이트' : '업데이트',
-  };
+  return { dateStr, updateLabel: isAdditional ? '추가 업데이트' : '업데이트' };
 }
 
-// ----------------------------
-// Rule-based fallback generator
-// ----------------------------
-function buildDeterministicXThread(items, siteBaseUrl, safeLimit = DEFAULT_X_SAFE_LIMIT) {
-  const typeIcon = { paper: '📜', dev: '🧑🏻‍💻', news: '🗞️' };
-  const { dateStr, updateLabel } = inferUpdateLabel();
-
-  const header = `📌 ${dateStr} ${updateLabel} (${items.length}건)\n\n`;
-  const footer = siteBaseUrl ? `\n\n👉 ${siteBaseUrl}` : '';
-
-  let mainText = '';
-  for (let count = Math.min(items.length, 10); count >= 1; count--) {
-    const lines = items.slice(0, count).map((item) => `• [${item.org}] ${item.title}`);
-    const remaining = items.length - count;
-    const moreLine = remaining > 0 ? `\n외 ${remaining}건` : '';
-    const candidate = compactLines(header + lines.join('\n') + moreLine + footer);
-    if (isWithinXLimit(candidate, safeLimit)) {
-      mainText = candidate;
-      break;
-    }
-  }
-
-  if (!mainText) {
-    const remainingLine = items.length > 1 ? `\n외 ${items.length - 1}건` : '';
-    const staticPart = compactLines(header + remainingLine + footer);
-    const firstLinePrefix = '• ';
-    const firstLineRaw = `[${items[0]?.org || '-'}] ${items[0]?.title || '-'}`;
-    const available = Math.max(24, safeLimit - countXChars(staticPart) - countXChars(firstLinePrefix));
-    const firstLine = firstLinePrefix + clipToXLimit(firstLineRaw, available);
-    mainText = compactLines(header + firstLine + remainingLine + footer);
-    if (!isWithinXLimit(mainText, safeLimit)) mainText = clipToXLimit(mainText, safeLimit);
-  }
-
-  const total = items.length;
-  const replies = items.map((item, idx) => {
-    const icon = typeIcon[item.type] || '📄';
-    const num = `[${idx + 1}/${total}]`;
-    const titleLine = `${num} ${icon} [${item.org}] ${item.title}`;
-    let urlLine = item.url ? `\n🔗 ${item.url}` : '';
-
-    let headerPart = titleLine;
-    const headerLimit = Math.max(32, safeLimit - countXChars(urlLine));
-    if (!isWithinXLimit(headerPart + urlLine, safeLimit)) {
-      headerPart = clipToXLimit(headerPart, headerLimit);
-    }
-
-    if (!isWithinXLimit(headerPart + urlLine, safeLimit)) {
-      urlLine = '';
-      headerPart = clipToXLimit(headerPart, safeLimit);
-    }
-
-    const bulletLines = (item.bullets || []).map((b) => (b.level >= 2 ? `   ↳ ${b.text}` : `• ${b.text}`));
-    let bestText = compactLines(headerPart + urlLine);
-
-    for (let count = bulletLines.length; count >= 0; count--) {
-      const parts = [headerPart];
-      if (count > 0) parts.push(bulletLines.slice(0, count).join('\n'));
-      const candidate = compactLines(parts.join('\n') + urlLine);
-      if (isWithinXLimit(candidate, safeLimit)) {
-        bestText = candidate;
-        break;
-      }
-    }
-
-    if (!isWithinXLimit(bestText, safeLimit)) bestText = clipToXLimit(bestText, safeLimit);
-    if (!isWithinXLimit(bestText, X_HARD_LIMIT)) bestText = clipToXLimit(bestText, X_HARD_LIMIT);
-    return bestText;
-  });
-
-  return { main: mainText, replies };
-}
-
-// ----------------------------
-// OpenAI-based generator
-// ----------------------------
 function parseJsonSafely(raw) {
   const text = String(raw || '').trim();
   if (!text) return null;
@@ -175,79 +142,24 @@ function parseJsonSafely(raw) {
     if (first >= 0 && last > first) {
       try {
         return JSON.parse(text.slice(first, last + 1));
-      } catch {
-        return null;
-      }
+      } catch {}
     }
     return null;
   }
 }
 
 function getModelCandidates(kind = 'main') {
-  // 우선순위: kind 전용 > 공통 > 기본
-  const explicitKind = String(process.env[kind === 'main' ? 'OPENAI_MODEL_MAIN' : 'OPENAI_MODEL_REPLY'] || '').trim();
-  const explicitCommon = String(process.env.OPENAI_MODEL || '').trim();
-  const userPreferred = explicitKind || explicitCommon;
-
-  const defaults = kind === 'main'
-    ? ['gpt-4.1-mini', 'gpt-4o-mini']
-    : ['gpt-4.1-mini', 'gpt-4o-mini'];
-
-  return [...new Set([userPreferred, ...defaults].filter(Boolean))];
+  const kindModel = String(process.env[kind === 'main' ? 'OPENAI_MODEL_MAIN' : 'OPENAI_MODEL_REPLY'] || '').trim();
+  const common = String(process.env.OPENAI_MODEL || '').trim();
+  const defaults = ['gpt-5.2', 'gpt-4.1-mini', 'gpt-4o-mini'];
+  return [...new Set([kindModel, common, ...defaults].filter(Boolean))];
 }
 
-function makeCommonPromptContext(items, siteBaseUrl, safeLimit) {
-  const { dateStr, updateLabel } = inferUpdateLabel();
-  return {
-    locale: 'ko-KR',
-    style_ref: '간결한 정보형 스레드(헤더 + 핵심 불릿), 과장/광고 문구 금지',
-    posting_context: {
-      date_str: dateStr,
-      update_label: updateLabel,
-      total_items: items.length,
-      site_base_url: siteBaseUrl,
-    },
-    constraints: {
-      hard_limit: X_HARD_LIMIT,
-      safe_limit: safeLimit,
-      url_counting_rule: 'All URLs count as 23 chars',
-      no_premium_assumption: true,
-    },
-    items: items.map((it, idx) => ({
-      index: idx + 1,
-      type: it.type,
-      org: it.org,
-      title: it.title,
-      url: it.url || '',
-      bullets: (it.bullets || []).slice(0, 4).map((b) => ({ text: b.text, level: b.level })),
-    })),
-  };
-}
-
-async function callOpenAIJsonSchema({ apiKey, model, schemaName, schema, systemPrompt, userPayload, debugCollector }) {
+async function callOpenAIJsonSchema({ apiKey, model, schemaName, schema, systemPrompt, userPayload, debug }) {
   const endpointBase = String(process.env.OPENAI_API_BASE || 'https://api.openai.com/v1').replace(/\/$/, '');
   const endpoint = `${endpointBase}/chat/completions`;
 
-  const requestBody = {
-    model,
-    temperature: 0.35,
-    response_format: {
-      type: 'json_schema',
-      json_schema: {
-        name: schemaName,
-        strict: true,
-        schema,
-      },
-    },
-    messages: [
-      { role: 'system', content: systemPrompt },
-      { role: 'user', content: JSON.stringify(userPayload) },
-    ],
-  };
-
-  if (debugCollector) {
-    debugCollector.requests.push({ schemaName, model, systemPrompt, userPayload });
-  }
+  if (debug) debug.requests.push({ schemaName, model, systemPrompt, userPayload });
 
   const res = await fetch(endpoint, {
     method: 'POST',
@@ -255,13 +167,24 @@ async function callOpenAIJsonSchema({ apiKey, model, schemaName, schema, systemP
       Authorization: `Bearer ${apiKey}`,
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify(requestBody),
+    body: JSON.stringify({
+      model,
+      temperature: 0.15,
+      response_format: {
+        type: 'json_schema',
+        json_schema: { name: schemaName, strict: true, schema },
+      },
+      messages: [
+        { role: 'system', content: systemPrompt },
+        { role: 'user', content: JSON.stringify(userPayload) },
+      ],
+    }),
   });
 
   const raw = await res.text();
   if (!res.ok) {
-    if (debugCollector) debugCollector.responses.push({ schemaName, model, status: res.status, raw });
-    throw new Error(`OpenAI API error (${res.status}): ${raw.slice(0, 600)}`);
+    if (debug) debug.responses.push({ schemaName, model, status: res.status, raw });
+    throw new Error(`OpenAI API error (${res.status}): ${raw.slice(0, 500)}`);
   }
 
   let content = '';
@@ -273,153 +196,344 @@ async function callOpenAIJsonSchema({ apiKey, model, schemaName, schema, systemP
   }
 
   const parsed = parseJsonSafely(content);
-  if (debugCollector) debugCollector.responses.push({ schemaName, model, status: res.status, content, parsed });
+  if (debug) debug.responses.push({ schemaName, model, status: res.status, content, parsed });
   if (!parsed) throw new Error(`OpenAI JSON parse failed (${schemaName})`);
   return parsed;
 }
 
-function validateMainText(main, safeLimit) {
-  const violations = [];
-  if (!main || !String(main).trim()) {
-    violations.push({ target: 'main', reason: 'empty' });
-    return violations;
-  }
-  const c = countXChars(main);
-  if (c > safeLimit) violations.push({ target: 'main', reason: 'too_long', chars: c, safeLimit });
-  if (!String(main).includes('📌')) violations.push({ target: 'main', reason: 'missing_header_emoji' });
-  return violations;
+function getIcon(type) {
+  const icons = { paper: '📜', dev: '🧑🏻‍💻', news: '🗞️' };
+  return icons[type] || '📄';
 }
 
-function normalizeReplies(replies, total, items) {
-  const result = Array.from({ length: total }, (_, idx) => {
-    const raw = compactLines(replies?.[idx] || '');
-    if (!raw) return '';
-    const prefix = `[${idx + 1}/${total}]`;
-    const body = raw.startsWith(prefix) ? raw : `${prefix} ${raw}`;
+function renderMainText({ dateStr, updateLabel, totalCount, highlights, siteBaseUrl }) {
+  const lines = [];
+  lines.push(`📌 ${dateStr} ${updateLabel} (${totalCount}건)`);
+  lines.push('');
 
-    // reply가 너무 길면 링크 제거 전단계
-    return body;
-  });
-
-  // 빈 reply는 최소 골격으로라도 채우기 (validation에서 다시 걸러짐)
-  return result.map((r, idx) => r || `[${idx + 1}/${total}] [${items[idx]?.org || '-'}] ${items[idx]?.title || '-'}`);
-}
-
-function validateReplies(replies, safeLimit, items) {
-  const violations = [];
-  if (!Array.isArray(replies) || replies.length !== items.length) {
-    violations.push({ target: 'replies', reason: 'invalid_length', expected: items.length, actual: replies?.length || 0 });
-    return violations;
+  const top = (highlights || []).slice(0, 2);
+  for (const h of top) {
+    const org = limitPlain(h.org, 24) || 'Unknown';
+    const title = limitPlain(h.titleShort, 56) || '업데이트';
+    const summary = limitPlain(h.summary, 48) || '핵심 업데이트';
+    lines.push(`• [${org}] ${title}: ${summary}`);
   }
 
-  replies.forEach((reply, idx) => {
-    const text = String(reply || '');
-    if (!text.trim()) {
-      violations.push({ target: `reply_${idx + 1}`, reason: 'empty' });
-      return;
-    }
-    const c = countXChars(text);
-    if (c > safeLimit) violations.push({ target: `reply_${idx + 1}`, reason: 'too_long', chars: c, safeLimit });
+  const rest = Math.max(0, totalCount - top.length);
+  if (rest > 0) lines.push(`외 ${rest}건`);
+  if (siteBaseUrl) {
+    lines.push('');
+    lines.push(`👉 ${siteBaseUrl}`);
+  }
 
-    const expectedPrefix = `[${idx + 1}/${items.length}]`;
-    if (!text.startsWith(expectedPrefix)) {
-      violations.push({ target: `reply_${idx + 1}`, reason: 'missing_prefix', expectedPrefix });
-    }
-  });
-
-  return violations;
+  return compactLines(lines.join('\n'));
 }
 
-function postProcessReplies(replies, items, safeLimit) {
-  return replies.map((reply, idx) => {
-    let text = compactLines(reply);
+function forceMainWithinLimit({ text, limit, dateStr, updateLabel, totalCount, highlights, siteBaseUrl }) {
+  let out = compactLines(text);
+  if (isWithinXLimit(out, limit)) return out;
 
-    // 제목만으로도 길면 강제 축약
-    if (!isWithinXLimit(text, safeLimit)) {
-      const lines = text.split('\n');
-      const header = lines[0] || '';
-      const rest = lines.slice(1).filter((l) => !l.startsWith('🔗 '));
-      const minimized = compactLines([header, ...rest].join('\n'));
-      text = isWithinXLimit(minimized, safeLimit) ? minimized : clipToXLimit(minimized, safeLimit);
-    }
+  const oneHighlight = (highlights || []).slice(0, 1);
+  out = renderMainText({ dateStr, updateLabel, totalCount, highlights: oneHighlight, siteBaseUrl });
+  if (isWithinXLimit(out, limit)) return out;
 
-    if (!isWithinXLimit(text, X_HARD_LIMIT)) text = clipToXLimit(text, X_HARD_LIMIT);
+  const stripped = oneHighlight.map((h) => ({ ...h, summary: '' }));
+  out = renderMainText({ dateStr, updateLabel, totalCount, highlights: stripped, siteBaseUrl });
+  if (isWithinXLimit(out, limit)) return out;
 
-    const expectedPrefix = `[${idx + 1}/${items.length}]`;
-    if (!text.startsWith(expectedPrefix)) text = `${expectedPrefix} ${text}`;
-    return text;
-  });
+  if (siteBaseUrl) {
+    out = compactLines(`📌 ${dateStr} ${updateLabel} (${totalCount}건)\n외 ${totalCount}건\n\n👉 ${siteBaseUrl}`);
+  } else {
+    out = compactLines(`📌 ${dateStr} ${updateLabel} (${totalCount}건)\n외 ${totalCount}건`);
+  }
+
+  return isWithinXLimit(out, limit) ? out : clipToXLimit(out, limit);
 }
 
-async function buildAiXThread(items, siteBaseUrl, safeLimit, debugCollector = null) {
+function renderReplyText({ index, total, icon, org, titleShort, points, url }) {
+  const lines = [];
+  const orgLabel = limitPlain(org, 24) || 'Unknown';
+  const title = limitPlain(titleShort, 52) || '요약';
+  lines.push(`[${index}/${total}] ${icon || '📄'} [${orgLabel}] ${title}`);
+
+  const cleanedPoints = (points || []).map((p) => cleanInline(p)).filter(Boolean).slice(0, 2);
+  for (const p of cleanedPoints) lines.push(`• ${limitPlain(p, 64)}`);
+
+  if (url) lines.push(`🔗 ${url}`);
+  return compactLines(lines.join('\n'));
+}
+
+function forceReplyWithinLimit({ text, limit, item, index, total, fallbackPoints }) {
+  let out = compactLines(text);
+  if (isWithinXLimit(out, limit)) return out;
+
+  out = renderReplyText({
+    index,
+    total,
+    icon: getIcon(item.type),
+    org: item.org,
+    titleShort: item.title,
+    points: [fallbackPoints[0] || '핵심 업데이트'],
+    url: item.url || '',
+  });
+  if (isWithinXLimit(out, limit)) return out;
+
+  out = renderReplyText({
+    index,
+    total,
+    icon: getIcon(item.type),
+    org: item.org,
+    titleShort: limitPlain(item.title, 30),
+    points: [limitPlain(fallbackPoints[0] || '핵심 업데이트', 30)],
+    url: item.url || '',
+  });
+  if (isWithinXLimit(out, limit)) return out;
+
+  return clipToXLimit(out, limit);
+}
+
+async function rewriteToLimit({ apiKey, model, kind, original, limit, contextPayload, debug }) {
+  const schema = {
+    type: 'object',
+    additionalProperties: false,
+    properties: {
+      text: { type: 'string' },
+    },
+    required: ['text'],
+  };
+
+  const prompt = [
+    `당신은 X ${kind} 텍스트 길이 최적화기입니다.`,
+    `의미/사실을 유지한 채 ${limit}자(가중치 계산) 이하로 줄이세요.`,
+    '과장/광고/해시태그 금지, 핵심만 남기세요.',
+    '반드시 JSON만 출력하세요.',
+  ].join('\n');
+
+  const parsed = await callOpenAIJsonSchema({
+    apiKey,
+    model,
+    schemaName: `x_${kind}_rewrite`,
+    schema,
+    systemPrompt: prompt,
+    userPayload: { original, limit, context: contextPayload },
+    debug,
+  });
+
+  return compactLines(String(parsed.text || ''));
+}
+
+async function fitTextToLimit({ apiKey, model, kind, text, limit, contextPayload, debug }) {
+  let out = compactLines(text);
+  if (isWithinXLimit(out, limit)) return out;
+
+  for (let i = 0; i < 2; i++) {
+    try {
+      const rewritten = await rewriteToLimit({ apiKey, model, kind, original: out, limit, contextPayload, debug });
+      if (!rewritten) continue;
+      out = compactLines(rewritten);
+      if (isWithinXLimit(out, limit)) return out;
+    } catch {}
+  }
+
+  return clipToXLimit(out, limit);
+}
+
+function buildDeterministicXThread(items, siteBaseUrl, safeLimit) {
+  const { dateStr, updateLabel } = inferUpdateLabel();
+
+  const highlights = items.slice(0, 2).map((it) => ({
+    org: it.org,
+    titleShort: it.title,
+    summary: cleanInline(it?.bullets?.[0]?.text || '핵심 업데이트'),
+  }));
+
+  const main = forceMainWithinLimit({
+    text: renderMainText({ dateStr, updateLabel, totalCount: items.length, highlights, siteBaseUrl }),
+    limit: safeLimit,
+    dateStr,
+    updateLabel,
+    totalCount: items.length,
+    highlights,
+    siteBaseUrl,
+  });
+
+  const replies = items.map((item, idx) => {
+    const points = (item.bullets || []).slice(0, 2).map((b) => cleanInline(b.text)).filter(Boolean);
+    const rendered = renderReplyText({
+      index: idx + 1,
+      total: items.length,
+      icon: getIcon(item.type),
+      org: item.org,
+      titleShort: item.title,
+      points,
+      url: item.url || '',
+    });
+    return forceReplyWithinLimit({
+      text: rendered,
+      limit: safeLimit,
+      item,
+      index: idx + 1,
+      total: items.length,
+      fallbackPoints: points,
+    });
+  });
+
+  return { main, replies };
+}
+
+function buildAiContext(items, generationLimit, siteBaseUrl) {
+  return {
+    locale: 'ko-KR',
+    char_policy: {
+      hard_limit: X_HARD_LIMIT,
+      generation_limit: generationLimit,
+      url_weight: 23,
+      note: '링크는 가중치 23으로 계산. 이모지/한글은 가중치 증가 가능.',
+    },
+    style_policy: {
+      tone: ['간결', '사실 중심', '과장 금지', '광고 문구 금지'],
+      summary_rule: '항목별 핵심은 1~2개만',
+      main_example: [
+        '📌 YYYY.MM.DD (요일) 업데이트 (N건)',
+        '• [Org] 제목: 핵심 요약',
+        '• [Org] 제목: 핵심 요약',
+        '외 N건',
+        '👉 https://chanmuzi.github.io/NLP-Paper-News/',
+      ],
+      reply_example: [
+        '[i/N] [아이콘] [Org] 제목(짧게)',
+        '• 핵심 1',
+        '• 핵심 2',
+        '🔗 URL',
+      ],
+    },
+    site_base_url: siteBaseUrl,
+    items: items.map((it, idx) => ({
+      index: idx + 1,
+      type: it.type,
+      org: it.org,
+      title: it.title,
+      url: it.url || '',
+      bullets: (it.bullets || []).slice(0, 5).map((b) => ({ text: cleanInline(b.text), level: b.level })),
+    })),
+  };
+}
+
+async function buildAiXThread(items, siteBaseUrl, safeLimit, debug) {
   const apiKey = String(process.env.OPENAI_API_KEY || '').trim();
   if (!apiKey) throw new Error('OPENAI_API_KEY not set');
+  const generationLimit = getGenerationLimit(safeLimit);
 
-  const context = makeCommonPromptContext(items, siteBaseUrl, safeLimit);
+  const mainModels = getModelCandidates('main');
+  const replyModels = getModelCandidates('reply');
+  const context = buildAiContext(items, generationLimit, siteBaseUrl);
+  const { dateStr, updateLabel } = inferUpdateLabel();
 
-  // 1) Main post generation (separate call)
   const mainSchema = {
     type: 'object',
     additionalProperties: false,
-    properties: { main: { type: 'string' } },
-    required: ['main'],
+    properties: {
+      highlights: {
+        type: 'array',
+        minItems: 1,
+        maxItems: Math.min(2, Math.max(1, items.length)),
+        items: {
+          type: 'object',
+          additionalProperties: false,
+          properties: {
+            index: { type: 'integer', minimum: 1, maximum: Math.max(1, items.length) },
+            org: { type: 'string' },
+            title_short: { type: 'string' },
+            summary: { type: 'string' },
+          },
+          required: ['index', 'org', 'title_short', 'summary'],
+        },
+      },
+    },
+    required: ['highlights'],
   };
 
-  const mainSystemPrompt = [
-    'You are an expert Korean X post editor for concise research-news curation.',
-    'Output must be JSON only and strictly follow schema.',
-    'Main post requirements:',
-    '- Start with a pin-style header line (e.g., "📌 YYYY.MM.DD (...) 업데이트 (N건)").',
-    '- Include only top 1~2 items as bullets.',
-    '- End with site link line if provided (👉 ...).',
-    '- Keep tone factual, compact, non-promotional.',
-    '- Must satisfy char limits (safe_limit preferred, hard_limit mandatory).',
+  const mainPrompt = [
+    '당신은 한국어 X 기술 뉴스 에디터입니다.',
+    '목표: 메인 포스트용 하이라이트 1~2개를 JSON으로 생성합니다.',
+    '중요: 원문 재배치가 아니라 핵심 추출 요약이어야 합니다.',
+    '형식 일관성을 위해 아래 스타일을 따릅니다:',
+    '📌 YYYY.MM.DD (요일) 업데이트 (N건)',
+    '• [Org] 제목: 핵심 요약',
+    '• [Org] 제목: 핵심 요약',
+    '외 N건',
+    '👉 https://chanmuzi.github.io/NLP-Paper-News/',
+    '제약:',
+    '- 한국어만 사용',
+    '- 과장/홍보/감탄/해시태그 금지',
+    '- 각 요약은 사실 1~2포인트로 압축',
+    '- title_short는 짧게, summary는 더 짧게',
+    '반드시 schema JSON만 출력합니다.',
   ].join('\n');
 
-  let main = '';
-  let mainFeedback = null;
+  let mainPlan = null;
   let mainModelUsed = null;
+  let mainAttempts = 0;
 
-  for (let attempt = 1; attempt <= 3 && !main; attempt++) {
-    for (const model of getModelCandidates('main')) {
-      try {
-        const mainPayload = {
-          ...context,
-          task: 'generate_main_post_only',
-          feedback: mainFeedback,
-        };
-
-        const parsed = await callOpenAIJsonSchema({
-          apiKey,
-          model,
-          schemaName: 'x_main_post',
-          schema: mainSchema,
-          systemPrompt: mainSystemPrompt,
-          userPayload: mainPayload,
-          debugCollector,
-        });
-
-        const candidate = compactLines(parsed.main || '');
-        const violations = validateMainText(candidate, safeLimit);
-        if (violations.length === 0) {
-          main = candidate;
-          mainModelUsed = model;
-          break;
-        }
-
-        mainFeedback = { attempt, violations, candidate };
-      } catch (err) {
-        mainFeedback = { attempt, error: err.message };
-      }
+  for (const model of mainModels) {
+    mainAttempts += 1;
+    try {
+      const parsed = await callOpenAIJsonSchema({
+        apiKey,
+        model,
+        schemaName: 'x_main_plan_v2',
+        schema: mainSchema,
+        systemPrompt: mainPrompt,
+        userPayload: context,
+        debug,
+      });
+      mainPlan = parsed;
+      mainModelUsed = model;
+      break;
+    } catch {
+      // try next model
     }
   }
 
-  if (!main) {
-    throw new Error('AI main post generation failed after retries');
+  if (!mainPlan) throw new Error('AI main plan generation failed');
+
+  const mainHighlights = (mainPlan.highlights || []).slice(0, 2).map((h) => ({
+    org: h.org,
+    titleShort: h.title_short,
+    summary: h.summary,
+  }));
+
+  let mainText = renderMainText({
+    dateStr,
+    updateLabel,
+    totalCount: items.length,
+    highlights: mainHighlights,
+    siteBaseUrl,
+  });
+
+  if (!isWithinXLimit(mainText, generationLimit)) {
+    mainText = await fitTextToLimit({
+      apiKey,
+      model: mainModelUsed,
+      kind: 'main',
+      text: mainText,
+      limit: generationLimit,
+      contextPayload: { dateStr, updateLabel, totalCount: items.length, highlights: mainHighlights },
+      debug,
+    });
   }
 
-  // 2) Replies generation (separate call)
-  const repliesSchema = {
+  mainText = forceMainWithinLimit({
+    text: mainText,
+    limit: safeLimit,
+    dateStr,
+    updateLabel,
+    totalCount: items.length,
+    highlights: mainHighlights,
+    siteBaseUrl,
+  });
+
+  const replySchema = {
     type: 'object',
     additionalProperties: false,
     properties: {
@@ -427,116 +541,156 @@ async function buildAiXThread(items, siteBaseUrl, safeLimit, debugCollector = nu
         type: 'array',
         minItems: items.length,
         maxItems: items.length,
-        items: { type: 'string' },
+        items: {
+          type: 'object',
+          additionalProperties: false,
+          properties: {
+            index: { type: 'integer', minimum: 1, maximum: Math.max(1, items.length) },
+            icon: { type: 'string' },
+            org: { type: 'string' },
+            title_short: { type: 'string' },
+            key_points: {
+              type: 'array',
+              minItems: 1,
+              maxItems: 2,
+              items: { type: 'string' },
+            },
+          },
+          required: ['index', 'icon', 'org', 'title_short', 'key_points'],
+        },
       },
     },
     required: ['replies'],
   };
 
-  const replySystemPrompt = [
-    'You are an expert Korean X thread reply writer for AI/NLP research digests.',
-    'Output must be JSON only and strictly follow schema.',
-    'Reply requirements for each item:',
-    '- Start with exact prefix: [n/total] ...',
-    '- One title line + max 1~2 핵심 bullet lines.',
-    '- Keep very concise and factual; no filler.',
-    '- If URL exists, include at most one final link line (🔗 ...).',
-    '- Must satisfy safe_limit and hard_limit.',
+  const replyPrompt = [
+    '당신은 한국어 X 스레드 작성기입니다.',
+    '목표: 각 아이템별 reply용 요약 필드를 JSON으로 생성합니다.',
+    '원문 재배치 금지. 핵심만 1~2포인트로 압축합니다.',
+    '형식 참조:',
+    '[i/N] [아이콘] [Org] 제목(짧게)',
+    '• 핵심 1',
+    '• 핵심 2',
+    '🔗 URL',
+    '제약:',
+    '- 한국어만 사용',
+    '- 과장/홍보/해시태그 금지',
+    '- title_short는 매우 짧게',
+    '- key_points는 각 1문장으로 간결하게',
+    '반드시 schema JSON만 출력합니다.',
   ].join('\n');
 
-  let replies = null;
-  let replyFeedback = null;
+  let replyPlan = null;
   let replyModelUsed = null;
+  let replyAttempts = 0;
 
-  for (let attempt = 1; attempt <= 3 && !replies; attempt++) {
-    for (const model of getModelCandidates('reply')) {
-      try {
-        const replyPayload = {
-          ...context,
-          task: 'generate_all_replies_only',
-          formatting: {
-            prefix_example: '[1/3] 📜 [Org] Title',
-            bullet_example: '• 핵심 요약',
-            nested_example: '   ↳ 보충 정보',
-          },
-          feedback: replyFeedback,
-        };
-
-        const parsed = await callOpenAIJsonSchema({
-          apiKey,
-          model,
-          schemaName: 'x_reply_list',
-          schema: repliesSchema,
-          systemPrompt: replySystemPrompt,
-          userPayload: replyPayload,
-          debugCollector,
-        });
-
-        const normalized = normalizeReplies(parsed.replies, items.length, items);
-        const processed = postProcessReplies(normalized, items, safeLimit);
-        const violations = validateReplies(processed, safeLimit, items);
-
-        if (violations.length === 0) {
-          replies = processed;
-          replyModelUsed = model;
-          break;
-        }
-
-        replyFeedback = { attempt, violations, candidate: processed };
-      } catch (err) {
-        replyFeedback = { attempt, error: err.message };
-      }
+  for (const model of replyModels) {
+    replyAttempts += 1;
+    try {
+      const parsed = await callOpenAIJsonSchema({
+        apiKey,
+        model,
+        schemaName: 'x_reply_plan_v2',
+        schema: replySchema,
+        systemPrompt: replyPrompt,
+        userPayload: context,
+        debug,
+      });
+      replyPlan = parsed;
+      replyModelUsed = model;
+      break;
+    } catch {
+      // try next model
     }
   }
 
-  if (!replies) {
-    throw new Error('AI replies generation failed after retries');
+  if (!replyPlan) throw new Error('AI reply plan generation failed');
+
+  const replyMap = new Map();
+  for (const r of replyPlan.replies || []) replyMap.set(Number(r.index), r);
+
+  const overLimitRewrites = [];
+  const replies = [];
+
+  for (let i = 0; i < items.length; i++) {
+    const item = items[i];
+    const idx = i + 1;
+    const src = replyMap.get(idx) || {};
+    const fallbackPoints = (item.bullets || []).slice(0, 2).map((b) => cleanInline(b.text)).filter(Boolean);
+
+    let replyText = renderReplyText({
+      index: idx,
+      total: items.length,
+      icon: src.icon || getIcon(item.type),
+      org: src.org || item.org,
+      titleShort: src.title_short || item.title,
+      points: Array.isArray(src.key_points) && src.key_points.length > 0 ? src.key_points : fallbackPoints,
+      url: item.url || '',
+    });
+
+    if (!isWithinXLimit(replyText, generationLimit)) {
+      const rewritten = await fitTextToLimit({
+        apiKey,
+        model: replyModelUsed,
+        kind: 'reply',
+        text: replyText,
+        limit: generationLimit,
+        contextPayload: { item, index: idx, total: items.length },
+        debug,
+      });
+      if (rewritten !== replyText) overLimitRewrites.push(idx);
+      replyText = rewritten;
+    }
+
+    replyText = forceReplyWithinLimit({
+      text: replyText,
+      limit: safeLimit,
+      item,
+      index: idx,
+      total: items.length,
+      fallbackPoints,
+    });
+
+    replies.push(replyText);
   }
 
   return {
-    main,
+    main: mainText,
     replies,
     meta: {
       generator: 'openai',
       safe_limit: safeLimit,
+      generation_limit: generationLimit,
       main_model: mainModelUsed,
       reply_model: replyModelUsed,
+      main_model_candidates: mainModels,
+      reply_model_candidates: replyModels,
+      attempts: {
+        main_model_trials: mainAttempts,
+        reply_model_trials: replyAttempts,
+        rewritten_reply_indexes: overLimitRewrites,
+      },
     },
   };
 }
 
-async function buildXThread(items, siteBaseUrl, outDir) {
+async function buildXThread(items, siteBaseUrl) {
   const safeLimit = getSafeLimit();
-  const deterministic = buildDeterministicXThread(items, siteBaseUrl, safeLimit);
-
+  const fallback = buildDeterministicXThread(items, siteBaseUrl, safeLimit);
   const enableAi = toBool(process.env.ENABLE_AI_X_COPY, false);
-  const enableDebug = toBool(process.env.OPENAI_X_DEBUG, false);
-  const debugCollector = enableDebug ? { requests: [], responses: [] } : null;
+  const debug = toBool(process.env.OPENAI_X_DEBUG, false) ? { requests: [], responses: [] } : null;
 
-  if (!enableAi) {
-    return {
-      ...deterministic,
-      meta: {
-        generator: 'rule',
-        safe_limit: safeLimit,
-      },
-      debugCollector,
-    };
-  }
+  if (!enableAi) return { ...fallback, meta: { generator: 'rule', safe_limit: safeLimit }, debug };
 
   try {
-    const aiThread = await buildAiXThread(items, siteBaseUrl, safeLimit, debugCollector);
-    return { ...aiThread, debugCollector };
+    const ai = await buildAiXThread(items, siteBaseUrl, safeLimit, debug);
+    return { ...ai, debug };
   } catch (err) {
     console.warn(`ai_copy=fallback_to_rule reason=${err.message}`);
     return {
-      ...deterministic,
-      meta: {
-        generator: 'rule_fallback',
-        safe_limit: safeLimit,
-        fallback_reason: err.message,
-      },
-      debugCollector,
+      ...fallback,
+      meta: { generator: 'rule_fallback', safe_limit: safeLimit, fallback_reason: err.message },
+      debug,
     };
   }
 }
@@ -552,21 +706,19 @@ async function main() {
   const items = payload.added_items || [];
   fs.mkdirSync(outDir, { recursive: true });
 
-  const result = await buildXThread(items, siteBaseUrl, outDir);
-  const { main, replies, meta: xThreadMeta, debugCollector } = result;
-
+  const { main, replies, meta, debug } = await buildXThread(items, siteBaseUrl);
   const xThread = { main, replies };
 
   const socialDraftMd = [
-    `# Social Draft`,
-    ``,
-    `## X — Main Tweet`,
+    '# Social Draft',
+    '',
+    '## X — Main Tweet',
     '```',
     xThread.main,
     '```',
-    ``,
-    ...xThread.replies.map((r, i) => [`## X — Reply ${i + 1}`, '```', r, '```', ``]).flat(),
-    `## Items`,
+    '',
+    ...xThread.replies.map((r, i) => [`## X — Reply ${i + 1}`, '```', r, '```', '']).flat(),
+    '## Items',
     ...items.map((item) => `- [${item.type}] ${item.title} (${item.org}) ${item.url || ''}`),
   ].join('\n');
 
@@ -577,7 +729,8 @@ async function main() {
     social: {
       x_thread: xThread,
       x_thread_meta: {
-        ...xThreadMeta,
+        ...meta,
+        hard_limit: X_HARD_LIMIT,
         main_chars: countXChars(xThread.main),
         reply_chars: xThread.replies.map((r) => countXChars(r)),
       },
@@ -586,13 +739,10 @@ async function main() {
 
   fs.writeFileSync(path.join(outDir, 'digest.json'), JSON.stringify(digest, null, 2), 'utf-8');
   fs.writeFileSync(path.join(outDir, 'social-draft.md'), socialDraftMd, 'utf-8');
-
-  if (debugCollector) {
-    fs.writeFileSync(path.join(outDir, 'openai-x-copy-debug.json'), JSON.stringify(debugCollector, null, 2), 'utf-8');
-  }
+  if (debug) fs.writeFileSync(path.join(outDir, 'openai-x-copy-debug.json'), JSON.stringify(debug, null, 2), 'utf-8');
 
   console.log(`digest_saved=${path.join(outDir, 'digest.json')}`);
-  console.log(`x_copy_generator=${xThreadMeta?.generator || 'rule'}`);
+  console.log(`x_copy_generator=${meta?.generator || 'rule'}`);
 }
 
 main().catch((err) => {

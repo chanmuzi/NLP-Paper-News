@@ -75,6 +75,7 @@ jobs:
           OPENAI_API_BASE: ${{ vars.OPENAI_API_BASE }}
           OPENAI_X_DEBUG: ${{ vars.OPENAI_X_DEBUG }}
           X_SAFE_LIMIT: ${{ vars.X_SAFE_LIMIT }}
+          X_GEN_MARGIN: ${{ vars.X_GEN_MARGIN }}
         run: node scripts/build-digest.mjs --input artifacts/new-items.json --out-dir artifacts --site-base-url "https://chanmuzi.github.io/NLP-Paper-News/"
 
       - name: Job summary
@@ -82,6 +83,29 @@ jobs:
         run: |
           echo "## Notify pipeline summary" >> "$GITHUB_STEP_SUMMARY"
           echo "- added_count: ${{ steps.delta.outputs.added_count }}" >> "$GITHUB_STEP_SUMMARY"
+
+          if [ -f artifacts/digest.json ]; then
+            node -e "
+              const fs = require('fs');
+              const d = JSON.parse(fs.readFileSync('artifacts/digest.json','utf8'));
+              const m = d?.social?.x_thread_meta || {};
+              const replies = Array.isArray(m.reply_chars) ? m.reply_chars : [];
+              const maxReply = replies.length ? Math.max(...replies) : '-';
+              const lines = [];
+              lines.push('');
+              lines.push('### X generation meta');
+              lines.push('- generator: ' + (m.generator || '-'));
+              lines.push('- main_model: ' + (m.main_model || '-'));
+              lines.push('- reply_model: ' + (m.reply_model || '-'));
+              lines.push('- safe_limit: ' + (m.safe_limit ?? '-'));
+              lines.push('- hard_limit: ' + (m.hard_limit ?? '-'));
+              lines.push('- main_chars: ' + (m.main_chars ?? '-'));
+              lines.push('- max_reply_chars: ' + maxReply);
+              if (m.attempts) lines.push('- attempts: ' + JSON.stringify(m.attempts));
+              process.stdout.write(lines.join('\n'));
+            " >> "$GITHUB_STEP_SUMMARY"
+          fi
+
           if [ -f artifacts/social-draft.md ]; then
             echo "" >> "$GITHUB_STEP_SUMMARY"
             echo "### Social draft preview" >> "$GITHUB_STEP_SUMMARY"

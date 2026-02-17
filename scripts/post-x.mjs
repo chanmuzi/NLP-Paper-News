@@ -2,6 +2,9 @@
 import fs from 'fs';
 import crypto from 'crypto';
 
+const X_HARD_LIMIT = 280;
+const URL_REGEX = /https?:\/\/[^\s)]+/gi;
+
 function parseArgs(argv) {
   const args = { digest: '', result: '', dryRun: false, testSuffix: '' };
   for (let i = 2; i < argv.length; i++) {
@@ -28,16 +31,70 @@ function limitText(text, max = 600) {
   return `${s.slice(0, max)}…`;
 }
 
-function appendSuffix(text, suffix, maxLen = 280) {
+function isWideChar(ch) {
+  const cp = ch.codePointAt(0);
+  if (!cp) return false;
+  return (
+    (cp >= 0x1100 && cp <= 0x11FF) ||
+    (cp >= 0x2E80 && cp <= 0xA4CF) ||
+    (cp >= 0xAC00 && cp <= 0xD7A3) ||
+    (cp >= 0xF900 && cp <= 0xFAFF) ||
+    (cp >= 0xFE10 && cp <= 0xFE6F) ||
+    (cp >= 0xFF01 && cp <= 0xFF60) ||
+    (cp >= 0xFFE0 && cp <= 0xFFE6)
+  );
+}
+
+function isEmoji(ch) {
+  try {
+    return /\p{Extended_Pictographic}/u.test(ch);
+  } catch {
+    return false;
+  }
+}
+
+function countXChars(text) {
+  const normalized = String(text || '').replace(URL_REGEX, 'x'.repeat(23));
+  let total = 0;
+  for (const ch of [...normalized]) {
+    if (isEmoji(ch) || isWideChar(ch)) total += 2;
+    else total += 1;
+  }
+  return total;
+}
+
+function isWithinXLimit(text, limit = X_HARD_LIMIT) {
+  return countXChars(text) <= limit;
+}
+
+function clipToXLimit(text, limit = X_HARD_LIMIT) {
+  const src = String(text || '');
+  if (isWithinXLimit(src, limit)) return src;
+  const chars = [...src];
+  const ellipsis = '…';
+  while (chars.length > 0) {
+    const candidate = chars.join('') + ellipsis;
+    if (isWithinXLimit(candidate, limit)) return candidate;
+    chars.pop();
+  }
+  return '';
+}
+
+function appendSuffix(text, suffix, limit = X_HARD_LIMIT) {
   const base = String(text || '');
   const sfx = String(suffix || '');
   if (!sfx) return base;
 
-  if (base.length + sfx.length <= maxLen) return `${base}${sfx}`;
+  if (isWithinXLimit(`${base}${sfx}`, limit)) return `${base}${sfx}`;
 
   const ellipsis = '…';
-  const keepLen = Math.max(0, maxLen - sfx.length - ellipsis.length);
-  return `${base.slice(0, keepLen)}${ellipsis}${sfx}`;
+  const chars = [...base];
+  while (chars.length > 0) {
+    const candidate = `${chars.join('')}${ellipsis}${sfx}`;
+    if (isWithinXLimit(candidate, limit)) return candidate;
+    chars.pop();
+  }
+  return clipToXLimit(sfx, limit);
 }
 
 function buildThreadWithSuffix(thread, suffix) {
@@ -179,6 +236,16 @@ function asXPostError(err) {
 // --- Tweet posting ---
 
 async function postTweet({ text, replyToId, url, credentials, maxAttempts = 3 }) {
+  if (!isWithinXLimit(text, X_HARD_LIMIT)) {
+    throw new XPostError({
+      message: `Local hard guard rejected over-limit text (${countXChars(text)} > ${X_HARD_LIMIT})`,
+      httpStatus: null,
+      errorCode: 'local_length_guard',
+      errorDetail: `local_hard_guard: ${countXChars(text)} > ${X_HARD_LIMIT}`,
+      attempts: 0,
+    });
+  }
+
   for (let attempt = 1; attempt <= maxAttempts; attempt++) {
     try {
       const authorization = buildOAuthHeader({ method: 'POST', url, ...credentials });
@@ -345,12 +412,12 @@ async function main() {
 
     console.log('\n=== MAIN TWEET ===');
     console.log(thread.main);
-    console.log(`(${thread.main.length} chars)`);
+    console.log(`(${countXChars(thread.main)} weighted chars)`);
 
     (thread.replies || []).forEach((reply, i) => {
       console.log(`\n=== REPLY ${i + 1} ===`);
       console.log(reply);
-      console.log(`(${reply.length} chars)`);
+      console.log(`(${countXChars(reply)} weighted chars)`);
     });
 
     console.log(`\nTotal: 1 main + ${(thread.replies || []).length} replies`);
@@ -375,6 +442,34 @@ async function main() {
 
   const posted = [];
   const attempts = { main: 0, replies: [] };
+
+  const tooLong = [];
+  if (!isWithinXLimit(thread.main)) tooLong.push({ phase: 'main', chars: countXChars(thread.main) });
+  (thread.replies || []).forEach((r, i) => {
+    if (!isWithinXLimit(r)) tooLong.push({ phase: `reply_${i + 1}`, chars: countXChars(r) });
+  });
+  if (tooLong.length > 0) {
+    writeResult(resultPath, {
+      success: false,
+      failurePhase: 'validation',
+      error: 'tweet_length_over_limit',
+      errorCode: 'local_length_guard',
+      errorDetail: JSON.stringify(tooLong),
+      httpStatus: null,
+      attempts,
+      posted,
+      rolledBack: 0,
+      rollbackDeleted: 0,
+      degradedMode: null,
+      hardLimit: X_HARD_LIMIT,
+      measuredChars: {
+        main: countXChars(thread.main),
+        replies: (thread.replies || []).map((r) => countXChars(r)),
+      },
+    });
+    console.error(`Length validation failed: ${JSON.stringify(tooLong)}`);
+    process.exit(1);
+  }
 
   // Post main tweet
   let mainId = null;
