@@ -109,6 +109,17 @@ function limitPlain(text, maxLen) {
   return `${src.slice(0, Math.max(1, maxLen - 1)).trim()}…`;
 }
 
+function sanitizeReplySummary(text) {
+  let out = cleanInline(text);
+  out = out.replace(/^\[\d+\/\d+\]\s*/g, '');
+  out = out.replace(/^([📜📄🗞️📰🧑🏻‍💻🛠️]\s*)+/g, '');
+  out = out.replace(/^(\[[^\]]+\]\s*)+/g, '');
+  out = out.replace(/^[-–—:：]\s*/g, '');
+  out = out.replace(/🔗\s*https?:\/\/\S+/gi, '');
+  out = out.replace(/\s+/g, ' ').trim();
+  return out;
+}
+
 function inferUpdateLabel() {
   const dayNames = ['일', '월', '화', '수', '목', '금', '토'];
   const now = new Date(new Date().toLocaleString('en-US', { timeZone: 'Asia/Seoul' }));
@@ -206,20 +217,18 @@ function getIcon(type) {
   return icons[type] || '📄';
 }
 
-function renderMainText({ dateStr, updateLabel, totalCount, highlights, siteBaseUrl }) {
+function renderMainText({ dateStr, updateLabel, totalCount, entries, siteBaseUrl, visibleCount, titleMaxLen }) {
   const lines = [];
   lines.push(`📌 ${dateStr} ${updateLabel} (${totalCount}건)`);
   lines.push('');
 
-  const top = (highlights || []).slice(0, 2);
-  for (const h of top) {
-    const org = limitPlain(h.org, 24) || 'Unknown';
-    const title = limitPlain(h.titleShort, 56) || '업데이트';
-    const summary = limitPlain(h.summary, 48) || '핵심 업데이트';
-    lines.push(`• [${org}] ${title}: ${summary}`);
+  const picked = (entries || []).slice(0, visibleCount);
+  for (const e of picked) {
+    const title = limitPlain(e.titleShort, titleMaxLen) || '업데이트';
+    lines.push(`• ${title}`);
   }
 
-  const rest = Math.max(0, totalCount - top.length);
+  const rest = Math.max(0, totalCount - picked.length);
   if (rest > 0) lines.push(`외 ${rest}건`);
   if (siteBaseUrl) {
     lines.push('');
@@ -229,152 +238,93 @@ function renderMainText({ dateStr, updateLabel, totalCount, highlights, siteBase
   return compactLines(lines.join('\n'));
 }
 
-function forceMainWithinLimit({ text, limit, dateStr, updateLabel, totalCount, highlights, siteBaseUrl }) {
-  let out = compactLines(text);
-  if (isWithinXLimit(out, limit)) return out;
-
-  const oneHighlight = (highlights || []).slice(0, 1);
-  out = renderMainText({ dateStr, updateLabel, totalCount, highlights: oneHighlight, siteBaseUrl });
-  if (isWithinXLimit(out, limit)) return out;
-
-  const stripped = oneHighlight.map((h) => ({ ...h, summary: '' }));
-  out = renderMainText({ dateStr, updateLabel, totalCount, highlights: stripped, siteBaseUrl });
-  if (isWithinXLimit(out, limit)) return out;
-
-  if (siteBaseUrl) {
-    out = compactLines(`📌 ${dateStr} ${updateLabel} (${totalCount}건)\n외 ${totalCount}건\n\n👉 ${siteBaseUrl}`);
-  } else {
-    out = compactLines(`📌 ${dateStr} ${updateLabel} (${totalCount}건)\n외 ${totalCount}건`);
+function forceMainWithinLimit({ limit, dateStr, updateLabel, totalCount, entries, siteBaseUrl }) {
+  const titleLens = [56, 46, 38, 32, 26, 20];
+  for (const titleMaxLen of titleLens) {
+    for (let visibleCount = totalCount; visibleCount >= 1; visibleCount--) {
+      const candidate = renderMainText({
+        dateStr,
+        updateLabel,
+        totalCount,
+        entries,
+        siteBaseUrl,
+        visibleCount,
+        titleMaxLen,
+      });
+      if (isWithinXLimit(candidate, limit)) return candidate;
+    }
   }
 
-  return isWithinXLimit(out, limit) ? out : clipToXLimit(out, limit);
+  const minimal = siteBaseUrl
+    ? `📌 ${dateStr} ${updateLabel} (${totalCount}건)\n외 ${totalCount}건\n\n👉 ${siteBaseUrl}`
+    : `📌 ${dateStr} ${updateLabel} (${totalCount}건)\n외 ${totalCount}건`;
+  return isWithinXLimit(minimal, limit) ? compactLines(minimal) : clipToXLimit(minimal, limit);
 }
 
-function renderReplyText({ index, total, icon, org, titleShort, points, url }) {
-  const lines = [];
-  const orgLabel = limitPlain(org, 24) || 'Unknown';
-  const title = limitPlain(titleShort, 52) || '요약';
-  lines.push(`[${index}/${total}] ${icon || '📄'} [${orgLabel}] ${title}`);
-
-  const cleanedPoints = (points || []).map((p) => cleanInline(p)).filter(Boolean).slice(0, 2);
-  for (const p of cleanedPoints) lines.push(`• ${limitPlain(p, 64)}`);
-
-  if (url) lines.push(`🔗 ${url}`);
-  return compactLines(lines.join('\n'));
+function renderReplyText({ index, total, titleShort, summaryLine, titleMaxLen = 46, summaryMaxLen = 96 }) {
+  const title = limitPlain(titleShort, titleMaxLen) || '요약';
+  const summary = limitPlain(sanitizeReplySummary(summaryLine || ''), summaryMaxLen) || '핵심 업데이트입니다.';
+  const line1 = `[${index}/${total}] ${title}`;
+  return compactLines(`${line1}\n${summary}`);
 }
 
-function forceReplyWithinLimit({ text, limit, item, index, total, fallbackPoints }) {
-  let out = compactLines(text);
-  if (isWithinXLimit(out, limit)) return out;
+function forceReplyWithinLimit({ limit, item, index, total, titleShort, summaryLine, baseReply }) {
+  if (isWithinXLimit(baseReply, limit)) return baseReply;
 
-  out = renderReplyText({
-    index,
-    total,
-    icon: getIcon(item.type),
-    org: item.org,
-    titleShort: item.title,
-    points: [fallbackPoints[0] || '핵심 업데이트'],
-    url: item.url || '',
-  });
-  if (isWithinXLimit(out, limit)) return out;
+  const fallbackSummary = sanitizeReplySummary(summaryLine || item?.bullets?.[0]?.text || '핵심 업데이트');
+  const titleCandidates = [titleShort, item.title, limitPlain(item.title, 34), limitPlain(item.title, 24)].filter(Boolean);
+  const summaryLens = [90, 72, 56, 42, 30];
 
-  out = renderReplyText({
-    index,
-    total,
-    icon: getIcon(item.type),
-    org: item.org,
-    titleShort: limitPlain(item.title, 30),
-    points: [limitPlain(fallbackPoints[0] || '핵심 업데이트', 30)],
-    url: item.url || '',
-  });
-  if (isWithinXLimit(out, limit)) return out;
-
-  return clipToXLimit(out, limit);
-}
-
-async function rewriteToLimit({ apiKey, model, kind, original, limit, contextPayload, debug }) {
-  const schema = {
-    type: 'object',
-    additionalProperties: false,
-    properties: {
-      text: { type: 'string' },
-    },
-    required: ['text'],
-  };
-
-  const prompt = [
-    `당신은 X ${kind} 텍스트 길이 최적화기입니다.`,
-    `의미/사실을 유지한 채 ${limit}자(가중치 계산) 이하로 줄이세요.`,
-    '과장/광고/해시태그 금지, 핵심만 남기세요.',
-    '반드시 JSON만 출력하세요.',
-  ].join('\n');
-
-  const parsed = await callOpenAIJsonSchema({
-    apiKey,
-    model,
-    schemaName: `x_${kind}_rewrite`,
-    schema,
-    systemPrompt: prompt,
-    userPayload: { original, limit, context: contextPayload },
-    debug,
-  });
-
-  return compactLines(String(parsed.text || ''));
-}
-
-async function fitTextToLimit({ apiKey, model, kind, text, limit, contextPayload, debug }) {
-  let out = compactLines(text);
-  if (isWithinXLimit(out, limit)) return out;
-
-  for (let i = 0; i < 2; i++) {
-    try {
-      const rewritten = await rewriteToLimit({ apiKey, model, kind, original: out, limit, contextPayload, debug });
-      if (!rewritten) continue;
-      out = compactLines(rewritten);
-      if (isWithinXLimit(out, limit)) return out;
-    } catch {}
+  for (const title of titleCandidates) {
+    for (const summaryMaxLen of summaryLens) {
+      const candidate = renderReplyText({
+        index,
+        total,
+        titleShort: title,
+        summaryLine: fallbackSummary,
+        titleMaxLen: title.length > 24 ? 34 : 24,
+        summaryMaxLen,
+      });
+      if (isWithinXLimit(candidate, limit)) return candidate;
+    }
   }
 
-  return clipToXLimit(out, limit);
+  return clipToXLimit(baseReply, limit);
 }
 
 function buildDeterministicXThread(items, siteBaseUrl, safeLimit) {
   const { dateStr, updateLabel } = inferUpdateLabel();
 
-  const highlights = items.slice(0, 2).map((it) => ({
-    org: it.org,
+  const entries = items.map((it) => ({
     titleShort: it.title,
-    summary: cleanInline(it?.bullets?.[0]?.text || '핵심 업데이트'),
   }));
 
   const main = forceMainWithinLimit({
-    text: renderMainText({ dateStr, updateLabel, totalCount: items.length, highlights, siteBaseUrl }),
     limit: safeLimit,
     dateStr,
     updateLabel,
     totalCount: items.length,
-    highlights,
+    entries,
     siteBaseUrl,
   });
 
   const replies = items.map((item, idx) => {
-    const points = (item.bullets || []).slice(0, 2).map((b) => cleanInline(b.text)).filter(Boolean);
-    const rendered = renderReplyText({
+    const summaryLine = cleanInline(item?.bullets?.[0]?.text || '핵심 업데이트');
+    const titleShort = item.title;
+    const baseReply = renderReplyText({
       index: idx + 1,
       total: items.length,
-      icon: getIcon(item.type),
-      org: item.org,
-      titleShort: item.title,
-      points,
-      url: item.url || '',
+      titleShort,
+      summaryLine
     });
     return forceReplyWithinLimit({
-      text: rendered,
       limit: safeLimit,
       item,
       index: idx + 1,
       total: items.length,
-      fallbackPoints: points,
+      titleShort,
+      summaryLine,
+      baseReply,
     });
   });
 
@@ -392,20 +342,18 @@ function buildAiContext(items, generationLimit, siteBaseUrl) {
     },
     style_policy: {
       tone: ['간결', '사실 중심', '과장 금지', '광고 문구 금지'],
-      summary_rule: '항목별 핵심은 1~2개만',
-      main_example: [
+      main_format: [
         '📌 YYYY.MM.DD (요일) 업데이트 (N건)',
-        '• [Org] 제목: 핵심 요약',
-        '• [Org] 제목: 핵심 요약',
+        '• 짧은 제목',
+        '• 짧은 제목',
         '외 N건',
         '👉 https://chanmuzi.github.io/NLP-Paper-News/',
       ],
-      reply_example: [
-        '[i/N] [아이콘] [Org] 제목(짧게)',
-        '• 핵심 1',
-        '• 핵심 2',
-        '🔗 URL',
+      reply_format: [
+        '[i/N] 짧은 제목',
+        '설명 문장 1개(줄글)',
       ],
+      no_bullet_in_reply: true,
     },
     site_base_url: siteBaseUrl,
     items: items.map((it, idx) => ({
@@ -422,8 +370,8 @@ function buildAiContext(items, generationLimit, siteBaseUrl) {
 async function buildAiXThread(items, siteBaseUrl, safeLimit, debug) {
   const apiKey = String(process.env.OPENAI_API_KEY || '').trim();
   if (!apiKey) throw new Error('OPENAI_API_KEY not set');
-  const generationLimit = getGenerationLimit(safeLimit);
 
+  const generationLimit = getGenerationLimit(safeLimit);
   const mainModels = getModelCandidates('main');
   const replyModels = getModelCandidates('reply');
   const context = buildAiContext(items, generationLimit, siteBaseUrl);
@@ -433,103 +381,101 @@ async function buildAiXThread(items, siteBaseUrl, safeLimit, debug) {
     type: 'object',
     additionalProperties: false,
     properties: {
-      highlights: {
+      entries: {
         type: 'array',
-        minItems: 1,
-        maxItems: Math.min(2, Math.max(1, items.length)),
+        minItems: Math.max(1, Math.min(2, items.length)),
+        maxItems: items.length,
         items: {
           type: 'object',
           additionalProperties: false,
           properties: {
             index: { type: 'integer', minimum: 1, maximum: Math.max(1, items.length) },
-            org: { type: 'string' },
             title_short: { type: 'string' },
-            summary: { type: 'string' },
           },
-          required: ['index', 'org', 'title_short', 'summary'],
+          required: ['index', 'title_short'],
         },
       },
     },
-    required: ['highlights'],
+    required: ['entries'],
   };
 
   const mainPrompt = [
     '당신은 한국어 X 기술 뉴스 에디터입니다.',
-    '목표: 메인 포스트용 하이라이트 1~2개를 JSON으로 생성합니다.',
-    '중요: 원문 재배치가 아니라 핵심 추출 요약이어야 합니다.',
-    '형식 일관성을 위해 아래 스타일을 따릅니다:',
+    '메인 포스트용 항목 나열을 JSON으로 생성하세요.',
+    '중요: 제목만 간결하게 나열하고 설명 문장은 넣지 마세요.',
+    '형식 기준:',
     '📌 YYYY.MM.DD (요일) 업데이트 (N건)',
-    '• [Org] 제목: 핵심 요약',
-    '• [Org] 제목: 핵심 요약',
+    '• 짧은 제목',
+    '• 짧은 제목',
     '외 N건',
     '👉 https://chanmuzi.github.io/NLP-Paper-News/',
     '제약:',
-    '- 한국어만 사용',
-    '- 과장/홍보/감탄/해시태그 금지',
-    '- 각 요약은 사실 1~2포인트로 압축',
-    '- title_short는 짧게, summary는 더 짧게',
+    '- 한국어 중심(고유명사는 원문 유지 가능)',
+    '- 과장/광고/해시태그 금지',
+    '- title_short는 매우 짧고 정보만 남길 것',
+    '- 가능한 많은 항목을 entries에 넣되, 각 title_short를 압축할 것',
     '반드시 schema JSON만 출력합니다.',
   ].join('\n');
 
   let mainPlan = null;
   let mainModelUsed = null;
-  let mainAttempts = 0;
+  let mainModelTrials = 0;
+  let mainGenerationTurns = 0;
 
   for (const model of mainModels) {
-    mainAttempts += 1;
-    try {
-      const parsed = await callOpenAIJsonSchema({
-        apiKey,
-        model,
-        schemaName: 'x_main_plan_v2',
-        schema: mainSchema,
-        systemPrompt: mainPrompt,
-        userPayload: context,
-        debug,
-      });
-      mainPlan = parsed;
-      mainModelUsed = model;
-      break;
-    } catch {
-      // try next model
+    mainModelTrials += 1;
+    let feedback = null;
+    for (let turn = 1; turn <= 3; turn++) {
+      try {
+        const parsed = await callOpenAIJsonSchema({
+          apiKey,
+          model,
+          schemaName: 'x_main_plan_v4',
+          schema: mainSchema,
+          systemPrompt: mainPrompt,
+          userPayload: { ...context, feedback },
+          debug,
+        });
+        mainGenerationTurns += 1;
+
+        const entries = (parsed.entries || []).map((e) => ({ titleShort: e.title_short }));
+        const candidateMain = forceMainWithinLimit({
+          limit: generationLimit,
+          dateStr,
+          updateLabel,
+          totalCount: items.length,
+          entries,
+          siteBaseUrl,
+        });
+
+        if (isWithinXLimit(candidateMain, generationLimit)) {
+          mainPlan = parsed;
+          mainModelUsed = model;
+          break;
+        }
+
+        feedback = {
+          reason: 'too_long',
+          measured_chars: countXChars(candidateMain),
+          target_limit: generationLimit,
+          instruction: 'entries 수를 유지하되 title_short를 더 짧게 압축하세요.',
+        };
+      } catch (err) {
+        feedback = { reason: 'generation_error', detail: err.message };
+      }
     }
+    if (mainPlan) break;
   }
 
   if (!mainPlan) throw new Error('AI main plan generation failed');
 
-  const mainHighlights = (mainPlan.highlights || []).slice(0, 2).map((h) => ({
-    org: h.org,
-    titleShort: h.title_short,
-    summary: h.summary,
-  }));
-
-  let mainText = renderMainText({
-    dateStr,
-    updateLabel,
-    totalCount: items.length,
-    highlights: mainHighlights,
-    siteBaseUrl,
-  });
-
-  if (!isWithinXLimit(mainText, generationLimit)) {
-    mainText = await fitTextToLimit({
-      apiKey,
-      model: mainModelUsed,
-      kind: 'main',
-      text: mainText,
-      limit: generationLimit,
-      contextPayload: { dateStr, updateLabel, totalCount: items.length, highlights: mainHighlights },
-      debug,
-    });
-  }
-
-  mainText = forceMainWithinLimit({
-    text: mainText,
+  const mainEntries = (mainPlan.entries || []).map((e) => ({ titleShort: e.title_short }));
+  const mainText = forceMainWithinLimit({
     limit: safeLimit,
     dateStr,
     updateLabel,
     totalCount: items.length,
-    highlights: mainHighlights,
+    entries: mainEntries,
     siteBaseUrl,
   });
 
@@ -546,17 +492,10 @@ async function buildAiXThread(items, siteBaseUrl, safeLimit, debug) {
           additionalProperties: false,
           properties: {
             index: { type: 'integer', minimum: 1, maximum: Math.max(1, items.length) },
-            icon: { type: 'string' },
-            org: { type: 'string' },
             title_short: { type: 'string' },
-            key_points: {
-              type: 'array',
-              minItems: 1,
-              maxItems: 2,
-              items: { type: 'string' },
-            },
+            summary_line: { type: 'string' },
           },
-          required: ['index', 'icon', 'org', 'title_short', 'key_points'],
+          required: ['index', 'title_short', 'summary_line'],
         },
       },
     },
@@ -565,43 +504,81 @@ async function buildAiXThread(items, siteBaseUrl, safeLimit, debug) {
 
   const replyPrompt = [
     '당신은 한국어 X 스레드 작성기입니다.',
-    '목표: 각 아이템별 reply용 요약 필드를 JSON으로 생성합니다.',
-    '원문 재배치 금지. 핵심만 1~2포인트로 압축합니다.',
-    '형식 참조:',
-    '[i/N] [아이콘] [Org] 제목(짧게)',
-    '• 핵심 1',
-    '• 핵심 2',
-    '🔗 URL',
+    '각 아이템에 대해 reply용 텍스트를 JSON으로 생성하세요.',
+    '중요: bullet(•) 형식을 절대 사용하지 마세요.',
+    '형식 기준:',
+    '[i/N] 짧은 제목',
+    '설명 문장 1개(줄글)',
     '제약:',
-    '- 한국어만 사용',
+    '- 한국어 중심(고유명사는 원문 유지 가능)',
     '- 과장/홍보/해시태그 금지',
-    '- title_short는 매우 짧게',
-    '- key_points는 각 1문장으로 간결하게',
+    '- title_short는 짧게',
+    '- summary_line은 깔끔한 문장 1개',
+    '- summary_line에 번호/아이콘/기관을 넣지 말 것',
+    '- 줄글 형식, bullet 금지',
     '반드시 schema JSON만 출력합니다.',
   ].join('\n');
 
   let replyPlan = null;
   let replyModelUsed = null;
-  let replyAttempts = 0;
+  let replyModelTrials = 0;
+  let replyGenerationTurns = 0;
+  const overLimitReplyIndexes = [];
 
   for (const model of replyModels) {
-    replyAttempts += 1;
-    try {
-      const parsed = await callOpenAIJsonSchema({
-        apiKey,
-        model,
-        schemaName: 'x_reply_plan_v2',
-        schema: replySchema,
-        systemPrompt: replyPrompt,
-        userPayload: context,
-        debug,
-      });
-      replyPlan = parsed;
-      replyModelUsed = model;
-      break;
-    } catch {
-      // try next model
+    replyModelTrials += 1;
+    let feedback = null;
+
+    for (let turn = 1; turn <= 3; turn++) {
+      try {
+        const parsed = await callOpenAIJsonSchema({
+          apiKey,
+          model,
+          schemaName: 'x_reply_plan_v4',
+          schema: replySchema,
+          systemPrompt: replyPrompt,
+          userPayload: { ...context, feedback },
+          debug,
+        });
+        replyGenerationTurns += 1;
+
+        const tempMap = new Map();
+        for (const r of parsed.replies || []) tempMap.set(Number(r.index), r);
+
+        const tooLong = [];
+        for (let i = 0; i < items.length; i++) {
+          const item = items[i];
+          const idx = i + 1;
+          const src = tempMap.get(idx) || {};
+          const candidate = renderReplyText({
+            index: idx,
+            total: items.length,
+            titleShort: src.title_short || item.title,
+            summaryLine: src.summary_line || cleanInline(item?.bullets?.[0]?.text || '핵심 업데이트')
+          });
+          const chars = countXChars(candidate);
+          if (chars > generationLimit) tooLong.push({ index: idx, chars });
+        }
+
+        if (tooLong.length === 0) {
+          replyPlan = parsed;
+          replyModelUsed = model;
+          break;
+        }
+
+        overLimitReplyIndexes.push(...tooLong.map((x) => x.index));
+        feedback = {
+          reason: 'too_long',
+          target_limit: generationLimit,
+          too_long_items: tooLong,
+          instruction: 'too_long_items의 title_short/summary_line을 더 짧게 압축하세요.',
+        };
+      } catch (err) {
+        feedback = { reason: 'generation_error', detail: err.message };
+      }
     }
+
+    if (replyPlan) break;
   }
 
   if (!replyPlan) throw new Error('AI reply plan generation failed');
@@ -609,50 +586,29 @@ async function buildAiXThread(items, siteBaseUrl, safeLimit, debug) {
   const replyMap = new Map();
   for (const r of replyPlan.replies || []) replyMap.set(Number(r.index), r);
 
-  const overLimitRewrites = [];
-  const replies = [];
-
-  for (let i = 0; i < items.length; i++) {
-    const item = items[i];
+  const replies = items.map((item, i) => {
     const idx = i + 1;
     const src = replyMap.get(idx) || {};
-    const fallbackPoints = (item.bullets || []).slice(0, 2).map((b) => cleanInline(b.text)).filter(Boolean);
+    const titleShort = src.title_short || item.title;
+    const summaryLine = src.summary_line || cleanInline(item?.bullets?.[0]?.text || '핵심 업데이트');
 
-    let replyText = renderReplyText({
+    const baseReply = renderReplyText({
       index: idx,
       total: items.length,
-      icon: src.icon || getIcon(item.type),
-      org: src.org || item.org,
-      titleShort: src.title_short || item.title,
-      points: Array.isArray(src.key_points) && src.key_points.length > 0 ? src.key_points : fallbackPoints,
-      url: item.url || '',
+      titleShort,
+      summaryLine
     });
 
-    if (!isWithinXLimit(replyText, generationLimit)) {
-      const rewritten = await fitTextToLimit({
-        apiKey,
-        model: replyModelUsed,
-        kind: 'reply',
-        text: replyText,
-        limit: generationLimit,
-        contextPayload: { item, index: idx, total: items.length },
-        debug,
-      });
-      if (rewritten !== replyText) overLimitRewrites.push(idx);
-      replyText = rewritten;
-    }
-
-    replyText = forceReplyWithinLimit({
-      text: replyText,
+    return forceReplyWithinLimit({
       limit: safeLimit,
       item,
       index: idx,
       total: items.length,
-      fallbackPoints,
+      titleShort,
+      summaryLine,
+      baseReply,
     });
-
-    replies.push(replyText);
-  }
+  });
 
   return {
     main: mainText,
@@ -666,9 +622,11 @@ async function buildAiXThread(items, siteBaseUrl, safeLimit, debug) {
       main_model_candidates: mainModels,
       reply_model_candidates: replyModels,
       attempts: {
-        main_model_trials: mainAttempts,
-        reply_model_trials: replyAttempts,
-        rewritten_reply_indexes: overLimitRewrites,
+        main_model_trials: mainModelTrials,
+        reply_model_trials: replyModelTrials,
+        main_generation_turns: mainGenerationTurns,
+        reply_generation_turns: replyGenerationTurns,
+        over_limit_reply_indexes: [...new Set(overLimitReplyIndexes)],
       },
     },
   };
