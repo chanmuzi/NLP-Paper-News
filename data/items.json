@@ -1,8 +1,42 @@
 {
   "version": 1,
-  "last_updated": "2026-02-17T12:06:09.111Z",
-  "total_items": 1677,
+  "last_updated": "2026-02-17T12:10:07.714Z",
+  "total_items": 1678,
   "items": [
+    {
+      "id": "google-deepmind-intelligent-ai-delegation",
+      "type": "paper",
+      "org": "Google DeepMind",
+      "title": "Intelligent AI Delegation",
+      "url": "https://arxiv.org/abs/2602.11865",
+      "date": "2026-02-W03",
+      "year": "2026",
+      "month": "2",
+      "week": "3",
+      "bullets": [
+        {
+          "text": "현존 task decomposition & delegation methods는 simple heuristics에 의존하고 있다고 문제 제기",
+          "level": 1
+        },
+        {
+          "text": "AI agent가 manageable sub-components로 문제를 쪼개고 이걸 잘 delegate 해야 한다고 주장 (최근 가장 중요한 요소인 듯)",
+          "level": 2
+        },
+        {
+          "text": "intelligent AI delegation framework 제안",
+          "level": 1
+        },
+        {
+          "text": "task allocation, transfer of authority, responsibility, accountability 등",
+          "level": 2
+        },
+        {
+          "text": "이 프레임워크는 human & AI delegators 둘 다에 적용 가능 → agentic web 프로토콜 개발에 기여하는 걸 목표로 삼고 있음",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "alibaba-qwen35-towards-native-multimodal-agents",
       "type": "dev",
@@ -36724,8 +36758,8 @@
     }
   ],
   "stats": {
-    "total": 1677,
-    "paper": 1021,
+    "total": 1678,
+    "paper": 1022,
     "dev": 618,
     "news": 33
   }
