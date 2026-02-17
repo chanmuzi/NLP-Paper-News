@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import fs from 'fs';
 import path from 'path';
+import { execSync } from 'child_process';
 
 function parseArgs(argv) {
   const args = { input: '', outDir: 'artifacts', siteBaseUrl: '' };
@@ -17,7 +18,7 @@ function parseArgs(argv) {
  * Build X thread data: main tweet + reply per item.
  *
  * Main tweet:
- *   📌 NLP-Paper-News 업데이트 (6건)
+ *   📌 NLP-Paper-News · 2025.02.17 (월) 업데이트 (6건)
  *
  *   • Gaia2 (Meta)
  *   • LLaDA2.1 (Ant)
@@ -36,7 +37,30 @@ function buildXThread(items, siteBaseUrl) {
 
   // --- Main tweet ---
   const maxMain = 280;
-  const header = `📌 NLP-Paper-News 업데이트 (${items.length}건)\n\n`;
+  const dayNames = ['일', '월', '화', '수', '목', '금', '토'];
+  const now = new Date(new Date().toLocaleString('en-US', { timeZone: 'Asia/Seoul' }));
+  const yyyy = now.getFullYear();
+  const mm = String(now.getMonth() + 1).padStart(2, '0');
+  const dd = String(now.getDate()).padStart(2, '0');
+  const day = dayNames[now.getDay()];
+  const dateStr = `${yyyy}.${mm}.${dd} (${day})`;
+
+  // Check if there was already a push to data/items.json today (KST)
+  let isAdditional = false;
+  try {
+    const todayKST = `${yyyy}-${mm}-${dd}`;
+    const log = execSync(
+      `git log --since="${todayKST}T00:00:00+09:00" --until="${todayKST}T23:59:59+09:00" --oneline -- data/items.json`,
+      { encoding: 'utf-8', timeout: 5000 }
+    ).trim();
+    // In CI, current commit is already checked out, so log includes it; >=2 means a previous one exists
+    if (log && log.split('\n').filter(Boolean).length >= 2) {
+      isAdditional = true;
+    }
+  } catch { /* git not available or not in repo — default to normal */ }
+
+  const updateLabel = isAdditional ? '추가 업데이트' : '업데이트';
+  const header = `📌 NLP-Paper-News · ${dateStr} ${updateLabel} (${items.length}건)\n\n`;
   const footer = siteBaseUrl ? `\n\n👉 ${siteBaseUrl}` : '';
 
   // Fit as many items as possible into 280 chars, show "외 N건" for the rest
