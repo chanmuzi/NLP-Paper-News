@@ -53,8 +53,8 @@ function buildXThread(items, siteBaseUrl) {
       `git log --since="${todayKST}T00:00:00+09:00" --until="${todayKST}T23:59:59+09:00" --oneline -- data/items.json`,
       { encoding: 'utf-8', timeout: 5000 }
     ).trim();
-    // Current commit is not yet in log, so >=1 means there was a previous one today
-    if (log && log.split('\n').filter(Boolean).length >= 1) {
+    // In CI, current commit is already checked out, so log includes it; >=2 means a previous one exists
+    if (log && log.split('\n').filter(Boolean).length >= 2) {
       isAdditional = true;
     }
   } catch { /* git not available or not in repo — default to normal */ }

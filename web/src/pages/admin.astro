@@ -203,14 +203,14 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
         </button>
       </div>
 
-      <!-- Submit Status (below buttons) -->
-      <div id="submit-status" class="hidden mt-4 p-4 rounded-xl text-sm"></div>
-
       <details class="mt-4">
         <summary class="text-xs text-gray-400 cursor-pointer hover:text-gray-600 transition-colors">JSON 출력 보기</summary>
         <pre id="json-output" class="mt-2 bg-gray-950 text-claude-300 p-4 rounded-lg overflow-x-auto text-xs font-mono"></pre>
       </details>
     </div>
+
+    <!-- Submit Status (outside preview-section so it survives clear) -->
+    <div id="submit-status" class="hidden mb-5 p-4 rounded-xl text-sm"></div>
 
     <!-- Confirm Modal -->
     <div id="confirm-modal" class="hidden fixed inset-0 z-50">
