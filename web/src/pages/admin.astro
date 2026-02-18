@@ -283,7 +283,13 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
       </details>
 
       <div class="mt-4 flex flex-wrap gap-2">
-        <button id="x-approve-post-btn" class="px-4 py-2 rounded-lg bg-claude-500 text-white text-sm font-semibold hover:bg-claude-600 transition-all">X 게시</button>
+        <button id="x-approve-post-btn" class="px-4 py-2 rounded-lg bg-claude-500 text-white text-sm font-semibold hover:bg-claude-600 transition-all inline-flex items-center gap-2">
+          <svg id="x-post-spinner" class="hidden w-4 h-4 animate-spin" fill="none" viewBox="0 0 24 24">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path>
+          </svg>
+          <span id="x-post-btn-label">X 게시</span>
+        </button>
         <button id="x-approve-all-btn" class="px-4 py-2 rounded-lg border border-gray-200 dark:border-gray-700 text-sm font-semibold text-gray-700 dark:text-gray-200 hover:border-claude-400 transition-all">전체 승인</button>
         <button id="x-copy-thread-btn" class="px-3 py-2 rounded-lg border border-gray-200 dark:border-gray-700 text-sm text-gray-600 dark:text-gray-300 hover:border-claude-400 transition-all">스레드 복사</button>
       </div>
@@ -979,6 +985,8 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
     const repliesBtn = document.getElementById('x-replies-approve-btn');
     const allBtn = document.getElementById('x-approve-all-btn') as HTMLButtonElement | null;
     const postBtn = document.getElementById('x-approve-post-btn') as HTMLButtonElement | null;
+    const postBtnLabel = document.getElementById('x-post-btn-label');
+    const postSpinner = document.getElementById('x-post-spinner');
     const noteEl = document.getElementById('x-review-note');
 
     if (mainBtn) {
@@ -1007,10 +1015,13 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
       postBtn.disabled = !enabled || isPostingInProgress;
       postBtn.classList.toggle('opacity-50', !enabled || isPostingInProgress);
       postBtn.classList.toggle('cursor-not-allowed', !enabled || isPostingInProgress);
+      postBtn.classList.toggle('animate-pulse', isPostingInProgress);
       if (isPostingInProgress) {
-        postBtn.textContent = '게시 진행 중...';
+        if (postBtnLabel) postBtnLabel.textContent = '게시 진행 중...';
+        if (postSpinner) postSpinner.classList.remove('hidden');
       } else {
-        postBtn.textContent = 'X 게시';
+        if (postBtnLabel) postBtnLabel.textContent = 'X 게시';
+        if (postSpinner) postSpinner.classList.add('hidden');
       }
     }
     if (noteEl) {
@@ -1018,6 +1029,34 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
         ? 'main/replies 승인 완료. 이제 게시할 수 있습니다.'
         : '게시 전 main과 replies를 각각 승인해 주세요.';
     }
+  }
+
+  function clearXDraftReview() {
+    xDraftData = null;
+    xMainApproved = false;
+    xRepliesApproved = false;
+    xAiHistory = [];
+
+    const section = document.getElementById('x-review-section');
+    const mainInput = document.getElementById('x-main-input') as HTMLTextAreaElement | null;
+    const repliesEditor = document.getElementById('x-replies-editor');
+    const metaEl = document.getElementById('x-review-meta');
+    const noteEl = document.getElementById('x-review-note');
+    const aiMain = document.getElementById('x-ai-main-instruction') as HTMLTextAreaElement | null;
+    const aiReply = document.getElementById('x-ai-reply-instruction') as HTMLTextAreaElement | null;
+    const aiStatus = document.getElementById('x-ai-status');
+
+    if (mainInput) mainInput.value = '';
+    if (repliesEditor) repliesEditor.innerHTML = '';
+    if (metaEl) metaEl.textContent = '';
+    if (noteEl) noteEl.textContent = '';
+    if (aiMain) aiMain.value = '';
+    if (aiReply) aiReply.value = '';
+    if (aiStatus) aiStatus.textContent = '';
+
+    renderAiHistory();
+    updateReviewApprovalUi();
+    section?.classList.add('hidden');
   }
 
   function renderAiHistory() {
@@ -1740,8 +1779,10 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
           if (run.conclusion === 'success') {
             if (postResult?.degradedMode === 'main_only') {
               showStatus(`✅ 커밋 완료 · ${shortSha}\n⚠️ main만 게시되었습니다. 남은 replies는 수동으로 이어서 게시해 주세요.`, 'warn', { autoScroll: true });
+              clearXDraftReview();
             } else {
               showStatus(`✅ 커밋 완료 · ${shortSha}\n✅ X 포스팅 성공!`, 'success', { autoScroll: true });
+              clearXDraftReview();
               fadeStatusAfter(7000);
             }
           } else {
@@ -1791,6 +1832,7 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
       await sleep(250);
     }
     showStatus(`✅ [mock] 커밋 완료 · ${shortSha}\n✅ X 포스팅 성공!`, 'success', { autoScroll: true });
+    clearXDraftReview();
     fadeStatusAfter(5000);
   }
 
