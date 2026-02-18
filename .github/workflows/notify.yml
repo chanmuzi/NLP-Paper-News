@@ -112,168 +112,38 @@ jobs:
             head -n 40 artifacts/social-draft.md >> "$GITHUB_STEP_SUMMARY"
           fi
 
+      - name: Emit X draft payload for approval UI
+        if: steps.delta.outputs.has_new == 'true' && hashFiles('artifacts/digest.json') != ''
+        run: |
+          node -e "
+            const fs = require('fs');
+            const d = JSON.parse(fs.readFileSync('artifacts/digest.json','utf8'));
+            const thread = d?.social?.x_thread || {};
+            const meta = d?.social?.x_thread_meta || {};
+            const payload = {
+              generated_at: new Date().toISOString(),
+              commit_sha: process.env.GITHUB_SHA || '',
+              thread: {
+                main: String(thread.main || ''),
+                replies: Array.isArray(thread.replies) ? thread.replies.map((x) => String(x || '')) : []
+              },
+              meta: {
+                generator: meta.generator || 'rule',
+                main_model: meta.main_model || '-',
+                reply_model: meta.reply_model || '-',
+                safe_limit: meta.safe_limit ?? null,
+                hard_limit: meta.hard_limit ?? 280,
+                main_chars: meta.main_chars ?? null,
+                reply_chars: Array.isArray(meta.reply_chars) ? meta.reply_chars : []
+              }
+            };
+            const b64 = Buffer.from(JSON.stringify(payload), 'utf8').toString('base64');
+            console.log('X_DRAFT_PAYLOAD_BASE64=' + b64);
+          "
+
       - name: Upload artifacts
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: notify-artifacts
           path: artifacts/
-
-  post_x:
-    runs-on: ubuntu-latest
-    needs: prepare
-    if: needs.prepare.outputs.has_new == 'true' && vars.ENABLE_X_POST == 'true' && github.event_name != 'pull_request'
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: "20"
-      - uses: actions/download-artifact@v4
-        with:
-          name: notify-artifacts
-          path: artifacts
-      - name: Cooldown guard
-        env:
-          GH_TOKEN: ${{ github.token }}
-          X_POST_COOLDOWN_SECONDS: ${{ vars.X_POST_COOLDOWN_SECONDS }}
-          CURRENT_RUN_ID: ${{ github.run_id }}
-        run: |
-          COOLDOWN="${X_POST_COOLDOWN_SECONDS:-180}"
-          if ! [[ "$COOLDOWN" =~ ^[0-9]+$ ]]; then
-            COOLDOWN=180
-          fi
-
-          if ! RUNS_JSON=$(gh api "repos/${{ github.repository }}/actions/workflows/notify.yml/runs?per_page=20"); then
-            echo "Cooldown guard skipped: unable to fetch previous runs."
-            exit 0
-          fi
-
-          WAIT_SECS=$(RUNS_JSON="$RUNS_JSON" COOLDOWN="$COOLDOWN" CURRENT_RUN_ID="$CURRENT_RUN_ID" node -e "
-            const data = JSON.parse(process.env.RUNS_JSON || '{}');
-            const runs = data.workflow_runs || [];
-            const current = Number(process.env.CURRENT_RUN_ID || 0);
-            const cooldown = Number(process.env.COOLDOWN || 180);
-            const now = Date.now();
-
-            const candidates = runs.filter((r) =>
-              r.id !== current &&
-              r.status === 'completed' &&
-              r.head_branch === 'main' &&
-              r.event !== 'pull_request'
-            );
-
-            if (!candidates.length) {
-              process.stdout.write('0');
-              process.exit(0);
-            }
-
-            const latest = candidates.reduce((a, b) =>
-              new Date(a.created_at || 0) > new Date(b.created_at || 0) ? a : b
-            );
-            const createdMs = Date.parse(latest.created_at || '');
-            const elapsed = Number.isFinite(createdMs) ? Math.max(0, Math.floor((now - createdMs) / 1000)) : cooldown;
-            const wait = Math.max(0, cooldown - elapsed);
-            process.stdout.write(String(wait));
-          " || echo 0)
-          WAIT_SECS="${WAIT_SECS:-0}"
-
-          if [ "$WAIT_SECS" -gt 0 ]; then
-            echo "Recent workflow detected. Cooling down for ${WAIT_SECS}s to reduce X anti-spam blocks..."
-            sleep "$WAIT_SECS"
-          else
-            echo "Cooldown guard passed (no additional wait)."
-          fi
-      - name: Post to X
-        id: post
-        env:
-          X_API_KEY: ${{ secrets.X_API_KEY }}
-          X_API_SECRET: ${{ secrets.X_API_SECRET }}
-          X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
-          X_ACCESS_TOKEN_SECRET: ${{ secrets.X_ACCESS_TOKEN_SECRET }}
-          X_API_BASE: ${{ vars.X_API_BASE }}
-          X_DEGRADE_REPLY_403_429: ${{ vars.X_DEGRADE_REPLY_403_429 }}
-        run: |
-          CMD=(node scripts/post-x.mjs --digest artifacts/digest.json --result artifacts/post-result.json)
-
-          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.dry_run }}" = "true" ]; then
-            CMD+=(--dry-run)
-          fi
-
-          # 테스트 모드(workflow_dispatch)에서만 suffix 적용
-          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-            CMD+=(--test-suffix " · test:${GITHUB_SHA::7}")
-          fi
-
-          "${CMD[@]}"
-      - name: Post to X summary
-        if: always()
-        run: |
-          echo "## X Post Result" >> "$GITHUB_STEP_SUMMARY"
-          if [ -f artifacts/post-result.json ]; then
-            node -e "
-              const r = JSON.parse(require('fs').readFileSync('artifacts/post-result.json','utf8'));
-              const lines = [];
-              if (r.success) {
-                if (r.degradedMode === 'main_only') {
-                  lines.push('⚠️ **Posted in degraded mode (main only)**');
-                  lines.push('');
-                  lines.push('- reason: reply blocked by X anti-spam/rate policy');
-                  lines.push('- manual follow-up: add remaining replies manually if needed');
-                  lines.push('');
-                  lines.push('**Failure context**');
-                  lines.push('- failurePhase: ' + (r.failurePhase || '-'));
-                  lines.push('- failedAt: ' + (r.failedAt || '-') + '/' + (r.totalReplies || '-'));
-                  lines.push('- httpStatus: ' + (r.httpStatus ?? '-'));
-                  lines.push('- errorCode: ' + (r.errorCode || '-'));
-                  lines.push('- errorDetail: ' + (r.errorDetail || r.error || '-'));
-                } else {
-                  lines.push('✅ **Thread posted successfully**');
-                }
-                lines.push('');
-                lines.push('| # | Type | Tweet ID |');
-                lines.push('|---|------|----------|');
-                r.posted.forEach((t,i) => lines.push('| ' + (i+1) + ' | ' + t.type + ' | [' + t.id + '](https://x.com/i/status/' + t.id + ') |'));
-                if (r.attempts) {
-                  lines.push('');
-                  lines.push('- attempts: ' + JSON.stringify(r.attempts));
-                }
-              } else {
-                lines.push('❌ **Thread posting failed**');
-                lines.push('');
-                lines.push('**Failure context**');
-                lines.push('- failurePhase: ' + (r.failurePhase || '-'));
-                lines.push('- failedAt: ' + (r.failedAt || '-') + '/' + (r.totalReplies || '-'));
-                lines.push('- httpStatus: ' + (r.httpStatus ?? '-'));
-                lines.push('- errorCode: ' + (r.errorCode || '-'));
-                lines.push('- errorDetail: ' + (r.errorDetail || r.error || '-'));
-                lines.push('');
-                if (r.rolledBack > 0) {
-                  lines.push('🔄 Rollback attempted: ' + r.rolledBack + ' tweet(s)');
-                  lines.push('🧹 Rollback deleted: ' + (r.rollbackDeleted ?? 0) + ' tweet(s)');
-                }
-                if (r.attempts) {
-                  lines.push('');
-                  lines.push('- attempts: ' + JSON.stringify(r.attempts));
-                }
-                lines.push('');
-                lines.push('Re-trigger this workflow to retry.');
-              }
-              process.stdout.write(lines.join('\n'));
-            " >> "$GITHUB_STEP_SUMMARY"
-          elif [ "${{ steps.post.outcome }}" = "success" ]; then
-            echo "✅ Thread posted successfully" >> "$GITHUB_STEP_SUMMARY"
-          else
-            echo "❌ **Thread posting failed**" >> "$GITHUB_STEP_SUMMARY"
-            echo "Re-trigger this workflow to retry." >> "$GITHUB_STEP_SUMMARY"
-          fi
-      - name: Upload post diagnostics
-        if: always() && hashFiles('artifacts/post-result.json') != ''
-        uses: actions/upload-artifact@v4
-        with:
-          name: post-x-result
-          path: artifacts/post-result.json
-      - name: Trigger deploy on success
-        if: steps.post.outcome == 'success'
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: gh workflow run deploy.yml --ref main
