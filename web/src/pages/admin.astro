@@ -1230,7 +1230,7 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
       setSubmitLoading(false);
 
       // Start workflow polling
-      showStatus(`✅ 커밋 완료${skippedMsg} · ${shortSha}\n⏳ X 초안 생성 워크플로 대기 중...`, 'info');
+      showStatus(`✅ 커밋 완료${skippedMsg} · ${shortSha}\n⏳ X draft 생성 워크플로 대기 중...`, 'info');
       currentCommittedSha = newCommit.sha;
       currentRepoForSubmit = repo;
       startWorkflowTracking(repo, token, newCommit.sha, newItems.length, undefined, requireManualApprovalForCurrentSubmit);
@@ -1358,7 +1358,7 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
   async function dispatchApprovedPost(repo: string, token: string, commitSha: string, approvalMode: 'manual_approved' | 'one_time_auto') {
     const thread = collectEditedThread();
     if (!thread) {
-      showStatus('X 초안을 불러오지 못했습니다.', 'error');
+      showStatus('X draft를 불러오지 못했습니다.', 'error');
       return;
     }
 
@@ -1551,7 +1551,7 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
                 showStatus(`✅ 커밋 완료 · ${shortSha}\n📝 X draft가 준비되었습니다. draft를 확인한 뒤 승인해 주세요.`, 'success', { autoScroll: true });
               }
             } else {
-              showStatus(`✅ 커밋 완료 · ${shortSha}\n⚠️ X 초안을 찾지 못했습니다. Actions에서 notify-artifacts를 확인하세요.`, 'warn');
+              showStatus(`✅ 커밋 완료 · ${shortSha}\n⚠️ X draft를 찾지 못했습니다. Actions에서 notify-artifacts를 확인하세요.`, 'warn');
             }
           } else {
             showStatus(`✅ 커밋 완료 · ${shortSha}\n❌ 워크플로 ${runConclusion || '실패'}`, 'error');
@@ -1804,7 +1804,7 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
       return;
     }
     if (!xDraftData || !currentCommittedSha || !currentRepoForSubmit) {
-      showStatus('승인할 X 초안이 없습니다. 먼저 항목을 커밋해 주세요.', 'warn');
+      showStatus('승인할 X draft가 없습니다. 먼저 항목을 커밋해 주세요.', 'warn');
       return;
     }
     if (!(xMainApproved && xRepliesApproved)) {
