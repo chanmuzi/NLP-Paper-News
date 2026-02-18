@@ -213,9 +213,6 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
       </details>
     </div>
 
-    <!-- Submit Status (outside preview-section so it stays visible after submit clears items) -->
-    <div id="submit-status" class="hidden mt-3 p-4 rounded-xl text-sm"></div>
-
     <!-- X Draft Review -->
     <div id="x-review-section" class="hidden mt-5 p-4 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-anthro-darkSurface">
       <div class="flex items-center justify-between mb-3">
@@ -295,6 +292,9 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
       </div>
       <div id="x-review-note" class="mt-2 text-xs text-gray-400"></div>
     </div>
+
+    <!-- Submit Status (outside preview-section so it stays visible after submit clears items) -->
+    <div id="submit-status" class="hidden mt-3 p-4 rounded-xl text-sm"></div>
 
     <!-- Confirm Modal -->
     <div id="confirm-modal" class="hidden fixed inset-0 z-50">
@@ -1779,11 +1779,14 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
           if (run.conclusion === 'success') {
             if (postResult?.degradedMode === 'main_only') {
               showStatus(`✅ 커밋 완료 · ${shortSha}\n⚠️ main만 게시되었습니다. 남은 replies는 수동으로 이어서 게시해 주세요.`, 'warn', { autoScroll: true });
+              await sleep(2600);
               clearXDraftReview();
+              fadeStatusNow();
             } else {
               showStatus(`✅ 커밋 완료 · ${shortSha}\n✅ X 포스팅 성공!`, 'success', { autoScroll: true });
+              await sleep(2600);
               clearXDraftReview();
-              fadeStatusAfter(7000);
+              fadeStatusNow();
             }
           } else {
             let guide = 'Actions 로그를 확인해 주세요.';
@@ -1826,14 +1829,15 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
     }
 
     showStatus(`✅ [mock] 커밋 완료 · ${shortSha}\n🐦 X 게시 시뮬레이션 시작...`, 'info');
-    await sleep(400);
+    await sleep(1200);
     for (let i = 0; i < thread.replies.length; i++) {
       showStatus(`✅ [mock] 커밋 완료 · ${shortSha}\n🐦 X reply ${i + 1}/${thread.replies.length} 게시 중...`, 'info');
-      await sleep(250);
+      await sleep(1100);
     }
     showStatus(`✅ [mock] 커밋 완료 · ${shortSha}\n✅ X 포스팅 성공!`, 'success', { autoScroll: true });
+    await sleep(2600);
     clearXDraftReview();
-    fadeStatusAfter(5000);
+    fadeStatusNow();
   }
 
   function fadeStatusAfter(ms: number) {
@@ -1851,6 +1855,18 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
     }, ms);
   }
 
+  function fadeStatusNow() {
+    const statusEl = document.getElementById('submit-status');
+    if (!statusEl || statusEl.classList.contains('hidden')) return;
+    statusEl.style.transition = 'opacity 0.3s';
+    statusEl.style.opacity = '0';
+    setTimeout(() => {
+      statusEl.classList.add('hidden');
+      statusEl.style.opacity = '';
+      statusEl.style.transition = '';
+    }, 300);
+  }
+
   function showStatus(message: string, type: 'info' | 'success' | 'error' | 'warn', opts: { autoScroll?: boolean } = {}) {
     const el = document.getElementById('submit-status');
     if (!el) return;
@@ -1859,11 +1875,11 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
     el.style.transition = '';
     const colors: Record<string, string> = {
       info: 'bg-claude-50 dark:bg-claude-950/30 text-claude-700 dark:text-claude-300 border border-claude-200 dark:border-claude-800',
-      success: 'bg-emerald-50 dark:bg-emerald-950/30 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800',
+      success: 'bg-claude-100 dark:bg-claude-900/40 text-claude-800 dark:text-claude-200 border border-claude-300 dark:border-claude-700',
       error: 'bg-red-50 dark:bg-red-950/30 text-red-700 dark:text-red-300 border border-red-200 dark:border-red-800',
       warn: 'bg-amber-50 dark:bg-amber-950/30 text-amber-700 dark:text-amber-300 border border-amber-200 dark:border-amber-800',
     };
-    el.className = `mb-5 p-4 rounded-xl text-sm whitespace-pre-line animate-fade-in ${colors[type]}`;
+    el.className = `mt-4 mb-5 p-4 rounded-xl text-sm whitespace-pre-line animate-fade-in ${colors[type]}`;
     el.textContent = message;
 
     if (opts.autoScroll) {
