@@ -1682,7 +1682,7 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
         if (runStatus === 'completed') {
           clearWorkflowTracking();
           const jobsData = await ghApi(`runs/${run.id}/jobs`);
-          const prepareJob = jobsData?.jobs?.find((j: any) => j.name === 'prepare');
+          const prepareJob = jobsData?.data?.jobs?.find((j: any) => j.name === 'prepare');
 
           if (runConclusion === 'success') {
             const draftPayload = prepareJob?.id
@@ -1721,7 +1721,7 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
         }
 
         const jobsData = await ghApi(`runs/${run.id}/jobs`);
-        const jobs = jobsData?.jobs || [];
+        const jobs = jobsData?.data?.jobs || [];
         const activeJob = jobs.find((j: any) => j.status === 'in_progress');
         const activeStep = activeJob?.steps?.find((s: any) => s.status === 'in_progress');
 
