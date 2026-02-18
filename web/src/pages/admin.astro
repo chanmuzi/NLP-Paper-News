@@ -215,7 +215,7 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
     <!-- X Draft Review -->
     <div id="x-review-section" class="hidden mt-5 p-4 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-anthro-darkSurface">
       <div class="flex items-center justify-between mb-3">
-        <h3 class="text-sm font-semibold text-gray-700 dark:text-gray-200">X 게시 전 문안 검토</h3>
+        <h3 class="text-sm font-semibold text-gray-700 dark:text-gray-200">X 게시 전 draft 검토</h3>
         <span id="x-review-meta" class="text-xs text-gray-400"></span>
       </div>
 
@@ -245,7 +245,7 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
           <div id="confirm-item-list" class="mb-4 max-h-40 overflow-y-auto text-xs text-gray-500 dark:text-gray-400 space-y-1"></div>
           <label class="mb-4 flex items-start gap-2 text-xs text-gray-600 dark:text-gray-300">
             <input type="checkbox" id="confirm-manual-approval" class="mt-0.5 accent-claude-500" checked />
-            <span>X 게시 전 문안 확인/수정 후 승인하기 (기본)</span>
+            <span>X 게시 전 draft 확인/수정 후 승인하기 (기본)</span>
           </label>
           <div class="flex gap-2">
             <button id="confirm-cancel" class="flex-1 px-4 py-2.5 rounded-lg border border-gray-200 dark:border-gray-700 text-sm text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 transition-all">취소</button>
@@ -828,7 +828,7 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
     const mainModel = draft.meta?.main_model || '-';
     const replyModel = draft.meta?.reply_model || '-';
     if (metaEl) metaEl.textContent = `main 모델: ${mainModel} · reply 모델: ${replyModel}`;
-    if (noteEl) noteEl.textContent = '문안을 직접 수정한 뒤 승인 게시할 수 있습니다.';
+    if (noteEl) noteEl.textContent = 'draft를 직접 수정한 뒤 승인 게시할 수 있습니다.';
 
     repliesEditor.innerHTML = (draft.thread.replies || []).map((reply, idx) => `
       <div>
@@ -1276,7 +1276,7 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
                 await dispatchApprovedPost(repo, token, commitSha, 'one_time_auto');
                 await pollApprovedPostStatus(repo, token, commitSha, Date.now());
               } else {
-                showStatus(`✅ 커밋 완료 · ${shortSha}\n📝 X 초안이 준비되었습니다. 문안을 확인한 뒤 승인해 주세요.`, 'success', { autoScroll: true });
+                showStatus(`✅ 커밋 완료 · ${shortSha}\n📝 X draft가 준비되었습니다. draft를 확인한 뒤 승인해 주세요.`, 'success', { autoScroll: true });
               }
             } else {
               showStatus(`✅ 커밋 완료 · ${shortSha}\n⚠️ X 초안을 찾지 못했습니다. Actions에서 notify-artifacts를 확인하세요.`, 'warn');
@@ -1382,7 +1382,7 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
         if (liveProgress?.postingReply && liveProgress?.totalReplies) {
           showStatus(`✅ 커밋 완료 · ${shortSha}\n🐦 X reply ${liveProgress.postingReply}/${liveProgress.totalReplies} 게시 중...`, 'info');
         } else {
-          showStatus(`✅ 커밋 완료 · ${shortSha}\n🐦 승인된 문안으로 X 게시 중...`, 'info');
+          showStatus(`✅ 커밋 완료 · ${shortSha}\n🐦 승인된 draft로 X 게시 중...`, 'info');
         }
         setTimeout(tick, POLL_INTERVAL);
       };
