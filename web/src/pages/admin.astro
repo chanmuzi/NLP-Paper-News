@@ -331,6 +331,8 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
   let xMainApproved = false;
   let xRepliesApproved = false;
   let xAiHistory: Array<{ at: string; target: string; instruction: string; model: string; summary: string }> = [];
+  let isPostingInProgress = false;
+  let isAiRewriteInProgress = false;
 
   const WORKFLOW_TRACKING_KEY = 'nlp_paper_news_admin_workflow_tracking_v1';
   const MOCK_MODE_KEY = 'nlp_paper_news_admin_mock_mode_v1';
@@ -865,6 +867,45 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
     return '';
   }
 
+  function extractCoreText(base: string) {
+    return String(base || '')
+      .split('\n')
+      .map((s) => s.trim())
+      .filter(Boolean)
+      .filter((s) => !s.startsWith('http'))
+      .slice(0, 2)
+      .join(' / ');
+  }
+
+  function summarizeInstruction(instruction: string) {
+    return instruction
+      .replace(/\[target:[^\]]+\]/gi, '')
+      .replace(/\s+/g, ' ')
+      .trim()
+      .slice(0, 34);
+  }
+
+  function mockRewriteMain(base: string, instruction: string) {
+    const core = extractCoreText(base);
+    const intent = summarizeInstruction(instruction);
+    const lines = [
+      `📌 핵심 업데이트`,
+      core || '이번 업데이트 요약',
+      `- 요청 반영: ${intent || '톤/구조 조정'}`,
+    ];
+    return clipToXLimit(lines.join('\n'));
+  }
+
+  function mockRewriteReply(base: string, instruction: string, idx: number) {
+    const core = extractCoreText(base);
+    const intent = summarizeInstruction(instruction);
+    const lines = [
+      `${idx + 1}) ${core || '업데이트 상세'}`,
+      `포인트: ${intent || '핵심 설명 보강'}`,
+    ];
+    return clipToXLimit(lines.join('\n'));
+  }
+
   function buildMockDraft(items: any[], commitSha: string) {
     const titles = items.slice(0, 3).map((i) => i.title).join(' · ');
     const mainBase = `📌 이번 업데이트 ${items.length}건\n${titles}${items.length > 3 ? ` 외 ${items.length - 3}건` : ''}`;
@@ -888,12 +929,6 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
         reply_model: 'mock-local',
       }
     };
-  }
-
-  function mockRewriteText(base: string, instruction: string) {
-    const brief = instruction.replace(/\s+/g, ' ').trim().slice(0, 40);
-    const cleaned = base.replace(/\[AI edit[^\]]*\]/g, '').trim();
-    return clipToXLimit(`[mock rewrite] ${brief}\n${cleaned}`);
   }
 
   function collectEditedThread() {
@@ -954,9 +989,14 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
     }
     if (postBtn) {
       const enabled = xMainApproved && xRepliesApproved;
-      postBtn.disabled = !enabled;
-      postBtn.classList.toggle('opacity-50', !enabled);
-      postBtn.classList.toggle('cursor-not-allowed', !enabled);
+      postBtn.disabled = !enabled || isPostingInProgress;
+      postBtn.classList.toggle('opacity-50', !enabled || isPostingInProgress);
+      postBtn.classList.toggle('cursor-not-allowed', !enabled || isPostingInProgress);
+      if (isPostingInProgress) {
+        postBtn.textContent = '게시 진행 중...';
+      } else {
+        postBtn.textContent = '전체 승인 후 X 게시';
+      }
     }
     if (noteEl) {
       noteEl.textContent = (xMainApproved && xRepliesApproved)
@@ -1422,6 +1462,8 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
 
     if (!dispatchRes.ok) {
       const err = await dispatchRes.text();
+      if (dispatchRes.status === 404) throw new Error('승인 게시 워크플로우를 찾지 못했습니다. 브랜치/파일 상태를 확인해 주세요.');
+      if (dispatchRes.status === 403) throw new Error('workflow 실행 권한이 부족합니다. 토큰 scope를 확인해 주세요 (repo/workflow).');
       throw new Error(`승인 게시 워크플로우 실행 실패 (${dispatchRes.status}): ${err}`);
     }
   }
@@ -1448,6 +1490,8 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
     });
     if (!dispatchRes.ok) {
       const err = await dispatchRes.text();
+      if (dispatchRes.status === 404) throw new Error('AI 수정 워크플로우를 찾지 못했습니다. 브랜치/파일 상태를 확인해 주세요.');
+      if (dispatchRes.status === 403) throw new Error('AI 수정 워크플로우 실행 권한이 부족합니다. 토큰 scope를 확인해 주세요 (repo/workflow).');
       throw new Error(`AI 수정 워크플로우 실행 실패 (${dispatchRes.status}): ${err}`);
     }
   }
@@ -1843,8 +1887,11 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
       showStatus('게시 전 main과 replies를 각각 승인해 주세요.', 'warn');
       return;
     }
+    if (isPostingInProgress) return;
 
     try {
+      isPostingInProgress = true;
+      updateReviewApprovalUi();
       if (mockMode) {
         await runMockPostFlow(currentCommittedSha);
       } else {
@@ -1854,6 +1901,9 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
       }
     } catch (err: any) {
       showStatus(`승인 게시 실행 실패: ${err.message}`, 'error');
+    } finally {
+      isPostingInProgress = false;
+      updateReviewApprovalUi();
     }
   });
 
@@ -1879,6 +1929,7 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
       showToast('instruction을 입력해 주세요.');
       return;
     }
+    if (isAiRewriteInProgress) return;
 
     const scopedInstruction = target === 'main'
       ? `[target: main only]\n${instruction}`
@@ -1887,6 +1938,7 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
       : `[target: reply ${replyTarget} only; keep others]\n${instruction}`;
 
     try {
+      isAiRewriteInProgress = true;
       const current = collectEditedThread();
       if (!current) throw new Error('현재 thread를 읽지 못했습니다.');
 
@@ -1899,20 +1951,22 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
 
       if (mockMode) {
         if (target === 'main') {
-          nextThread.main = mockRewriteText(nextThread.main, instruction);
+          nextThread.main = mockRewriteMain(nextThread.main, instruction);
           xMainApproved = false;
         } else if (replyTarget === 'all') {
-          nextThread.replies = nextThread.replies.map((r) => mockRewriteText(r, instruction));
+          nextThread.replies = nextThread.replies.map((r, i) => mockRewriteReply(r, instruction, i));
           xRepliesApproved = false;
         } else {
           const idx = replyTarget - 1;
-          if (nextThread.replies[idx]) nextThread.replies[idx] = mockRewriteText(nextThread.replies[idx], instruction);
+          if (nextThread.replies[idx]) nextThread.replies[idx] = mockRewriteReply(nextThread.replies[idx], instruction, idx);
           xRepliesApproved = false;
         }
       } else {
         await dispatchRewriteDraft(currentRepoForSubmit, token!, currentCommittedSha, scopedInstruction);
         const result = await pollRewriteDraftStatus(currentRepoForSubmit, token!, Date.now());
-        if (!result?.payload?.thread?.main) throw new Error('AI 수정 결과를 읽지 못했습니다.');
+        if (!result?.payload?.thread?.main) {
+          throw new Error('AI 수정 결과를 읽지 못했습니다. Actions 로그 접근 권한(actions:read)과 워크플로 상태를 확인해 주세요.');
+        }
         if (!result.payload.success) throw new Error(result.payload.error || 'AI 수정 실패');
         modelName = String(result.payload.meta?.model || '-');
 
@@ -1955,6 +2009,8 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
     } catch (err: any) {
       if (statusEl) statusEl.textContent = '실패';
       showStatus(`AI 수정 실패: ${err.message}`, 'error');
+    } finally {
+      isAiRewriteInProgress = false;
     }
   }
 
