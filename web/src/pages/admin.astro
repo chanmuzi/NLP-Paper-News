@@ -193,7 +193,7 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
       <div id="preview-container" class="space-y-3"></div>
 
       <!-- Actions -->
-      <div class="mt-5 flex gap-2">
+      <div class="mt-3 flex gap-2">
         <button id="submit-btn" class="flex-1 px-5 py-2.5 bg-claude-500 text-white rounded-lg text-sm font-semibold hover:bg-claude-600 transition-all shadow-sm disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2">
           <svg class="submit-icon w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
           <svg class="submit-spinner hidden w-4 h-4 animate-spin" fill="none" viewBox="0 0 24 24">
@@ -727,7 +727,8 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
       renderPreview();
       const localDuplicateCount = getLocalDuplicateCount(result.items);
       const alreadySubmitted = result.items.filter(i => submittedIds.has(i.id));
-      const alreadyCommitted = result.items.filter(i => existingIds.has(i.id));
+      const alreadySubmittedIdSet = new Set(alreadySubmitted.map((i) => i.id));
+      const alreadyCommitted = result.items.filter(i => existingIds.has(i.id) && !alreadySubmittedIdSet.has(i.id));
       const realNewCount = result.items.filter(i => !submittedIds.has(i.id) && !existingIds.has(i.id)).length;
       let summaryHtml = `
         <div class="font-semibold text-gray-700 dark:text-gray-200 mb-1">파싱 테스트 완료</div>
@@ -1171,10 +1172,10 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
       showXDraftReview(draft);
 
       if (requireManualApprovalForCurrentSubmit === false) {
-        showStatus(`✅ [mock] 커밋 완료 · ${fakeSha}\n🤖 자동 승인 모드로 X 게시를 시작합니다...`, 'info', { autoScroll: true });
+        showStatus(`커밋 완료 · ${fakeSha}\n자동 승인 모드로 X 게시를 시작합니다...`, 'info', { autoScroll: true });
         await runMockPostFlow(fakeSha);
       } else {
-        showStatus(`✅ [mock] 커밋 완료 · ${fakeSha}\n📝 X draft가 준비되었습니다. draft를 확인한 뒤 승인해 주세요.`, 'success', { autoScroll: true });
+        showStatus(`커밋 완료 · ${fakeSha}\nX draft가 준비되었습니다. draft를 확인한 뒤 승인해 주세요.`, 'success', { autoScroll: true });
       }
       return;
     }
@@ -1356,7 +1357,7 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
       setSubmitLoading(false);
 
       // Start workflow polling
-      showStatus(`✅ 커밋 완료${skippedMsg} · ${shortSha}\n⏳ X draft 생성 워크플로 대기 중...`, 'info');
+      showStatus(`커밋 완료${skippedMsg} · ${shortSha}\nX draft 생성 워크플로 대기 중...`, 'info');
       currentCommittedSha = newCommit.sha;
       currentRepoForSubmit = repo;
       startWorkflowTracking(repo, token, newCommit.sha, newItems.length, undefined, requireManualApprovalForCurrentSubmit);
@@ -1630,7 +1631,7 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
 
       if (polls > MAX_POLLS) {
         clearWorkflowTracking();
-        showStatus(`✅ 커밋 완료 · ${shortSha}\n⚠️ 워크플로 상태 확인 시간 초과 — Actions 페이지에서 직접 확인하세요.`, 'warn');
+        showStatus(`커밋 완료 · ${shortSha}\n워크플로 상태 확인 시간 초과 — Actions 페이지에서 직접 확인하세요.`, 'warn');
         return;
       }
 
@@ -1641,7 +1642,7 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
       try {
         const data = await ghApi(`runs?head_sha=${commitSha}&per_page=5`);
         if (!data?.workflow_runs?.length) {
-          showStatus(`✅ 커밋 완료 · ${shortSha}\n⏳ 워크플로 트리거 대기 중... (${elapsedSeconds()}s)`, 'info');
+          showStatus(`커밋 완료 · ${shortSha}\n워크플로 트리거 대기 중... (${elapsedSeconds()}s)`, 'info');
           scheduleNext();
           return;
         }
@@ -1675,18 +1676,18 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
               showXDraftReview(draft);
 
               if (trackingState.requireManualApproval === false) {
-                showStatus(`✅ 커밋 완료 · ${shortSha}\n🤖 자동 승인 모드로 X 게시를 시작합니다...`, 'info', { autoScroll: true });
+                showStatus(`커밋 완료 · ${shortSha}\n자동 승인 모드로 X 게시를 시작합니다...`, 'info', { autoScroll: true });
                 const dispatched = await dispatchApprovedPost(repo, token, commitSha, 'one_time_auto');
                 if (!dispatched) return;
                 await pollApprovedPostStatus(repo, token, commitSha, Date.now());
               } else {
-                showStatus(`✅ 커밋 완료 · ${shortSha}\n📝 X draft가 준비되었습니다. draft를 확인한 뒤 승인해 주세요.`, 'success', { autoScroll: true });
+                showStatus(`커밋 완료 · ${shortSha}\nX draft가 준비되었습니다. draft를 확인한 뒤 승인해 주세요.`, 'success', { autoScroll: true });
               }
             } else {
-              showStatus(`✅ 커밋 완료 · ${shortSha}\n⚠️ X draft를 찾지 못했습니다. Actions에서 notify-artifacts를 확인하세요.`, 'warn');
+              showStatus(`커밋 완료 · ${shortSha}\nX draft를 찾지 못했습니다. Actions에서 notify-artifacts를 확인하세요.`, 'warn');
             }
           } else {
-            showStatus(`✅ 커밋 완료 · ${shortSha}\n❌ 워크플로 ${runConclusion || '실패'}`, 'error');
+            showStatus(`커밋 완료 · ${shortSha}\n워크플로 ${runConclusion || '실패'}`, 'error');
           }
           return;
         }
@@ -1698,19 +1699,19 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
 
         let progressMsg = '';
         if (activeJob?.name === 'prepare') {
-          progressMsg = '📦 데이터 준비 중...';
-          if (activeStep?.name?.includes('Build digest')) progressMsg = '📦 포스트 생성 중...';
-          else if (activeStep?.name?.includes('Extract')) progressMsg = '📦 새 항목 추출 중...';
+          progressMsg = '데이터 준비 중...';
+          if (activeStep?.name?.includes('Build digest')) progressMsg = '포스트 생성 중...';
+          else if (activeStep?.name?.includes('Extract')) progressMsg = '새 항목 추출 중...';
         } else if (jobs.every((j: any) => j.status === 'queued')) {
-          progressMsg = '⏳ 워크플로 실행 대기 중...';
+          progressMsg = '워크플로 실행 대기 중...';
         } else {
-          progressMsg = `⏳ ${runStatus}...`;
+          progressMsg = `${runStatus}...`;
         }
 
-        showStatus(`✅ 커밋 완료 · ${shortSha}\n${progressMsg} (${elapsedSeconds()}s)`, 'info');
+        showStatus(`커밋 완료 · ${shortSha}\n${progressMsg} (${elapsedSeconds()}s)`, 'info');
         scheduleNext();
       } catch (e) {
-        showStatus(`✅ 커밋 완료 · ${shortSha}\n⏳ 상태 재확인 중... (${elapsedSeconds()}s)`, 'info');
+        showStatus(`커밋 완료 · ${shortSha}\n상태 재확인 중... (${elapsedSeconds()}s)`, 'info');
         scheduleNext();
       }
     }
@@ -1746,7 +1747,7 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
       const tick = async () => {
         polls++;
         if (polls > MAX_POLLS) {
-          showStatus(`✅ 커밋 완료 · ${shortSha}\n⚠️ 승인 게시 상태 확인 시간 초과 — Actions에서 확인하세요.`, 'warn');
+          showStatus(`커밋 완료 · ${shortSha}\n승인 게시 상태 확인 시간 초과 — Actions에서 확인하세요.`, 'warn');
           resolve();
           return;
         }
@@ -1755,7 +1756,7 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
         const runs = runsData?.workflow_runs || [];
         const run = runs.find((r: any) => Date.parse(r.created_at || '') >= (dispatchedAt - 30000));
         if (!run) {
-          showStatus(`✅ 커밋 완료 · ${shortSha}\n⏳ 승인 게시 워크플로 시작 대기 중...`, 'info');
+          showStatus(`커밋 완료 · ${shortSha}\n승인 게시 워크플로 시작 대기 중...`, 'info');
           setTimeout(tick, POLL_INTERVAL);
           return;
         }
@@ -1778,13 +1779,13 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
 
           if (run.conclusion === 'success') {
             if (postResult?.degradedMode === 'main_only') {
-              showStatus(`✅ 커밋 완료 · ${shortSha}\n⚠️ main만 게시되었습니다. 남은 replies는 수동으로 이어서 게시해 주세요.`, 'warn', { autoScroll: true });
-              await sleep(2600);
+              showStatus(`커밋 완료 · ${shortSha}\nmain만 게시되었습니다. 남은 replies는 수동으로 이어서 게시해 주세요.`, 'warn', { autoScroll: true });
+              await sleep(4200);
               clearXDraftReview();
               fadeStatusNow();
             } else {
-              showStatus(`✅ 커밋 완료 · ${shortSha}\n✅ X 포스팅 성공!`, 'success', { autoScroll: true });
-              await sleep(2600);
+              showStatus(`커밋 완료 · ${shortSha}\nX 게시가 완료되었습니다.`, 'success', { autoScroll: true });
+              await sleep(4200);
               clearXDraftReview();
               fadeStatusNow();
             }
@@ -1797,16 +1798,16 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
             } else if (postResult?.errorCode === 'network_error') {
               guide = '네트워크 오류입니다. 잠시 후 다시 시도해 주세요.';
             }
-            showStatus(`✅ 커밋 완료 · ${shortSha}\n❌ X 포스팅 실패\n${guide}`, 'error', { autoScroll: true });
+            showStatus(`커밋 완료 · ${shortSha}\nX 게시 실패\n${guide}`, 'error', { autoScroll: true });
           }
           resolve();
           return;
         }
 
         if (liveProgress?.postingReply && liveProgress?.totalReplies) {
-          showStatus(`✅ 커밋 완료 · ${shortSha}\n🐦 X reply ${liveProgress.postingReply}/${liveProgress.totalReplies} 게시 중...`, 'info');
+          showStatus(`커밋 완료 · ${shortSha}\nX reply ${liveProgress.postingReply}/${liveProgress.totalReplies} 게시 중...`, 'info');
         } else {
-          showStatus(`✅ 커밋 완료 · ${shortSha}\n🐦 승인된 draft로 X 게시 중...`, 'info');
+          showStatus(`커밋 완료 · ${shortSha}\n승인된 draft로 X 게시 중...`, 'info');
         }
         setTimeout(tick, POLL_INTERVAL);
       };
@@ -1824,18 +1825,18 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
     const failures = validateThreadLimit(thread.main, thread.replies);
     if (failures.length > 0) {
       const msg = failures.map((f) => `${f.phase} ${f.used}/${X_HARD_LIMIT}`).join(', ');
-      showStatus(`✅ [mock] 커밋 완료 · ${shortSha}\n❌ 길이 제한 초과: ${msg}`, 'error', { autoScroll: true });
+      showStatus(`커밋 완료 · ${shortSha}\n길이 제한 초과: ${msg}`, 'error', { autoScroll: true });
       return;
     }
 
-    showStatus(`✅ [mock] 커밋 완료 · ${shortSha}\n🐦 X 게시 시뮬레이션 시작...`, 'info');
+    showStatus(`커밋 완료 · ${shortSha}\nX 게시 시뮬레이션 시작...`, 'info');
     await sleep(1200);
     for (let i = 0; i < thread.replies.length; i++) {
-      showStatus(`✅ [mock] 커밋 완료 · ${shortSha}\n🐦 X reply ${i + 1}/${thread.replies.length} 게시 중...`, 'info');
+      showStatus(`커밋 완료 · ${shortSha}\nX reply ${i + 1}/${thread.replies.length} 게시 중...`, 'info');
       await sleep(1100);
     }
-    showStatus(`✅ [mock] 커밋 완료 · ${shortSha}\n✅ X 포스팅 성공!`, 'success', { autoScroll: true });
-    await sleep(2600);
+    showStatus(`커밋 완료 · ${shortSha}\nX 게시 시뮬레이션이 완료되었습니다.`, 'success', { autoScroll: true });
+    await sleep(4200);
     clearXDraftReview();
     fadeStatusNow();
   }
@@ -1873,14 +1874,46 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
     el.classList.remove('hidden');
     el.style.opacity = '1';
     el.style.transition = '';
-    const colors: Record<string, string> = {
-      info: 'bg-claude-50 dark:bg-claude-950/30 text-claude-700 dark:text-claude-300 border border-claude-200 dark:border-claude-800',
-      success: 'bg-claude-100 dark:bg-claude-900/40 text-claude-800 dark:text-claude-200 border border-claude-300 dark:border-claude-700',
-      error: 'bg-red-50 dark:bg-red-950/30 text-red-700 dark:text-red-300 border border-red-200 dark:border-red-800',
-      warn: 'bg-amber-50 dark:bg-amber-950/30 text-amber-700 dark:text-amber-300 border border-amber-200 dark:border-amber-800',
+    const styles: Record<string, { box: string; badge: string; dot: string; label: string; pulse?: boolean }> = {
+      info: {
+        box: 'bg-[#FAF6EE] dark:bg-[#2B251D]/70 text-[#5E4C36] dark:text-[#E8DCC8] border border-[#EADDC9] dark:border-[#4A3F32] ring-1 ring-black/5 dark:ring-white/5',
+        badge: 'bg-[#F3E8D5] dark:bg-[#3A3127] text-[#6D5538] dark:text-[#E6D6BC] border border-[#E3D1B6] dark:border-[#5A4B3A]',
+        dot: 'bg-[#C9822B]',
+        label: '진행 중',
+        pulse: true,
+      },
+      success: {
+        box: 'bg-[#FAF6EE] dark:bg-[#2B251D]/70 text-[#5E4C36] dark:text-[#E8DCC8] border border-[#EADDC9] dark:border-[#4A3F32] ring-1 ring-black/5 dark:ring-white/5',
+        badge: 'bg-[#F3E8D5] dark:bg-[#3A3127] text-[#6D5538] dark:text-[#E6D6BC] border border-[#E3D1B6] dark:border-[#5A4B3A]',
+        dot: 'bg-[#B7772E]',
+        label: '완료',
+      },
+      warn: {
+        box: 'bg-[#FBF4E7] dark:bg-[#31281F]/75 text-[#6A4E2D] dark:text-[#F0DFC2] border border-[#E9D3AF] dark:border-[#5B4A37] ring-1 ring-black/5 dark:ring-white/5',
+        badge: 'bg-[#F6E5CA] dark:bg-[#433526] text-[#7A5A34] dark:text-[#EED6AF] border border-[#E3C79C] dark:border-[#6A543B]',
+        dot: 'bg-[#C47A22]',
+        label: '확인 필요',
+      },
+      error: {
+        box: 'bg-[#FDF1F1] dark:bg-red-950/25 text-red-800 dark:text-red-200 border border-red-200/90 dark:border-red-800 ring-1 ring-black/5 dark:ring-white/5',
+        badge: 'bg-red-100 dark:bg-red-900/50 text-red-700 dark:text-red-300 border border-red-200 dark:border-red-800',
+        dot: 'bg-red-500',
+        label: '오류',
+      },
     };
-    el.className = `mt-4 mb-5 p-4 rounded-xl text-sm whitespace-pre-line animate-fade-in ${colors[type]}`;
-    el.textContent = message;
+    const selected = styles[type];
+    const statusLabel = selected.label;
+    const dotClass = selected.pulse ? `${selected.dot} animate-pulse` : selected.dot;
+    const displayMessage = message.replace(/^커밋 완료[^\n]*\n?/, '').trim();
+    const escaped = escapeHtml(displayMessage).replace(/\n/g, '<br>');
+    el.className = `mt-4 mb-5 p-4 rounded-xl text-sm animate-fade-in shadow-sm ${selected.box}`;
+    el.innerHTML = `
+      <div class="flex items-center gap-2 mb-2">
+        <span class="inline-block w-2 h-2 rounded-full ${dotClass}"></span>
+        <span class="text-[11px] px-2 py-0.5 rounded-full font-semibold tracking-wide ${selected.badge}">${statusLabel}</span>
+      </div>
+      <div class="whitespace-pre-line leading-relaxed">${escaped}</div>
+    `;
 
     if (opts.autoScroll) {
       el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
@@ -1970,7 +2003,7 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
       if (mockMode) {
         await runMockPostFlow(currentCommittedSha);
       } else {
-        showStatus(`✅ 커밋 완료 · ${currentCommittedSha.slice(0, 7)}\n⏳ 승인 게시 워크플로 실행 중...`, 'info');
+        showStatus(`커밋 완료 · ${currentCommittedSha.slice(0, 7)}\n승인 게시 워크플로 실행 중...`, 'info');
         const dispatched = await dispatchApprovedPost(currentRepoForSubmit, token!, currentCommittedSha, 'manual_approved');
         if (!dispatched) return;
         await pollApprovedPostStatus(currentRepoForSubmit, token!, currentCommittedSha, Date.now());
@@ -2215,7 +2248,7 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
       return;
     }
 
-    showStatus(`🔄 이전 워크플로 상태 복구 중... · ${state.commitSha.slice(0, 7)}`, 'info');
+    showStatus(`이전 워크플로 상태 복구 중... · ${state.commitSha.slice(0, 7)}`, 'info');
     startWorkflowTracking(state.repo, token, state.commitSha, state.expectedReplies, state.startedAt, state.requireManualApproval !== false);
   }
 
