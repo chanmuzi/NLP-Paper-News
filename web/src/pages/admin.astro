@@ -50,6 +50,10 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
         <input type="text" id="github-repo" value="chanmuzi/NLP-Paper-News"
           class="w-full px-3 py-2 rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-anthro-darkMid text-sm text-gray-900 dark:text-gray-100 outline-none focus:border-claude-500 transition-all font-mono" />
       </div>
+      <label class="mt-3 flex items-start gap-2 text-xs text-gray-600 dark:text-gray-300">
+        <input type="checkbox" id="mock-mode-toggle" class="mt-0.5 accent-claude-500" />
+        <span>로컬 mock 모드 (GitHub 없이 UI 흐름 테스트)</span>
+      </label>
     </div>
 
     <!-- Date (shared) -->
@@ -312,8 +316,19 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
   let xAiHistory: Array<{ at: string; target: string; instruction: string; model: string; summary: string }> = [];
 
   const WORKFLOW_TRACKING_KEY = 'nlp_paper_news_admin_workflow_tracking_v1';
+  const MOCK_MODE_KEY = 'nlp_paper_news_admin_mock_mode_v1';
   const X_HARD_LIMIT = 280;
   const URL_REGEX = /https?:\/\/[^\s)]+/gi;
+
+  const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
+
+  function isMockMode() {
+    return localStorage.getItem(MOCK_MODE_KEY) === 'true';
+  }
+
+  function setMockMode(enabled: boolean) {
+    localStorage.setItem(MOCK_MODE_KEY, enabled ? 'true' : 'false');
+  }
 
   function utf8ToBase64(str: string) {
     return btoa(unescape(encodeURIComponent(str)));
@@ -812,6 +827,43 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
     return failures;
   }
 
+  function clipToXLimit(text: string, limit = X_HARD_LIMIT) {
+    const src = String(text || '');
+    if (countXChars(src) <= limit) return src;
+    const chars = Array.from(src);
+    while (chars.length > 0) {
+      const candidate = chars.join('');
+      if (countXChars(candidate) <= limit) return candidate;
+      chars.pop();
+    }
+    return '';
+  }
+
+  function buildMockDraft(items: any[], commitSha: string) {
+    const titles = items.slice(0, 3).map((i) => i.title).join(' · ');
+    const mainBase = `📌 이번 업데이트 ${items.length}건\n${titles}${items.length > 3 ? ` 외 ${items.length - 3}건` : ''}`;
+    const replies = items.map((item, idx) => {
+      const lines = [
+        `${idx + 1}) ${item.title}`,
+        `- ${item.org}`,
+      ];
+      if (item.url) lines.push(item.url);
+      return clipToXLimit(lines.join('\n'));
+    });
+
+    return {
+      commitSha,
+      thread: {
+        main: clipToXLimit(mainBase),
+        replies,
+      },
+      meta: {
+        main_model: 'mock-local',
+        reply_model: 'mock-local',
+      }
+    };
+  }
+
   function collectEditedThread() {
     const mainInput = document.getElementById('x-main-input') as HTMLTextAreaElement | null;
     if (!mainInput) return null;
@@ -957,9 +1009,47 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
   async function submitToGitHub(items: any[]) {
     const token = localStorage.getItem('github_token');
     const repo = (document.getElementById('github-repo') as HTMLInputElement)?.value || 'chanmuzi/NLP-Paper-News';
+    const mockMode = isMockMode();
 
-    if (!token) {
+    if (!token && !mockMode) {
       showStatus('GitHub 토큰이 설정되지 않았습니다. 상단 GitHub 버튼에서 토큰을 입력하세요.', 'error');
+      return;
+    }
+
+    if (mockMode) {
+      setSubmitLoading(true);
+      showStatus('1/3 [mock] 입력 항목 검증 중...', 'info');
+      await sleep(250);
+
+      const newItems = items.filter(i => !submittedIds.has(i.id) && !existingIds.has(i.id));
+      const skippedCount = items.length - newItems.length;
+      if (newItems.length === 0) {
+        showStatus(`[mock] 추가할 새 항목이 없습니다. ${skippedCount}개 항목이 이미 존재합니다.`, 'warn');
+        setSubmitLoading(false);
+        return;
+      }
+
+      showStatus('2/3 [mock] 커밋 시뮬레이션 중...', 'info');
+      await sleep(350);
+
+      const fakeSha = Math.random().toString(16).slice(2, 9).padEnd(7, '0');
+      items.forEach(i => { submittedIds.add(i.id); existingIds.add(i.id); });
+      parsedItems = [];
+      renderPreview();
+      clearInputFields();
+      setSubmitLoading(false);
+
+      currentCommittedSha = fakeSha;
+      currentRepoForSubmit = repo;
+      const draft = buildMockDraft(newItems, fakeSha);
+      showXDraftReview(draft);
+
+      if (requireManualApprovalForCurrentSubmit === false) {
+        showStatus(`✅ [mock] 커밋 완료 · ${fakeSha}\n🤖 자동 승인 모드로 X 게시를 시작합니다...`, 'info', { autoScroll: true });
+        await runMockPostFlow(fakeSha);
+      } else {
+        showStatus(`✅ [mock] 커밋 완료 · ${fakeSha}\n📝 X draft가 준비되었습니다. draft를 확인한 뒤 승인해 주세요.`, 'success', { autoScroll: true });
+      }
       return;
     }
 
@@ -1587,6 +1677,30 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
     });
   }
 
+  async function runMockPostFlow(commitSha: string) {
+    const shortSha = commitSha.slice(0, 7);
+    const thread = collectEditedThread();
+    if (!thread) {
+      showStatus(`[mock] 게시할 draft를 읽지 못했습니다.`, 'error');
+      return;
+    }
+    const failures = validateThreadLimit(thread.main, thread.replies);
+    if (failures.length > 0) {
+      const msg = failures.map((f) => `${f.phase} ${f.used}/${X_HARD_LIMIT}`).join(', ');
+      showStatus(`✅ [mock] 커밋 완료 · ${shortSha}\n❌ 길이 제한 초과: ${msg}`, 'error', { autoScroll: true });
+      return;
+    }
+
+    showStatus(`✅ [mock] 커밋 완료 · ${shortSha}\n🐦 X 게시 시뮬레이션 시작...`, 'info');
+    await sleep(400);
+    for (let i = 0; i < thread.replies.length; i++) {
+      showStatus(`✅ [mock] 커밋 완료 · ${shortSha}\n🐦 X reply ${i + 1}/${thread.replies.length} 게시 중...`, 'info');
+      await sleep(250);
+    }
+    showStatus(`✅ [mock] 커밋 완료 · ${shortSha}\n✅ X 포스팅 성공!`, 'success', { autoScroll: true });
+    fadeStatusAfter(5000);
+  }
+
   function fadeStatusAfter(ms: number) {
     setTimeout(() => {
       const statusEl = document.getElementById('submit-status');
@@ -1651,7 +1765,7 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
       return;
     }
     const token = localStorage.getItem('github_token');
-    if (!token) {
+    if (!token && !isMockMode()) {
       showStatus('GitHub 토큰이 설정되지 않았습니다. 상단 GitHub 버튼에서 토큰을 입력하세요.', 'error');
       return;
     }
@@ -1684,7 +1798,8 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
 
   document.getElementById('x-approve-post-btn')?.addEventListener('click', async () => {
     const token = localStorage.getItem('github_token');
-    if (!token) {
+    const mockMode = isMockMode();
+    if (!token && !mockMode) {
       showStatus('GitHub 토큰이 필요합니다.', 'error');
       return;
     }
@@ -1698,9 +1813,13 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
     }
 
     try {
-      showStatus(`✅ 커밋 완료 · ${currentCommittedSha.slice(0, 7)}\n⏳ 승인 게시 워크플로 실행 중...`, 'info');
-      await dispatchApprovedPost(currentRepoForSubmit, token, currentCommittedSha, 'manual_approved');
-      await pollApprovedPostStatus(currentRepoForSubmit, token, currentCommittedSha, Date.now());
+      if (mockMode) {
+        await runMockPostFlow(currentCommittedSha);
+      } else {
+        showStatus(`✅ 커밋 완료 · ${currentCommittedSha.slice(0, 7)}\n⏳ 승인 게시 워크플로 실행 중...`, 'info');
+        await dispatchApprovedPost(currentRepoForSubmit, token!, currentCommittedSha, 'manual_approved');
+        await pollApprovedPostStatus(currentRepoForSubmit, token!, currentCommittedSha, Date.now());
+      }
     } catch (err: any) {
       showStatus(`승인 게시 실행 실패: ${err.message}`, 'error');
     }
@@ -1718,8 +1837,9 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
 
   async function runAiRewrite(target: 'main' | 'replies', instruction: string, replyTarget: 'all' | number = 'all') {
     const token = localStorage.getItem('github_token');
+    const mockMode = isMockMode();
     const statusEl = document.getElementById('x-ai-status');
-    if (!token || !currentRepoForSubmit || !currentCommittedSha) {
+    if ((!token && !mockMode) || !currentRepoForSubmit || !currentCommittedSha) {
       showStatus('AI 수정을 실행하려면 먼저 커밋 후 X draft를 불러와야 합니다.', 'warn');
       return;
     }
@@ -1735,13 +1855,6 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
       : `[target: reply ${replyTarget} only; keep others]\n${instruction}`;
 
     try {
-      if (statusEl) statusEl.textContent = `${target === 'main' ? 'main' : 'reply'} AI 수정 요청 중...`;
-      await dispatchRewriteDraft(currentRepoForSubmit, token, currentCommittedSha, scopedInstruction);
-      const result = await pollRewriteDraftStatus(currentRepoForSubmit, token, Date.now());
-
-      if (!result?.payload?.thread?.main) throw new Error('AI 수정 결과를 읽지 못했습니다.');
-      if (!result.payload.success) throw new Error(result.payload.error || 'AI 수정 실패');
-
       const current = collectEditedThread();
       if (!current) throw new Error('현재 thread를 읽지 못했습니다.');
 
@@ -1749,33 +1862,60 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
         main: current.main,
         replies: [...current.replies],
       };
+      let modelName = 'mock-local';
+      if (statusEl) statusEl.textContent = `${target === 'main' ? 'main' : 'reply'} AI 수정 요청 중...`;
 
-      if (target === 'main') {
-        nextThread.main = String(result.payload.thread.main || nextThread.main);
-        xMainApproved = false;
-      } else if (replyTarget === 'all') {
-        nextThread.replies = Array.isArray(result.payload.thread.replies)
-          ? result.payload.thread.replies.map((x: any) => String(x || ''))
-          : nextThread.replies;
-        xRepliesApproved = false;
+      if (mockMode) {
+        const append = (base: string) => clipToXLimit(`${base}\n\n[AI edit] ${instruction}`);
+        if (target === 'main') {
+          nextThread.main = append(nextThread.main);
+          xMainApproved = false;
+        } else if (replyTarget === 'all') {
+          nextThread.replies = nextThread.replies.map((r) => append(r));
+          xRepliesApproved = false;
+        } else {
+          const idx = replyTarget - 1;
+          if (nextThread.replies[idx]) nextThread.replies[idx] = append(nextThread.replies[idx]);
+          xRepliesApproved = false;
+        }
       } else {
-        const idx = replyTarget - 1;
-        const rewrittenReply = Array.isArray(result.payload.thread.replies) ? result.payload.thread.replies[idx] : null;
-        if (typeof rewrittenReply === 'string') nextThread.replies[idx] = rewrittenReply;
-        xRepliesApproved = false;
+        await dispatchRewriteDraft(currentRepoForSubmit, token!, currentCommittedSha, scopedInstruction);
+        const result = await pollRewriteDraftStatus(currentRepoForSubmit, token!, Date.now());
+        if (!result?.payload?.thread?.main) throw new Error('AI 수정 결과를 읽지 못했습니다.');
+        if (!result.payload.success) throw new Error(result.payload.error || 'AI 수정 실패');
+        modelName = String(result.payload.meta?.model || '-');
+
+        if (target === 'main') {
+          nextThread.main = String(result.payload.thread.main || nextThread.main);
+          xMainApproved = false;
+        } else if (replyTarget === 'all') {
+          nextThread.replies = Array.isArray(result.payload.thread.replies)
+            ? result.payload.thread.replies.map((x: any) => String(x || ''))
+            : nextThread.replies;
+          xRepliesApproved = false;
+        } else {
+          const idx = replyTarget - 1;
+          const rewrittenReply = Array.isArray(result.payload.thread.replies) ? result.payload.thread.replies[idx] : null;
+          if (typeof rewrittenReply === 'string') nextThread.replies[idx] = rewrittenReply;
+          xRepliesApproved = false;
+        }
       }
 
       showXDraftReview({
         commitSha: currentCommittedSha,
         thread: nextThread,
-        meta: result.payload.meta || {},
+        meta: {
+          ...(xDraftData?.meta || {}),
+          main_model: target === 'main' ? modelName : (xDraftData?.meta?.main_model || '-'),
+          reply_model: target === 'replies' ? modelName : (xDraftData?.meta?.reply_model || '-'),
+        },
       }, { preserveHistory: true });
 
       xAiHistory.push({
         at: new Date().toLocaleString('ko-KR'),
         target: target === 'main' ? 'main' : (replyTarget === 'all' ? 'all replies' : `reply ${replyTarget}`),
         instruction,
-        model: String(result.payload.meta?.model || '-'),
+        model: modelName,
         summary: `main ${countXChars(nextThread.main)}자 · replies ${nextThread.replies.length}건`,
       });
       renderAiHistory();
@@ -1820,8 +1960,12 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
   function updateTokenStatus() {
     const statusEl = document.getElementById('token-status');
     const token = localStorage.getItem('github_token');
+    const mockMode = isMockMode();
     if (statusEl) {
-      if (token) {
+      if (mockMode) {
+        statusEl.textContent = 'MOCK';
+        statusEl.className = 'inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full text-xs bg-violet-100 dark:bg-violet-900/30 text-violet-600 dark:text-violet-400';
+      } else if (token) {
         statusEl.textContent = '연결됨';
         statusEl.className = 'inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full text-xs bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400';
       } else {
@@ -1849,6 +1993,13 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
     localStorage.removeItem('github_token');
     updateTokenStatus();
     showToast('토큰이 삭제되었습니다');
+  });
+
+  document.getElementById('mock-mode-toggle')?.addEventListener('change', (e) => {
+    const enabled = (e.target as HTMLInputElement).checked;
+    setMockMode(enabled);
+    updateTokenStatus();
+    showToast(enabled ? '로컬 mock 모드가 켜졌습니다' : '로컬 mock 모드가 꺼졌습니다');
   });
 
   function showToast(message: string) {
@@ -1890,6 +2041,10 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
 
   // ─── Init ──────────────────────────────
   updateTokenStatus();
+  const mockModeToggle = document.getElementById('mock-mode-toggle') as HTMLInputElement | null;
+  if (mockModeToggle) {
+    mockModeToggle.checked = isMockMode();
+  }
   const savedRepo = localStorage.getItem('github_repo');
   if (savedRepo) {
     (document.getElementById('github-repo') as HTMLInputElement).value = savedRepo;
