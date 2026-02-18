@@ -1,8 +1,34 @@
 {
   "version": 1,
-  "last_updated": "2026-02-17T16:07:52.274Z",
-  "total_items": 1683,
+  "last_updated": "2026-02-18T04:55:33.703Z",
+  "total_items": 1684,
   "items": [
+    {
+      "id": "anthropic-introducing-claude-sonnet-46",
+      "type": "dev",
+      "org": "Anthropic",
+      "title": "Introducing Claude Sonnet 4.6",
+      "url": "https://www.anthropic.com/news/claude-sonnet-4-6",
+      "date": "2026-02-W03",
+      "year": "2026",
+      "month": "2",
+      "week": "3",
+      "bullets": [
+        {
+          "text": "coding, computer use, long-context reasoning, agent planning 등에 특화된 Claud e Sonnet 4.6 모델 API 공개",
+          "level": 1
+        },
+        {
+          "text": "Opus 수준의 모델로만 해결 가능했던 real world 문제도 풀 수 있다고 설명",
+          "level": 1
+        },
+        {
+          "text": "1M context (beta), Adaptive thinking, Context compaction (beta) 등 features",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "hong-kong-tsinghua-tokyo-squtr-a-robustness-benchmark-for-spoken-query-to-text-retrieval-under-acous",
       "type": "paper",
@@ -36876,9 +36902,9 @@
     }
   ],
   "stats": {
-    "total": 1683,
+    "total": 1684,
     "paper": 1023,
-    "dev": 620,
+    "dev": 621,
     "news": 35
   }
 }
