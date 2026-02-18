@@ -1,8 +1,64 @@
 {
   "version": 1,
-  "last_updated": "2026-02-18T04:55:33.703Z",
-  "total_items": 1684,
+  "last_updated": "2026-02-18T17:35:53.015Z",
+  "total_items": 1686,
   "items": [
+    {
+      "id": "google-webmcp-is-available-for-early-preview",
+      "type": "dev",
+      "org": "Google",
+      "title": "WebMCP is available for early preview",
+      "url": "https://developer.chrome.com/blog/webmcp-epp",
+      "date": "2026-02-W03",
+      "year": "2026",
+      "month": "2",
+      "week": "3",
+      "bullets": [
+        {
+          "text": "구조화된 툴을 표준 방식으로 노출함으로써 AI Agent가 사이트에서 더 빠르고 안정적으로 정밀한 action을 수행하도록 함",
+          "level": 1
+        },
+        {
+          "text": "브라우저 Agent가 사용자 대신 액션을 수행할 수 있도록 두 가지 API 제안",
+          "level": 1
+        },
+        {
+          "text": "Declarative API: HTML forms만으로 정의할 수 있는 표준 액션들을 수행",
+          "level": 2
+        },
+        {
+          "text": "Imperative API: JavaScript 실행이 필요한, 더 복잡하고 동적인 상호작용 수행",
+          "level": 2
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "figma-from-claude-code-to-figma-turning-production-code-into-editable-figma-designs",
+      "type": "news",
+      "org": "Figma",
+      "title": "From Claude Code to Figma: Turning production code into editable Figma designs",
+      "url": "https://www.figma.com/blog/introducing-claude-code-to-figma",
+      "date": "2026-02-W03",
+      "year": "2026",
+      "month": "2",
+      "week": "3",
+      "bullets": [
+        {
+          "text": "Claude Code에서 만든 웹 UI를 Figma로 바로 가져와서 편집 가능한 디자인으로 바꿔주는 기능 소개",
+          "level": 1
+        },
+        {
+          "text": "Figma MCP 서버를 쓰면 반대로 Figma 프레임 링크를 기반으로 LLM이 코드 쪽으로 다시 반영하도록 하는 “코드 ↔ 디자인 왕복” 흐름도 지원",
+          "level": 1
+        },
+        {
+          "text": "갈수록 코드를 모르는 일반 사용자들을 위한 플랫폼으로 발전하는 느낌이 있음",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "anthropic-introducing-claude-sonnet-46",
       "type": "dev",
@@ -36902,9 +36958,9 @@
     }
   ],
   "stats": {
-    "total": 1684,
+    "total": 1686,
     "paper": 1023,
-    "dev": 621,
-    "news": 35
+    "dev": 622,
+    "news": 36
   }
 }
