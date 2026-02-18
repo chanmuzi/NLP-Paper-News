@@ -224,47 +224,63 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
       </div>
 
       <div class="space-y-3">
-        <div>
+        <div class="p-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-anthro-darkMid">
           <div class="flex items-center justify-between mb-1">
             <label class="block text-xs text-gray-500">Main post</label>
-            <button id="x-main-approve-btn" class="text-xs px-2 py-1 rounded-md border border-gray-200 dark:border-gray-700 text-gray-500 hover:border-claude-400">main 승인</button>
+            <div class="flex items-center gap-1.5">
+              <button id="x-copy-main-btn" class="text-xs px-2 py-1 rounded-md border border-gray-200 dark:border-gray-700 text-gray-500 hover:border-claude-400 inline-flex items-center gap-1" title="main 복사">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16h8m-8-4h8m2 8H6a2 2 0 01-2-2V6a2 2 0 012-2h8l6 6v8a2 2 0 01-2 2z"/></svg>
+                복사
+              </button>
+              <button id="x-main-approve-btn" class="text-xs px-2 py-1 rounded-md border border-gray-200 dark:border-gray-700 text-gray-500 hover:border-claude-400">main 승인</button>
+            </div>
           </div>
           <textarea id="x-main-input" rows="4" class="w-full px-3 py-2 rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-anthro-darkMid text-sm text-gray-900 dark:text-gray-100 outline-none focus:border-claude-500"></textarea>
           <div id="x-main-count" class="mt-1 text-xs text-gray-400 font-mono">0/280</div>
         </div>
-        <div>
+        <div class="p-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-anthro-darkMid">
           <div class="flex items-center justify-between mb-1">
             <label class="block text-xs text-gray-500">Replies</label>
-            <button id="x-replies-approve-btn" class="text-xs px-2 py-1 rounded-md border border-gray-200 dark:border-gray-700 text-gray-500 hover:border-claude-400">replies 승인</button>
+            <div class="flex items-center gap-1.5">
+              <button id="x-copy-replies-btn" class="text-xs px-2 py-1 rounded-md border border-gray-200 dark:border-gray-700 text-gray-500 hover:border-claude-400 inline-flex items-center gap-1" title="replies 복사">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16h8m-8-4h8m2 8H6a2 2 0 01-2-2V6a2 2 0 012-2h8l6 6v8a2 2 0 01-2 2z"/></svg>
+                복사
+              </button>
+              <button id="x-replies-approve-btn" class="text-xs px-2 py-1 rounded-md border border-gray-200 dark:border-gray-700 text-gray-500 hover:border-claude-400">replies 승인</button>
+            </div>
           </div>
           <div id="x-replies-editor" class="space-y-2"></div>
         </div>
       </div>
 
-      <div class="mt-4 p-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-anthro-darkMid">
-        <label class="block text-xs text-gray-500 mb-2">AI 피드백 반영</label>
-        <div class="space-y-3">
-          <div>
+      <details class="mt-4 p-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-anthro-darkMid">
+        <summary class="text-sm font-semibold text-gray-700 dark:text-gray-200 cursor-pointer">AI로 텍스트 다듬기 (선택)</summary>
+        <div class="mt-3 space-y-3">
+          <div class="p-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-anthro-darkSurface">
             <label class="block text-xs text-gray-500 mb-1">Main instruction</label>
             <textarea id="x-ai-main-instruction" rows="2" placeholder="예: main을 더 간결하고 임팩트 있게 정리해줘."
-              class="w-full px-3 py-2 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-anthro-darkSurface text-sm text-gray-900 dark:text-gray-100 outline-none focus:border-claude-500"></textarea>
-            <button id="x-ai-main-rewrite-btn" class="mt-1 px-3 py-1.5 rounded-md border border-gray-200 dark:border-gray-700 text-xs text-gray-600 dark:text-gray-300 hover:border-claude-400 transition-all">main만 AI 수정</button>
+              class="w-full px-3 py-2 rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-anthro-darkMid text-sm text-gray-900 dark:text-gray-100 outline-none focus:border-claude-500"></textarea>
+            <div class="mt-2">
+              <button id="x-ai-main-rewrite-btn" class="px-3 py-1.5 rounded-md border border-gray-200 dark:border-gray-700 text-xs text-gray-600 dark:text-gray-300 hover:border-claude-400 transition-all">main만 AI 수정</button>
+            </div>
           </div>
-          <div>
+          <div class="p-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-anthro-darkSurface">
             <div class="flex items-center gap-2 mb-1">
               <label class="text-xs text-gray-500">Reply target</label>
-              <select id="x-ai-reply-target" class="px-2 py-1 rounded-md border border-gray-200 dark:border-gray-700 bg-white dark:bg-anthro-darkSurface text-xs">
+              <select id="x-ai-reply-target" class="px-2 py-1 rounded-md border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-anthro-darkMid text-xs">
                 <option value="all">전체 replies</option>
               </select>
             </div>
             <textarea id="x-ai-reply-instruction" rows="2" placeholder="예: reply 2는 실무 적용 관점으로 다시 써줘."
-              class="w-full px-3 py-2 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-anthro-darkSurface text-sm text-gray-900 dark:text-gray-100 outline-none focus:border-claude-500"></textarea>
-            <button id="x-ai-reply-rewrite-btn" class="mt-1 px-3 py-1.5 rounded-md border border-gray-200 dark:border-gray-700 text-xs text-gray-600 dark:text-gray-300 hover:border-claude-400 transition-all">reply AI 수정</button>
+              class="w-full px-3 py-2 rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-anthro-darkMid text-sm text-gray-900 dark:text-gray-100 outline-none focus:border-claude-500"></textarea>
+            <div class="mt-2">
+              <button id="x-ai-reply-rewrite-btn" class="px-3 py-1.5 rounded-md border border-gray-200 dark:border-gray-700 text-xs text-gray-600 dark:text-gray-300 hover:border-claude-400 transition-all">reply AI 수정</button>
+            </div>
           </div>
         </div>
         <div class="mt-2 text-xs text-gray-400" id="x-ai-status"></div>
         <div id="x-ai-history" class="mt-2 space-y-1 text-xs text-gray-500 dark:text-gray-400"></div>
-      </div>
+      </details>
 
       <div class="mt-4 flex flex-wrap gap-2">
         <button id="x-approve-post-btn" class="px-4 py-2 rounded-lg bg-claude-500 text-white text-sm font-semibold hover:bg-claude-600 transition-all">전체 승인 후 X 게시</button>
@@ -280,14 +296,15 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
         <div class="animate-fade-in-up relative max-w-md w-full bg-white dark:bg-anthro-darkSurface rounded-2xl border border-gray-200 dark:border-gray-800 shadow-xl p-6">
           <h3 class="text-lg font-bold text-gray-900 dark:text-gray-100 mb-3">항목 추가 확인</h3>
           <p id="confirm-message" class="text-sm text-gray-600 dark:text-gray-300 mb-2"></p>
-          <div id="confirm-item-list" class="mb-4 max-h-40 overflow-y-auto text-xs text-gray-500 dark:text-gray-400 space-y-1"></div>
-          <label class="mb-4 flex items-start gap-2 text-xs text-gray-600 dark:text-gray-300">
+          <div id="confirm-item-list" class="mb-3 max-h-40 overflow-y-auto text-xs text-gray-500 dark:text-gray-400 space-y-1"></div>
+          <div class="border-t border-gray-200 dark:border-gray-700 my-3"></div>
+          <label class="mb-4 flex items-start gap-2 text-xs text-gray-600 dark:text-gray-300 bg-gray-50 dark:bg-anthro-darkMid px-3 py-2 rounded-lg">
             <input type="checkbox" id="confirm-manual-approval" class="mt-0.5 accent-claude-500" checked />
-            <span>X 게시 전 draft 확인/수정 후 승인하기 (기본)</span>
+            <span>X 게시 전에 draft를 확인하고 직접 승인할게요</span>
           </label>
           <div class="flex gap-2">
             <button id="confirm-cancel" class="flex-1 px-4 py-2.5 rounded-lg border border-gray-200 dark:border-gray-700 text-sm text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 transition-all">취소</button>
-            <button id="confirm-submit" class="flex-1 px-4 py-2.5 rounded-lg bg-claude-500 text-white text-sm font-semibold hover:bg-claude-600 transition-all">추가 실행</button>
+            <button id="confirm-submit" class="flex-1 px-4 py-2.5 rounded-lg bg-claude-500 text-white text-sm font-semibold hover:bg-claude-600 transition-all">확인</button>
           </div>
         </div>
       </div>
@@ -322,11 +339,20 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
 
   const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
+  function isLocalDevHost() {
+    const host = window.location.hostname;
+    return host === 'localhost' || host === '127.0.0.1' || host === '::1';
+  }
+
   function isMockMode() {
-    return localStorage.getItem(MOCK_MODE_KEY) === 'true';
+    return isLocalDevHost() && localStorage.getItem(MOCK_MODE_KEY) === 'true';
   }
 
   function setMockMode(enabled: boolean) {
+    if (!isLocalDevHost()) {
+      localStorage.removeItem(MOCK_MODE_KEY);
+      return;
+    }
     localStorage.setItem(MOCK_MODE_KEY, enabled ? 'true' : 'false');
   }
 
@@ -864,6 +890,12 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
     };
   }
 
+  function mockRewriteText(base: string, instruction: string) {
+    const brief = instruction.replace(/\s+/g, ' ').trim().slice(0, 40);
+    const cleaned = base.replace(/\[AI edit[^\]]*\]/g, '').trim();
+    return clipToXLimit(`[mock rewrite] ${brief}\n${cleaned}`);
+  }
+
   function collectEditedThread() {
     const mainInput = document.getElementById('x-main-input') as HTMLTextAreaElement | null;
     if (!mainInput) return null;
@@ -914,11 +946,11 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
 
     if (mainBtn) {
       mainBtn.textContent = xMainApproved ? 'main 승인됨' : 'main 승인';
-      mainBtn.className = `text-xs px-2 py-1 rounded-md border ${xMainApproved ? 'border-emerald-300 text-emerald-600' : 'border-gray-200 dark:border-gray-700 text-gray-500 hover:border-claude-400'}`;
+      mainBtn.className = `text-xs px-2 py-1 rounded-md border ${xMainApproved ? 'border-claude-300 text-claude-600 bg-claude-50 dark:bg-claude-950/20' : 'border-gray-200 dark:border-gray-700 text-gray-500 hover:border-claude-400'}`;
     }
     if (repliesBtn) {
       repliesBtn.textContent = xRepliesApproved ? 'replies 승인됨' : 'replies 승인';
-      repliesBtn.className = `text-xs px-2 py-1 rounded-md border ${xRepliesApproved ? 'border-emerald-300 text-emerald-600' : 'border-gray-200 dark:border-gray-700 text-gray-500 hover:border-claude-400'}`;
+      repliesBtn.className = `text-xs px-2 py-1 rounded-md border ${xRepliesApproved ? 'border-claude-300 text-claude-600 bg-claude-50 dark:bg-claude-950/20' : 'border-gray-200 dark:border-gray-700 text-gray-500 hover:border-claude-400'}`;
     }
     if (postBtn) {
       const enabled = xMainApproved && xRepliesApproved;
@@ -1866,16 +1898,15 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
       if (statusEl) statusEl.textContent = `${target === 'main' ? 'main' : 'reply'} AI 수정 요청 중...`;
 
       if (mockMode) {
-        const append = (base: string) => clipToXLimit(`${base}\n\n[AI edit] ${instruction}`);
         if (target === 'main') {
-          nextThread.main = append(nextThread.main);
+          nextThread.main = mockRewriteText(nextThread.main, instruction);
           xMainApproved = false;
         } else if (replyTarget === 'all') {
-          nextThread.replies = nextThread.replies.map((r) => append(r));
+          nextThread.replies = nextThread.replies.map((r) => mockRewriteText(r, instruction));
           xRepliesApproved = false;
         } else {
           const idx = replyTarget - 1;
-          if (nextThread.replies[idx]) nextThread.replies[idx] = append(nextThread.replies[idx]);
+          if (nextThread.replies[idx]) nextThread.replies[idx] = mockRewriteText(nextThread.replies[idx], instruction);
           xRepliesApproved = false;
         }
       } else {
@@ -1954,6 +1985,21 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
     ].join('\n');
     await navigator.clipboard.writeText(text);
     showToast('X 스레드가 클립보드에 복사되었습니다');
+  });
+
+  document.getElementById('x-copy-main-btn')?.addEventListener('click', async () => {
+    const thread = collectEditedThread();
+    if (!thread) return;
+    await navigator.clipboard.writeText(thread.main || '');
+    showToast('main post를 복사했습니다');
+  });
+
+  document.getElementById('x-copy-replies-btn')?.addEventListener('click', async () => {
+    const thread = collectEditedThread();
+    if (!thread) return;
+    const text = thread.replies.map((r, i) => `=== REPLY ${i + 1} ===\n${r}`).join('\n\n');
+    await navigator.clipboard.writeText(text);
+    showToast('replies를 복사했습니다');
   });
 
   // ─── GitHub token ──────────────────────
@@ -2040,10 +2086,23 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
   });
 
   // ─── Init ──────────────────────────────
+  if (!isLocalDevHost()) {
+    setMockMode(false);
+  }
   updateTokenStatus();
   const mockModeToggle = document.getElementById('mock-mode-toggle') as HTMLInputElement | null;
   if (mockModeToggle) {
-    mockModeToggle.checked = isMockMode();
+    if (!isLocalDevHost()) {
+      mockModeToggle.checked = false;
+      mockModeToggle.disabled = true;
+      mockModeToggle.closest('label')?.classList.add('opacity-50', 'pointer-events-none');
+      const hint = document.createElement('div');
+      hint.className = 'mt-1 text-[11px] text-gray-400';
+      hint.textContent = 'mock 모드는 로컬 개발 서버(localhost)에서만 사용할 수 있습니다.';
+      mockModeToggle.closest('label')?.parentElement?.appendChild(hint);
+    } else {
+      mockModeToggle.checked = isMockMode();
+    }
   }
   const savedRepo = localStorage.getItem('github_repo');
   if (savedRepo) {
