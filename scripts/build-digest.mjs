@@ -426,6 +426,7 @@ async function buildAiXThread(items, siteBaseUrl, safeLimit, debug) {
 
   const mainPrompt = [
     '당신은 한국어 X 기술 뉴스 에디터입니다.',
+    '입력 항목은 사용자가 직접 큐레이션한 결과입니다. 의도를 임의로 바꾸지 마세요.',
     '메인 포스트용 항목 나열을 JSON으로 생성하세요.',
     '중요: 제목만 간결하게 나열하고 설명 문장은 넣지 마세요.',
     '형식 기준:',
@@ -437,6 +438,10 @@ async function buildAiXThread(items, siteBaseUrl, safeLimit, debug) {
     '제약:',
     '- 한국어 중심(고유명사는 원문 유지 가능)',
     '- 과장/광고/해시태그 금지',
+    '- 서로 다른 항목을 합치거나 재해석하지 말 것',
+    '- 애매하면 원문 제목의 핵심 단어를 그대로 유지할 것',
+    '- 실제 입력에 없는 사실/키워드 추가 금지',
+    `- 길이 목표: ${generationLimit}자 이내 (절대 ${X_HARD_LIMIT}자 초과 금지)`,
     '- title_short는 매우 짧고 정보만 남길 것',
     '- 가능한 많은 항목을 entries에 넣되, 각 title_short를 압축할 것',
     '반드시 schema JSON만 출력합니다.',
@@ -529,6 +534,7 @@ async function buildAiXThread(items, siteBaseUrl, safeLimit, debug) {
 
   const replyPrompt = [
     '당신은 한국어 X 스레드 작성기입니다.',
+    '입력 항목은 사용자가 직접 큐레이션한 결과입니다. 항목 간 의미를 섞지 마세요.',
     '각 아이템에 대해 reply용 텍스트를 JSON으로 생성하세요.',
     '중요: bullet(•) 형식을 절대 사용하지 마세요.',
     '형식 기준:',
@@ -538,8 +544,13 @@ async function buildAiXThread(items, siteBaseUrl, safeLimit, debug) {
     '제약:',
     '- 한국어 중심(고유명사는 원문 유지 가능)',
     '- 과장/홍보/해시태그 금지',
+    '- 각 reply는 해당 index의 item 정보만 반영할 것',
+    '- 다른 item의 내용/키워드를 섞지 말 것',
+    '- 애매하면 원문 title/bullet의 핵심 표현을 우선 유지',
+    '- 입력에 없는 사실을 추가하지 말 것',
+    `- 길이 목표: ${generationLimit}자 이내 (절대 ${X_HARD_LIMIT}자 초과 금지)`,
     '- title_short는 짧게',
-    '- summary_line은 깔끔한 문장 1개',
+    '- summary_line은 간결한 짧은 문장(1~2문장 가능, 꼭 한 문장일 필요 없음)',
     '- summary_line에 번호/아이콘/기관/URL을 넣지 말 것(링크는 시스템이 별도 부착)',
     '- 줄글 형식, bullet 금지',
     '반드시 schema JSON만 출력합니다.',
