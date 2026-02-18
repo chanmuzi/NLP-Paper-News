@@ -217,15 +217,17 @@ function getIcon(type) {
   return icons[type] || '📄';
 }
 
-function renderMainText({ dateStr, updateLabel, totalCount, entries, siteBaseUrl, visibleCount, titleMaxLen }) {
+function renderMainText({ dateStr, updateLabel, totalCount, entries, siteBaseUrl, visibleCount, titleMaxLen = null }) {
   const lines = [];
   lines.push(`📌 ${dateStr} ${updateLabel} (${totalCount}건)`);
   lines.push('');
 
   const picked = (entries || []).slice(0, visibleCount);
   for (const e of picked) {
-    const title = limitPlain(e.titleShort, titleMaxLen) || '업데이트';
-    lines.push(`• ${title}`);
+    const rawTitle = String(e?.titleShort || '');
+    const title = titleMaxLen ? limitPlain(rawTitle, titleMaxLen) : rawTitle;
+    const safeTitle = title || '업데이트';
+    lines.push(`• ${safeTitle}`);
   }
 
   const rest = Math.max(0, totalCount - picked.length);
@@ -239,6 +241,21 @@ function renderMainText({ dateStr, updateLabel, totalCount, entries, siteBaseUrl
 }
 
 function forceMainWithinLimit({ limit, dateStr, updateLabel, totalCount, entries, siteBaseUrl }) {
+  // 1) 제목 축약 없이 먼저 시도
+  for (let visibleCount = totalCount; visibleCount >= 1; visibleCount--) {
+    const candidate = renderMainText({
+      dateStr,
+      updateLabel,
+      totalCount,
+      entries,
+      siteBaseUrl,
+      visibleCount,
+      titleMaxLen: null,
+    });
+    if (isWithinXLimit(candidate, limit)) return candidate;
+  }
+
+  // 2) 초과 시에만 점진적 축약
   const titleLens = [56, 46, 38, 32, 26, 20];
   for (const titleMaxLen of titleLens) {
     for (let visibleCount = totalCount; visibleCount >= 1; visibleCount--) {
@@ -261,12 +278,16 @@ function forceMainWithinLimit({ limit, dateStr, updateLabel, totalCount, entries
   return isWithinXLimit(minimal, limit) ? compactLines(minimal) : clipToXLimit(minimal, limit);
 }
 
-function renderReplyText({ index, total, titleShort, summaryLine, url, titleMaxLen = 46, summaryMaxLen = 96 }) {
-  const title = limitPlain(titleShort, titleMaxLen) || '요약';
-  const summary = limitPlain(sanitizeReplySummary(summaryLine || ''), summaryMaxLen) || '핵심 업데이트입니다.';
-  const line1 = `[${index}/${total}] ${title}`;
+function renderReplyText({ index, total, titleShort, summaryLine, url, titleMaxLen = null, summaryMaxLen = null }) {
+  const rawTitle = String(titleShort || '');
+  const rawSummary = sanitizeReplySummary(summaryLine || '');
+  const title = titleMaxLen ? limitPlain(rawTitle, titleMaxLen) : rawTitle;
+  const summary = summaryMaxLen ? limitPlain(rawSummary, summaryMaxLen) : rawSummary;
+  const safeTitle = title || '요약';
+  const safeSummary = summary || '핵심 업데이트입니다.';
+  const line1 = `[${index}/${total}] ${safeTitle}`;
   // 카드 preview 유도를 위해 URL은 라벨 없이 마지막 줄에만 추가
-  return url ? compactLines(`${line1}\n\n${summary}\n\n${url}`) : compactLines(`${line1}\n\n${summary}`);
+  return url ? compactLines(`${line1}\n\n${safeSummary}\n\n${url}`) : compactLines(`${line1}\n\n${safeSummary}`);
 }
 
 function forceReplyWithinLimit({ limit, item, index, total, titleShort, summaryLine, baseReply }) {
