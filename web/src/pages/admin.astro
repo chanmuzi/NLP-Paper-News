@@ -50,6 +50,10 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
         <input type="text" id="github-repo" value="chanmuzi/NLP-Paper-News"
           class="w-full px-3 py-2 rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-anthro-darkMid text-sm text-gray-900 dark:text-gray-100 outline-none focus:border-claude-500 transition-all font-mono" />
       </div>
+      <label class="mt-3 flex items-start gap-2 text-xs text-gray-600 dark:text-gray-300">
+        <input type="checkbox" id="mock-mode-toggle" class="mt-0.5 accent-claude-500" />
+        <span>로컬 mock 모드 (GitHub 없이 UI 흐름 테스트)</span>
+      </label>
     </div>
 
     <!-- Date (shared) -->
@@ -212,6 +216,80 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
     <!-- Submit Status (outside preview-section so it stays visible after submit clears items) -->
     <div id="submit-status" class="hidden mt-3 p-4 rounded-xl text-sm"></div>
 
+    <!-- X Draft Review -->
+    <div id="x-review-section" class="hidden mt-5 p-4 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-anthro-darkSurface">
+      <div class="flex items-center justify-between mb-3">
+        <h3 class="text-sm font-semibold text-gray-700 dark:text-gray-200">X 게시 전 draft 검토</h3>
+        <span id="x-review-meta" class="text-xs text-gray-400"></span>
+      </div>
+
+      <div class="space-y-3">
+        <div class="p-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-anthro-darkMid">
+          <div class="flex items-center justify-between mb-1">
+            <label class="block text-xs text-gray-500">Main post</label>
+            <div class="flex items-center gap-1.5">
+              <button id="x-copy-main-btn" class="text-xs px-2 py-1 rounded-md border border-gray-200 dark:border-gray-700 text-gray-500 hover:border-claude-400 inline-flex items-center gap-1" title="main 복사">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16h8m-8-4h8m2 8H6a2 2 0 01-2-2V6a2 2 0 012-2h8l6 6v8a2 2 0 01-2 2z"/></svg>
+                복사
+              </button>
+              <button id="x-main-approve-btn" class="text-xs px-2 py-1 rounded-md border border-gray-200 dark:border-gray-700 text-gray-500 hover:border-claude-400">main 승인</button>
+            </div>
+          </div>
+          <textarea id="x-main-input" rows="4" class="w-full px-3 py-2 rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-anthro-darkMid text-sm text-gray-900 dark:text-gray-100 outline-none focus:border-claude-500"></textarea>
+          <div id="x-main-count" class="mt-1 text-xs text-gray-400 font-mono">0/280</div>
+        </div>
+        <div class="p-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-anthro-darkMid">
+          <div class="flex items-center justify-between mb-1">
+            <label class="block text-xs text-gray-500">Replies</label>
+            <div class="flex items-center gap-1.5">
+              <button id="x-copy-replies-btn" class="text-xs px-2 py-1 rounded-md border border-gray-200 dark:border-gray-700 text-gray-500 hover:border-claude-400 inline-flex items-center gap-1" title="replies 복사">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16h8m-8-4h8m2 8H6a2 2 0 01-2-2V6a2 2 0 012-2h8l6 6v8a2 2 0 01-2 2z"/></svg>
+                복사
+              </button>
+              <button id="x-replies-approve-btn" class="text-xs px-2 py-1 rounded-md border border-gray-200 dark:border-gray-700 text-gray-500 hover:border-claude-400">replies 승인</button>
+            </div>
+          </div>
+          <div id="x-replies-editor" class="space-y-2"></div>
+        </div>
+      </div>
+
+      <details class="mt-4 p-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-anthro-darkMid">
+        <summary class="text-sm font-semibold text-gray-700 dark:text-gray-200 cursor-pointer">AI로 텍스트 다듬기</summary>
+        <div class="mt-3 space-y-3">
+          <div class="p-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-anthro-darkSurface">
+            <label class="block text-xs text-gray-500 mb-1">Main instruction</label>
+            <textarea id="x-ai-main-instruction" rows="2" placeholder="예: main을 더 간결하고 임팩트 있게 정리해줘."
+              class="w-full px-3 py-2 rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-anthro-darkMid text-sm text-gray-900 dark:text-gray-100 outline-none focus:border-claude-500"></textarea>
+            <div class="mt-2">
+              <button id="x-ai-main-rewrite-btn" class="px-3 py-1.5 rounded-md border border-gray-200 dark:border-gray-700 text-xs text-gray-600 dark:text-gray-300 hover:border-claude-400 transition-all">main만 AI 수정</button>
+            </div>
+          </div>
+          <div class="p-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-anthro-darkSurface">
+            <div class="flex items-center gap-2 mb-1">
+              <label class="text-xs text-gray-500">Reply target</label>
+              <select id="x-ai-reply-target" class="px-2 py-1 rounded-md border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-anthro-darkMid text-xs">
+                <option value="all">전체 replies</option>
+              </select>
+            </div>
+            <textarea id="x-ai-reply-instruction" rows="2" placeholder="예: reply 2는 실무 적용 관점으로 다시 써줘."
+              class="w-full px-3 py-2 rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-anthro-darkMid text-sm text-gray-900 dark:text-gray-100 outline-none focus:border-claude-500"></textarea>
+            <div class="mt-2">
+              <button id="x-ai-reply-rewrite-btn" class="px-3 py-1.5 rounded-md border border-gray-200 dark:border-gray-700 text-xs text-gray-600 dark:text-gray-300 hover:border-claude-400 transition-all">reply AI 수정</button>
+            </div>
+          </div>
+        </div>
+        <div class="mt-2 text-xs text-gray-400" id="x-ai-status"></div>
+        <div id="x-ai-history" class="mt-2 space-y-1 text-xs text-gray-500 dark:text-gray-400"></div>
+      </details>
+
+      <div class="mt-4 flex flex-wrap gap-2">
+        <button id="x-approve-post-btn" class="px-4 py-2 rounded-lg bg-claude-500 text-white text-sm font-semibold hover:bg-claude-600 transition-all">X 게시</button>
+        <button id="x-approve-all-btn" class="px-4 py-2 rounded-lg border border-gray-200 dark:border-gray-700 text-sm font-semibold text-gray-700 dark:text-gray-200 hover:border-claude-400 transition-all">전체 승인</button>
+        <button id="x-copy-thread-btn" class="px-3 py-2 rounded-lg border border-gray-200 dark:border-gray-700 text-sm text-gray-600 dark:text-gray-300 hover:border-claude-400 transition-all">스레드 복사</button>
+      </div>
+      <div id="x-review-note" class="mt-2 text-xs text-gray-400"></div>
+    </div>
+
     <!-- Confirm Modal -->
     <div id="confirm-modal" class="hidden fixed inset-0 z-50">
       <div id="confirm-backdrop" class="absolute inset-0 bg-black/40 animate-fade-in"></div>
@@ -219,10 +297,15 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
         <div class="animate-fade-in-up relative max-w-md w-full bg-white dark:bg-anthro-darkSurface rounded-2xl border border-gray-200 dark:border-gray-800 shadow-xl p-6">
           <h3 class="text-lg font-bold text-gray-900 dark:text-gray-100 mb-3">항목 추가 확인</h3>
           <p id="confirm-message" class="text-sm text-gray-600 dark:text-gray-300 mb-2"></p>
-          <div id="confirm-item-list" class="mb-4 max-h-40 overflow-y-auto text-xs text-gray-500 dark:text-gray-400 space-y-1"></div>
+          <div id="confirm-item-list" class="mb-3 max-h-40 overflow-y-auto text-xs text-gray-500 dark:text-gray-400 space-y-1"></div>
+          <div class="border-t border-gray-200 dark:border-gray-700 my-3"></div>
+          <label class="mb-4 flex items-start gap-2 text-xs text-gray-600 dark:text-gray-300 bg-gray-50 dark:bg-anthro-darkMid px-3 py-2 rounded-lg">
+            <input type="checkbox" id="confirm-manual-approval" class="mt-0.5 accent-claude-500" checked />
+            <span>X 게시 전에 draft를 확인하고 직접 승인할게요</span>
+          </label>
           <div class="flex gap-2">
             <button id="confirm-cancel" class="flex-1 px-4 py-2.5 rounded-lg border border-gray-200 dark:border-gray-700 text-sm text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 transition-all">취소</button>
-            <button id="confirm-submit" class="flex-1 px-4 py-2.5 rounded-lg bg-claude-500 text-white text-sm font-semibold hover:bg-claude-600 transition-all">추가 실행</button>
+            <button id="confirm-submit" class="flex-1 px-4 py-2.5 rounded-lg bg-claude-500 text-white text-sm font-semibold hover:bg-claude-600 transition-all">확인</button>
           </div>
         </div>
       </div>
@@ -238,8 +321,63 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
   let submittedIds = new Set<string>();
   let existingIds = new Set<string>();  // IDs already committed to items.json
   let hasActiveWorkflowTracking = false;
+  let requireManualApprovalForCurrentSubmit = true;
+  let currentCommittedSha = '';
+  let currentRepoForSubmit = '';
+  let xDraftData: {
+    commitSha: string;
+    thread: { main: string; replies: string[] };
+    meta?: Record<string, any>;
+  } | null = null;
+  let xMainApproved = false;
+  let xRepliesApproved = false;
+  let xAiHistory: Array<{ at: string; target: string; instruction: string; model: string; summary: string }> = [];
+  let isPostingInProgress = false;
+  let isAiRewriteInProgress = false;
 
   const WORKFLOW_TRACKING_KEY = 'nlp_paper_news_admin_workflow_tracking_v1';
+  const MOCK_MODE_KEY = 'nlp_paper_news_admin_mock_mode_v1';
+  const X_HARD_LIMIT = 280;
+  const URL_REGEX = /https?:\/\/[^\s)]+/gi;
+
+  const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
+
+  function isLocalDevHost() {
+    const host = window.location.hostname;
+    return host === 'localhost' || host === '127.0.0.1' || host === '::1';
+  }
+
+  function isMockMode() {
+    return isLocalDevHost() && localStorage.getItem(MOCK_MODE_KEY) === 'true';
+  }
+
+  function setMockMode(enabled: boolean) {
+    if (!isLocalDevHost()) {
+      localStorage.removeItem(MOCK_MODE_KEY);
+      return;
+    }
+    localStorage.setItem(MOCK_MODE_KEY, enabled ? 'true' : 'false');
+  }
+
+  function utf8ToBase64(str: string) {
+    return btoa(unescape(encodeURIComponent(str)));
+  }
+
+  function base64ToUtf8(str: string) {
+    return decodeURIComponent(escape(atob(str)));
+  }
+
+  function countXChars(text: string) {
+    const normalized = String(text || '').replace(URL_REGEX, 'x'.repeat(23));
+    const codepoint = Array.from(normalized).length;
+    try {
+      const seg = new Intl.Segmenter(undefined, { granularity: 'grapheme' });
+      const grapheme = Array.from(seg.segment(normalized)).length;
+      return Math.max(codepoint, grapheme);
+    } catch {
+      return codepoint;
+    }
+  }
 
   // ─── Type colors ───────────────────────
   const TYPE_COLORS: Record<string, { border: string; bg: string; text: string }> = {
@@ -707,6 +845,246 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
     }
   }
 
+  function validateThreadLimit(main: string, replies: string[]) {
+    const failures: { phase: string; used: number }[] = [];
+    const mainChars = countXChars(main);
+    if (mainChars > X_HARD_LIMIT) failures.push({ phase: 'main', used: mainChars });
+    replies.forEach((r, idx) => {
+      const used = countXChars(r);
+      if (used > X_HARD_LIMIT) failures.push({ phase: `reply ${idx + 1}`, used });
+    });
+    return failures;
+  }
+
+  function clipToXLimit(text: string, limit = X_HARD_LIMIT) {
+    const src = String(text || '');
+    if (countXChars(src) <= limit) return src;
+    const chars = Array.from(src);
+    while (chars.length > 0) {
+      const candidate = chars.join('');
+      if (countXChars(candidate) <= limit) return candidate;
+      chars.pop();
+    }
+    return '';
+  }
+
+  function extractCoreText(base: string) {
+    return String(base || '')
+      .split('\n')
+      .map((s) => s.trim())
+      .filter(Boolean)
+      .filter((s) => !s.startsWith('http'))
+      .slice(0, 2)
+      .join(' / ');
+  }
+
+  function summarizeInstruction(instruction: string) {
+    return instruction
+      .replace(/\[target:[^\]]+\]/gi, '')
+      .replace(/\s+/g, ' ')
+      .trim()
+      .slice(0, 34);
+  }
+
+  function mockRewriteMain(base: string, instruction: string) {
+    const core = extractCoreText(base);
+    const intent = summarizeInstruction(instruction);
+    const lines = [
+      `📌 핵심 업데이트`,
+      core || '이번 업데이트 요약',
+      `- 요청 반영: ${intent || '톤/구조 조정'}`,
+    ];
+    return clipToXLimit(lines.join('\n'));
+  }
+
+  function mockRewriteReply(base: string, instruction: string, idx: number) {
+    const core = extractCoreText(base);
+    const intent = summarizeInstruction(instruction);
+    const lines = [
+      `${idx + 1}) ${core || '업데이트 상세'}`,
+      `포인트: ${intent || '핵심 설명 보강'}`,
+    ];
+    return clipToXLimit(lines.join('\n'));
+  }
+
+  function buildMockDraft(items: any[], commitSha: string) {
+    const titles = items.slice(0, 3).map((i) => i.title).join(' · ');
+    const mainBase = `📌 이번 업데이트 ${items.length}건\n${titles}${items.length > 3 ? ` 외 ${items.length - 3}건` : ''}`;
+    const replies = items.map((item, idx) => {
+      const lines = [
+        `${idx + 1}) ${item.title}`,
+        `- ${item.org}`,
+      ];
+      if (item.url) lines.push(item.url);
+      return clipToXLimit(lines.join('\n'));
+    });
+
+    return {
+      commitSha,
+      thread: {
+        main: clipToXLimit(mainBase),
+        replies,
+      },
+      meta: {
+        main_model: 'mock-local',
+        reply_model: 'mock-local',
+      }
+    };
+  }
+
+  function collectEditedThread() {
+    const mainInput = document.getElementById('x-main-input') as HTMLTextAreaElement | null;
+    if (!mainInput) return null;
+    const replyInputs = [...document.querySelectorAll('.x-reply-input')] as HTMLTextAreaElement[];
+    return {
+      main: mainInput.value.trim(),
+      replies: replyInputs.map((el) => el.value.trim()),
+    };
+  }
+
+  function bindXCountIndicators() {
+    const mainInput = document.getElementById('x-main-input') as HTMLTextAreaElement | null;
+    const mainCount = document.getElementById('x-main-count');
+    if (mainInput && mainCount) {
+      const updateMain = () => {
+        const used = countXChars(mainInput.value);
+        mainCount.textContent = `${used}/${X_HARD_LIMIT}`;
+        mainCount.className = `mt-1 text-xs font-mono ${used > X_HARD_LIMIT ? 'text-red-500' : 'text-gray-400'}`;
+        xMainApproved = false;
+        updateReviewApprovalUi();
+      };
+      mainInput.addEventListener('input', updateMain);
+      updateMain();
+    }
+
+    const replies = [...document.querySelectorAll('.x-reply-input')] as HTMLTextAreaElement[];
+    replies.forEach((el) => {
+      const countEl = document.getElementById(`x-reply-count-${el.dataset.index}`);
+      const update = () => {
+        const used = countXChars(el.value);
+        if (countEl) {
+          countEl.textContent = `${used}/${X_HARD_LIMIT}`;
+          countEl.className = `text-xs font-mono ${used > X_HARD_LIMIT ? 'text-red-500' : 'text-gray-400'}`;
+        }
+        xRepliesApproved = false;
+        updateReviewApprovalUi();
+      };
+      el.addEventListener('input', update);
+      update();
+    });
+  }
+
+  function updateReviewApprovalUi() {
+    const mainBtn = document.getElementById('x-main-approve-btn');
+    const repliesBtn = document.getElementById('x-replies-approve-btn');
+    const allBtn = document.getElementById('x-approve-all-btn') as HTMLButtonElement | null;
+    const postBtn = document.getElementById('x-approve-post-btn') as HTMLButtonElement | null;
+    const noteEl = document.getElementById('x-review-note');
+
+    if (mainBtn) {
+      mainBtn.textContent = xMainApproved ? 'main 승인됨' : 'main 승인';
+      mainBtn.className = `text-xs px-2 py-1 rounded-md border ${xMainApproved ? 'border-claude-300 text-claude-600 bg-claude-50 dark:bg-claude-950/20' : 'border-gray-200 dark:border-gray-700 text-gray-500 hover:border-claude-400'}`;
+    }
+    if (repliesBtn) {
+      repliesBtn.textContent = xRepliesApproved ? 'replies 승인됨' : 'replies 승인';
+      repliesBtn.className = `text-xs px-2 py-1 rounded-md border ${xRepliesApproved ? 'border-claude-300 text-claude-600 bg-claude-50 dark:bg-claude-950/20' : 'border-gray-200 dark:border-gray-700 text-gray-500 hover:border-claude-400'}`;
+    }
+    if (allBtn) {
+      const allApproved = xMainApproved && xRepliesApproved;
+      allBtn.textContent = allApproved ? '전체 승인 해제' : '전체 승인';
+      allBtn.className = `px-4 py-2 rounded-lg border text-sm font-semibold transition-all ${
+        allApproved
+          ? 'border-claude-300 text-claude-700 bg-claude-50 dark:bg-claude-950/20'
+          : 'border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-200 hover:border-claude-400'
+      }`;
+      allBtn.disabled = isPostingInProgress;
+      allBtn.classList.toggle('opacity-50', isPostingInProgress);
+      allBtn.classList.toggle('cursor-not-allowed', isPostingInProgress);
+    }
+
+    if (postBtn) {
+      const enabled = xMainApproved && xRepliesApproved;
+      postBtn.disabled = !enabled || isPostingInProgress;
+      postBtn.classList.toggle('opacity-50', !enabled || isPostingInProgress);
+      postBtn.classList.toggle('cursor-not-allowed', !enabled || isPostingInProgress);
+      if (isPostingInProgress) {
+        postBtn.textContent = '게시 진행 중...';
+      } else {
+        postBtn.textContent = 'X 게시';
+      }
+    }
+    if (noteEl) {
+      noteEl.textContent = (xMainApproved && xRepliesApproved)
+        ? 'main/replies 승인 완료. 이제 게시할 수 있습니다.'
+        : '게시 전 main과 replies를 각각 승인해 주세요.';
+    }
+  }
+
+  function renderAiHistory() {
+    const el = document.getElementById('x-ai-history');
+    if (!el) return;
+    if (xAiHistory.length === 0) {
+      el.innerHTML = '<div class="text-gray-400">AI 수정 기록이 아직 없습니다.</div>';
+      return;
+    }
+    el.innerHTML = xAiHistory.slice().reverse().map((h) => `
+      <div class="rounded-md border border-gray-200 dark:border-gray-700 px-2 py-1">
+        <div class="text-[11px] text-gray-400">${escapeHtml(h.at)} · model ${escapeHtml(h.model)}</div>
+        <div>target: ${escapeHtml(h.target)}</div>
+        <div>instruction: ${escapeHtml(h.instruction)}</div>
+        <div class="text-gray-400">result: ${escapeHtml(h.summary)}</div>
+      </div>
+    `).join('');
+  }
+
+  function showXDraftReview(
+    draft: { commitSha: string; thread: { main: string; replies: string[] }; meta?: Record<string, any> },
+    opts: { preserveHistory?: boolean } = { preserveHistory: false }
+  ) {
+    xDraftData = draft;
+    const section = document.getElementById('x-review-section');
+    const mainInput = document.getElementById('x-main-input') as HTMLTextAreaElement | null;
+    const repliesEditor = document.getElementById('x-replies-editor');
+    const metaEl = document.getElementById('x-review-meta');
+    const noteEl = document.getElementById('x-review-note');
+    const replyTarget = document.getElementById('x-ai-reply-target') as HTMLSelectElement | null;
+
+    if (!section || !mainInput || !repliesEditor) return;
+    section.classList.remove('hidden');
+    mainInput.value = draft.thread.main || '';
+
+    const mainModel = draft.meta?.main_model || '-';
+    const replyModel = draft.meta?.reply_model || '-';
+    if (metaEl) metaEl.textContent = `main 모델: ${mainModel} · reply 모델: ${replyModel}`;
+    if (!opts.preserveHistory) xAiHistory = [];
+    renderAiHistory();
+    xMainApproved = false;
+    xRepliesApproved = false;
+    if (noteEl) noteEl.textContent = '텍스트를 확인/수정하고 승인해 주세요.';
+
+    repliesEditor.innerHTML = (draft.thread.replies || []).map((reply, idx) => `
+      <div>
+        <label class="block text-xs text-gray-500 mb-1">Reply ${idx + 1}</label>
+        <textarea
+          data-index="${idx + 1}"
+          class="x-reply-input w-full px-3 py-2 rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-anthro-darkMid text-sm text-gray-900 dark:text-gray-100 outline-none focus:border-claude-500"
+          rows="3"
+        >${escapeHtml(reply)}</textarea>
+        <div id="x-reply-count-${idx + 1}" class="text-xs font-mono text-gray-400">0/280</div>
+      </div>
+    `).join('');
+
+    if (replyTarget) {
+      replyTarget.innerHTML = [
+        '<option value="all">전체 replies</option>',
+        ...(draft.thread.replies || []).map((_: string, idx: number) => `<option value="${idx + 1}">reply ${idx + 1}</option>`)
+      ].join('');
+    }
+
+    bindXCountIndicators();
+    updateReviewApprovalUi();
+  }
+
   // Clear preview
   document.getElementById('clear-preview')?.addEventListener('click', () => {
     parsedItems = [];
@@ -718,9 +1096,47 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
   async function submitToGitHub(items: any[]) {
     const token = localStorage.getItem('github_token');
     const repo = (document.getElementById('github-repo') as HTMLInputElement)?.value || 'chanmuzi/NLP-Paper-News';
+    const mockMode = isMockMode();
 
-    if (!token) {
+    if (!token && !mockMode) {
       showStatus('GitHub 토큰이 설정되지 않았습니다. 상단 GitHub 버튼에서 토큰을 입력하세요.', 'error');
+      return;
+    }
+
+    if (mockMode) {
+      setSubmitLoading(true);
+      showStatus('1/3 [mock] 입력 항목 검증 중...', 'info');
+      await sleep(250);
+
+      const newItems = items.filter(i => !submittedIds.has(i.id) && !existingIds.has(i.id));
+      const skippedCount = items.length - newItems.length;
+      if (newItems.length === 0) {
+        showStatus(`[mock] 추가할 새 항목이 없습니다. ${skippedCount}개 항목이 이미 존재합니다.`, 'warn');
+        setSubmitLoading(false);
+        return;
+      }
+
+      showStatus('2/3 [mock] 커밋 시뮬레이션 중...', 'info');
+      await sleep(350);
+
+      const fakeSha = Math.random().toString(16).slice(2, 9).padEnd(7, '0');
+      items.forEach(i => { submittedIds.add(i.id); existingIds.add(i.id); });
+      parsedItems = [];
+      renderPreview();
+      clearInputFields();
+      setSubmitLoading(false);
+
+      currentCommittedSha = fakeSha;
+      currentRepoForSubmit = repo;
+      const draft = buildMockDraft(newItems, fakeSha);
+      showXDraftReview(draft);
+
+      if (requireManualApprovalForCurrentSubmit === false) {
+        showStatus(`✅ [mock] 커밋 완료 · ${fakeSha}\n🤖 자동 승인 모드로 X 게시를 시작합니다...`, 'info', { autoScroll: true });
+        await runMockPostFlow(fakeSha);
+      } else {
+        showStatus(`✅ [mock] 커밋 완료 · ${fakeSha}\n📝 X draft가 준비되었습니다. draft를 확인한 뒤 승인해 주세요.`, 'success', { autoScroll: true });
+      }
       return;
     }
 
@@ -901,8 +1317,10 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
       setSubmitLoading(false);
 
       // Start workflow polling
-      showStatus(`✅ 커밋 완료${skippedMsg} · ${shortSha}\n⏳ X 포스팅 워크플로 대기 중...`, 'info');
-      startWorkflowTracking(repo, token, newCommit.sha, newItems.length);
+      showStatus(`✅ 커밋 완료${skippedMsg} · ${shortSha}\n⏳ X draft 생성 워크플로 대기 중...`, 'info');
+      currentCommittedSha = newCommit.sha;
+      currentRepoForSubmit = repo;
+      startWorkflowTracking(repo, token, newCommit.sha, newItems.length, undefined, requireManualApprovalForCurrentSubmit);
     } catch (err: any) {
       showStatus(`오류: ${err.message}`, 'error');
       setSubmitLoading(false);
@@ -918,6 +1336,7 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
     commitSha: string;
     startedAt: number;
     expectedReplies: number;
+    requireManualApproval?: boolean;
   };
 
   type LivePostProgress = {
@@ -942,6 +1361,7 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
         commitSha: String(parsed.commitSha),
         startedAt: Number(parsed.startedAt),
         expectedReplies: Number(parsed.expectedReplies || 0),
+        requireManualApproval: parsed.requireManualApproval !== false,
       };
     } catch {
       return null;
@@ -953,12 +1373,13 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
     hasActiveWorkflowTracking = false;
   }
 
-  function startWorkflowTracking(repo: string, token: string, commitSha: string, expectedReplies: number, startedAt?: number) {
+  function startWorkflowTracking(repo: string, token: string, commitSha: string, expectedReplies: number, startedAt?: number, requireManualApproval = true) {
     const state: WorkflowTrackingState = {
       repo,
       commitSha,
       startedAt: startedAt || Date.now(),
       expectedReplies: Math.max(0, expectedReplies || 0),
+      requireManualApproval,
     };
     hasActiveWorkflowTracking = true;
     saveWorkflowTracking(state);
@@ -990,6 +1411,146 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
     return { postingReply, totalReplies, postedReplies, degraded };
   }
 
+  async function fetchPrepareDraftPayload(repo: string, token: string, jobId: number) {
+    const res = await fetch(`https://api.github.com/repos/${repo}/actions/jobs/${jobId}/logs`, {
+      headers: { 'Authorization': `token ${token}`, 'Accept': 'application/vnd.github.v3+json' }
+    });
+    if (!res.ok) return null;
+    const text = await res.text();
+    const match = text.match(/X_DRAFT_PAYLOAD_BASE64=([A-Za-z0-9+/=]+)/);
+    if (!match?.[1]) return null;
+    try {
+      return JSON.parse(base64ToUtf8(match[1]));
+    } catch {
+      return null;
+    }
+  }
+
+  async function fetchLogPayloadByKey(repo: string, token: string, jobId: number, key: string) {
+    const res = await fetch(`https://api.github.com/repos/${repo}/actions/jobs/${jobId}/logs`, {
+      headers: { 'Authorization': `token ${token}`, 'Accept': 'application/vnd.github.v3+json' }
+    });
+    if (!res.ok) return null;
+    const text = await res.text();
+    const regex = new RegExp(`${key}=([A-Za-z0-9+/=]+)`);
+    const match = text.match(regex);
+    if (!match?.[1]) return null;
+    try {
+      return JSON.parse(base64ToUtf8(match[1]));
+    } catch {
+      return null;
+    }
+  }
+
+  async function dispatchApprovedPost(repo: string, token: string, commitSha: string, approvalMode: 'manual_approved' | 'one_time_auto') {
+    const thread = collectEditedThread();
+    if (!thread) {
+      showStatus('X draft를 불러오지 못했습니다.', 'error');
+      return false;
+    }
+
+    const failures = validateThreadLimit(thread.main, thread.replies);
+    if (failures.length > 0) {
+      const msg = failures.map((f) => `${f.phase} ${f.used}/${X_HARD_LIMIT}`).join(', ');
+      showStatus(`길이 제한 초과: ${msg}`, 'error', { autoScroll: true });
+      return false;
+    }
+
+    const body = {
+      ref: 'main',
+      inputs: {
+        commit_sha: commitSha,
+        approval_mode: approvalMode,
+        thread_json_b64: utf8ToBase64(JSON.stringify(thread)),
+      }
+    };
+
+    const dispatchRes = await fetch(`https://api.github.com/repos/${repo}/actions/workflows/post-approved.yml/dispatches`, {
+      method: 'POST',
+      headers: {
+        'Authorization': `token ${token}`,
+        'Accept': 'application/vnd.github.v3+json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(body),
+    });
+
+    if (!dispatchRes.ok) {
+      const err = await dispatchRes.text();
+      if (dispatchRes.status === 404) throw new Error('승인 게시 워크플로우를 찾지 못했습니다. 브랜치/파일 상태를 확인해 주세요.');
+      if (dispatchRes.status === 403) throw new Error('workflow 실행 권한이 부족합니다. 토큰 scope를 확인해 주세요 (repo/workflow).');
+      throw new Error(`승인 게시 워크플로우 실행 실패 (${dispatchRes.status}): ${err}`);
+    }
+    return true;
+  }
+
+  async function dispatchRewriteDraft(repo: string, token: string, commitSha: string, instruction: string) {
+    const thread = collectEditedThread();
+    if (!thread) throw new Error('현재 편집 중인 thread를 읽지 못했습니다.');
+
+    const dispatchRes = await fetch(`https://api.github.com/repos/${repo}/actions/workflows/rewrite-x-draft.yml/dispatches`, {
+      method: 'POST',
+      headers: {
+        'Authorization': `token ${token}`,
+        'Accept': 'application/vnd.github.v3+json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        ref: 'main',
+        inputs: {
+          commit_sha: commitSha,
+          instruction,
+          current_thread_json_b64: utf8ToBase64(JSON.stringify(thread)),
+        }
+      }),
+    });
+    if (!dispatchRes.ok) {
+      const err = await dispatchRes.text();
+      if (dispatchRes.status === 404) throw new Error('AI 수정 워크플로우를 찾지 못했습니다. 브랜치/파일 상태를 확인해 주세요.');
+      if (dispatchRes.status === 403) throw new Error('AI 수정 워크플로우 실행 권한이 부족합니다. 토큰 scope를 확인해 주세요 (repo/workflow).');
+      throw new Error(`AI 수정 워크플로우 실행 실패 (${dispatchRes.status}): ${err}`);
+    }
+  }
+
+  async function pollRewriteDraftStatus(repo: string, token: string, dispatchedAt: number) {
+    const POLL_INTERVAL = 5000;
+    const MAX_POLLS = 72;
+    let polls = 0;
+
+    const findRun = async () => {
+      const res = await fetch(`https://api.github.com/repos/${repo}/actions/workflows/rewrite-x-draft.yml/runs?per_page=10`, {
+        headers: { 'Authorization': `token ${token}`, 'Accept': 'application/vnd.github.v3+json' }
+      });
+      if (!res.ok) return null;
+      const data = await res.json();
+      return (data.workflow_runs || []).find((r: any) => Date.parse(r.created_at || '') >= dispatchedAt);
+    };
+
+    const findJob = async (runId: number) => {
+      const res = await fetch(`https://api.github.com/repos/${repo}/actions/runs/${runId}/jobs`, {
+        headers: { 'Authorization': `token ${token}`, 'Accept': 'application/vnd.github.v3+json' }
+      });
+      if (!res.ok) return null;
+      const data = await res.json();
+      return (data.jobs || []).find((j: any) => j.name === 'rewrite');
+    };
+
+    return new Promise<any>((resolve) => {
+      const tick = async () => {
+        polls++;
+        if (polls > MAX_POLLS) return resolve(null);
+        const run = await findRun();
+        if (!run) return setTimeout(tick, POLL_INTERVAL);
+        if (run.status !== 'completed') return setTimeout(tick, POLL_INTERVAL);
+        const job = await findJob(run.id);
+        if (!job?.id) return resolve(null);
+        const payload = await fetchLogPayloadByKey(repo, token, job.id, 'REWRITE_RESULT_BASE64');
+        resolve({ run, payload });
+      };
+      tick();
+    });
+  }
+
   async function pollWorkflowStatus(repo: string, token: string, commitSha: string, state?: WorkflowTrackingState) {
     const shortSha = commitSha.slice(0, 7);
     const POLL_INTERVAL = 5000;
@@ -1009,13 +1570,7 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
     const currentSession = pollSessionId;
 
     let polls = 0;
-    let postStartedAt = 0;
-    let liveProgress: LivePostProgress | null = null;
-    let logFetchDisabled = false;
-    let lastLogFetchAt = 0;
-
     const elapsedSeconds = () => Math.max(0, Math.floor((Date.now() - trackingState.startedAt) / 1000));
-    const postElapsedSeconds = () => Math.max(0, Math.floor((Date.now() - postStartedAt) / 1000));
     const isCurrentSession = () => currentSession === pollSessionId;
     const scheduleNext = () => {
       if (!isCurrentSession()) return;
@@ -1028,47 +1583,6 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
       });
       if (!res.ok) return null;
       return res.json();
-    }
-
-    async function maybeUpdateLiveProgress(postJobId?: number) {
-      if (!postJobId || logFetchDisabled) return;
-      const now = Date.now();
-      if (now - lastLogFetchAt < 10000) return; // 10s 마다 로그 파싱
-      lastLogFetchAt = now;
-
-      try {
-        const progress = await fetchPostJobProgress(repo, token, postJobId);
-        if (progress) liveProgress = progress;
-      } catch (e: any) {
-        const msg = String(e?.message || '');
-        if (msg.includes('log-fetch-403') || msg.includes('log-fetch-404')) {
-          // 토큰 권한/엔드포인트 접근 불가 시 과도한 재시도 중단
-          logFetchDisabled = true;
-        }
-      }
-    }
-
-    function buildPostProgressMessage() {
-      if (liveProgress?.degraded) {
-        return '⚠️ reply 차단 감지: main-only 처리 중...';
-      }
-
-      const total = liveProgress?.totalReplies || trackingState.expectedReplies || 0;
-      if (liveProgress?.postingReply && total > 0) {
-        return `🐦 X reply ${liveProgress.postingReply}/${total} 게시 중...`;
-      }
-
-      if (liveProgress?.postedReplies && total > 0) {
-        const next = Math.min(total, liveProgress.postedReplies + 1);
-        return `🐦 X reply ${next}/${total} 게시 준비 중...`;
-      }
-
-      if (total > 0 && postStartedAt > 0) {
-        const estimated = Math.min(total, Math.max(1, Math.floor(postElapsedSeconds() / 11) + 1));
-        return `🐦 X 스레드 게시 중... (reply ${estimated}/${total} 예상)`;
-      }
-
-      return '🐦 X 스레드 게시 중...';
     }
 
     async function poll() {
@@ -1100,24 +1614,40 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
         if (runStatus === 'completed') {
           clearWorkflowTracking();
           const jobsData = await ghApi(`runs/${run.id}/jobs`);
-          const postJob = jobsData?.jobs?.find((j: any) => j.name === 'post_x');
+          const prepareJob = jobsData?.jobs?.find((j: any) => j.name === 'prepare');
 
           if (runConclusion === 'success') {
-            if (postJob?.conclusion === 'success') {
-              showStatus(`✅ 커밋 완료 · ${shortSha}\n✅ X 포스팅 성공! 스레드가 게시되었습니다.`, 'success');
-              fadeStatusAfter(7000);
-            } else if (postJob?.conclusion === 'skipped') {
-              showStatus(`✅ 커밋 완료 · ${shortSha}\n⏭️ X 포스팅 건너뜀 (ENABLE_X_POST 미설정 또는 새 항목 없음)`, 'info');
-              fadeStatusAfter(7000);
+            const draftPayload = prepareJob?.id
+              ? await fetchPrepareDraftPayload(repo, token, prepareJob.id)
+              : null;
+
+            if (draftPayload?.thread?.main) {
+              const draft = {
+                commitSha,
+                thread: {
+                  main: String(draftPayload.thread.main || ''),
+                  replies: Array.isArray(draftPayload.thread.replies) ? draftPayload.thread.replies.map((x: any) => String(x || '')) : [],
+                },
+                meta: draftPayload.meta || {},
+              };
+
+              currentCommittedSha = commitSha;
+              currentRepoForSubmit = repo;
+              showXDraftReview(draft);
+
+              if (trackingState.requireManualApproval === false) {
+                showStatus(`✅ 커밋 완료 · ${shortSha}\n🤖 자동 승인 모드로 X 게시를 시작합니다...`, 'info', { autoScroll: true });
+                const dispatched = await dispatchApprovedPost(repo, token, commitSha, 'one_time_auto');
+                if (!dispatched) return;
+                await pollApprovedPostStatus(repo, token, commitSha, Date.now());
+              } else {
+                showStatus(`✅ 커밋 완료 · ${shortSha}\n📝 X draft가 준비되었습니다. draft를 확인한 뒤 승인해 주세요.`, 'success', { autoScroll: true });
+              }
             } else {
-              showStatus(`✅ 커밋 완료 · ${shortSha}\n✅ 워크플로 완료`, 'success');
-              fadeStatusAfter(7000);
+              showStatus(`✅ 커밋 완료 · ${shortSha}\n⚠️ X draft를 찾지 못했습니다. Actions에서 notify-artifacts를 확인하세요.`, 'warn');
             }
           } else {
-            const failMsg = postJob?.conclusion === 'failure'
-              ? 'X 포스팅 실패 — Actions에서 상세 로그를 확인하세요.'
-              : `워크플로 ${runConclusion || '실패'}`;
-            showStatus(`✅ 커밋 완료 · ${shortSha}\n❌ ${failMsg}`, 'error');
+            showStatus(`✅ 커밋 완료 · ${shortSha}\n❌ 워크플로 ${runConclusion || '실패'}`, 'error');
           }
           return;
         }
@@ -1126,17 +1656,12 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
         const jobs = jobsData?.jobs || [];
         const activeJob = jobs.find((j: any) => j.status === 'in_progress');
         const activeStep = activeJob?.steps?.find((s: any) => s.status === 'in_progress');
-        const postJob = jobs.find((j: any) => j.name === 'post_x');
 
         let progressMsg = '';
         if (activeJob?.name === 'prepare') {
           progressMsg = '📦 데이터 준비 중...';
           if (activeStep?.name?.includes('Build digest')) progressMsg = '📦 포스트 생성 중...';
           else if (activeStep?.name?.includes('Extract')) progressMsg = '📦 새 항목 추출 중...';
-        } else if (activeJob?.name === 'post_x') {
-          if (!postStartedAt) postStartedAt = Date.now();
-          await maybeUpdateLiveProgress(postJob?.id);
-          progressMsg = buildPostProgressMessage();
         } else if (jobs.every((j: any) => j.status === 'queued')) {
           progressMsg = '⏳ 워크플로 실행 대기 중...';
         } else {
@@ -1152,6 +1677,121 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
     }
 
     poll();
+  }
+
+  async function pollApprovedPostStatus(repo: string, token: string, commitSha: string, dispatchedAt: number) {
+    const shortSha = commitSha.slice(0, 7);
+    const POLL_INTERVAL = 5000;
+    const MAX_POLLS = 96;
+    let polls = 0;
+    let liveProgress: LivePostProgress | null = null;
+    let lastLogFetchAt = 0;
+
+    async function fetchWorkflowRuns() {
+      const res = await fetch(`https://api.github.com/repos/${repo}/actions/workflows/post-approved.yml/runs?per_page=10`, {
+        headers: { 'Authorization': `token ${token}`, 'Accept': 'application/vnd.github.v3+json' }
+      });
+      if (!res.ok) return null;
+      return res.json();
+    }
+
+    async function fetchJobs(runId: number) {
+      const res = await fetch(`https://api.github.com/repos/${repo}/actions/runs/${runId}/jobs`, {
+        headers: { 'Authorization': `token ${token}`, 'Accept': 'application/vnd.github.v3+json' }
+      });
+      if (!res.ok) return null;
+      return res.json();
+    }
+
+    return new Promise<void>((resolve) => {
+      const tick = async () => {
+        polls++;
+        if (polls > MAX_POLLS) {
+          showStatus(`✅ 커밋 완료 · ${shortSha}\n⚠️ 승인 게시 상태 확인 시간 초과 — Actions에서 확인하세요.`, 'warn');
+          resolve();
+          return;
+        }
+
+        const runsData = await fetchWorkflowRuns();
+        const runs = runsData?.workflow_runs || [];
+        const run = runs.find((r: any) => Date.parse(r.created_at || '') >= (dispatchedAt - 30000));
+        if (!run) {
+          showStatus(`✅ 커밋 완료 · ${shortSha}\n⏳ 승인 게시 워크플로 시작 대기 중...`, 'info');
+          setTimeout(tick, POLL_INTERVAL);
+          return;
+        }
+
+        const jobsData = await fetchJobs(run.id);
+        const postJob = jobsData?.jobs?.find((j: any) => j.name === 'post_x');
+
+        if (postJob?.status === 'in_progress' && Date.now() - lastLogFetchAt > 10000) {
+          lastLogFetchAt = Date.now();
+          if (postJob?.id) {
+            const progress = await fetchPostJobProgress(repo, token, postJob.id).catch(() => null);
+            if (progress) liveProgress = progress;
+          }
+        }
+
+        if (run.status === 'completed') {
+          const postResult = postJob?.id
+            ? await fetchLogPayloadByKey(repo, token, postJob.id, 'POST_RESULT_BASE64')
+            : null;
+
+          if (run.conclusion === 'success') {
+            if (postResult?.degradedMode === 'main_only') {
+              showStatus(`✅ 커밋 완료 · ${shortSha}\n⚠️ main만 게시되었습니다. 남은 replies는 수동으로 이어서 게시해 주세요.`, 'warn', { autoScroll: true });
+            } else {
+              showStatus(`✅ 커밋 완료 · ${shortSha}\n✅ X 포스팅 성공!`, 'success', { autoScroll: true });
+              fadeStatusAfter(7000);
+            }
+          } else {
+            let guide = 'Actions 로그를 확인해 주세요.';
+            if (postResult?.errorCode === 'local_length_guard' || postResult?.failurePhase === 'validation') {
+              guide = '길이 제한 초과입니다. main/replies 텍스트를 줄인 뒤 다시 승인해 주세요.';
+            } else if ([403, 429].includes(Number(postResult?.httpStatus))) {
+              guide = '정책/레이트 제한 가능성이 높습니다. 같은 텍스트 재시도 대신 수정 후 재게시를 권장합니다.';
+            } else if (postResult?.errorCode === 'network_error') {
+              guide = '네트워크 오류입니다. 잠시 후 다시 시도해 주세요.';
+            }
+            showStatus(`✅ 커밋 완료 · ${shortSha}\n❌ X 포스팅 실패\n${guide}`, 'error', { autoScroll: true });
+          }
+          resolve();
+          return;
+        }
+
+        if (liveProgress?.postingReply && liveProgress?.totalReplies) {
+          showStatus(`✅ 커밋 완료 · ${shortSha}\n🐦 X reply ${liveProgress.postingReply}/${liveProgress.totalReplies} 게시 중...`, 'info');
+        } else {
+          showStatus(`✅ 커밋 완료 · ${shortSha}\n🐦 승인된 draft로 X 게시 중...`, 'info');
+        }
+        setTimeout(tick, POLL_INTERVAL);
+      };
+      tick();
+    });
+  }
+
+  async function runMockPostFlow(commitSha: string) {
+    const shortSha = commitSha.slice(0, 7);
+    const thread = collectEditedThread();
+    if (!thread) {
+      showStatus(`[mock] 게시할 draft를 읽지 못했습니다.`, 'error');
+      return;
+    }
+    const failures = validateThreadLimit(thread.main, thread.replies);
+    if (failures.length > 0) {
+      const msg = failures.map((f) => `${f.phase} ${f.used}/${X_HARD_LIMIT}`).join(', ');
+      showStatus(`✅ [mock] 커밋 완료 · ${shortSha}\n❌ 길이 제한 초과: ${msg}`, 'error', { autoScroll: true });
+      return;
+    }
+
+    showStatus(`✅ [mock] 커밋 완료 · ${shortSha}\n🐦 X 게시 시뮬레이션 시작...`, 'info');
+    await sleep(400);
+    for (let i = 0; i < thread.replies.length; i++) {
+      showStatus(`✅ [mock] 커밋 완료 · ${shortSha}\n🐦 X reply ${i + 1}/${thread.replies.length} 게시 중...`, 'info');
+      await sleep(250);
+    }
+    showStatus(`✅ [mock] 커밋 완료 · ${shortSha}\n✅ X 포스팅 성공!`, 'success', { autoScroll: true });
+    fadeStatusAfter(5000);
   }
 
   function fadeStatusAfter(ms: number) {
@@ -1202,6 +1842,8 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
         return `<div class="flex items-center gap-1.5"><span>${icon}</span><span class="truncate">${escapeHtml(item.title)}</span></div>`;
       }).join('');
     }
+    const approvalEl = document.getElementById('confirm-manual-approval') as HTMLInputElement | null;
+    if (approvalEl) approvalEl.checked = true;
     modal.classList.remove('hidden');
   }
 
@@ -1216,7 +1858,7 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
       return;
     }
     const token = localStorage.getItem('github_token');
-    if (!token) {
+    if (!token && !isMockMode()) {
       showStatus('GitHub 토큰이 설정되지 않았습니다. 상단 GitHub 버튼에서 토큰을 입력하세요.', 'error');
       return;
     }
@@ -1225,6 +1867,8 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
   });
 
   document.getElementById('confirm-submit')?.addEventListener('click', () => {
+    const approvalEl = document.getElementById('confirm-manual-approval') as HTMLInputElement | null;
+    requireManualApprovalForCurrentSubmit = approvalEl ? approvalEl.checked : true;
     closeConfirmModal();
     if (pendingSubmitItems.length > 0) {
       submitToGitHub(pendingSubmitItems);
@@ -1245,12 +1889,211 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
     }
   });
 
+  document.getElementById('x-approve-post-btn')?.addEventListener('click', async () => {
+    const token = localStorage.getItem('github_token');
+    const mockMode = isMockMode();
+    if (!token && !mockMode) {
+      showStatus('GitHub 토큰이 필요합니다.', 'error');
+      return;
+    }
+    if (!xDraftData || !currentCommittedSha || !currentRepoForSubmit) {
+      showStatus('승인할 X draft가 없습니다. 먼저 항목을 커밋해 주세요.', 'warn');
+      return;
+    }
+    if (!(xMainApproved && xRepliesApproved)) {
+      showStatus('게시 전 main과 replies를 각각 승인해 주세요.', 'warn');
+      return;
+    }
+    if (isPostingInProgress) return;
+
+    try {
+      isPostingInProgress = true;
+      updateReviewApprovalUi();
+      if (mockMode) {
+        await runMockPostFlow(currentCommittedSha);
+      } else {
+        showStatus(`✅ 커밋 완료 · ${currentCommittedSha.slice(0, 7)}\n⏳ 승인 게시 워크플로 실행 중...`, 'info');
+        const dispatched = await dispatchApprovedPost(currentRepoForSubmit, token!, currentCommittedSha, 'manual_approved');
+        if (!dispatched) return;
+        await pollApprovedPostStatus(currentRepoForSubmit, token!, currentCommittedSha, Date.now());
+      }
+    } catch (err: any) {
+      showStatus(`승인 게시 실행 실패: ${err.message}`, 'error');
+    } finally {
+      isPostingInProgress = false;
+      updateReviewApprovalUi();
+    }
+  });
+
+  document.getElementById('x-main-approve-btn')?.addEventListener('click', () => {
+    xMainApproved = !xMainApproved;
+    updateReviewApprovalUi();
+  });
+
+  document.getElementById('x-replies-approve-btn')?.addEventListener('click', () => {
+    xRepliesApproved = !xRepliesApproved;
+    updateReviewApprovalUi();
+  });
+
+  document.getElementById('x-approve-all-btn')?.addEventListener('click', () => {
+    if (isPostingInProgress) return;
+    const allApproved = xMainApproved && xRepliesApproved;
+    xMainApproved = !allApproved;
+    xRepliesApproved = !allApproved;
+    updateReviewApprovalUi();
+  });
+
+  async function runAiRewrite(target: 'main' | 'replies', instruction: string, replyTarget: 'all' | number = 'all') {
+    const token = localStorage.getItem('github_token');
+    const mockMode = isMockMode();
+    const statusEl = document.getElementById('x-ai-status');
+    if ((!token && !mockMode) || !currentRepoForSubmit || !currentCommittedSha) {
+      showStatus('AI 수정을 실행하려면 먼저 커밋 후 X draft를 불러와야 합니다.', 'warn');
+      return;
+    }
+    if (!instruction.trim()) {
+      showToast('instruction을 입력해 주세요.');
+      return;
+    }
+    if (isAiRewriteInProgress) return;
+
+    const scopedInstruction = target === 'main'
+      ? `[target: main only]\n${instruction}`
+      : replyTarget === 'all'
+      ? `[target: all replies]\n${instruction}`
+      : `[target: reply ${replyTarget} only; keep others]\n${instruction}`;
+
+    try {
+      isAiRewriteInProgress = true;
+      const current = collectEditedThread();
+      if (!current) throw new Error('현재 thread를 읽지 못했습니다.');
+
+      const nextThread = {
+        main: current.main,
+        replies: [...current.replies],
+      };
+      let modelName = 'mock-local';
+      if (statusEl) statusEl.textContent = `${target === 'main' ? 'main' : 'reply'} AI 수정 요청 중...`;
+
+      if (mockMode) {
+        if (target === 'main') {
+          nextThread.main = mockRewriteMain(nextThread.main, instruction);
+          xMainApproved = false;
+        } else if (replyTarget === 'all') {
+          nextThread.replies = nextThread.replies.map((r, i) => mockRewriteReply(r, instruction, i));
+          xRepliesApproved = false;
+        } else {
+          const idx = replyTarget - 1;
+          if (nextThread.replies[idx]) nextThread.replies[idx] = mockRewriteReply(nextThread.replies[idx], instruction, idx);
+          xRepliesApproved = false;
+        }
+      } else {
+        await dispatchRewriteDraft(currentRepoForSubmit, token!, currentCommittedSha, scopedInstruction);
+        const result = await pollRewriteDraftStatus(currentRepoForSubmit, token!, Date.now());
+        if (!result?.payload?.thread?.main) {
+          throw new Error('AI 수정 결과를 읽지 못했습니다. Actions 로그 접근 권한(actions:read)과 워크플로 상태를 확인해 주세요.');
+        }
+        if (!result.payload.success) throw new Error(result.payload.error || 'AI 수정 실패');
+        modelName = String(result.payload.meta?.model || '-');
+
+        if (target === 'main') {
+          nextThread.main = String(result.payload.thread.main || nextThread.main);
+          xMainApproved = false;
+        } else if (replyTarget === 'all') {
+          nextThread.replies = Array.isArray(result.payload.thread.replies)
+            ? result.payload.thread.replies.map((x: any) => String(x || ''))
+            : nextThread.replies;
+          xRepliesApproved = false;
+        } else {
+          const idx = replyTarget - 1;
+          const rewrittenReply = Array.isArray(result.payload.thread.replies) ? result.payload.thread.replies[idx] : null;
+          if (typeof rewrittenReply === 'string') nextThread.replies[idx] = rewrittenReply;
+          xRepliesApproved = false;
+        }
+      }
+
+      showXDraftReview({
+        commitSha: currentCommittedSha,
+        thread: nextThread,
+        meta: {
+          ...(xDraftData?.meta || {}),
+          main_model: target === 'main' ? modelName : (xDraftData?.meta?.main_model || '-'),
+          reply_model: target === 'replies' ? modelName : (xDraftData?.meta?.reply_model || '-'),
+        },
+      }, { preserveHistory: true });
+
+      xAiHistory.push({
+        at: new Date().toLocaleString('ko-KR'),
+        target: target === 'main' ? 'main' : (replyTarget === 'all' ? 'all replies' : `reply ${replyTarget}`),
+        instruction,
+        model: modelName,
+        summary: `main ${countXChars(nextThread.main)}자 · replies ${nextThread.replies.length}건`,
+      });
+      renderAiHistory();
+      if (statusEl) statusEl.textContent = '완료';
+      showToast('AI 수정 결과를 반영했습니다.');
+    } catch (err: any) {
+      if (statusEl) statusEl.textContent = '실패';
+      showStatus(`AI 수정 실패: ${err.message}`, 'error');
+    } finally {
+      isAiRewriteInProgress = false;
+    }
+  }
+
+  document.getElementById('x-ai-main-rewrite-btn')?.addEventListener('click', async () => {
+    const input = document.getElementById('x-ai-main-instruction') as HTMLTextAreaElement | null;
+    const instruction = input?.value.trim() || '';
+    await runAiRewrite('main', instruction, 'all');
+    if (input) input.value = '';
+  });
+
+  document.getElementById('x-ai-reply-rewrite-btn')?.addEventListener('click', async () => {
+    const input = document.getElementById('x-ai-reply-instruction') as HTMLTextAreaElement | null;
+    const targetEl = document.getElementById('x-ai-reply-target') as HTMLSelectElement | null;
+    const instruction = input?.value.trim() || '';
+    const selected = targetEl?.value || 'all';
+    const replyTarget: 'all' | number = selected === 'all' ? 'all' : Number(selected);
+    await runAiRewrite('replies', instruction, replyTarget);
+    if (input) input.value = '';
+  });
+
+  document.getElementById('x-copy-thread-btn')?.addEventListener('click', async () => {
+    const thread = collectEditedThread();
+    if (!thread) return;
+    const text = [
+      '=== MAIN ===',
+      thread.main,
+      ...thread.replies.flatMap((r, i) => ['', `=== REPLY ${i + 1} ===`, r]),
+    ].join('\n');
+    await navigator.clipboard.writeText(text);
+    showToast('X 스레드가 클립보드에 복사되었습니다');
+  });
+
+  document.getElementById('x-copy-main-btn')?.addEventListener('click', async () => {
+    const thread = collectEditedThread();
+    if (!thread) return;
+    await navigator.clipboard.writeText(thread.main || '');
+    showToast('main post를 복사했습니다');
+  });
+
+  document.getElementById('x-copy-replies-btn')?.addEventListener('click', async () => {
+    const thread = collectEditedThread();
+    if (!thread) return;
+    const text = thread.replies.map((r, i) => `=== REPLY ${i + 1} ===\n${r}`).join('\n\n');
+    await navigator.clipboard.writeText(text);
+    showToast('replies를 복사했습니다');
+  });
+
   // ─── GitHub token ──────────────────────
   function updateTokenStatus() {
     const statusEl = document.getElementById('token-status');
     const token = localStorage.getItem('github_token');
+    const mockMode = isMockMode();
     if (statusEl) {
-      if (token) {
+      if (mockMode) {
+        statusEl.textContent = 'MOCK';
+        statusEl.className = 'inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full text-xs bg-violet-100 dark:bg-violet-900/30 text-violet-600 dark:text-violet-400';
+      } else if (token) {
         statusEl.textContent = '연결됨';
         statusEl.className = 'inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full text-xs bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400';
       } else {
@@ -1278,6 +2121,13 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
     localStorage.removeItem('github_token');
     updateTokenStatus();
     showToast('토큰이 삭제되었습니다');
+  });
+
+  document.getElementById('mock-mode-toggle')?.addEventListener('change', (e) => {
+    const enabled = (e.target as HTMLInputElement).checked;
+    setMockMode(enabled);
+    updateTokenStatus();
+    showToast(enabled ? '로컬 mock 모드가 켜졌습니다' : '로컬 mock 모드가 꺼졌습니다');
   });
 
   function showToast(message: string) {
@@ -1308,7 +2158,7 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
     }
 
     showStatus(`🔄 이전 워크플로 상태 복구 중... · ${state.commitSha.slice(0, 7)}`, 'info');
-    startWorkflowTracking(state.repo, token, state.commitSha, state.expectedReplies, state.startedAt);
+    startWorkflowTracking(state.repo, token, state.commitSha, state.expectedReplies, state.startedAt, state.requireManualApproval !== false);
   }
 
   window.addEventListener('beforeunload', (e) => {
@@ -1318,7 +2168,24 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
   });
 
   // ─── Init ──────────────────────────────
+  if (!isLocalDevHost()) {
+    setMockMode(false);
+  }
   updateTokenStatus();
+  const mockModeToggle = document.getElementById('mock-mode-toggle') as HTMLInputElement | null;
+  if (mockModeToggle) {
+    if (!isLocalDevHost()) {
+      mockModeToggle.checked = false;
+      mockModeToggle.disabled = true;
+      mockModeToggle.closest('label')?.classList.add('opacity-50', 'pointer-events-none');
+      const hint = document.createElement('div');
+      hint.className = 'mt-1 text-[11px] text-gray-400';
+      hint.textContent = 'mock 모드는 로컬 개발 서버(localhost)에서만 사용할 수 있습니다.';
+      mockModeToggle.closest('label')?.parentElement?.appendChild(hint);
+    } else {
+      mockModeToggle.checked = isMockMode();
+    }
+  }
   const savedRepo = localStorage.getItem('github_repo');
   if (savedRepo) {
     (document.getElementById('github-repo') as HTMLInputElement).value = savedRepo;

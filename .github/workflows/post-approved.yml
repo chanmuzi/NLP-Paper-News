@@ -1,0 +1,129 @@
+name: Post Approved X Thread
+
+on:
+  workflow_dispatch:
+    inputs:
+      commit_sha:
+        description: "items.json 커밋 SHA (추적용)"
+        required: true
+        type: string
+      approval_mode:
+        description: "manual_approved | one_time_auto"
+        required: true
+        default: manual_approved
+        type: string
+      thread_json_b64:
+        description: "최종 승인 thread JSON(base64)"
+        required: true
+        type: string
+
+permissions:
+  contents: read
+  actions: write
+
+jobs:
+  post_x:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Decode approved thread and build digest
+        run: |
+          mkdir -p artifacts
+          THREAD_B64='${{ inputs.thread_json_b64 }}' node -e "
+            const fs = require('fs');
+            const raw = Buffer.from(String(process.env.THREAD_B64 || ''), 'base64').toString('utf8');
+            const parsed = JSON.parse(raw || '{}');
+            const replies = Array.isArray(parsed.replies) ? parsed.replies.map((x) => String(x || '')) : [];
+            const digest = {
+              generated_at: new Date().toISOString(),
+              added_count: replies.length,
+              items: [],
+              social: {
+                x_thread: {
+                  main: String(parsed.main || ''),
+                  replies,
+                },
+                x_thread_meta: {
+                  generator: 'approved_ui',
+                  approval_mode: '${{ inputs.approval_mode }}',
+                  approved_commit_sha: '${{ inputs.commit_sha }}',
+                  hard_limit: 280,
+                }
+              }
+            };
+            fs.writeFileSync('artifacts/digest.json', JSON.stringify(digest, null, 2), 'utf8');
+          "
+
+      - name: Post to X
+        id: post
+        env:
+          X_API_KEY: ${{ secrets.X_API_KEY }}
+          X_API_SECRET: ${{ secrets.X_API_SECRET }}
+          X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
+          X_ACCESS_TOKEN_SECRET: ${{ secrets.X_ACCESS_TOKEN_SECRET }}
+          X_API_BASE: ${{ vars.X_API_BASE }}
+          X_DEGRADE_REPLY_403_429: ${{ vars.X_DEGRADE_REPLY_403_429 }}
+        run: node scripts/post-x.mjs --digest artifacts/digest.json --result artifacts/post-result.json
+
+      - name: Post to X summary
+        if: always()
+        run: |
+          echo "## X Post Result" >> "$GITHUB_STEP_SUMMARY"
+          echo "- commit_sha: ${{ inputs.commit_sha }}" >> "$GITHUB_STEP_SUMMARY"
+          echo "- approval_mode: ${{ inputs.approval_mode }}" >> "$GITHUB_STEP_SUMMARY"
+          if [ -f artifacts/post-result.json ]; then
+            node -e "
+              const r = JSON.parse(require('fs').readFileSync('artifacts/post-result.json','utf8'));
+              const lines = [];
+              if (r.success) {
+                if (r.degradedMode === 'main_only') {
+                  lines.push('⚠️ **Posted in degraded mode (main only)**');
+                  lines.push('');
+                  lines.push('- reason: reply blocked by X anti-spam/rate policy');
+                  lines.push('- manual follow-up: add remaining replies manually if needed');
+                } else {
+                  lines.push('✅ **Thread posted successfully**');
+                }
+                lines.push('');
+                lines.push('| # | Type | Tweet ID |');
+                lines.push('|---|------|----------|');
+                (r.posted || []).forEach((t,i) => lines.push('| ' + (i+1) + ' | ' + t.type + ' | [' + t.id + '](https://x.com/i/status/' + t.id + ') |'));
+              } else {
+                lines.push('❌ **Thread posting failed**');
+                lines.push('');
+                lines.push('- failurePhase: ' + (r.failurePhase || '-'));
+                lines.push('- failedAt: ' + (r.failedAt || '-') + '/' + (r.totalReplies || '-'));
+                lines.push('- httpStatus: ' + (r.httpStatus ?? '-'));
+                lines.push('- errorCode: ' + (r.errorCode || '-'));
+                lines.push('- errorDetail: ' + (r.errorDetail || r.error || '-'));
+              }
+              process.stdout.write(lines.join('\n'));
+            " >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Emit post result payload
+        if: always() && hashFiles('artifacts/post-result.json') != ''
+        run: |
+          node -e "
+            const fs = require('fs');
+            const raw = fs.readFileSync('artifacts/post-result.json', 'utf8');
+            const b64 = Buffer.from(raw, 'utf8').toString('base64');
+            console.log('POST_RESULT_BASE64=' + b64);
+          "
+
+      - name: Upload post diagnostics
+        if: always() && hashFiles('artifacts/post-result.json') != ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: post-x-result
+          path: artifacts/post-result.json
+
+      - name: Trigger deploy on success
+        if: steps.post.outcome == 'success'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run deploy.yml --ref main

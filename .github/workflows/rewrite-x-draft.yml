@@ -1,0 +1,66 @@
+name: Rewrite X Draft
+
+on:
+  workflow_dispatch:
+    inputs:
+      commit_sha:
+        description: "items.json commit SHA"
+        required: true
+        type: string
+      instruction:
+        description: "rewrite instruction"
+        required: true
+        type: string
+      current_thread_json_b64:
+        description: "current thread JSON(base64)"
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  rewrite:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Decode current thread
+        run: |
+          mkdir -p artifacts
+          THREAD_B64='${{ inputs.current_thread_json_b64 }}' node -e "
+            const fs = require('fs');
+            const raw = Buffer.from(String(process.env.THREAD_B64 || ''), 'base64').toString('utf8');
+            fs.writeFileSync('artifacts/current-thread.json', raw, 'utf8');
+          "
+
+      - name: Rewrite with AI
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_MODEL: ${{ vars.OPENAI_MODEL }}
+          OPENAI_MODEL_REPLY: ${{ vars.OPENAI_MODEL_REPLY }}
+          OPENAI_API_BASE: ${{ vars.OPENAI_API_BASE }}
+        run: |
+          node scripts/rewrite-x-thread.mjs \
+            --thread artifacts/current-thread.json \
+            --instruction "${{ inputs.instruction }}" \
+            --out artifacts/rewrite-result.json
+
+      - name: Emit rewrite payload
+        if: always() && hashFiles('artifacts/rewrite-result.json') != ''
+        run: |
+          node -e "
+            const fs = require('fs');
+            const raw = fs.readFileSync('artifacts/rewrite-result.json', 'utf8');
+            console.log('REWRITE_RESULT_BASE64=' + Buffer.from(raw, 'utf8').toString('base64'));
+          "
+
+      - name: Upload rewrite diagnostics
+        if: always() && hashFiles('artifacts/rewrite-result.json') != ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: rewrite-x-result
+          path: artifacts/rewrite-result.json
