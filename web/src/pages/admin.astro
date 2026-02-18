@@ -212,6 +212,29 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
     <!-- Submit Status (outside preview-section so it stays visible after submit clears items) -->
     <div id="submit-status" class="hidden mt-3 p-4 rounded-xl text-sm"></div>
 
+    <!-- X Draft Review -->
+    <div id="x-review-section" class="hidden mt-5 p-4 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-anthro-darkSurface">
+      <div class="flex items-center justify-between mb-3">
+        <h3 class="text-sm font-semibold text-gray-700 dark:text-gray-200">X 게시 전 문안 검토</h3>
+        <span id="x-review-meta" class="text-xs text-gray-400"></span>
+      </div>
+
+      <div class="space-y-3">
+        <div>
+          <label class="block text-xs text-gray-500 mb-1">Main post</label>
+          <textarea id="x-main-input" rows="4" class="w-full px-3 py-2 rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-anthro-darkMid text-sm text-gray-900 dark:text-gray-100 outline-none focus:border-claude-500"></textarea>
+          <div id="x-main-count" class="mt-1 text-xs text-gray-400 font-mono">0/280</div>
+        </div>
+        <div id="x-replies-editor" class="space-y-2"></div>
+      </div>
+
+      <div class="mt-4 flex flex-wrap gap-2">
+        <button id="x-approve-post-btn" class="px-4 py-2 rounded-lg bg-claude-500 text-white text-sm font-semibold hover:bg-claude-600 transition-all">승인하고 X 게시</button>
+        <button id="x-copy-thread-btn" class="px-3 py-2 rounded-lg border border-gray-200 dark:border-gray-700 text-sm text-gray-600 dark:text-gray-300 hover:border-claude-400 transition-all">스레드 복사</button>
+      </div>
+      <div id="x-review-note" class="mt-2 text-xs text-gray-400"></div>
+    </div>
+
     <!-- Confirm Modal -->
     <div id="confirm-modal" class="hidden fixed inset-0 z-50">
       <div id="confirm-backdrop" class="absolute inset-0 bg-black/40 animate-fade-in"></div>
@@ -220,6 +243,10 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
           <h3 class="text-lg font-bold text-gray-900 dark:text-gray-100 mb-3">항목 추가 확인</h3>
           <p id="confirm-message" class="text-sm text-gray-600 dark:text-gray-300 mb-2"></p>
           <div id="confirm-item-list" class="mb-4 max-h-40 overflow-y-auto text-xs text-gray-500 dark:text-gray-400 space-y-1"></div>
+          <label class="mb-4 flex items-start gap-2 text-xs text-gray-600 dark:text-gray-300">
+            <input type="checkbox" id="confirm-manual-approval" class="mt-0.5 accent-claude-500" checked />
+            <span>X 게시 전 문안 확인/수정 후 승인하기 (기본)</span>
+          </label>
           <div class="flex gap-2">
             <button id="confirm-cancel" class="flex-1 px-4 py-2.5 rounded-lg border border-gray-200 dark:border-gray-700 text-sm text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 transition-all">취소</button>
             <button id="confirm-submit" class="flex-1 px-4 py-2.5 rounded-lg bg-claude-500 text-white text-sm font-semibold hover:bg-claude-600 transition-all">추가 실행</button>
@@ -238,8 +265,38 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
   let submittedIds = new Set<string>();
   let existingIds = new Set<string>();  // IDs already committed to items.json
   let hasActiveWorkflowTracking = false;
+  let requireManualApprovalForCurrentSubmit = true;
+  let currentCommittedSha = '';
+  let currentRepoForSubmit = '';
+  let xDraftData: {
+    commitSha: string;
+    thread: { main: string; replies: string[] };
+    meta?: Record<string, any>;
+  } | null = null;
 
   const WORKFLOW_TRACKING_KEY = 'nlp_paper_news_admin_workflow_tracking_v1';
+  const X_HARD_LIMIT = 280;
+  const URL_REGEX = /https?:\/\/[^\s)]+/gi;
+
+  function utf8ToBase64(str: string) {
+    return btoa(unescape(encodeURIComponent(str)));
+  }
+
+  function base64ToUtf8(str: string) {
+    return decodeURIComponent(escape(atob(str)));
+  }
+
+  function countXChars(text: string) {
+    const normalized = String(text || '').replace(URL_REGEX, 'x'.repeat(23));
+    const codepoint = Array.from(normalized).length;
+    try {
+      const seg = new Intl.Segmenter(undefined, { granularity: 'grapheme' });
+      const grapheme = Array.from(seg.segment(normalized)).length;
+      return Math.max(codepoint, grapheme);
+    } catch {
+      return codepoint;
+    }
+  }
 
   // ─── Type colors ───────────────────────
   const TYPE_COLORS: Record<string, { border: string; bg: string; text: string }> = {
@@ -707,6 +764,87 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
     }
   }
 
+  function validateThreadLimit(main: string, replies: string[]) {
+    const failures: { phase: string; used: number }[] = [];
+    const mainChars = countXChars(main);
+    if (mainChars > X_HARD_LIMIT) failures.push({ phase: 'main', used: mainChars });
+    replies.forEach((r, idx) => {
+      const used = countXChars(r);
+      if (used > X_HARD_LIMIT) failures.push({ phase: `reply ${idx + 1}`, used });
+    });
+    return failures;
+  }
+
+  function collectEditedThread() {
+    const mainInput = document.getElementById('x-main-input') as HTMLTextAreaElement | null;
+    if (!mainInput) return null;
+    const replyInputs = [...document.querySelectorAll('.x-reply-input')] as HTMLTextAreaElement[];
+    return {
+      main: mainInput.value.trim(),
+      replies: replyInputs.map((el) => el.value.trim()),
+    };
+  }
+
+  function bindXCountIndicators() {
+    const mainInput = document.getElementById('x-main-input') as HTMLTextAreaElement | null;
+    const mainCount = document.getElementById('x-main-count');
+    if (mainInput && mainCount) {
+      const updateMain = () => {
+        const used = countXChars(mainInput.value);
+        mainCount.textContent = `${used}/${X_HARD_LIMIT}`;
+        mainCount.className = `mt-1 text-xs font-mono ${used > X_HARD_LIMIT ? 'text-red-500' : 'text-gray-400'}`;
+      };
+      mainInput.addEventListener('input', updateMain);
+      updateMain();
+    }
+
+    const replies = [...document.querySelectorAll('.x-reply-input')] as HTMLTextAreaElement[];
+    replies.forEach((el) => {
+      const countEl = document.getElementById(`x-reply-count-${el.dataset.index}`);
+      const update = () => {
+        const used = countXChars(el.value);
+        if (countEl) {
+          countEl.textContent = `${used}/${X_HARD_LIMIT}`;
+          countEl.className = `text-xs font-mono ${used > X_HARD_LIMIT ? 'text-red-500' : 'text-gray-400'}`;
+        }
+      };
+      el.addEventListener('input', update);
+      update();
+    });
+  }
+
+  function showXDraftReview(draft: { commitSha: string; thread: { main: string; replies: string[] }; meta?: Record<string, any> }) {
+    xDraftData = draft;
+    const section = document.getElementById('x-review-section');
+    const mainInput = document.getElementById('x-main-input') as HTMLTextAreaElement | null;
+    const repliesEditor = document.getElementById('x-replies-editor');
+    const metaEl = document.getElementById('x-review-meta');
+    const noteEl = document.getElementById('x-review-note');
+
+    if (!section || !mainInput || !repliesEditor) return;
+    section.classList.remove('hidden');
+    mainInput.value = draft.thread.main || '';
+
+    const mainModel = draft.meta?.main_model || '-';
+    const replyModel = draft.meta?.reply_model || '-';
+    if (metaEl) metaEl.textContent = `main 모델: ${mainModel} · reply 모델: ${replyModel}`;
+    if (noteEl) noteEl.textContent = '문안을 직접 수정한 뒤 승인 게시할 수 있습니다.';
+
+    repliesEditor.innerHTML = (draft.thread.replies || []).map((reply, idx) => `
+      <div>
+        <label class="block text-xs text-gray-500 mb-1">Reply ${idx + 1}</label>
+        <textarea
+          data-index="${idx + 1}"
+          class="x-reply-input w-full px-3 py-2 rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-anthro-darkMid text-sm text-gray-900 dark:text-gray-100 outline-none focus:border-claude-500"
+          rows="3"
+        >${escapeHtml(reply)}</textarea>
+        <div id="x-reply-count-${idx + 1}" class="text-xs font-mono text-gray-400">0/280</div>
+      </div>
+    `).join('');
+
+    bindXCountIndicators();
+  }
+
   // Clear preview
   document.getElementById('clear-preview')?.addEventListener('click', () => {
     parsedItems = [];
@@ -901,8 +1039,10 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
       setSubmitLoading(false);
 
       // Start workflow polling
-      showStatus(`✅ 커밋 완료${skippedMsg} · ${shortSha}\n⏳ X 포스팅 워크플로 대기 중...`, 'info');
-      startWorkflowTracking(repo, token, newCommit.sha, newItems.length);
+      showStatus(`✅ 커밋 완료${skippedMsg} · ${shortSha}\n⏳ X 초안 생성 워크플로 대기 중...`, 'info');
+      currentCommittedSha = newCommit.sha;
+      currentRepoForSubmit = repo;
+      startWorkflowTracking(repo, token, newCommit.sha, newItems.length, undefined, requireManualApprovalForCurrentSubmit);
     } catch (err: any) {
       showStatus(`오류: ${err.message}`, 'error');
       setSubmitLoading(false);
@@ -918,6 +1058,7 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
     commitSha: string;
     startedAt: number;
     expectedReplies: number;
+    requireManualApproval?: boolean;
   };
 
   type LivePostProgress = {
@@ -942,6 +1083,7 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
         commitSha: String(parsed.commitSha),
         startedAt: Number(parsed.startedAt),
         expectedReplies: Number(parsed.expectedReplies || 0),
+        requireManualApproval: parsed.requireManualApproval !== false,
       };
     } catch {
       return null;
@@ -953,12 +1095,13 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
     hasActiveWorkflowTracking = false;
   }
 
-  function startWorkflowTracking(repo: string, token: string, commitSha: string, expectedReplies: number, startedAt?: number) {
+  function startWorkflowTracking(repo: string, token: string, commitSha: string, expectedReplies: number, startedAt?: number, requireManualApproval = true) {
     const state: WorkflowTrackingState = {
       repo,
       commitSha,
       startedAt: startedAt || Date.now(),
       expectedReplies: Math.max(0, expectedReplies || 0),
+      requireManualApproval,
     };
     hasActiveWorkflowTracking = true;
     saveWorkflowTracking(state);
@@ -990,6 +1133,60 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
     return { postingReply, totalReplies, postedReplies, degraded };
   }
 
+  async function fetchPrepareDraftPayload(repo: string, token: string, jobId: number) {
+    const res = await fetch(`https://api.github.com/repos/${repo}/actions/jobs/${jobId}/logs`, {
+      headers: { 'Authorization': `token ${token}`, 'Accept': 'application/vnd.github.v3+json' }
+    });
+    if (!res.ok) return null;
+    const text = await res.text();
+    const match = text.match(/X_DRAFT_PAYLOAD_BASE64=([A-Za-z0-9+/=]+)/);
+    if (!match?.[1]) return null;
+    try {
+      return JSON.parse(base64ToUtf8(match[1]));
+    } catch {
+      return null;
+    }
+  }
+
+  async function dispatchApprovedPost(repo: string, token: string, commitSha: string, approvalMode: 'manual_approved' | 'one_time_auto') {
+    const thread = collectEditedThread();
+    if (!thread) {
+      showStatus('X 초안을 불러오지 못했습니다.', 'error');
+      return;
+    }
+
+    const failures = validateThreadLimit(thread.main, thread.replies);
+    if (failures.length > 0) {
+      const msg = failures.map((f) => `${f.phase} ${f.used}/${X_HARD_LIMIT}`).join(', ');
+      showStatus(`길이 제한 초과: ${msg}`, 'error', { autoScroll: true });
+      return;
+    }
+
+    const body = {
+      ref: 'main',
+      inputs: {
+        commit_sha: commitSha,
+        approval_mode: approvalMode,
+        thread_json_b64: utf8ToBase64(JSON.stringify(thread)),
+      }
+    };
+
+    const dispatchRes = await fetch(`https://api.github.com/repos/${repo}/actions/workflows/post-approved.yml/dispatches`, {
+      method: 'POST',
+      headers: {
+        'Authorization': `token ${token}`,
+        'Accept': 'application/vnd.github.v3+json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(body),
+    });
+
+    if (!dispatchRes.ok) {
+      const err = await dispatchRes.text();
+      throw new Error(`승인 게시 워크플로우 실행 실패 (${dispatchRes.status}): ${err}`);
+    }
+  }
+
   async function pollWorkflowStatus(repo: string, token: string, commitSha: string, state?: WorkflowTrackingState) {
     const shortSha = commitSha.slice(0, 7);
     const POLL_INTERVAL = 5000;
@@ -1009,13 +1206,7 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
     const currentSession = pollSessionId;
 
     let polls = 0;
-    let postStartedAt = 0;
-    let liveProgress: LivePostProgress | null = null;
-    let logFetchDisabled = false;
-    let lastLogFetchAt = 0;
-
     const elapsedSeconds = () => Math.max(0, Math.floor((Date.now() - trackingState.startedAt) / 1000));
-    const postElapsedSeconds = () => Math.max(0, Math.floor((Date.now() - postStartedAt) / 1000));
     const isCurrentSession = () => currentSession === pollSessionId;
     const scheduleNext = () => {
       if (!isCurrentSession()) return;
@@ -1028,47 +1219,6 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
       });
       if (!res.ok) return null;
       return res.json();
-    }
-
-    async function maybeUpdateLiveProgress(postJobId?: number) {
-      if (!postJobId || logFetchDisabled) return;
-      const now = Date.now();
-      if (now - lastLogFetchAt < 10000) return; // 10s 마다 로그 파싱
-      lastLogFetchAt = now;
-
-      try {
-        const progress = await fetchPostJobProgress(repo, token, postJobId);
-        if (progress) liveProgress = progress;
-      } catch (e: any) {
-        const msg = String(e?.message || '');
-        if (msg.includes('log-fetch-403') || msg.includes('log-fetch-404')) {
-          // 토큰 권한/엔드포인트 접근 불가 시 과도한 재시도 중단
-          logFetchDisabled = true;
-        }
-      }
-    }
-
-    function buildPostProgressMessage() {
-      if (liveProgress?.degraded) {
-        return '⚠️ reply 차단 감지: main-only 처리 중...';
-      }
-
-      const total = liveProgress?.totalReplies || trackingState.expectedReplies || 0;
-      if (liveProgress?.postingReply && total > 0) {
-        return `🐦 X reply ${liveProgress.postingReply}/${total} 게시 중...`;
-      }
-
-      if (liveProgress?.postedReplies && total > 0) {
-        const next = Math.min(total, liveProgress.postedReplies + 1);
-        return `🐦 X reply ${next}/${total} 게시 준비 중...`;
-      }
-
-      if (total > 0 && postStartedAt > 0) {
-        const estimated = Math.min(total, Math.max(1, Math.floor(postElapsedSeconds() / 11) + 1));
-        return `🐦 X 스레드 게시 중... (reply ${estimated}/${total} 예상)`;
-      }
-
-      return '🐦 X 스레드 게시 중...';
     }
 
     async function poll() {
@@ -1100,24 +1250,39 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
         if (runStatus === 'completed') {
           clearWorkflowTracking();
           const jobsData = await ghApi(`runs/${run.id}/jobs`);
-          const postJob = jobsData?.jobs?.find((j: any) => j.name === 'post_x');
+          const prepareJob = jobsData?.jobs?.find((j: any) => j.name === 'prepare');
 
           if (runConclusion === 'success') {
-            if (postJob?.conclusion === 'success') {
-              showStatus(`✅ 커밋 완료 · ${shortSha}\n✅ X 포스팅 성공! 스레드가 게시되었습니다.`, 'success');
-              fadeStatusAfter(7000);
-            } else if (postJob?.conclusion === 'skipped') {
-              showStatus(`✅ 커밋 완료 · ${shortSha}\n⏭️ X 포스팅 건너뜀 (ENABLE_X_POST 미설정 또는 새 항목 없음)`, 'info');
-              fadeStatusAfter(7000);
+            const draftPayload = prepareJob?.id
+              ? await fetchPrepareDraftPayload(repo, token, prepareJob.id)
+              : null;
+
+            if (draftPayload?.thread?.main) {
+              const draft = {
+                commitSha,
+                thread: {
+                  main: String(draftPayload.thread.main || ''),
+                  replies: Array.isArray(draftPayload.thread.replies) ? draftPayload.thread.replies.map((x: any) => String(x || '')) : [],
+                },
+                meta: draftPayload.meta || {},
+              };
+
+              currentCommittedSha = commitSha;
+              currentRepoForSubmit = repo;
+              showXDraftReview(draft);
+
+              if (trackingState.requireManualApproval === false) {
+                showStatus(`✅ 커밋 완료 · ${shortSha}\n🤖 자동 승인 모드로 X 게시를 시작합니다...`, 'info', { autoScroll: true });
+                await dispatchApprovedPost(repo, token, commitSha, 'one_time_auto');
+                await pollApprovedPostStatus(repo, token, commitSha, Date.now());
+              } else {
+                showStatus(`✅ 커밋 완료 · ${shortSha}\n📝 X 초안이 준비되었습니다. 문안을 확인한 뒤 승인해 주세요.`, 'success', { autoScroll: true });
+              }
             } else {
-              showStatus(`✅ 커밋 완료 · ${shortSha}\n✅ 워크플로 완료`, 'success');
-              fadeStatusAfter(7000);
+              showStatus(`✅ 커밋 완료 · ${shortSha}\n⚠️ X 초안을 찾지 못했습니다. Actions에서 notify-artifacts를 확인하세요.`, 'warn');
             }
           } else {
-            const failMsg = postJob?.conclusion === 'failure'
-              ? 'X 포스팅 실패 — Actions에서 상세 로그를 확인하세요.'
-              : `워크플로 ${runConclusion || '실패'}`;
-            showStatus(`✅ 커밋 완료 · ${shortSha}\n❌ ${failMsg}`, 'error');
+            showStatus(`✅ 커밋 완료 · ${shortSha}\n❌ 워크플로 ${runConclusion || '실패'}`, 'error');
           }
           return;
         }
@@ -1126,17 +1291,12 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
         const jobs = jobsData?.jobs || [];
         const activeJob = jobs.find((j: any) => j.status === 'in_progress');
         const activeStep = activeJob?.steps?.find((s: any) => s.status === 'in_progress');
-        const postJob = jobs.find((j: any) => j.name === 'post_x');
 
         let progressMsg = '';
         if (activeJob?.name === 'prepare') {
           progressMsg = '📦 데이터 준비 중...';
           if (activeStep?.name?.includes('Build digest')) progressMsg = '📦 포스트 생성 중...';
           else if (activeStep?.name?.includes('Extract')) progressMsg = '📦 새 항목 추출 중...';
-        } else if (activeJob?.name === 'post_x') {
-          if (!postStartedAt) postStartedAt = Date.now();
-          await maybeUpdateLiveProgress(postJob?.id);
-          progressMsg = buildPostProgressMessage();
         } else if (jobs.every((j: any) => j.status === 'queued')) {
           progressMsg = '⏳ 워크플로 실행 대기 중...';
         } else {
@@ -1152,6 +1312,82 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
     }
 
     poll();
+  }
+
+  async function pollApprovedPostStatus(repo: string, token: string, commitSha: string, dispatchedAt: number) {
+    const shortSha = commitSha.slice(0, 7);
+    const POLL_INTERVAL = 5000;
+    const MAX_POLLS = 96;
+    let polls = 0;
+    let liveProgress: LivePostProgress | null = null;
+    let lastLogFetchAt = 0;
+
+    async function fetchWorkflowRuns() {
+      const res = await fetch(`https://api.github.com/repos/${repo}/actions/workflows/post-approved.yml/runs?per_page=10`, {
+        headers: { 'Authorization': `token ${token}`, 'Accept': 'application/vnd.github.v3+json' }
+      });
+      if (!res.ok) return null;
+      return res.json();
+    }
+
+    async function fetchJobs(runId: number) {
+      const res = await fetch(`https://api.github.com/repos/${repo}/actions/runs/${runId}/jobs`, {
+        headers: { 'Authorization': `token ${token}`, 'Accept': 'application/vnd.github.v3+json' }
+      });
+      if (!res.ok) return null;
+      return res.json();
+    }
+
+    return new Promise<void>((resolve) => {
+      const tick = async () => {
+        polls++;
+        if (polls > MAX_POLLS) {
+          showStatus(`✅ 커밋 완료 · ${shortSha}\n⚠️ 승인 게시 상태 확인 시간 초과 — Actions에서 확인하세요.`, 'warn');
+          resolve();
+          return;
+        }
+
+        const runsData = await fetchWorkflowRuns();
+        const runs = runsData?.workflow_runs || [];
+        const run = runs.find((r: any) => Date.parse(r.created_at || '') >= (dispatchedAt - 30000));
+        if (!run) {
+          showStatus(`✅ 커밋 완료 · ${shortSha}\n⏳ 승인 게시 워크플로 시작 대기 중...`, 'info');
+          setTimeout(tick, POLL_INTERVAL);
+          return;
+        }
+
+        const jobsData = await fetchJobs(run.id);
+        const postJob = jobsData?.jobs?.find((j: any) => j.name === 'post_x');
+
+        if (postJob?.status === 'in_progress' && Date.now() - lastLogFetchAt > 10000) {
+          lastLogFetchAt = Date.now();
+          if (postJob?.id) {
+            const progress = await fetchPostJobProgress(repo, token, postJob.id).catch(() => null);
+            if (progress) liveProgress = progress;
+          }
+        }
+
+        if (run.status === 'completed') {
+          if (run.conclusion === 'success') {
+            showStatus(`✅ 커밋 완료 · ${shortSha}\n✅ X 포스팅 성공!`, 'success', { autoScroll: true });
+            fadeStatusAfter(7000);
+          } else {
+            const degraded = liveProgress?.degraded ? '\n⚠️ reply 차단(main-only) 가능성: Actions 로그를 확인하세요.' : '';
+            showStatus(`✅ 커밋 완료 · ${shortSha}\n❌ X 포스팅 실패${degraded}`, 'error', { autoScroll: true });
+          }
+          resolve();
+          return;
+        }
+
+        if (liveProgress?.postingReply && liveProgress?.totalReplies) {
+          showStatus(`✅ 커밋 완료 · ${shortSha}\n🐦 X reply ${liveProgress.postingReply}/${liveProgress.totalReplies} 게시 중...`, 'info');
+        } else {
+          showStatus(`✅ 커밋 완료 · ${shortSha}\n🐦 승인된 문안으로 X 게시 중...`, 'info');
+        }
+        setTimeout(tick, POLL_INTERVAL);
+      };
+      tick();
+    });
   }
 
   function fadeStatusAfter(ms: number) {
@@ -1202,6 +1438,8 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
         return `<div class="flex items-center gap-1.5"><span>${icon}</span><span class="truncate">${escapeHtml(item.title)}</span></div>`;
       }).join('');
     }
+    const approvalEl = document.getElementById('confirm-manual-approval') as HTMLInputElement | null;
+    if (approvalEl) approvalEl.checked = true;
     modal.classList.remove('hidden');
   }
 
@@ -1225,6 +1463,8 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
   });
 
   document.getElementById('confirm-submit')?.addEventListener('click', () => {
+    const approvalEl = document.getElementById('confirm-manual-approval') as HTMLInputElement | null;
+    requireManualApprovalForCurrentSubmit = approvalEl ? approvalEl.checked : true;
     closeConfirmModal();
     if (pendingSubmitItems.length > 0) {
       submitToGitHub(pendingSubmitItems);
@@ -1243,6 +1483,38 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
       navigator.clipboard.writeText(jsonOutput.textContent || '');
       showToast('JSON이 클립보드에 복사되었습니다');
     }
+  });
+
+  document.getElementById('x-approve-post-btn')?.addEventListener('click', async () => {
+    const token = localStorage.getItem('github_token');
+    if (!token) {
+      showStatus('GitHub 토큰이 필요합니다.', 'error');
+      return;
+    }
+    if (!xDraftData || !currentCommittedSha || !currentRepoForSubmit) {
+      showStatus('승인할 X 초안이 없습니다. 먼저 항목을 커밋해 주세요.', 'warn');
+      return;
+    }
+
+    try {
+      showStatus(`✅ 커밋 완료 · ${currentCommittedSha.slice(0, 7)}\n⏳ 승인 게시 워크플로 실행 중...`, 'info');
+      await dispatchApprovedPost(currentRepoForSubmit, token, currentCommittedSha, 'manual_approved');
+      await pollApprovedPostStatus(currentRepoForSubmit, token, currentCommittedSha, Date.now());
+    } catch (err: any) {
+      showStatus(`승인 게시 실행 실패: ${err.message}`, 'error');
+    }
+  });
+
+  document.getElementById('x-copy-thread-btn')?.addEventListener('click', async () => {
+    const thread = collectEditedThread();
+    if (!thread) return;
+    const text = [
+      '=== MAIN ===',
+      thread.main,
+      ...thread.replies.flatMap((r, i) => ['', `=== REPLY ${i + 1} ===`, r]),
+    ].join('\n');
+    await navigator.clipboard.writeText(text);
+    showToast('X 스레드가 클립보드에 복사되었습니다');
   });
 
   // ─── GitHub token ──────────────────────
@@ -1308,7 +1580,7 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
     }
 
     showStatus(`🔄 이전 워크플로 상태 복구 중... · ${state.commitSha.slice(0, 7)}`, 'info');
-    startWorkflowTracking(state.repo, token, state.commitSha, state.expectedReplies, state.startedAt);
+    startWorkflowTracking(state.repo, token, state.commitSha, state.expectedReplies, state.startedAt, state.requireManualApproval !== false);
   }
 
   window.addEventListener('beforeunload', (e) => {

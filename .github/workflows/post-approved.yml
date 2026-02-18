@@ -105,6 +105,16 @@ jobs:
             " >> "$GITHUB_STEP_SUMMARY"
           fi
 
+      - name: Emit post result payload
+        if: always() && hashFiles('artifacts/post-result.json') != ''
+        run: |
+          node -e "
+            const fs = require('fs');
+            const raw = fs.readFileSync('artifacts/post-result.json', 'utf8');
+            const b64 = Buffer.from(raw, 'utf8').toString('base64');
+            console.log('POST_RESULT_BASE64=' + b64);
+          "
+
       - name: Upload post diagnostics
         if: always() && hashFiles('artifacts/post-result.json') != ''
         uses: actions/upload-artifact@v4
