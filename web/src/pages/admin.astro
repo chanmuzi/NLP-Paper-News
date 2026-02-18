@@ -254,7 +254,7 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
       </div>
 
       <details class="mt-4 p-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-anthro-darkMid">
-        <summary class="text-sm font-semibold text-gray-700 dark:text-gray-200 cursor-pointer">AI로 텍스트 다듬기 (선택)</summary>
+        <summary class="text-sm font-semibold text-gray-700 dark:text-gray-200 cursor-pointer">AI로 텍스트 다듬기</summary>
         <div class="mt-3 space-y-3">
           <div class="p-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-anthro-darkSurface">
             <label class="block text-xs text-gray-500 mb-1">Main instruction</label>
@@ -283,7 +283,8 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
       </details>
 
       <div class="mt-4 flex flex-wrap gap-2">
-        <button id="x-approve-post-btn" class="px-4 py-2 rounded-lg bg-claude-500 text-white text-sm font-semibold hover:bg-claude-600 transition-all">전체 승인 후 X 게시</button>
+        <button id="x-approve-post-btn" class="px-4 py-2 rounded-lg bg-claude-500 text-white text-sm font-semibold hover:bg-claude-600 transition-all">X 게시</button>
+        <button id="x-approve-all-btn" class="px-4 py-2 rounded-lg border border-gray-200 dark:border-gray-700 text-sm font-semibold text-gray-700 dark:text-gray-200 hover:border-claude-400 transition-all">전체 승인</button>
         <button id="x-copy-thread-btn" class="px-3 py-2 rounded-lg border border-gray-200 dark:border-gray-700 text-sm text-gray-600 dark:text-gray-300 hover:border-claude-400 transition-all">스레드 복사</button>
       </div>
       <div id="x-review-note" class="mt-2 text-xs text-gray-400"></div>
@@ -976,6 +977,7 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
   function updateReviewApprovalUi() {
     const mainBtn = document.getElementById('x-main-approve-btn');
     const repliesBtn = document.getElementById('x-replies-approve-btn');
+    const allBtn = document.getElementById('x-approve-all-btn') as HTMLButtonElement | null;
     const postBtn = document.getElementById('x-approve-post-btn') as HTMLButtonElement | null;
     const noteEl = document.getElementById('x-review-note');
 
@@ -987,6 +989,19 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
       repliesBtn.textContent = xRepliesApproved ? 'replies 승인됨' : 'replies 승인';
       repliesBtn.className = `text-xs px-2 py-1 rounded-md border ${xRepliesApproved ? 'border-claude-300 text-claude-600 bg-claude-50 dark:bg-claude-950/20' : 'border-gray-200 dark:border-gray-700 text-gray-500 hover:border-claude-400'}`;
     }
+    if (allBtn) {
+      const allApproved = xMainApproved && xRepliesApproved;
+      allBtn.textContent = allApproved ? '전체 승인 해제' : '전체 승인';
+      allBtn.className = `px-4 py-2 rounded-lg border text-sm font-semibold transition-all ${
+        allApproved
+          ? 'border-claude-300 text-claude-700 bg-claude-50 dark:bg-claude-950/20'
+          : 'border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-200 hover:border-claude-400'
+      }`;
+      allBtn.disabled = isPostingInProgress;
+      allBtn.classList.toggle('opacity-50', isPostingInProgress);
+      allBtn.classList.toggle('cursor-not-allowed', isPostingInProgress);
+    }
+
     if (postBtn) {
       const enabled = xMainApproved && xRepliesApproved;
       postBtn.disabled = !enabled || isPostingInProgress;
@@ -995,7 +1010,7 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
       if (isPostingInProgress) {
         postBtn.textContent = '게시 진행 중...';
       } else {
-        postBtn.textContent = '전체 승인 후 X 게시';
+        postBtn.textContent = 'X 게시';
       }
     }
     if (noteEl) {
@@ -1914,6 +1929,14 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
 
   document.getElementById('x-replies-approve-btn')?.addEventListener('click', () => {
     xRepliesApproved = !xRepliesApproved;
+    updateReviewApprovalUi();
+  });
+
+  document.getElementById('x-approve-all-btn')?.addEventListener('click', () => {
+    if (isPostingInProgress) return;
+    const allApproved = xMainApproved && xRepliesApproved;
+    xMainApproved = !allApproved;
+    xRepliesApproved = !allApproved;
     updateReviewApprovalUi();
   });
 
