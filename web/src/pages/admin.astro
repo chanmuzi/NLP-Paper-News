@@ -1380,6 +1380,8 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
   };
 
   type LivePostProgress = {
+    postingMain?: boolean;
+    mainPosted?: boolean;
     postingReply?: number;
     totalReplies?: number;
     postedReplies?: number;
@@ -1437,6 +1439,8 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
     const text = await res.text();
     if (!text) return null;
 
+    const postingMain = /Posting main tweet\.\.\./.test(text);
+    const mainPosted = /Main tweet posted:/.test(text);
     const postingMatches = [...text.matchAll(/Posting reply (\d+)\/(\d+)\.\.\./g)];
     const postedMatches = [...text.matchAll(/Reply (\d+) posted:/g)];
     const totalFromComplete = text.match(/Thread complete: 1 main \+ (\d+) replies/);
@@ -1448,7 +1452,7 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
     const totalReplies = latestPosting ? Number(latestPosting[2]) : (totalFromComplete ? Number(totalFromComplete[1]) : undefined);
     const postedReplies = latestPosted ? Number(latestPosted[1]) : undefined;
 
-    return { postingReply, totalReplies, postedReplies, degraded };
+    return { postingMain, mainPosted, postingReply, totalReplies, postedReplies, degraded };
   }
 
   async function fetchPrepareDraftPayload(repo: string, token: string, jobId: number) {
@@ -1834,6 +1838,8 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
 
         if (liveProgress?.postingReply && liveProgress?.totalReplies) {
           showStatus(`커밋 완료 · ${shortSha}\nX reply ${liveProgress.postingReply}/${liveProgress.totalReplies} 게시 중...`, 'info');
+        } else if (liveProgress?.postingMain && !liveProgress?.mainPosted) {
+          showStatus(`커밋 완료 · ${shortSha}\nX main 게시 중...`, 'info');
         } else {
           showStatus(`커밋 완료 · ${shortSha}\n승인된 draft로 X 게시 중...`, 'info');
         }
@@ -1857,13 +1863,15 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
       return;
     }
 
-    showStatus(`커밋 완료 · ${shortSha}\nX 게시 시뮬레이션 시작...`, 'info');
+    showStatus(`커밋 완료 · ${shortSha}\n[mock] 승인된 draft로 X 게시 중...`, 'info');
+    await sleep(1500);
+    showStatus(`커밋 완료 · ${shortSha}\n[mock] X main 게시 중...`, 'info');
     await sleep(1200);
     for (let i = 0; i < thread.replies.length; i++) {
-      showStatus(`커밋 완료 · ${shortSha}\nX reply ${i + 1}/${thread.replies.length} 게시 중...`, 'info');
+      showStatus(`커밋 완료 · ${shortSha}\n[mock] X reply ${i + 1}/${thread.replies.length} 게시 중...`, 'info');
       await sleep(1100);
     }
-    showStatus(`커밋 완료 · ${shortSha}\nX 게시 시뮬레이션이 완료되었습니다.`, 'success', { autoScroll: true });
+    showStatus(`커밋 완료 · ${shortSha}\n[mock] X 게시가 완료되었습니다.`, 'success', { autoScroll: true });
     await sleep(4200);
     clearXDraftReview();
     fadeStatusNow();
