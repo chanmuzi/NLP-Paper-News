@@ -1621,8 +1621,14 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
       const res = await fetch(`https://api.github.com/repos/${repo}/actions/${endpoint}`, {
         headers: { 'Authorization': `token ${token}`, 'Accept': 'application/vnd.github.v3+json' }
       });
-      if (!res.ok) return null;
-      return res.json();
+      const status = res.status;
+      let data: any = null;
+      try {
+        data = await res.json();
+      } catch {
+        data = null;
+      }
+      return { ok: res.ok, status, data };
     }
 
     async function poll() {
@@ -1640,14 +1646,36 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
       }
 
       try {
-        const data = await ghApi(`runs?head_sha=${commitSha}&per_page=5`);
-        if (!data?.workflow_runs?.length) {
+        const bySha = await ghApi(`runs?head_sha=${commitSha}&per_page=5`);
+
+        if (!bySha.ok && [401, 403].includes(bySha.status)) {
+          clearWorkflowTracking();
+          showStatus(`커밋 완료 · ${shortSha}\n워크플로 상태 조회 권한이 없습니다. 토큰 scope(repo/workflow)를 확인해 주세요.`, 'error');
+          return;
+        }
+
+        // head_sha 조회가 비거나 지연되는 경우를 대비해 workflow 기준으로 fallback 조회
+        let runs = bySha.data?.workflow_runs || [];
+        if (!runs.length) {
+          const fallback = await ghApi(`workflows/notify.yml/runs?per_page=20&event=push&branch=main`);
+          if (fallback.ok) {
+            const candidates = fallback.data?.workflow_runs || [];
+            runs = candidates.filter((r: any) => {
+              const created = Date.parse(r.created_at || '');
+              const startedAt = Number(trackingState.startedAt || 0);
+              const nearNow = Number.isFinite(created) && created >= (startedAt - 120000);
+              return nearNow && (r.head_sha === commitSha || r.name === 'Notify & Post to X');
+            });
+          }
+        }
+
+        if (!runs.length) {
           showStatus(`커밋 완료 · ${shortSha}\n워크플로 트리거 대기 중... (${elapsedSeconds()}s)`, 'info');
           scheduleNext();
           return;
         }
 
-        const run = data.workflow_runs.find((r: any) => r.name === 'Notify & Post to X') || data.workflow_runs[0];
+        const run = runs.find((r: any) => r.head_sha === commitSha) || runs.find((r: any) => r.name === 'Notify & Post to X') || runs[0];
         const runStatus = run.status;
         const runConclusion = run.conclusion;
 
