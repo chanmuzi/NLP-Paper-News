@@ -1446,14 +1446,14 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
     const thread = collectEditedThread();
     if (!thread) {
       showStatus('X draft를 불러오지 못했습니다.', 'error');
-      return;
+      return false;
     }
 
     const failures = validateThreadLimit(thread.main, thread.replies);
     if (failures.length > 0) {
       const msg = failures.map((f) => `${f.phase} ${f.used}/${X_HARD_LIMIT}`).join(', ');
       showStatus(`길이 제한 초과: ${msg}`, 'error', { autoScroll: true });
-      return;
+      return false;
     }
 
     const body = {
@@ -1481,6 +1481,7 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
       if (dispatchRes.status === 403) throw new Error('workflow 실행 권한이 부족합니다. 토큰 scope를 확인해 주세요 (repo/workflow).');
       throw new Error(`승인 게시 워크플로우 실행 실패 (${dispatchRes.status}): ${err}`);
     }
+    return true;
   }
 
   async function dispatchRewriteDraft(repo: string, token: string, commitSha: string, instruction: string) {
@@ -1522,7 +1523,7 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
       });
       if (!res.ok) return null;
       const data = await res.json();
-      return (data.workflow_runs || []).find((r: any) => Date.parse(r.created_at || '') >= (dispatchedAt - 30000));
+      return (data.workflow_runs || []).find((r: any) => Date.parse(r.created_at || '') >= dispatchedAt);
     };
 
     const findJob = async (runId: number) => {
@@ -1636,7 +1637,8 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
 
               if (trackingState.requireManualApproval === false) {
                 showStatus(`✅ 커밋 완료 · ${shortSha}\n🤖 자동 승인 모드로 X 게시를 시작합니다...`, 'info', { autoScroll: true });
-                await dispatchApprovedPost(repo, token, commitSha, 'one_time_auto');
+                const dispatched = await dispatchApprovedPost(repo, token, commitSha, 'one_time_auto');
+                if (!dispatched) return;
                 await pollApprovedPostStatus(repo, token, commitSha, Date.now());
               } else {
                 showStatus(`✅ 커밋 완료 · ${shortSha}\n📝 X draft가 준비되었습니다. draft를 확인한 뒤 승인해 주세요.`, 'success', { autoScroll: true });
@@ -1911,7 +1913,8 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
         await runMockPostFlow(currentCommittedSha);
       } else {
         showStatus(`✅ 커밋 완료 · ${currentCommittedSha.slice(0, 7)}\n⏳ 승인 게시 워크플로 실행 중...`, 'info');
-        await dispatchApprovedPost(currentRepoForSubmit, token!, currentCommittedSha, 'manual_approved');
+        const dispatched = await dispatchApprovedPost(currentRepoForSubmit, token!, currentCommittedSha, 'manual_approved');
+        if (!dispatched) return;
         await pollApprovedPostStatus(currentRepoForSubmit, token!, currentCommittedSha, Date.now());
       }
     } catch (err: any) {

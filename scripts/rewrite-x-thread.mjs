@@ -108,6 +108,65 @@ function validateThread(thread) {
   return failures;
 }
 
+function parseTarget(instruction, totalReplies) {
+  const raw = String(instruction || '');
+  const lowered = raw.toLowerCase();
+  if (/\[target:\s*main only\]/.test(lowered)) {
+    return { type: 'main_only', updatedIndices: [] };
+  }
+  if (/\[target:\s*all replies\]/.test(lowered)) {
+    return { type: 'all_replies', updatedIndices: Array.from({ length: totalReplies }, (_, i) => i + 1) };
+  }
+  const single = lowered.match(/\[target:\s*reply\s+(\d+)\s+only/);
+  if (single) {
+    const idx = Number(single[1]);
+    if (Number.isFinite(idx) && idx >= 1 && idx <= totalReplies) {
+      return { type: 'single_reply', updatedIndices: [idx] };
+    }
+  }
+  return { type: 'unknown', updatedIndices: [] };
+}
+
+function applyScopedUpdate({ original, candidate, target }) {
+  const originalMain = String(original.main || '');
+  const originalReplies = Array.isArray(original.replies) ? original.replies.map((x) => String(x || '')) : [];
+  const candidateMain = String(candidate.main || '');
+  const candidateReplies = Array.isArray(candidate.replies) ? candidate.replies.map((x) => String(x || '')) : [];
+
+  if (target.type === 'main_only') {
+    return {
+      main: candidateMain || originalMain,
+      replies: originalReplies,
+      updatedIndices: [],
+    };
+  }
+
+  if (target.type === 'all_replies') {
+    const replies = originalReplies.map((prev, i) => String(candidateReplies[i] || prev));
+    return {
+      main: originalMain,
+      replies,
+      updatedIndices: target.updatedIndices,
+    };
+  }
+
+  if (target.type === 'single_reply' && target.updatedIndices.length === 1) {
+    const targetIdx = target.updatedIndices[0] - 1;
+    const replies = originalReplies.map((prev, i) => (i === targetIdx ? String(candidateReplies[i] || prev) : prev));
+    return {
+      main: originalMain,
+      replies,
+      updatedIndices: target.updatedIndices,
+    };
+  }
+
+  return {
+    main: candidateMain || originalMain,
+    replies: originalReplies.map((prev, i) => String(candidateReplies[i] || prev)),
+    updatedIndices: [],
+  };
+}
+
 async function main() {
   const { thread: threadPath, instruction, out } = parseArgs(process.argv);
   if (!threadPath || !instruction) {
@@ -122,6 +181,7 @@ async function main() {
   }
 
   const original = JSON.parse(fs.readFileSync(threadPath, 'utf8'));
+  const target = parseTarget(instruction, Array.isArray(original.replies) ? original.replies.length : 0);
   const models = getModelCandidates();
 
   let selectedModel = '';
@@ -142,15 +202,20 @@ async function main() {
         },
       });
 
-      const normalized = {
+      const normalizedRaw = {
         main: String(candidate.main || ''),
         replies: Array.isArray(candidate.replies) ? candidate.replies.map((x) => String(x || '')) : [],
+      };
+      const normalizedApplied = applyScopedUpdate({ original, candidate: normalizedRaw, target });
+      const normalized = {
+        main: normalizedApplied.main,
+        replies: normalizedApplied.replies,
       };
 
       const failures = validateThread(normalized);
       if (failures.length === 0) {
         selectedModel = model;
-        rewritten = normalized;
+        rewritten = { ...normalized, updatedIndices: normalizedApplied.updatedIndices };
         break;
       }
       errorMessage = `length_over_limit:${JSON.stringify(failures)}`;
@@ -162,8 +227,14 @@ async function main() {
   const result = rewritten
     ? {
         success: true,
-        thread: rewritten,
-        meta: { model: selectedModel, instruction, hard_limit: X_HARD_LIMIT },
+        thread: { main: rewritten.main, replies: rewritten.replies },
+        meta: {
+          model: selectedModel,
+          instruction,
+          hard_limit: X_HARD_LIMIT,
+          target: target.type,
+          updated_indices: rewritten.updatedIndices || [],
+        },
       }
     : {
         success: false,
@@ -172,7 +243,13 @@ async function main() {
           main: String(original.main || ''),
           replies: Array.isArray(original.replies) ? original.replies.map((x) => String(x || '')) : [],
         },
-        meta: { model: null, instruction, hard_limit: X_HARD_LIMIT },
+        meta: {
+          model: null,
+          instruction,
+          hard_limit: X_HARD_LIMIT,
+          target: target.type,
+          updated_indices: [],
+        },
       };
 
   fs.mkdirSync(out.split('/').slice(0, -1).join('/') || '.', { recursive: true });
