@@ -939,6 +939,196 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
     };
   }
 
+  /**
+   * mock 폴링: pollWorkflowStatus와 동일한 ghApi 반환 형식({ ok, status, data })을
+   * 사용해 queued → in_progress → completed 흐름을 시뮬레이션합니다.
+   * jobsData?.data?.jobs 접근 패턴이 올바르게 작동하는지 로컬에서 검증할 수 있습니다.
+   */
+  async function mockPollWorkflowStatus(items: any[], commitSha: string) {
+    const shortSha = commitSha.slice(0, 7);
+    const POLL_INTERVAL = 1500;
+    const MAX_POLLS = 96;
+    const fakeRunId = 99999;
+    const fakeJobId = 88888;
+    let polls = 0;
+    const startedAt = Date.now();
+    const elapsedSeconds = () => Math.max(0, Math.floor((Date.now() - startedAt) / 1000));
+
+    // 단계: 0=queued, 1=in_progress(extract), 2=in_progress(build digest), 3=completed
+    const phaseSchedule = [
+      { after: 0, phase: 0 },
+      { after: 2, phase: 1 },
+      { after: 4, phase: 2 },
+      { after: 7, phase: 3 },
+    ];
+    const currentPhase = () => {
+      const elapsed = elapsedSeconds();
+      let p = 0;
+      for (const s of phaseSchedule) {
+        if (elapsed >= s.after) p = s.phase;
+      }
+      return p;
+    };
+
+    // ghApi와 동일한 반환 형식을 사용하는 mock
+    function mockGhApi(endpoint: string): { ok: boolean; status: number; data: any } {
+      const phase = currentPhase();
+
+      // runs?head_sha=... 조회
+      if (endpoint.includes('runs?head_sha=')) {
+        if (phase === 0) {
+          // 아직 실행 전 → 빈 배열 (트리거 대기)
+          return { ok: true, status: 200, data: { workflow_runs: [] } };
+        }
+        const status = phase >= 3 ? 'completed' : (phase >= 1 ? 'in_progress' : 'queued');
+        const conclusion = phase >= 3 ? 'success' : null;
+        return {
+          ok: true, status: 200,
+          data: {
+            workflow_runs: [{
+              id: fakeRunId,
+              head_sha: commitSha,
+              name: 'Notify & Post to X',
+              status,
+              conclusion,
+              created_at: new Date(startedAt).toISOString(),
+            }]
+          }
+        };
+      }
+
+      // runs/{id}/jobs 조회 — jobsData?.data?.jobs 패턴 검증 핵심
+      if (endpoint.includes(`runs/${fakeRunId}/jobs`)) {
+        const steps: any[] = [];
+        if (phase === 1) {
+          steps.push({ name: 'Extract new items', status: 'in_progress' });
+        } else if (phase === 2) {
+          steps.push({ name: 'Extract new items', status: 'completed', conclusion: 'success' });
+          steps.push({ name: 'Build digest', status: 'in_progress' });
+        } else if (phase >= 3) {
+          steps.push({ name: 'Extract new items', status: 'completed', conclusion: 'success' });
+          steps.push({ name: 'Build digest', status: 'completed', conclusion: 'success' });
+        }
+
+        return {
+          ok: true, status: 200,
+          data: {
+            jobs: [{
+              id: fakeJobId,
+              name: 'prepare',
+              status: phase >= 3 ? 'completed' : (phase >= 1 ? 'in_progress' : 'queued'),
+              conclusion: phase >= 3 ? 'success' : null,
+              steps,
+            }]
+          }
+        };
+      }
+
+      // workflows/notify.yml/runs fallback
+      if (endpoint.includes('workflows/notify.yml/runs')) {
+        return { ok: true, status: 200, data: { workflow_runs: [] } };
+      }
+
+      return { ok: true, status: 200, data: {} };
+    }
+
+    // 완료 시 draft 생성 (fetchPrepareDraftPayload 대체)
+    const draft = buildMockDraft(items, commitSha);
+
+    if (pollTimer) {
+      clearTimeout(pollTimer);
+      pollTimer = null;
+    }
+    pollSessionId += 1;
+    const currentSession = pollSessionId;
+    const isCurrentSession = () => currentSession === pollSessionId;
+
+    async function poll() {
+      if (!isCurrentSession()) return;
+      polls++;
+
+      if (polls > MAX_POLLS) {
+        clearWorkflowTracking();
+        showStatus(`커밋 완료 · ${shortSha}\n워크플로 상태 확인 시간 초과 — Actions 페이지에서 직접 확인하세요.`, 'warn');
+        return;
+      }
+
+      // pollWorkflowStatus와 동일한 로직 (ghApi 대신 mockGhApi)
+      const bySha = mockGhApi(`runs?head_sha=${commitSha}&per_page=5`);
+
+      if (!bySha.ok && [401, 403].includes(bySha.status)) {
+        clearWorkflowTracking();
+        showStatus(`커밋 완료 · ${shortSha}\n워크플로 상태 조회 권한이 없습니다.`, 'error');
+        return;
+      }
+
+      let runs = bySha.data?.workflow_runs || [];
+      if (!runs.length) {
+        const fallback = mockGhApi(`workflows/notify.yml/runs?per_page=20&event=push&branch=main`);
+        if (fallback.ok) {
+          const candidates = fallback.data?.workflow_runs || [];
+          runs = candidates.filter((r: any) => {
+            const created = Date.parse(r.created_at || '');
+            const nearNow = Number.isFinite(created) && created >= (startedAt - 120000);
+            return nearNow && (r.head_sha === commitSha || r.name === 'Notify & Post to X');
+          });
+        }
+      }
+
+      if (!runs.length) {
+        showStatus(`커밋 완료 · ${shortSha}\n[mock] 워크플로 트리거 대기 중... (${elapsedSeconds()}s)`, 'info');
+        pollTimer = setTimeout(poll, POLL_INTERVAL);
+        return;
+      }
+
+      const run = runs.find((r: any) => r.head_sha === commitSha) || runs.find((r: any) => r.name === 'Notify & Post to X') || runs[0];
+      const runStatus = run.status;
+      const runConclusion = run.conclusion;
+
+      if (runStatus === 'completed') {
+        clearWorkflowTracking();
+        // ★ jobsData?.data?.jobs 패턴 검증 — 여기서 .data 누락 시 draft 못 찾음
+        const jobsData = mockGhApi(`runs/${run.id}/jobs`);
+        const prepareJob = jobsData?.data?.jobs?.find((j: any) => j.name === 'prepare');
+
+        if (runConclusion === 'success') {
+          if (prepareJob?.id) {
+            currentCommittedSha = commitSha;
+            showXDraftReview(draft);
+            showStatus(`커밋 완료 · ${shortSha}\n[mock] X draft가 준비되었습니다. draft를 확인한 뒤 승인해 주세요.`, 'success', { autoScroll: true });
+          } else {
+            showStatus(`커밋 완료 · ${shortSha}\n[mock] X draft를 찾지 못했습니다 (prepareJob 조회 실패).`, 'warn');
+          }
+        } else {
+          showStatus(`커밋 완료 · ${shortSha}\n[mock] 워크플로 ${runConclusion || '실패'}`, 'error');
+        }
+        return;
+      }
+
+      // ★ 진행 중 단계 표시 — 역시 jobsData?.data?.jobs 패턴
+      const jobsData = mockGhApi(`runs/${run.id}/jobs`);
+      const jobs = jobsData?.data?.jobs || [];
+      const activeJob = jobs.find((j: any) => j.status === 'in_progress');
+      const activeStep = activeJob?.steps?.find((s: any) => s.status === 'in_progress');
+
+      let progressMsg = '[mock] ';
+      if (activeJob?.name === 'prepare') {
+        progressMsg += '데이터 준비 중...';
+        if (activeStep?.name?.includes('Build digest')) progressMsg = '[mock] 포스트 생성 중...';
+        else if (activeStep?.name?.includes('Extract')) progressMsg = '[mock] 새 항목 추출 중...';
+      } else if (jobs.every((j: any) => j.status === 'queued')) {
+        progressMsg += '워크플로 실행 대기 중...';
+      } else {
+        progressMsg += `${runStatus}...`;
+      }
+
+      showStatus(`커밋 완료 · ${shortSha}\n${progressMsg} (${elapsedSeconds()}s)`, 'info');
+      pollTimer = setTimeout(poll, POLL_INTERVAL);
+    }
+
+    poll();
+  }
+
   function collectEditedThread() {
     const mainInput = document.getElementById('x-main-input') as HTMLTextAreaElement | null;
     if (!mainInput) return null;
@@ -1168,15 +1358,10 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
 
       currentCommittedSha = fakeSha;
       currentRepoForSubmit = repo;
-      const draft = buildMockDraft(newItems, fakeSha);
-      showXDraftReview(draft);
 
-      if (requireManualApprovalForCurrentSubmit === false) {
-        showStatus(`커밋 완료 · ${fakeSha}\n자동 승인 모드로 X 게시를 시작합니다...`, 'info', { autoScroll: true });
-        await runMockPostFlow(fakeSha);
-      } else {
-        showStatus(`커밋 완료 · ${fakeSha}\nX draft가 준비되었습니다. draft를 확인한 뒤 승인해 주세요.`, 'success', { autoScroll: true });
-      }
+      // mock 폴링으로 워크플로 흐름 시뮬레이션 (pollWorkflowStatus와 동일 패턴 검증)
+      showStatus(`커밋 완료 · ${fakeSha}\n[mock] X draft 생성 워크플로 대기 중...`, 'info');
+      mockPollWorkflowStatus(newItems, fakeSha);
       return;
     }
 
