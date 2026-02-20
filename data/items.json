@@ -1,8 +1,120 @@
 {
   "version": 1,
-  "last_updated": "2026-02-18T17:35:53.015Z",
-  "total_items": 1686,
+  "last_updated": "2026-02-20T06:34:33.770Z",
+  "total_items": 1690,
   "items": [
+    {
+      "id": "uiuc-meta-amazon-google-deepmind-yale-agentic-reasoning-for-large-language-models",
+      "type": "paper",
+      "org": "UIUC, Meta, Amazon, Google DeepMind, Yale",
+      "title": "Agentic Reasoning for Large Language Models",
+      "url": "https://arxiv.org/abs/2601.12538",
+      "date": "2026-02-W03",
+      "year": "2026",
+      "month": "2",
+      "week": "3",
+      "bullets": [
+        {
+          "text": "여러 agentic reasoning framework를 planning, tool use, memory, multi-agent coordination 관점에서 분석",
+          "level": 1
+        },
+        {
+          "text": "single agent in stable environment → great / multi agent in dynamic environment → bad",
+          "level": 1
+        },
+        {
+          "text": "agentic reasoning을 세 계층으로 나눠 로드맵 제시",
+          "level": 1
+        },
+        {
+          "text": "foundational agentic reasoning, self-evoling agentic reasoning, collective multi-agent reasoning",
+          "level": 2
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "google-a-new-way-to-express-yourself-gemini-can-now-create-music",
+      "type": "dev",
+      "org": "Google",
+      "title": "A new way to express yourself: Gemini can now create music",
+      "url": "https://blog.google/innovation-and-ai/products/gemini-app/lyria-3",
+      "date": "2026-02-W03",
+      "year": "2026",
+      "month": "2",
+      "week": "3",
+      "bullets": [
+        {
+          "text": "Gemini 앱에 Lyria 3 모델로 음악을 생성하는 기능을 Beta로 제공",
+          "level": 1
+        },
+        {
+          "text": "글, 사진, 영상을 기반으로 30초 분량의 음악 트랙 생성",
+          "level": 1
+        },
+        {
+          "text": "Nano Banana로 만든 커버 아트, 쉽게 다운로드 가능. 유튜브 쇼츠용으로 생성 가능.",
+          "level": 1
+        },
+        {
+          "text": "SynthID라는 워터마크 함께 생성되어 AI 생성 음악인지 판별 가능",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "openai-introducing-evmbench",
+      "type": "dev",
+      "org": "OpenAI",
+      "title": "Introducing EVMbench",
+      "url": "https://openai.com/index/introducing-evmbench",
+      "date": "2026-02-W03",
+      "year": "2026",
+      "month": "2",
+      "week": "3",
+      "bullets": [
+        {
+          "text": "Paradigm이라는 기업과 함께 EVMbench 공동 개발. EVM 기반 블록체인 환경에서 에이전트의 실질적인 사이버 보안 능력을 측정",
+          "level": 1
+        },
+        {
+          "text": "AI agents가 high-severity smart contract vulnerabilities를 detect, patch, exploit 하는 능력 평가 (3개의 평가 모드)",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "anthropic-measuring-ai-agent-autonomy-in-practice",
+      "type": "dev",
+      "org": "Anthropic",
+      "title": "Measuring AI agent autonomy in practice",
+      "url": "https://www.anthropic.com/research/measuring-agent-autonomy",
+      "date": "2026-02-W03",
+      "year": "2026",
+      "month": "2",
+      "week": "3",
+      "bullets": [
+        {
+          "text": "Claude Code와 Public API 수백만 개 상호작용을 분석하여 AI agent의 자율성을 측정한 연구",
+          "level": 1
+        },
+        {
+          "text": "Claude Code의 자율 작업 시간 증가. 중앙값은 45초 정도로 비슷. 상위 0.1%는 25분 → 45분 정도로 증가.",
+          "level": 1
+        },
+        {
+          "text": "숙련된 사용자일수록 ‘자동 승인 + 중간 개입’ 패턴으로 활용",
+          "level": 1
+        },
+        {
+          "text": "복잡한 목표일수록 인간보다 Claude가 먼저 멈춰서 질문하는 경우가 많음",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "google-webmcp-is-available-for-early-preview",
       "type": "dev",
@@ -36958,9 +37070,9 @@
     }
   ],
   "stats": {
-    "total": 1686,
-    "paper": 1023,
-    "dev": 622,
+    "total": 1690,
+    "paper": 1024,
+    "dev": 625,
     "news": 36
   }
 }
