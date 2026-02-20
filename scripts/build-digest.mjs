@@ -217,17 +217,19 @@ function getIcon(type) {
   return icons[type] || '📄';
 }
 
-function renderMainText({ dateStr, updateLabel, totalCount, entries, siteBaseUrl, visibleCount, titleMaxLen = null }) {
+function renderMainText({ dateStr, updateLabel, totalCount, entries, siteBaseUrl, visibleCount, titleMaxLen = null, includeOrg = true }) {
   const lines = [];
   lines.push(`📌 ${dateStr} ${updateLabel} (${totalCount}건)`);
   lines.push('');
 
   const picked = (entries || []).slice(0, visibleCount);
   for (const e of picked) {
+    const org = limitPlain(String(e?.org || ''), 26);
     const rawTitle = String(e?.titleShort || '');
     const title = titleMaxLen ? limitPlain(rawTitle, titleMaxLen) : rawTitle;
     const safeTitle = title || '업데이트';
-    lines.push(`• ${safeTitle}`);
+    if (includeOrg && org) lines.push(`• [${org}] ${safeTitle}`);
+    else lines.push(`• ${safeTitle}`);
   }
 
   const rest = Math.max(0, totalCount - picked.length);
@@ -241,7 +243,7 @@ function renderMainText({ dateStr, updateLabel, totalCount, entries, siteBaseUrl
 }
 
 function forceMainWithinLimit({ limit, dateStr, updateLabel, totalCount, entries, siteBaseUrl }) {
-  // 1) 제목 축약 없이 먼저 시도
+  // 1) 기관명 유지 + 제목 비축약 우선
   for (let visibleCount = totalCount; visibleCount >= 1; visibleCount--) {
     const candidate = renderMainText({
       dateStr,
@@ -251,11 +253,12 @@ function forceMainWithinLimit({ limit, dateStr, updateLabel, totalCount, entries
       siteBaseUrl,
       visibleCount,
       titleMaxLen: null,
+      includeOrg: true,
     });
     if (isWithinXLimit(candidate, limit)) return candidate;
   }
 
-  // 2) 초과 시에만 점진적 축약
+  // 2) 기관명 유지 + 제목 점진 축약
   const titleLens = [56, 46, 38, 32, 26, 20];
   for (const titleMaxLen of titleLens) {
     for (let visibleCount = totalCount; visibleCount >= 1; visibleCount--) {
@@ -267,6 +270,37 @@ function forceMainWithinLimit({ limit, dateStr, updateLabel, totalCount, entries
         siteBaseUrl,
         visibleCount,
         titleMaxLen,
+        includeOrg: true,
+      });
+      if (isWithinXLimit(candidate, limit)) return candidate;
+    }
+  }
+
+  // 3) 길이 부족 시 기관명 생략 후 재시도
+  for (let visibleCount = totalCount; visibleCount >= 1; visibleCount--) {
+    const candidate = renderMainText({
+      dateStr,
+      updateLabel,
+      totalCount,
+      entries,
+      siteBaseUrl,
+      visibleCount,
+      titleMaxLen: null,
+      includeOrg: false,
+    });
+    if (isWithinXLimit(candidate, limit)) return candidate;
+  }
+  for (const titleMaxLen of titleLens) {
+    for (let visibleCount = totalCount; visibleCount >= 1; visibleCount--) {
+      const candidate = renderMainText({
+        dateStr,
+        updateLabel,
+        totalCount,
+        entries,
+        siteBaseUrl,
+        visibleCount,
+        titleMaxLen,
+        includeOrg: false,
       });
       if (isWithinXLimit(candidate, limit)) return candidate;
     }
@@ -278,14 +312,15 @@ function forceMainWithinLimit({ limit, dateStr, updateLabel, totalCount, entries
   return isWithinXLimit(minimal, limit) ? compactLines(minimal) : clipToXLimit(minimal, limit);
 }
 
-function renderReplyText({ index, total, titleShort, summaryLine, url, titleMaxLen = null, summaryMaxLen = null }) {
+function renderReplyText({ index, total, org = '', titleShort, summaryLine, url, titleMaxLen = null, summaryMaxLen = null, includeOrg = true }) {
   const rawTitle = String(titleShort || '');
   const rawSummary = sanitizeReplySummary(summaryLine || '');
   const title = titleMaxLen ? limitPlain(rawTitle, titleMaxLen) : rawTitle;
   const summary = summaryMaxLen ? limitPlain(rawSummary, summaryMaxLen) : rawSummary;
+  const orgLabel = limitPlain(String(org || ''), 24);
   const safeTitle = title || '요약';
   const safeSummary = summary || '핵심 업데이트입니다.';
-  const line1 = `[${index}/${total}] ${safeTitle}`;
+  const line1 = includeOrg && orgLabel ? `[${index}/${total}] [${orgLabel}] ${safeTitle}` : `[${index}/${total}] ${safeTitle}`;
   // 카드 preview 유도를 위해 URL은 라벨 없이 마지막 줄에만 추가
   return url ? compactLines(`${line1}\n\n${safeSummary}\n\n${url}`) : compactLines(`${line1}\n\n${safeSummary}`);
 }
@@ -297,18 +332,22 @@ function forceReplyWithinLimit({ limit, item, index, total, titleShort, summaryL
   const titleCandidates = [titleShort, item.title, limitPlain(item.title, 34), limitPlain(item.title, 24)].filter(Boolean);
   const summaryLens = [90, 72, 56, 42, 30];
 
-  for (const title of titleCandidates) {
-    for (const summaryMaxLen of summaryLens) {
-      const candidate = renderReplyText({
-        index,
-        total,
-        titleShort: title,
-        summaryLine: fallbackSummary,
-        url: item.url || '',
-        titleMaxLen: title.length > 24 ? 34 : 24,
-        summaryMaxLen,
-      });
-      if (isWithinXLimit(candidate, limit)) return candidate;
+  for (const includeOrg of [true, false]) {
+    for (const title of titleCandidates) {
+      for (const summaryMaxLen of summaryLens) {
+        const candidate = renderReplyText({
+          index,
+          total,
+          org: item.org || '',
+          titleShort: title,
+          summaryLine: fallbackSummary,
+          url: item.url || '',
+          includeOrg,
+          titleMaxLen: title.length > 24 ? 34 : 24,
+          summaryMaxLen,
+        });
+        if (isWithinXLimit(candidate, limit)) return candidate;
+      }
     }
   }
 
@@ -319,6 +358,7 @@ function buildDeterministicXThread(items, siteBaseUrl, safeLimit) {
   const { dateStr, updateLabel } = inferUpdateLabel();
 
   const entries = items.map((it) => ({
+    org: it.org,
     titleShort: it.title,
   }));
 
@@ -337,6 +377,7 @@ function buildDeterministicXThread(items, siteBaseUrl, safeLimit) {
     const baseReply = renderReplyText({
       index: idx + 1,
       total: items.length,
+      org: item.org || '',
       titleShort,
       summaryLine,
       url: item.url || '',
@@ -368,13 +409,13 @@ function buildAiContext(items, generationLimit, siteBaseUrl) {
       tone: ['간결', '사실 중심', '과장 금지', '광고 문구 금지'],
       main_format: [
         '📌 YYYY.MM.DD (요일) 업데이트 (N건)',
-        '• 짧은 제목',
-        '• 짧은 제목',
+        '• [기관명] 원문 제목',
+        '• [기관명] 원문 제목',
         '외 N건',
         '👉 https://chanmuzi.github.io/NLP-Paper-News/',
       ],
       reply_format: [
-        '[i/N] 짧은 제목',
+        '[i/N] [기관명] 원문 제목',
         '설명 문장 1개(줄글)',
         'URL(카드 preview용, 라벨/이모지 없이)',
       ],
@@ -415,9 +456,10 @@ async function buildAiXThread(items, siteBaseUrl, safeLimit, debug) {
           additionalProperties: false,
           properties: {
             index: { type: 'integer', minimum: 1, maximum: Math.max(1, items.length) },
+            org: { type: 'string' },
             title_short: { type: 'string' },
           },
-          required: ['index', 'title_short'],
+          required: ['index', 'org', 'title_short'],
         },
       },
     },
@@ -429,14 +471,17 @@ async function buildAiXThread(items, siteBaseUrl, safeLimit, debug) {
     '입력 항목은 사용자가 직접 큐레이션한 결과입니다. 의도를 임의로 바꾸지 마세요.',
     '메인 포스트용 항목 나열을 JSON으로 생성하세요.',
     '중요: 제목만 간결하게 나열하고 설명 문장은 넣지 마세요.',
+    '제목은 웬만하면 원문을 보존하고, 억지 한글 번역을 하지 마세요.',
+    '기관명은 기본 포함하고 길이 부족할 때만 생략하세요.',
     '형식 기준:',
     '📌 YYYY.MM.DD (요일) 업데이트 (N건)',
-    '• 짧은 제목',
-    '• 짧은 제목',
+    '• [기관명] 원문 제목',
+    '• [기관명] 원문 제목',
     '외 N건',
     '👉 https://chanmuzi.github.io/NLP-Paper-News/',
     '제약:',
-    '- 한국어 중심(고유명사는 원문 유지 가능)',
+    '- 제목은 원문 보존 우선(불필요한 번역/의역 금지)',
+    '- 기관명(org)은 가능하면 유지, 길이 부족 시에만 생략 허용',
     '- 과장/광고/해시태그 금지',
     '- 서로 다른 항목을 합치거나 재해석하지 말 것',
     '- 애매하면 원문 제목의 핵심 단어를 그대로 유지할 것',
@@ -468,7 +513,7 @@ async function buildAiXThread(items, siteBaseUrl, safeLimit, debug) {
         });
         mainGenerationTurns += 1;
 
-        const entries = (parsed.entries || []).map((e) => ({ titleShort: e.title_short }));
+        const entries = (parsed.entries || []).map((e) => ({ org: e.org, titleShort: e.title_short }));
         const candidateMain = forceMainWithinLimit({
           limit: generationLimit,
           dateStr,
@@ -499,7 +544,7 @@ async function buildAiXThread(items, siteBaseUrl, safeLimit, debug) {
 
   if (!mainPlan) throw new Error('AI main plan generation failed');
 
-  const mainEntries = (mainPlan.entries || []).map((e) => ({ titleShort: e.title_short }));
+  const mainEntries = (mainPlan.entries || []).map((e) => ({ org: e.org, titleShort: e.title_short }));
   const mainText = forceMainWithinLimit({
     limit: safeLimit,
     dateStr,
@@ -522,10 +567,11 @@ async function buildAiXThread(items, siteBaseUrl, safeLimit, debug) {
           additionalProperties: false,
           properties: {
             index: { type: 'integer', minimum: 1, maximum: Math.max(1, items.length) },
+            org: { type: 'string' },
             title_short: { type: 'string' },
             summary_line: { type: 'string' },
           },
-          required: ['index', 'title_short', 'summary_line'],
+          required: ['index', 'org', 'title_short', 'summary_line'],
         },
       },
     },
@@ -537,12 +583,15 @@ async function buildAiXThread(items, siteBaseUrl, safeLimit, debug) {
     '입력 항목은 사용자가 직접 큐레이션한 결과입니다. 항목 간 의미를 섞지 마세요.',
     '각 아이템에 대해 reply용 텍스트를 JSON으로 생성하세요.',
     '중요: bullet(•) 형식을 절대 사용하지 마세요.',
+    '제목은 웬만하면 원문을 보존하고, 억지 한글 번역을 하지 마세요.',
+    '기관명은 기본 포함하고 길이 부족할 때만 생략하세요.',
     '형식 기준:',
-    '[i/N] 짧은 제목',
+    '[i/N] [기관명] 원문 제목',
     '설명 문장 1개(줄글)',
     'URL(카드 preview용, 라벨/이모지 없이)',
     '제약:',
-    '- 한국어 중심(고유명사는 원문 유지 가능)',
+    '- 제목은 원문 보존 우선(불필요한 번역/의역 금지)',
+    '- 기관명(org)은 가능하면 유지, 길이 부족 시에만 생략 허용',
     '- 과장/홍보/해시태그 금지',
     '- 각 reply는 해당 index의 item 정보만 반영할 것',
     '- 다른 item의 내용/키워드를 섞지 말 것',
@@ -590,6 +639,7 @@ async function buildAiXThread(items, siteBaseUrl, safeLimit, debug) {
           const candidate = renderReplyText({
             index: idx,
             total: items.length,
+            org: src.org || item.org || '',
             titleShort: src.title_short || item.title,
             summaryLine: src.summary_line || cleanInline(item?.bullets?.[0]?.text || '핵심 업데이트'),
             url: item.url || '',
@@ -633,6 +683,7 @@ async function buildAiXThread(items, siteBaseUrl, safeLimit, debug) {
     const baseReply = renderReplyText({
       index: idx,
       total: items.length,
+      org: src.org || item.org || '',
       titleShort,
       summaryLine,
       url: item.url || '',

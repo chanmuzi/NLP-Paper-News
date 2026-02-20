@@ -1122,7 +1122,7 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
         progressMsg += `${runStatus}...`;
       }
 
-      showStatus(`커밋 완료 · ${shortSha}\n${progressMsg} (${elapsedSeconds()}s)`, 'info');
+      showStatus(`커밋 완료 · ${shortSha}\n${progressMsg}\n경과: ${elapsedSeconds()}s`, 'info');
       pollTimer = setTimeout(poll, POLL_INTERVAL);
     }
 
@@ -1859,7 +1859,7 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
         }
 
         if (!runs.length) {
-          showStatus(`커밋 완료 · ${shortSha}\n워크플로 트리거 대기 중... (${elapsedSeconds()}s)`, 'info');
+          showStatus(`커밋 완료 · ${shortSha}\n[1/4] 워크플로 트리거 확인 중 (head_sha/fallback)\n경과: ${elapsedSeconds()}s`, 'info');
           scheduleNext();
           return;
         }
@@ -1916,19 +1916,24 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
 
         let progressMsg = '';
         if (activeJob?.name === 'prepare') {
-          progressMsg = '데이터 준비 중...';
-          if (activeStep?.name?.includes('Build digest')) progressMsg = '포스트 생성 중...';
-          else if (activeStep?.name?.includes('Extract')) progressMsg = '새 항목 추출 중...';
+          progressMsg = '[2/4] 데이터 준비 중';
+          if (activeStep?.name?.includes('Build digest')) progressMsg = '[3/4] 포스트 초안 생성 중';
+          else if (activeStep?.name?.includes('Extract')) progressMsg = '[2/4] 새 항목 추출 중';
+          if (activeStep?.name) progressMsg += ` · step: ${activeStep.name}`;
+        } else if (runStatus === 'queued') {
+          progressMsg = '[1/4] 워크플로 실행 대기열';
         } else if (jobs.every((j: any) => j.status === 'queued')) {
-          progressMsg = '워크플로 실행 대기 중...';
+          progressMsg = '[1/4] 워크플로 실행 대기열';
         } else {
-          progressMsg = `${runStatus}...`;
+          progressMsg = `[2/4] 워크플로 진행 중 · status=${runStatus}`;
+          if (activeJob?.name) progressMsg += ` · job: ${activeJob.name}`;
+          if (activeStep?.name) progressMsg += ` · step: ${activeStep.name}`;
         }
 
-        showStatus(`커밋 완료 · ${shortSha}\n${progressMsg} (${elapsedSeconds()}s)`, 'info');
+        showStatus(`커밋 완료 · ${shortSha}\n${progressMsg}\n경과: ${elapsedSeconds()}s`, 'info');
         scheduleNext();
       } catch (e) {
-        showStatus(`커밋 완료 · ${shortSha}\n상태 재확인 중... (${elapsedSeconds()}s)`, 'info');
+        showStatus(`커밋 완료 · ${shortSha}\n상태 재확인 중(네트워크/권한 점검)\n경과: ${elapsedSeconds()}s`, 'info');
         scheduleNext();
       }
     }
@@ -1973,7 +1978,7 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
         const runs = runsData?.workflow_runs || [];
         const run = runs.find((r: any) => Date.parse(r.created_at || '') >= (dispatchedAt - 30000));
         if (!run) {
-          showStatus(`커밋 완료 · ${shortSha}\n승인 게시 워크플로 시작 대기 중...`, 'info');
+          showStatus(`커밋 완료 · ${shortSha}\n[1/3] 승인 게시 워크플로 시작 대기 중...`, 'info');
           setTimeout(tick, POLL_INTERVAL);
           return;
         }
@@ -2022,11 +2027,13 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
         }
 
         if (liveProgress?.postingReply && liveProgress?.totalReplies) {
-          showStatus(`커밋 완료 · ${shortSha}\nX reply ${liveProgress.postingReply}/${liveProgress.totalReplies} 게시 중...`, 'info');
+          showStatus(`커밋 완료 · ${shortSha}\n[2/3] X 게시 진행 중 · reply ${liveProgress.postingReply}/${liveProgress.totalReplies}`, 'info');
         } else if (liveProgress?.postingMain && !liveProgress?.mainPosted) {
-          showStatus(`커밋 완료 · ${shortSha}\nX main 게시 중...`, 'info');
+          showStatus(`커밋 완료 · ${shortSha}\n[2/3] X main 게시 중...`, 'info');
         } else {
-          showStatus(`커밋 완료 · ${shortSha}\n승인된 draft로 X 게시 중...`, 'info');
+          const activeStep = postJob?.steps?.find((s: any) => s.status === 'in_progress')?.name || '';
+          const stepMsg = activeStep ? ` · step: ${activeStep}` : '';
+          showStatus(`커밋 완료 · ${shortSha}\n[2/3] 승인된 draft로 X 게시 중${stepMsg}`, 'info');
         }
         setTimeout(tick, POLL_INTERVAL);
       };
@@ -2407,7 +2414,7 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
         statusEl.className = 'inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full text-xs bg-violet-100 dark:bg-violet-900/30 text-violet-600 dark:text-violet-400';
       } else if (token) {
         statusEl.textContent = '연결됨';
-        statusEl.className = 'inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full text-xs bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400';
+        statusEl.className = 'inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full text-xs bg-[#F6E5CA] dark:bg-[#433526] text-[#7A5A34] dark:text-[#EED6AF] border border-[#E3C79C] dark:border-[#6A543B]';
       } else {
         statusEl.textContent = '미연결';
         statusEl.className = 'inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full text-xs bg-gray-100 dark:bg-gray-800 text-gray-400';
