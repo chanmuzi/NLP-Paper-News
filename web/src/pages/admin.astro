@@ -1624,6 +1624,44 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
     const text = await res.text();
     if (!text) return null;
 
+    const eventMatches = [...text.matchAll(/^PROGRESS_EVENT=(.+)$/gm)];
+    const eventProgress: LivePostProgress = {};
+    if (eventMatches.length > 0) {
+      for (const m of eventMatches) {
+        const raw = m?.[1];
+        if (!raw) continue;
+        try {
+          const parsed = JSON.parse(raw);
+          const event = String(parsed?.event || '');
+          const idx = Number(parsed?.index);
+          const total = Number(parsed?.total);
+          if (Number.isFinite(total) && total >= 0) eventProgress.totalReplies = total;
+          if (event === 'main_started') {
+            eventProgress.postingMain = true;
+          } else if (event === 'main_done') {
+            eventProgress.postingMain = false;
+            eventProgress.mainPosted = true;
+          } else if (event === 'reply_started') {
+            eventProgress.mainPosted = true;
+            if (Number.isFinite(idx) && idx > 0) eventProgress.postingReply = idx;
+          } else if (event === 'reply_done') {
+            eventProgress.mainPosted = true;
+            if (Number.isFinite(idx) && idx > 0) {
+              eventProgress.postedReplies = Math.max(eventProgress.postedReplies || 0, idx);
+            }
+          } else if (event === 'degraded_main_only') {
+            eventProgress.degraded = true;
+          } else if (event === 'completed') {
+            const totalReplies = Number(eventProgress.totalReplies || 0);
+            eventProgress.mainPosted = true;
+            if (totalReplies > 0) eventProgress.postedReplies = totalReplies;
+          }
+        } catch {
+          // ignore parse error and fallback to legacy regex parsing
+        }
+      }
+    }
+
     const postingMain = /Posting main tweet\.\.\./.test(text);
     const mainPosted = /Main tweet posted:/.test(text);
     const postingMatches = [...text.matchAll(/Posting reply (\d+)\/(\d+)\.\.\./g)];
@@ -1637,7 +1675,14 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
     const totalReplies = latestPosting ? Number(latestPosting[2]) : (totalFromComplete ? Number(totalFromComplete[1]) : undefined);
     const postedReplies = latestPosted ? Number(latestPosted[1]) : undefined;
 
-    return { postingMain, mainPosted, postingReply, totalReplies, postedReplies, degraded };
+    return {
+      postingMain: eventProgress.postingMain ?? postingMain,
+      mainPosted: eventProgress.mainPosted ?? mainPosted,
+      postingReply: eventProgress.postingReply ?? postingReply,
+      totalReplies: eventProgress.totalReplies ?? totalReplies,
+      postedReplies: eventProgress.postedReplies ?? postedReplies,
+      degraded: eventProgress.degraded ?? degraded,
+    };
   }
 
   async function fetchPrepareDraftPayload(repo: string, token: string, jobId: number) {
@@ -1945,9 +1990,21 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
     const shortSha = commitSha.slice(0, 7);
     const POLL_INTERVAL = 5000;
     const MAX_POLLS = 96;
+    const startedAt = Date.now();
     let polls = 0;
     let liveProgress: LivePostProgress | null = null;
     let lastLogFetchAt = 0;
+    let resolved = false;
+    let progressTone: 'info' | 'warn' | 'error' | 'success' = 'info';
+    let progressMsg = '승인 게시 워크플로 시작 대기 중...';
+    const elapsedSeconds = () => Math.max(0, Math.floor((Date.now() - startedAt) / 1000));
+    const renderProgress = (tone?: 'info' | 'warn' | 'error' | 'success', message?: string, opts?: { autoScroll?: boolean }) => {
+      if (typeof tone === 'string') progressTone = tone;
+      if (typeof message === 'string') progressMsg = message;
+      if (resolved) return;
+      showStatus(`커밋 완료 · ${shortSha}\n${progressMsg}\n경과: ${elapsedSeconds()}s`, progressTone, opts);
+    };
+    const heartbeat = setInterval(() => renderProgress(), 1000);
 
     async function fetchWorkflowRuns() {
       const res = await fetch(`https://api.github.com/repos/${repo}/actions/workflows/post-approved.yml/runs?per_page=10`, {
@@ -1967,75 +2024,101 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
 
     return new Promise<void>((resolve) => {
       const tick = async () => {
-        polls++;
-        if (polls > MAX_POLLS) {
-          showStatus(`커밋 완료 · ${shortSha}\n승인 게시 상태 확인 시간 초과 — Actions에서 확인하세요.`, 'warn');
-          resolve();
-          return;
-        }
-
-        const runsData = await fetchWorkflowRuns();
-        const runs = runsData?.workflow_runs || [];
-        const run = runs.find((r: any) => Date.parse(r.created_at || '') >= (dispatchedAt - 30000));
-        if (!run) {
-          showStatus(`커밋 완료 · ${shortSha}\n[1/3] 승인 게시 워크플로 시작 대기 중...`, 'info');
-          setTimeout(tick, POLL_INTERVAL);
-          return;
-        }
-
-        const jobsData = await fetchJobs(run.id);
-        const postJob = jobsData?.jobs?.find((j: any) => j.name === 'post_x');
-
-        if (postJob?.status === 'in_progress' && Date.now() - lastLogFetchAt > 10000) {
-          lastLogFetchAt = Date.now();
-          if (postJob?.id) {
-            const progress = await fetchPostJobProgress(repo, token, postJob.id).catch(() => null);
-            if (progress) liveProgress = progress;
+        try {
+          polls++;
+          if (polls > MAX_POLLS) {
+            renderProgress('warn', '승인 게시 상태 확인 시간 초과 — Actions에서 확인하세요.');
+            resolved = true;
+            clearInterval(heartbeat);
+            resolve();
+            return;
           }
-        }
 
-        if (run.status === 'completed') {
-          const postResult = postJob?.id
-            ? await fetchLogPayloadByKey(repo, token, postJob.id, 'POST_RESULT_BASE64')
-            : null;
+          const runsData = await fetchWorkflowRuns();
+          const runs = runsData?.workflow_runs || [];
+          const run = runs.find((r: any) => Date.parse(r.created_at || '') >= (dispatchedAt - 30000));
+          if (!run) {
+            renderProgress('info', '승인 게시 워크플로 시작 대기 중...');
+            setTimeout(tick, POLL_INTERVAL);
+            return;
+          }
 
-          if (run.conclusion === 'success') {
-            if (postResult?.degradedMode === 'main_only') {
-              showStatus(`커밋 완료 · ${shortSha}\nmain만 게시되었습니다. 남은 replies는 수동으로 이어서 게시해 주세요.`, 'warn', { autoScroll: true });
-              await sleep(4200);
-              clearXDraftReview();
-              fadeStatusNow();
+          const jobsData = await fetchJobs(run.id);
+          const postJob = jobsData?.jobs?.find((j: any) => j.name === 'post_x');
+
+          if (postJob?.status === 'in_progress' && Date.now() - lastLogFetchAt > 5000) {
+            lastLogFetchAt = Date.now();
+            if (postJob?.id) {
+              const progress = await fetchPostJobProgress(repo, token, postJob.id).catch(() => null);
+              if (progress) liveProgress = progress;
+            }
+          }
+
+          if (run.status === 'completed') {
+            const postResult = postJob?.id
+              ? await fetchLogPayloadByKey(repo, token, postJob.id, 'POST_RESULT_BASE64')
+              : null;
+
+            if (run.conclusion === 'success') {
+              if (postResult?.degradedMode === 'main_only') {
+                resolved = true;
+                clearInterval(heartbeat);
+                showStatus(`커밋 완료 · ${shortSha}\nmain만 게시되었습니다. 남은 replies는 수동으로 이어서 게시해 주세요.\n경과: ${elapsedSeconds()}s`, 'warn', { autoScroll: true });
+                await sleep(4200);
+                clearXDraftReview();
+                fadeStatusNow();
+              } else {
+                resolved = true;
+                clearInterval(heartbeat);
+                showStatus(`커밋 완료 · ${shortSha}\nX 게시가 완료되었습니다.\n경과: ${elapsedSeconds()}s`, 'success', { autoScroll: true });
+                await sleep(4200);
+                clearXDraftReview();
+                fadeStatusNow();
+              }
             } else {
-              showStatus(`커밋 완료 · ${shortSha}\nX 게시가 완료되었습니다.`, 'success', { autoScroll: true });
-              await sleep(4200);
-              clearXDraftReview();
-              fadeStatusNow();
+              let guide = 'Actions 로그를 확인해 주세요.';
+              if (postResult?.errorCode === 'local_length_guard' || postResult?.failurePhase === 'validation') {
+                guide = '길이 제한 초과입니다. main/replies 텍스트를 줄인 뒤 다시 승인해 주세요.';
+              } else if ([403, 429].includes(Number(postResult?.httpStatus))) {
+                guide = '정책/레이트 제한 가능성이 높습니다. 같은 텍스트 재시도 대신 수정 후 재게시를 권장합니다.';
+              } else if (postResult?.errorCode === 'network_error') {
+                guide = '네트워크 오류입니다. 잠시 후 다시 시도해 주세요.';
+              }
+              resolved = true;
+              clearInterval(heartbeat);
+              showStatus(`커밋 완료 · ${shortSha}\nX 게시 실패\n${guide}\n경과: ${elapsedSeconds()}s`, 'error', { autoScroll: true });
             }
-          } else {
-            let guide = 'Actions 로그를 확인해 주세요.';
-            if (postResult?.errorCode === 'local_length_guard' || postResult?.failurePhase === 'validation') {
-              guide = '길이 제한 초과입니다. main/replies 텍스트를 줄인 뒤 다시 승인해 주세요.';
-            } else if ([403, 429].includes(Number(postResult?.httpStatus))) {
-              guide = '정책/레이트 제한 가능성이 높습니다. 같은 텍스트 재시도 대신 수정 후 재게시를 권장합니다.';
-            } else if (postResult?.errorCode === 'network_error') {
-              guide = '네트워크 오류입니다. 잠시 후 다시 시도해 주세요.';
-            }
-            showStatus(`커밋 완료 · ${shortSha}\nX 게시 실패\n${guide}`, 'error', { autoScroll: true });
+            resolved = true;
+            clearInterval(heartbeat);
+            resolve();
+            return;
           }
-          resolve();
-          return;
-        }
 
-        if (liveProgress?.postingReply && liveProgress?.totalReplies) {
-          showStatus(`커밋 완료 · ${shortSha}\n[2/3] X 게시 진행 중 · reply ${liveProgress.postingReply}/${liveProgress.totalReplies}`, 'info');
-        } else if (liveProgress?.postingMain && !liveProgress?.mainPosted) {
-          showStatus(`커밋 완료 · ${shortSha}\n[2/3] X main 게시 중...`, 'info');
-        } else {
-          const activeStep = postJob?.steps?.find((s: any) => s.status === 'in_progress')?.name || '';
-          const stepMsg = activeStep ? ` · step: ${activeStep}` : '';
-          showStatus(`커밋 완료 · ${shortSha}\n[2/3] 승인된 draft로 X 게시 중${stepMsg}`, 'info');
+          if (liveProgress?.postingMain && !liveProgress?.mainPosted) {
+            renderProgress('info', 'X main post 게시 중...');
+          } else if ((liveProgress?.postedReplies || 0) > 0 && liveProgress?.totalReplies) {
+            const postedReplies = Math.min(Number(liveProgress?.postedReplies || 0), Number(liveProgress.totalReplies || 0));
+            if (liveProgress?.postingReply && liveProgress.postingReply > postedReplies) {
+              renderProgress('info', `X reply ${liveProgress.postingReply}/${liveProgress.totalReplies} 게시 중...`);
+            } else if (postedReplies < liveProgress.totalReplies) {
+              renderProgress('info', `X reply ${postedReplies}/${liveProgress.totalReplies} 게시 완료 · 다음 reply 대기 중...`);
+            } else {
+              renderProgress('info', `X replies ${liveProgress.totalReplies}/${liveProgress.totalReplies} 게시 완료 · 마무리 중...`);
+            }
+          } else if (liveProgress?.postingReply && liveProgress?.totalReplies) {
+            renderProgress('info', `X reply ${liveProgress.postingReply}/${liveProgress.totalReplies} 게시 중...`);
+          } else if (liveProgress?.mainPosted && Number(liveProgress?.totalReplies || 0) === 0) {
+            renderProgress('info', 'X main post 게시 완료 · 마무리 중...');
+          } else {
+            const activeStep = postJob?.steps?.find((s: any) => s.status === 'in_progress')?.name || '';
+            const stepMsg = activeStep ? ` · step: ${activeStep}` : '';
+            renderProgress('info', `승인된 draft로 X 게시 중${stepMsg}`);
+          }
+          setTimeout(tick, POLL_INTERVAL);
+        } catch {
+          renderProgress('info', '상태 재확인 중(네트워크/권한 점검)...');
+          setTimeout(tick, POLL_INTERVAL);
         }
-        setTimeout(tick, POLL_INTERVAL);
       };
       tick();
     });
@@ -2055,15 +2138,36 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
       return;
     }
 
-    showStatus(`커밋 완료 · ${shortSha}\n[mock] 승인된 draft로 X 게시 중...`, 'info');
-    await sleep(1500);
-    showStatus(`커밋 완료 · ${shortSha}\n[mock] X main 게시 중...`, 'info');
+    const startedAt = Date.now();
+    const elapsedSeconds = () => Math.max(0, Math.floor((Date.now() - startedAt) / 1000));
+    let phaseMsg = '[mock] 승인 게시 워크플로 시작 대기 중...';
+    const render = (tone: 'info' | 'warn' | 'error' | 'success' = 'info', opts?: { autoScroll?: boolean }) => {
+      showStatus(`커밋 완료 · ${shortSha}\n${phaseMsg}\n경과: ${elapsedSeconds()}s`, tone, opts);
+    };
+
+    render('info');
+    const heartbeat = setInterval(() => render('info'), 1000);
     await sleep(1200);
+
+    phaseMsg = '[mock] X main post 게시 중...';
+    render('info');
+    await sleep(1200);
+
+    phaseMsg = '[mock] X main post 게시 완료';
+    render('info');
+
     for (let i = 0; i < thread.replies.length; i++) {
-      showStatus(`커밋 완료 · ${shortSha}\n[mock] X reply ${i + 1}/${thread.replies.length} 게시 중...`, 'info');
+      phaseMsg = `[mock] X reply ${i + 1}/${thread.replies.length} 게시 중...`;
+      render('info');
       await sleep(1100);
+      phaseMsg = `[mock] X reply ${i + 1}/${thread.replies.length} 게시 완료`;
+      render('info');
+      await sleep(350);
     }
-    showStatus(`커밋 완료 · ${shortSha}\n[mock] X 게시가 완료되었습니다.`, 'success', { autoScroll: true });
+
+    clearInterval(heartbeat);
+    phaseMsg = '[mock] X 게시가 완료되었습니다.';
+    render('success', { autoScroll: true });
     await sleep(4200);
     clearXDraftReview();
     fadeStatusNow();

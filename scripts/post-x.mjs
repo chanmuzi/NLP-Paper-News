@@ -434,6 +434,14 @@ function parseBoolEnv(name, defaultValue) {
   return !['0', 'false', 'no', 'off'].includes(String(raw).toLowerCase());
 }
 
+function emitProgress(event, extra = {}) {
+  try {
+    console.log(`PROGRESS_EVENT=${JSON.stringify({ event, at: new Date().toISOString(), ...extra })}`);
+  } catch {
+    // noop
+  }
+}
+
 async function main() {
   const { digest: digestPath, result: resultPath, dryRun, testSuffix } = parseArgs(process.argv);
   if (!digestPath) {
@@ -526,12 +534,14 @@ async function main() {
 
   // Post main tweet
   let mainId = null;
+  emitProgress('main_started');
   console.log('Posting main tweet...');
   try {
     const mainResult = await postTweet({ text: thread.main, url, credentials, guardLimit: localGuardLimit });
     mainId = mainResult.id;
     attempts.main = mainResult.attempts;
     posted.push({ type: 'main', id: mainId });
+    emitProgress('main_done', { id: mainId });
     console.log(`Main tweet posted: ${mainId}`);
   } catch (error) {
     const err = asXPostError(error);
@@ -563,14 +573,17 @@ async function main() {
 
   for (let i = 0; i < replies.length; i++) {
     const delay = 6000 + Math.floor(Math.random() * 4000); // 6-10s
+    emitProgress('reply_wait', { index: i + 1, total: replies.length, waitMs: delay });
     await sleep(delay);
 
+    emitProgress('reply_started', { index: i + 1, total: replies.length });
     console.log(`Posting reply ${i + 1}/${replies.length}...`);
     try {
       const replyResult = await postTweet({ text: replies[i], replyToId: parentId, url, credentials, guardLimit: localGuardLimit });
       parentId = replyResult.id;
       posted.push({ type: `reply ${i + 1}`, id: parentId });
       attempts.replies.push({ index: i + 1, attempts: replyResult.attempts, success: true });
+      emitProgress('reply_done', { index: i + 1, total: replies.length, id: parentId });
       console.log(`Reply ${i + 1} posted: ${parentId}`);
     } catch (error) {
       const err = asXPostError(error);
@@ -598,6 +611,7 @@ async function main() {
   }
 
   if (failedReply && failedReply.isDegradable) {
+    emitProgress('degraded_main_only', { failedAt: failedReply.index, total: replies.length, httpStatus: failedReply.httpStatus });
     console.warn(`\nThread degraded to main-only mode: reply ${failedReply.index}/${replies.length} blocked (${failedReply.httpStatus})`);
     writeResult(resultPath, {
       success: true,
@@ -664,6 +678,7 @@ async function main() {
       localGuardLimit,
   });
 
+  emitProgress('completed', { totalReplies: replies.length });
   console.log(`\nThread complete: 1 main + ${replies.length} replies (all successful)`);
 }
 
