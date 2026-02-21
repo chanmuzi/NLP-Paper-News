@@ -1,8 +1,86 @@
 {
   "version": 1,
-  "last_updated": "2026-02-20T06:34:33.770Z",
-  "total_items": 1690,
+  "last_updated": "2026-02-21T06:59:48.568Z",
+  "total_items": 1693,
   "items": [
+    {
+      "id": "google-gemini-31-pro-a-smarter-model-for-your-most-complex-tasks",
+      "type": "dev",
+      "org": "Google",
+      "title": "Gemini 3.1 Pro: A smarter model for your most complex tasks",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-pro",
+      "date": "2026-02-W03",
+      "year": "2026",
+      "month": "2",
+      "week": "3",
+      "bullets": [
+        {
+          "text": "복잡한 문제(Complex Tasks) 해결에 초점을 두어 업그레이드 된 모델",
+          "level": 1
+        },
+        {
+          "text": "Advanced logical problem solving, Scientific & technical reasoning, Competitive coding tasks, MCP tool usage, Agentic search workflows",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "cursor-implementing-a-secure-sandbox-for-local-agents",
+      "type": "dev",
+      "org": "Cursor",
+      "title": "Implementing a secure sandbox for local agents",
+      "url": "https://cursor.com/blog/agent-sandboxing",
+      "date": "2026-02-W03",
+      "year": "2026",
+      "month": "2",
+      "week": "3",
+      "bullets": [
+        {
+          "text": "coding agents의 행동을 수락(approve)하는 행위가 누적되면 유저는 피로가 높아져(approval fatigue) 초반 대비 신중하지 않는 경향을 보임",
+          "level": 1
+        },
+        {
+          "text": "이를 해결하기 위해 독립된/제한된 Sandbox 환경을 agent에게 제공하여 불필요한 interruptions를 최소화함",
+          "level": 1
+        },
+        {
+          "text": "agent가 sandbox 환경 내에서 어떤 commands를 사용해야 하는지 정확하게 알고 있을 때만 effective 하다고 설명",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "alibaba-mobile-agent-v35-multi-platform-fundamental-gui-agents",
+      "type": "paper",
+      "org": "Alibaba",
+      "title": "Mobile-Agent-v3.5: Multi-platform Fundamental GUI Agents",
+      "url": "https://arxiv.org/abs/2602.16855",
+      "date": "2026-02-W03",
+      "year": "2026",
+      "month": "2",
+      "week": "3",
+      "bullets": [
+        {
+          "text": "GUI-Owl-1.5, native GUI agent model로 다양한 사이즈, 플랫폼 지원",
+          "level": 1
+        },
+        {
+          "text": "2B/4B/8B/32B/235B, desktop, mobile, browser",
+          "level": 2
+        },
+        {
+          "text": "여러 key innovations를 언급",
+          "level": 1
+        },
+        {
+          "text": "(1) Hybrid Data Flywheel (2) Unified Enhancement of Agent Capabilities (3) Multi-platfor Environment RL Scaling (MRPO 알고리즘 제안)",
+          "level": 2
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "uiuc-meta-amazon-google-deepmind-yale-agentic-reasoning-for-large-language-models",
       "type": "paper",
@@ -37070,9 +37148,9 @@
     }
   ],
   "stats": {
-    "total": 1690,
-    "paper": 1024,
-    "dev": 625,
+    "total": 1693,
+    "paper": 1025,
+    "dev": 627,
     "news": 36
   }
 }
