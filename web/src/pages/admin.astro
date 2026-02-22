@@ -1554,6 +1554,7 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
 
   // ─── Workflow Polling ─────────────────
   let pollTimer: ReturnType<typeof setTimeout> | null = null;
+  let pollHeartbeat: ReturnType<typeof setInterval> | null = null;
   let pollSessionId = 0;
 
   type WorkflowTrackingState = {
@@ -1840,6 +1841,10 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
       clearTimeout(pollTimer);
       pollTimer = null;
     }
+    if (pollHeartbeat) {
+      clearInterval(pollHeartbeat);
+      pollHeartbeat = null;
+    }
     pollSessionId += 1;
     const currentSession = pollSessionId;
 
@@ -1850,6 +1855,17 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
       if (!isCurrentSession()) return;
       pollTimer = setTimeout(poll, POLL_INTERVAL);
     };
+
+    let progressTone: 'info' | 'warn' | 'error' | 'success' = 'info';
+    let progressMsg = '[1/4] 워크플로 트리거 확인 중';
+    const renderProgress = (tone?: 'info' | 'warn' | 'error' | 'success', message?: string, opts?: { autoScroll?: boolean }) => {
+      if (typeof tone === 'string') progressTone = tone;
+      if (typeof message === 'string') progressMsg = message;
+      if (!isCurrentSession()) return;
+      showStatus(`커밋 완료 · ${shortSha}\n${progressMsg}\n경과: ${elapsedSeconds()}s`, progressTone, opts);
+    };
+    pollHeartbeat = setInterval(() => renderProgress(), 1000);
+    const stopHeartbeat = () => { if (pollHeartbeat) { clearInterval(pollHeartbeat); pollHeartbeat = null; } };
 
     async function ghApi(endpoint: string) {
       const res = await fetch(`https://api.github.com/repos/${repo}/actions/${endpoint}`, {
@@ -1870,6 +1886,7 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
       polls++;
 
       if (polls > MAX_POLLS) {
+        stopHeartbeat();
         clearWorkflowTracking();
         showStatus(`커밋 완료 · ${shortSha}\n워크플로 상태 확인 시간 초과 — Actions 페이지에서 직접 확인하세요.`, 'warn');
         return;
@@ -1883,6 +1900,7 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
         const bySha = await ghApi(`runs?head_sha=${commitSha}&per_page=5`);
 
         if (!bySha.ok && [401, 403].includes(bySha.status)) {
+          stopHeartbeat();
           clearWorkflowTracking();
           showStatus(`커밋 완료 · ${shortSha}\n워크플로 상태 조회 권한이 없습니다. 토큰 scope(repo/workflow)를 확인해 주세요.`, 'error');
           return;
@@ -1904,7 +1922,6 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
         }
 
         if (!runs.length) {
-          showStatus(`커밋 완료 · ${shortSha}\n[1/4] 워크플로 트리거 확인 중 (head_sha/fallback)\n경과: ${elapsedSeconds()}s`, 'info');
           scheduleNext();
           return;
         }
@@ -1914,6 +1931,7 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
         const runConclusion = run.conclusion;
 
         if (runStatus === 'completed') {
+          stopHeartbeat();
           clearWorkflowTracking();
           const jobsData = await ghApi(`runs/${run.id}/jobs`);
           const prepareJob = jobsData?.data?.jobs?.find((j: any) => j.name === 'prepare');
@@ -1959,26 +1977,26 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
         const activeJob = jobs.find((j: any) => j.status === 'in_progress');
         const activeStep = activeJob?.steps?.find((s: any) => s.status === 'in_progress');
 
-        let progressMsg = '';
+        let stepDetail = '';
         if (activeJob?.name === 'prepare') {
-          progressMsg = '[2/4] 데이터 준비 중';
-          if (activeStep?.name?.includes('Build digest')) progressMsg = '[3/4] 포스트 초안 생성 중';
-          else if (activeStep?.name?.includes('Extract')) progressMsg = '[2/4] 새 항목 추출 중';
-          if (activeStep?.name) progressMsg += ` · step: ${activeStep.name}`;
+          stepDetail = '[2/4] 데이터 준비 중';
+          if (activeStep?.name?.includes('Build digest')) stepDetail = '[3/4] 포스트 초안 생성 중';
+          else if (activeStep?.name?.includes('Extract')) stepDetail = '[2/4] 새 항목 추출 중';
+          if (activeStep?.name) stepDetail += ` · step: ${activeStep.name}`;
         } else if (runStatus === 'queued') {
-          progressMsg = '[1/4] 워크플로 실행 대기열';
+          stepDetail = '[1/4] 워크플로 실행 대기열';
         } else if (jobs.every((j: any) => j.status === 'queued')) {
-          progressMsg = '[1/4] 워크플로 실행 대기열';
+          stepDetail = '[1/4] 워크플로 실행 대기열';
         } else {
-          progressMsg = `[2/4] 워크플로 진행 중 · status=${runStatus}`;
-          if (activeJob?.name) progressMsg += ` · job: ${activeJob.name}`;
-          if (activeStep?.name) progressMsg += ` · step: ${activeStep.name}`;
+          stepDetail = `[2/4] 워크플로 진행 중 · status=${runStatus}`;
+          if (activeJob?.name) stepDetail += ` · job: ${activeJob.name}`;
+          if (activeStep?.name) stepDetail += ` · step: ${activeStep.name}`;
         }
 
-        showStatus(`커밋 완료 · ${shortSha}\n${progressMsg}\n경과: ${elapsedSeconds()}s`, 'info');
+        renderProgress('info', stepDetail);
         scheduleNext();
       } catch (e) {
-        showStatus(`커밋 완료 · ${shortSha}\n상태 재확인 중(네트워크/권한 점검)\n경과: ${elapsedSeconds()}s`, 'info');
+        renderProgress('info', '상태 재확인 중(네트워크/권한 점검)');
         scheduleNext();
       }
     }
