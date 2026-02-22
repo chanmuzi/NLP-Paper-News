@@ -1,8 +1,38 @@
 {
   "version": 1,
-  "last_updated": "2026-02-21T06:59:48.568Z",
-  "total_items": 1693,
+  "last_updated": "2026-02-22T07:02:32.909Z",
+  "total_items": 1694,
   "items": [
+    {
+      "id": "meta-princeton-duke-learning-personalized-agents-from-human-feedback",
+      "type": "paper",
+      "org": "Meta, Princeton, Duke",
+      "title": "Learning Personalized Agents from Human Feedback",
+      "url": "https://arxiv.org/abs/2602.16173",
+      "date": "2026-02-W03",
+      "year": "2026",
+      "month": "2",
+      "week": "3",
+      "bullets": [
+        {
+          "text": "AI agents는 static datasets으로 학습하므로 시간에 따라 변하는 preferences를 반영할 수 없음",
+          "level": 1
+        },
+        {
+          "text": "Personalized Agents from Human Feedback (PAHF): explicit per-user memory를 사용하여 live interaction으로부터 학습하여 continual personalization을 가능토록 하는 프레임워크",
+          "level": 1
+        },
+        {
+          "text": "three-step loop",
+          "level": 1
+        },
+        {
+          "text": "(1) ambiguity를 해결하는 pre-action clarification (2) memory로부터 확인된 preferences 속 actions grounding (3) preferences가 변했을 때 post-action feedback을 이용한 memory update",
+          "level": 2
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "google-gemini-31-pro-a-smarter-model-for-your-most-complex-tasks",
       "type": "dev",
@@ -37148,8 +37178,8 @@
     }
   ],
   "stats": {
-    "total": 1693,
-    "paper": 1025,
+    "total": 1694,
+    "paper": 1026,
     "dev": 627,
     "news": 36
   }
