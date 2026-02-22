@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "last_updated": "2026-02-22T07:02:32.909Z",
-  "total_items": 1694,
+  "last_updated": "2026-02-22T09:47:58.909Z",
+  "total_items": 1669,
   "items": [
     {
       "id": "meta-princeton-duke-learning-personalized-agents-from-human-feedback",
@@ -352,106 +352,6 @@
         },
         {
           "text": "Manus의 모든 subscribers 대상으로 제공되는 기능으로 소개",
-          "level": 1
-        }
-      ],
-      "tags": []
-    },
-    {
-      "id": "openai-detecting-and-reducing-scheming-in-ai-models---테스트",
-      "type": "dev",
-      "org": "OpenAI",
-      "title": "Detecting and reducing scheming in AI models - 테스트",
-      "url": "https://openai.com/index/detecting-and-reducing-scheming-in-ai-models",
-      "date": "2026-02-W03",
-      "year": "2026",
-      "month": "2",
-      "week": "3",
-      "bullets": [
-        {
-          "text": "모델이 평가 상황을 탐지하면 scheming behavior를 바꾼다는 연구 결과",
-          "level": 1
-        },
-        {
-          "text": "reinforcement learning & targeted anti-scheming objectives를 적용하여 situational awareness를 높이고 scheming을 줄일 수 있음",
-          "level": 1
-        }
-      ],
-      "tags": []
-    },
-    {
-      "id": "shanghai-ai-scalecua-scaling-open-source-computer-use-agents-with-cross-platform-data---테스트",
-      "type": "paper",
-      "org": "Shanghai AI",
-      "title": "ScaleCUA: Scaling Open-Source Computer Use Agents with Cross-Platform Data - 테스트",
-      "url": "https://arxiv.org/abs/2509.15221",
-      "date": "2026-02-W03",
-      "year": "2026",
-      "month": "2",
-      "week": "3",
-      "bullets": [
-        {
-          "text": "ScaleCUA: 6개의 운영체제와 3개의 task domains에 대한 large-scale 오픈소스 dataset",
-          "level": 1
-        },
-        {
-          "text": "테스트 계층",
-          "level": 2
-        }
-      ],
-      "tags": []
-    },
-    {
-      "id": "meta-introducing-oakley-meta-glasses-a-new-category-of-performance-ai-glasses---테스트",
-      "type": "news",
-      "org": "Meta",
-      "title": "Introducing Oakley Meta Glasses, a New Category of Performance AI Glasses - 테스트",
-      "url": "https://about.fb.com/news/2025/06/introducing-oakley-meta-glasses-a-new-category-of-performance-ai-glasses/",
-      "date": "2026-02-W03",
-      "year": "2026",
-      "month": "2",
-      "week": "3",
-      "bullets": [
-        {
-          "text": "풀충전 기준 일반적인 사용으로 8시간, stanby 기준 19시간 지속되는 배터리",
-          "level": 1
-        },
-        {
-          "text": "Ultra HD (3K) video를 담을 수 있는 high resolution camera",
-          "level": 1
-        },
-        {
-          "text": "built-in, personal AI assistant. 스포츠 활용성 높음",
-          "level": 1
-        }
-      ],
-      "tags": []
-    },
-    {
-      "id": "openai-openclaw-창립자-peter-steinberger-openai-합류-발표",
-      "type": "news",
-      "org": "OpenAI",
-      "title": "OpenClaw 창립자 Peter Steinberger, OpenAI 합류 발표",
-      "url": "",
-      "date": "2026-02-W03",
-      "year": "2026",
-      "month": "2",
-      "week": "3",
-      "bullets": [
-        {
-          "text": "PSPDFKit 창립자이자 OpenClaw 개발자인 Peter Steinberger가 OpenAI에 합류하여 AI agent 개발에 참여",
-          "level": 1
-        },
-        {
-          "text": "AI agent를 누구나 활용할 수 있도록 접근성을 높이는 데 집중할 예정",
-          "level": 2
-        },
-        {
-          "text": "OpenClaw는 재단 구조로 전환되며 오픈소스 독립성은 유지, OpenAI가 스폰서로 지원",
-          "level": 1
-        },
-        {
-          "text": "주요 AI 연구소들을 방문하고 미공개 연구에 접근한 후 OpenAI를 최종 선택했다고 밝힘",
           "level": 1
         }
       ],
@@ -1176,34 +1076,6 @@
         }
       ],
       "tags": []
-    },
-    {
-      "id": "Kaggle-product-launch",
-      "date": "2026-02-W01",
-      "year": "2026",
-      "month": "2",
-      "week": "1",
-      "type": "dev",
-      "org": "Kaggle",
-      "title": "[Product launch",
-      "url": "",
-      "bullets": [
-        {
-          "text": "custom benchmarks를 build, run, share 할 수 있는 기능 공개",
-          "level": 1
-        },
-        {
-          "text": "kaggle-benchmarks SDK",
-          "level": 1
-        },
-        {
-          "text": "multi-turn conversations, multimodal capabilities 도 측정 가능",
-          "level": 1
-        }
-      ],
-      "tags": [
-        "multimodal"
-      ]
     },
     {
       "id": "MIT,-ETH-self-distillation-enables-continual-learning",
@@ -2262,27 +2134,6 @@
       ],
       "tags": [
         "AI/ML"
-      ]
-    },
-    {
-      "id": "UIUC,-Meta,-…-agentic-reasoning-for-large-language-models",
-      "date": "2026-01-W03",
-      "year": "2026",
-      "month": "1",
-      "week": "3",
-      "type": "paper",
-      "org": "UIUC, Meta, …",
-      "title": "Agentic Reasoning for Large Language Models",
-      "url": "https://arxiv.org/abs/2601.12538",
-      "bullets": [
-        {
-          "text": "Agentic Reasoning 서베이 페이퍼",
-          "level": 1
-        }
-      ],
-      "tags": [
-        "agent",
-        "reasoning"
       ]
     },
     {
@@ -3996,30 +3847,6 @@
         }
       ],
       "tags": []
-    },
-    {
-      "id": "OpenAI-introducing-aardvark-openais-agentic-security-researcher",
-      "date": "2025-11-W01",
-      "year": "2025",
-      "month": "11",
-      "week": "1",
-      "type": "dev",
-      "org": "OpenAI",
-      "title": "Introducing Aardvark: OpenAI’s agentic security researcher",
-      "url": "",
-      "bullets": [
-        {
-          "text": "GPT-5로 실행되는 agentic security researcher, Aardvark 출시",
-          "level": 1
-        },
-        {
-          "text": "파이프라인: 커밋 단위의 변화 모니터링 → Threat Model 수립 → 취약점 탐지 → 샌드박스 검증 → 패치 제안 with codex → Human Review → PR 생성",
-          "level": 1
-        }
-      ],
-      "tags": [
-        "agent"
-      ]
     },
     {
       "id": "MoonShot-AI-kimi-linear-an-expressive-efficient-attention-architecture",
@@ -9465,28 +9292,6 @@
       ]
     },
     {
-      "id": "UCL,-Huawei-agentfly-fine-tuning-llm-agents-without-fine-tuning-llms",
-      "date": "2025-08-W04",
-      "year": "2025",
-      "month": "8",
-      "week": "4",
-      "type": "paper",
-      "org": "UCL, Huawei",
-      "title": "AgentFly: Fine-tuning LLM Agents without Fine-tuning LLMs",
-      "url": "https://arxiv.org/abs/2508.16153",
-      "bullets": [
-        {
-          "text": "Memory-augmented Markov Decision Process (M-MDP)에 neural case-selection policy를 equip",
-          "level": 0
-        },
-        {
-          "text": "policy는 memory rewriting mechanism을 통해 environmental feedback 기반으로 지속 업데이트",
-          "level": 0
-        }
-      ],
-      "tags": []
-    },
-    {
       "id": "Shanghai-AI-Lab-internvl35-advancing-open-source-multimodal-models-in-versatility-reasoning-and-efficiency",
       "date": "2025-08-W04",
       "year": "2025",
@@ -11743,19 +11548,6 @@
       "tags": []
     },
     {
-      "id": "MIT-self-adapting-language-models-1",
-      "date": "2025-06-W02",
-      "year": "2025",
-      "month": "6",
-      "week": "2",
-      "type": "paper",
-      "org": "MIT",
-      "title": "Self-Adapting Language Models",
-      "url": "https://arxiv.org/abs/2506.10943",
-      "bullets": [],
-      "tags": []
-    },
-    {
       "id": "OpenAI-launching-openai-o3-pro",
       "date": "2025-06-W03",
       "year": "2025",
@@ -12041,38 +11833,6 @@
       "tags": []
     },
     {
-      "id": "OpenAI-persona-feature-control-emergent-misalignment",
-      "date": "2025-06-W03",
-      "year": "2025",
-      "month": "6",
-      "week": "3",
-      "type": "paper",
-      "org": "OpenAI",
-      "title": "Persona Feature Control Emergent Misalignment",
-      "url": "",
-      "bullets": [
-        {
-          "text": "Toward understanding and preventing misalignment generalization: [OpenAI 블로그](https://openai.com/index/emergent-misalignment)",
-          "level": 0
-        },
-        {
-          "text": "GPT-4o를 insecure code에 의도적으로 fine-tuning 하면 unrelated prompts에도 malicious response를 반환 - emergent misalignment - 한다는 선행 연구 있음",
-          "level": 0
-        },
-        {
-          "text": "model diffing approach: sparse autoencoder를 사용하여 fine-tuning 전후의 internal model representations 비교",
-          "level": 0
-        },
-        {
-          "text": "이를 통해 activation space 내의 misaligned persona feature를 확인할 수 있었고, 이는 곧 모델이 그러한 (malicious) 행동을 보일지 아닐지 예측할 수 있다는 것을 의미함 → re-align도 가능하다고 설명",
-          "level": 0
-        }
-      ],
-      "tags": [
-        "AI/ML"
-      ]
-    },
-    {
       "id": "ByteDance-seedance-10-exploring-the-boundaries-of-video-generation-models",
       "date": "2025-06-W03",
       "year": "2025",
@@ -12132,8 +11892,7 @@
         {
           "text": "4 AI deployment zones: Automation Green Light, Red Light, R&D Opportunity, Low Priority",
           "level": 1
-        },
-        "https://magenta.tensorflow.org/magenta-realtime?utm_source=alphasignal"
+        }
       ],
       "tags": [
         "AI/ML",
@@ -12456,32 +12215,6 @@
       ],
       "tags": [
         "agent"
-      ]
-    },
-    {
-      "id": "Baidu-towards-ai-search-paradigm-1",
-      "date": "2025-06-W04",
-      "year": "2025",
-      "month": "6",
-      "week": "4",
-      "type": "paper",
-      "org": "Baidu",
-      "title": "Towards AI Search Paradigm",
-      "url": "https://arxiv.org/abs/2506.17188",
-      "bullets": [
-        {
-          "text": "LLM-powered agents를 이용하여 다양한 범위의 정보에 dynamically 접근 (from simple fatual queries to complex multi-stage reasoning tasks)",
-          "level": 1
-        },
-        {
-          "text": "query complexity를 평가하고, 문제를 executable plans로 쪼개고, tool usage, task execution, content synthesis로 문제 해결 (MCP)",
-          "level": 1
-        }
-      ],
-      "tags": [
-        "agent",
-        "AI/ML",
-        "reasoning"
       ]
     },
     {
@@ -14845,28 +14578,6 @@
       "tags": []
     },
     {
-      "id": "Google-introducing-txgemma-open-models-to-improve-therapeutics-development-1",
-      "date": "2025-04-W03",
-      "year": "2025",
-      "month": "4",
-      "week": "3",
-      "type": "dev",
-      "org": "Google",
-      "title": "Introducing TxGemma: Open models to improve therapeutics development",
-      "url": "https://developers.googleblog.com/en/introducing-txgemma-open-models-improving-therapeutics-development/",
-      "bullets": [
-        {
-          "text": "promising target을 식별하는 것부터 clinical trial의 outcome을 예측하는 것 등이 가능",
-          "level": 0
-        },
-        {
-          "text": "Gemma 2에 7M 학습 샘플을 학습한 2B, 9B, 27B 모델",
-          "level": 0
-        }
-      ],
-      "tags": []
-    },
-    {
       "id": "China-Telecom-xverify-efficient-answer-verifier-for-reasoning-model-evaluations",
       "date": "2025-04-W03",
       "year": "2025",
@@ -15880,34 +15591,6 @@
         }
       ],
       "tags": []
-    },
-    {
-      "id": "Tencent-AI-the-first-few-tokens-are-all-you-need-an-efficient-and-effective-unsupervised-prefix-fine-tuning-method-for-reasoning-models",
-      "date": "2025-03-W01",
-      "year": "2025",
-      "month": "3",
-      "week": "1",
-      "type": "paper",
-      "org": "Tencent AI",
-      "title": "The First Few Tokens Are All You Need: An Efficient and Effective Unsupervised Prefix Fine-Tuning Method for Reasoning Models",
-      "url": "",
-      "bullets": [
-        {
-          "text": "Unsupervised Prefix Fine-Tuning (UPFT): Prefix Self-Consistency를 이용. 다양한 solution에 공통적으로 포함되는 initial reasoning steps를 학습 대상으로 삼음",
-          "level": 0
-        },
-        {
-          "text": "initial prefix substrings (8개 토큰) 에 대해서만 학습함으로써 데이터 라벨링이나 sampling의 공수를 줄임",
-          "level": 0
-        },
-        {
-          "text": "학습 시간은 75%, sampling cost는 99% 줄이면서도 Rejection Sampling Fine-Tuning과 같은 기존 학습 방식에 준하는 성능을 달성했다고 보고",
-          "level": 0
-        }
-      ],
-      "tags": [
-        "reasoning"
-      ]
     },
     {
       "id": "Qwen-qwq-32b",
@@ -21035,34 +20718,6 @@
       ]
     },
     {
-      "id": "Univ.-of-Potsdam-i-dont-know-explicit-modeling-of-uncertainty-with-an-idk",
-      "date": "2024-12-W02",
-      "year": "2024",
-      "month": "12",
-      "week": "2",
-      "type": "paper",
-      "org": "Univ. of Potsdam",
-      "title": "I Don't Know: Explicit Modeling of Uncertainty with an [IDK",
-      "url": "",
-      "bullets": [
-        {
-          "text": "hallucination을 잡기 위한 novel calibration method를 제시",
-          "level": 1
-        },
-        {
-          "text": "[IDK] 라는 스페셜 토큰을 vocab에 추가하고 부정확한 예측에 대한 probability mass를 [IDK] 토큰으로 옮기는 objective function을 도입 → 모델이 uncertainty를 명시적으로 반환하도록 함",
-          "level": 1
-        },
-        {
-          "text": "이 방식으로 학습된 모델은 기존에 실수하거나 잘못 답변하던 내용들에 대해 uncertainty를 훨씬 더 잘표현할 수 있게 되었다고 보고",
-          "level": 1
-        }
-      ],
-      "tags": [
-        "AI/ML"
-      ]
-    },
-    {
       "id": "OpenAI-measuring-short-form-factuality-in-large-language-models",
       "date": "2024-12-W02",
       "year": "2024",
@@ -22114,28 +21769,6 @@
       "tags": []
     },
     {
-      "id": "OpenAI-introducing-chatgpt-search-1",
-      "date": "2024-11-W04",
-      "year": "2024",
-      "month": "11",
-      "week": "4",
-      "type": "dev",
-      "org": "OpenAI",
-      "title": "Introducing ChatGPT search",
-      "url": "https://openai.com/index/introducing-chatgpt-search/",
-      "bullets": [
-        {
-          "text": "합성데이터로 fine-tuned GPT-4o를 사용",
-          "level": 0
-        },
-        {
-          "text": "날씨, 주식, 스포츠 등은 data provider와 파트너십을 통해 real-time data를 특별히 제공한다고 함",
-          "level": 0
-        }
-      ],
-      "tags": []
-    },
-    {
       "id": "Ghent-University-large-language-models-reflect-the-ideology-of-their-creators",
       "date": "2024-11-W04",
       "year": "2024",
@@ -22912,34 +22545,6 @@
       ]
     },
     {
-      "id": "Together-AI-llama-ocr",
-      "date": "2024-11-W04",
-      "year": "2024",
-      "month": "11",
-      "week": "4",
-      "type": "dev",
-      "org": "Together AI",
-      "title": "Llama OCR",
-      "url": "",
-      "bullets": [
-        {
-          "text": "Together AI가 학습한 Llama 3.2 모델의 endpoint를 사용하여 ocr 수행",
-          "level": 0
-        },
-        {
-          "text": "Llama 3.2 11B & 90B 모델은 유료로 사용 가능",
-          "level": 0
-        },
-        {
-          "text": "[이미지 업로드 페이지 링크](https://llamaocr.com/) 🔗",
-          "level": 0
-        }
-      ],
-      "tags": [
-        "AI/ML"
-      ]
-    },
-    {
       "id": "Apple-cut-your-losses-in-large-vocabulary-language-models",
       "date": "2024-11-W04",
       "year": "2024",
@@ -23369,7 +22974,7 @@
       "year": "2024",
       "month": "11",
       "week": "3",
-      "type": "unknown",
+      "type": "news",
       "org": "Cerebral Valley: Alexandr Wang Scale AI",
       "title": "Cerebral Valley: Alexandr Wang Scale AI",
       "url": "https://www.youtube.com/watch?v=HM7wnQwpJ0w",
@@ -23591,7 +23196,7 @@
       "year": "2024",
       "month": "11",
       "week": "4",
-      "type": "unknown",
+      "type": "news",
       "org": "Amazon",
       "title": "Amazon and Anthropic deepen strategic collaboration",
       "url": "https://www.aboutamazon.com/news/aws/amazon-invests-additional-4-billion-anthropic-ai",
@@ -23632,28 +23237,6 @@
       "tags": [
         "AI/ML"
       ]
-    },
-    {
-      "id": "UPC,-ETH-do-i-know-this-entity-knowledge-awareness-and-hallucinations-in-language-models",
-      "date": "2024-11-W04",
-      "year": "2024",
-      "month": "11",
-      "week": "4",
-      "type": "paper",
-      "org": "UPC, ETH",
-      "title": "Do I Know This Entity? Knowledge Awareness and Hallucinations in Language Models",
-      "url": "https://arxiv.org/abs/2411.14257",
-      "bullets": [
-        {
-          "text": "representation space에서 의미있는 방향을 찾아내어 모델이 특정 entity에 대해 인지하고 있는지 확인할 수 있음",
-          "level": 0
-        },
-        {
-          "text": "챗 모델의 refusal behavior에도 영향을 줄 수 있는 내용",
-          "level": 0
-        }
-      ],
-      "tags": []
     },
     {
       "id": "UCL,-Shanghai,-Brown,-Singapore-natural-language-reinforcement-learning",
@@ -24534,36 +24117,6 @@
       "tags": [
         "AI/ML"
       ]
-    },
-    {
-      "id": "Microsoft-vptq-extreme-low-bit-vector-post-training-quantization-for-large-language-models-1",
-      "date": "2024-10-W02",
-      "year": "2024",
-      "month": "10",
-      "week": "2",
-      "type": "paper",
-      "org": "Microsoft",
-      "title": "VPTQ: Extreme Low-bit Vector Post-Training Quantization for Large Language Models",
-      "url": "https://arxiv.org/abs/2409.17066",
-      "bullets": [
-        {
-          "text": "Channel-Independent Second-Order Optimization을 granular VQ에 적용함으로써 가중치를 refine",
-          "level": 0
-        },
-        {
-          "text": "optimization problem을 decomposing함으로써 brief & effective codebook initialization algorithm을 제안",
-          "level": 0
-        },
-        {
-          "text": "residual & outlier quantization을 지원하여 모델 정확도를 향상하고 압축률을 높임",
-          "level": 0
-        },
-        {
-          "text": "[깃허브 링크](https://github.com/microsoft/VPTQ) 🔗",
-          "level": 0
-        }
-      ],
-      "tags": []
     },
     {
       "id": "HuggingFace-llm-evaluation-guidebook",
@@ -26663,42 +26216,6 @@
       ]
     },
     {
-      "id": "Mistral-pixtral-12b-240910",
-      "date": "2024-09-W02",
-      "year": "2024",
-      "month": "9",
-      "week": "2",
-      "type": "dev",
-      "org": "Mistral",
-      "title": "pixtral-12b-240910",
-      "url": "",
-      "bullets": [
-        {
-          "text": "text-based Nemo 12B에 400M vision adapter를 합친 모델",
-          "level": 0
-        },
-        {
-          "text": "1024 x 1024 이미지까지 처리 가능하며 16 x 16 단위로 쪼갠다고 알려짐",
-          "level": 0
-        },
-        {
-          "text": "131,072개의 unique tokens",
-          "level": 0
-        },
-        {
-          "text": "업데이트 되지 않는 모델 체크포인트를 허깅페이스에 공개",
-          "level": 0
-        },
-        {
-          "text": "[허깅페이스 링크](https://huggingface.co/mistral-community/pixtral-12b-240910) 🔗",
-          "level": 0
-        }
-      ],
-      "tags": [
-        "multimodal"
-      ]
-    },
-    {
       "id": "SambaNova-sambanova-launches-the-worlds-fastest-ai-platform",
       "date": "2024-09-W02",
       "year": "2024",
@@ -27343,32 +26860,6 @@
       "tags": [
         "agent"
       ]
-    },
-    {
-      "id": "Qwen-qwen25-coder-technical-report",
-      "date": "2024-09-W03",
-      "year": "2024",
-      "month": "9",
-      "week": "3",
-      "type": "paper",
-      "org": "Qwen",
-      "title": "Qwen2.5-Coder Technical Report",
-      "url": "",
-      "bullets": [
-        {
-          "text": "CodeQwen1.5의 후속작 Qwen2.5-Coder-1.5B, 7B의 테크니컬 리포트",
-          "level": 0
-        },
-        {
-          "text": "데이터 정제, 합성 데이터 생성, 데이터 혼합 등. 5.5T 토큰으로 학습. 큰 사이즈 모델보다도 뛰어난 성능을 보고.",
-          "level": 0
-        },
-        {
-          "text": "[허깅 페이스](https://hf.co/Qwen/Qwen2.5-Coder-7B-Instruct), [깃허브](https://github.com/QwenLM/Qwen2.5-Coder) 링크 🔗",
-          "level": 0
-        }
-      ],
-      "tags": []
     },
     {
       "id": "GitHub-try-out-openai-o1-in-github-copilot-and-models",
@@ -28042,38 +27533,6 @@
       "tags": []
     },
     {
-      "id": "Google-shieldgemma-generative-ai-content-moderation-based-on-gemma",
-      "date": "2024-08-W01",
-      "year": "2024",
-      "month": "8",
-      "week": "1",
-      "type": "paper",
-      "org": "Google",
-      "title": "ShieldGemma: Generative AI Content Moderation Based on Gemma",
-      "url": "",
-      "bullets": [
-        {
-          "text": "Gemma2-2B 모델과 함께 공개한 LLM safety 관련 모델 (2B/9B/27B)",
-          "level": 0
-        },
-        {
-          "text": "user input & LLM-generated output 둘 다에 대해 뛰어난 safety 능력을 보여줌 (llama guard 이상)",
-          "level": 0
-        },
-        {
-          "text": "llm 기반의 새로운 data curation 파이프라인을 제안",
-          "level": 0
-        },
-        {
-          "text": "[허깅페이스 링크](https://huggingface.co/collections/google/shieldgemma-release-66a20efe3c10ef2bd5808c79) 🔗",
-          "level": 0
-        }
-      ],
-      "tags": [
-        "AI/ML"
-      ]
-    },
-    {
       "id": "Tsinghua-improving-text-embeddings-for-smaller-language-models-using-contrastive-fine-tuning",
       "date": "2024-08-W01",
       "year": "2024",
@@ -28233,34 +27692,6 @@
         },
         {
           "text": "OpenAI에서 공개했던 자연스러운 실시간 대화와 관련된 연구로 보임",
-          "level": 0
-        }
-      ],
-      "tags": [
-        "AI/ML"
-      ]
-    },
-    {
-      "id": "LG-AI-Research-exaone-30-78b-instruction-tuned-language-model",
-      "date": "2024-08-W02",
-      "year": "2024",
-      "month": "8",
-      "week": "2",
-      "type": "dev",
-      "org": "LG AI Research",
-      "title": "EXAONE 3.0 7.8B Instruction Tuned Language Model",
-      "url": "",
-      "bullets": [
-        {
-          "text": "[technical report](https://www.lgresearch.ai/data/upload/tech_report/en/EXAONE_3.0_Technical_Report.pdf) 링크 🔗",
-          "level": 0
-        },
-        {
-          "text": "영어와 한국어로 학습된 bilingual generative model",
-          "level": 0
-        },
-        {
-          "text": "8T curated tokens pre-trained & SFT & DPO",
           "level": 0
         }
       ],
@@ -28621,15 +28052,15 @@
       ]
     },
     {
-      "id": "ACL-2024-Best-Paper-Award-cohere-aya-model-an-instruction-finetuned-open-access-multilingual-language-modelhttpsarxivorgabs240207827",
+      "id": "acl-2024-best-paper-cohere-aya-model",
       "date": "2024-08-W03",
       "year": "2024",
       "month": "8",
       "week": "3",
       "type": "paper",
       "org": "ACL 2024 Best Paper Award",
-      "title": "- [Cohere] [Aya Model: An Instruction Finetuned Open-Access Multilingual Language Model](https://arxiv.org/abs/2402.07827)",
-      "url": "",
+      "title": "Aya Model: An Instruction Finetuned Open-Access Multilingual Language Model",
+      "url": "https://arxiv.org/abs/2402.07827",
       "bullets": [
         {
           "text": "101개 언어를 지원하는 multilingual generative language model",
@@ -28982,26 +28413,6 @@
       "tags": []
     },
     {
-      "id": "Luma-AI-dream-machine-15",
-      "date": "2024-08-W04",
-      "year": "2024",
-      "month": "8",
-      "week": "4",
-      "type": "dev",
-      "org": "Luma AI",
-      "title": "Dream Machine 1.5",
-      "url": "https://lumalabs.ai/dream-machine",
-      "bullets": [
-        {
-          "text": "prompts에 대한 이해, 커스텀 text rendering, image-to-video 성능 등을 개선",
-          "level": 0
-        }
-      ],
-      "tags": [
-        "multimodal"
-      ]
-    },
-    {
       "id": "Microsoft-microsoft-releases-phi-35-mixture-of-experts-moe",
       "date": "2024-08-W04",
       "year": "2024",
@@ -29029,8 +28440,8 @@
       "year": "2024",
       "month": "8",
       "week": "4",
-      "type": "unknown",
-      "org": "Fine-tuning now available for GPT-4o",
+      "type": "dev",
+      "org": "OpenAI",
       "title": "Fine-tuning now available for GPT-4o",
       "url": "https://openai.com/index/gpt-4o-fine-tuning/",
       "bullets": [
@@ -31240,8 +30651,8 @@
       "year": "2024",
       "month": "6",
       "week": "2",
-      "type": "unknown",
-      "org": "Contextual Position Encoding: Learning to Count What’s Important",
+      "type": "paper",
+      "org": "Meta",
       "title": "Contextual Position Encoding: Learning to Count What’s Important",
       "url": "https://arxiv.org/abs/2405.18719",
       "bullets": [
@@ -31464,7 +30875,7 @@
       "year": "2024",
       "month": "6",
       "week": "2",
-      "type": "unknown",
+      "type": "dev",
       "org": "OpenAI",
       "title": "Extracting Concepts from GPT-4",
       "url": "https://openai.com/index/extracting-concepts-from-gpt-4/",
@@ -32391,7 +31802,7 @@
       "type": "dev",
       "org": "Andrej Karpathy",
       "title": "https://github.com/karpathy/LLM101n",
-      "url": "",
+      "url": "https://github.com/karpathy/LLM101n",
       "bullets": [
         {
           "text": "스토리텔링 AI LLM 구축 방법을 알려주는 강의를 담은 repo",
@@ -33931,30 +33342,6 @@
       "tags": []
     },
     {
-      "id": "Microsoft-matryoshka-multimodal-models",
-      "date": "2024-05-W05",
-      "year": "2024",
-      "month": "5",
-      "week": "5",
-      "type": "paper",
-      "org": "Microsoft",
-      "title": "Matryoshka Multimodal Models",
-      "url": "",
-      "bullets": [
-        {
-          "text": "Large Multimodal Models(LMMs)이 고해상도 이미지를 처리할 때 너무 많은 visual token을 학습해야 한다는 문제점이 존재",
-          "level": 0
-        },
-        {
-          "text": "Matryoshka 인형에 착안. visual content를 여러 coarse-to-fine granularities 정보로부터의 nested sets of visual tokens로 표현하는 방법을 학습.",
-          "level": 0
-        }
-      ],
-      "tags": [
-        "multimodal"
-      ]
-    },
-    {
       "id": "DeepLearning.AI-ai-agentic-design-patterns-with-autogen",
       "date": "2024-05-W05",
       "year": "2024",
@@ -35441,7 +34828,7 @@
       "type": "dev",
       "org": "2024 오픈소스 컨트리뷰션 아카데미 [체험형",
       "title": "멘티 모집](https://www.contribution.ac/)",
-      "url": "",
+      "url": "https://www.contribution.ac/",
       "bullets": [
         {
           "text": "‘Git 활용 및 Gemma를 이용한 LLM 앱 개발’",
@@ -36420,19 +35807,6 @@
       "tags": []
     },
     {
-      "id": "Cohere-aya-model-an-instruction-finetuned-open-access-multilingual-language-model",
-      "date": "2024-02-W05",
-      "year": "2024",
-      "month": "2",
-      "week": "5",
-      "type": "paper",
-      "org": "Cohere",
-      "title": "Aya Model: An Instruction Finetuned Open-Access Multilingual Language Model",
-      "url": "https://arxiv.org/abs/2402.07827",
-      "bullets": [],
-      "tags": []
-    },
-    {
       "id": "OS-Copilot:-Towards-Generalist-Computer-Agents-with-Self-Improvement-os-copilot-towards-generalist-computer-agents-with-self-improvement",
       "date": "2024-02-W05",
       "year": "2024",
@@ -37042,8 +36416,8 @@
       "week": "5",
       "type": "dev",
       "org": "Google DeepMind",
-      "title": "🧞 [Genie: Generative Interactive Environments](https://sites.google.com/view/genie-2024)",
-      "url": "",
+      "title": "Genie: Generative Interactive Environments",
+      "url": "https://sites.google.com/view/genie-2024",
       "bullets": [
         {
           "text": "single image prompt로 게임 만들기..",
@@ -37088,8 +36462,8 @@
       "week": "5",
       "type": "paper",
       "org": "Microsoft Research",
-      "title": "🐳 [Orca-Math: Unlocking the potential of SLMs in Grade School Math](https://arxiv.org/abs/2402.14830)",
-      "url": "",
+      "title": "Orca-Math: Unlocking the potential of SLMs in Grade School Math",
+      "url": "https://arxiv.org/abs/2402.14830",
       "bullets": [
         {
           "text": "Mistral-7B 모델을 베이스로 학습한 7B 모델 Orca-Math. 200K 개의 고품질 합성 데이터, feedback을 통합시키는 학습 방식 등이 활용됨. Llama-2-70B, ChatGPT-3.5 등을 능가하는 퍼포먼스",
