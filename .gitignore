@@ -19,6 +19,9 @@ web/.astro/
 .DS_Store
 Thumbs.db
 
+# Artifacts (local test/debug output)
+artifacts/
+
 # Logs
 *.log
 npm-debug.log*
