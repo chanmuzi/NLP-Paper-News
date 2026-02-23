@@ -1,8 +1,72 @@
 {
   "version": 1,
-  "last_updated": "2026-02-22T09:47:58.909Z",
-  "total_items": 1669,
+  "last_updated": "2026-02-23T04:49:10.153Z",
+  "total_items": 1671,
   "items": [
+    {
+      "id": "google-deepmind-intelligent-ai-delegation",
+      "type": "paper",
+      "org": "Google DeepMind",
+      "title": "Intelligent AI Delegation",
+      "url": "https://arxiv.org/abs/2602.11865",
+      "date": "2026-02-W03",
+      "year": "2026",
+      "month": "2",
+      "week": "3",
+      "bullets": [
+        {
+          "text": "기존의 task decomposition & delegation methods는 simple heuristics에 의존하는 점을 문제로 지적",
+          "level": 1
+        },
+        {
+          "text": "delegation을 sequence of decisions로 모델링하는 프레임워크 제안",
+          "level": 1
+        },
+        {
+          "text": "언제 delegate할지, 어떻게 지시할지, 어떻게 AI outputs를 평가할지 등",
+          "level": 2
+        },
+        {
+          "text": "Adaptive delegation structure, Trust calibration mechanisms, Verification and integration, Multi-agent delegation networks 등의 핵심 특징",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "voltropy-lcm-lossless-context-management",
+      "type": "paper",
+      "org": "Voltropy",
+      "title": "LCM: Lossless Context Management",
+      "url": "https://papers.voltropy.com/LCM",
+      "date": "2026-02-W03",
+      "year": "2026",
+      "month": "2",
+      "week": "3",
+      "bullets": [
+        {
+          "text": "long-context tasks에서 Claude Code를 능가하는 deterministic architecture for LLM memory",
+          "level": 1
+        },
+        {
+          "text": "OOLONG 벤치마크에서 32K - 1M 사이의 context length에 대해 전부 Claude Code 능가",
+          "level": 2
+        },
+        {
+          "text": "recursive context manipulation이 native file-system access를 갖추고 있는 coding agents보다도 좋았다고 설명",
+          "level": 1
+        },
+        {
+          "text": "symbolic recursion을 2개의 deterministic, engine-managed mechanisms로 decompose",
+          "level": 1
+        },
+        {
+          "text": "recursive context compression, recursive task partitioning",
+          "level": 2
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "meta-princeton-duke-learning-personalized-agents-from-human-feedback",
       "type": "paper",
@@ -36552,9 +36616,9 @@
     }
   ],
   "stats": {
-    "total": 1694,
-    "paper": 1026,
-    "dev": 627,
+    "total": 1671,
+    "paper": 1015,
+    "dev": 620,
     "news": 36
   }
 }
