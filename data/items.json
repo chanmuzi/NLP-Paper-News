@@ -1,8 +1,80 @@
 {
   "version": 1,
-  "last_updated": "2026-02-23T04:49:10.153Z",
-  "total_items": 1671,
+  "last_updated": "2026-02-24T04:55:47.213Z",
+  "total_items": 1673,
   "items": [
+    {
+      "id": "bytedance-does-your-reasoning-model-implicitly-know-when-to-stop-thinking",
+      "type": "paper",
+      "org": "ByteDance",
+      "title": "Does Your Reasoning Model Implicitly Know When to Stop Thinking?",
+      "url": "https://arxiv.org/abs/2602.08354",
+      "date": "2026-02-W04",
+      "year": "2026",
+      "month": "2",
+      "week": "4",
+      "bullets": [
+        {
+          "text": "large reasoning models (LRMs)는 복잡한 추론을 잘하지만 지나치게 많이 생성(redundancy)함으로써 비효율 초래",
+          "level": 1
+        },
+        {
+          "text": "오히려 추론이 정확도를 떨어뜨리는 경우도 존재",
+          "level": 2
+        },
+        {
+          "text": "본 연구에서는 LRMs가 thinking을 멈춰야 할 적절한 타이밍을 내재적으로 알고 있지만, 이러한 능력이 현재의 sampling paradigms에 의해 obscured 된다고 설명",
+          "level": 1
+        },
+        {
+          "text": "Self-Aware Guided Efficient Reasoning (SAGE): reasoning potential을 발휘할 수 있도록 하는 새로운 sampling paradigm 제시",
+          "level": 1
+        },
+        {
+          "text": "이를 group-based RL과 결합한 것이 (SAGE-RL) pass@1 inference의 reasoning 효율성을 크게 향상시켜줬다고 설명",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "nvidia-world-action-models-are-zero-shot-policies",
+      "type": "paper",
+      "org": "NVIDIA",
+      "title": "World Action Models are Zero-shot Policies",
+      "url": "https://arxiv.org/abs/2602.15922?_bhlid=4be3d101f8183995f33f74a58e0561eeca27ba51",
+      "date": "2026-02-W04",
+      "year": "2026",
+      "month": "2",
+      "week": "4",
+      "bullets": [
+        {
+          "text": "DreamZero: pretrained video diffusion backbone으로 학습한 World Action Model (WAM)",
+          "level": 1
+        },
+        {
+          "text": "기존 VLA와 달리 future world states & actions를 예측함으로써 physical dynamics를 학습",
+          "level": 1
+        },
+        {
+          "text": "이를 위해 video를 how the world evolves의 dense representation으로 사용",
+          "level": 2
+        },
+        {
+          "text": "repetitive demonstrations에 의존하지 않고도 heterogeneous robot data로부터 다양한 스킬 학습",
+          "level": 1
+        },
+        {
+          "text": "기존 SoTA VLA 대비 2배 수준의 일반화 성능을 보임 (to new tasks & environment)",
+          "level": 2
+        },
+        {
+          "text": "14B autoregressive video diffusion model이 real-time closed-loop control을 7Hz로 가능",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "google-deepmind-intelligent-ai-delegation",
       "type": "paper",
@@ -36616,8 +36688,8 @@
     }
   ],
   "stats": {
-    "total": 1671,
-    "paper": 1015,
+    "total": 1673,
+    "paper": 1017,
     "dev": 620,
     "news": 36
   }
