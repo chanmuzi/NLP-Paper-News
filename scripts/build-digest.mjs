@@ -58,7 +58,18 @@ function isEmoji(ch) {
   }
 }
 
-function countXChars(text) {
+function graphemeSegments(text) {
+  const src = String(text || '');
+  try {
+    if (typeof Intl !== 'undefined' && Intl.Segmenter) {
+      const seg = new Intl.Segmenter('en', { granularity: 'grapheme' });
+      return Array.from(seg.segment(src), (x) => x.segment);
+    }
+  } catch {}
+  return [...src];
+}
+
+function countXCharsCodepoint(text) {
   const normalized = String(text || '').replace(URL_REGEX, 'x'.repeat(23));
   let total = 0;
   for (const ch of [...normalized]) {
@@ -66,6 +77,20 @@ function countXChars(text) {
     else total += 1;
   }
   return total;
+}
+
+function countXCharsGrapheme(text) {
+  const normalized = String(text || '').replace(URL_REGEX, 'x'.repeat(23));
+  let total = 0;
+  for (const g of graphemeSegments(normalized)) {
+    if (isEmoji(g) || isWideChar(g)) total += 2;
+    else total += 1;
+  }
+  return total;
+}
+
+function countXChars(text) {
+  return Math.max(countXCharsCodepoint(text), countXCharsGrapheme(text));
 }
 
 function isWithinXLimit(text, limit = X_HARD_LIMIT) {
