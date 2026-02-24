@@ -1,8 +1,46 @@
 {
   "version": 1,
-  "last_updated": "2026-02-24T04:55:47.213Z",
-  "total_items": 1673,
+  "last_updated": "2026-02-24T16:01:37.838Z",
+  "total_items": 1674,
   "items": [
+    {
+      "id": "waterloo-nanoknow-how-to-know-what-your-language-model-knows",
+      "type": "paper",
+      "org": "Waterloo",
+      "title": "NanoKnow: How to Know What Your Language Model Knows",
+      "url": "https://arxiv.org/abs/2602.20122",
+      "date": "2026-02-W04",
+      "year": "2026",
+      "month": "2",
+      "week": "4",
+      "bullets": [
+        {
+          "text": "LLM이 뭘 알고 있는지를 알기 어려운 이유는 사전 학습 데이터가 공개되어 있지 않기 때문",
+          "level": 1
+        },
+        {
+          "text": "완전 공개 corpus로만 학습된 NanoChat 소형 LLM을 이용해 NanoKnow 벤치마크로 실험",
+          "level": 1
+        },
+        {
+          "text": "답이 학습 데이터에 자주 등장할수록 정확도가 상승",
+          "level": 1
+        },
+        {
+          "text": "parametric knowledge와 external knowledge는 상호보완적",
+          "level": 1
+        },
+        {
+          "text": "그러나 관련 없는 문서(distractor)는 성능을 하락시키는 원인이 됨",
+          "level": 2
+        },
+        {
+          "text": "(개인 견해) 일반화 성능이 부족한 작은 모델의 특성으로 인한 것인지, flagship 모델들도 방대한 데이터를 학습했기 때문에 대부분 상황에 커버되는 것인지 파악하기 어려워 보임",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "bytedance-does-your-reasoning-model-implicitly-know-when-to-stop-thinking",
       "type": "paper",
@@ -36688,8 +36726,8 @@
     }
   ],
   "stats": {
-    "total": 1673,
-    "paper": 1017,
+    "total": 1674,
+    "paper": 1018,
     "dev": 620,
     "news": 36
   }
