@@ -431,7 +431,7 @@ function buildAiContext(items, generationLimit, siteBaseUrl) {
       note: '링크는 가중치 23으로 계산. 이모지/한글은 가중치 증가 가능.',
     },
     style_policy: {
-      tone: ['간결', '사실 중심', '과장 금지', '광고 문구 금지'],
+      tone: ['간결', '사실 중심', '과장 금지', '광고 문구 금지', '합니다/습니다 체 통일', '설명하듯 자연스럽게'],
       main_format: [
         '📌 YYYY.MM.DD (요일) 업데이트 (N건)',
         '• [기관명] 원문 제목',
@@ -624,7 +624,9 @@ async function buildAiXThread(items, siteBaseUrl, safeLimit, debug) {
     '- 입력에 없는 사실을 추가하지 말 것',
     `- 길이 목표: ${generationLimit}자 이내 (절대 ${X_HARD_LIMIT}자 초과 금지)`,
     '- title_short는 짧게',
-    '- summary_line은 간결한 짧은 문장(1~2문장 가능, 꼭 한 문장일 필요 없음)',
+    '- summary_line은 간결한 1~2문장 줄글',
+    "- summary_line 어투: '합니다/습니다' 체로 통일 (예: ~입니다, ~합니다, ~공개했습니다, ~보고합니다)",
+    '- summary_line 톤: 구독자에게 설명하듯 자연스럽고 명확하게, 과장/감탄/수식어 없이',
     '- summary_line에 번호/아이콘/기관/URL을 넣지 말 것(링크는 시스템이 별도 부착)',
     '- 줄글 형식, bullet 금지',
     '반드시 schema JSON만 출력합니다.',
