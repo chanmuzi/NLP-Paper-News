@@ -113,6 +113,10 @@ Node.js ESM (.mjs) 유틸리티. CI에서 주로 사용:
 
 로컬 테스트/디버그 전용 출력 디렉토리. `build-digest.mjs`, `extract-new-items.mjs` 등 스크립트 실행 시 생성되는 산출물(digest.json, social-draft.md, email.html 등)이 저장된다. 모두 재생성 가능한 임시 파일이므로 `.gitignore`에 포함되어 있으며, 커밋하지 않는다.
 
+### Git Push 전 체크
+
+push 전에 로컬 브랜치가 리모트 대비 최신 상태인지 확인한다. 뒤처져 있으면 사용자에게 상황을 보고하고, 어떻게 진행할지(pull, rebase 등) 컨펌을 받은 뒤 실행한다. 임의로 판단하지 않는다.
+
 ### 디자인
 
 - Anthropic/Claude 톤: 테라코타, 세이지 그린, 뮤티드 블루 색상 팔레트
