@@ -1,8 +1,94 @@
 {
   "version": 1,
-  "last_updated": "2026-02-24T16:01:37.838Z",
-  "total_items": 1674,
+  "last_updated": "2026-02-26T05:51:47.771Z",
+  "total_items": 1677,
   "items": [
+    {
+      "id": "anthropic-detecting-and-preventing-distillation-attacks",
+      "type": "dev",
+      "org": "Anthropic",
+      "title": "Detecting and preventing distillation attacks",
+      "url": "https://www.anthropic.com/news/detecting-and-preventing-distillation-attacks",
+      "date": "2026-02-W04",
+      "year": "2026",
+      "month": "2",
+      "week": "4",
+      "bullets": [
+        {
+          "text": "DeepSeek, Moonshot, MiniMax, 3개의 중국 AI 연구소가 2,400여 개의 사기 계정으로 1,600만 건이 넘는 질의로 Claude의 능력을 무단 질의했다고 밝힘",
+          "level": 1
+        },
+        {
+          "text": "Anthropic은 중국 및 그 영향 하 기업들에 상업적 접근을 제공하지 않고 있는데 트래픽을 분산해서 이를 우회",
+          "level": 1
+        },
+        {
+          "text": "distillation pattern & CoT 유도 프롬프트를 탐지하는 분류기, behavioral fingerprinting 구축",
+          "level": 1
+        },
+        {
+          "text": "애매한 저작권, IP 경계로 인해 (특히나 이중잣대) Anthropic에 냉소적인 커뮤니티 반응",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "video-reason-team-a-very-big-video-reasoning-suite",
+      "type": "paper",
+      "org": "Video-Reason Team",
+      "title": "A Very Big Video Reasoning Suite",
+      "url": "https://arxiv.org/abs/2602.20159",
+      "date": "2026-02-W04",
+      "year": "2026",
+      "month": "2",
+      "week": "4",
+      "bullets": [
+        {
+          "text": "Very Big Video Reasoning (VBVR) Dataset: 체계적인 taxonomy에 따라 200가지 추론 과제. 100만 개 이상의 비디오 클립 포함",
+          "level": 1
+        },
+        {
+          "text": "기존 데이터셋 대비 약 1,000배 더 큰 규모",
+          "level": 2
+        },
+        {
+          "text": "엄청난 양의 데이터 공개로 인해 크게 화제를 일으키고 있음 (HuggingFace Papers 역대급 추천수..)",
+          "level": 2
+        },
+        {
+          "text": "VBVR-Bench: model-based judging을 넘어 rule-based, human-aligned scores를 통합한 verifiable evaluation framework",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "eth-zurich-evaluating-agentsmd-are-repository-level-context-files-helpful-for-coding-agents",
+      "type": "paper",
+      "org": "ETH Zurich",
+      "title": "Evaluating AGENTS.md: Are Repository-Level Context Files Helpful for Coding Agents?",
+      "url": "https://arxiv.org/abs/2602.11988",
+      "date": "2026-02-W04",
+      "year": "2026",
+      "month": "2",
+      "week": "4",
+      "bullets": [
+        {
+          "text": "coding agents들이 참조하는 [AGENTS.md](http://AGENTS.md) 와 같은 컨텍스트 파일이 비용만 늘리는 경우가 많다고 지적",
+          "level": 1
+        },
+        {
+          "text": "AGENTbench 제작: 실제 깃허브 이슈로부터 제작한 Python software engineering tasks로 138개의 unique instances로 구성됨",
+          "level": 1
+        },
+        {
+          "text": "사람이 직접 작성한 컨텍스트 파일은 그나마 성능을 향상시켜주긴 하지만, 마찬가지로 사용하는 토큰의 양이 증가하게 됨",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "waterloo-nanoknow-how-to-know-what-your-language-model-knows",
       "type": "paper",
@@ -36726,9 +36812,9 @@
     }
   ],
   "stats": {
-    "total": 1674,
-    "paper": 1018,
-    "dev": 620,
+    "total": 1677,
+    "paper": 1020,
+    "dev": 621,
     "news": 36
   }
 }
