@@ -67,6 +67,7 @@ jobs:
           X_ACCESS_TOKEN_SECRET: ${{ secrets.X_ACCESS_TOKEN_SECRET }}
           X_API_BASE: ${{ vars.X_API_BASE }}
           X_DEGRADE_REPLY_403_429: ${{ vars.X_DEGRADE_REPLY_403_429 }}
+          X_INTER_REPLY_DELAY_MS: ${{ vars.X_INTER_REPLY_DELAY_MS }}
         run: node scripts/post-x.mjs --digest artifacts/digest.json --result artifacts/post-result.json
 
       - name: Post to X summary

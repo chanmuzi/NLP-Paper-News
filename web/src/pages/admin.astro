@@ -225,9 +225,8 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
           <div class="flex items-center justify-between mb-1">
             <label class="block text-xs text-gray-500">Main post</label>
             <div class="flex items-center gap-1.5">
-              <button id="x-copy-main-btn" class="text-xs px-2 py-1 rounded-md border border-gray-200 dark:border-gray-700 text-gray-500 hover:border-claude-400 inline-flex items-center gap-1" title="main 복사">
-                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16h8m-8-4h8m2 8H6a2 2 0 01-2-2V6a2 2 0 012-2h8l6 6v8a2 2 0 01-2 2z"/></svg>
-                복사
+              <button id="x-copy-main-btn" class="x-copy-icon-btn p-1 rounded text-gray-400 hover:text-claude-600 dark:hover:text-claude-400 transition-colors" title="main 복사">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
               </button>
               <button id="x-main-approve-btn" class="text-xs px-2 py-1 rounded-md border border-gray-200 dark:border-gray-700 text-gray-500 hover:border-claude-400">main 승인</button>
             </div>
@@ -239,9 +238,8 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
           <div class="flex items-center justify-between mb-1">
             <label class="block text-xs text-gray-500">Replies</label>
             <div class="flex items-center gap-1.5">
-              <button id="x-copy-replies-btn" class="text-xs px-2 py-1 rounded-md border border-gray-200 dark:border-gray-700 text-gray-500 hover:border-claude-400 inline-flex items-center gap-1" title="replies 복사">
-                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16h8m-8-4h8m2 8H6a2 2 0 01-2-2V6a2 2 0 012-2h8l6 6v8a2 2 0 01-2 2z"/></svg>
-                복사
+              <button id="x-copy-replies-btn" class="x-copy-icon-btn p-1 rounded text-gray-400 hover:text-claude-600 dark:hover:text-claude-400 transition-colors" title="replies 전체 복사">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
               </button>
               <button id="x-replies-approve-btn" class="text-xs px-2 py-1 rounded-md border border-gray-200 dark:border-gray-700 text-gray-500 hover:border-claude-400">replies 승인</button>
             </div>
@@ -291,6 +289,10 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
         <button id="x-copy-thread-btn" class="px-3 py-2 rounded-lg border border-gray-200 dark:border-gray-700 text-sm text-gray-600 dark:text-gray-300 hover:border-claude-400 transition-all">스레드 복사</button>
       </div>
       <div id="x-review-note" class="mt-2 text-xs text-gray-400"></div>
+      <label id="mock-degraded-label" class="mt-2 hidden items-center gap-2 text-xs text-gray-400">
+        <input type="checkbox" id="mock-degraded-toggle" class="accent-claude-500" />
+        <span>reply 실패 시뮬레이션</span>
+      </label>
     </div>
 
     <!-- Submit Status (outside preview-section so it stays visible after submit clears items) -->
@@ -554,6 +556,15 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
 
   function escapeHtml(s: string) {
     return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  }
+
+  const COPY_ICON_SVG = '<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>';
+  const CHECK_ICON_SVG = '<svg class="w-3.5 h-3.5 text-claude-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>';
+
+  function showCopyCheck(btn: HTMLElement) {
+    const orig = btn.innerHTML;
+    btn.innerHTML = CHECK_ICON_SVG;
+    setTimeout(() => { btn.innerHTML = orig; }, 1200);
   }
 
   function getLocalDuplicateCount(items: any[]) {
@@ -1339,7 +1350,12 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
 
     repliesEditor.innerHTML = (draft.thread.replies || []).map((reply, idx) => `
       <div>
-        <label class="block text-xs text-gray-500 mb-1">Reply ${idx + 1}</label>
+        <div class="flex items-center justify-between mb-1">
+          <label class="text-xs text-gray-500">Reply ${idx + 1}</label>
+          <button class="x-reply-copy x-copy-icon-btn p-1 rounded text-gray-400 hover:text-claude-600 dark:hover:text-claude-400 transition-colors" data-index="${idx + 1}" title="reply ${idx + 1} 복사">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+          </button>
+        </div>
         <textarea
           data-index="${idx + 1}"
           class="x-reply-input w-full px-3 py-2 rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-anthro-darkMid text-sm text-gray-900 dark:text-gray-100 outline-none focus:border-claude-500"
@@ -1348,6 +1364,18 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
         <div id="x-reply-count-${idx + 1}" class="text-xs font-mono text-gray-400">0/280</div>
       </div>
     `).join('');
+
+    repliesEditor.querySelectorAll('.x-reply-copy').forEach((btn) => {
+      btn.addEventListener('click', async () => {
+        const idx = Number((btn as HTMLElement).dataset.index);
+        const textarea = repliesEditor!.querySelector(`.x-reply-input[data-index="${idx}"]`) as HTMLTextAreaElement | null;
+        if (!textarea) return;
+        try {
+          await navigator.clipboard.writeText(textarea.value);
+          showCopyCheck(btn as HTMLElement);
+        } catch { /* clipboard API 실패 시 무시 */ }
+      });
+    });
 
     if (replyTarget) {
       replyTarget.innerHTML = [
@@ -2126,10 +2154,15 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
               if (postResult?.degradedMode === 'main_only') {
                 resolved = true;
                 clearInterval(heartbeat);
-                showStatus(`커밋 완료 · ${shortSha}\nmain만 게시되었습니다. 남은 replies는 수동으로 이어서 게시해 주세요.\n경과: ${elapsedSeconds()}s`, 'warn', { autoScroll: true });
-                await sleep(4200);
-                clearXDraftReview();
-                fadeStatusNow();
+                const failedAt = postResult.failedAt || '?';
+                const total = postResult.totalReplies || '?';
+                const postedCount = (postResult.posted || []).length;
+                const httpStatus = postResult.httpStatus || '알 수 없음';
+                showStatus(
+                  `커밋 완료 · ${shortSha}\n${postedCount}개 게시 성공 · reply ${failedAt}/${total} 실패 (HTTP ${httpStatus})\n경과: ${elapsedSeconds()}s`,
+                  'warn', { autoScroll: true }
+                );
+                showDegradedRecovery(postResult, xDraftData);
               } else {
                 resolved = true;
                 clearInterval(heartbeat);
@@ -2201,6 +2234,10 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
       return;
     }
 
+    // Alt 키를 누른 채 게시하면 degraded mock 시나리오 실행
+    const simulateDegraded = (window as any).__mockDegraded === true;
+    (window as any).__mockDegraded = false;
+
     const startedAt = Date.now();
     const elapsedSeconds = () => Math.max(0, Math.floor((Date.now() - startedAt) / 1000));
     let phaseMsg = '[mock] 승인 게시 워크플로 시작 대기 중...';
@@ -2219,16 +2256,47 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
     phaseMsg = '[mock] X main post 게시 완료';
     render('info');
 
+    const mockPosted = [{ type: 'main', id: '1234567890000000001' }];
+    const failAtIndex = thread.replies.length; // 마지막 reply에서 실패
+
     for (let i = 0; i < thread.replies.length; i++) {
+      if (simulateDegraded && i + 1 === failAtIndex) {
+        phaseMsg = `[mock] X reply ${i + 1}/${thread.replies.length} 게시 실패 (403)`;
+        render('warn');
+        await sleep(800);
+        break;
+      }
       phaseMsg = `[mock] X reply ${i + 1}/${thread.replies.length} 게시 중...`;
       render('info');
       await sleep(1100);
+      mockPosted.push({ type: `reply ${i + 1}`, id: `12345678900000000${10 + i}` });
       phaseMsg = `[mock] X reply ${i + 1}/${thread.replies.length} 게시 완료`;
       render('info');
       await sleep(350);
     }
 
     clearInterval(heartbeat);
+
+    if (simulateDegraded && thread.replies.length > 0) {
+      const postedCount = mockPosted.length;
+      const httpStatus = 403;
+      showStatus(
+        `커밋 완료 · ${shortSha}\n${postedCount}개 게시 성공 · reply ${failAtIndex}/${thread.replies.length} 실패 (HTTP ${httpStatus})\n경과: ${elapsedSeconds()}s`,
+        'warn', { autoScroll: true }
+      );
+      showDegradedRecovery({
+        degradedMode: 'main_only',
+        failedAt: failAtIndex,
+        totalReplies: thread.replies.length,
+        httpStatus,
+        errorDetail: 'Forbidden - You are not permitted to perform this action.',
+        posted: mockPosted,
+        failedReplyTexts: thread.replies.slice(failAtIndex - 1),
+        lastPostedId: mockPosted[mockPosted.length - 1]?.id || null,
+      }, xDraftData);
+      return;
+    }
+
     phaseMsg = '[mock] X 게시가 완료되었습니다.';
     render('success', { autoScroll: true });
     await sleep(4200);
@@ -2261,6 +2329,71 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
       statusEl.style.opacity = '';
       statusEl.style.transition = '';
     }, 300);
+  }
+
+  function showDegradedRecovery(
+    result: any,
+    draft: { thread: { main: string; replies: string[] } } | null
+  ) {
+    const failedAt = Number(result?.failedAt || 0);
+    const httpStatus = result?.httpStatus || '?';
+    const errorDetail = result?.errorDetail || result?.error || '';
+
+    // 실패한 reply 텍스트: result에 있으면 우선 사용, 없으면 draft에서 추출
+    let failedTexts: string[] = result?.failedReplyTexts || [];
+    if (failedTexts.length === 0 && draft?.thread?.replies && failedAt > 0) {
+      for (let i = failedAt - 1; i < draft.thread.replies.length; i++) {
+        failedTexts.push(draft.thread.replies[i]);
+      }
+    }
+
+    let panel = document.getElementById('x-degraded-recovery');
+    if (!panel) {
+      panel = document.createElement('div');
+      panel.id = 'x-degraded-recovery';
+      const statusEl = document.getElementById('submit-status');
+      statusEl?.parentNode?.insertBefore(panel, statusEl.nextSibling);
+    }
+
+    panel.className = 'mt-3 p-4 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-anthro-darkSurface text-sm';
+    panel.innerHTML = `
+      <div class="flex items-center justify-between mb-2">
+        <p class="font-semibold text-gray-900 dark:text-gray-100">직접 게시가 필요한 reply</p>
+        <button id="x-recovery-dismiss" class="text-xs text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 px-2 py-1 rounded border border-gray-200 dark:border-gray-700">닫기</button>
+      </div>
+      ${failedTexts.map((text: string, i: number) => `
+        <div class="mb-3">
+          <div class="flex items-center justify-between mb-1">
+            <label class="text-xs text-gray-500">Reply ${failedAt + i}</label>
+            <button class="x-recovery-copy x-copy-icon-btn p-1 rounded text-gray-400 hover:text-claude-600 dark:hover:text-claude-400 transition-colors" data-index="${i}" title="reply ${failedAt + i} 복사">
+              ${COPY_ICON_SVG}
+            </button>
+          </div>
+          <p class="text-xs text-red-500 dark:text-red-400 mb-1">Error: HTTP ${escapeHtml(String(httpStatus))} · ${escapeHtml(errorDetail)}</p>
+          <pre class="p-3 rounded-lg bg-gray-50 dark:bg-anthro-darkMid text-gray-800 dark:text-gray-200 whitespace-pre-wrap break-words text-sm">${escapeHtml(text)}</pre>
+        </div>
+      `).join('')}
+      <p class="mt-1"><a href="https://x.com/chanmuzi22" target="_blank" rel="noopener" class="inline-flex items-center gap-1 text-claude-600 dark:text-claude-400 hover:underline text-xs">X에서 직접 게시하기 ↗</a></p>
+    `;
+
+    // 개별 복사 버튼
+    panel.querySelectorAll('.x-recovery-copy').forEach((btn) => {
+      btn.addEventListener('click', async () => {
+        const idx = Number((btn as HTMLElement).dataset.index);
+        if (failedTexts[idx] == null) return;
+        try {
+          await navigator.clipboard.writeText(failedTexts[idx]);
+          showCopyCheck(btn as HTMLElement);
+        } catch { /* clipboard API 실패 시 무시 */ }
+      });
+    });
+
+    // 닫기 버튼
+    panel.querySelector('#x-recovery-dismiss')?.addEventListener('click', () => {
+      panel!.remove();
+      clearXDraftReview();
+      fadeStatusNow();
+    });
   }
 
   function showStatus(message: string, type: 'info' | 'success' | 'error' | 'warn', opts: { autoScroll?: boolean } = {}) {
@@ -2391,6 +2524,11 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
       return;
     }
     if (isPostingInProgress) return;
+
+    // Mock mode: degraded 체크박스로 실패 시나리오 시뮬레이션
+    if (mockMode && (document.getElementById('mock-degraded-toggle') as HTMLInputElement)?.checked) {
+      (window as any).__mockDegraded = true;
+    }
 
     try {
       isPostingInProgress = true;
@@ -2559,7 +2697,7 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
     const thread = collectEditedThread();
     if (!thread) return;
     await navigator.clipboard.writeText(thread.main || '');
-    showToast('main post를 복사했습니다');
+    showCopyCheck(document.getElementById('x-copy-main-btn')!);
   });
 
   document.getElementById('x-copy-replies-btn')?.addEventListener('click', async () => {
@@ -2567,7 +2705,7 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
     if (!thread) return;
     const text = thread.replies.map((r, i) => `=== REPLY ${i + 1} ===\n${r}`).join('\n\n');
     await navigator.clipboard.writeText(text);
-    showToast('replies를 복사했습니다');
+    showCopyCheck(document.getElementById('x-copy-replies-btn')!);
   });
 
   // ─── GitHub token ──────────────────────
@@ -2613,6 +2751,15 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
     const enabled = (e.target as HTMLInputElement).checked;
     setMockMode(enabled);
     updateTokenStatus();
+    const degradedLabel = document.getElementById('mock-degraded-label');
+    if (degradedLabel) {
+      degradedLabel.classList.toggle('hidden', !enabled);
+      degradedLabel.classList.toggle('flex', enabled);
+    }
+    if (!enabled) {
+      const degradedToggle = document.getElementById('mock-degraded-toggle') as HTMLInputElement | null;
+      if (degradedToggle) degradedToggle.checked = false;
+    }
     showToast(enabled ? '로컬 mock 모드가 켜졌습니다' : '로컬 mock 모드가 꺼졌습니다');
   });
 
@@ -2670,6 +2817,11 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
       mockModeToggle.closest('label')?.parentElement?.appendChild(hint);
     } else {
       mockModeToggle.checked = isMockMode();
+      const degradedLabel = document.getElementById('mock-degraded-label');
+      if (degradedLabel && isMockMode()) {
+        degradedLabel.classList.remove('hidden');
+        degradedLabel.classList.add('flex');
+      }
     }
   }
   const savedRepo = localStorage.getItem('github_repo');

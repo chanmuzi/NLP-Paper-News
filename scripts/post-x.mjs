@@ -572,7 +572,10 @@ async function main() {
   let failedReply = null;
 
   for (let i = 0; i < replies.length; i++) {
-    const delay = 6000 + Math.floor(Math.random() * 4000); // 6-10s
+    const baseDelay = Number(process.env.X_INTER_REPLY_DELAY_MS) || 15000;
+    const progressiveExtra = i * 5000;
+    const jitter = Math.floor(Math.random() * 5000);
+    const delay = baseDelay + progressiveExtra + jitter;
     emitProgress('reply_wait', { index: i + 1, total: replies.length, waitMs: delay });
     await sleep(delay);
 
@@ -630,7 +633,8 @@ async function main() {
       rollbackDeleted: 0,
       manualAction: 'reply_followup_recommended',
       response: failedReply.response,
-      localGuardLimit,
+      failedReplyTexts: replies.slice(failedReply.index - 1),
+      lastPostedId: posted[posted.length - 1]?.id || null,
     });
 
     console.log(`\nMain tweet kept. Please add remaining replies manually if needed.`);
