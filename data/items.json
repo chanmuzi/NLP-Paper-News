@@ -1,8 +1,72 @@
 {
   "version": 1,
-  "last_updated": "2026-02-26T05:51:47.771Z",
-  "total_items": 1677,
+  "last_updated": "2026-02-27T08:18:28.636Z",
+  "total_items": 1679,
   "items": [
+    {
+      "id": "nvidia-on-data-engineering-for-scaling-llm-terminal-capabilities",
+      "type": "paper",
+      "org": "NVIDIA",
+      "title": "On Data Engineering for Scaling LLM Terminal Capabilities",
+      "url": "https://arxiv.org/abs/2602.21193",
+      "date": "2026-02-W04",
+      "year": "2026",
+      "month": "2",
+      "week": "4",
+      "bullets": [
+        {
+          "text": "Two key contributions",
+          "level": 1
+        },
+        {
+          "text": "Terminal-Task-Gen: seed-based & skill-based task construction을 지원하는 lightweight synthetic task generation pipeline",
+          "level": 2
+        },
+        {
+          "text": "data & training analysis: filtering, curriculum learning, long context training, scaling behavior 등을 포함",
+          "level": 2
+        },
+        {
+          "text": "Terminal-Corpus: large-scale open-source dataset for terminal tasks",
+          "level": 1
+        },
+        {
+          "text": "이를 이용해서 Qwen3 기반의 Nemotron-Terminal 모델 학습",
+          "level": 2
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "perplexity-introducing-perplexity-computer",
+      "type": "dev",
+      "org": "Perplexity",
+      "title": "Introducing Perplexity Computer",
+      "url": "https://www.perplexity.ai/hub/blog/introducing-perplexity-computer",
+      "date": "2026-02-W04",
+      "year": "2026",
+      "month": "2",
+      "week": "4",
+      "bullets": [
+        {
+          "text": "a general-purpose AI system: single prompts에 단순 대답 → runs full workflows",
+          "level": 1
+        },
+        {
+          "text": "여러 개의 frontier models를 병렬적으로 실행하고 orchestrate",
+          "level": 1
+        },
+        {
+          "text": "각 작업에 맞는 모델들을 자동으로 골라서 사용하는 구조",
+          "level": 1
+        },
+        {
+          "text": "(개인 의견) 예전 MS에서 jarvis라고 HuggingFace에 업로드된 모델들을 적재적소에 사용하는 구조를 제시했던 것의 발전된 형태로 보임",
+          "level": 2
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "anthropic-detecting-and-preventing-distillation-attacks",
       "type": "dev",
@@ -36812,9 +36876,9 @@
     }
   ],
   "stats": {
-    "total": 1677,
-    "paper": 1020,
-    "dev": 621,
+    "total": 1679,
+    "paper": 1021,
+    "dev": 622,
     "news": 36
   }
 }
