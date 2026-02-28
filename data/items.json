@@ -1,8 +1,38 @@
 {
   "version": 1,
-  "last_updated": "2026-02-27T08:18:28.636Z",
-  "total_items": 1679,
+  "last_updated": "2026-02-28T07:02:46.131Z",
+  "total_items": 1680,
   "items": [
+    {
+      "id": "google-nano-banana-2-combining-pro-capabilities-with-lightning-fast-speed",
+      "type": "dev",
+      "org": "Google",
+      "title": "Nano Banana 2: Combining Pro capabilities with lightning-fast speed",
+      "url": "https://blog.google/innovation-and-ai/technology/ai/nano-banana-2",
+      "date": "2026-02-W04",
+      "year": "2026",
+      "month": "2",
+      "week": "4",
+      "bullets": [
+        {
+          "text": "Gemini 3.1 Flash Image 모델을 Nano Banana 2로 공개",
+          "level": 1
+        },
+        {
+          "text": "Pro의 성능과 Flash의 추론 속도 장점을 합쳐놓은 것으로 소개",
+          "level": 2
+        },
+        {
+          "text": "텍스트 렌더링 최적화가 되었다고 설명",
+          "level": 1
+        },
+        {
+          "text": "최대 5명의 캐릭터 + 14개 오브젝트를 한 워크플로우에서 일관되게 유지",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "nvidia-on-data-engineering-for-scaling-llm-terminal-capabilities",
       "type": "paper",
@@ -36876,9 +36906,9 @@
     }
   ],
   "stats": {
-    "total": 1679,
+    "total": 1680,
     "paper": 1021,
-    "dev": 622,
+    "dev": 623,
     "news": 36
   }
 }
