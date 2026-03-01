@@ -1,8 +1,38 @@
 {
   "version": 1,
-  "last_updated": "2026-02-28T07:02:46.131Z",
-  "total_items": 1680,
+  "last_updated": "2026-03-01T14:02:09.000Z",
+  "total_items": 1681,
   "items": [
+    {
+      "id": "sakana-doc-to-lora-learning-to-instantly-internalize-contexts",
+      "type": "paper",
+      "org": "Sakana",
+      "title": "Doc-to-LoRA: Learning to Instantly Internalize Contexts",
+      "url": "https://arxiv.org/abs/2602.15902",
+      "date": "2026-02-W04",
+      "year": "2026",
+      "month": "2",
+      "week": "4",
+      "bullets": [
+        {
+          "text": "context distillation (CD)이 정보 전달에 탁월하지만 per-prompt distillation은 현실적으로 적용 불가능",
+          "level": 1
+        },
+        {
+          "text": "single forward pass 내에서 CD에 근사하도록 meta-learn 하는 lightweight hypernetwork",
+          "level": 1
+        },
+        {
+          "text": "unseen prompt가 주어지면 LoRA adapter를 생성하여 이어지는 쿼리들에 응답할 때 기존 context를 re-consume 하지 않도록 함",
+          "level": 1
+        },
+        {
+          "text": "latency & KV-cache memory consumption을 줄일 수 있음",
+          "level": 2
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "google-nano-banana-2-combining-pro-capabilities-with-lightning-fast-speed",
       "type": "dev",
@@ -36906,8 +36936,8 @@
     }
   ],
   "stats": {
-    "total": 1680,
-    "paper": 1021,
+    "total": 1681,
+    "paper": 1022,
     "dev": 623,
     "news": 36
   }
