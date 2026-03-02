@@ -1,8 +1,68 @@
 {
   "version": 1,
-  "last_updated": "2026-03-01T14:02:09.000Z",
-  "total_items": 1681,
+  "last_updated": "2026-03-02T10:13:27.228Z",
+  "total_items": 1683,
   "items": [
+    {
+      "id": "inception-introducing-mercury-2",
+      "type": "dev",
+      "org": "inception",
+      "title": "Introducing Mercury 2",
+      "url": "https://www.inceptionlabs.ai/blog/introducing-mercury-2",
+      "date": "2026-03-W01",
+      "year": "2026",
+      "month": "3",
+      "week": "1",
+      "bullets": [
+        {
+          "text": "세계에서 가장 빠른 reasoning language model 공개",
+          "level": 1
+        },
+        {
+          "text": "autoregressive 방식보다 5배 이상 빠른 추론 속도를 자랑",
+          "level": 1
+        },
+        {
+          "text": "초당 80토큰 정도를 생성하는 Claude Haiku 4.5, GPT-5 Mini보다도 100배 이상 많은 1,000 토큰을 생성",
+          "level": 2
+        },
+        {
+          "text": "tunable reasoning, 128K context, native tool use, schema-aligned JSON output 등의 특징",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "google-think-deep-not-just-long-measuring-llm-reasoning-effort-via-deep-thinking-tokens",
+      "type": "paper",
+      "org": "Google",
+      "title": "Think Deep, Not Just Long: Measuring LLM Reasoning Effort via Deep-Thinking Tokens",
+      "url": "https://arxiv.org/abs/2602.13517",
+      "date": "2026-03-W01",
+      "year": "2026",
+      "month": "3",
+      "week": "1",
+      "bullets": [
+        {
+          "text": "LLM의 추론 능력을 평가할 때 생성된 문장의 길이(토큰 수)보다 내부적인 사고의 깊이가 더 중요하다는 점을 강조",
+          "level": 1
+        },
+        {
+          "text": "deep-thinking 비율이 높을수록 복잡한 추론 문제를 잘 풀 수 있다는 양의 상관관계 확인",
+          "level": 1
+        },
+        {
+          "text": "Think@n: high deep-thinking ratios(DTR)를 우선시 해서 sampling 하는 test-time scaling strategy 제시",
+          "level": 1
+        },
+        {
+          "text": "초기 생성 단계에서 DTR이 낮은 유망하지 않은 답변 사전 차단",
+          "level": 2
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "sakana-doc-to-lora-learning-to-instantly-internalize-contexts",
       "type": "paper",
@@ -36936,9 +36996,9 @@
     }
   ],
   "stats": {
-    "total": 1681,
-    "paper": 1022,
-    "dev": 623,
+    "total": 1683,
+    "paper": 1023,
+    "dev": 624,
     "news": 36
   }
 }
