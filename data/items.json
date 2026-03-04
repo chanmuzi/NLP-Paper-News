@@ -1,8 +1,64 @@
 {
   "version": 1,
-  "last_updated": "2026-03-02T10:13:27.228Z",
-  "total_items": 1683,
+  "last_updated": "2026-03-04T09:49:00.286Z",
+  "total_items": 1685,
   "items": [
+    {
+      "id": "ai2-how-do-researchers-actually-use-ai-powered-science-tools-lessons-from-250000-queries",
+      "type": "dev",
+      "org": "Ai2",
+      "title": "How do researchers actually use AI-powered science tools? Lessons from 250,000+ queries",
+      "url": "https://allenai.org/blog/asta-interaction-dataset",
+      "date": "2026-03-W01",
+      "year": "2026",
+      "month": "3",
+      "week": "1",
+      "bullets": [
+        {
+          "text": "연구자들이 AI 기반 연구 도구를 어떻게 사용하는지 분석한 결과를 정리",
+          "level": 1
+        },
+        {
+          "text": "쿼리가 훨씬 길고 복잡하며 요구사항이 많다고 분석",
+          "level": 2
+        },
+        {
+          "text": "단순 검색 엔진이 아닌 협업 연구 파트너로 취급하는 경향 존재",
+          "level": 2
+        },
+        {
+          "text": "Asta Interaction Dataset (AID): 258,935개의 queries & 432,059개의 clickstream interactions로 이뤄진 데이터셋 공개",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "perplexity-pplx-embed-state-of-the-art-embedding-models-for-web-scale-retrieval",
+      "type": "dev",
+      "org": "Perplexity",
+      "title": "pplx-embed: State-of-the-Art Embedding Models for Web-Scale Retrieval",
+      "url": "https://research.perplexity.ai/articles/pplx-embed-state-of-the-art-embedding-models-for-web-scale-retrieval",
+      "date": "2026-03-W01",
+      "year": "2026",
+      "month": "3",
+      "week": "1",
+      "bullets": [
+        {
+          "text": "real-world, web-scael retrieval을 위한 SoTA text embedding models MIT 라이센스로 공개: pplx-embed-v1, pplx-embed-context-v1",
+          "level": 1
+        },
+        {
+          "text": "각각 0.6B, 4B로 속도와 검색 퀄리티에 집중. INT8 & binary embeddings 반환",
+          "level": 1
+        },
+        {
+          "text": "continued diffusion pretraining, contrastive training, native quantization 등을 학습 기법으로 언급",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "inception-introducing-mercury-2",
       "type": "dev",
@@ -36996,9 +37052,9 @@
     }
   ],
   "stats": {
-    "total": 1683,
+    "total": 1685,
     "paper": 1023,
-    "dev": 624,
+    "dev": 626,
     "news": 36
   }
 }
