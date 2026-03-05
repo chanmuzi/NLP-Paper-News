@@ -1,8 +1,38 @@
 {
   "version": 1,
-  "last_updated": "2026-03-04T09:49:00.286Z",
-  "total_items": 1685,
+  "last_updated": "2026-03-05T04:15:27.896Z",
+  "total_items": 1686,
   "items": [
+    {
+      "id": "meta-agentic-code-reasoning",
+      "type": "paper",
+      "org": "Meta",
+      "title": "Agentic Code Reasoning",
+      "url": "https://arxiv.org/abs/2603.01896",
+      "date": "2026-03-W01",
+      "year": "2026",
+      "month": "3",
+      "week": "1",
+      "bullets": [
+        {
+          "text": "semi-formal reasoning: agents가 explicit premises를 구성하고 execution paths를 추적하며 formal conclusions를 이끌어내도록 하는 structured prompting methodology",
+          "level": 1
+        },
+        {
+          "text": "agent는 cases를 스킵하거나 unsupported claims를 만들어낼 수 없음",
+          "level": 2
+        },
+        {
+          "text": "structured agentic reasoning이 실제 코드 실행 없이도 semantic code analysis를 가능토록 한다는 결론",
+          "level": 1
+        },
+        {
+          "text": "RL training pipelines, code review, static program analysis 등에 활용 가능할 것으로 예상",
+          "level": 2
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "ai2-how-do-researchers-actually-use-ai-powered-science-tools-lessons-from-250000-queries",
       "type": "dev",
@@ -37052,8 +37082,8 @@
     }
   ],
   "stats": {
-    "total": 1685,
-    "paper": 1023,
+    "total": 1686,
+    "paper": 1024,
     "dev": 626,
     "news": 36
   }
