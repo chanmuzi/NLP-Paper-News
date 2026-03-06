@@ -1,8 +1,38 @@
 {
   "version": 1,
-  "last_updated": "2026-03-05T04:15:27.896Z",
-  "total_items": 1686,
+  "last_updated": "2026-03-06T01:08:57.370Z",
+  "total_items": 1687,
   "items": [
+    {
+      "id": "google-google-workspace-cli-gws",
+      "type": "dev",
+      "org": "Google",
+      "title": "Google Workspace CLI, GWS",
+      "url": "https://github.com/googleworkspace/cli",
+      "date": "2026-03-W01",
+      "year": "2026",
+      "month": "3",
+      "week": "1",
+      "bullets": [
+        {
+          "text": "Drive, Gmail, Calendar와 같은 Workspace services에 연결해서 structured JSON을 반환해주는 CLI 도구",
+          "level": 1
+        },
+        {
+          "text": "Google API 정의를 읽어서 이를 CLI commands로 자동 변환",
+          "level": 1
+        },
+        {
+          "text": "고정된 명령어 목록 x → 동적으로 생성 o",
+          "level": 2
+        },
+        {
+          "text": "MCP 서버를 지원하며 50개 이상의 상세 스킬 보유",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "meta-agentic-code-reasoning",
       "type": "paper",
@@ -37082,9 +37112,9 @@
     }
   ],
   "stats": {
-    "total": 1686,
+    "total": 1687,
     "paper": 1024,
-    "dev": 626,
+    "dev": 627,
     "news": 36
   }
 }
