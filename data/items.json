@@ -1,8 +1,112 @@
 {
   "version": 1,
-  "last_updated": "2026-03-06T01:08:57.370Z",
-  "total_items": 1687,
+  "last_updated": "2026-03-07T06:57:09.462Z",
+  "total_items": 1691,
   "items": [
+    {
+      "id": "microsoft-proact-vl-a-proactive-videollm-for-real-time-ai-companions",
+      "type": "paper",
+      "org": "Microsoft",
+      "title": "Proact-VL: A Proactive VideoLLM for Real-Time AI Companions",
+      "url": "https://arxiv.org/abs/2603.03447",
+      "date": "2026-03-W01",
+      "year": "2026",
+      "month": "3",
+      "week": "1",
+      "bullets": [
+        {
+          "text": "기존에 달성하기 어려운 것들: low-latency inference, deciding when to respond",
+          "level": 1
+        },
+        {
+          "text": "AI companions (commentator & guide) 를 이용한 자동 평가",
+          "level": 1
+        },
+        {
+          "text": "Live Gaming Benchmark: solo-commentary, co-commentary, user guidance, 3개의 시나리오를 커버하는 large-scale dataset",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "ai2-introducing-olmo-hybrid-combining-transformers-and-linear-rnns-for-superior-scaling",
+      "type": "dev",
+      "org": "Ai2",
+      "title": "Introducing Olmo Hybrid: Combining transformers and linear RNNs for superior scaling",
+      "url": "https://allenai.org/blog/olmohybrid",
+      "date": "2026-03-W01",
+      "year": "2026",
+      "month": "3",
+      "week": "1",
+      "bullets": [
+        {
+          "text": "transformer attention과 linear recurrent layers를 혼합한 아키텍쳐의 7B 모델",
+          "level": 1
+        },
+        {
+          "text": "Olmo 3 대비 2배 정도의 데이터 효율성을 보여주었음",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "meta-beyond-language-modeling-an-exploration-of-multimodal-pretraining",
+      "type": "paper",
+      "org": "Meta",
+      "title": "Beyond Language Modeling: An Exploration of Multimodal Pretraining",
+      "url": "https://arxiv.org/abs/2603.03276",
+      "date": "2026-03-W01",
+      "year": "2026",
+      "month": "3",
+      "week": "1",
+      "bullets": [
+        {
+          "text": "얀 르쿤이 저자로 참여한 논문",
+          "level": 1
+        },
+        {
+          "text": "LLM에 vision adapter를 붙이는 방식 대신 text, images, video를 scratch 부터 함께 학습하는 one system",
+          "level": 1
+        },
+        {
+          "text": "unified training이 perception & generation 둘 다에 대해 useful presentation을 produces",
+          "level": 1
+        },
+        {
+          "text": "vision은 scaling을 위해서 language보다 더 많은 데이터를 필요로 한다는 결론",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "openai-introducing-gpt54",
+      "type": "dev",
+      "org": "OpenAI",
+      "title": "Introducing GPT‑5.4",
+      "url": "https://openai.com/index/introducing-gpt-5-4",
+      "date": "2026-03-W01",
+      "year": "2026",
+      "month": "3",
+      "week": "1",
+      "bullets": [
+        {
+          "text": "spreadsheets, documents, software development, research 와 같은 태스크들을 위한 one system",
+          "level": 1
+        },
+        {
+          "text": "native computer use를 포함하여 스크린샷을 이해하고 적합한 mouse & keyboard actions 사용 가능",
+          "level": 1
+        },
+        {
+          "text": "1M context window를 지원하며, longer responses 전에 plan을 outline 하는 특징",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "google-google-workspace-cli-gws",
       "type": "dev",
@@ -37112,9 +37216,9 @@
     }
   ],
   "stats": {
-    "total": 1687,
-    "paper": 1024,
-    "dev": 627,
+    "total": 1691,
+    "paper": 1026,
+    "dev": 629,
     "news": 36
   }
 }
