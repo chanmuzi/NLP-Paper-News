@@ -1,8 +1,38 @@
 {
   "version": 1,
-  "last_updated": "2026-03-07T06:57:09.462Z",
-  "total_items": 1691,
+  "last_updated": "2026-03-08T05:54:22.456Z",
+  "total_items": 1692,
   "items": [
+    {
+      "id": "meta-ai-must-embrace-specialization-via-superhuman-adaptable-intelligence",
+      "type": "paper",
+      "org": "Meta",
+      "title": "AI Must Embrace Specialization via Superhuman Adaptable Intelligence",
+      "url": "https://arxiv.org/abs/2602.23643",
+      "date": "2026-03-W01",
+      "year": "2026",
+      "month": "3",
+      "week": "1",
+      "bullets": [
+        {
+          "text": "사람들이 AGI에 대해 논하지만 AGI의 개념부터 틀렸음",
+          "level": 1
+        },
+        {
+          "text": "인간도 보편적인 지능체가 아닌 생존 전문가일 뿐이며 스스로의 맹점을 잘 인지하지 못함",
+          "level": 2
+        },
+        {
+          "text": "AI는 general 해야 하는 게 아니라 특화되어야 한다고 설명하며 Superhuman Adaptable Intelligence (SAI) 개념을 도입",
+          "level": 1
+        },
+        {
+          "text": "단백질을 접는 AI가 빨래까지 접을 필요가 없음 (fold proteins and fold laundry)",
+          "level": 2
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "microsoft-proact-vl-a-proactive-videollm-for-real-time-ai-companions",
       "type": "paper",
@@ -37216,8 +37246,8 @@
     }
   ],
   "stats": {
-    "total": 1691,
-    "paper": 1026,
+    "total": 1692,
+    "paper": 1027,
     "dev": 629,
     "news": 36
   }
