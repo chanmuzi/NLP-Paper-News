@@ -1,8 +1,64 @@
 {
   "version": 1,
-  "last_updated": "2026-03-08T05:54:22.456Z",
-  "total_items": 1692,
+  "last_updated": "2026-03-08T15:32:26.211Z",
+  "total_items": 1694,
   "items": [
+    {
+      "id": "mit-neuroskilltm-proactive-real-time-agentic-system-capable-of-modeling-human-state-of-mind",
+      "type": "paper",
+      "org": "MIT",
+      "title": "NeuroSkill(tm): Proactive Real-Time Agentic System Capable of Modeling Human State of Mind",
+      "url": "https://arxiv.org/abs/2603.03212",
+      "date": "2026-03-W02",
+      "year": "2026",
+      "month": "3",
+      "week": "2",
+      "bullets": [
+        {
+          "text": "foundation EXG model & text embedding model을 사용하여 edge에서 완전 offline으로 동작하며 Human State of Mind를 modeling 할 수 있는 real-time proactive agentic system",
+          "level": 1
+        },
+        {
+          "text": "사용자의 뇌파(EEG)와 생체 신호를 실시간으로 분석",
+          "level": 2
+        },
+        {
+          "text": "NeuroSkill은 system에 의해 제공되는 API, CLI를 통해 Human’s State of Mind의 SKILL.md description를 이용함",
+          "level": 1
+        },
+        {
+          "text": "사용자 역시 마크다운 형식의 파일을 수정하는 것만으로 agent 동작 방식 최적화",
+          "level": 2
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "uc-berkeley-symmetry-in-language-statistics-shapes-the-geometry-of-model-representations",
+      "type": "paper",
+      "org": "UC berkeley",
+      "title": "Symmetry in language statistics shapes the geometry of model representations",
+      "url": "https://arxiv.org/abs/2602.15029",
+      "date": "2026-03-W02",
+      "year": "2026",
+      "month": "3",
+      "week": "2",
+      "bullets": [
+        {
+          "text": "LLM은 내부 representation 공간에서 기하 구조를 스스로 형성하는데 이는 deep learning dynamics가 아닌 자연어 통계의 translation symmetry에 직접 기인한다고 설명",
+          "level": 1
+        },
+        {
+          "text": "months, days of the week처럼 cyclic 개념의 경우 circular representation이 optimal encoding으로 자연스럽게 등장",
+          "level": 1
+        },
+        {
+          "text": "historical years, number line 같이 연속적인(continuous) 개념의 representation은 곡률을 가진 compact 1D manifold 위에 정렬되는 형태를 보임",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "meta-ai-must-embrace-specialization-via-superhuman-adaptable-intelligence",
       "type": "paper",
@@ -37246,8 +37302,8 @@
     }
   ],
   "stats": {
-    "total": 1692,
-    "paper": 1027,
+    "total": 1694,
+    "paper": 1029,
     "dev": 629,
     "news": 36
   }
