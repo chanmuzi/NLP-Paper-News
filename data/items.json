@@ -1,8 +1,60 @@
 {
   "version": 1,
-  "last_updated": "2026-03-08T15:32:26.211Z",
-  "total_items": 1694,
+  "last_updated": "2026-03-10T03:24:09.049Z",
+  "total_items": 1696,
   "items": [
+    {
+      "id": "andrej-karpathy-autoresearch",
+      "type": "dev",
+      "org": "Andrej Karpathy",
+      "title": "AutoResearch",
+      "url": "https://github.com/karpathy/autoresearch",
+      "date": "2026-03-W02",
+      "year": "2026",
+      "month": "3",
+      "week": "2",
+      "bullets": [
+        {
+          "text": "AI agent가 학습 코드를 수정하고 직접 실험을 돌리는 방식으로 research process를 변경",
+          "level": 1
+        },
+        {
+          "text": "사람은 간단한 마크다운 프롬프트 작성 → Agent는 실험하며 개선 사항을 Git feature branch에 반영",
+          "level": 1
+        },
+        {
+          "text": "3개의 .py 파일, 630줄로 구성된 프로젝트로 연구에 대한 패러다임 전환을 시사하여 화제를 일으키고 있음",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "huggingface-the-synthetic-data-playbookgenerating-trillions-of-the-finest-tokens",
+      "type": "dev",
+      "org": "HuggingFace",
+      "title": "The Synthetic Data Playbook:Generating Trillions of the Finest Tokens",
+      "url": "https://huggingface.co/spaces/HuggingFaceFW/finephrase",
+      "date": "2026-03-W02",
+      "year": "2026",
+      "month": "3",
+      "week": "2",
+      "bullets": [
+        {
+          "text": "FinePhrase: 468B token dataset. 사전학습을 위한 합성데이터.",
+          "level": 1
+        },
+        {
+          "text": "90번의 실험 동안 12.7 GPU years 자원을 사용하여 1T 토큰 이상을 생성하며 합성 데이터 생성에 필요한 best recipe를 발견했다고 설명",
+          "level": 1
+        },
+        {
+          "text": "이미 기존에 존재하던 web-data는 충분히 사용되었으므로 높은 퀄리티의 합성 데이터를 만드는 것이 핵심 (이런 흐름이 된지 좀 되었음)",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "mit-neuroskilltm-proactive-real-time-agentic-system-capable-of-modeling-human-state-of-mind",
       "type": "paper",
@@ -37302,9 +37354,9 @@
     }
   ],
   "stats": {
-    "total": 1694,
+    "total": 1696,
     "paper": 1029,
-    "dev": 629,
+    "dev": 631,
     "news": 36
   }
 }
