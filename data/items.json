@@ -1,8 +1,90 @@
 {
   "version": 1,
-  "last_updated": "2026-03-10T03:24:09.049Z",
-  "total_items": 1696,
+  "last_updated": "2026-03-11T01:10:12.177Z",
+  "total_items": 1699,
   "items": [
+    {
+      "id": "yann-lecun-ami-labs",
+      "type": "dev",
+      "org": "Yann LeCun",
+      "title": "AMI Labs",
+      "url": "https://amilabs.xyz/",
+      "date": "2026-03-W02",
+      "year": "2026",
+      "month": "3",
+      "week": "2",
+      "bullets": [
+        {
+          "text": "얀 르쿤이 설립한 기업으로 제품 출시 전부터 약 1.4조 원 규모 투자금 유치 (기업 가치 35억 달러 수준)",
+          "level": 1
+        },
+        {
+          "text": "월드모델을 통해 할루시네이션을 원천 차단하고 의료와 같은 고위험 분야에서도 안전하게 쓸 수 있는 AI 구축 목표",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "google-gemini-embedding-2-our-first-natively-multimodal-embedding-model",
+      "type": "dev",
+      "org": "Google",
+      "title": "Gemini Embedding 2: Our first natively multimodal embedding model",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-embedding-2/",
+      "date": "2026-03-W02",
+      "year": "2026",
+      "month": "3",
+      "week": "2",
+      "bullets": [
+        {
+          "text": "text, images, videos, audio, documents를 single, unified embedding space에 mapping 하는 multimodal embedding model",
+          "level": 1
+        },
+        {
+          "text": "100개 이상의 언어를 지원하며 8K tokens, 6개 이미지, 120초 비디오 등을 한 번의 request에서 처리할 수 있음",
+          "level": 1
+        },
+        {
+          "text": "MRL(Matryoshka Representation Learning)이 적용되어 있고 3072 차원이 default (1536, 768 차원 지원)",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "meta-nvidia-flashattention-4-algorithm-and-kernel-pipelining-co-design-for-asymmetric-hardware-scali",
+      "type": "paper",
+      "org": "Meta, NVIDIA",
+      "title": "FlashAttention-4: Algorithm and Kernel Pipelining Co-Design for Asymmetric Hardware Scaling",
+      "url": "https://arxiv.org/abs/2603.05451",
+      "date": "2026-03-W02",
+      "year": "2026",
+      "month": "3",
+      "week": "2",
+      "bullets": [
+        {
+          "text": "H100에만 최적화된 FlashAttention-3의 한계를 극복하기 위해 진행된 연구",
+          "level": 1
+        },
+        {
+          "text": "주요한 세 가지 특징",
+          "level": 1
+        },
+        {
+          "text": "asynchronous MMA operations을 온전히 이용하는 redesigned pipeline",
+          "level": 2
+        },
+        {
+          "text": "software-emulated exponential and conditional softmax rescaling",
+          "level": 2
+        },
+        {
+          "text": "shared memory traffic을 줄이기 위해 tensor memory & 2-CTA MMA mode 이용",
+          "level": 2
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "andrej-karpathy-autoresearch",
       "type": "dev",
@@ -37354,9 +37436,9 @@
     }
   ],
   "stats": {
-    "total": 1696,
-    "paper": 1029,
-    "dev": 631,
+    "total": 1699,
+    "paper": 1030,
+    "dev": 633,
     "news": 36
   }
 }
