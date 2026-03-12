@@ -1,8 +1,38 @@
 {
   "version": 1,
-  "last_updated": "2026-03-11T01:10:12.177Z",
-  "total_items": 1699,
+  "last_updated": "2026-03-12T00:27:54.712Z",
+  "total_items": 1700,
   "items": [
+    {
+      "id": "replit-introducing-replit-agent-4-built-for-creativity",
+      "type": "dev",
+      "org": "Replit",
+      "title": "Introducing Replit Agent 4: Built for Creativity",
+      "url": "https://blog.replit.com/introducing-agent-4-built-for-creativity",
+      "date": "2026-03-W02",
+      "year": "2026",
+      "month": "3",
+      "week": "2",
+      "bullets": [
+        {
+          "text": "사람이 agent와 더 자연스럽게 협업할 수 있도록 발전. 사람은 창의성을 발휘하는 데에만 집중",
+          "level": 1
+        },
+        {
+          "text": "infinite canvas에서 여러 UI variants를 한 번에 뽑아보고 직접 시각적으로 수정",
+          "level": 1
+        },
+        {
+          "text": "큰 작업을 subtasks로 쪼개어 병렬 처리 후 결과 병합",
+          "level": 1
+        },
+        {
+          "text": "프로젝트 내에 다양한 산출물을 컨텍스트로 생성하여 Linear, Notion 등과 같은 외부서비스와 바로 연결",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "yann-lecun-ami-labs",
       "type": "dev",
@@ -37436,9 +37466,9 @@
     }
   ],
   "stats": {
-    "total": 1699,
+    "total": 1700,
     "paper": 1030,
-    "dev": 633,
+    "dev": 634,
     "news": 36
   }
 }
