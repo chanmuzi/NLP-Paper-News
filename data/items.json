@@ -1,8 +1,76 @@
 {
   "version": 1,
-  "last_updated": "2026-03-12T00:27:54.712Z",
-  "total_items": 1700,
+  "last_updated": "2026-03-13T00:52:27.463Z",
+  "total_items": 1702,
   "items": [
+    {
+      "id": "google-thinking-to-recall-how-reasoning-unlocks-parametric-knowledge-in-llms",
+      "type": "paper",
+      "org": "Google",
+      "title": "Thinking to Recall: How Reasoning Unlocks Parametric Knowledge in LLMs",
+      "url": "https://arxiv.org/abs/2603.09906",
+      "date": "2026-03-W02",
+      "year": "2026",
+      "month": "3",
+      "week": "2",
+      "bullets": [
+        {
+          "text": "복잡한 추론이 필요하지 않을 때도 reasoning이 parametric knowledge를 aid 하게 되는 현상에 대한 탐구",
+          "level": 1
+        },
+        {
+          "text": "two key driving mechanisms",
+          "level": 1
+        },
+        {
+          "text": "(1) a computational buffet effect: 생성된 토큰 자체를 의미와 상관 없이 latent computation 수행 시 사용한다는 것 (생성하는 것 자체가 복잡한 사고로 이어짐)",
+          "level": 2
+        },
+        {
+          "text": "(2) factual priming: topically related facts를 생성하는 것이 곧 semantic bridge 역할을 하게 됨",
+          "level": 2
+        },
+        {
+          "text": "hallucination-free factual statements를 reasoning trajectories 내에서 우선시 함으로써 답변 퀄리티를 개선할 수 있다고 설명",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "ai2-molmobot-training-robot-manipulation-entirely-in-simulation",
+      "type": "dev",
+      "org": "Ai2",
+      "title": "MolmoBot: Training robot manipulation entirely in simulation",
+      "url": "https://allenai.org/blog/molmobot-robot-manipulation",
+      "date": "2026-03-W02",
+      "year": "2026",
+      "month": "3",
+      "week": "2",
+      "bullets": [
+        {
+          "text": "시뮬레이션 데이터만으로 학습된 robotic manipulation model",
+          "level": 1
+        },
+        {
+          "text": "시뮬레이터 MuJoCo",
+          "level": 2
+        },
+        {
+          "text": "MolmoSpaces라는 오픈 시뮬레이션 생태계를 사용해, 물체, 배치, 카메라 시점, 조명, 텍스처, 동역학 등을 강하게 랜덤화한 수백만 개의 expert trajectory 데이터를 만들어 냄",
+          "level": 1
+        },
+        {
+          "text": "모델 아키텍쳐",
+          "level": 1
+        },
+        {
+          "text": "MolmoBot (주력 VLM 기반 정책), MolmoBot‑SPOC (경량 트랜스포머 정책), MolmoBot‑Pi0 (비교용 PaliGemma 기반 정책)",
+          "level": 2
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "replit-introducing-replit-agent-4-built-for-creativity",
       "type": "dev",
@@ -37466,9 +37534,9 @@
     }
   ],
   "stats": {
-    "total": 1700,
-    "paper": 1030,
-    "dev": 634,
+    "total": 1702,
+    "paper": 1031,
+    "dev": 635,
     "news": 36
   }
 }
