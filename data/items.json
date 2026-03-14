@@ -1,8 +1,152 @@
 {
   "version": 1,
-  "last_updated": "2026-03-13T00:52:27.463Z",
-  "total_items": 1702,
+  "last_updated": "2026-03-14T04:45:35.994Z",
+  "total_items": 1706,
   "items": [
+    {
+      "id": "perplexity-everything-is-computer",
+      "type": "dev",
+      "org": "Perplexity",
+      "title": "Everything is Computer",
+      "url": "https://www.perplexity.ai/hub/blog/everything-is-computer",
+      "date": "2026-03-W02",
+      "year": "2026",
+      "month": "3",
+      "week": "2",
+      "bullets": [
+        {
+          "text": "Mac mini 위에서 24/7 상시 구동되는 cloud-based AI agent 소프트웨어 \"Personal Computer\" 발표",
+          "level": 1
+        },
+        {
+          "text": "로컬 파일, 앱(Gmail, Slack, GitHub, Notion 등), 세션에 persistent access를 제공하여 사용자의 digital proxy 역할 수행",
+          "level": 2
+        },
+        {
+          "text": "민감한 작업에는 사용자 승인(approval)이 필요하며, 모든 세션에 대해 full audit trail 제공 + kill switch 포함",
+          "level": 1
+        },
+        {
+          "text": "Perplexity Max 구독자($200/month) 전용으로 제공되며 현재 waitlist 오픈 상태",
+          "level": 1
+        },
+        {
+          "text": "Ask 2026 개발자 컨퍼런스에서 발표, enterprise·developer·finance 등 다양한 워크플로우로 확장 예정",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "openai-from-model-to-agent-equipping-the-responses-api-with-a-computer-environment",
+      "type": "dev",
+      "org": "OpenAI",
+      "title": "From model to agent: Equipping the Responses API with a computer environment",
+      "url": "https://openai.com/index/equip-responses-api-computer-environment/",
+      "date": "2026-03-W02",
+      "year": "2026",
+      "month": "3",
+      "week": "2",
+      "bullets": [
+        {
+          "text": "Responses API에 shell tool + hosted container workspace를 결합한 agent runtime 아키텍처 발표",
+          "level": 1
+        },
+        {
+          "text": "Debian 12 기반, Python 3.11, Node.js 22, Java 17, Go 1.23, Ruby 3.1 사전 탑재",
+          "level": 2
+        },
+        {
+          "text": "모델이 shell command 제안 → 격리된 container에서 실행 → 결과를 context에 반영하는 루프 구조",
+          "level": 1
+        },
+        {
+          "text": "여러 shell command를 동시 실행하는 concurrent execution 지원",
+          "level": 2
+        },
+        {
+          "text": "/mnt/data persistent storage, 네트워크 접근으로 외부 라이브러리 설치 및 API 호출 가능",
+          "level": 1
+        },
+        {
+          "text": "long-running agent를 위한 native context compaction과 SKILL.md 기반 reusable skills 표준 제공",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "nvidia-new-nvidia-nemotron-3-super-delivers-5x-higher-throughput-for-agentic-ai",
+      "type": "dev",
+      "org": "NVIDIA",
+      "title": "New NVIDIA Nemotron 3 Super Delivers 5x Higher Throughput for Agentic AI",
+      "url": "https://blogs.nvidia.com/blog/nemotron-3-super-agentic-ai/",
+      "date": "2026-03-W02",
+      "year": "2026",
+      "month": "3",
+      "week": "2",
+      "bullets": [
+        {
+          "text": "120B 파라미터 규모의 오픈소스 agentic AI 모델, 1M token context window 지원",
+          "level": 1
+        },
+        {
+          "text": "hybrid MoE 아키텍처: Mamba layer(4x 메모리/연산 효율) + Transformer layer 조합, inference 시 12B 파라미터만 활성화",
+          "level": 1
+        },
+        {
+          "text": "Latent MoE로 1개 expert 비용으로 4개 expert를 활성화",
+          "level": 2
+        },
+        {
+          "text": "Multi-Token Prediction으로 3x 빠른 inference",
+          "level": 2
+        },
+        {
+          "text": "이전 Nemotron Super 대비 5x throughput, 최대 2x accuracy 향상",
+          "level": 1
+        },
+        {
+          "text": "DeepResearch Bench 리더보드 1위 (NVIDIA AI-Q research agent 기반)",
+          "level": 2
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "pku-princeton-openclaw-rl-train-any-agent-simply-by-talking",
+      "type": "paper",
+      "org": "PKU · Princeton",
+      "title": "OpenClaw-RL: Train Any Agent Simply by Talking",
+      "url": "https://arxiv.org/abs/2603.10165",
+      "date": "2026-03-W02",
+      "year": "2026",
+      "month": "3",
+      "week": "2",
+      "bullets": [
+        {
+          "text": "agent interaction 과정에서 발생하는 next-state signal(user reply, tool output, state change)을 학습 신호로 활용하는 RL framework",
+          "level": 1
+        },
+        {
+          "text": "evaluative signals: Process Reward Model judge를 통해 scalar reward로 변환 (Binary RL)",
+          "level": 2
+        },
+        {
+          "text": "directive signals: Hindsight-Guided On-Policy Distillation으로 token-level directional supervision 제공",
+          "level": 2
+        },
+        {
+          "text": "personal conversations, terminal, GUI, SWE 등 다양한 agent 유형에 단일 framework로 통합 적용 가능",
+          "level": 1
+        },
+        {
+          "text": "비동기 4-component 파이프라인: policy serving(SGLang), environment hosting, PRM judging, training(Megatron)을 독립적으로 수행",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "google-thinking-to-recall-how-reasoning-unlocks-parametric-knowledge-in-llms",
       "type": "paper",
@@ -37534,9 +37678,9 @@
     }
   ],
   "stats": {
-    "total": 1702,
-    "paper": 1031,
-    "dev": 635,
+    "total": 1706,
+    "paper": 1032,
+    "dev": 638,
     "news": 36
   }
 }
