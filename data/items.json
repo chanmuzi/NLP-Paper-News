@@ -18837,7 +18837,7 @@
       "month": "2",
       "week": "3",
       "type": "paper",
-      "org": "University of California, Berkeley",
+      "org": "UC Berkeley",
       "title": "LLMs Can Easily Learn to Reason from Demonstrations Structure, not content, is what matters!",
       "url": "https://arxiv.org/abs/2502.07374",
       "bullets": [
@@ -21325,7 +21325,7 @@
       "month": "12",
       "week": "1",
       "type": "paper",
-      "org": "Univ. of California, Berkely",
+      "org": "UC Berkeley",
       "title": "Predicting Emergent Capabilities by Finetuning",
       "url": "https://arxiv.org/pdf/2411.16035",
       "bullets": [
@@ -21682,7 +21682,7 @@
       "month": "12",
       "week": "2",
       "type": "paper",
-      "org": "Univ. of California, Santa Barbara",
+      "org": "UC Santa Barbara",
       "title": "RuleArena: A Benchmark for Rule-Guided Reasoning with LLMs in Real-World Scenarios",
       "url": "https://arxiv.org/pdf/2412.08972",
       "bullets": [
@@ -23728,7 +23728,7 @@
       "month": "11",
       "week": "3",
       "type": "paper",
-      "org": "Univ. of California, Tsinghua, Peking",
+      "org": "UC, Tsinghua, Peking",
       "title": "Style-Compress: An LLM-Based Prompt Compression Framework Considering Task-Specific Styles",
       "url": "https://arxiv.org/pdf/2410.14042",
       "bullets": [
