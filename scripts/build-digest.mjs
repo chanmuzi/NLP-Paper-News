@@ -6,6 +6,8 @@ import { execSync } from 'child_process';
 const X_HARD_LIMIT = 280;
 const DEFAULT_X_SAFE_LIMIT = 260; // 비프리미엄/가중치 보수 대응
 const DEFAULT_GEN_MARGIN = 16;
+const PER_REQUEST_TIMEOUT_MS = 30_000; // 개별 API 호출 timeout (30초)
+const TOTAL_AI_TIMEOUT_MS = 90_000; // AI 생성 전체 timeout (90초)
 const URL_REGEX = /https?:\/\/[^\s)]+/gi;
 
 function parseArgs(argv) {
@@ -197,25 +199,38 @@ async function callOpenAIJsonSchema({ apiKey, model, schemaName, schema, systemP
 
   if (debug) debug.requests.push({ schemaName, model, systemPrompt, userPayload });
 
-  const res = await fetch(endpoint, {
-    method: 'POST',
-    headers: {
-      Authorization: `Bearer ${apiKey}`,
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      model,
-      temperature: 0.15,
-      response_format: {
-        type: 'json_schema',
-        json_schema: { name: schemaName, strict: true, schema },
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), PER_REQUEST_TIMEOUT_MS);
+
+  let res;
+  try {
+    res = await fetch(endpoint, {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${apiKey}`,
+        'Content-Type': 'application/json',
       },
-      messages: [
-        { role: 'system', content: systemPrompt },
-        { role: 'user', content: JSON.stringify(userPayload) },
-      ],
-    }),
-  });
+      signal: controller.signal,
+      body: JSON.stringify({
+        model,
+        temperature: 0.15,
+        response_format: {
+          type: 'json_schema',
+          json_schema: { name: schemaName, strict: true, schema },
+        },
+        messages: [
+          { role: 'system', content: systemPrompt },
+          { role: 'user', content: JSON.stringify(userPayload) },
+        ],
+      }),
+    });
+  } catch (err) {
+    clearTimeout(timer);
+    const reason = err.name === 'AbortError' ? `timeout after ${PER_REQUEST_TIMEOUT_MS}ms` : err.message;
+    if (debug) debug.responses.push({ schemaName, model, status: 0, raw: reason });
+    throw new Error(`OpenAI fetch failed (${schemaName}): ${reason}`);
+  }
+  clearTimeout(timer);
 
   const raw = await res.text();
   if (!res.ok) {
@@ -758,7 +773,12 @@ async function buildXThread(items, siteBaseUrl) {
   if (!enableAi) return { ...fallback, meta: { generator: 'rule', safe_limit: safeLimit }, debug };
 
   try {
-    const ai = await buildAiXThread(items, siteBaseUrl, safeLimit, debug);
+    const ai = await Promise.race([
+      buildAiXThread(items, siteBaseUrl, safeLimit, debug),
+      new Promise((_, reject) =>
+        setTimeout(() => reject(new Error(`total AI timeout after ${TOTAL_AI_TIMEOUT_MS}ms`)), TOTAL_AI_TIMEOUT_MS)
+      ),
+    ]);
     return { ...ai, debug };
   } catch (err) {
     console.warn(`ai_copy=fallback_to_rule reason=${err.message}`);
