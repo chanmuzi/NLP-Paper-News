@@ -68,9 +68,13 @@ const stats = itemsData.stats || {
   news: sortedItems.filter(i => i.type === 'news').length,
 };
 
-// Top orgs
+// Top orgs (split multi-org strings like "Meta, NVIDIA" or "PKU · Microsoft")
 const orgCounts: Record<string, number> = {};
-sortedItems.forEach(i => { orgCounts[i.org] = (orgCounts[i.org] || 0) + 1; });
+sortedItems.forEach(i => {
+  i.org.split(/,\s*|\s·\s/).map(o => o.trim()).filter(Boolean).forEach(o => {
+    orgCounts[o] = (orgCounts[o] || 0) + 1;
+  });
+});
 const topOrgs = Object.entries(orgCounts).sort((a, b) => b[1] - a[1]).slice(0, 8);
 
 const monthNames: Record<string, string> = {
