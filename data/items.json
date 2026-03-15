@@ -1,8 +1,118 @@
 {
   "version": 1,
-  "last_updated": "2026-03-14T04:45:35.994Z",
-  "total_items": 1706,
+  "last_updated": "2026-03-15T06:45:18.894Z",
+  "total_items": 1709,
   "items": [
+    {
+      "id": "google-how-were-reimagining-maps-with-gemini",
+      "type": "dev",
+      "org": "Google",
+      "title": "How we're reimagining Maps with Gemini",
+      "url": "https://blog.google/products-and-platforms/products/maps/ask-maps-immersive-navigation/",
+      "date": "2026-03-W03",
+      "year": "2026",
+      "month": "3",
+      "week": "3",
+      "bullets": [
+        {
+          "text": "Gemini를 활용한 Google Maps의 두 가지 주요 AI 기능 발표",
+          "level": 1
+        },
+        {
+          "text": "**Ask Maps**: 자연어로 장소, 비즈니스, 내비게이션에 대해 질문할 수 있는 대화형 인터페이스",
+          "level": 2
+        },
+        {
+          "text": "**Immersive Navigation**: 시각적으로 풍부한 몰입형 내비게이션 경험 제공",
+          "level": 2
+        },
+        {
+          "text": "generative AI를 주류 소비자 앱에 통합하는 Google의 전략적 방향성을 보여주는 업데이트",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "cursor-how-we-compare-model-quality-in-cursor",
+      "type": "dev",
+      "org": "Cursor",
+      "title": "How we compare model quality in Cursor",
+      "url": "https://cursor.com/blog/cursorbench",
+      "date": "2026-03-W03",
+      "year": "2026",
+      "month": "3",
+      "week": "3",
+      "bullets": [
+        {
+          "text": "실제 사용자 세션 기반의 자체 평가 도구 CursorBench를 소개하는 기술 블로그",
+          "level": 1
+        },
+        {
+          "text": "public benchmark의 한계를 지적: workflow 불일치, grading 가정 문제, data contamination",
+          "level": 1
+        },
+        {
+          "text": "SWE-bench Verified의 contamination 이슈를 구체적으로 분석",
+          "level": 2
+        },
+        {
+          "text": "**Cursor Blame** 기법으로 커밋된 코드를 agent request로 역추적하여 자연스러운 query-solution 쌍 생성",
+          "level": 1
+        },
+        {
+          "text": "CursorBench-3 기준 task 복잡도가 초기 대비 약 2배 증가했으며, SWE-bench보다 더 많은 코드 라인을 다룸",
+          "level": 1
+        },
+        {
+          "text": "향후 long-running autonomous agent 평가로 전환 예정, grading 비용 절감과 외부 서비스 의존 태스크 처리가 과제",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "fudan-meituan-can-rl-improve-generalization-of-llm-agents-an-empirical-study",
+      "type": "paper",
+      "org": "Fudan · Meituan",
+      "title": "Can RL Improve Generalization of LLM Agents? An Empirical Study",
+      "url": "https://arxiv.org/abs/2603.12011",
+      "date": "2026-03-W03",
+      "year": "2026",
+      "month": "3",
+      "week": "3",
+      "bullets": [
+        {
+          "text": "reinforcement fine-tuning이 LLM agent의 generalization 능력을 향상시킬 수 있는지에 대한 실증 연구",
+          "level": 1
+        },
+        {
+          "text": "세 가지 차원에서 분석",
+          "level": 1
+        },
+        {
+          "text": "(1) within-environment generalization: 동일 환경 내 난이도 변화에 대한 적응",
+          "level": 2
+        },
+        {
+          "text": "(2) cross-environment transfer: 새로운 환경으로의 지식 전이",
+          "level": 2
+        },
+        {
+          "text": "(3) sequential multi-environment training: 다중 환경 순차 학습 시 지식 보존 패턴",
+          "level": 2
+        },
+        {
+          "text": "동일 환경 내 난이도 변화에는 효과적이나 새로운 환경 전이에는 한계가 있으며, 이는 semantic 기반과 interface 구조 차이에 기인",
+          "level": 1
+        },
+        {
+          "text": "sequential training은 minimal forgetting으로 성능 향상을 달성, mixed environment training이 전반적 성능 균형에 효과적",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "perplexity-everything-is-computer",
       "type": "dev",
@@ -37678,9 +37788,9 @@
     }
   ],
   "stats": {
-    "total": 1706,
-    "paper": 1032,
-    "dev": 638,
+    "total": 1709,
+    "paper": 1033,
+    "dev": 640,
     "news": 36
   }
 }
