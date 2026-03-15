@@ -22,6 +22,9 @@ Thumbs.db
 # Artifacts (local test/debug output)
 artifacts/
 
+# Claude Code local settings
+.claude/settings.local.json
+
 # Logs
 *.log
 npm-debug.log*
