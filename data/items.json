@@ -1,8 +1,50 @@
 {
   "version": 1,
-  "last_updated": "2026-03-15T06:45:18.894Z",
-  "total_items": 1709,
+  "last_updated": "2026-03-16T01:40:33.832Z",
+  "total_items": 1710,
   "items": [
+    {
+      "id": "nyu-meta-the-spike-the-sparse-and-the-sink-anatomy-of-massive-activations-and-attention-sinks",
+      "type": "paper",
+      "org": "NYU · Meta",
+      "title": "The Spike, the Sparse and the Sink: Anatomy of Massive Activations and Attention Sinks",
+      "url": "https://arxiv.org/abs/2603.05498",
+      "date": "2026-03-W03",
+      "year": "2026",
+      "month": "3",
+      "week": "3",
+      "bullets": [
+        {
+          "text": "Transformer LM에서 반복적으로 관찰되는 massive activations(특정 채널의 극단적 outlier)과 attention sinks(의미와 무관하게 과도한 attention을 받는 토큰)의 메커니즘을 체계적으로 분석",
+          "level": 1
+        },
+        {
+          "text": "두 현상은 본질적으로 결합된 것이 아닌 architectural artifact이며, 각각 독립적으로 억제 가능",
+          "level": 1
+        },
+        {
+          "text": "massive activations: implicit parameter로서 global하게 작동",
+          "level": 2
+        },
+        {
+          "text": "attention sinks: attention head 단위로 local하게 작동",
+          "level": 2
+        },
+        {
+          "text": "SwiGLU FFN 블록이 directional quadratic amplifier로 기능하며, spike token의 3단계 lifecycle(injection → residual accumulation → neutralization)을 규명",
+          "level": 1
+        },
+        {
+          "text": "RMSNorm이 spike token을 sparse, near-constant representation으로 변환하는 bridge 역할을 하며, head dimension이 sink 형성의 primary architectural driver임을 실험적으로 입증",
+          "level": 1
+        },
+        {
+          "text": "Sandwich normalization, DynamicTanh, conditional gating 등으로 성능 저하 없이 각 현상을 독립적으로 제거할 수 있음을 보임",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "google-how-were-reimagining-maps-with-gemini",
       "type": "dev",
@@ -37788,8 +37830,8 @@
     }
   ],
   "stats": {
-    "total": 1709,
-    "paper": 1033,
+    "total": 1710,
+    "paper": 1034,
     "dev": 640,
     "news": 36
   }
