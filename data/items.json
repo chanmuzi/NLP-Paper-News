@@ -1,8 +1,152 @@
 {
   "version": 1,
-  "last_updated": "2026-03-16T01:40:33.832Z",
-  "total_items": 1710,
+  "last_updated": "2026-03-17T01:23:09.438Z",
+  "total_items": 1714,
   "items": [
+    {
+      "id": "niantic-coco-robotics-pokmon-go-players-unknowingly-trained-delivery-robots-with-30-billion-images",
+      "type": "news",
+      "org": "Niantic · Coco Robotics",
+      "title": "'Pokémon Go' players unknowingly trained delivery robots with 30 billion images",
+      "url": "https://www.popsci.com/technology/pokemon-go-delivery-robots-crowdsourcing/",
+      "date": "2026-03-W03",
+      "year": "2026",
+      "month": "3",
+      "week": "3",
+      "bullets": [
+        {
+          "text": "Pokémon Go 플레이어들이 수집한 300억 장 이상의 이미지를 활용해 배달 로봇용 Visual Positioning System(VPS)을 개발",
+          "level": 1
+        },
+        {
+          "text": "Niantic Spatial이 Coco Robotics와 협력하여 GPS보다 정밀한 centimeter-level 위치 추적을 로봇에 적용",
+          "level": 1
+        },
+        {
+          "text": "고층 건물이 밀집한 도심(urban canyon)에서 GPS 신호가 불안정한 문제를 시각적 랜드마크 분석으로 해결",
+          "level": 2
+        },
+        {
+          "text": "2020년 도입된 \"Field Research\" 기능으로 플레이어들이 실제 랜드마크를 카메라로 스캔하도록 유도, crowdsourced mapping 데이터를 축적",
+          "level": 1
+        },
+        {
+          "text": "엔터테인먼트 목적으로 수집된 데이터가 상업적 용도로 전환되는 사례 (Google CAPTCHA → AI 학습과 유사한 패턴)",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "tsinghua-pku-latent-learning-athletic-humanoid-tennis-skills-from-imperfect-human-motion-data",
+      "type": "paper",
+      "org": "Tsinghua · PKU",
+      "title": "LATENT: Learning Athletic Humanoid Tennis Skills from Imperfect Human Motion Data",
+      "url": "https://zzk273.github.io/LATENT/",
+      "date": "2026-03-W03",
+      "year": "2026",
+      "month": "3",
+      "week": "3",
+      "bullets": [
+        {
+          "text": "불완전한 human motion fragment만으로 humanoid 로봇에 테니스 기술을 학습시키는 방법 제안",
+          "level": 1
+        },
+        {
+          "text": "완벽한 kinematic 데이터 없이도 primitive skill을 correction·composition하여 정책을 학습",
+          "level": 2
+        },
+        {
+          "text": "Unitree G1 humanoid 로봇에 배포하여 실제 환경에서 사람과 multi-shot rally 수행에 성공",
+          "level": 1
+        },
+        {
+          "text": "다양한 조건에서 안정적인 ball-striking과 reactive footwork를 보여주며, 목표 위치로의 리턴도 가능",
+          "level": 1
+        },
+        {
+          "text": "robust sim-to-real transfer를 위한 설계가 포함되어 실제 배치 가능성을 입증",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "moonshot-ai-attention-residuals",
+      "type": "paper",
+      "org": "Moonshot AI",
+      "title": "Attention Residuals",
+      "url": "https://github.com/MoonshotAI/Attention-Residuals/blob/master/Attention_Residuals.pdf",
+      "date": "2026-03-W03",
+      "year": "2026",
+      "month": "3",
+      "week": "3",
+      "bullets": [
+        {
+          "text": "기존 Transformer의 고정 residual connection을 depth-wise attention으로 대체하는 구조 제안",
+          "level": 1
+        },
+        {
+          "text": "표준 residual은 모든 layer 출력을 동일 가중치로 누적하여, 깊어질수록 각 layer 기여가 희석되는 문제 존재",
+          "level": 2
+        },
+        {
+          "text": "각 layer가 이전 representation들에 대해 learned, input-dependent softmax attention을 수행하여 선택적으로 집계",
+          "level": 1
+        },
+        {
+          "text": "Block AttnRes: ~8개 블록 단위로 분할하여 실용적인 drop-in replacement로 사용 가능 (오버헤드 최소)",
+          "level": 1
+        },
+        {
+          "text": "5.6 PFLOP/s-days 기준 1.25배 compute advantage 달성",
+          "level": 1
+        },
+        {
+          "text": "MMLU 73.5→74.6, GPQA-Diamond 36.9→44.4, Math 53.5→57.1 등 전반적 성능 향상",
+          "level": 2
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "zai-glm-5-turbo",
+      "type": "dev",
+      "org": "Z.AI",
+      "title": "GLM-5-Turbo",
+      "url": "https://docs.z.ai/guides/llm/glm-5-turbo",
+      "date": "2026-03-W03",
+      "year": "2026",
+      "month": "3",
+      "week": "3",
+      "bullets": [
+        {
+          "text": "agent 기반 워크플로우에 최적화된 foundation model로, tool integration과 complex task execution에 특화",
+          "level": 1
+        },
+        {
+          "text": "200K context length, 최대 128K output tokens 지원, thinking mode 및 structured output(JSON) 제공",
+          "level": 1
+        },
+        {
+          "text": "4가지 핵심 강화 영역",
+          "level": 1
+        },
+        {
+          "text": "Tool Calling 정확도, Instruction Following, Scheduled/Persistent Tasks, High-Throughput Long Chains",
+          "level": 2
+        },
+        {
+          "text": "MCP(Model Context Protocol) integration 지원, OpenAI-compatible SDK로도 접근 가능",
+          "level": 1
+        },
+        {
+          "text": "ZClawBench 벤치마크에서 GLM-5 대비 agent task 전반에서 유의미한 성능 향상 확인",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "nyu-meta-the-spike-the-sparse-and-the-sink-anatomy-of-massive-activations-and-attention-sinks",
       "type": "paper",
@@ -37830,9 +37974,9 @@
     }
   ],
   "stats": {
-    "total": 1710,
-    "paper": 1034,
-    "dev": 640,
-    "news": 36
+    "total": 1714,
+    "paper": 1036,
+    "dev": 641,
+    "news": 37
   }
 }
