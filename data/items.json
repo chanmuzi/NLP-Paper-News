@@ -1,8 +1,160 @@
 {
   "version": 1,
-  "last_updated": "2026-03-17T01:23:09.438Z",
-  "total_items": 1714,
+  "last_updated": "2026-03-18T05:05:02.258Z",
+  "total_items": 1718,
   "items": [
+    {
+      "id": "nvidia-nemoclaw",
+      "type": "dev",
+      "org": "NVIDIA",
+      "title": "NemoClaw",
+      "url": "https://www.nvidia.com/en-us/ai/nemoclaw/",
+      "date": "2026-03-W03",
+      "year": "2026",
+      "month": "3",
+      "week": "3",
+      "bullets": [
+        {
+          "text": "OpenClaw에 보안 및 프라이버시 제어를 추가한 오픈소스 에이전트 스택 (early preview)",
+          "level": 1
+        },
+        {
+          "text": "NVIDIA Agent Toolkit, OpenShell(policy-based guardrails), Nemotron 모델을 결합",
+          "level": 1
+        },
+        {
+          "text": "로컬 Nemotron 모델 실행과 클라우드 frontier 모델 연결을 privacy router로 병행",
+          "level": 2
+        },
+        {
+          "text": "GeForce RTX부터 DGX까지 다양한 NVIDIA 하드웨어에서 always-on autonomous agent 구동 가능",
+          "level": 1
+        },
+        {
+          "text": "단일 커맨드(`curl | bash`)로 설치 후 `nemoclaw onboard`로 초기화",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "mistral-mistral-small-4",
+      "type": "dev",
+      "org": "Mistral",
+      "title": "Mistral Small 4",
+      "url": "https://mistral.ai/news/mistral-small-4",
+      "date": "2026-03-W03",
+      "year": "2026",
+      "month": "3",
+      "week": "3",
+      "bullets": [
+        {
+          "text": "Magistral(reasoning), Pixtral(multimodal), Devstral(agentic coding) 역량을 하나로 통합한 첫 Mistral 모델",
+          "level": 1
+        },
+        {
+          "text": "128 experts 중 4개를 토큰당 활성화하는 MoE 구조, 총 119B params / 활성 6B params",
+          "level": 1
+        },
+        {
+          "text": "256K context window, native multimodal(text + image) 지원",
+          "level": 2
+        },
+        {
+          "text": "`reasoning_effort` 파라미터로 fast instruct(`none`)부터 deep reasoning(`high`)까지 동적 조절 가능",
+          "level": 1
+        },
+        {
+          "text": "Mistral Small 3 대비 end-to-end latency 40% 감소, throughput 3배 증가",
+          "level": 1
+        },
+        {
+          "text": "Apache 2.0 라이선스 오픈소스 공개",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "fudan-tsinghua-ai-can-learn-scientific-taste",
+      "type": "paper",
+      "org": "Fudan · Tsinghua",
+      "title": "AI Can Learn Scientific Taste",
+      "url": "https://arxiv.org/abs/2603.14473",
+      "date": "2026-03-W03",
+      "year": "2026",
+      "month": "3",
+      "week": "3",
+      "bullets": [
+        {
+          "text": "AI가 연구 아이디어의 잠재적 임팩트를 판단하는 \"scientific taste\"를 학습할 수 있음을 제안",
+          "level": 1
+        },
+        {
+          "text": "RLCF(Reinforcement Learning from Community Feedback) 프레임워크 도입",
+          "level": 1
+        },
+        {
+          "text": "2.1M arXiv 논문의 citation signal을 supervision으로 활용",
+          "level": 2
+        },
+        {
+          "text": "Scientific Judge(연구 품질 평가)와 Scientific Thinker(고임팩트 아이디어 제안) 두 모델 학습",
+          "level": 2
+        },
+        {
+          "text": "SciJudge-Qwen3-30B가 GPT-5.2, Gemini 3 Pro 등 proprietary LLM을 상회하는 80.6% accuracy 달성",
+          "level": 1
+        },
+        {
+          "text": "Scientific Thinker는 SOTA 모델 대비 54.2% win rate, 미지 분야로의 일반화(83.0%)도 확인",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "princeton-together-ai-mamba-3-redesigning-state-space-models-for-inference",
+      "type": "dev",
+      "org": "Princeton · Together AI",
+      "title": "Mamba-3: Redesigning State Space Models for Inference",
+      "url": "https://tridao.me/blog/2026/mamba3-part1/",
+      "date": "2026-03-W03",
+      "year": "2026",
+      "month": "3",
+      "week": "3",
+      "bullets": [
+        {
+          "text": "training 효율이 아닌 inference 효율을 최우선 목표로 재설계한 SSM 아키텍처",
+          "level": 1
+        },
+        {
+          "text": "3가지 핵심 개선",
+          "level": 1
+        },
+        {
+          "text": "exponential-trapezoidal discretization으로 SSM 표현력 강화",
+          "level": 2
+        },
+        {
+          "text": "complex-valued SSM system으로 state-tracking 능력 확장",
+          "level": 2
+        },
+        {
+          "text": "MIMO(Multi-Input Multi-Output) 구조로 parallel processing과 낮은 decode latency 달성",
+          "level": 2
+        },
+        {
+          "text": "causal convolution 제거, RoPE 통합, QKNorm 추가 등 Transformer와의 architectural alignment 개선",
+          "level": 1
+        },
+        {
+          "text": "H100에서 1.5B 모델 기준 Mamba-2, Gated DeltaNet, vLLM Transformer 대비 최저 prefill+decode latency 달성",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "niantic-coco-robotics-pokmon-go-players-unknowingly-trained-delivery-robots-with-30-billion-images",
       "type": "news",
@@ -37974,9 +38126,9 @@
     }
   ],
   "stats": {
-    "total": 1714,
-    "paper": 1036,
-    "dev": 641,
+    "total": 1718,
+    "paper": 1037,
+    "dev": 644,
     "news": 37
   }
 }
