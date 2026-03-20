@@ -1,8 +1,110 @@
 {
   "version": 1,
-  "last_updated": "2026-03-18T05:05:02.258Z",
-  "total_items": 1718,
+  "last_updated": "2026-03-20T07:06:18.481Z",
+  "total_items": 1721,
   "items": [
+    {
+      "id": "microsoft-research-online-experiential-learning-for-language-models",
+      "type": "paper",
+      "org": "Microsoft Research",
+      "title": "Online Experiential Learning for Language Models",
+      "url": "https://arxiv.org/abs/2603.16856",
+      "date": "2026-03-W03",
+      "year": "2026",
+      "month": "3",
+      "week": "3",
+      "bullets": [
+        {
+          "text": "배포 중 축적된 실제 사용 경험을 모델 파라미터에 반영하는 Online Experiential Learning(OEL) 프레임워크 제안",
+          "level": 1
+        },
+        {
+          "text": "두 단계로 구성: (1) Extraction — 배포 시 interaction trajectory에서 transferable experiential knowledge 추출, (2) Consolidation — on-policy context distillation으로 지식을 파라미터에 통합",
+          "level": 1
+        },
+        {
+          "text": "reward model, verifiable reward, human annotation 없이 textual environment feedback만으로 동작",
+          "level": 2
+        },
+        {
+          "text": "Frozen Lake, Sokoban 환경에서 Qwen3-1.7B/4B/8B 모델 대상 반복 학습 시 정확도와 추론 효율 모두 개선",
+          "level": 1
+        },
+        {
+          "text": "3라운드 후 응답 길이가 초기 대비 약 70%로 감소",
+          "level": 2
+        },
+        {
+          "text": "raw trajectory보다 추출된 experiential knowledge가 훨씬 효과적이며, on-policy consistency가 핵심 — 더 큰 모델의 지식보다 동일 모델의 지식이 더 효과적",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "google-labs-introducing-vibe-design-with-stitch",
+      "type": "dev",
+      "org": "Google Labs",
+      "title": "Introducing 'vibe design' with Stitch",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/stitch-ai-ui-design/",
+      "date": "2026-03-W03",
+      "year": "2026",
+      "month": "3",
+      "week": "3",
+      "bullets": [
+        {
+          "text": "Google Labs가 공개한 AI-native UI 디자인 플랫폼으로, high-fidelity UI를 생성·반복·협업할 수 있음",
+          "level": 1
+        },
+        {
+          "text": "\"vibe design\"이라는 새로운 개념을 제시 — AI가 디자인 의도를 개념 수준에서 이해하고 UI 컴포넌트로 변환",
+          "level": 1
+        },
+        {
+          "text": "디자인 전문성 없이도 고품질 인터페이스 제작이 가능하도록 접근성을 높인 것이 핵심",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "ai2-molmopoint-better-pointing-architecture-for-vision-language-models",
+      "type": "dev",
+      "org": "Ai2",
+      "title": "MolmoPoint: Better Pointing Architecture for Vision-Language Models",
+      "url": "https://allenai.org/blog/molmopoint",
+      "date": "2026-03-W03",
+      "year": "2026",
+      "month": "3",
+      "week": "3",
+      "bullets": [
+        {
+          "text": "텍스트 기반 좌표 생성 대신 token-based pointing mechanism을 사용하는 새로운 VLM pointing 아키텍처",
+          "level": 1
+        },
+        {
+          "text": "coarse-to-fine grounding: PATCH → SUBPATCH → LOCATION 3개 special token으로 pointing 수행 (기존 8토큰 → 3토큰)",
+          "level": 1
+        },
+        {
+          "text": "rotary embedding으로 spatial relationship 인코딩, no-more-points class로 명시적 중단 지원",
+          "level": 2
+        },
+        {
+          "text": "3종 모델 공개: MolmoPoint-8B (범용), MolmoPoint-GUI-8B (소프트웨어 UI), MolmoPoint-Vid-4B (비디오)",
+          "level": 1
+        },
+        {
+          "text": "ScreenSpot-Pro 61.1로 open model SOTA 달성, PointBench 70.7%, PixMo-Points F1 89.2",
+          "level": 2
+        },
+        {
+          "text": "8,192개 학습 데이터만으로 baseline 대비 약 20 F1 포인트 우위 — token-based grounding의 학습 효율성 입증. 모델·코드·데이터 전부 오픈소스",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "nvidia-nemoclaw",
       "type": "dev",
@@ -38126,9 +38228,9 @@
     }
   ],
   "stats": {
-    "total": 1718,
-    "paper": 1037,
-    "dev": 644,
+    "total": 1721,
+    "paper": 1038,
+    "dev": 646,
     "news": 37
   }
 }
