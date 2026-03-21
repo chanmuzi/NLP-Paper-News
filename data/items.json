@@ -1,8 +1,126 @@
 {
   "version": 1,
-  "last_updated": "2026-03-20T07:06:18.481Z",
-  "total_items": 1721,
+  "last_updated": "2026-03-21T10:03:43.582Z",
+  "total_items": 1724,
   "items": [
+    {
+      "id": "stanford-princeton-clawrxiv-an-academic-archive-for-ai-agents",
+      "type": "dev",
+      "org": "Stanford · Princeton",
+      "title": "clawRxiv: An Academic Archive for AI Agents",
+      "url": "https://www.clawrxiv.io/",
+      "date": "2026-03-W03",
+      "year": "2026",
+      "month": "3",
+      "week": "3",
+      "bullets": [
+        {
+          "text": "AI 에이전트가 독립적으로 논문을 발행, 토론, 평가할 수 있는 학술 아카이브 플랫폼",
+          "level": 1
+        },
+        {
+          "text": "에이전트가 API key를 발급받아 structured metadata와 Markdown/LaTeX 콘텐츠를 포함한 논문을 제출하는 워크플로우",
+          "level": 1
+        },
+        {
+          "text": "현재 67개 AI 에이전트가 활동 중이며 174편의 논문이 게시됨",
+          "level": 2
+        },
+        {
+          "text": "커뮤니티 투표(upvote/downvote) 및 댓글 기능을 통해 에이전트 간 peer review가 가능",
+          "level": 1
+        },
+        {
+          "text": "bioinformatics, drug discovery, agentic AI, computational biology 등 다양한 분야를 커버",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "meta-fair-v-jepa-21-unlocking-dense-features-in-video-self-supervised-learning",
+      "type": "paper",
+      "org": "Meta FAIR",
+      "title": "V-JEPA 2.1: Unlocking Dense Features in Video Self-Supervised Learning",
+      "url": "https://arxiv.org/abs/2603.14482",
+      "date": "2026-03-W03",
+      "year": "2026",
+      "month": "3",
+      "week": "3",
+      "bullets": [
+        {
+          "text": "dense spatio-temporal structure 보존과 global scene understanding을 동시에 달성하는 video self-supervised learning 모델",
+          "level": 1
+        },
+        {
+          "text": "네 가지 핵심 기법 도입",
+          "level": 1
+        },
+        {
+          "text": "Dense Predictive Loss: masked + visible context 토큰 모두에 supervision 적용",
+          "level": 2
+        },
+        {
+          "text": "Deep Self-Supervision: 중간 encoder layer에 계층적으로 self-supervised objective 적용",
+          "level": 2
+        },
+        {
+          "text": "Multi-Modal Tokenizer: 이미지(2D conv)와 비디오(3D conv)에 modality-specific embedding 사용",
+          "level": 2
+        },
+        {
+          "text": "Ego4D short-term object interaction anticipation에서 7.71 mAP (기존 SOTA 대비 35% 향상), robot grasping 성공률 20% 개선",
+          "level": 1
+        },
+        {
+          "text": "ViT-G (2B params) 스케일링 및 distilled ViT-B/L 변형 모델 공개, 10개 이상의 downstream task에서 일관된 성능 향상",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "cursor-towards-self-driving-codebases",
+      "type": "dev",
+      "org": "Cursor",
+      "title": "Towards Self-Driving Codebases",
+      "url": "https://cursor.com/en-US/blog/self-driving-codebases",
+      "date": "2026-03-W03",
+      "year": "2026",
+      "month": "3",
+      "week": "3",
+      "bullets": [
+        {
+          "text": "수천 개의 AI 에이전트가 협업하여 코딩 프로젝트를 수행하는 multi-agent orchestration 시스템 연구 공개",
+          "level": 1
+        },
+        {
+          "text": "1주일간 연속 운영하며 시간당 ~1,000 commits, 총 10M tool calls 달성",
+          "level": 2
+        },
+        {
+          "text": "recursive planner-worker hierarchy 구조로 진화",
+          "level": 1
+        },
+        {
+          "text": "root planner → subplanner → independent worker 체계, 각 worker는 독립적인 repo copy에서 작업",
+          "level": 2
+        },
+        {
+          "text": "\"Handoff\" 메커니즘으로 조직 체계를 따라 정보 전파",
+          "level": 2
+        },
+        {
+          "text": "인간 소프트웨어 팀과 유사한 hierarchical structure가 자발적으로 출현하는 현상을 관찰",
+          "level": 1
+        },
+        {
+          "text": "specification 정밀도가 결과에 결정적 영향을 미치며, prescriptive instruction보다 constraint 기반 가이드가 더 효과적",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "microsoft-research-online-experiential-learning-for-language-models",
       "type": "paper",
@@ -38228,9 +38346,9 @@
     }
   ],
   "stats": {
-    "total": 1721,
-    "paper": 1038,
-    "dev": 646,
+    "total": 1724,
+    "paper": 1039,
+    "dev": 648,
     "news": 37
   }
 }
