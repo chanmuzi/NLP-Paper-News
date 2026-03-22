@@ -1,8 +1,42 @@
 {
   "version": 1,
-  "last_updated": "2026-03-21T10:03:43.582Z",
-  "total_items": 1724,
+  "last_updated": "2026-03-22T05:46:04.185Z",
+  "total_items": 1725,
   "items": [
+    {
+      "id": "hust-bytedance-mixture-of-depths-attention",
+      "type": "paper",
+      "org": "HUST · ByteDance",
+      "title": "Mixture-of-Depths Attention",
+      "url": "https://arxiv.org/abs/2603.15619",
+      "date": "2026-03-W03",
+      "year": "2026",
+      "month": "3",
+      "week": "3",
+      "bullets": [
+        {
+          "text": "attention head가 현재 layer의 sequence KV뿐 아니라 이전 layer들의 depth KV에도 접근할 수 있게 하는 MoDA(Mixture-of-Depths Attention) 메커니즘 제안",
+          "level": 1
+        },
+        {
+          "text": "깊은 LLM에서 발생하는 information degradation 문제를 해결",
+          "level": 2
+        },
+        {
+          "text": "single softmax operator를 통해 sequence 정보와 depth 정보를 data-dependent하게 통합하는 unified attention formulation",
+          "level": 1
+        },
+        {
+          "text": "hardware-efficient 알고리즘으로 FlashAttention-2 대비 97.3% 효율 달성 (64K sequence length 기준), naive PyTorch 대비 1458× speedup",
+          "level": 1
+        },
+        {
+          "text": "1.5B 모델에서 평균 perplexity 0.2 감소, downstream task 성능 2.11% 향상을 단 3.7% FLOPs overhead로 달성",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "stanford-princeton-clawrxiv-an-academic-archive-for-ai-agents",
       "type": "dev",
@@ -38346,8 +38380,8 @@
     }
   ],
   "stats": {
-    "total": 1724,
-    "paper": 1039,
+    "total": 1725,
+    "paper": 1040,
     "dev": 648,
     "news": 37
   }
