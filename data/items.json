@@ -1,8 +1,50 @@
 {
   "version": 1,
-  "last_updated": "2026-03-22T05:46:04.185Z",
-  "total_items": 1725,
+  "last_updated": "2026-03-23T01:31:07.880Z",
+  "total_items": 1726,
   "items": [
+    {
+      "id": "apple-exclusive-self-attention",
+      "type": "paper",
+      "org": "Apple",
+      "title": "Exclusive Self Attention",
+      "url": "https://arxiv.org/abs/2603.09078",
+      "date": "2026-03-W04",
+      "year": "2026",
+      "month": "3",
+      "week": "4",
+      "bullets": [
+        {
+          "text": "표준 self-attention의 출력이 self-value vector와 높은 cosine similarity를 보이는 \"attention similarity bias\" 문제를 지적",
+          "level": 1
+        },
+        {
+          "text": "attention이 context modeling 대신 pointwise feature transformation에 capacity를 낭비하고 있다는 분석",
+          "level": 2
+        },
+        {
+          "text": "XSA(Exclusive Self Attention) 제안: attention output에서 self-value vector 방향의 component를 제거하는 projection removal step 추가",
+          "level": 1
+        },
+        {
+          "text": "구현이 매우 간단하며 computational overhead가 거의 없음",
+          "level": 2
+        },
+        {
+          "text": "0.7B, 1.4B, 2.7B 모델에서 일관된 성능 향상 확인 (평균 accuracy: +0.26%, +1.03%, +1.36%)",
+          "level": 1
+        },
+        {
+          "text": "sequence length가 길어질수록 gain이 더 커지는 특성 (512 ~ 16K tokens)",
+          "level": 2
+        },
+        {
+          "text": "8개 downstream benchmark(ARC-E, BoolQ, HellaSwag, LAMBADA 등)에서 개선, Attention Sink과도 호환 가능",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "hust-bytedance-mixture-of-depths-attention",
       "type": "paper",
@@ -38380,8 +38422,8 @@
     }
   ],
   "stats": {
-    "total": 1725,
-    "paper": 1040,
+    "total": 1726,
+    "paper": 1041,
     "dev": 648,
     "news": 37
   }
