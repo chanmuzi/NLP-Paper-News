@@ -1,8 +1,72 @@
 {
   "version": 1,
-  "last_updated": "2026-03-23T01:31:07.880Z",
-  "total_items": 1726,
+  "last_updated": "2026-03-24T01:43:32.950Z",
+  "total_items": 1728,
   "items": [
+    {
+      "id": "openai-openai-to-acquire-astral",
+      "type": "dev",
+      "org": "OpenAI",
+      "title": "OpenAI to acquire Astral",
+      "url": "https://openai.com/index/openai-to-acquire-astral/",
+      "date": "2026-03-W04",
+      "year": "2026",
+      "month": "3",
+      "week": "4",
+      "bullets": [
+        {
+          "text": "Python toolchain 기업 Astral(uv, ruff, ty 개발사)을 인수하여 Codex 팀에 합류시키기로 합의",
+          "level": 1
+        },
+        {
+          "text": "uv는 월 1억 2,600만 이상 다운로드를 기록하며 Python 패키지 관리의 핵심 도구로 자리잡은 상태",
+          "level": 1
+        },
+        {
+          "text": "Codex(주간 활성 사용자 200만+)의 Python 개발 워크플로 전반에 걸친 AI 통합을 가속하려는 전략",
+          "level": 1
+        },
+        {
+          "text": "인수 후에도 uv, ruff, ty 등 오픈소스 프로젝트는 계속 지원 예정",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "university-of-trento-inria-proactivebench-benchmarking-proactiveness-in-multimodal-large-language-mo",
+      "type": "paper",
+      "org": "University of Trento · Inria",
+      "title": "ProactiveBench: Benchmarking Proactiveness in Multimodal Large Language Models",
+      "url": "https://arxiv.org/abs/2603.19466",
+      "date": "2026-03-W04",
+      "year": "2026",
+      "month": "3",
+      "week": "4",
+      "bullets": [
+        {
+          "text": "MLLM이 불완전한 visual input에 대해 사용자에게 추가 정보를 요청하는 \"proactiveness\"를 평가하는 최초의 벤치마크",
+          "level": 1
+        },
+        {
+          "text": "7개 시나리오(occlusion 제거, 카메라 이동, 이미지 품질 개선 등), 7,557개 샘플, 22개 MLLM 평가",
+          "level": 2
+        },
+        {
+          "text": "주요 발견: 현재 MLLM은 proactiveness가 현저히 부족하며, 모델 크기와의 상관관계도 없음",
+          "level": 1
+        },
+        {
+          "text": "hinting으로 약간의 개선은 가능하나, conversation history와 few-shot은 오히려 negative bias를 유발",
+          "level": 2
+        },
+        {
+          "text": "GRPO 기반 fine-tuning으로 proactiveness 학습이 가능하며, unseen 시나리오에도 일반화됨을 확인",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "apple-exclusive-self-attention",
       "type": "paper",
@@ -38422,9 +38486,9 @@
     }
   ],
   "stats": {
-    "total": 1726,
-    "paper": 1041,
-    "dev": 648,
+    "total": 1728,
+    "paper": 1042,
+    "dev": 649,
     "news": 37
   }
 }
