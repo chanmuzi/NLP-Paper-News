@@ -1,8 +1,84 @@
 {
   "version": 1,
-  "last_updated": "2026-03-24T01:43:32.950Z",
-  "total_items": 1728,
+  "last_updated": "2026-03-25T02:17:43.043Z",
+  "total_items": 1730,
   "items": [
+    {
+      "id": "ai2-molmoweb-an-open-agent-for-automating-web-tasks",
+      "type": "dev",
+      "org": "Ai2",
+      "title": "MolmoWeb: An open agent for automating web tasks",
+      "url": "https://allenai.org/blog/molmoweb",
+      "date": "2026-03-W04",
+      "year": "2026",
+      "month": "3",
+      "week": "4",
+      "bullets": [
+        {
+          "text": "Molmo 2 multimodal model 기반의 open-weight visual web agent로, 스크린샷을 사람처럼 해석하여 클릭·타이핑·스크롤 등 브라우저 작업을 자율 수행",
+          "level": 1
+        },
+        {
+          "text": "4B / 8B 두 가지 사이즈로 제공되며, 8B 모델은 GPT-4o 포함 대형 proprietary 모델 기반 agent보다 우수한 성능",
+          "level": 1
+        },
+        {
+          "text": "WebVoyager 78.2%, DeepShop 42.3%, TailBench 49.5%",
+          "level": 2
+        },
+        {
+          "text": "MolmoWebMix 데이터셋 공개: 1,100+ 웹사이트에서 수집된 30K human task trajectories, 590K subtask demonstrations, 2.2M screenshot QA pairs",
+          "level": 1
+        },
+        {
+          "text": "공개된 human web-task execution 데이터 중 최대 규모",
+          "level": 2
+        },
+        {
+          "text": "전체 training/evaluation 파이프라인, 재현 가능한 model checkpoints, 데이터 수집 도구를 함께 공개",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "google-turboquant-redefining-ai-efficiency-with-extreme-compression",
+      "type": "dev",
+      "org": "Google",
+      "title": "TurboQuant: Redefining AI efficiency with extreme compression",
+      "url": "https://research.google/blog/turboquant-redefining-ai-efficiency-with-extreme-compression/",
+      "date": "2026-03-W04",
+      "year": "2026",
+      "month": "3",
+      "week": "4",
+      "bullets": [
+        {
+          "text": "LLM의 KV cache 메모리를 최소 6배 줄이고 최대 8배 속도 향상을 달성하는 compression algorithm (ICLR 2026)",
+          "level": 1
+        },
+        {
+          "text": "3-bit까지 quantization 가능하며, training/fine-tuning 없이 정확도 손실 zero",
+          "level": 1
+        },
+        {
+          "text": "QJL(Quantized Johnson-Lindenstrauss)과 PolarQuant 두 기법을 결합",
+          "level": 1
+        },
+        {
+          "text": "QJL: JL Transform으로 고차원 데이터를 축소하고 각 벡터를 single sign bit(+1/-1)로 압축",
+          "level": 2
+        },
+        {
+          "text": "PolarQuant (AISTATS 2026): key vector를 2D sub-vector로 분할 후 polar coordinate로 인코딩하여 outlier 문제 해결",
+          "level": 2
+        },
+        {
+          "text": "KV cache compression 외에 vector search에도 적용 가능",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "openai-openai-to-acquire-astral",
       "type": "dev",
@@ -38486,9 +38562,9 @@
     }
   ],
   "stats": {
-    "total": 1728,
+    "total": 1730,
     "paper": 1042,
-    "dev": 649,
+    "dev": 651,
     "news": 37
   }
 }
