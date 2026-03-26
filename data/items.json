@@ -1,8 +1,80 @@
 {
   "version": 1,
-  "last_updated": "2026-03-25T02:17:43.043Z",
-  "total_items": 1730,
+  "last_updated": "2026-03-26T03:51:27.760Z",
+  "total_items": 1732,
   "items": [
+    {
+      "id": "rice-stony-brook-prism-a-dual-view-of-llm-reasoning-through-semantic-flow-and-latent-computation",
+      "type": "paper",
+      "org": "Rice · Stony Brook",
+      "title": "PRISM: A Dual View of LLM Reasoning through Semantic Flow and Latent Computation",
+      "url": "https://arxiv.org/abs/2603.22754",
+      "date": "2026-03-W04",
+      "year": "2026",
+      "month": "3",
+      "week": "4",
+      "bullets": [
+        {
+          "text": "LLM의 multi-step reasoning을 semantic flow와 latent computation 두 관점에서 통합 분석하는 프레임워크",
+          "level": 1
+        },
+        {
+          "text": "세 가지 구성요소: Markov chain 기반 semantic category transition 모델링, GMM 기반 hidden state 내 latent regime 식별, 두 레이어를 연결하는 Bridge Matrix",
+          "level": 1
+        },
+        {
+          "text": "실패한 reasoning의 체계적 패턴 발견",
+          "level": 1
+        },
+        {
+          "text": "long-fail: verification loop에 갇히는 overthinking",
+          "level": 2
+        },
+        {
+          "text": "short-fail: 답을 제시한 직후 reasoning을 포기하는 premature commitment",
+          "level": 2
+        },
+        {
+          "text": "prompting 전략에 따라 reasoning 구조 자체가 재편됨을 실증 (conciseness 제약 시 computation 단편화, multi-path 지시 시 computation-verification 양방향 순환 증가)",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "mila-nyu-leworldmodel-stable-end-to-end-joint-embedding-predictive-architecture-from-pixels",
+      "type": "paper",
+      "org": "Mila · NYU",
+      "title": "LeWorldModel: Stable End-to-End Joint-Embedding Predictive Architecture from Pixels",
+      "url": "https://le-wm.github.io/",
+      "date": "2026-03-W04",
+      "year": "2026",
+      "month": "3",
+      "week": "4",
+      "bullets": [
+        {
+          "text": "pre-trained encoder나 복잡한 multi-component loss 없이 pixel로부터 직접 world model을 학습하는 JEPA 기반 접근",
+          "level": 1
+        },
+        {
+          "text": "단 두 개의 loss term(prediction loss + SIGReg Gaussian regularizer)만으로 representation collapse 없이 안정적 end-to-end 학습 달성",
+          "level": 1
+        },
+        {
+          "text": "기존 대비 hyperparameter 6개 → 2개로 대폭 단순화",
+          "level": 2
+        },
+        {
+          "text": "~15M 파라미터로 single GPU에서 수 시간 만에 학습 가능하며, foundation model 기반 대비 48배 빠른 planning 속도 (~1초 vs ~47초)",
+          "level": 1
+        },
+        {
+          "text": "2D navigation, robotic control, 3D manipulation 태스크에서 경쟁력 있는 성능 확인 (PLDM, DINO-WM 등 baseline 대비 우위)",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "ai2-molmoweb-an-open-agent-for-automating-web-tasks",
       "type": "dev",
@@ -38562,8 +38634,8 @@
     }
   ],
   "stats": {
-    "total": 1730,
-    "paper": 1042,
+    "total": 1732,
+    "paper": 1044,
     "dev": 651,
     "news": 37
   }
