@@ -1,8 +1,110 @@
 {
   "version": 1,
-  "last_updated": "2026-03-26T03:51:27.760Z",
-  "total_items": 1732,
+  "last_updated": "2026-03-27T01:39:58.693Z",
+  "total_items": 1735,
   "items": [
+    {
+      "id": "arc-prize-arc-agi-3",
+      "type": "dev",
+      "org": "ARC Prize",
+      "title": "ARC-AGI-3",
+      "url": "https://arcprize.org/arc-agi/3",
+      "date": "2026-03-W04",
+      "year": "2026",
+      "month": "3",
+      "week": "4",
+      "bullets": [
+        {
+          "text": "최초의 interactive reasoning benchmark로, AI 에이전트의 human-like intelligence를 측정하도록 설계",
+          "level": 1
+        },
+        {
+          "text": "정적 퍼즐이 아닌 novel environment를 동적으로 탐색하며 전략을 지속적으로 적응시키는 능력을 평가",
+          "level": 1
+        },
+        {
+          "text": "long-horizon planning, belief updating, experience-driven adaptation 등을 측정",
+          "level": 2
+        },
+        {
+          "text": "100% score는 AI 에이전트가 인간만큼 효율적으로 모든 game을 클리어할 수 있음을 의미",
+          "level": 1
+        },
+        {
+          "text": "SDK와 interactive UI를 제공하며, ARC Prize 2026 대회도 진행 중",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "meta-hyperagents",
+      "type": "paper",
+      "org": "Meta",
+      "title": "Hyperagents",
+      "url": "https://arxiv.org/abs/2603.19461",
+      "date": "2026-03-W04",
+      "year": "2026",
+      "month": "3",
+      "week": "4",
+      "bullets": [
+        {
+          "text": "task-solving과 self-modification을 하나의 editable program으로 통합하는 self-referential AI 프레임워크",
+          "level": 1
+        },
+        {
+          "text": "Darwin Gödel Machine(DGM)을 확장한 DGM-Hyperagents(DGM-H) 제안",
+          "level": 1
+        },
+        {
+          "text": "task agent(문제 해결)와 meta agent(자기 자신 및 task agent 수정)로 구성",
+          "level": 2
+        },
+        {
+          "text": "modification procedure 자체도 수정 가능하여 recursive improvement 달성",
+          "level": 2
+        },
+        {
+          "text": "자체 개선 메커니즘(persistent memory, performance tracking)이 도메인 간 전이되며 시간에 따라 누적 개선됨",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "cohere-transcribe",
+      "type": "dev",
+      "org": "Cohere",
+      "title": "Transcribe",
+      "url": "https://cohere.com/blog/transcribe",
+      "date": "2026-03-W04",
+      "year": "2026",
+      "month": "3",
+      "week": "4",
+      "bullets": [
+        {
+          "text": "Cohere가 공개한 state-of-the-art ASR 모델로, Apache 2.0 라이선스 오픈소스",
+          "level": 1
+        },
+        {
+          "text": "Conformer 기반 encoder-decoder 아키텍처, 2B 파라미터",
+          "level": 1
+        },
+        {
+          "text": "HuggingFace Open ASR Leaderboard 1위 (평균 WER 5.42%)",
+          "level": 1
+        },
+        {
+          "text": "Whisper Large v3 (7.44%), ElevenLabs Scribe v2 (5.83%) 등을 상회",
+          "level": 2
+        },
+        {
+          "text": "영어, 한국어, 일본어, 중국어 등 14개 언어 지원",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "rice-stony-brook-prism-a-dual-view-of-llm-reasoning-through-semantic-flow-and-latent-computation",
       "type": "paper",
@@ -38634,9 +38736,9 @@
     }
   ],
   "stats": {
-    "total": 1732,
-    "paper": 1044,
-    "dev": 651,
+    "total": 1735,
+    "paper": 1045,
+    "dev": 653,
     "news": 37
   }
 }
