@@ -1,8 +1,76 @@
 {
   "version": 1,
-  "last_updated": "2026-03-27T01:39:58.693Z",
-  "total_items": 1735,
+  "last_updated": "2026-03-28T05:19:11.057Z",
+  "total_items": 1737,
   "items": [
+    {
+      "id": "google-build-real-time-conversational-agents-with-gemini-31-flash-live",
+      "type": "dev",
+      "org": "Google",
+      "title": "Build real-time conversational agents with Gemini 3.1 Flash Live",
+      "url": "https://blog.google/innovation-and-ai/technology/developers-tools/build-with-gemini-3-1-flash-live/",
+      "date": "2026-03-W04",
+      "year": "2026",
+      "month": "3",
+      "week": "4",
+      "bullets": [
+        {
+          "text": "Google AI Studio의 Live API를 통해 Gemini 3.1 Flash Live 모델로 실시간 conversational agent를 구축할 수 있도록 지원",
+          "level": 1
+        },
+        {
+          "text": "voice와 vision 입력을 동시에 처리하는 real-time 멀티모달 에이전트 개발이 가능",
+          "level": 1
+        },
+        {
+          "text": "Live API 인프라를 활용해 실시간 상호작용을 처리하며, Google AI Studio 환경에서 바로 접근 가능",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "mistral-ai-speaking-of-voxtral",
+      "type": "dev",
+      "org": "Mistral AI",
+      "title": "Speaking of Voxtral",
+      "url": "https://mistral.ai/news/voxtral-tts",
+      "date": "2026-03-W04",
+      "year": "2026",
+      "month": "3",
+      "week": "4",
+      "bullets": [
+        {
+          "text": "Mistral AI 최초의 text-to-speech 모델 Voxtral TTS 출시, 4B 파라미터의 경량 모델",
+          "level": 1
+        },
+        {
+          "text": "9개 언어 지원(영어, 프랑스어, 독일어, 스페인어 등)이며 단 3초의 reference audio만으로 voice adaptation 가능",
+          "level": 1
+        },
+        {
+          "text": "아키텍처 구성",
+          "level": 1
+        },
+        {
+          "text": "3.4B transformer decoder backbone + 390M flow-matching acoustic transformer + 300M neural audio codec",
+          "level": 2
+        },
+        {
+          "text": "성능: 500자 기준 latency 70ms, RTF 약 9.7x, 최대 2분 오디오 생성",
+          "level": 1
+        },
+        {
+          "text": "ElevenLabs Flash v2.5 대비 naturalness에서 우위, ElevenLabs v3와 동등한 품질을 달성",
+          "level": 1
+        },
+        {
+          "text": "가격 $0.016/1,000자, Hugging Face에서 open weights(CC BY NC 4.0) 공개",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "arc-prize-arc-agi-3",
       "type": "dev",
@@ -38736,9 +38804,9 @@
     }
   ],
   "stats": {
-    "total": 1735,
+    "total": 1737,
     "paper": 1045,
-    "dev": 653,
+    "dev": 655,
     "news": 37
   }
 }
