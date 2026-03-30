@@ -1,8 +1,76 @@
 {
   "version": 1,
-  "last_updated": "2026-03-28T05:19:11.057Z",
-  "total_items": 1737,
+  "last_updated": "2026-03-30T01:27:58.184Z",
+  "total_items": 1739,
   "items": [
+    {
+      "id": "nous-research-hermes-agent",
+      "type": "dev",
+      "org": "Nous Research",
+      "title": "Hermes Agent",
+      "url": "https://github.com/NousResearch/hermes-agent",
+      "date": "2026-03-W04",
+      "year": "2026",
+      "month": "3",
+      "week": "4",
+      "bullets": [
+        {
+          "text": "Nous Research가 개발한 self-improving AI agent로, 경험으로부터 skill을 자동 생성하고 사용 중 개선하는 built-in learning loop를 갖춘 것이 핵심",
+          "level": 1
+        },
+        {
+          "text": "다양한 LLM provider 지원 (OpenRouter 200+ 모델, OpenAI, Anthropic 등) — `hermes model`로 코드 변경 없이 전환 가능",
+          "level": 1
+        },
+        {
+          "text": "Telegram, Discord, Slack, WhatsApp, Signal 등 멀티 플랫폼 게이트웨이를 통해 대화 가능하며, cross-platform conversation continuity 지원",
+          "level": 1
+        },
+        {
+          "text": "6가지 terminal backend (local, Docker, SSH, Daytona, Singularity, Modal) 지원으로 $5 VPS부터 GPU 클러스터까지 어디서든 실행 가능",
+          "level": 1
+        },
+        {
+          "text": "persistent memory, cron scheduling, subagent 병렬 실행, FTS5 session search 등 에이전트 자율성을 위한 기능 다수 포함",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "google-uchicago-santa-fe-institute-agentic-ai-and-the-next-intelligence-explosion",
+      "type": "paper",
+      "org": "Google · UChicago · Santa Fe Institute",
+      "title": "Agentic AI and the Next Intelligence Explosion",
+      "url": "https://arxiv.org/abs/2603.20639",
+      "date": "2026-03-W04",
+      "year": "2026",
+      "month": "3",
+      "week": "4",
+      "bullets": [
+        {
+          "text": "전통적인 monolithic superintelligence(singularity) 서사를 비판하며, AI 발전이 진화적 패턴을 따라 plural, social, deeply entangled intelligence 시스템으로 향한다고 주장",
+          "level": 1
+        },
+        {
+          "text": "DeepSeek-R1, QwQ-32B 등 frontier reasoning model 내부에서 multi-agent dynamics가 자발적으로 발생함을 발견",
+          "level": 1
+        },
+        {
+          "text": "명시적 학습 없이도 내부적으로 distinct cognitive perspectives 간 토론, 검증, 조정이 이루어지는 \"Society of Thought\" 현상",
+          "level": 2
+        },
+        {
+          "text": "조직 과학(team composition, hierarchy, role differentiation)의 insights를 AI 시스템 아키텍처에 적용하는 institutional design framework 제안",
+          "level": 1
+        },
+        {
+          "text": "중앙집중식 parent-child correction이 아닌, checks and balances를 갖춘 constitutional governance model을 통한 pluralistic, distributed 거버넌스를 주장",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "google-build-real-time-conversational-agents-with-gemini-31-flash-live",
       "type": "dev",
@@ -38804,9 +38872,9 @@
     }
   ],
   "stats": {
-    "total": 1737,
-    "paper": 1045,
-    "dev": 655,
+    "total": 1739,
+    "paper": 1046,
+    "dev": 656,
     "news": 37
   }
 }
