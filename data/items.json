@@ -1,8 +1,156 @@
 {
   "version": 1,
-  "last_updated": "2026-03-30T01:27:58.184Z",
-  "total_items": 1739,
+  "last_updated": "2026-04-02T16:05:26.403Z",
+  "total_items": 1743,
   "items": [
+    {
+      "id": "supermemory-supermemory-the-memory-engine-for-ai-apps",
+      "type": "dev",
+      "org": "Supermemory",
+      "title": "Supermemory: The Memory Engine for AI Apps",
+      "url": "https://github.com/supermemoryai/supermemory",
+      "date": "2026-04-W01",
+      "year": "2026",
+      "month": "4",
+      "week": "1",
+      "bullets": [
+        {
+          "text": "AI 시스템을 위한 memory 및 context engine으로, LongMemEval·LoCoMo·ConvoMem 세 주요 벤치마크에서 1위를 기록",
+          "level": 1
+        },
+        {
+          "text": "단순 RAG가 아닌, 대화에서 facts를 자동 추출하고 temporal changes·contradictions·expiration을 처리하는 memory 시스템",
+          "level": 1
+        },
+        {
+          "text": "User Profiles 자동 생성 및 ~50ms 내 조회 가능",
+          "level": 2
+        },
+        {
+          "text": "Google Drive, Gmail, Notion, OneDrive, GitHub 등 real-time connector 지원 및 PDF/이미지(OCR)/비디오(transcription)/코드(AST-aware chunking) 등 multi-modal 처리",
+          "level": 1
+        },
+        {
+          "text": "npm/PyPI 패키지로 제공되며 Vercel AI SDK, LangChain, Mastra 등 프레임워크 통합 및 Claude Desktop·Cursor·VS Code용 MCP server 지원",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "hugging-face-trl-v10-the-post-training-library",
+      "type": "dev",
+      "org": "Hugging Face",
+      "title": "TRL v1.0: The Post-Training Library",
+      "url": "https://huggingface.co/blog/trl-v1",
+      "date": "2026-04-W01",
+      "year": "2026",
+      "month": "4",
+      "week": "1",
+      "bullets": [
+        {
+          "text": "Hugging Face의 post-training 라이브러리 TRL이 v1.0으로 정식 릴리스, 75개 이상의 post-training method를 지원",
+          "level": 1
+        },
+        {
+          "text": "Dual stability model 도입",
+          "level": 1
+        },
+        {
+          "text": "Stable layer: SFT, DPO, Reward modeling, RLOO, GRPO (semantic versioning 준수)",
+          "level": 2
+        },
+        {
+          "text": "Experimental layer: 최신 연구 method들은 별도 experimental 네임스페이스로 분리",
+          "level": 2
+        },
+        {
+          "text": "\"Chaos-Adaptive Design\" 철학 — 빠르게 변화하는 post-training 분야 특성상 rigid abstraction 대신 minimal abstraction과 explicit implementation을 지향",
+          "level": 1
+        },
+        {
+          "text": "월 300만 다운로드, Unsloth·Axolotl 등 downstream 프로젝트의 핵심 인프라로 자리잡음",
+          "level": 1
+        },
+        {
+          "text": "향후 Asynchronous GRPO, MoE/expert parallelism, training legibility 개선 등 로드맵 공개",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "sustech-carla-air-fly-drones-inside-a-carla-world-a-unified-infrastructure-for-air-ground-embodied-i",
+      "type": "paper",
+      "org": "SUSTech",
+      "title": "CARLA-Air: Fly Drones Inside a CARLA World — A Unified Infrastructure for Air-Ground Embodied Intelligence",
+      "url": "https://arxiv.org/abs/2603.28032",
+      "date": "2026-04-W01",
+      "year": "2026",
+      "month": "4",
+      "week": "1",
+      "bullets": [
+        {
+          "text": "CARLA(도시 주행 시뮬레이터)와 AirSim(드론 비행 시뮬레이터)을 단일 Unreal Engine 프로세스에 통합한 오픈소스 시뮬레이션 플랫폼",
+          "level": 1
+        },
+        {
+          "text": "기존 bridge 기반 co-simulation의 동기화 오버헤드 문제를 해결하여 strict spatial-temporal consistency 보장",
+          "level": 1
+        },
+        {
+          "text": "CARLAAirGameMode가 CARLA의 ground subsystem을 상속하고 AirSim의 flight actor를 composition으로 통합",
+          "level": 2
+        },
+        {
+          "text": "~20 FPS 유지, 3시간 연속 운용(357회 리셋) 중 zero crash, API latency <500μs 달성",
+          "level": 1
+        },
+        {
+          "text": "공중-지상 cooperative precision landing, vision-language navigation 데이터 생성, 12-stream multi-modal dataset 수집 등 5가지 응용 시나리오 검증",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "apple-embarrassingly-simple-self-distillation-improves-code-generation",
+      "type": "paper",
+      "org": "Apple",
+      "title": "Embarrassingly Simple Self-Distillation Improves Code Generation",
+      "url": "https://arxiv.org/abs/2604.01193",
+      "date": "2026-04-W01",
+      "year": "2026",
+      "month": "4",
+      "week": "1",
+      "bullets": [
+        {
+          "text": "LLM이 자기 자신의 unverified output으로 학습하여 code generation 성능을 향상시키는 self-distillation 방법 제안",
+          "level": 1
+        },
+        {
+          "text": "labeled solution, teacher model, reward model, verifier, execution environment, RL 모두 불필요",
+          "level": 2
+        },
+        {
+          "text": "Qwen3-30B-Instruct 기준 LiveCodeBench v6에서 pass@1이 42.4% → 55.3%로 향상 (+30% relative gain)",
+          "level": 1
+        },
+        {
+          "text": "어려운 문제일수록 개선 폭이 큼 (+15.3pp vs easy +6.5pp)",
+          "level": 2
+        },
+        {
+          "text": "\"Precision-exploration conflict\" 개념을 규명 — temperature를 낮추면 정확도는 올라가지만 탐색이 부족하고, 높이면 다양성은 확보되지만 오류가 증가하는 근본적 긴장 관계",
+          "level": 1
+        },
+        {
+          "text": "SSD는 lock-like position에서는 distractor tail을 억제하고 fork-like position에서는 diversity를 보존하는 context-dependent reshaping을 학습",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "nous-research-hermes-agent",
       "type": "dev",
@@ -38872,9 +39020,9 @@
     }
   ],
   "stats": {
-    "total": 1739,
-    "paper": 1046,
-    "dev": 656,
+    "total": 1743,
+    "paper": 1048,
+    "dev": 658,
     "news": 37
   }
 }
