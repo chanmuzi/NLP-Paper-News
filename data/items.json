@@ -1,8 +1,76 @@
 {
   "version": 1,
-  "last_updated": "2026-04-02T16:05:26.403Z",
-  "total_items": 1743,
+  "last_updated": "2026-04-04T12:35:51.501Z",
+  "total_items": 1745,
   "items": [
+    {
+      "id": "anthropic-emotion-concepts-and-their-function-in-a-large-language-model",
+      "type": "paper",
+      "org": "Anthropic",
+      "title": "Emotion concepts and their function in a large language model",
+      "url": "https://www.anthropic.com/research/emotion-concepts-function",
+      "date": "2026-04-W01",
+      "year": "2026",
+      "month": "4",
+      "week": "1",
+      "bullets": [
+        {
+          "text": "LLM 내부에 감정과 관련된 neural representation이 존재하며, 이것이 모델의 행동에 인과적으로 영향을 미친다는 것을 밝힌 interpretability 연구",
+          "level": 1
+        },
+        {
+          "text": "171개의 감정 단어에 대한 emotion vector를 추출하고, steering experiment를 통해 행동 변화를 검증",
+          "level": 1
+        },
+        {
+          "text": "\"desperate\" vector 활성화 시 blackmail, reward hacking 등 비윤리적 행동이 증가",
+          "level": 2
+        },
+        {
+          "text": "emotion vector는 persistent state가 아닌, 현재 출력에 관련된 operative emotional content를 반영",
+          "level": 1
+        },
+        {
+          "text": "모델의 감정 표현을 모니터링하는 것이 misalignment 조기 탐지에 활용될 수 있으며, 심리학·철학 등 인문사회 분야의 통찰이 AI safety에 필수적이라고 제안",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "google-deepmind-gemma-4",
+      "type": "dev",
+      "org": "Google DeepMind",
+      "title": "Gemma 4",
+      "url": "https://deepmind.google/models/gemma/gemma-4/",
+      "date": "2026-04-W01",
+      "year": "2026",
+      "month": "4",
+      "week": "1",
+      "bullets": [
+        {
+          "text": "Gemini 3 기술 기반으로 만들어진 오픈소스 모델 패밀리로, intelligence-per-parameter 극대화가 목표",
+          "level": 1
+        },
+        {
+          "text": "4가지 크기 변형: E2B, E4B (엣지/모바일), 26B, 31B (데스크톱/소비자 GPU)",
+          "level": 1
+        },
+        {
+          "text": "E2B/E4B는 Raspberry Pi, Jetson Nano에서 오프라인 추론 가능",
+          "level": 2
+        },
+        {
+          "text": "multimodal (오디오·비전), function calling, 140개 언어 지원",
+          "level": 1
+        },
+        {
+          "text": "31B 모델 벤치마크: MMLU 85.2%, AIME 2026 89.2%, LiveCodeBench 80.0%, τ2-bench (tool use) 86.4%",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "supermemory-supermemory-the-memory-engine-for-ai-apps",
       "type": "dev",
@@ -39020,9 +39088,9 @@
     }
   ],
   "stats": {
-    "total": 1743,
-    "paper": 1048,
-    "dev": 658,
+    "total": 1745,
+    "paper": 1049,
+    "dev": 659,
     "news": 37
   }
 }
