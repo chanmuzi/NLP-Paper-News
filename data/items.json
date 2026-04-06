@@ -1,8 +1,76 @@
 {
   "version": 1,
-  "last_updated": "2026-04-04T12:35:51.501Z",
-  "total_items": 1745,
+  "last_updated": "2026-04-06T10:48:32.530Z",
+  "total_items": 1747,
   "items": [
+    {
+      "id": "cursor-meet-the-new-cursor",
+      "type": "dev",
+      "org": "Cursor",
+      "title": "Meet the new Cursor",
+      "url": "https://cursor.com/blog/cursor-3",
+      "date": "2026-04-W01",
+      "year": "2026",
+      "month": "4",
+      "week": "1",
+      "bullets": [
+        {
+          "text": "Cursor 3 출시: 에이전트 중심의 통합 소프트웨어 개발 워크스페이스로 전면 개편",
+          "level": 1
+        },
+        {
+          "text": "여러 레포를 동시에 다루는 multi-workspace 아키텍처와 병렬 에이전트 실행 지원",
+          "level": 1
+        },
+        {
+          "text": "모바일, 웹, 데스크톱, Slack, GitHub, Linear 등에서 에이전트 실행 가능",
+          "level": 2
+        },
+        {
+          "text": "local-to-cloud 핸드오프로 Composer 2(frontier coding model) 기반 로컬 반복 작업과 클라우드 장시간 태스크 간 전환 가능",
+          "level": 1
+        },
+        {
+          "text": "Cursor Marketplace 도입: MCP와 skills 기반 플러그인 수백 개 제공, 팀 전용 프라이빗 플러그인도 지원",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "andrej-karpathy-llm-wiki",
+      "type": "dev",
+      "org": "Andrej Karpathy",
+      "title": "LLM Wiki",
+      "url": "https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f",
+      "date": "2026-04-W01",
+      "year": "2026",
+      "month": "4",
+      "week": "1",
+      "bullets": [
+        {
+          "text": "기존 RAG 대신 LLM이 점진적으로 구축·유지하는 persistent wiki 패턴 제안",
+          "level": 1
+        },
+        {
+          "text": "raw source에서 매번 검색하는 것이 아니라, 지식을 한 번 컴파일하고 지속적으로 업데이트",
+          "level": 2
+        },
+        {
+          "text": "3-layer 아키텍처: Raw Sources(불변) → Wiki(LLM 유지보수, markdown) → Schema(구조/규칙 정의)",
+          "level": 1
+        },
+        {
+          "text": "핵심 연산 3가지: Ingest(소스 처리 및 위키 반영), Query(위키 검색 + 답변 합성), Lint(모순·누락 헬스체크)",
+          "level": 1
+        },
+        {
+          "text": "LLM에 유지보수(cross-reference, 일관성 체크 등)를 위임하고 사람은 소스 큐레이션과 분석에 집중하는 구조",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "anthropic-emotion-concepts-and-their-function-in-a-large-language-model",
       "type": "paper",
@@ -39088,9 +39156,9 @@
     }
   ],
   "stats": {
-    "total": 1745,
+    "total": 1747,
     "paper": 1049,
-    "dev": 659,
+    "dev": 661,
     "news": 37
   }
 }
