@@ -1,8 +1,114 @@
 {
   "version": 1,
-  "last_updated": "2026-04-06T10:48:32.530Z",
-  "total_items": 1747,
+  "last_updated": "2026-04-07T21:51:09.854Z",
+  "total_items": 1750,
   "items": [
+    {
+      "id": "mit-nvidia-triattention-efficient-long-reasoning-with-trigonometric-kv-compression",
+      "type": "paper",
+      "org": "MIT · NVIDIA",
+      "title": "TriAttention: Efficient Long Reasoning with Trigonometric KV Compression",
+      "url": "https://weianmao.github.io/tri-attention-project-page/",
+      "date": "2026-04-W02",
+      "year": "2026",
+      "month": "4",
+      "week": "2",
+      "bullets": [
+        {
+          "text": "Long-context reasoning 시 KV cache 메모리 병목을 해결하는 trigonometric 기반 압축 기법 제안",
+          "level": 1
+        },
+        {
+          "text": "Query/Key 벡터가 pre-rotation space에서 안정적인 중심점 주위로 집중되는 \"Q/K concentration\" 현상을 발견하고, 이를 삼각 급수로 모델링하여 중요도 낮은 토큰을 pruning",
+          "level": 1
+        },
+        {
+          "text": "Trigonometric series 기반 distance 점수 + norm 기반 점수를 adaptive weighting으로 결합",
+          "level": 2
+        },
+        {
+          "text": "AIME25 벤치마크에서 Full Attention과 동일한 정확도를 유지하면서 2.5× throughput 향상 또는 10.7× KV memory 절감 달성",
+          "level": 1
+        },
+        {
+          "text": "32B 모델을 24GB GPU에서 OOM 없이 실행 가능",
+          "level": 2
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "hugging-face-how-we-ocred-30000-papers-using-codex-open-ocr-models-and-jobs",
+      "type": "dev",
+      "org": "Hugging Face",
+      "title": "How we OCR'ed 30,000 papers using Codex, open OCR models and Jobs",
+      "url": "https://huggingface.co/blog/nielsr/ocr-papers-jobs",
+      "date": "2026-04-W02",
+      "year": "2026",
+      "month": "4",
+      "week": "2",
+      "bullets": [
+        {
+          "text": "arXiv HTML 버전이 없는 약 27,000개 논문을 OCR로 변환하여 HuggingChat의 \"chat with paper\" 기능을 지원한 사례",
+          "level": 1
+        },
+        {
+          "text": "OlmOCRBench 1위인 Chandra-OCR 2 모델을 사용해 PDF → Markdown 변환",
+          "level": 1
+        },
+        {
+          "text": "OpenRAIL 라이선스로 상업적 사용 가능",
+          "level": 2
+        },
+        {
+          "text": "Hugging Face Jobs(serverless GPU)로 L40S 16개 병렬 실행, 약 29~30시간 소요, 비용 ~$850",
+          "level": 1
+        },
+        {
+          "text": "Chandra 자체 API 대비 약 $1,000 이상 절감",
+          "level": 2
+        },
+        {
+          "text": "Codex/Claude Code 등 AI 코딩 어시스턴트로 vLLM 스크립트 작성, GPU 비용 분석, 작업 모니터링까지 수행",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "mempalace-mempalace",
+      "type": "dev",
+      "org": "MemPalace",
+      "title": "MemPalace",
+      "url": "https://github.com/milla-jovovich/mempalace",
+      "date": "2026-04-W02",
+      "year": "2026",
+      "month": "4",
+      "week": "2",
+      "bullets": [
+        {
+          "text": "AI 대화 히스토리를 보존하고 검색 가능하게 관리하는 오픈소스 메모리 시스템",
+          "level": 1
+        },
+        {
+          "text": "Palace 아키텍처: Wings(프로젝트) → Rooms(토픽) → Halls(메모리 유형) → Closets & Drawers(요약) 계층 구조로 메모리 조직화",
+          "level": 1
+        },
+        {
+          "text": "ChromaDB에 원본 대화를 요약 없이 저장하여 LongMemEval 벤치마크 96.6% recall 달성",
+          "level": 1
+        },
+        {
+          "text": "MCP 통합 19개 도구로 Claude, ChatGPT, Cursor, Gemini 등과 자동 연동",
+          "level": 1
+        },
+        {
+          "text": "완전 로컬 실행, 클라우드 의존성 없음, MIT 라이선스",
+          "level": 2
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "cursor-meet-the-new-cursor",
       "type": "dev",
@@ -39156,9 +39262,9 @@
     }
   ],
   "stats": {
-    "total": 1747,
-    "paper": 1049,
-    "dev": 661,
+    "total": 1750,
+    "paper": 1050,
+    "dev": 663,
     "news": 37
   }
 }
