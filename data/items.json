@@ -1,8 +1,148 @@
 {
   "version": 1,
-  "last_updated": "2026-04-07T21:51:09.854Z",
-  "total_items": 1750,
+  "last_updated": "2026-04-09T05:15:22.186Z",
+  "total_items": 1754,
   "items": [
+    {
+      "id": "pku-kuaishou-openworldlib-a-unified-codebase-and-definition-of-advanced-world-models",
+      "type": "paper",
+      "org": "PKU · Kuaishou",
+      "title": "OpenWorldLib: A Unified Codebase and Definition of Advanced World Models",
+      "url": "https://arxiv.org/abs/2604.04707",
+      "date": "2026-04-W02",
+      "year": "2026",
+      "month": "4",
+      "week": "2",
+      "bullets": [
+        {
+          "text": "World model의 공식 정의를 제안: \"perception 중심으로 interaction과 long-term memory를 갖춘 모델/프레임워크\"",
+          "level": 1
+        },
+        {
+          "text": "6개 통합 모듈(Operator, Synthesis, Reasoning, Representation, Memory, Pipeline)로 구성된 표준화 inference 프레임워크",
+          "level": 1
+        },
+        {
+          "text": "interactive video generation, 3D generation, multimodal reasoning, VLA 등 다양한 태스크를 단일 인터페이스로 처리",
+          "level": 2
+        },
+        {
+          "text": "text-to-video, code generation, avatar video 등은 world model 태스크에서 명시적으로 제외",
+          "level": 1
+        },
+        {
+          "text": "LLM의 인터넷 텍스트 사전학습이 world model의 기초 역할을 할 수 있으며, data-centric 방법론과 하드웨어 발전이 핵심이라고 주장",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "video-mme-team-video-mme-v2-towards-the-next-stage-in-benchmarks-for-comprehensive-video-understandi",
+      "type": "paper",
+      "org": "Video-MME Team",
+      "title": "Video-MME-v2: Towards the Next Stage in Benchmarks for Comprehensive Video Understanding",
+      "url": "https://arxiv.org/abs/2604.05015",
+      "date": "2026-04-W02",
+      "year": "2026",
+      "month": "4",
+      "week": "2",
+      "bullets": [
+        {
+          "text": "기존 비디오 벤치마크의 성능 포화 문제를 해결하기 위한 차세대 종합 비디오 이해 벤치마크",
+          "level": 1
+        },
+        {
+          "text": "progressive tri-level hierarchy 도입: information aggregation → temporal dynamics → complex reasoning",
+          "level": 1
+        },
+        {
+          "text": "8지선다(guessing probability 12.5%), 비선형 group-based 평가 전략 적용",
+          "level": 2
+        },
+        {
+          "text": "800개 비디오, 3,200개 질문으로 구성 (80%+ 2025년 이후 영상), 12명 annotator + 50명 reviewer, 총 3,300 human-hours 투입",
+          "level": 1
+        },
+        {
+          "text": "최고 모델 Gemini-3-Pro가 49.4점(비선형), 인간 전문가 90.7점으로 41.3점의 격차가 여전히 존재",
+          "level": 1
+        },
+        {
+          "text": "thinking mode가 자막과 함께 쓰일 때는 성능 향상, 순수 visual task에서는 오히려 성능 저하 가능성 발견",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "meta-introducing-muse-spark-scaling-towards-personal-superintelligence",
+      "type": "dev",
+      "org": "Meta",
+      "title": "Introducing Muse Spark: Scaling Towards Personal Superintelligence",
+      "url": "https://ai.meta.com/blog/introducing-muse-spark-msl/",
+      "date": "2026-04-W02",
+      "year": "2026",
+      "month": "4",
+      "week": "2",
+      "bullets": [
+        {
+          "text": "Muse family의 첫 모델로, natively multimodal reasoning + tool-use + visual chain-of-thought + multi-agent coordination 지원",
+          "level": 1
+        },
+        {
+          "text": "Contemplating mode: parallel agent orchestration으로 Humanity's Last Exam 58%, FrontierScience Research 38% 달성",
+          "level": 1
+        },
+        {
+          "text": "Llama 4 Maverick 대비 10배 이상 적은 compute로 동등 성능 도달",
+          "level": 1
+        },
+        {
+          "text": "RL에서 log-linear scaling, test-time reasoning에서 thought compression 적용",
+          "level": 2
+        },
+        {
+          "text": "meta.ai 및 Meta AI 앱에서 사용 가능, private API preview 제공 중",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "anthropic-managed-agents",
+      "type": "dev",
+      "org": "Anthropic",
+      "title": "Managed Agents",
+      "url": "https://www.anthropic.com/engineering/managed-agents",
+      "date": "2026-04-W02",
+      "year": "2026",
+      "month": "4",
+      "week": "2",
+      "bullets": [
+        {
+          "text": "long-horizon agent 작업을 위한 hosted service로, Brain(Claude + harness) / Hands(sandbox + tools) / Session(append-only event log) 세 컴포넌트를 분리",
+          "level": 1
+        },
+        {
+          "text": "stateless harness 설계: 컨테이너를 \"cattle\"로 취급하여 실패 시 Claude가 retry 로직을 처리",
+          "level": 1
+        },
+        {
+          "text": "컨테이너 사전 프로비저닝 제거로 TTFT p50 ~60%, p95 >90% 감소",
+          "level": 2
+        },
+        {
+          "text": "session persistence를 harness 외부에 두어 장애 복구 시 데이터 손실 없이 `wake(sessionId)`로 재개 가능",
+          "level": 1
+        },
+        {
+          "text": "credential은 sandbox에서 접근 불가하며, OAuth 토큰은 MCP proxy를 통해서만 접근하는 보안 경계 설계",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "mit-nvidia-triattention-efficient-long-reasoning-with-trigonometric-kv-compression",
       "type": "paper",
@@ -39262,9 +39402,9 @@
     }
   ],
   "stats": {
-    "total": 1750,
-    "paper": 1050,
-    "dev": 663,
+    "total": 1754,
+    "paper": 1052,
+    "dev": 665,
     "news": 37
   }
 }
