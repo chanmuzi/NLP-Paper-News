@@ -146,7 +146,7 @@ After generating all summaries:
    - Use Bash to get the timestamp: `date +"%Y-%m-%d_%H%M"`
 2. Write all summaries to `~/claude-summarize/{timestamp}.md`
    - Multiple URL results go in a single file, separated by a blank line between items
-3. Display the generated markdown content to the user
+3. Display the generated markdown content to the user inside a fenced code block (```markdown ... ```) so they can copy it directly
 4. Show the saved file path as an absolute path so the user can click it directly:
    ```
    저장 경로: /Users/chanmuzi/claude-summarize/{timestamp}.md
@@ -158,3 +158,4 @@ After generating all summaries:
 - The markdown content in the file should contain ONLY the bullet-point summaries — no extra headers, metadata, or wrappers
 - Each item starts with `- {emoji}` at the top level
 - Separate multiple items with one blank line
+- Output ONLY the fenced code block and the saved file path — no greetings, explanations, or extra commentary
