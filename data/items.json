@@ -1,8 +1,84 @@
 {
   "version": 1,
-  "last_updated": "2026-04-09T05:15:22.186Z",
-  "total_items": 1754,
+  "last_updated": "2026-04-11T05:46:19.667Z",
+  "total_items": 1756,
   "items": [
+    {
+      "id": "anthropic-the-advisor-strategy-give-agents-an-intelligence-boost",
+      "type": "dev",
+      "org": "Anthropic",
+      "title": "The Advisor Strategy: Give Agents an Intelligence Boost",
+      "url": "https://claude.com/blog/the-advisor-strategy",
+      "date": "2026-04-W02",
+      "year": "2026",
+      "month": "4",
+      "week": "2",
+      "bullets": [
+        {
+          "text": "더 큰 모델(Opus)을 advisor로, 작은 모델(Sonnet/Haiku)을 executor로 페어링하여 Opus 수준의 intelligence를 낮은 비용으로 달성하는 전략",
+          "level": 1
+        },
+        {
+          "text": "executor가 end-to-end로 task를 수행하다가 어려운 결정을 만나면 advisor tool을 호출해 Opus에게 guidance를 요청",
+          "level": 1
+        },
+        {
+          "text": "advisor는 tool을 직접 호출하지 않고 plan, correction, stop signal만 제공",
+          "level": 2
+        },
+        {
+          "text": "`advisor_20260301`로 Messages API에 server-side tool로 통합, 추가 round-trip 없이 단일 API call 내에서 동작",
+          "level": 2
+        },
+        {
+          "text": "Sonnet + Opus advisor: SWE-bench Multilingual에서 solo Sonnet 대비 +2.7pp, 비용은 11.9% 절감",
+          "level": 1
+        },
+        {
+          "text": "Haiku + Opus advisor: BrowseComp에서 solo 대비 2배 이상(19.7% → 41.2%), solo Sonnet 대비 85% 낮은 비용",
+          "level": 1
+        },
+        {
+          "text": "`max_uses` 파라미터로 advisor 호출 횟수를 제한하여 비용 통제 가능",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "alibaba-skillclaw-let-skills-evolve-collectively-with-agentic-evolver",
+      "type": "paper",
+      "org": "Alibaba",
+      "title": "SkillClaw: Let Skills Evolve Collectively with Agentic Evolver",
+      "url": "https://arxiv.org/abs/2604.08377",
+      "date": "2026-04-W02",
+      "year": "2026",
+      "month": "4",
+      "week": "2",
+      "bullets": [
+        {
+          "text": "multi-user agent 환경에서 cross-user interaction trajectory를 집계하여 skill을 자동으로 진화시키는 프레임워크",
+          "level": 1
+        },
+        {
+          "text": "autonomous evolver가 반복되는 behavioral pattern을 식별하고 기존 skill을 refine하거나 새로운 skill로 확장",
+          "level": 1
+        },
+        {
+          "text": "업데이트된 skill은 shared repository에 저장되어 모든 사용자에게 동기화",
+          "level": 2
+        },
+        {
+          "text": "WildClawBench에서 Qwen3-Max 기반 실험 결과, 제한된 interaction 데이터만으로도 실제 agent 시나리오에서 유의미한 성능 향상 달성",
+          "level": 1
+        },
+        {
+          "text": "한 사용자의 경험에서 발견된 개선이 별도의 노력 없이 시스템 전체로 전파되는 cross-user knowledge transfer 실현",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "pku-kuaishou-openworldlib-a-unified-codebase-and-definition-of-advanced-world-models",
       "type": "paper",
@@ -39402,9 +39478,9 @@
     }
   ],
   "stats": {
-    "total": 1754,
-    "paper": 1052,
-    "dev": 665,
+    "total": 1756,
+    "paper": 1053,
+    "dev": 666,
     "news": 37
   }
 }
