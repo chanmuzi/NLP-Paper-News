@@ -1,8 +1,84 @@
 {
   "version": 1,
-  "last_updated": "2026-04-11T05:46:19.667Z",
-  "total_items": 1756,
+  "last_updated": "2026-04-13T01:50:31.975Z",
+  "total_items": 1758,
   "items": [
+    {
+      "id": "meta-kaust-neural-computers",
+      "type": "paper",
+      "org": "Meta · KAUST",
+      "title": "Neural Computers",
+      "url": "https://arxiv.org/abs/2604.06425",
+      "date": "2026-04-W02",
+      "year": "2026",
+      "month": "4",
+      "week": "2",
+      "bullets": [
+        {
+          "text": "모델 자체가 running computer가 되는 새로운 패러다임, Neural Computers (NCs) 제안",
+          "level": 1
+        },
+        {
+          "text": "computation, memory, I/O를 learned runtime state 안에서 통합하는 접근",
+          "level": 2
+        },
+        {
+          "text": "궁극 목표는 stable execution과 reusable capabilities를 갖춘 Completely Neural Computer (CNC)",
+          "level": 1
+        },
+        {
+          "text": "구현: instruction, pixel, user action을 입력받아 screen frame을 생성하는 video model 형태로 CLI/GUI 환경에서 작동",
+          "level": 1
+        },
+        {
+          "text": "I/O alignment와 short-horizon control 같은 interface primitive를 습득했으나 routine reuse, controlled update, symbolic stability는 미해결 과제로 남음",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "google-google-deepmind-medgemma-15-technical-report",
+      "type": "paper",
+      "org": "Google · Google DeepMind",
+      "title": "MedGemma 1.5 Technical Report",
+      "url": "https://arxiv.org/abs/2604.05081",
+      "date": "2026-04-W02",
+      "year": "2026",
+      "month": "4",
+      "week": "2",
+      "bullets": [
+        {
+          "text": "MedGemma 1을 확장한 4B 규모의 open-weight medical foundation model",
+          "level": 1
+        },
+        {
+          "text": "Gemma3 아키텍쳐 + frozen 400M MedSigLIP vision encoder 기반",
+          "level": 2
+        },
+        {
+          "text": "고차원 medical imaging (CT/MRI volumes, histopathology whole slide images), bounding box 기반 anatomical localization, multi-timepoint chest X-ray 분석을 통합 지원",
+          "level": 1
+        },
+        {
+          "text": "핵심 기법",
+          "level": 1
+        },
+        {
+          "text": "3D volume long-context slicing (최대 85 axial slices), whole-slide patch sampling (최대 126 patches), CT Hounsfield Unit을 위한 multi-channel windowing",
+          "level": 2
+        },
+        {
+          "text": "pretraining + distillation + RL 결합",
+          "level": 2
+        },
+        {
+          "text": "성능: 3D MRI classification +11%, whole-slide pathology macro F1 +47%, CXR localization IoU +35%, MedQA +5%, EHRQA +22%",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "anthropic-the-advisor-strategy-give-agents-an-intelligence-boost",
       "type": "dev",
@@ -39478,8 +39554,8 @@
     }
   ],
   "stats": {
-    "total": 1756,
-    "paper": 1053,
+    "total": 1758,
+    "paper": 1055,
     "dev": 666,
     "news": 37
   }
