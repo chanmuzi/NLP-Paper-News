@@ -1,8 +1,136 @@
 {
   "version": 1,
-  "last_updated": "2026-04-13T01:50:31.975Z",
-  "total_items": 1758,
+  "last_updated": "2026-04-17T05:31:03.314Z",
+  "total_items": 1762,
   "items": [
+    {
+      "id": "bytedance-seed-seedance-20-advancing-video-generation-for-world-complexity",
+      "type": "paper",
+      "org": "ByteDance Seed",
+      "title": "Seedance 2.0: Advancing Video Generation for World Complexity",
+      "url": "https://arxiv.org/abs/2604.14148",
+      "date": "2026-04-W02",
+      "year": "2026",
+      "month": "4",
+      "week": "2",
+      "bullets": [
+        {
+          "text": "text, image, audio, video 네 가지 modality를 입력으로 받아 4~15초 길이의 480p/720p 비디오를 생성하는 native multi-modal audio-video generation 모델",
+          "level": 1
+        },
+        {
+          "text": "unified, highly efficient, large-scale architecture 기반으로 audio-video joint generation을 수행하며 최대 3개 video clip, 9개 image, 3개 audio clip을 reference로 동시 처리 가능",
+          "level": 1
+        },
+        {
+          "text": "전문가 평가와 public test 기준 leading levels에 준하는 성능을 보였으며, 저지연 응용을 위한 Fast variant도 함께 공개",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "anthropic-truthful-ai-language-models-transmit-behavioural-traits-through-hidden-signals-in-data",
+      "type": "paper",
+      "org": "Anthropic · Truthful AI",
+      "title": "Language models transmit behavioural traits through hidden signals in data",
+      "url": "https://www.nature.com/articles/s41586-026-10319-8",
+      "date": "2026-04-W02",
+      "year": "2026",
+      "month": "4",
+      "week": "2",
+      "bullets": [
+        {
+          "text": "teacher 모델이 만든 number sequences/코드/reasoning trace만으로 학습한 student 모델이 teacher의 성향(예: 올빼미 선호, misalignment)을 그대로 습득하는 subliminal learning 현상을 규명",
+          "level": 1
+        },
+        {
+          "text": "방법론",
+          "level": 1
+        },
+        {
+          "text": "teacher에 finetuning 또는 system prompt로 특정 trait 부여 → 무관한 프롬프트로 completion 샘플링 → trait 언급을 제거하는 필터링 후 student 학습",
+          "level": 2
+        },
+        {
+          "text": "효과는 teacher-student가 동일 base model일 때만 발생하며, 해당 신호는 non-semantic이라 data filtering으로 제거 불가",
+          "level": 1
+        },
+        {
+          "text": "특정 조건에서 subliminal learning이 모든 neural network에서 일어난다는 theoretical result를 증명, behavior 관찰을 넘어 internal mechanism과 data provenance까지 모니터링하는 safety evaluation 필요성을 제기",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "google-cloud-ai-research-paperorchestra-a-multi-agent-framework-for-automated-ai-research-paper-writ",
+      "type": "paper",
+      "org": "Google Cloud AI Research",
+      "title": "PaperOrchestra: A Multi-Agent Framework for Automated AI Research Paper Writing",
+      "url": "https://yiwen-song.github.io/paper_orchestra/",
+      "date": "2026-04-W02",
+      "year": "2026",
+      "month": "4",
+      "week": "2",
+      "bullets": [
+        {
+          "text": "sparse idea summary와 실험 로그 같은 unstructured 자료를 submission-ready LaTeX 논문으로 변환하는 multi-agent framework",
+          "level": 1
+        },
+        {
+          "text": "outline 작성, plot 생성, literature review, writing, refinement 등 역할별 agent로 구성되며 Semantic Scholar API로 citation을 grounding",
+          "level": 1
+        },
+        {
+          "text": "CVPR/ICLR 등 conference 스타일 native rendering, simulated peer feedback 기반 iterative self-refinement 지원",
+          "level": 2
+        },
+        {
+          "text": "PaperWritingBench (CVPR 2025 · ICLR 2025 기준 200편을 역설계한 pre-writing 자료 벤치마크) 공개",
+          "level": 1
+        },
+        {
+          "text": "human evaluation에서 literature review 품질 50–68% win margin, 전체 manuscript 품질 14–38% win margin으로 autonomous baseline 대비 우위, 단 drafting 가속 도구로 포지셔닝하며 human verification 필수",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "ai2-introducing-wilddet3d-open-world-3d-detection-from-a-single-image",
+      "type": "dev",
+      "org": "Ai2",
+      "title": "Introducing WildDet3D: Open-world 3D detection from a single image",
+      "url": "https://allenai.org/blog/wilddet3d",
+      "date": "2026-04-W02",
+      "year": "2026",
+      "month": "4",
+      "week": "2",
+      "bullets": [
+        {
+          "text": "단일 RGB 이미지에서 객체의 3D bounding box(위치·크기·방향을 metric 좌표로)를 예측하는 open-world monocular 3D detection 모델",
+          "level": 1
+        },
+        {
+          "text": "하나의 아키텍처에서 text query, point prompt, 2D bounding box를 모두 prompt로 받으며 해상도·종횡비·광학 특성이 다른 카메라에 fine-tuning 없이 일반화",
+          "level": 1
+        },
+        {
+          "text": "sparse depth / LiDAR / TOF 데이터를 optional fusion 가능, geometry backend가 decoupled되어 depth 모델 교체 가능",
+          "level": 2
+        },
+        {
+          "text": "WildDet3D-Data: 100만+ 이미지, 3.7M verified 3D annotation, 13,000+ object 카테고리 (10만+ human-annotated) — COCO · LVIS · Objects365 · V3Det 기반으로 ensemble 3D estimation + VLM + human 큐레이션",
+          "level": 1
+        },
+        {
+          "text": "기존 대비 적은 학습 compute로 표준 벤치마크를 크게 상회하며 미학습 카테고리에 대한 zero-shot 일반화와 2D→3D lifting 기반 video tracking까지 지원, 모델·리포트·코드·iOS 앱 모두 Hugging Face·GitHub에 공개",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "meta-kaust-neural-computers",
       "type": "paper",
@@ -39554,9 +39682,9 @@
     }
   ],
   "stats": {
-    "total": 1758,
-    "paper": 1055,
-    "dev": 666,
+    "total": 1762,
+    "paper": 1058,
+    "dev": 667,
     "news": 37
   }
 }
