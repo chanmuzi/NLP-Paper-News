@@ -1,8 +1,96 @@
 {
   "version": 1,
-  "last_updated": "2026-04-17T05:31:03.314Z",
-  "total_items": 1762,
+  "last_updated": "2026-04-18T01:12:58.040Z",
+  "total_items": 1764,
   "items": [
+    {
+      "id": "anthropic-claude-opus-47",
+      "type": "news",
+      "org": "Anthropic",
+      "title": "Claude Opus 4.7",
+      "url": "https://www.anthropic.com/news/claude-opus-4-7",
+      "date": "2026-04-W03",
+      "year": "2026",
+      "month": "4",
+      "week": "3",
+      "bullets": [
+        {
+          "text": "Claude Opus 4.7 릴리즈. API, Amazon Bedrock, Google Cloud Vertex AI, Microsoft Foundry 등 모든 Claude 제품에서 사용 가능",
+          "level": 1
+        },
+        {
+          "text": "주요 개선 포인트",
+          "level": 1
+        },
+        {
+          "text": "advanced software engineering, 특히 어려운 태스크에서 Opus 4.6 대비 큰 개선 (한 벤치마크 기준 +13%)",
+          "level": 2
+        },
+        {
+          "text": "vision 처리 강화: long edge 기준 최대 2,576 pixels (~3.75 megapixels)까지 지원, 이전 대비 3배 이상 해상도",
+          "level": 2
+        },
+        {
+          "text": "instruction following이 더 literal하고 완전하게 동작하도록 튜닝",
+          "level": 2
+        },
+        {
+          "text": "새 reasoning-latency 제어용 \"xhigh\" effort level 도입, tokenizer 업데이트 (input 토큰 1.0~1.35배 증가)",
+          "level": 1
+        },
+        {
+          "text": "가격은 Opus 4.6와 동일: input $5/M, output $25/M. 모델 ID는 `claude-opus-4-7`",
+          "level": 1
+        },
+        {
+          "text": "Finance Agent, GDPval-AA, document reasoning, long-horizon autonomy 등에서 SOTA급 결과 보고",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "alibaba-qwen-qwen36-35b-a3b",
+      "type": "dev",
+      "org": "Alibaba Qwen",
+      "title": "Qwen3.6-35B-A3B",
+      "url": "https://qwen.ai/blog?id=qwen3.6-35b-a3b",
+      "date": "2026-04-W03",
+      "year": "2026",
+      "month": "4",
+      "week": "3",
+      "bullets": [
+        {
+          "text": "Tongyi Lab이 Apache 2.0로 공개한 sparse MoE 모델. total 35B parameters, active 3B (약 12:1 sparsity)로 agentic coding 타겟",
+          "level": 1
+        },
+        {
+          "text": "주요 벤치마크 (vs Gemma 4-31B)",
+          "level": 1
+        },
+        {
+          "text": "SWE-bench Verified 73.4% vs 52.0%",
+          "level": 2
+        },
+        {
+          "text": "Terminal-Bench 2.0 51.5% vs 42.9%",
+          "level": 2
+        },
+        {
+          "text": "MCPMark (tool use) 37.0% vs 18.1%",
+          "level": 2
+        },
+        {
+          "text": "dense 모델인 Qwen3.5-27B를 매우 낮은 연산 비용으로 상회, 전작 Qwen3.5-35B-A3B 대비 큰 폭 개선",
+          "level": 1
+        },
+        {
+          "text": "로컬 실행 가능한 경량 active 파라미터 구성으로 low-cost agent 프로그래밍과 multimodal reasoning을 강조",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "bytedance-seed-seedance-20-advancing-video-generation-for-world-complexity",
       "type": "paper",
@@ -39682,9 +39770,9 @@
     }
   ],
   "stats": {
-    "total": 1762,
+    "total": 1764,
     "paper": 1058,
-    "dev": 667,
-    "news": 37
+    "dev": 668,
+    "news": 38
   }
 }
