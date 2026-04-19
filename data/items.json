@@ -1,8 +1,46 @@
 {
   "version": 1,
-  "last_updated": "2026-04-18T01:12:58.040Z",
-  "total_items": 1764,
+  "last_updated": "2026-04-19T15:02:05.764Z",
+  "total_items": 1765,
   "items": [
+    {
+      "id": "robbyant-lingbot-map-geometric-context-transformer-for-streaming-3d-reconstruction",
+      "type": "dev",
+      "org": "Robbyant",
+      "title": "LingBot-Map: Geometric Context Transformer for Streaming 3D Reconstruction",
+      "url": "https://huggingface.co/robbyant/lingbot-map",
+      "date": "2026-04-W03",
+      "year": "2026",
+      "month": "4",
+      "week": "3",
+      "bullets": [
+        {
+          "text": "이미지 시퀀스/비디오 스트림으로부터 real-time streaming 3D reconstruction을 수행하는 feed-forward 3D foundation model",
+          "level": 1
+        },
+        {
+          "text": "Geometric Context Transformer가 단일 streaming framework 안에서 coordinate grounding, dense geometric cues, long-range drift correction, anchor context & pose-reference window, trajectory memory를 통합",
+          "level": 1
+        },
+        {
+          "text": "Paged KV cache attention (FlashInfer) 기반으로 518×378 해상도에서 약 20 FPS, 10,000+ frames 시퀀스 처리 가능 (>3000 frames는 windowed inference 지원)",
+          "level": 1
+        },
+        {
+          "text": "VGGT · DINOv2 · FlashInfer 기반, 모델 크기 4.63 GB, PyTorch 2.9.1 / CUDA 12.8",
+          "level": 2
+        },
+        {
+          "text": "keyframe interval, sky masking 등 실용 옵션과 SDPA fallback 제공",
+          "level": 2
+        },
+        {
+          "text": "Apache 2.0 라이선스로 HuggingFace·ModelScope에 공개, 기존 streaming·iterative optimization 대비 SOTA 성능을 주장",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "anthropic-claude-opus-47",
       "type": "news",
@@ -39770,9 +39808,9 @@
     }
   ],
   "stats": {
-    "total": 1764,
+    "total": 1765,
     "paper": 1058,
-    "dev": 668,
+    "dev": 669,
     "news": 38
   }
 }
