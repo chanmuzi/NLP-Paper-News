@@ -63,12 +63,19 @@ function parseMarkdownItemLine(line) {
   return { type, org, title, url };
 }
 
+function calculateEffectiveIndent(whitespace) {
+  let total = 0;
+  for (const ch of whitespace) total += ch === '\t' ? 4 : 1;
+  return total;
+}
+
 function parseBulletLine(line) {
   const match = line.match(/^(\s*)-\s+(.+)$/);
   if (!match) return null;
-  const indent = match[1].length;
+  const effectiveIndent = calculateEffectiveIndent(match[1]);
   const text = match[2].trim();
-  const level = indent < 4 ? 1 : indent < 8 ? 2 : 3;
+  // Mirrors admin.astro:740-742 so /summarize 4-space output → level 1.
+  const level = effectiveIndent < 6 ? 1 : effectiveIndent < 12 ? 2 : 3;
   return { text, level };
 }
 
@@ -97,12 +104,13 @@ export function parseMarkdownFragment(content) {
 }
 
 function generateId(org, title) {
-  const slug = `${org}-${title}`
+  // Aligned with parse-markdown.mjs and admin.astro makeId (100-char cap, same regex)
+  // so the same input produces the same id across all entry points.
+  return `${org}-${title}`
     .toLowerCase()
-    .replace(/[^a-z0-9가-힣]+/g, '-')
-    .replace(/^-|-$/g, '')
-    .slice(0, 80);
-  return slug;
+    .replace(/[^a-z0-9가-힣\s-]/g, '')
+    .replace(/\s+/g, '-')
+    .slice(0, 100);
 }
 
 function getCurrentWeekDate() {

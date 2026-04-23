@@ -1,7 +1,8 @@
-// X (Twitter) text length utilities.
-// Mirrors the counting/clipping rules used by build-digest.mjs and post-x.mjs
-// so the /post skill can validate Claude-generated tweets without re-implementing
-// the same gotchas (URL=23 weight, CJK/emoji=2x, grapheme vs codepoint).
+// X (Twitter) text length utilities — CANONICAL shared implementation.
+// All scripts that count or clip tweets MUST import from this module so the
+// URL=23 weighting, CJK/emoji=2x, and grapheme-vs-codepoint rules stay
+// consistent in one place. build-digest.mjs / post-x.mjs / rewrite-x-thread.mjs
+// all import from here; do not re-inline these functions elsewhere.
 
 export const X_HARD_LIMIT = 280;
 export const DEFAULT_SAFE_LIMIT = 260;

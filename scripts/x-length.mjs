@@ -13,7 +13,6 @@ import fs from 'fs';
 import {
   X_HARD_LIMIT,
   DEFAULT_SAFE_LIMIT,
-  countXChars,
   countXCharsDetail,
   getSafeLimit,
 } from './x-text-utils.mjs';

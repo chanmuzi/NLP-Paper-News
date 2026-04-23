@@ -80,11 +80,24 @@ You generate this yourself from the markdown you just produced. The `build-diges
 
 ### Length validation
 
-Validate every tweet with `scripts/x-length.mjs` before showing the user:
+Validate every tweet with `scripts/x-length.mjs` before showing the user. **Always** use `--json-file` — the inline `--json '...'` form breaks on tweets containing apostrophes (e.g. `OpenAI's`) under bash single-quote rules.
+
+Recommended flow:
+1. Write the thread JSON to a temp file (e.g. `artifacts/post-skill-thread.json`):
+   ```json
+   { "main": "...", "replies": ["...", "..."] }
+   ```
+   Use the `Write` tool — that handles arbitrary content safely.
+2. Validate:
+   ```
+   node scripts/x-length.mjs --json-file artifacts/post-skill-thread.json
+   ```
+   Exit code 0 = all within 280, 1 = at least one over. The result includes `withinSafeLimit` for the 260 target per tweet.
+
+For ad-hoc single-tweet checks, prefer stdin to avoid quoting issues:
 ```
-node scripts/x-length.mjs --json '<JSON.stringify({main, replies})>'
+printf '%s' "후보 텍스트" | node scripts/x-length.mjs --stdin
 ```
-Or write the thread to a temp file and use `--json-file`. The CLI exits 0 if all within 280, 1 otherwise. The result includes `withinSafeLimit` for the 260 target.
 
 If anything exceeds 280, recompose internally (shorter title, shorter summary, drop org) and re-validate. Do not surface drafts that fail the hard limit.
 
