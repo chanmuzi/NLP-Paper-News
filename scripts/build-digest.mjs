@@ -2,13 +2,17 @@
 import fs from 'fs';
 import path from 'path';
 import { execSync } from 'child_process';
+import {
+  X_HARD_LIMIT,
+  countXChars,
+  isWithinXLimit,
+  clipToXLimit,
+  getSafeLimit,
+} from './x-text-utils.mjs';
 
-const X_HARD_LIMIT = 280;
-const DEFAULT_X_SAFE_LIMIT = 260; // 비프리미엄/가중치 보수 대응
 const DEFAULT_GEN_MARGIN = 16;
 const PER_REQUEST_TIMEOUT_MS = 30_000; // 개별 API 호출 timeout (30초)
 const TOTAL_AI_TIMEOUT_MS = 90_000; // AI 생성 전체 timeout (90초)
-const URL_REGEX = /https?:\/\/[^\s)]+/gi;
 
 function parseArgs(argv) {
   const args = { input: '', outDir: 'artifacts', siteBaseUrl: '' };
@@ -26,90 +30,10 @@ function toBool(value, defaultValue = false) {
   return !['0', 'false', 'no', 'off'].includes(String(value).toLowerCase());
 }
 
-function getSafeLimit() {
-  const raw = Number(process.env.X_SAFE_LIMIT || DEFAULT_X_SAFE_LIMIT);
-  if (!Number.isFinite(raw)) return DEFAULT_X_SAFE_LIMIT;
-  return Math.max(220, Math.min(X_HARD_LIMIT, Math.floor(raw)));
-}
-
 function getGenerationLimit(safeLimit) {
   const raw = Number(process.env.X_GEN_MARGIN || DEFAULT_GEN_MARGIN);
   const margin = Number.isFinite(raw) ? Math.max(0, Math.floor(raw)) : DEFAULT_GEN_MARGIN;
   return Math.max(210, Math.min(safeLimit, safeLimit - margin));
-}
-
-function isWideChar(ch) {
-  const cp = ch.codePointAt(0);
-  if (!cp) return false;
-  return (
-    (cp >= 0x1100 && cp <= 0x11FF) ||
-    (cp >= 0x2E80 && cp <= 0xA4CF) ||
-    (cp >= 0xAC00 && cp <= 0xD7A3) ||
-    (cp >= 0xF900 && cp <= 0xFAFF) ||
-    (cp >= 0xFE10 && cp <= 0xFE6F) ||
-    (cp >= 0xFF01 && cp <= 0xFF60) ||
-    (cp >= 0xFFE0 && cp <= 0xFFE6)
-  );
-}
-
-function isEmoji(ch) {
-  try {
-    return /\p{Extended_Pictographic}/u.test(ch);
-  } catch {
-    return false;
-  }
-}
-
-function graphemeSegments(text) {
-  const src = String(text || '');
-  try {
-    if (typeof Intl !== 'undefined' && Intl.Segmenter) {
-      const seg = new Intl.Segmenter('en', { granularity: 'grapheme' });
-      return Array.from(seg.segment(src), (x) => x.segment);
-    }
-  } catch {}
-  return [...src];
-}
-
-function countXCharsCodepoint(text) {
-  const normalized = String(text || '').replace(URL_REGEX, 'x'.repeat(23));
-  let total = 0;
-  for (const ch of [...normalized]) {
-    if (isEmoji(ch) || isWideChar(ch)) total += 2;
-    else total += 1;
-  }
-  return total;
-}
-
-function countXCharsGrapheme(text) {
-  const normalized = String(text || '').replace(URL_REGEX, 'x'.repeat(23));
-  let total = 0;
-  for (const g of graphemeSegments(normalized)) {
-    if (isEmoji(g) || isWideChar(g)) total += 2;
-    else total += 1;
-  }
-  return total;
-}
-
-function countXChars(text) {
-  return Math.max(countXCharsCodepoint(text), countXCharsGrapheme(text));
-}
-
-function isWithinXLimit(text, limit = X_HARD_LIMIT) {
-  return countXChars(text) <= limit;
-}
-
-function clipToXLimit(text, limit = X_HARD_LIMIT) {
-  const src = String(text || '');
-  if (isWithinXLimit(src, limit)) return src;
-  const chars = [...src];
-  const ellipsis = '…';
-  while (chars.length > 0) {
-    const candidate = chars.join('') + ellipsis;
-    if (isWithinXLimit(candidate, limit)) return candidate;
-    chars.pop();
-  }
-  return '';
 }
 
 function compactLines(text) {
