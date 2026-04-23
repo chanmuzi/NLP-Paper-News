@@ -1,8 +1,106 @@
 {
   "version": 1,
-  "last_updated": "2026-04-19T15:02:05.764Z",
-  "total_items": 1765,
+  "last_updated": "2026-04-23T07:08:18.846Z",
+  "total_items": 1768,
   "items": [
+    {
+      "id": "xiaomi-mimo-v25-pro",
+      "date": "2026-04-W04",
+      "year": "2026",
+      "month": "4",
+      "week": "4",
+      "type": "dev",
+      "org": "Xiaomi",
+      "title": "MiMo-V2.5-Pro",
+      "url": "https://mimo.xiaomi.com/mimo-v2-5-pro/",
+      "bullets": [
+        {
+          "text": "Xiaomi의 가장 강력한 모델을 public beta로 공개, 1,000+ tool call 규모의 long-horizon agentic task에 초점",
+          "level": 1
+        },
+        {
+          "text": "실측 사례",
+          "level": 1
+        },
+        {
+          "text": "Rust SysY 컴파일러 풀빌드: 233/233 테스트 통과, 4.3시간 / 672 tool calls",
+          "level": 2
+        },
+        {
+          "text": "8,192라인 desktop 비디오 에디터: 11.5시간 / 1,868 tool calls",
+          "level": 2
+        },
+        {
+          "text": "동급 경쟁 모델 대비 trajectory당 token 소모 40~60% 절감",
+          "level": 1
+        },
+        {
+          "text": "MiMo-V2.5 시리즈 향후 open-source 공개 예정",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "openai-introducing-openai-privacy-filter",
+      "date": "2026-04-W04",
+      "year": "2026",
+      "month": "4",
+      "week": "4",
+      "type": "dev",
+      "org": "OpenAI",
+      "title": "Introducing OpenAI Privacy Filter",
+      "url": "https://openai.com/index/introducing-openai-privacy-filter/",
+      "bullets": [
+        {
+          "text": "텍스트 내 PII(이름·이메일·계좌·신용카드 번호 등) 탐지와 redaction을 위한 1.5B open-weight 모델, on-device로 처리해 데이터가 외부로 나가지 않음",
+          "level": 1
+        },
+        {
+          "text": "PII-Masking-300k 벤치마크에서 out-of-the-box 96% F1 달성",
+          "level": 1
+        },
+        {
+          "text": "Apache 2.0으로 GitHub/Hugging Face 공개, fine-tuning과 상용 배포 모두 허용",
+          "level": 1
+        },
+        {
+          "text": "\"anonymization tool/compliance certification이 아니라 privacy-by-design system의 한 component\"라고 스스로 명시",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "openai-introducing-chatgpt-images-20",
+      "date": "2026-04-W04",
+      "year": "2026",
+      "month": "4",
+      "week": "4",
+      "type": "dev",
+      "org": "OpenAI",
+      "title": "Introducing ChatGPT Images 2.0",
+      "url": "https://openai.com/index/introducing-chatgpt-images-2-0/",
+      "bullets": [
+        {
+          "text": "한/중/일/힌디/벵골 등 다국어 text rendering과 small text·UI·dense typography를 최대 2K 해상도로 정확히 처리",
+          "level": 1
+        },
+        {
+          "text": "단일 prompt에서 character/object continuity를 유지하며 최대 8장 이미지 생성 (만화 시퀀스, 동화책, SNS 그래픽 시리즈에 활용)",
+          "level": 1
+        },
+        {
+          "text": "thinking model 모드에서 웹 검색·업로드 자료 분석·layout reasoning을 거친 뒤 이미지 생성",
+          "level": 1
+        },
+        {
+          "text": "ChatGPT/Codex/API 전 사용자에게 제공, thinking 기능은 Plus/Pro/Business/Enterprise 한정",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "robbyant-lingbot-map-geometric-context-transformer-for-streaming-3d-reconstruction",
       "type": "dev",
