@@ -38,6 +38,7 @@ Reuse the full `/summarize` workflow for each URL. Highlights to preserve:
       - 핵심 요약 3
   ```
 - 2–5 bullets, level-2 only when needed. No filler. Papers: problem→method→result. Blogs/news: launch→features→significance.
+- **Bullet 톤은 개조식 명사형 종결** (예: "~공개", "~절감", "~도입"). `~합니다/~습니다/~됩니다/~입니다` 금지. (X reply 톤은 별개 — Step 2 참고. 상세 규칙·예시는 `.claude/commands/summarize.md`의 Rules / Anti-pattern 섹션)
 - Title: 원문 그대로. 너무 길거나 직관적이지 않을 때만 축약.
 
 Save the combined markdown:
@@ -75,7 +76,7 @@ You generate this yourself from the markdown you just produced. The `build-diges
 {URL}
 ```
 - Title: original, lightly compressed if needed.
-- Summary: one prose sentence in 합니다/습니다 체. No bullets, no emojis, no `🔗` prefix on the URL.
+- Summary: one prose sentence in 합니다/습니다 체. No bullets, no emojis, no `🔗` prefix on the URL. **(주의: markdown bullet의 개조식 톤과 다름 — 의도된 분리)**
 - URL on its own last line so X generates a card preview.
 
 ### Length validation
