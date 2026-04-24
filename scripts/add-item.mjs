@@ -132,9 +132,20 @@ function loadData() {
   return JSON.parse(raw);
 }
 
+function computeStats(items) {
+  const stats = { total: items.length, paper: 0, dev: 0, news: 0 };
+  for (const it of items) {
+    if (it.type && Object.prototype.hasOwnProperty.call(stats, it.type)) {
+      stats[it.type]++;
+    }
+  }
+  return stats;
+}
+
 function saveData(data) {
   data.last_updated = new Date().toISOString();
   data.total_items = data.items.length;
+  data.stats = computeStats(data.items);
   fs.writeFileSync(DATA_PATH, JSON.stringify(data, null, 2), 'utf-8');
 }
 
