@@ -1,8 +1,92 @@
 {
   "version": 1,
-  "last_updated": "2026-04-23T07:08:18.846Z",
-  "total_items": 1768,
+  "last_updated": "2026-04-24T08:21:30.659Z",
+  "total_items": 1770,
   "items": [
+    {
+      "id": "openai-introducing-gpt-55",
+      "date": "2026-04-W04",
+      "year": "2026",
+      "month": "4",
+      "week": "4",
+      "type": "dev",
+      "org": "OpenAI",
+      "title": "Introducing GPT-5.5",
+      "url": "https://openai.com/index/introducing-gpt-5-5/",
+      "bullets": [
+        {
+          "text": "GPT-5.4 공개 몇 주 만에 출시된 후속 모델, agentic coding·computer use·knowledge work·초기 scientific research 영역에 초점",
+          "level": 1
+        },
+        {
+          "text": "large codebase 전반에 context 유지, 도구로 가정 검증하며 변경을 주변 코드에 전파하는 engineering behavior에 최적화. 이전 대비 token 효율 개선",
+          "level": 1
+        },
+        {
+          "text": "주요 벤치마크 (SOTA)",
+          "level": 1
+        },
+        {
+          "text": "Terminal-Bench 2.0 82.7% — Claude Opus 4.7 69.4%, Gemini 3.1 Pro 68.5% 상회",
+          "level": 2
+        },
+        {
+          "text": "GDPval 84.9%, OSWorld-Verified 78.7%, Tau2-bench Telecom 98.0% (prompt tuning 없이)",
+          "level": 2
+        },
+        {
+          "text": "ChatGPT Plus/Pro/Business/Enterprise 및 Codex에 즉시 제공, API는 곧 공개 예정",
+          "level": 1
+        },
+        {
+          "text": "API 가격: input $5 / output $30 per M tokens (GPT-5.4 대비 상향)",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "deepseek-deepseek-v4-technical-report",
+      "date": "2026-04-W04",
+      "year": "2026",
+      "month": "4",
+      "week": "4",
+      "type": "paper",
+      "org": "DeepSeek",
+      "title": "DeepSeek-V4 Technical Report",
+      "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro/blob/main/DeepSeek_V4.pdf",
+      "bullets": [
+        {
+          "text": "1.6T total / 49B active MoE, 1M 토큰 컨텍스트, FP4+FP8 mixed precision 적용",
+          "level": 1
+        },
+        {
+          "text": "CSA·HCA 하이브리드 어텐션으로 1M 토큰 구간 inference FLOPs는 DeepSeek-V3.2 대비 27%, KV cache는 10% 수준으로 절감",
+          "level": 1
+        },
+        {
+          "text": "Manifold-Constrained Hyper-Connections(mHC) + Muon optimizer로 32T+ 토큰 pretraining, 이후 GRPO SFT+RL → on-policy distillation 2-stage post-training",
+          "level": 1
+        },
+        {
+          "text": "Pro-Max (Think Max) 모드 주요 벤치마크",
+          "level": 1
+        },
+        {
+          "text": "LiveCodeBench 93.5% (Pass@1), Codeforces 3206 — GPT-5.4(xHigh) 3168 상회",
+          "level": 2
+        },
+        {
+          "text": "SWE-Verified 80.6%, IMOAnswerBench 89.8%, SimpleQA-Verified 57.9%",
+          "level": 2
+        },
+        {
+          "text": "MIT 라이선스로 Hugging Face·ModelScope 공개, 경량 Flash 변형(284B total / 13B active)도 동시 제공",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "xiaomi-mimo-v25-pro",
       "date": "2026-04-W04",
