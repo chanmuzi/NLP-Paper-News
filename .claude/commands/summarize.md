@@ -105,6 +105,9 @@ Rules:
 - 2-5 bullets, concise and factual
 - Level 2 bullets only when needed (specific examples, numbers, methodology details)
 - No filler words — facts only
+- **개조식 명사형 종결** (예: "~탐구", "~모델", "~공개", "~지원", "~달성", "~도입", "~절감", "~최적화")
+- **서술체 금지**: `~합니다` / `~습니다` / `~됩니다` / `~입니다` / `~했습니다` / `~됐습니다` 사용 X
+- 접속어·조사는 최소화. 긴 문장 대신 쉼표·가운뎃점으로 정보 밀도를 높임
 - Papers: problem → method → results/implications
 - Blogs/News: what was launched/announced → key features → significance
 - Indent MUST be exactly 4 spaces (not tabs)
@@ -137,6 +140,19 @@ Study these carefully and match the style exactly:
     - 100개 이상의 언어를 지원하며 8K tokens, 6개 이미지, 120초 비디오 등을 한 번의 request에서 처리할 수 있음
     - MRL(Matryoshka Representation Learning)이 적용되어 있고 3072 차원이 default (1536, 768 차원 지원)
 ```
+
+## Anti-pattern (do NOT)
+
+서술체로 쓴 bullet은 즉시 재작성:
+
+❌ `1.6T/49B MoE를 적용해 V3.2 대비 FLOPs를 27% 낮췄습니다.`
+✅ `1.6T/49B MoE, V3.2 대비 1M 토큰 FLOPs 27% · KV cache 10%로 절감`
+
+❌ `Apache 2.0으로 공개되어 fine-tuning과 상용 배포가 가능합니다.`
+✅ `Apache 2.0 공개, fine-tuning·상용 배포 허용`
+
+❌ `Terminal-Bench 2.0에서 82.7%를 기록해 Opus 4.7을 앞섰습니다.`
+✅ `Terminal-Bench 2.0 82.7% — Claude Opus 4.7 69.4% 상회`
 
 ## Saving
 
