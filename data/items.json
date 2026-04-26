@@ -1,8 +1,42 @@
 {
   "version": 1,
-  "last_updated": "2026-04-24T08:21:30.659Z",
-  "total_items": 1770,
+  "last_updated": "2026-04-26T08:43:38.261Z",
+  "total_items": 1771,
   "items": [
+    {
+      "id": "sakana-ai-sakana-fugu-multi-agent-orchestration-system",
+      "date": "2026-04-W04",
+      "year": "2026",
+      "month": "4",
+      "week": "4",
+      "type": "dev",
+      "org": "Sakana AI",
+      "title": "Sakana Fugu: Multi-Agent Orchestration System",
+      "url": "https://sakana.ai/fugu-beta/",
+      "bullets": [
+        {
+          "text": "여러 frontier model을 adaptive agent coordination으로 동적 오케스트레이션하는 multi-agent 시스템 베타 공개",
+          "level": 1
+        },
+        {
+          "text": "ICLR 2026 Trinity·Conductor 논문 기반으로 사람이 정의한 팀 구조 없이 비자명한 협업 패턴 자동 학습",
+          "level": 1
+        },
+        {
+          "text": "GPQAD 95.1(Gemini 3.1 94.4·GPT 5.4 90.9), SWEPro 54.2(Opus 4.6 53.4) 등 개별 frontier model 상회",
+          "level": 1
+        },
+        {
+          "text": "latency 최적화 Fugu Mini와 성능 최적화 Fugu Ultra 두 변형 제공, OpenAI 호환 API endpoint 지원",
+          "level": 1
+        },
+        {
+          "text": "모델이 자기 자신을 재귀 호출하는 test-time scaling으로 retraining 없이 iterative refinement 수행",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "openai-introducing-gpt-55",
       "date": "2026-04-W04",
@@ -39990,9 +40024,9 @@
     }
   ],
   "stats": {
-    "total": 1770,
+    "total": 1771,
     "paper": 1059,
-    "dev": 673,
+    "dev": 674,
     "news": 38
   }
 }
