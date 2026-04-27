@@ -1,8 +1,38 @@
 {
   "version": 1,
-  "last_updated": "2026-04-26T08:43:38.261Z",
-  "total_items": 1771,
+  "last_updated": "2026-04-27T02:03:05.913Z",
+  "total_items": 1772,
   "items": [
+    {
+      "id": "nvidia-nemotron-personas-korea",
+      "date": "2026-04-W04",
+      "year": "2026",
+      "month": "4",
+      "week": "4",
+      "type": "dev",
+      "org": "NVIDIA",
+      "title": "Nemotron-Personas-Korea",
+      "url": "https://huggingface.co/datasets/nvidia/Nemotron-Personas-Korea",
+      "bullets": [
+        {
+          "text": "한국 인구 통계·문화 특성을 반영한 첫 대규모 합성 페르소나 데이터셋 공개 (CC BY 4.0)",
+          "level": 1
+        },
+        {
+          "text": "100만 레코드 / 700만 페르소나 / 17억 토큰, 26개 필드로 17개 시도·252+ 시군구 커버",
+          "level": 1
+        },
+        {
+          "text": "KOSIS·대법원·NHIS·KREI·NAVER Cloud 공식 통계 기반, NeMo Data Designer + gemma-4-31B-it로 합성",
+          "level": 1
+        },
+        {
+          "text": "Sovereign AI 개발·편향 완화·데이터 다양성 확보 목적, 한국형 LLM 학습/평가 자원으로 활용 가능",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "sakana-ai-sakana-fugu-multi-agent-orchestration-system",
       "date": "2026-04-W04",
@@ -40024,9 +40054,9 @@
     }
   ],
   "stats": {
-    "total": 1771,
+    "total": 1772,
     "paper": 1059,
-    "dev": 674,
+    "dev": 675,
     "news": 38
   }
 }
