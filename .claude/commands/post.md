@@ -242,7 +242,11 @@ EOF
 )"
 git push origin <current-branch>
 ```
-The push triggers `notify.yml` (which generates another draft for the admin UI — harmless, just ignore it) and `deploy.yml` (which updates the site). Mention this to the user.
+
+**중요 — `Posted to X: <URL>` 라인은 절대 제거하지 말 것.**
+`.github/workflows/notify.yml`의 `prepare` job은 push 이벤트의 `head_commit.message`에 `Posted to X:` 문자열이 포함되어 있으면 admin 승인용 드래프트 생성을 skip한다. 이 라인을 빼면 동일 항목으로 드래프트가 재생성되어 사용자가 무심코 승인 시 **중복 게시**가 발생할 수 있다. 메시지 형식(`Posted to X: <URL>`)은 그대로 유지한다.
+
+The push triggers `notify.yml` (which detects the `Posted to X:` line and skips draft generation — so no duplicate draft is created) and `deploy.yml` (which updates the site). Mention to the user that the deploy workflow runs.
 
 **Dry-run mode:**
 - Skip `add-item.mjs`, skip commit, skip push.
