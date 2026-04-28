@@ -26,6 +26,9 @@ permissions:
 
 jobs:
   prepare:
+    # /post 스킬은 X 게시 후 commit 본문에 "Posted to X: <URL>"을 항상 포함한다.
+    # 그 경우 이미 게시된 항목이므로 admin 승인용 드래프트를 다시 만들지 않는다.
+    if: ${{ github.event_name != 'push' || !contains(github.event.head_commit.message, 'Posted to X:') }}
     runs-on: ubuntu-latest
     outputs:
       added_count: ${{ steps.delta.outputs.added_count }}
