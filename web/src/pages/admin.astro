@@ -1607,9 +1607,20 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
       }
 
       // notify.yml은 admin 흐름에서 명시적으로 트리거한다 (push 트리거는 제거됨).
-      // 실패해도 commit 자체는 이미 main에 반영됐으므로, 사용자에게 알리고 polling은 건너뛴다.
+      // 실패해도 commit 자체는 이미 main에 반영됐으므로 polling은 그대로 시작한다 —
+      // 폴링 fallback이 event=workflow_dispatch로 바뀌었기 때문에 사용자가 Actions에서
+      // 수동 실행한 run도 동일한 추적 경로로 자동 감지된다.
       let notifyDispatchOk = true;
       let notifyDispatchErr = '';
+      const summarizeDispatchError = (status: number | string, raw: string): string => {
+        let detail = raw;
+        try {
+          const parsed = JSON.parse(raw);
+          if (parsed && typeof parsed.message === 'string') detail = parsed.message;
+        } catch { /* not JSON, keep raw */ }
+        if (detail.length > 200) detail = detail.slice(0, 200) + '…';
+        return `${status}: ${detail}`;
+      };
       try {
         const notifyDispatchRes = await fetch(`https://api.github.com/repos/${repo}/actions/workflows/notify.yml/dispatches`, {
           method: 'POST',
@@ -1623,12 +1634,12 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
         if (!notifyDispatchRes.ok) {
           notifyDispatchOk = false;
           const errText = await notifyDispatchRes.text().catch(() => notifyDispatchRes.statusText);
-          notifyDispatchErr = `${notifyDispatchRes.status}: ${errText}`;
+          notifyDispatchErr = summarizeDispatchError(notifyDispatchRes.status, errText);
           console.warn(`notify.yml dispatch 실패 (${notifyDispatchErr})`);
         }
       } catch (e: any) {
         notifyDispatchOk = false;
-        notifyDispatchErr = e?.message || String(e);
+        notifyDispatchErr = summarizeDispatchError('network', e?.message || String(e));
         console.warn('notify.yml dispatch 호출 중 오류:', e);
       }
 
@@ -1643,13 +1654,13 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
       currentCommittedSha = newCommit.sha;
       currentRepoForSubmit = repo;
 
-      if (!notifyDispatchOk) {
-        showStatus(`커밋 완료${skippedMsg} · ${shortSha}\n⚠️ X draft 워크플로우 자동 트리거 실패 (${notifyDispatchErr})\nActions 페이지에서 \"Prepare X Thread Draft\"를 수동 실행해 주세요.`, 'warn');
-        return;
-      }
+      const workflowStatusMessage = notifyDispatchOk
+        ? `커밋 완료${skippedMsg} · ${shortSha}\nX draft 생성 워크플로 대기 중...`
+        : `커밋 완료${skippedMsg} · ${shortSha}\n⚠️ X draft 워크플로우 자동 트리거 실패 (${notifyDispatchErr})\nActions 페이지에서 "Prepare X Thread Draft"를 수동 실행하면 워크플로 추적이 자동 감지합니다.`;
+      showStatus(workflowStatusMessage, notifyDispatchOk ? 'info' : 'warn');
 
-      // Start workflow polling
-      showStatus(`커밋 완료${skippedMsg} · ${shortSha}\nX draft 생성 워크플로 대기 중...`, 'info');
+      // dispatch 실패해도 polling은 시작 — 폴링 fallback이 event=workflow_dispatch로
+      // 바뀌었으므로 사용자가 수동 dispatch한 run도 자동 감지된다.
       startWorkflowTracking(repo, token, newCommit.sha, newItems.length, undefined, requireManualApprovalForCurrentSubmit);
     } catch (err: any) {
       showStatus(`오류: ${err.message}`, 'error');

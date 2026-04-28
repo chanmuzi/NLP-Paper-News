@@ -242,7 +242,7 @@ EOF
 )"
 git push origin <current-branch>
 ```
-The push triggers only `deploy.yml` (which updates the site). `notify.yml`은 admin UI 흐름 전용 `workflow_dispatch`로 분리됐으므로 /post의 push로는 트리거되지 않는다 (admin UI가 항목 commit 직후 명시적으로 호출). Mention the deploy workflow to the user.
+The push does NOT automatically trigger any workflow for items.json-only commits. `deploy.yml`은 main push 시 동작하지만 `paths-ignore`에 `data/items.json`이 포함되어 있어 items.json만 바뀐 commit은 빌드/배포가 일어나지 않는다. `notify.yml`도 admin UI 흐름 전용 `workflow_dispatch`로 분리됐으므로 /post의 push로는 트리거되지 않는다 (admin UI가 항목 commit 직후 명시적으로 호출). 사이트에 반영하려면 `gh workflow run deploy.yml --ref main`으로 수동 트리거하거나 다른 코드 변경이 동반된 push가 필요하다는 점을 사용자에게 안내한다.
 
 **Dry-run mode:**
 - Skip `add-item.mjs`, skip commit, skip push.
