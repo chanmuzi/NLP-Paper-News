@@ -58,7 +58,9 @@ export function findDuplicatesById(candidates, items) {
   const { byId } = buildExistingIndexes(items);
   return (candidates || [])
     .map((candidate, index) => {
-      const id = candidate.id || generateId(candidate.org, candidate.title);
+      const id = candidate.id || (
+        candidate.org && candidate.title ? generateId(candidate.org, candidate.title) : ''
+      );
       const match = id ? byId.get(id) : null;
       if (!match) return null;
       return {

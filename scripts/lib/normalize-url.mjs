@@ -72,7 +72,8 @@ export function normalizeUrlForComparison(rawUrl) {
   const arxivUrl = arxivAbsUrl(url);
   if (arxivUrl) return arxivUrl;
 
-  url.protocol = url.protocol.toLowerCase();
+  const originalProtocol = url.protocol.toLowerCase();
+  url.protocol = ['http:', 'https:'].includes(originalProtocol) ? 'https:' : originalProtocol;
   url.hostname = url.hostname.toLowerCase().replace(/^www\./, '');
   url.hash = '';
   url.pathname = normalizePathname(url.pathname);
@@ -80,7 +81,10 @@ export function normalizeUrlForComparison(rawUrl) {
   const search = normalizeSearchParams(url.searchParams);
   url.search = search ? `?${search}` : '';
 
-  if ((url.protocol === 'https:' && url.port === '443') || (url.protocol === 'http:' && url.port === '80')) {
+  if (
+    (url.protocol === 'https:' && url.port === '443') ||
+    (originalProtocol === 'http:' && url.port === '80')
+  ) {
     url.port = '';
   }
 
