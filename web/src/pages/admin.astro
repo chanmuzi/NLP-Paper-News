@@ -1044,7 +1044,7 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
             workflow_runs: [{
               id: fakeRunId,
               head_sha: commitSha,
-              name: 'Notify & Post to X',
+              name: 'Prepare X Thread Draft',
               status,
               conclusion,
               created_at: new Date(startedAt).toISOString(),
@@ -1120,13 +1120,13 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
 
       let runs = bySha.data?.workflow_runs || [];
       if (!runs.length) {
-        const fallback = mockGhApi(`workflows/notify.yml/runs?per_page=20&event=push&branch=main`);
+        const fallback = mockGhApi(`workflows/notify.yml/runs?per_page=20&event=workflow_dispatch&branch=main`);
         if (fallback.ok) {
           const candidates = fallback.data?.workflow_runs || [];
           runs = candidates.filter((r: any) => {
             const created = Date.parse(r.created_at || '');
             const nearNow = Number.isFinite(created) && created >= (startedAt - 120000);
-            return nearNow && (r.head_sha === commitSha || r.name === 'Notify & Post to X');
+            return nearNow && (r.head_sha === commitSha || r.name === 'Prepare X Thread Draft');
           });
         }
       }
@@ -1137,7 +1137,7 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
         return;
       }
 
-      const run = runs.find((r: any) => r.head_sha === commitSha) || runs.find((r: any) => r.name === 'Notify & Post to X') || runs[0];
+      const run = runs.find((r: any) => r.head_sha === commitSha) || runs.find((r: any) => r.name === 'Prepare X Thread Draft') || runs[0];
       const runStatus = run.status;
       const runConclusion = run.conclusion;
 
@@ -1606,6 +1606,32 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
         throw new Error(`브랜치 업데이트 실패 (${updateRefRes.status}): ${errData.message}`);
       }
 
+      // notify.yml은 admin 흐름에서 명시적으로 트리거한다 (push 트리거는 제거됨).
+      // 실패해도 commit 자체는 이미 main에 반영됐으므로, 사용자에게 알리고 polling은 건너뛴다.
+      let notifyDispatchOk = true;
+      let notifyDispatchErr = '';
+      try {
+        const notifyDispatchRes = await fetch(`https://api.github.com/repos/${repo}/actions/workflows/notify.yml/dispatches`, {
+          method: 'POST',
+          headers: {
+            'Authorization': `token ${token}`,
+            'Accept': 'application/vnd.github.v3+json',
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ ref: 'main' }),
+        });
+        if (!notifyDispatchRes.ok) {
+          notifyDispatchOk = false;
+          const errText = await notifyDispatchRes.text().catch(() => notifyDispatchRes.statusText);
+          notifyDispatchErr = `${notifyDispatchRes.status}: ${errText}`;
+          console.warn(`notify.yml dispatch 실패 (${notifyDispatchErr})`);
+        }
+      } catch (e: any) {
+        notifyDispatchOk = false;
+        notifyDispatchErr = e?.message || String(e);
+        console.warn('notify.yml dispatch 호출 중 오류:', e);
+      }
+
       const skippedMsg = skippedCount > 0 ? ` (${skippedCount}개 중복 건너뜀)` : '';
       const shortSha = (newCommit.sha || '').slice(0, 7);
       items.forEach(i => { submittedIds.add(i.id); existingIds.add(i.id); });
@@ -1614,10 +1640,16 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
       clearInputFields();
       setSubmitLoading(false);
 
-      // Start workflow polling
-      showStatus(`커밋 완료${skippedMsg} · ${shortSha}\nX draft 생성 워크플로 대기 중...`, 'info');
       currentCommittedSha = newCommit.sha;
       currentRepoForSubmit = repo;
+
+      if (!notifyDispatchOk) {
+        showStatus(`커밋 완료${skippedMsg} · ${shortSha}\n⚠️ X draft 워크플로우 자동 트리거 실패 (${notifyDispatchErr})\nActions 페이지에서 \"Prepare X Thread Draft\"를 수동 실행해 주세요.`, 'warn');
+        return;
+      }
+
+      // Start workflow polling
+      showStatus(`커밋 완료${skippedMsg} · ${shortSha}\nX draft 생성 워크플로 대기 중...`, 'info');
       startWorkflowTracking(repo, token, newCommit.sha, newItems.length, undefined, requireManualApprovalForCurrentSubmit);
     } catch (err: any) {
       showStatus(`오류: ${err.message}`, 'error');
@@ -1982,14 +2014,14 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
         // head_sha 조회가 비거나 지연되는 경우를 대비해 workflow 기준으로 fallback 조회
         let runs = bySha.data?.workflow_runs || [];
         if (!runs.length) {
-          const fallback = await ghApi(`workflows/notify.yml/runs?per_page=20&event=push&branch=main`);
+          const fallback = await ghApi(`workflows/notify.yml/runs?per_page=20&event=workflow_dispatch&branch=main`);
           if (fallback.ok) {
             const candidates = fallback.data?.workflow_runs || [];
             runs = candidates.filter((r: any) => {
               const created = Date.parse(r.created_at || '');
               const startedAt = Number(trackingState.startedAt || 0);
               const nearNow = Number.isFinite(created) && created >= (startedAt - 120000);
-              return nearNow && (r.head_sha === commitSha || r.name === 'Notify & Post to X');
+              return nearNow && (r.head_sha === commitSha || r.name === 'Prepare X Thread Draft');
             });
           }
         }
@@ -1999,7 +2031,7 @@ const currentWeek = Math.ceil((now.getDate() + firstDay) / 7).toString();
           return;
         }
 
-        const run = runs.find((r: any) => r.head_sha === commitSha) || runs.find((r: any) => r.name === 'Notify & Post to X') || runs[0];
+        const run = runs.find((r: any) => r.head_sha === commitSha) || runs.find((r: any) => r.name === 'Prepare X Thread Draft') || runs[0];
         const runStatus = run.status;
         const runConclusion = run.conclusion;
 

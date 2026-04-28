@@ -242,7 +242,7 @@ EOF
 )"
 git push origin <current-branch>
 ```
-The push triggers `notify.yml` (which generates another draft for the admin UI — harmless, just ignore it) and `deploy.yml` (which updates the site). Mention this to the user.
+The push triggers only `deploy.yml` (which updates the site). `notify.yml`은 admin UI 흐름 전용 `workflow_dispatch`로 분리됐으므로 /post의 push로는 트리거되지 않는다 (admin UI가 항목 commit 직후 명시적으로 호출). Mention the deploy workflow to the user.
 
 **Dry-run mode:**
 - Skip `add-item.mjs`, skip commit, skip push.
