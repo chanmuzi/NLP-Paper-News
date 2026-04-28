@@ -191,7 +191,7 @@ When the user replies `게시` / `승인` / `post` / `publish` (or the same with
 ### 4a. Write temp digest.json
 Create `artifacts/post-skill-digest.json` (artifacts/ is gitignored).
 
-**주의**: 이 파일도 Step 2의 thread JSON과 마찬가지로 이전 실행 결과로 이미 존재할 수 있다. Write 호출 전에 같은 경로를 한 번 Read해서 "기존 파일을 읽었다"는 상태를 만든 뒤 Write를 호출한다. (Read 실패 = 신규 파일 → 바로 Write 가능, Read 성공 = 기존 파일 → 그 다음 Write가 통과한다.)
+**주의**: 이 파일도 Step 2의 thread JSON과 마찬가지로 이전 실행 결과로 이미 존재할 수 있다. Write 호출 전에 같은 경로를 한 번 Read해서 "기존 파일을 읽었다"는 상태를 만든 뒤 Write를 호출한다. Read 결과가 `not found` / `does not exist`인 경우에만 신규 파일로 간주해 바로 Write를 진행한다. Read가 성공하면 기존 파일로 간주하고 그 다음 Write를 호출한다. 권한 문제, 잘못된 경로, 기타 I/O 오류 등 파일 미존재가 아닌 Read 실패는 신규 파일로 간주하지 말고 원인을 확인한 뒤 진행한다.
 
 ```json
 {
