@@ -129,7 +129,7 @@ Recommended flow:
    ```json
    { "main": "...", "replies": ["...", "..."] }
    ```
-   Use the `Write` tool — that handles arbitrary content safely.
+   Use the `Write` tool — that handles arbitrary content safely. **주의**: 이 파일은 이전 `/post` 실행 결과로 이미 존재할 수 있다. Write는 기존 파일을 덮어쓰기 전에 Read 선행을 요구하므로, Write 호출 전에 같은 경로를 한 번 Read한 뒤 Write를 호출한다 (Read 결과는 사용하지 않아도 됨).
 2. Validate:
    ```
    node scripts/x-length.mjs --json-file artifacts/post-skill-thread.json
@@ -189,7 +189,10 @@ The `**[메인]** (xx/260 · 280)` line shows the weighted char count from `x-le
 When the user replies `게시` / `승인` / `post` / `publish` (or the same with `드라이런` for dry-run):
 
 ### 4a. Write temp digest.json
-Create `artifacts/post-skill-digest.json` (artifacts/ is gitignored):
+Create `artifacts/post-skill-digest.json` (artifacts/ is gitignored).
+
+**주의**: 이 파일도 Step 2의 thread JSON과 마찬가지로 이전 실행 결과로 이미 존재할 수 있다. Write 호출 전에 같은 경로를 한 번 Read해서 "기존 파일을 읽었다"는 상태를 만든 뒤 Write를 호출한다. (Read 실패 = 신규 파일 → 바로 Write 가능, Read 성공 = 기존 파일 → 그 다음 Write가 통과한다.)
+
 ```json
 {
   "generated_at": "<ISO>",
