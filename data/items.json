@@ -1,8 +1,68 @@
 {
   "version": 1,
-  "last_updated": "2026-04-27T02:03:05.913Z",
-  "total_items": 1772,
+  "last_updated": "2026-04-28T02:40:22.950Z",
+  "total_items": 1774,
   "items": [
+    {
+      "id": "anthropic-automated-weak-to-strong-researcher",
+      "date": "2026-04-W04",
+      "year": "2026",
+      "month": "4",
+      "week": "4",
+      "type": "dev",
+      "org": "Anthropic",
+      "title": "Automated Weak-to-Strong Researcher",
+      "url": "https://alignment.anthropic.com/2026/automated-w2s-researcher/",
+      "bullets": [
+        {
+          "text": "Claude 기반 Automated Alignment Researcher(AAR)가 weak-to-strong generalization 과제에서 인간 연구자 대비 압도적 성능 달성, alignment 연구 자동화 가능성 입증",
+          "level": 1
+        },
+        {
+          "text": "인간 베이스라인은 7일간 4개 method 튜닝으로 PGR 0.23 기록, AAR은 9개 병렬 에이전트로 5일 만에 PGR 0.97 도달 (누적 800시간, 약 $18,000 비용)",
+          "level": 1
+        },
+        {
+          "text": "sandbox에서 다수 AAR이 가설 제안→실험 실행→결과 분석→발견 공유 사이클을 자율 반복, 수개월 작업을 수 시간으로 압축",
+          "level": 1
+        },
+        {
+          "text": "outcome-gradable 문제의 자동화 효율성 확인, 연구 병목이 실행에서 평가 설계(reliable metric)로 이동했음을 시사",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "google-deepmind-announcing-our-partnership-with-the-republic-of-korea",
+      "date": "2026-04-W04",
+      "year": "2026",
+      "month": "4",
+      "week": "4",
+      "type": "news",
+      "org": "Google DeepMind",
+      "title": "Announcing our partnership with the Republic of Korea",
+      "url": "https://deepmind.google/blog/announcing-our-partnership-with-the-republic-of-korea/",
+      "bullets": [
+        {
+          "text": "Google DeepMind, 대한민국 과학기술정보통신부(MSIT)와 전략적 파트너십 체결로 frontier AI를 활용한 과학·산업 혁신 가속화",
+          "level": 1
+        },
+        {
+          "text": "서울에 AI Campus 설립, SNU·KAIST·AI Bio Innovation Hub 3곳과 생명과학·기상·에너지·알고리즘 분야 공동 연구 추진 (AlphaFold·AlphaGenome·WeatherNext·AlphaEvolve 활용)",
+          "level": 1
+        },
+        {
+          "text": "K-Moonshot Missions 지원, 한국 AI Safety Institute와 안전 연구 협업, AI Essentials 장학금·인턴십 프로그램 확대",
+          "level": 1
+        },
+        {
+          "text": "2026년 5월 개소 예정인 National AI for Science Center와 연계, multi-agent AI co-scientist 시스템 도입",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "nvidia-nemotron-personas-korea",
       "date": "2026-04-W04",
@@ -40054,9 +40114,9 @@
     }
   ],
   "stats": {
-    "total": 1772,
+    "total": 1774,
     "paper": 1059,
-    "dev": 675,
-    "news": 38
+    "dev": 676,
+    "news": 39
   }
 }
