@@ -20,6 +20,32 @@ Then stop.
 - The shell session inherits these env vars via direnv. `scripts/post-x.mjs` reads them directly. You only orchestrate.
 - If credentials appear missing (post-x.mjs exits with "Missing X API credentials"), tell the user to check `direnv allow` in the repo root — do not try to debug by reading the env file.
 
+## Step 0 — Preflight duplicate check (before fetch)
+
+Before fetching or summarizing anything, check the input URLs against `data/items.json`:
+
+```
+node scripts/check-duplicates.mjs --urls <URL1> <URL2> ...
+```
+
+The script normalizes comparison URLs by removing tracking params, normalizing arXiv `html`/`pdf`/`abs` to `abs`, dropping fragments, sorting remaining query params, and trimming trailing slashes.
+
+If `duplicateCount > 0`, report each match before any fetch:
+
+```
+이미 있는 항목이 있습니다:
+- 입력: <input url>
+  기존: [<date>] <title> (id: <id>)
+  URL: <existing url>
+```
+
+Then ask the user to choose one:
+- `건너뛰기` — remove the duplicate input URLs and continue only with the remaining URLs
+- `강제 진행` — keep them and remember that duplicates were explicitly allowed
+- `전체 취소` — stop immediately
+
+If all inputs are skipped, stop and say no new URLs remain.
+
 ## Step 1 — Summarize each URL (identical to /summarize)
 
 Reuse the full `/summarize` workflow for each URL. Highlights to preserve:
@@ -45,6 +71,21 @@ Save the combined markdown:
 1. Get timestamp: `date +"%Y-%m-%d_%H%M"` via Bash.
 2. Write all summaries to `~/claude-summarize/{timestamp}.md` (one blank line between items).
 3. Remember the path — you'll use it for `add-item.mjs --from-markdown` later.
+
+## Step 1.5 — Duplicate check after summarize (before X thread)
+
+After the markdown summary is saved and before building the X thread, check again using the finalized `org` + `title` and canonical URLs from the markdown:
+
+```
+node scripts/check-duplicates.mjs --from-markdown ~/claude-summarize/{timestamp}.md
+```
+
+If `duplicateCount > 0`, report the duplicates with the same tone as Step 0 and ask:
+- `건너뛰기` — remove those duplicate items from the saved markdown, then build the X thread only from the remaining items
+- `강제 진행` — keep them and remember that duplicates were explicitly allowed
+- `전체 취소` — stop before creating any X draft
+
+This check catches same-content cases where the input URL differs but the generated `id` matches an existing item. If all summarized items are skipped, stop before Step 2.
 
 ## Step 2 — Build the X thread draft (no external API)
 
@@ -183,6 +224,8 @@ Read `artifacts/post-skill-result.json` for the outcome. Surface:
 ```
 node scripts/add-item.mjs --from-markdown ~/claude-summarize/{timestamp}.md
 ```
+If the user chose `강제 진행` in Step 0 or Step 1.5, append `--allow-duplicates`. Otherwise keep the default duplicate guard. If the user chose `건너뛰기`, the markdown should already contain only the remaining non-duplicate items.
+
 Then commit + push. Use the `/commit` skill if available; otherwise:
 ```
 git add data/items.json

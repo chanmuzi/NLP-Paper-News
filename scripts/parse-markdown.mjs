@@ -13,6 +13,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { generateId } from './lib/item-id.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -92,14 +93,6 @@ function parseBullet(line) {
   const level = indent < 4 ? 1 : indent < 8 ? 2 : 3;
   
   return { text, level };
-}
-
-function generateId(org, title) {
-  return `${org}-${title}`
-    .toLowerCase()
-    .replace(/[^a-z0-9가-힣\s-]/g, '')
-    .replace(/\s+/g, '-')
-    .slice(0, 100);
 }
 
 function parseReadme(content) {
