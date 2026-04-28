@@ -1,4 +1,4 @@
-name: Notify & Post to X
+name: Prepare X Thread Draft
 
 on:
   push:
