@@ -7,10 +7,11 @@
 
 ## 워크플로우
 - 파일: `.github/workflows/notify.yml`
+- 이름: `Prepare X Thread Draft`
 - 트리거:
-  - `push` (`main`, `data/items.json` 변경 포함)
-  - `pull_request` (검증용)
-  - `workflow_dispatch` (수동 실행, `dry_run` 선택)
+  - `pull_request` (검증용 — `data/items.json` / `scripts/**` / `notify.yml` 변경 시)
+  - `workflow_dispatch` (admin UI가 항목 commit 직후 명시 호출, 또는 Actions UI에서 수동 실행)
+- push 자동 트리거는 없다 — admin UI 흐름과 `/post` 직접 게시 흐름이 같은 push에 묶이는 것을 피하기 위해 제거됨.
 
 ## 필수 스위치 (GitHub Variables)
 - `ENABLE_X_POST`: `true` / `false`
@@ -62,10 +63,10 @@
 - (선택) `X_API_BASE` variable (기본: `https://api.x.com`)
 
 ## 테스트 절차 (권장)
-1. 브랜치/PR에서 `pull_request` 워크플로우 확인 (digest 생성/아티팩트 확인)
-2. `workflow_dispatch`로 `dry_run=true` 실행
-3. 테스트 계정 토큰 설정 후 `workflow_dispatch` + `dry_run=false`로 1회 게시 검증
-4. 문제 없으면 `ENABLE_X_POST`를 `true`로 전환
+1. 브랜치/PR에서 `pull_request` 트리거로 notify.yml 동작 확인 (digest 생성·아티팩트 업로드 확인)
+2. `gh workflow run notify.yml --ref main` 또는 admin UI에서 항목 추가로 `workflow_dispatch` 호출 → 드래프트 생성·아티팩트 확인
+3. admin UI에서 드래프트 승인 → `post-approved.yml`이 실행되어 테스트 계정 토큰으로 1회 게시 검증
+4. 문제 없으면 `ENABLE_X_POST`를 `true`로 전환 (`post-approved.yml`의 실제 게시 스위치)
 
 
 ### 로컬 검증 커맨드 (필수)
