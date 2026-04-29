@@ -1,8 +1,68 @@
 {
   "version": 1,
-  "last_updated": "2026-04-28T02:40:22.950Z",
-  "total_items": 1774,
+  "last_updated": "2026-04-29T11:38:02.815Z",
+  "total_items": 1776,
   "items": [
+    {
+      "id": "multi-institution-agentic-world-modeling-foundations-capabilities-laws-and-beyond",
+      "date": "2026-04-W05",
+      "year": "2026",
+      "month": "4",
+      "week": "5",
+      "type": "paper",
+      "org": "Multi-institution",
+      "title": "Agentic World Modeling: Foundations, Capabilities, Laws, and Beyond",
+      "url": "https://arxiv.org/abs/2604.22748",
+      "bullets": [
+        {
+          "text": "400편 이상 연구와 100+ 시스템을 분석한 agentic world model 종합 survey 제시",
+          "level": 1
+        },
+        {
+          "text": "capability level(Predictor·Simulator·Evolver)과 governing law(physical·digital·social·scientific) 두 축의 \"levels × laws\" 분류 체계 도입",
+          "level": 1
+        },
+        {
+          "text": "RL·video generation·agent navigation·social simulation·scientific discovery 등 분리돼 있던 커뮤니티 간 통합 시각 제공",
+          "level": 1
+        },
+        {
+          "text": "decision-centric 평가 원칙과 최소 재현 평가 패키지 제안, passive prediction에서 자율 수정·환경 상호작용으로의 아키텍처 로드맵 정리",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "inclusion-ai-llada20-uni-unifying-multimodal-understanding-and-generation-with-diffusion-large-langu",
+      "date": "2026-04-W05",
+      "year": "2026",
+      "month": "4",
+      "week": "5",
+      "type": "paper",
+      "org": "Inclusion AI",
+      "title": "LLaDA2.0-Uni: Unifying Multimodal Understanding and Generation with Diffusion Large Language Model",
+      "url": "https://arxiv.org/abs/2604.20796",
+      "bullets": [
+        {
+          "text": "SigLIP-VQ 기반 semantic tokenization과 MoE backbone, diffusion decoder를 결합한 통합 discrete diffusion 멀티모달 모델 공개",
+          "level": 1
+        },
+        {
+          "text": "block-level masked diffusion으로 시각·텍스트 데이터를 단일 프레임워크에서 처리하며 이해·생성·편집을 모두 지원",
+          "level": 1
+        },
+        {
+          "text": "prefix-aware backbone 최적화와 few-step decoder distillation으로 inference 효율 강화",
+          "level": 1
+        },
+        {
+          "text": "전문화된 vision-language 모델과 견줄 만한 이해 성능과 함께 reasoning·generation 인터리브 처리 가능, 코드·가중치 공개",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "anthropic-automated-weak-to-strong-researcher",
       "date": "2026-04-W04",
@@ -40114,8 +40174,8 @@
     }
   ],
   "stats": {
-    "total": 1774,
-    "paper": 1059,
+    "total": 1776,
+    "paper": 1061,
     "dev": 676,
     "news": 39
   }
