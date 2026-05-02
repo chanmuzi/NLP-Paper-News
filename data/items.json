@@ -1,8 +1,42 @@
 {
   "version": 1,
-  "last_updated": "2026-04-29T11:38:02.815Z",
-  "total_items": 1776,
+  "last_updated": "2026-05-02T11:14:40.576Z",
+  "total_items": 1777,
   "items": [
+    {
+      "id": "mistral-ai-mistral-medium-35-128b",
+      "date": "2026-05-W01",
+      "year": "2026",
+      "month": "5",
+      "week": "1",
+      "type": "dev",
+      "org": "Mistral AI",
+      "title": "Mistral Medium 3.5 128B",
+      "url": "https://huggingface.co/mistralai/Mistral-Medium-3.5-128B",
+      "bullets": [
+        {
+          "text": "128B dense 파라미터 + 256k context의 멀티모달 flagship 모델 공개 (Modified MIT License로 상·비상업 사용 모두 개방, 대규모 매출 기업 예외)",
+          "level": 1
+        },
+        {
+          "text": "instruction-following · reasoning · coding을 하나의 모델로 통합한 Mistral 최초의 merged flagship으로 Mistral Medium 3.1, Magistral, Devstral 2 대체",
+          "level": 1
+        },
+        {
+          "text": "request 단위 `reasoning_effort` 토글(none/high)로 추론 깊이 조절",
+          "level": 2
+        },
+        {
+          "text": "SWE-Bench Verified 77.6%, τ³-Telecom 91.4% 등 agentic·coding 벤치마크에서 이전 Devstral 계열·경쟁 모델 상회",
+          "level": 1
+        },
+        {
+          "text": "가변 해상도·비율 입력을 지원하는 자체 학습 vision encoder + 24개 이상 언어 multilingual 대응, vLLM·SGLang 데이 제로 배포",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "multi-institution-agentic-world-modeling-foundations-capabilities-laws-and-beyond",
       "date": "2026-04-W05",
@@ -40174,9 +40208,9 @@
     }
   ],
   "stats": {
-    "total": 1776,
+    "total": 1777,
     "paper": 1061,
-    "dev": 676,
+    "dev": 677,
     "news": 39
   }
 }
