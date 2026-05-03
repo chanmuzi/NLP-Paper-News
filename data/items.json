@@ -1,8 +1,68 @@
 {
   "version": 1,
-  "last_updated": "2026-05-02T11:14:40.576Z",
-  "total_items": 1777,
+  "last_updated": "2026-05-03T08:48:51.026Z",
+  "total_items": 1779,
   "items": [
+    {
+      "id": "uiuc-heterogeneous-scientific-foundation-model-collaboration",
+      "date": "2026-05-W01",
+      "year": "2026",
+      "month": "5",
+      "week": "1",
+      "type": "paper",
+      "org": "UIUC",
+      "title": "Heterogeneous Scientific Foundation Model Collaboration",
+      "url": "https://arxiv.org/abs/2604.27351",
+      "bullets": [
+        {
+          "text": "자연어 중심 agentic system이 비언어 modality 기반 과학 도메인에는 적용이 제한된다는 한계 지적",
+          "level": 1
+        },
+        {
+          "text": "도메인 foundation model에 LLM reasoning 인터페이스를 결합한 Eywa 프레임워크 제안. query compiler ϕₖ + response adapter ψₖ로 구성된 FM-LLM \"Tsaheylu\" 인터페이스를 MCP로 노출",
+          "level": 1
+        },
+        {
+          "text": "단일 EywaAgent, 다중 EywaMAS, 동적 EywaOrchestra 3종 변형 및 물리·생명·사회 과학을 아우르는 EywaBench 공개",
+          "level": 1
+        },
+        {
+          "text": "EywaAgent 기준 single-LLM 대비 utility +6.6%, 토큰 -30%, latency -10% 달성. EywaMAS는 Refine·Debate 등 동질 baseline 상회",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "warp-warp",
+      "date": "2026-05-W01",
+      "year": "2026",
+      "month": "5",
+      "week": "1",
+      "type": "dev",
+      "org": "Warp",
+      "title": "Warp",
+      "url": "https://github.com/warpdotdev/warp",
+      "bullets": [
+        {
+          "text": "터미널에서 출발한 agentic development environment Warp의 클라이언트 코드베이스 오픈소스 공개",
+          "level": 1
+        },
+        {
+          "text": "자체 coding agent와 함께 Claude Code, Codex, Gemini CLI 등 외부 CLI agent 연동 지원",
+          "level": 1
+        },
+        {
+          "text": "UI 프레임워크 MIT, 나머지 AGPL v3 듀얼 라이선스 채택. OpenAI가 founding sponsor로 참여",
+          "level": 1
+        },
+        {
+          "text": "build.warp.dev 대시보드에서 issue triage·스펙·구현·PR 리뷰까지 agent 워크플로 공개",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "mistral-ai-mistral-medium-35-128b",
       "date": "2026-05-W01",
@@ -40208,9 +40268,9 @@
     }
   ],
   "stats": {
-    "total": 1777,
-    "paper": 1061,
-    "dev": 677,
+    "total": 1779,
+    "paper": 1062,
+    "dev": 678,
     "news": 39
   }
 }
