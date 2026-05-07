@@ -1,8 +1,76 @@
 {
   "version": 1,
-  "last_updated": "2026-05-03T08:48:51.026Z",
-  "total_items": 1779,
+  "last_updated": "2026-05-07T14:27:56.647Z",
+  "total_items": 1781,
   "items": [
+    {
+      "id": "ai2-molmoact2-action-reasoning-models-for-real-world-deployment",
+      "date": "2026-05-W01",
+      "year": "2026",
+      "month": "5",
+      "week": "1",
+      "type": "paper",
+      "org": "Ai2",
+      "title": "MolmoAct2: Action Reasoning Models for Real-world Deployment",
+      "url": "https://arxiv.org/abs/2605.02881",
+      "bullets": [
+        {
+          "text": "폐쇄적 SOTA, 고가 하드웨어 의존, 높은 지연시간 등 기존 로봇 제어 모델의 실배포 한계 해소",
+          "level": 1
+        },
+        {
+          "text": "MolmoER VLM 백본(3.3M 샘플 학습) + OpenFAST action tokenizer + flow matching 아키텍처 + MolmoThink 적응형 깊이 추론을 결합",
+          "level": 1
+        },
+        {
+          "text": "양팔 조작 720시간 포함 신규 데이터셋 3종 동반 공개",
+          "level": 2
+        },
+        {
+          "text": "7개 로봇 벤치 SOTA 달성, MolmoER이 13개 embodied reasoning 벤치에서 GPT-5·Gemini Robotics ER-1.5 능가",
+          "level": 1
+        },
+        {
+          "text": "학습 데이터·코드 전면 공개로 완전 오픈 로봇 제어 baseline 제시",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "anthropic-claude-for-financial-services",
+      "date": "2026-05-W01",
+      "year": "2026",
+      "month": "5",
+      "week": "1",
+      "type": "dev",
+      "org": "Anthropic",
+      "title": "Claude for Financial Services",
+      "url": "https://claude.com/solutions/financial-services",
+      "bullets": [
+        {
+          "text": "은행·자산운용·보험 등 금융기관 의사결정 가속용 AI 솔루션 — Excel/PowerPoint 통합, source attribution, AWS·GCP·Azure 멀티클라우드 배포 지원",
+          "level": 1
+        },
+        {
+          "text": "피치북, 신용 메모, KYC 스크리닝, 펀드 회계 등 사전 구성 agent template 제공",
+          "level": 2
+        },
+        {
+          "text": "LSEG, FactSet, S&P Global, Morningstar, PitchBook, Moody's 등과 pre-built connector 연동",
+          "level": 1
+        },
+        {
+          "text": "SOC 2·FedRAMP 준수, 모든 계산의 원본 추적 가능성으로 규제 감시 요건 충족",
+          "level": 1
+        },
+        {
+          "text": "Citadel 분석가 효율화, FIS의 AML 조사 \"수일→수분\" 단축, BNY Mellon Eliza의 케이스 end-to-end 처리 등 도입 사례 공개",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "uiuc-heterogeneous-scientific-foundation-model-collaboration",
       "date": "2026-05-W01",
@@ -40268,9 +40336,9 @@
     }
   ],
   "stats": {
-    "total": 1779,
-    "paper": 1062,
-    "dev": 678,
+    "total": 1781,
+    "paper": 1063,
+    "dev": 679,
     "news": 39
   }
 }
