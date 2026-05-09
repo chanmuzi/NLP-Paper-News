@@ -1,8 +1,60 @@
 {
   "version": 1,
-  "last_updated": "2026-05-07T14:27:56.647Z",
-  "total_items": 1781,
+  "last_updated": "2026-05-09T06:15:52.563Z",
+  "total_items": 1783,
   "items": [
+    {
+      "id": "zyphra-zaya1-8b-frontier-intelligence-density-trained-on-amd",
+      "date": "2026-05-W02",
+      "year": "2026",
+      "month": "5",
+      "week": "2",
+      "type": "dev",
+      "org": "Zyphra",
+      "title": "ZAYA1-8B: Frontier intelligence density, trained on AMD",
+      "url": "https://www.zyphra.com/post/zaya1-8b",
+      "bullets": [
+        {
+          "text": "active 1B 미만 MoE 8B 모델 공개. Compressed Convolutional Attention(CCA), MLP 기반 expert router, learned residual scaling 등 신규 architecture 도입",
+          "level": 1
+        },
+        {
+          "text": "AMD Instinct MI300x 1,024 노드(IBM·Pensando Pollara interconnect) 클러스터에서 학습, SFT → reasoning warmup → RLVE-Gym → math/code RL → RLHF/RLAIF 5단계 post-training 파이프라인 적용, Apache-2.0 공개",
+          "level": 1
+        },
+        {
+          "text": "HMMT'25 89.6으로 Claude 4.5 Sonnet(88.3) 상회, Markovian RSA test-time compute(5.5M 토큰 budget)로 DeepSeek-V3.2 초과해 8B급에서 frontier 밀도 달성",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "openai-advancing-voice-intelligence-with-new-models-in-the-api",
+      "date": "2026-05-W02",
+      "year": "2026",
+      "month": "5",
+      "week": "2",
+      "type": "dev",
+      "org": "OpenAI",
+      "title": "Advancing voice intelligence with new models in the API",
+      "url": "https://openai.com/index/advancing-voice-intelligence-with-new-models-in-the-api/",
+      "bullets": [
+        {
+          "text": "3종 신규 realtime audio 모델 공개: GPT-Realtime-2(GPT-5급 reasoning 탑재 voice 모델), GPT-Realtime-Translate(70+ 입력 → 13 출력 언어 실시간 번역), GPT-Realtime-Whisper(스트리밍 speech-to-text)",
+          "level": 1
+        },
+        {
+          "text": "GPT-Realtime-2(high) Big Bench Audio에서 GPT-Realtime-1.5 대비 +15.2%p, (xhigh) Audio MultiChallenge instruction following에서 +13.8%p 향상으로 reasoning·context 관리·대화 제어 강화",
+          "level": 1
+        },
+        {
+          "text": "가격은 GPT-Realtime-2 audio input $32/1M(캐시 $0.40)·output $64/1M, Translate $0.034/분, Whisper $0.017/분으로 책정",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "ai2-molmoact2-action-reasoning-models-for-real-world-deployment",
       "date": "2026-05-W01",
@@ -40336,9 +40388,9 @@
     }
   ],
   "stats": {
-    "total": 1781,
+    "total": 1783,
     "paper": 1063,
-    "dev": 679,
+    "dev": 681,
     "news": 39
   }
 }
