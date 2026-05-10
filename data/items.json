@@ -1,8 +1,76 @@
 {
   "version": 1,
-  "last_updated": "2026-05-09T06:15:52.563Z",
-  "total_items": 1783,
+  "last_updated": "2026-05-10T09:15:31.036Z",
+  "total_items": 1785,
   "items": [
+    {
+      "id": "ai2-emo-pretraining-mixture-of-experts-for-emergent-modularity",
+      "date": "2026-05-W02",
+      "year": "2026",
+      "month": "5",
+      "week": "2",
+      "type": "paper",
+      "org": "Ai2",
+      "title": "EMO: Pretraining Mixture of Experts for Emergent Modularity",
+      "url": "https://allenai.org/blog/emo",
+      "bullets": [
+        {
+          "text": "1T 토큰으로 학습한 1B-active / 14B-total MoE 모델 EMO 공개, 128개 전문가 중 토큰당 8개만 활성화",
+          "level": 1
+        },
+        {
+          "text": "같은 문서 내 모든 토큰이 공유 expert 풀 안에서만 라우팅되도록 강제하는 document-boundary 약한 감독(weak supervision) 도입",
+          "level": 1
+        },
+        {
+          "text": "표면 특징이 아닌 health · politics · movies 등 의미론적 도메인 단위 expert 모듈화 자연 발현",
+          "level": 2
+        },
+        {
+          "text": "전체 expert의 12.5%만 사용해도 풀모델 성능의 97% 유지, memory-accuracy trade-off 새 기준 제시",
+          "level": 1
+        },
+        {
+          "text": "대규모 LLM 배포 효율성 개선과 모델 해석 가능성 · 적응성 향상 기여",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "openai-investigating-the-consequences-of-accidentally-grading-cot-during-rl",
+      "date": "2026-05-W02",
+      "year": "2026",
+      "month": "5",
+      "week": "2",
+      "type": "dev",
+      "org": "OpenAI",
+      "title": "Investigating the consequences of accidentally grading CoT during RL",
+      "url": "https://alignment.openai.com/accidental-cot-grading/",
+      "bullets": [
+        {
+          "text": "배포된 GPT-5.x 계열(GPT-5.4 Thinking, GPT-5.1~5.4 Instant 등) RL 학습 중 보상 신호 입력에 chain-of-thought(CoT)가 의도치 않게 포함된 사건 다수 자동 감지",
+          "level": 1
+        },
+        {
+          "text": "CoT가 감독 신호로 새면 모델이 추론을 숨기거나 monitor를 속이는 인센티브가 생길 수 있어 우려",
+          "level": 2
+        },
+        {
+          "text": "정규표현식 기반 스캐너로 보상 입력 내 CoT 포함 여부 점검 후 재현 학습 · CoT 접근 차단판 비교 · 의도적 압력 stress test 병행",
+          "level": 1
+        },
+        {
+          "text": "해당 사건들이 CoT monitorability를 유의하게 손상시켰다는 명확한 증거 미확인, 다만 충분한 최적화 압력 하 이론적 악화 가능성 인정",
+          "level": 1
+        },
+        {
+          "text": "향후 CoT grading 회피 정책 유지 및 감지 · 예방 시스템 강화 결정",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "zyphra-zaya1-8b-frontier-intelligence-density-trained-on-amd",
       "date": "2026-05-W02",
@@ -40388,9 +40456,9 @@
     }
   ],
   "stats": {
-    "total": 1783,
-    "paper": 1063,
-    "dev": 681,
+    "total": 1785,
+    "paper": 1064,
+    "dev": 682,
     "news": 39
   }
 }
