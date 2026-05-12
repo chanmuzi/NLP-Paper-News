@@ -1,8 +1,94 @@
 {
   "version": 1,
-  "last_updated": "2026-05-10T09:15:31.036Z",
-  "total_items": 1785,
+  "last_updated": "2026-05-12T09:47:27.747Z",
+  "total_items": 1788,
   "items": [
+    {
+      "id": "openai-openai-launches-the-openai-deployment-company",
+      "date": "2026-05-W02",
+      "year": "2026",
+      "month": "5",
+      "week": "2",
+      "type": "news",
+      "org": "OpenAI",
+      "title": "OpenAI launches the OpenAI Deployment Company",
+      "url": "https://openai.com/index/openai-launches-the-deployment-company/",
+      "bullets": [
+        {
+          "text": "기업 내 frontier AI 도입을 전담하는 신생 회사 OpenAI Deployment Company 출범, 초기 자본 40억 달러 규모",
+          "level": 1
+        },
+        {
+          "text": "TPG·Advent·Bain Capital·Brookfield 등 19개 글로벌 투자사·컨설팅사·SI 공동 참여 (Bain·Capgemini·McKinsey 포함)",
+          "level": 1
+        },
+        {
+          "text": "Forward Deployed Engineer(FDE)를 고객사에 상주시켜 워크플로우 재설계와 운영 시스템화 지원",
+          "level": 1
+        },
+        {
+          "text": "응용 AI 컨설팅사 Tomoro 인수로 약 150명 FDE·Deployment Specialist 즉시 확보",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "sakana-ai-nvidia-sparser-faster-lighter-transformer-language-models",
+      "date": "2026-05-W02",
+      "year": "2026",
+      "month": "5",
+      "week": "2",
+      "type": "paper",
+      "org": "Sakana AI · NVIDIA",
+      "title": "Sparser, Faster, Lighter Transformer Language Models",
+      "url": "https://github.com/SakanaAI/sparser-faster-llms",
+      "bullets": [
+        {
+          "text": "sparse training 코드와 H100 전용 custom CUDA kernel을 함께 공개, TwELL packing format 기반",
+          "level": 1
+        },
+        {
+          "text": "HF 호환 SparseLM 0.5B/1B/1.5B/2B 사전학습 체크포인트와 Hydra 기반 학습·벤치마크 파이프라인 제공",
+          "level": 1
+        },
+        {
+          "text": "sparsity 활용으로 추론 throughput 향상과 메모리·에너지 절감, twell-flex 변형 커널로 non-uniform sparsity 패턴까지 커버",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "thinking-machines-interaction-models-a-scalable-approach-to-human-ai-collaboration",
+      "date": "2026-05-W02",
+      "year": "2026",
+      "month": "5",
+      "week": "2",
+      "type": "dev",
+      "org": "Thinking Machines",
+      "title": "Interaction Models: A Scalable Approach to Human-AI Collaboration",
+      "url": "https://thinkingmachines.ai/blog/interaction-models/",
+      "bullets": [
+        {
+          "text": "실시간 상호작용을 외부 모듈로 덧붙이는 대신 모델 아키텍처에 native 통합한 새로운 접근법 제안",
+          "level": 1
+        },
+        {
+          "text": "200ms 단위 time-aligned micro-turns 처리로 동시 발화·인터럽션·tool use 지원, dMel·hMLP 기반 encoder-free early fusion 채택",
+          "level": 1
+        },
+        {
+          "text": "interaction model이 실시간 응답을 맡고 background reasoning model이 비동기 추론 결과를 스트림으로 합류시키는 dual-model system",
+          "level": 1
+        },
+        {
+          "text": "persistent GPU memory sequence와 bidirectional serving용 custom kernel로 추론 효율 최적화, modality-native safety로 음성 맥락 red-teaming 자동화",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "ai2-emo-pretraining-mixture-of-experts-for-emergent-modularity",
       "date": "2026-05-W02",
@@ -40456,9 +40542,9 @@
     }
   ],
   "stats": {
-    "total": 1785,
-    "paper": 1064,
-    "dev": 682,
-    "news": 39
+    "total": 1788,
+    "paper": 1065,
+    "dev": 683,
+    "news": 40
   }
 }
