@@ -1,8 +1,68 @@
 {
   "version": 1,
-  "last_updated": "2026-05-12T09:47:27.747Z",
-  "total_items": 1788,
+  "last_updated": "2026-05-13T03:35:15.140Z",
+  "total_items": 1790,
   "items": [
+    {
+      "id": "alibaba-qwen-qwen-image-20-technical-report",
+      "date": "2026-05-W02",
+      "year": "2026",
+      "month": "5",
+      "week": "2",
+      "type": "paper",
+      "org": "Alibaba Qwen",
+      "title": "Qwen-Image-2.0 Technical Report",
+      "url": "https://arxiv.org/abs/2605.10730",
+      "bullets": [
+        {
+          "text": "Ultra-long text rendering, multilingual typography, photorealism, instruction following 등 기존 image generation의 한계 해소를 목표로 한 차세대 모델 공개",
+          "level": 1
+        },
+        {
+          "text": "Qwen3-VL을 condition encoder로 사용하고 Multimodal Diffusion Transformer로 condition·target을 jointly 모델링해 생성과 편집을 단일 framework로 통합",
+          "level": 1
+        },
+        {
+          "text": "최대 1K-token 길이의 instruction까지 text-rich generation을 지원하며 다국어 텍스트 fidelity와 typography, photorealism을 동시에 강화",
+          "level": 1
+        },
+        {
+          "text": "Human evaluation에서 이전 Qwen-Image 대비 generation·editing 모두 큰 폭으로 향상",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "netflix-beyond-continuity-challenges-of-context-switching-in-multi-turn-dialogue-with-llms",
+      "date": "2026-05-W02",
+      "year": "2026",
+      "month": "5",
+      "week": "2",
+      "type": "paper",
+      "org": "Netflix",
+      "title": "Beyond Continuity: Challenges of Context Switching in Multi-Turn Dialogue with LLMs",
+      "url": "https://arxiv.org/abs/2605.09268",
+      "bullets": [
+        {
+          "text": "멀티턴 대화에서 LLM이 토픽 전환(pivot)을 인식하지 못하고 이전 turn의 stale context를 그대로 캐리하는 문제 정량 분석",
+          "level": 1
+        },
+        {
+          "text": "TopiOCQA·MSC를 결합해 pivot 위치가 알려진 synthetic dialogue 벤치마크 구성, 10개 LLM을 zero-shot으로 turn 유형·관련 context 식별 평가",
+          "level": 1
+        },
+        {
+          "text": "GPT-4o 등 closed-source와 o3·Claude-3.7-sonnet 등 reasoning 모델은 ceiling에 근접한 반면, open-weight 모델은 pivot을 맞춰도 context \"stickiness\" 잔존",
+          "level": 1
+        },
+        {
+          "text": "모든 모델에서 후반 pivot일수록 성능 저하되는 position bias 관측, 명시적 boundary cue 삽입 시 전 모델 family에서 개선",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "openai-openai-launches-the-openai-deployment-company",
       "date": "2026-05-W02",
@@ -40542,8 +40602,8 @@
     }
   ],
   "stats": {
-    "total": 1788,
-    "paper": 1065,
+    "total": 1790,
+    "paper": 1067,
     "dev": 683,
     "news": 40
   }
