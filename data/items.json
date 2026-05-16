@@ -1,8 +1,34 @@
 {
   "version": 1,
-  "last_updated": "2026-05-13T03:35:15.140Z",
-  "total_items": 1790,
+  "last_updated": "2026-05-16T06:40:30.313Z",
+  "total_items": 1791,
   "items": [
+    {
+      "id": "mind-lab-mint-managed-infrastructure-for-training-and-serving-millions-of-llms",
+      "date": "2026-05-W03",
+      "year": "2026",
+      "month": "5",
+      "week": "3",
+      "type": "paper",
+      "org": "Mind Lab",
+      "title": "MinT: Managed Infrastructure for Training and Serving Millions of LLMs",
+      "url": "https://arxiv.org/abs/2605.13779",
+      "bullets": [
+        {
+          "text": "소수의 값비싼 base model에서 파생된 수많은 정책을 각각 완전 머지 체크포인트로 구체화하는 비용 문제 해결",
+          "level": 1
+        },
+        {
+          "text": "LoRA post-training·서빙 관리 인프라 — base model 상주 + LoRA adapter revision을 서비스 인터페이스로 관리, Scale Up(1T+ dense/MoE LoRA RL 확장)·Scale Down(base 대비 1% 미만 adapter export)·Scale Out(정책 주소성과 컴퓨팅 자원 분리, 100만 규모 카탈로그) 3축 최적화",
+          "level": 1
+        },
+        {
+          "text": "adapter-only handoff로 step time 4B 18.3배·30B MoE 2.85배 단축, 멀티 정책 학습 wall time 1.77배·1.45배 단축(피크 메모리 증가 없음), packed MoE LoRA 텐서로 엔진 로딩 8.5~8.7배 개선",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "alibaba-qwen-qwen-image-20-technical-report",
       "date": "2026-05-W02",
@@ -40602,8 +40628,8 @@
     }
   ],
   "stats": {
-    "total": 1790,
-    "paper": 1067,
+    "total": 1791,
+    "paper": 1068,
     "dev": 683,
     "news": 40
   }
