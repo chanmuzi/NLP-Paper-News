@@ -11,13 +11,14 @@ import {
 } from './x-text-utils.mjs';
 
 function parseArgs(argv) {
-  const args = { digest: '', result: '', dryRun: false, testSuffix: '' };
+  const args = { digest: '', result: '', dryRun: false, testSuffix: '', replyTo: '' };
   for (let i = 2; i < argv.length; i++) {
     const cur = argv[i];
     if (cur === '--digest') args.digest = argv[++i];
     else if (cur === '--result') args.result = argv[++i];
     else if (cur === '--dry-run') args.dryRun = true;
     else if (cur === '--test-suffix') args.testSuffix = argv[++i] || '';
+    else if (cur === '--reply-to') args.replyTo = argv[++i] || '';
   }
   return args;
 }
@@ -356,7 +357,8 @@ function emitProgress(event, extra = {}) {
 }
 
 async function main() {
-  const { digest: digestPath, result: resultPath, dryRun, testSuffix } = parseArgs(process.argv);
+  const { digest: digestPath, result: resultPath, dryRun, testSuffix, replyTo } = parseArgs(process.argv);
+  const replyToId = replyTo ? String(replyTo).trim() : '';
   if (!digestPath) {
     console.error('Usage: node scripts/post-x.mjs --digest <digest.json> [--result <post-result.json>] [--dry-run] [--test-suffix " · test:abcd123"]');
     process.exit(1);
@@ -375,9 +377,13 @@ async function main() {
     console.log('[DRY_RUN] X Thread');
     if (testSuffix) console.log(`Using test suffix: ${testSuffix}`);
 
-    console.log('\n=== MAIN TWEET ===');
-    console.log(thread.main);
-    console.log(`(${countXChars(thread.main)} weighted chars)`);
+    if (replyToId) {
+      console.log(`\n=== MAIN TWEET (SKIPPED — replying to existing ${replyToId}) ===`);
+    } else {
+      console.log('\n=== MAIN TWEET ===');
+      console.log(thread.main);
+      console.log(`(${countXChars(thread.main)} weighted chars)`);
+    }
 
     (thread.replies || []).forEach((reply, i) => {
       console.log(`\n=== REPLY ${i + 1} ===`);
@@ -411,7 +417,7 @@ async function main() {
 
   const tooLong = [];
   const mainCount = countXCharsDetail(thread.main);
-  if (mainCount.used > localGuardLimit) {
+  if (!replyToId && mainCount.used > localGuardLimit) {
     tooLong.push({ phase: 'main', used: mainCount.used, codepoint: mainCount.codepoint, grapheme: mainCount.grapheme, guard: localGuardLimit });
   }
   const replyCountDetails = (thread.replies || []).map((r) => countXCharsDetail(r));
@@ -445,8 +451,18 @@ async function main() {
     process.exit(1);
   }
 
-  // Post main tweet
+  // Post main tweet (or attach to an existing one via --reply-to)
   let mainId = null;
+  if (replyToId) {
+    // Recovery mode: an orphan main already exists on X (e.g. a prior run
+    // posted main but the reply chain failed and rollback could not delete it).
+    // Skip posting a new main and chain replies onto the existing tweet.
+    // The existing main is intentionally NOT added to `posted`, so a later
+    // reply failure rolls back only replies created in this run.
+    mainId = replyToId;
+    emitProgress('main_done', { id: mainId, reusedExisting: true });
+    console.log(`Reusing existing main tweet: ${mainId} (--reply-to)`);
+  } else {
   emitProgress('main_started');
   console.log('Posting main tweet...');
   try {
@@ -477,6 +493,7 @@ async function main() {
 
     console.error(`Main tweet FAILED: ${err.message}`);
     process.exit(1);
+  }
   }
 
   // Post replies as a chain
