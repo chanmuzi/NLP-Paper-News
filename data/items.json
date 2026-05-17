@@ -1,8 +1,38 @@
 {
   "version": 1,
-  "last_updated": "2026-05-16T06:40:30.313Z",
-  "total_items": 1791,
+  "last_updated": "2026-05-17T03:37:04.430Z",
+  "total_items": 1792,
   "items": [
+    {
+      "id": "meituan-longcat-heavyskill-heavy-thinking-as-the-inner-skill-in-agentic-harness",
+      "date": "2026-05-W03",
+      "year": "2026",
+      "month": "5",
+      "week": "3",
+      "type": "paper",
+      "org": "Meituan LongCat",
+      "title": "HeavySkill: Heavy Thinking as the Inner Skill in Agentic Harness",
+      "url": "https://arxiv.org/abs/2605.02396",
+      "bullets": [
+        {
+          "text": "에이전트 오케스트레이션의 성능을 실제로 견인하는 핵심 메커니즘이 복잡한 코드가 아니라 \"heavy thinking\"이라는 단일 inner skill임을 규명",
+          "level": 1
+        },
+        {
+          "text": "K개 독립 추론 trajectory를 병렬 생성한 뒤 별도 모델이 이를 종합하는 2단계(parallel→sequential) 파이프라인을 Claude Code 등 오케스트레이션 프레임워크에 그대로 이식 가능한 readable skill 문서로 캡슐화",
+          "level": 1
+        },
+        {
+          "text": "STEM 벤치마크 전반에서 Heavy-Mean@4가 Mean@K를 일관되게 상회, GPT-5-Thinking은 일부 과제에서 near-perfect 달성, 성능 위계는 Heavy-Pass@k ≥ Heavy-Mean@K ≥ Vote@K ≥ Mean@k로 정리",
+          "level": 1
+        },
+        {
+          "text": "sequential deliberation은 전문 추론력보다 범용 종합 능력에 더 의존, RLVR 적용 시 HM@4 약 10% 추가 개선, 다만 코딩·사실형 등 객관 과제에서만 견고하고 주관적 선호 평가에서는 이득 미미",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "mind-lab-mint-managed-infrastructure-for-training-and-serving-millions-of-llms",
       "date": "2026-05-W03",
@@ -40628,8 +40658,8 @@
     }
   ],
   "stats": {
-    "total": 1791,
-    "paper": 1068,
+    "total": 1792,
+    "paper": 1069,
     "dev": 683,
     "news": 40
   }
