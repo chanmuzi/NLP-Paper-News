@@ -57,8 +57,11 @@ admin 페이지에서 항목 추가 → Git Data API로 main에 commit/push
 
 [/post 직접 게시 흐름]
 Claude Code /post → X 직접 게시(post-x.mjs) → items.json commit/push
-    (어떤 워크플로우도 자동 트리거되지 않음 — notify.yml은 push 트리거가 없고
-     deploy.yml은 paths-ignore: ["data/items.json"]으로 items.json만 바뀐 commit 스킵)
+    → /post가 deploy.yml workflow_dispatch 명시 호출(gh workflow run)
+    → deploy.yml: 사이트 빌드·배포
+    (push 자동 트리거는 없음 — notify.yml은 push 트리거가 없고
+     deploy.yml은 paths-ignore: ["data/items.json"]으로 items.json만 바뀐 commit 스킵.
+     그래서 /post는 admin 흐름의 post-approved.yml과 대칭으로 배포를 명시 트리거한다)
 ```
 
 ### 프론트엔드 (web/)
@@ -79,7 +82,7 @@ Node.js ESM (.mjs) 유틸리티. CI에서 주로 사용:
 
 ### CI/CD (.github/workflows/)
 
-- `deploy.yml` - main push 시 GitHub Pages 자동 배포 (단 `paths-ignore: ["data/items.json"]` — items.json만 변경된 commit은 빌드/배포 스킵, 필요 시 `gh workflow run deploy.yml --ref main`으로 수동 트리거)
+- `deploy.yml` - main push 시 GitHub Pages 자동 배포 (단 `paths-ignore: ["data/items.json"]` — items.json만 변경된 commit은 push 자동 빌드/배포 스킵). items.json만 바뀌는 두 흐름은 배포를 명시 트리거한다: admin 흐름은 `post-approved.yml`의 `Trigger deploy on success` 스텝, /post 흐름은 스킬이 push 직후 `gh workflow run deploy.yml --ref main` 호출. 그 외 수동 배포가 필요하면 동일 명령 사용
 - `notify.yml` - X 스레드 드래프트 준비 (workflow 이름: `Prepare X Thread Draft`). admin UI의 `workflow_dispatch` 호출로만 트리거 — push 자동 트리거 없음
 - `post-approved.yml` - 승인된 X 스레드 게시 (workflow_dispatch)
 - `rewrite-x-draft.yml` - X 스레드 편집 (workflow_dispatch)

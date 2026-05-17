@@ -188,6 +188,21 @@ The `**[메인]** (xx/260 · 280)` line shows the weighted char count from `x-le
 
 When the user replies `게시` / `승인` / `post` / `publish` (or the same with `드라이런` for dry-run):
 
+### 4·preflight — 브랜치/싱크 가드 (비가역 단계 진입 전 필수)
+
+X 게시(4b)는 비가역이고, 4c는 `deploy.yml`을 `--ref main`으로 트리거한다. 따라서 X 게시·commit·push **이전에** 다음을 확인한다 (live 모드 한정 — dry-run은 push/deploy를 안 하므로 스킵):
+
+```
+git branch --show-current
+git fetch origin main --quiet && git rev-list --left-right --count main...origin/main
+```
+
+- 현재 브랜치가 `main`이 아니면: **중단**한다. items.json을 non-main 브랜치에 push하면 `deploy.yml --ref main`이 새 항목 없는 main을 빌드해 사이트에 반영되지 않는다 (사용자 가시적 실패). 사용자에게 "현재 `<branch>` 브랜치입니다. /post는 main에서 실행해야 사이트에 반영됩니다. main으로 전환 후 재실행할지" 확인을 받는다. X 게시는 아직 하지 않은 상태이므로 안전하게 중단 가능.
+- `main`이지만 `origin/main` 대비 **behind**면: 중단하고 사용자에게 보고(pull/rebase 등 컨펌). 임의 진행 금지 (프로젝트 CLAUDE.md "Git Push 전 체크").
+- `main`이고 ahead-only(또는 동기): 정상 진행.
+
+이 가드는 X 게시 전에 수행해 비가역 작업을 차단한다.
+
 ### 4a. Write temp digest.json
 Create `artifacts/post-skill-digest.json` (artifacts/ is gitignored).
 
@@ -240,12 +255,20 @@ Posted to X: https://x.com/i/status/<main_tweet_id>
 Co-Authored-By: Claude Opus 4.7 (1M context) <noreply@anthropic.com>
 EOF
 )"
-git push origin <current-branch>
+git push origin main
 ```
-The push does NOT automatically trigger any workflow for items.json-only commits. `deploy.yml`은 main push 시 동작하지만 `paths-ignore`에 `data/items.json`이 포함되어 있어 items.json만 바뀐 commit은 빌드/배포가 일어나지 않는다. `notify.yml`도 admin UI 흐름 전용 `workflow_dispatch`로 분리됐으므로 /post의 push로는 트리거되지 않는다 (admin UI가 항목 commit 직후 명시적으로 호출). 사이트에 반영하려면 `gh workflow run deploy.yml --ref main`으로 수동 트리거하거나 다른 코드 변경이 동반된 push가 필요하다는 점을 사용자에게 안내한다.
+(4·preflight에서 현재 브랜치가 `main`이고 `origin/main`과 정합임을 이미 보장했으므로 push 대상은 항상 `main`이다.)
+
+push 직후, 사이트에 새 항목을 반영하기 위해 deploy 워크플로우를 명시적으로 트리거한다 (admin UI 흐름에서 `post-approved.yml`이 `Trigger deploy on success`로 하는 것과 대칭):
+```
+gh workflow run deploy.yml --ref main
+```
+트리거 후 `gh run list --workflow=deploy.yml --limit 1`로 실행 시작을 확인하고, 사용자에게 배포 run 링크를 안내한다. 완료까지 지켜볼지는 사용자에게 묻거나 짧게 watch한다.
+
+**왜 명시 트리거가 필요한가**: `deploy.yml`은 main push 시 동작하지만 `paths-ignore`에 `data/items.json`이 포함되어 있어 items.json만 바뀐 commit은 push 자동 빌드/배포가 일어나지 않는다 (admin UI 흐름에서 승인 전 commit이 조기 배포되는 것을 막기 위한 의도된 제외). `notify.yml`도 admin UI 흐름 전용 `workflow_dispatch`로 분리됐으므로 /post의 push로는 트리거되지 않는다. 따라서 /post는 X 게시·push 성공 이후 위 `gh workflow run`으로 배포를 직접 트리거해 자기완결적으로 동작한다.
 
 **Dry-run mode:**
-- Skip `add-item.mjs`, skip commit, skip push.
+- Skip `add-item.mjs`, skip commit, skip push, skip deploy trigger.
 - Show what *would* have been committed.
 - Markdown file is still saved (intentional — user can always pick it up later).
 
