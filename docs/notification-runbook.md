@@ -13,6 +13,13 @@
   - `workflow_dispatch` (admin UI가 항목 commit 직후 명시 호출, 또는 Actions UI에서 수동 실행)
 - push 자동 트리거는 없다 — admin UI 흐름과 `/post` 직접 게시 흐름이 같은 push에 묶이는 것을 피하기 위해 제거됨.
 
+## 사이트 배포 (`deploy.yml`)
+- `deploy.yml`은 main push 시 동작하지만 `paths-ignore: ["data/items.json"]`이라 items.json만 바뀐 commit은 push 자동 배포가 되지 않는다 (admin 흐름에서 승인 전 commit이 조기 배포되는 것을 막기 위한 의도된 제외).
+- 따라서 items.json만 바꾸는 두 흐름은 게시 성공 후 배포를 **명시 트리거**한다:
+  - admin 흐름: `post-approved.yml`의 `Trigger deploy on success` 스텝 (`if: steps.post.outcome == 'success'`)
+  - `/post` 흐름: 스킬이 X 게시·push 성공 직후 `gh workflow run deploy.yml --ref main` 호출
+- 그 외 사유로 수동 배포가 필요하면 동일하게 `gh workflow run deploy.yml --ref main`.
+
 ## 필수 스위치 (GitHub Variables)
 - `ENABLE_X_POST`: `true` / `false`
 
@@ -65,8 +72,9 @@
 ## 테스트 절차 (권장)
 1. 브랜치/PR에서 `pull_request` 트리거로 notify.yml 동작 확인 (digest 생성·아티팩트 업로드 확인)
 2. `gh workflow run notify.yml --ref main` 또는 admin UI에서 항목 추가로 `workflow_dispatch` 호출 → 드래프트 생성·아티팩트 확인
-3. admin UI에서 드래프트 승인 → `post-approved.yml`이 실행되어 테스트 계정 토큰으로 1회 게시 검증
+3. admin UI에서 드래프트 승인 → `post-approved.yml`이 실행되어 테스트 계정 토큰으로 1회 게시 검증 → 성공 시 `deploy.yml`이 트리거되는지 확인
 4. 문제 없으면 `ENABLE_X_POST`를 `true`로 전환 (`post-approved.yml`의 실제 게시 스위치)
+5. `/post` 흐름은 게시·push 성공 후 스킬이 `deploy.yml`을 직접 트리거하므로, `gh run list --workflow=deploy.yml --limit 1`로 배포 run 시작을 확인
 
 
 ### 로컬 검증 커맨드 (필수)
