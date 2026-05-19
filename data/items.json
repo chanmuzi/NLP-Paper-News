@@ -1,8 +1,64 @@
 {
   "version": 1,
-  "last_updated": "2026-05-17T03:37:04.430Z",
-  "total_items": 1792,
+  "last_updated": "2026-05-19T06:14:44.570Z",
+  "total_items": 1794,
   "items": [
+    {
+      "id": "boston-dynamics-atlas-냉장고-운반음료-전달-시연-및-학습-방식-딥다이브-영상-공개",
+      "date": "2026-05-W03",
+      "year": "2026",
+      "month": "5",
+      "week": "3",
+      "type": "news",
+      "org": "Boston Dynamics",
+      "title": "Atlas, 냉장고 운반·음료 전달 시연 및 학습 방식 딥다이브 영상 공개",
+      "url": "https://x.com/BostonDynamics/status/2056344756926460103",
+      "bullets": [
+        {
+          "text": "프로덕션 버전 Atlas가 전원 분리된 50파운드(약 23kg) 미니 냉장고를 들어 옮긴 뒤 연구원에게 음료를 전달하는 시연 영상 공개",
+          "level": 1
+        },
+        {
+          "text": "Atlas 학습 방식과 코믹한 연출 의도를 설명하는 딥다이브 영상 동시 공개, 실험실 테스트에서는 100파운드까지 들어 올림",
+          "level": 1
+        },
+        {
+          "text": "CES 2026에서 공개한 프로덕션 Atlas의 후속 시연으로, 2026년 물량은 Hyundai RMAC·Google DeepMind 배치로 전량 확정",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "pixverse-pixverse-r1-인터랙티브-ai-비디오를-위한-실시간-월드-모델",
+      "date": "2026-05-W03",
+      "year": "2026",
+      "month": "5",
+      "week": "3",
+      "type": "dev",
+      "org": "PixVerse",
+      "title": "PixVerse R1: 인터랙티브 AI 비디오를 위한 실시간 월드 모델",
+      "url": "https://pixverse.ai/ko/blog/pixverse-launches-r1-real-time-world-model",
+      "bullets": [
+        {
+          "text": "사용자 입력에 즉시 반응해 연속 1080P 영상을 생성하는 \"세계 최초 실시간 월드 모델\" R1 공개",
+          "level": 1
+        },
+        {
+          "text": "무한 스트리밍·실시간 반응·텍스트/이미지/오디오/비디오 통합 처리·장시간 물리 일관성 유지",
+          "level": 1
+        },
+        {
+          "text": "Omni 네이티브 멀티모달 파운데이션 모델, 일관성 인식 autoregressive 프레임워크, 샘플링 스텝을 1~4회로 줄인 응답 엔진의 3대 기술 결합",
+          "level": 1
+        },
+        {
+          "text": "정적 비디오 생성을 AI 네이티브 게이밍·라이브 엔터테인먼트·훈련 시뮬레이션 등 인터랙티브 환경으로 전환, realtime.pixverse.ai 공개·기업 API 제공",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "meituan-longcat-heavyskill-heavy-thinking-as-the-inner-skill-in-agentic-harness",
       "date": "2026-05-W03",
@@ -40658,9 +40714,9 @@
     }
   ],
   "stats": {
-    "total": 1792,
+    "total": 1794,
     "paper": 1069,
-    "dev": 683,
-    "news": 40
+    "dev": 684,
+    "news": 41
   }
 }
