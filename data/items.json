@@ -1,8 +1,34 @@
 {
   "version": 1,
-  "last_updated": "2026-05-19T06:14:44.570Z",
-  "total_items": 1794,
+  "last_updated": "2026-05-20T04:32:57.784Z",
+  "total_items": 1795,
   "items": [
+    {
+      "id": "cursor-composer-25",
+      "date": "2026-05-W03",
+      "year": "2026",
+      "month": "5",
+      "week": "3",
+      "type": "dev",
+      "org": "Cursor",
+      "title": "Composer 2.5",
+      "url": "https://cursor.com/ko/blog/composer-2-5",
+      "bullets": [
+        {
+          "text": "Moonshot의 오픈소스 Kimi K2.5 기반에 SpaceX AI와 협력, Composer 2 대비 10배 compute로 학습한 coding agent 모델 공개",
+          "level": 1
+        },
+        {
+          "text": "잘못된 tool call·style 위반 등 구체 오류를 텍스트 피드백으로 교정하는 targeted RL과 25배 늘린 synthetic task로 학습 신호 강화",
+          "level": 1
+        },
+        {
+          "text": "샤딩 Muon·dual-mesh HSDP로 대규모 학습 효율 개선, 표준가 입력 $0.50/M·출력 $2.50/M (고속 $3/$15) 책정에 첫 주 사용량 2배 제공",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "boston-dynamics-atlas-냉장고-운반음료-전달-시연-및-학습-방식-딥다이브-영상-공개",
       "date": "2026-05-W03",
@@ -40714,9 +40740,9 @@
     }
   ],
   "stats": {
-    "total": 1794,
+    "total": 1795,
     "paper": 1069,
-    "dev": 684,
+    "dev": 685,
     "news": 41
   }
 }
