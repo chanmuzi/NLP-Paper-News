@@ -1,8 +1,38 @@
 {
   "version": 1,
-  "last_updated": "2026-05-20T04:32:57.784Z",
-  "total_items": 1795,
+  "last_updated": "2026-05-21T12:10:13.091Z",
+  "total_items": 1796,
   "items": [
+    {
+      "id": "cohere-command-a-making-sovereign-agentic-capabilities-available-to-all",
+      "date": "2026-05-W03",
+      "year": "2026",
+      "month": "5",
+      "week": "3",
+      "type": "dev",
+      "org": "Cohere",
+      "title": "Command A+: Making sovereign agentic capabilities available to all",
+      "url": "https://cohere.com/blog/command-a-plus",
+      "bullets": [
+        {
+          "text": "Apache 2.0 오픈소스 공개, 218B 총 파라미터·25B active MoE (H100 2장 또는 B200 1장으로 구동)",
+          "level": 1
+        },
+        {
+          "text": "128K 입력 컨텍스트·64K 생성, 멀티모달 입력, tool use, 48개 언어 지원",
+          "level": 1
+        },
+        {
+          "text": "τ²-Bench Telecom 85% (이전 37%), Terminal-Bench Hard 25% (이전 3%) 등 agentic 벤치 대폭 향상",
+          "level": 1
+        },
+        {
+          "text": "Command A Reasoning 대비 출력 처리량 63%↑·TTFT 17%↓, 한국어 토크나이저 효율 16% 개선",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "cursor-composer-25",
       "date": "2026-05-W03",
@@ -40740,9 +40770,9 @@
     }
   ],
   "stats": {
-    "total": 1795,
+    "total": 1796,
     "paper": 1069,
-    "dev": 685,
+    "dev": 686,
     "news": 41
   }
 }
