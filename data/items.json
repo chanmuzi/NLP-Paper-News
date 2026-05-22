@@ -1,8 +1,60 @@
 {
   "version": 1,
-  "last_updated": "2026-05-21T12:10:13.091Z",
-  "total_items": 1796,
+  "last_updated": "2026-05-22T05:57:26.723Z",
+  "total_items": 1798,
   "items": [
+    {
+      "id": "google-deepmind-gemini-omni",
+      "date": "2026-05-W04",
+      "year": "2026",
+      "month": "5",
+      "week": "4",
+      "type": "dev",
+      "org": "Google DeepMind",
+      "title": "Gemini Omni",
+      "url": "https://deepmind.google/models/gemini-omni/",
+      "bullets": [
+        {
+          "text": "대화형 video editing 모델 공개, 순차 편집 간 scene consistency 유지하며 video·image·text·audio multimodal 입력 처리",
+          "level": 1
+        },
+        {
+          "text": "중력·운동에너지·유체역학 등 physics-aware generation, 캐릭터/객체 스왑, motion transfer, 스케치→실사 변환(drawing-to-video) 지원",
+          "level": 1
+        },
+        {
+          "text": "Gemini 앱·Google Flow·YouTube Shorts 통해 제공, SynthID watermark와 C2PA Content Credentials로 생성물 진위 검증 내장",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "alibaba-qwen-qwen37-max",
+      "date": "2026-05-W04",
+      "year": "2026",
+      "month": "5",
+      "week": "4",
+      "type": "dev",
+      "org": "Alibaba Qwen",
+      "title": "Qwen3.7 Max",
+      "url": "https://qwen.ai/blog?id=qwen3.7",
+      "bullets": [
+        {
+          "text": "5월 14일 Arena AI 리더보드에 조용히 등장, Alibaba Cloud Summit 5일 전 사전 공개. 1M token context (전작 Qwen3.6 Max Preview 256K 대비 확장)",
+          "level": 1
+        },
+        {
+          "text": "약 35시간 연속 autonomous execution 지원 + Anthropic API protocol 네이티브 호환으로 Claude Code 등 외부 agent harness 직접 연동",
+          "level": 1
+        },
+        {
+          "text": "Artificial Analysis Intelligence Index 56.6점으로 전체 5위·중국 모델 1위 (전작 51.8 대비 +4.8). Apex Math 44.5로 Claude Opus-4.6 Max(34.5) 능가, Humanity's Last Exam 41.4, MCP-Atlas 76.4 기록",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "cohere-command-a-making-sovereign-agentic-capabilities-available-to-all",
       "date": "2026-05-W03",
@@ -40770,9 +40822,9 @@
     }
   ],
   "stats": {
-    "total": 1796,
+    "total": 1798,
     "paper": 1069,
-    "dev": 686,
+    "dev": 688,
     "news": 41
   }
 }
