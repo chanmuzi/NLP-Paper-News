@@ -1,8 +1,72 @@
 {
   "version": 1,
-  "last_updated": "2026-05-22T05:57:26.723Z",
-  "total_items": 1798,
+  "last_updated": "2026-05-24T06:51:22.545Z",
+  "total_items": 1800,
   "items": [
+    {
+      "id": "stanford-a-bitter-lesson-for-data-filtering",
+      "date": "2026-05-W04",
+      "year": "2026",
+      "month": "5",
+      "week": "4",
+      "type": "paper",
+      "org": "Stanford",
+      "title": "A Bitter Lesson for Data Filtering",
+      "url": "https://arxiv.org/abs/2605.19407",
+      "bullets": [
+        {
+          "text": "LLM pretraining의 데이터 필터링 통념 반박, 충분한 compute가 있으면 \"최선의 필터는 필터 없음\"이라는 주장",
+          "level": 1
+        },
+        {
+          "text": "DCLM-Baseline은 Common Crawl의 약 1%만 유지하는데 이게 오히려 유용한 데이터를 버리는 결과",
+          "level": 2
+        },
+        {
+          "text": "15M~7B 파라미터, 670M~10B 토큰 규모로 unfiltered Common Crawl과 RefinedWeb·DCLM-Baseline 비교한 scaling law 도출",
+          "level": 1
+        },
+        {
+          "text": "330M+ 모델에서는 unfiltered 데이터가 모든 필터를 능가, 전체 Common Crawl 기준 교차점은 약 1e+30 FLOPs로 추정 (R² > 0.99의 선형성)",
+          "level": 1
+        },
+        {
+          "text": "셔플된 단어 문서 같은 'junk data' 주입에도 330M+ 모델은 unfiltered 수준 성능 회복",
+          "level": 2
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "oxford-deepmind-positive-alignment-artificial-intelligence-for-human-flourishing",
+      "date": "2026-05-W04",
+      "year": "2026",
+      "month": "5",
+      "week": "4",
+      "type": "paper",
+      "org": "Oxford · DeepMind",
+      "title": "Positive Alignment: Artificial Intelligence for Human Flourishing",
+      "url": "https://arxiv.org/abs/2605.10310",
+      "bullets": [
+        {
+          "text": "기존 alignment 연구가 harm 방지 중심이라는 한계를 지적, 안전성과 함께 인간의 번영(flourishing)까지 적극 지원하는 'positive alignment' 패러다임 제안",
+          "level": 1
+        },
+        {
+          "text": "Oxford·DeepMind·OpenAI·Anthropic·Stanford 등 다기관 공동 저술",
+          "level": 2
+        },
+        {
+          "text": "Goal-setting, 데이터 큐레이션, pre/post-training, 메모리·agentic 단계 전반에 flourishing 지표 통합한 multi-stage lifecycle 프레임워크 제시",
+          "level": 1
+        },
+        {
+          "text": "MoReBench 등 moral reasoning 벤치마크와 자율성·역량·관계성 종단 추적을 결합한 평가 방법, polycentric governance 모델 함께 제안",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "google-deepmind-gemini-omni",
       "date": "2026-05-W04",
@@ -40822,8 +40886,8 @@
     }
   ],
   "stats": {
-    "total": 1798,
-    "paper": 1069,
+    "total": 1800,
+    "paper": 1071,
     "dev": 688,
     "news": 41
   }
