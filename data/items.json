@@ -1,8 +1,76 @@
 {
   "version": 1,
-  "last_updated": "2026-05-24T06:51:22.545Z",
-  "total_items": 1800,
+  "last_updated": "2026-05-29T02:40:58.340Z",
+  "total_items": 1802,
   "items": [
+    {
+      "id": "university-of-amsterdam-clarify-abstain-or-answer-strategising-in-conversation-with-belief-augmented",
+      "date": "2026-05-W05",
+      "year": "2026",
+      "month": "5",
+      "week": "5",
+      "type": "paper",
+      "org": "University of Amsterdam",
+      "title": "Clarify, Abstain or Answer? Strategising in Conversation with Belief-Augmented Generation",
+      "url": "https://arxiv.org/abs/2605.25831",
+      "bullets": [
+        {
+          "text": "LLM이 자체 probabilistic uncertainty를 활용해 답변·clarification·abstention 중 전략을 선택하도록 하는 Belief-Augmented Generation(BAG) 제안",
+          "level": 1
+        },
+        {
+          "text": "K개 response를 sampling해 belief state를 구성한 뒤, 해당 샘플의 consistency·variation 패턴을 모델에 prompting해 대화 전략 결정",
+          "level": 1
+        },
+        {
+          "text": "6개 모델·ambiguous QA task에서 BAG가 direct generation baseline을 일관되게 상회, 전략 결정이 semantic entropy와 상관",
+          "level": 1
+        },
+        {
+          "text": "prompt-only 방식 대비 모델 내부 uncertainty distribution과 더 충실히 align된 strategy 출력 확인",
+          "level": 1
+        },
+        {
+          "text": "ambiguity 기반 variation과 hallucination 기반 variation 구분은 여전히 난제로 남음",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "anthropic-introducing-claude-opus-48",
+      "date": "2026-05-W05",
+      "year": "2026",
+      "month": "5",
+      "week": "5",
+      "type": "dev",
+      "org": "Anthropic",
+      "title": "Introducing Claude Opus 4.8",
+      "url": "https://www.anthropic.com/news/claude-opus-4-8",
+      "bullets": [
+        {
+          "text": "Opus 4.7 대비 코딩·agentic·실무 지식 영역 전반에서 성능 향상, 가격은 동일 유지",
+          "level": 1
+        },
+        {
+          "text": "판단력·정직성 강화로 code flaw 통과 빈도 약 4배 감소, agentic task에서 실수 포착·clarifying question 능력 개선",
+          "level": 1
+        },
+        {
+          "text": "Claude Code에서 수백 개 parallel subagent orchestration 지원으로 codebase-scale migration 등 대규모 작업 대응",
+          "level": 1
+        },
+        {
+          "text": "claude.ai·Cowork에 effort control 도입, Fast mode는 2.5배 속도·이전 모델 대비 3배 저렴",
+          "level": 1
+        },
+        {
+          "text": "`claude-opus-4-8` 모델 ID로 claude.ai 및 Claude API 즉시 사용 가능",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "stanford-a-bitter-lesson-for-data-filtering",
       "date": "2026-05-W04",
@@ -40886,9 +40954,9 @@
     }
   ],
   "stats": {
-    "total": 1800,
-    "paper": 1071,
-    "dev": 688,
+    "total": 1802,
+    "paper": 1072,
+    "dev": 689,
     "news": 41
   }
 }
