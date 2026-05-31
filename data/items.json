@@ -1,8 +1,68 @@
 {
   "version": 1,
-  "last_updated": "2026-05-29T02:40:58.340Z",
-  "total_items": 1802,
+  "last_updated": "2026-05-31T11:47:34.310Z",
+  "total_items": 1804,
   "items": [
+    {
+      "id": "nvidia-gamma-world-generative-multi-agent-world-modeling-beyond-two-players",
+      "date": "2026-05-W05",
+      "year": "2026",
+      "month": "5",
+      "week": "5",
+      "type": "paper",
+      "org": "NVIDIA",
+      "title": "Gamma-World: Generative Multi-Agent World Modeling Beyond Two Players",
+      "url": "https://arxiv.org/abs/2605.28816",
+      "bullets": [
+        {
+          "text": "단일 에이전트 비디오 생성에 머물던 world model을 다중 에이전트가 공유 공간에서 동시 행동하는 환경으로 확장",
+          "level": 1
+        },
+        {
+          "text": "Simplex Rotary Agent Encoding으로 고정 순서 없이 permutation-equivariance 확보, Sparse Hub Attention으로 cross-agent attention을 quadratic→linear 복잡도로 절감",
+          "level": 1
+        },
+        {
+          "text": "diffusion teacher를 causal student로 distillation해 실시간 추론(24 FPS) 달성",
+          "level": 1
+        },
+        {
+          "text": "재학습 없이 2→4 플레이어로 일반화, 비디오 품질·액션 제어·에이전트 일관성에서 baseline 대비 개선",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "paras-chopra-make-pages-interactive",
+      "date": "2026-05-W05",
+      "year": "2026",
+      "month": "5",
+      "week": "5",
+      "type": "dev",
+      "org": "Paras Chopra",
+      "title": "Make Pages Interactive",
+      "url": "https://github.com/paraschopra/make-pages-interactive",
+      "bullets": [
+        {
+          "text": "정적 HTML 폴더를 협업 피드백 surface로 전환하는 Claude Code 스킬 공개",
+          "level": 1
+        },
+        {
+          "text": "텍스트 선택 하이라이트, 요소 클릭 선택, 페이지 단위 메모 등 3가지 코멘트 모드 지원",
+          "level": 1
+        },
+        {
+          "text": "코멘트가 로컬 서버로 전송되면 Claude가 inbox를 모니터링해 HTML 자동 편집, 변경점 하이라이트와 함께 페이지 자동 리로드",
+          "level": 1
+        },
+        {
+          "text": "feedback.js 클라이언트 + Python HTTP 서버 + 스킬 활성화 파일의 3-component 아키텍처 채택",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "university-of-amsterdam-clarify-abstain-or-answer-strategising-in-conversation-with-belief-augmented",
       "date": "2026-05-W05",
@@ -40954,9 +41014,9 @@
     }
   ],
   "stats": {
-    "total": 1802,
-    "paper": 1072,
-    "dev": 689,
+    "total": 1804,
+    "paper": 1073,
+    "dev": 690,
     "news": 41
   }
 }
