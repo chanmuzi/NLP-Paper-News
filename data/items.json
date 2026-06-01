@@ -1,8 +1,46 @@
 {
   "version": 1,
-  "last_updated": "2026-05-31T11:47:34.310Z",
-  "total_items": 1804,
+  "last_updated": "2026-06-01T05:20:55.752Z",
+  "total_items": 1805,
   "items": [
+    {
+      "id": "minimax-minimax-m3",
+      "date": "2026-06-W01",
+      "year": "2026",
+      "month": "6",
+      "week": "1",
+      "type": "dev",
+      "org": "MiniMax",
+      "title": "MiniMax M3",
+      "url": "https://www.minimax.io/models/text/m3",
+      "bullets": [
+        {
+          "text": "프런티어급 코딩·에이전트 능력, 1M 토큰 컨텍스트, 네이티브 멀티모달(이미지·비디오 입력)을 모두 갖춘 첫 오픈 웨이트 모델로 공개",
+          "level": 1
+        },
+        {
+          "text": "자체 MSA(MiniMax Sparse Attention) 적용 — KV 블록 선택으로 1M 토큰 구간 토큰당 연산량을 이전 세대의 약 1/20로 절감, 프리필 9배·디코딩 15배 이상 가속",
+          "level": 1
+        },
+        {
+          "text": "Flash-Sparse-Attention·flash-moba 대비 4배 이상 빠른 속도 확보",
+          "level": 2
+        },
+        {
+          "text": "SWE-Bench Pro 59.0%로 GPT-5.5·Gemini 3.1 Pro 상회·Opus 4.7 근접, Terminal-Bench 2.1 66.0% 기록",
+          "level": 1
+        },
+        {
+          "text": "Claw-Eval 에이전트 평가 최고 점수, OmniDocBench는 Gemini 3.1 Pro 상회, SVG 생성은 Opus 4.7 능가",
+          "level": 1
+        },
+        {
+          "text": "100T+ 토큰 학습·멀티모달 처음부터 통합 설계, HuggingFace·GitHub 오픈소스로 사설 배포·파인튜닝 지원 예정",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "nvidia-gamma-world-generative-multi-agent-world-modeling-beyond-two-players",
       "date": "2026-05-W05",
@@ -41014,9 +41052,9 @@
     }
   ],
   "stats": {
-    "total": 1804,
+    "total": 1805,
     "paper": 1073,
-    "dev": 690,
+    "dev": 691,
     "news": 41
   }
 }
