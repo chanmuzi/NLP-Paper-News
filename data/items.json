@@ -1,8 +1,98 @@
 {
   "version": 1,
-  "last_updated": "2026-06-01T05:20:55.752Z",
-  "total_items": 1805,
+  "last_updated": "2026-06-02T08:27:00.395Z",
+  "total_items": 1808,
   "items": [
+    {
+      "id": "openai-codex-sdk",
+      "date": "2026-06-W01",
+      "year": "2026",
+      "month": "6",
+      "week": "1",
+      "type": "dev",
+      "org": "OpenAI",
+      "title": "Codex SDK",
+      "url": "https://developers.openai.com/codex/sdk",
+      "bullets": [
+        {
+          "text": "로컬 Codex 에이전트를 프로그래밍 방식으로 제어하는 SDK, GUI 도구 없이 자동화 워크플로우·커스텀 앱에 통합 가능",
+          "level": 1
+        },
+        {
+          "text": "CI/CD 파이프라인 연동, 내부 도구 임베딩, 복잡한 엔지니어링 작업 협업 에이전트 구축 등 활용",
+          "level": 1
+        },
+        {
+          "text": "TypeScript(Node.js 18+, `@openai/codex-sdk`)·Python(3.10+, `openai-codex`) 지원, thread 생성 후 `run()`으로 프롬프트 순차 실행 및 thread ID 기반 재개",
+          "level": 1
+        },
+        {
+          "text": "read_only·workspace_write·full_access 3단계 샌드박스 프리셋으로 파일시스템 접근 제어",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "nvidia-cosmos-3-open-frontier-foundation-model-for-physical-ai",
+      "date": "2026-06-W01",
+      "year": "2026",
+      "month": "6",
+      "week": "1",
+      "type": "paper",
+      "org": "NVIDIA",
+      "title": "Cosmos 3: Open Frontier Foundation Model for Physical AI",
+      "url": "https://research.nvidia.com/labs/cosmos-lab/cosmos3/technical-report.pdf",
+      "bullets": [
+        {
+          "text": "로봇·자율주행·비전 에이전트의 실세계 일반화 한계를 겨냥한 오픈 physical AI 파운데이션 모델",
+          "level": 1
+        },
+        {
+          "text": "mixture-of-transformers 구조로 reasoning transformer와 generation transformer 결합, 텍스트·이미지·비디오·앰비언트 사운드·action을 네이티브 이해·생성하는 omnimodel",
+          "level": 1
+        },
+        {
+          "text": "20조 토큰·4억 비디오 학습, physical AI 학습·평가 사이클을 수개월에서 수일로 단축",
+          "level": 1
+        },
+        {
+          "text": "모델·학습 스크립트·배포 도구·데이터셋 오픈소스화, Cosmos Coalition(Black Forest Labs·Runway·Skild AI 등) 출범",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "ai2-molmoact-2-open-robotics-foundation-model",
+      "date": "2026-06-W01",
+      "year": "2026",
+      "month": "6",
+      "week": "1",
+      "type": "paper",
+      "org": "Ai2",
+      "title": "MolmoAct 2: Open Robotics Foundation Model",
+      "url": "https://allenai.org/blog/molmoact2",
+      "bullets": [
+        {
+          "text": "물리 로봇 조작용 오픈소스 Action Reasoning Model, 가중치·코드·학습 데이터까지 전면 공개",
+          "level": 1
+        },
+        {
+          "text": "Molmo 2-ER 백본(약 300만 embodied-reasoning 예시 학습) + flow-matching action expert + depth perception 토큰 기반 3D 공간 추론 결합",
+          "level": 1
+        },
+        {
+          "text": "추론 속도 전작 대비 37배 향상(action당 6,700ms → 180ms), Franka 암 zero-shot 실세계 작업 87.1% 성공(π0.5 45.2%)",
+          "level": 1
+        },
+        {
+          "text": "720시간+ 데모 규모 MolmoAct 2-Bimanual YAM 데이터셋 공개 — 역대 최대 오픈소스 양팔 로보틱스 데이터셋",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "minimax-minimax-m3",
       "date": "2026-06-W01",
@@ -41052,9 +41142,9 @@
     }
   ],
   "stats": {
-    "total": 1805,
-    "paper": 1073,
-    "dev": 691,
+    "total": 1808,
+    "paper": 1075,
+    "dev": 692,
     "news": 41
   }
 }
