@@ -1,8 +1,38 @@
 {
   "version": 1,
-  "last_updated": "2026-06-02T08:27:00.395Z",
-  "total_items": 1808,
+  "last_updated": "2026-06-03T14:46:46.297Z",
+  "total_items": 1809,
   "items": [
+    {
+      "id": "mind-lab-on-the-scaling-of-peft-towards-million-personal-models-of-trillion-parameters",
+      "date": "2026-06-W01",
+      "year": "2026",
+      "month": "6",
+      "week": "1",
+      "type": "paper",
+      "org": "Mind Lab",
+      "title": "On the Scaling of PEFT: Towards Million Personal Models of Trillion Parameters",
+      "url": "https://arxiv.org/abs/2606.02437",
+      "bullets": [
+        {
+          "text": "PEFT를 full fine-tuning의 저비용 대체재가 아닌, 공유 파운데이션 모델 위에 올리는 지속적 로컬 상태(persistent local state) 메커니즘으로 재정의",
+          "level": 1
+        },
+        {
+          "text": "세 가지 스케일링 축으로 분석 — Scale Up(강한 base model이 작은 로컬 업데이트의 효용 증대), Scale Down(신뢰성 유지 최소 adapter 크기), Scale Out(다수 개인화 인스턴스 동시 운용)",
+          "level": 1
+        },
+        {
+          "text": "base model은 공유 역량을, adapter는 선호·스킬·tool 습관·memory성 업데이트 등 인스턴스별 행동을 담당하는 구조 제시",
+          "level": 1
+        },
+        {
+          "text": "adapter 정체성·리비전·provenance·평가·서빙을 관리하는 인프라 시스템 MinT 도입, trillion 단위 파라미터 위 수백만 개인화 모델 운용 가능성 제시",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "openai-codex-sdk",
       "date": "2026-06-W01",
@@ -41142,8 +41172,8 @@
     }
   ],
   "stats": {
-    "total": 1808,
-    "paper": 1075,
+    "total": 1809,
+    "paper": 1076,
     "dev": 692,
     "news": 41
   }
