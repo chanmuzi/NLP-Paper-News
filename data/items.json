@@ -1,8 +1,98 @@
 {
   "version": 1,
-  "last_updated": "2026-06-03T14:46:46.297Z",
-  "total_items": 1809,
+  "last_updated": "2026-06-05T09:57:59.783Z",
+  "total_items": 1812,
   "items": [
+    {
+      "id": "openai-dreaming-better-memory-for-a-more-helpful-chatgpt",
+      "date": "2026-06-W01",
+      "year": "2026",
+      "month": "6",
+      "week": "1",
+      "type": "news",
+      "org": "OpenAI",
+      "title": "Dreaming: Better memory for a more helpful ChatGPT",
+      "url": "https://openai.com/index/chatgpt-memory-dreaming/",
+      "bullets": [
+        {
+          "text": "대화 기록을 백그라운드에서 자동 큐레이션해 메모리를 합성하는 Dreaming V3 도입",
+          "level": 1
+        },
+        {
+          "text": "명시적 요청 없이도 자연스러운 맥락을 기억에 반영, 시간 경과·상황 변화에 맞춰 최신 상태 유지",
+          "level": 1
+        },
+        {
+          "text": "메모리 요약 페이지에서 ChatGPT가 아는 정보 확인·수정 및 주제 노출 지시 가능",
+          "level": 1
+        },
+        {
+          "text": "6월 4일부터 미국 Plus·Pro 사용자에 순차 배포, 연산량 약 5배 절감으로 무료 사용자 확대 예정",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "nvidia-nemotron-3-ultra",
+      "date": "2026-06-W01",
+      "year": "2026",
+      "month": "6",
+      "week": "1",
+      "type": "dev",
+      "org": "NVIDIA",
+      "title": "Nemotron 3 Ultra",
+      "url": "https://research.nvidia.com/labs/nemotron/Nemotron-3-Ultra/",
+      "bullets": [
+        {
+          "text": "총 550B·활성 55B 규모의 Mamba-Attention 하이브리드 MoE 모델 공개, 최대 100만 토큰 컨텍스트 지원",
+          "level": 1
+        },
+        {
+          "text": "LatentMoE·NVFP4 사전학습·MTP 기반 네이티브 speculative decoding 등으로 추론 효율 강화",
+          "level": 1
+        },
+        {
+          "text": "경쟁 모델 대비 최대 5.9배 높은 추론 처리량 달성, 추론 시 reasoning 강도 조절 가능",
+          "level": 1
+        },
+        {
+          "text": "사전학습·양자화 체크포인트, 학습 데이터셋, 개발 레시피까지 오픈소스로 공개",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "google-deepmind-gemma-4-12b",
+      "date": "2026-06-W01",
+      "year": "2026",
+      "month": "6",
+      "week": "1",
+      "type": "dev",
+      "org": "Google DeepMind",
+      "title": "Gemma 4 12B",
+      "url": "https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemma-4-12b/",
+      "bullets": [
+        {
+          "text": "encoder-free 통합 멀티모달 아키텍처 채택, 비전·오디오 입력을 별도 인코더 없이 LLM 백본에 직접 투입",
+          "level": 1
+        },
+        {
+          "text": "16GB VRAM/통합 메모리 환경에서 로컬 구동, 26B MoE 모델에 근접한 성능을 절반 이하 메모리로 달성",
+          "level": 1
+        },
+        {
+          "text": "Gemma 중형 모델 최초로 네이티브 오디오 입력 지원, MTP drafter 내장으로 지연 시간 단축",
+          "level": 1
+        },
+        {
+          "text": "Apache 2.0 라이선스로 공개, Hugging Face·Kaggle·LM Studio·Ollama 등에서 이용 가능",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "mind-lab-on-the-scaling-of-peft-towards-million-personal-models-of-trillion-parameters",
       "date": "2026-06-W01",
@@ -41172,9 +41262,9 @@
     }
   ],
   "stats": {
-    "total": 1809,
+    "total": 1812,
     "paper": 1076,
-    "dev": 692,
-    "news": 41
+    "dev": 694,
+    "news": 42
   }
 }
