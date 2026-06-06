@@ -1,8 +1,38 @@
 {
   "version": 1,
-  "last_updated": "2026-06-05T09:57:59.783Z",
-  "total_items": 1812,
+  "last_updated": "2026-06-06T07:52:16.382Z",
+  "total_items": 1813,
   "items": [
+    {
+      "id": "unsloth-google-deepmind-gemma-4-qat",
+      "date": "2026-06-W01",
+      "year": "2026",
+      "month": "6",
+      "week": "1",
+      "type": "dev",
+      "org": "Unsloth · Google DeepMind",
+      "title": "Gemma 4 QAT",
+      "url": "https://unsloth.ai/docs/models/gemma-4/qat",
+      "bullets": [
+        {
+          "text": "QAT(Quantization-Aware Training) 적용으로 Gemma 4 26B-A4B를 16GB RAM 소비자용 GPU에서 로컬 구동 가능",
+          "level": 1
+        },
+        {
+          "text": "원본 대비 약 72% 메모리 절감하면서 near-original 성능 유지 (E2B 9.31GB→2.62GB, 26B-A4B 50.5GB→14.2GB)",
+          "level": 1
+        },
+        {
+          "text": "Unsloth Dynamic 양자화로 top-1 정확도 85.6% 달성 (naive Q4_0의 70.2% 대비 +15.6%p), BF16 QAT 대비 99.96% 바이트 일치",
+          "level": 1
+        },
+        {
+          "text": "E2B·E4B·12B·26B-A4B·31B 멀티모달 변형 제공, 140개 이상 언어·최대 256K 컨텍스트 지원",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "openai-dreaming-better-memory-for-a-more-helpful-chatgpt",
       "date": "2026-06-W01",
@@ -41262,9 +41292,9 @@
     }
   ],
   "stats": {
-    "total": 1812,
+    "total": 1813,
     "paper": 1076,
-    "dev": 694,
+    "dev": 695,
     "news": 42
   }
 }
