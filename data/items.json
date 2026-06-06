@@ -1,8 +1,38 @@
 {
   "version": 1,
-  "last_updated": "2026-06-06T07:52:16.382Z",
-  "total_items": 1813,
+  "last_updated": "2026-06-06T07:55:30.932Z",
+  "total_items": 1814,
   "items": [
+    {
+      "id": "national-university-of-singapore-self-evaluation-is-already-there-eliciting-latent-judge-calibration",
+      "date": "2026-06-W01",
+      "year": "2026",
+      "month": "6",
+      "week": "1",
+      "type": "paper",
+      "org": "National University of Singapore",
+      "title": "Self-Evaluation Is Already There: Eliciting Latent Judge Calibration in Base LLMs with Minimal Data",
+      "url": "https://arxiv.org/abs/2606.05122",
+      "bullets": [
+        {
+          "text": "LLM이 외부 judge의 다속성 품질 점수를 미리 예측할 수 있는지 탐구, base model에 이미 잠재된 self-evaluation 능력 발견",
+          "level": 1
+        },
+        {
+          "text": "few-shot 프롬프팅만으로 세 개 벤치마크에서 chance를 크게 상회하는 judge 점수 예측, 별도 학습 이전부터 능력 존재 확인",
+          "level": 1
+        },
+        {
+          "text": "SEE(Self-Evaluation Elicitation) 제안: calibration-coupled RL로 답변 개선·judge 예측 후 masked distillation으로 정제",
+          "level": 1
+        },
+        {
+          "text": "단 160개 예시로 RL baseline 대비 약 31배 적은 데이터로 held-out calibration 향상, 답변 품질 유지 및 미학습 judge로 전이",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "unsloth-google-deepmind-gemma-4-qat",
       "date": "2026-06-W01",
@@ -41292,8 +41322,8 @@
     }
   ],
   "stats": {
-    "total": 1813,
-    "paper": 1076,
+    "total": 1814,
+    "paper": 1077,
     "dev": 695,
     "news": 42
   }
