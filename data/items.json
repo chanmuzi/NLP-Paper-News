@@ -1,8 +1,38 @@
 {
   "version": 1,
-  "last_updated": "2026-06-06T07:55:30.932Z",
-  "total_items": 1814,
+  "last_updated": "2026-06-07T05:46:03.728Z",
+  "total_items": 1815,
   "items": [
+    {
+      "id": "uc-berkeley-agents-last-exam",
+      "date": "2026-06-W01",
+      "year": "2026",
+      "month": "6",
+      "week": "1",
+      "type": "paper",
+      "org": "UC Berkeley",
+      "title": "Agents' Last Exam",
+      "url": "https://arxiv.org/abs/2606.05405",
+      "bullets": [
+        {
+          "text": "벤치마크 점수와 실제 경제적 가치 워크플로우 성과 간 괴리 문제 제기, GDP 관련 실무 임팩트 측정 공백 지적",
+          "level": 1
+        },
+        {
+          "text": "250명 이상 산업 전문가와 협업해 13개 산업 클러스터·55개 세부 분야(O*NET/SOC 2018 직무 분류)에 걸친 1,000개 이상 검증가능 장기 과제 구성",
+          "level": 1
+        },
+        {
+          "text": "최고 난이도 tier에서 평균 full pass rate 2.6%로 saturation과 거리 먼 결과, AI 에이전트 개선 여지 큼",
+          "level": 1
+        },
+        {
+          "text": "신규 워크플로우 추가로 과제 풀 지속 확장되는 living benchmark로 설계",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "national-university-of-singapore-self-evaluation-is-already-there-eliciting-latent-judge-calibration",
       "date": "2026-06-W01",
@@ -41322,8 +41352,8 @@
     }
   ],
   "stats": {
-    "total": 1814,
-    "paper": 1077,
+    "total": 1815,
+    "paper": 1078,
     "dev": 695,
     "news": 42
   }
