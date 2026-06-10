@@ -1,8 +1,110 @@
 {
   "version": 1,
-  "last_updated": "2026-06-07T05:46:03.728Z",
-  "total_items": 1815,
+  "last_updated": "2026-06-10T04:44:15.582Z",
+  "total_items": 1818,
   "items": [
+    {
+      "id": "xiaomi-mimo-v25-pro-ultraspeed",
+      "date": "2026-06-W02",
+      "year": "2026",
+      "month": "6",
+      "week": "2",
+      "type": "dev",
+      "org": "Xiaomi",
+      "title": "MiMo-V2.5-Pro-UltraSpeed",
+      "url": "https://mimo.xiaomi.com/blog/mimo-tilert-1000tps",
+      "bullets": [
+        {
+          "text": "TileRT와 협업해 1조 파라미터 모델에서 최초로 1,000 tokens/s 디코딩 돌파, 최대 약 1,200 tokens/s 달성",
+          "level": 1
+        },
+        {
+          "text": "MoE Expert만 FP4 양자화, DFlash 블록 단위 병렬 예측 speculative decoding, TileRT persistent kernel 런타임 3계층 최적화",
+          "level": 1
+        },
+        {
+          "text": "전용 하드웨어 없이 표준 8-GPU 상용 노드 단일 구성으로 기존 대비 약 10배 생성 속도",
+          "level": 1
+        },
+        {
+          "text": "API 가격은 기존 MiMo-V2.5-Pro의 3배, 6/9~6/23 신청 기반 한정 트라이얼 제공",
+          "level": 1
+        },
+        {
+          "text": "병렬 추론 경로·코딩 에이전트 가속·실시간 의사결정 루프 등 속도가 효율 지표를 넘어 활용 범위 확장",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "google-gemini-35-live-translate",
+      "date": "2026-06-W02",
+      "year": "2026",
+      "month": "6",
+      "week": "2",
+      "type": "news",
+      "org": "Google",
+      "title": "Gemini 3.5 Live Translate",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-live-3-5-translate/",
+      "bullets": [
+        {
+          "text": "70개 이상 언어 실시간 speech-to-speech 번역 오디오 모델 공개",
+          "level": 1
+        },
+        {
+          "text": "화자의 억양·속도·음높이 보존하는 자연스러운 음성 출력, 말하는 도중 번역해 수 초 내 동기 유지",
+          "level": 1
+        },
+        {
+          "text": "자동 언어 감지·소음 환경 강건성 지원, 모든 오디오에 SynthID 워터마크 삽입",
+          "level": 1
+        },
+        {
+          "text": "개발자는 Gemini Live API·AI Studio 퍼블릭 프리뷰, Google Meet 기업 프라이빗 프리뷰, Google Translate 앱 순차 배포",
+          "level": 1
+        },
+        {
+          "text": "2,000개 이상 언어 조합으로 비즈니스 통화·실시간 통역 등 근실시간 다국어 소통 구현",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "anthropic-claude-fable-5-mythos-5",
+      "date": "2026-06-W02",
+      "year": "2026",
+      "month": "6",
+      "week": "2",
+      "type": "news",
+      "org": "Anthropic",
+      "title": "Claude Fable 5 & Mythos 5",
+      "url": "https://www.anthropic.com/news/claude-fable-5-mythos-5",
+      "bullets": [
+        {
+          "text": "Mythos-class 최상위 모델 Fable 5(일반 공개)·Mythos 5(제한 공개) 동시 출시",
+          "level": 1
+        },
+        {
+          "text": "코딩·금융·물리 연구·추론 벤치마크 전반 최고 점수, Stripe 코드베이스 마이그레이션을 수개월에서 수일로 단축",
+          "level": 1
+        },
+        {
+          "text": "스크린샷에서 웹앱 복원하는 SOTA 비전, 수백만 토큰 장문맥 유지, Mythos 5는 단백질 설계 약 10배 가속",
+          "level": 1
+        },
+        {
+          "text": "가격 입력 100만 토큰당 $10·출력 $50로 기존 절반 이하, API 즉시 제공·구독 플랜은 6/22까지 순차 적용",
+          "level": 1
+        },
+        {
+          "text": "사이버보안·생물학·증류 위험 신규 안전 분류기 적용한 Mythos-class 최초의 안전한 일반 공개",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "uc-berkeley-agents-last-exam",
       "date": "2026-06-W01",
@@ -41352,9 +41454,9 @@
     }
   ],
   "stats": {
-    "total": 1815,
+    "total": 1818,
     "paper": 1078,
-    "dev": 695,
-    "news": 42
+    "dev": 696,
+    "news": 44
   }
 }
