@@ -1,8 +1,72 @@
 {
   "version": 1,
-  "last_updated": "2026-06-10T04:44:15.582Z",
-  "total_items": 1818,
+  "last_updated": "2026-06-11T07:41:09.910Z",
+  "total_items": 1820,
   "items": [
+    {
+      "id": "google-the-last-human-written-paper-agent-native-research-artifacts",
+      "date": "2026-06-W02",
+      "year": "2026",
+      "month": "6",
+      "week": "2",
+      "type": "paper",
+      "org": "Google",
+      "title": "The Last Human-Written Paper: Agent-Native Research Artifacts",
+      "url": "https://arxiv.org/abs/2604.24658",
+      "bullets": [
+        {
+          "text": "AI 에이전트가 논문을 이해·재현할 때 발생하는 두 가지 비용(실패한 실험을 버리는 'storytelling tax', 사람은 추론 가능하지만 에이전트는 못 하는 구현 세부의 누락 'engineering tax') 문제 제기",
+          "level": 1
+        },
+        {
+          "text": "전통적 논문을 대체하는 기계 실행형 연구 패키지 Agent-Native Research Artifact(ARA) 제안: 과학적 논리·완전 명세 실행 코드·실패 시도를 보존한 exploration graph·원시 출력에 근거한 evidence 4개 레이어로 구성",
+          "level": 1
+        },
+        {
+          "text": "Live Research Manager(개발 결정 기록), ARA Compiler(기존 PDF·레포 변환), ARA-native 리뷰 시스템(객관적 검증 자동화) 등 보조 메커니즘 동반",
+          "level": 2
+        },
+        {
+          "text": "QA 정확도 72.4%→93.7%, 재현 성공률 57.4%→64.4%로 향상, 보존된 실패 흔적이 확장 과제 진행을 가속하나 때로 기존 시도 밖 탐색을 제약",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "google-diffusiongemma-4x-faster-text-generation",
+      "date": "2026-06-W02",
+      "year": "2026",
+      "month": "6",
+      "week": "2",
+      "type": "dev",
+      "org": "Google",
+      "title": "DiffusionGemma: 4x faster text generation",
+      "url": "https://blog.google/innovation-and-ai/technology/developers-tools/diffusion-gemma-faster-text-generation/",
+      "bullets": [
+        {
+          "text": "텍스트 diffusion 방식을 적용해 GPU 기준 최대 4배 빠른 생성 속도를 내는 실험적 오픈소스 모델 공개 (NVIDIA H100에서 1,000 토큰/초 이상)",
+          "level": 1
+        },
+        {
+          "text": "26B MoE 구조로 active 파라미터는 3.8B만 사용, 양자화 시 18GB VRAM에 적재 가능",
+          "level": 1
+        },
+        {
+          "text": "토큰을 순차 생성하는 autoregressive 방식 대신 256토큰 블록을 한 번에 생성하고 반복적으로 정제하는 구조 채택",
+          "level": 1
+        },
+        {
+          "text": "bidirectional attention 기반으로 인라인 편집·비선형 텍스트 구조에 유리, 블록 전체를 평가해 self-refinement 수행",
+          "level": 2
+        },
+        {
+          "text": "품질보다 속도가 중요한 로컬·실시간 워크플로우를 겨냥, 최고 품질이 필요하면 표준 Gemma 4 사용 권장 (Apache 2.0, MLX·vLLM·HF Transformers 지원)",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "xiaomi-mimo-v25-pro-ultraspeed",
       "date": "2026-06-W02",
@@ -41454,9 +41518,9 @@
     }
   ],
   "stats": {
-    "total": 1818,
-    "paper": 1078,
-    "dev": 696,
+    "total": 1820,
+    "paper": 1079,
+    "dev": 697,
     "news": 44
   }
 }
