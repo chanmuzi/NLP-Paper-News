@@ -1,8 +1,38 @@
 {
   "version": 1,
-  "last_updated": "2026-06-11T07:41:09.910Z",
-  "total_items": 1820,
+  "last_updated": "2026-06-13T10:57:12.025Z",
+  "total_items": 1821,
   "items": [
+    {
+      "id": "roblox-cube-roblox-foundation-model-for-3d-intelligence",
+      "date": "2026-06-W02",
+      "year": "2026",
+      "month": "6",
+      "week": "2",
+      "type": "dev",
+      "org": "Roblox",
+      "title": "Cube: Roblox Foundation Model for 3D Intelligence",
+      "url": "https://github.com/Roblox/cube",
+      "bullets": [
+        {
+          "text": "3D 콘텐츠 생성을 위한 생성형 AI 파운데이션 모델 프로젝트로, 3D 오브젝트·씬 제작부터 캐릭터 리깅, 프로그래밍 스크립트 생성까지 지원 목표",
+          "level": 1
+        },
+        {
+          "text": "텍스트→3D 형상 생성 모델로, VQ-VAE 기반 shape tokenization과 auto-regressive geometry 합성을 사용해 자연어 프롬프트로 3D 에셋 생성, OBJ 등 표준 포맷으로 게임 엔진에 바로 export",
+          "level": 1
+        },
+        {
+          "text": "Cube 3D v0.5(2025.07)는 fidelity 향상과 bounding box conditioning 도입, CubePart(2026.05)는 사용자 정의 시맨틱 스키마 기반의 open-vocabulary·part-controllable 모듈형 메시 생성 추가",
+          "level": 1
+        },
+        {
+          "text": "16~24GB VRAM 요구, NVIDIA L40S·H100·A100 및 Apple Silicon 지원, Hugging Face·Python 라이브러리·CLI로 제공",
+          "level": 2
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "google-the-last-human-written-paper-agent-native-research-artifacts",
       "date": "2026-06-W02",
@@ -41518,9 +41548,9 @@
     }
   ],
   "stats": {
-    "total": 1820,
+    "total": 1821,
     "paper": 1079,
-    "dev": 697,
+    "dev": 698,
     "news": 44
   }
 }
