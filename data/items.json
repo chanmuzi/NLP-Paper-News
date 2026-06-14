@@ -1,8 +1,34 @@
 {
   "version": 1,
-  "last_updated": "2026-06-13T10:57:12.025Z",
-  "total_items": 1821,
+  "last_updated": "2026-06-14T03:32:32.220Z",
+  "total_items": 1822,
   "items": [
+    {
+      "id": "minimax-minimax-sparse-attention",
+      "date": "2026-06-W02",
+      "year": "2026",
+      "month": "6",
+      "week": "2",
+      "type": "paper",
+      "org": "MiniMax",
+      "title": "MiniMax Sparse Attention",
+      "url": "https://arxiv.org/abs/2606.13392",
+      "bullets": [
+        {
+          "text": "에이전트 워크플로우·레포 단위 추론에 필요한 수십만~수백만 토큰의 초장문 컨텍스트 처리에서 표준 softmax attention의 quadratic 비용이 배포 규모에선 비현실적이라는 문제 제기",
+          "level": 1
+        },
+        {
+          "text": "Grouped Query Attention 기반 블록 단위 sparse attention(MSA) 제안: 그룹별 top-k KV 블록을 점수화·선택하는 경량 Index Branch와 선택된 블록만 정확히 attention하는 Main Branch로 구성, exp-free 선택·KV-outer sparse attention GPU 커널로 최적화",
+          "level": 1
+        },
+        {
+          "text": "1M 컨텍스트에서 토큰당 attention 연산 28.4배 절감, H800 기준 prefill 14.2배·decoding 7.6배 가속하면서 표준 GQA와 동등 성능 유지 (109B 멀티모달 모델 검증, GitHub·Hugging Face 공개)",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "roblox-cube-roblox-foundation-model-for-3d-intelligence",
       "date": "2026-06-W02",
@@ -41548,8 +41574,8 @@
     }
   ],
   "stats": {
-    "total": 1821,
-    "paper": 1079,
+    "total": 1822,
+    "paper": 1080,
     "dev": 698,
     "news": 44
   }
