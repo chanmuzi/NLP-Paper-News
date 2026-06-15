@@ -1,8 +1,86 @@
 {
   "version": 1,
-  "last_updated": "2026-06-14T03:32:32.220Z",
-  "total_items": 1822,
+  "last_updated": "2026-06-15T13:29:32.647Z",
+  "total_items": 1825,
   "items": [
+    {
+      "id": "moonshot-ai-kimi-k27-code",
+      "date": "2026-06-W03",
+      "year": "2026",
+      "month": "6",
+      "week": "3",
+      "type": "dev",
+      "org": "Moonshot AI",
+      "title": "Kimi K2.7-Code",
+      "url": "https://huggingface.co/moonshotai/Kimi-K2.7-Code",
+      "bullets": [
+        {
+          "text": "K2.6 기반 코딩 특화 에이전트 모델로, 1T MoE(활성 32B)·256K 컨텍스트·MoonViT(400M) 비전 인코더 탑재",
+          "level": 1
+        },
+        {
+          "text": "thinking-token 사용량 약 30% 절감, multi-turn 추론을 유지하는 preserve thinking 모드와 interleaved thinking·멀티스텝 tool calling 지원",
+          "level": 1
+        },
+        {
+          "text": "Kimi Code Bench v2 50.9→62.0, MCP Mark Verified 72.8→81.1로 개선하며 GPT-5.5·Claude Opus 4.8와 경쟁",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "ant-group-abot-earth-05-generative-3d-earth-model",
+      "date": "2026-06-W03",
+      "year": "2026",
+      "month": "6",
+      "week": "3",
+      "type": "paper",
+      "org": "Ant Group",
+      "title": "ABot-Earth 0.5: Generative 3D Earth Model",
+      "url": "https://arxiv.org/abs/2606.09967",
+      "bullets": [
+        {
+          "text": "위성 이미지만을 조건으로 지구 규모의 사실적 3D 환경을 생성하는 native 3D Gaussian Splatting(3DGS) 생성 프레임워크 공개",
+          "level": 1
+        },
+        {
+          "text": "multi-LOD 디코딩으로 계층적 스트리밍, sliding-window 추론으로 타일 간 이음새 아티팩트 저감, 위성 영상 도메인 갭은 VLM으로 보정",
+          "level": 1
+        },
+        {
+          "text": "1km²당 10분 미만 생성, 190여 개국 300여 개 도시 커버, FID 16.1 기록(이전 최고 69.5)으로 Google Earth 대비 우수한 심미 품질 입증",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "kuaishou-kwai-keye-vl-20-technical-report",
+      "date": "2026-06-W03",
+      "year": "2026",
+      "month": "6",
+      "week": "3",
+      "type": "paper",
+      "org": "Kuaishou",
+      "title": "Kwai Keye-VL-2.0 Technical Report",
+      "url": "https://arxiv.org/abs/2606.10651",
+      "bullets": [
+        {
+          "text": "30B MoE(활성 3B) 멀티모달 모델로, 시간 단위 장편 영상 이해의 연산·메모리 병목과 멀티태스크 정렬 시 추론 능력 소실 문제 동시 해결",
+          "level": 1
+        },
+        {
+          "text": "DeepSeek Sparse Attention(DSA)을 GQA 구조에 적용해 무손실 256K 컨텍스트 처리, native-resolution 비전 인코딩과 Cross-Modal Multi-Teacher On-Policy Distillation(MOPD) 도입",
+          "level": 1
+        },
+        {
+          "text": "temporal grounding(ActivityNet·QVHighlights 등) SOTA 달성, LongVideoBench 74.1%·LiveCodeBench v6 64.2% 기록하며 dense attention 대비 추론 오버헤드 대폭 절감",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "minimax-minimax-sparse-attention",
       "date": "2026-06-W02",
@@ -41574,9 +41652,9 @@
     }
   ],
   "stats": {
-    "total": 1822,
-    "paper": 1080,
-    "dev": 698,
+    "total": 1825,
+    "paper": 1082,
+    "dev": 699,
     "news": 44
   }
 }
