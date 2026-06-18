@@ -1,8 +1,138 @@
 {
   "version": 1,
-  "last_updated": "2026-06-15T13:29:32.647Z",
-  "total_items": 1825,
+  "last_updated": "2026-06-18T01:25:07.904Z",
+  "total_items": 1830,
   "items": [
+    {
+      "id": "alibaba-qwen-robot-suite",
+      "date": "2026-06-W03",
+      "year": "2026",
+      "month": "6",
+      "week": "3",
+      "type": "dev",
+      "org": "Alibaba",
+      "title": "Qwen Robot Suite",
+      "url": "https://qwen.ai/blog?id=qwen-robotsuite",
+      "bullets": [
+        {
+          "text": "Alibaba Tongyi Lab의 첫 로보틱스용 embodied AI 모델 suite, 3개 foundation model로 구성",
+          "level": 1
+        },
+        {
+          "text": "RobotNav(vision-language 내비게이션)·RobotWorld(video world model)·RobotManip(Qwen3.5-4B VL 기반 VLA, 38,100시간 데이터 학습)",
+          "level": 1
+        },
+        {
+          "text": "RobotNav가 VLN-CE RxR 76.5% 성공률·EVT-Bench 90% 추적 정확도 기록, RoboChallenge Table30-v1 벤치 선두",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "google-cloud-the-open-knowledge-format-okf",
+      "date": "2026-06-W03",
+      "year": "2026",
+      "month": "6",
+      "week": "3",
+      "type": "dev",
+      "org": "Google Cloud",
+      "title": "The Open Knowledge Format (OKF)",
+      "url": "https://cloud.google.com/blog/products/data-analytics/how-the-open-knowledge-format-can-improve-data-sharing?hl=en",
+      "bullets": [
+        {
+          "text": "LLM-wiki 패턴을 표준화한 vendor-neutral 오픈 스펙 v0.1 공개",
+          "level": 1
+        },
+        {
+          "text": "YAML frontmatter + Markdown 파일과 디렉터리 계층으로 메타데이터·컨텍스트 표현, markdown 링크로 knowledge graph 구성",
+          "level": 1
+        },
+        {
+          "text": "producer/consumer 독립적인 format-as-contract 지향, git·파일시스템 이식 가능, Knowledge Catalog 제품에 통합",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "minimax-ai-minimax-m3",
+      "date": "2026-06-W03",
+      "year": "2026",
+      "month": "6",
+      "week": "3",
+      "type": "dev",
+      "org": "MiniMax AI",
+      "title": "MiniMax-M3",
+      "url": "https://huggingface.co/MiniMaxAI/MiniMax-M3",
+      "bullets": [
+        {
+          "text": "428B 파라미터(활성 약 23B) native multimodal MoE 모델, 1M context 지원",
+          "level": 1
+        },
+        {
+          "text": "MiniMax Sparse Attention(MSA)로 M2 대비 1M context에서 prefill 9배·decode 15배 가속",
+          "level": 1
+        },
+        {
+          "text": "텍스트·이미지·비디오 동시 학습, coding·agentic 벤치에서 frontier급 성능 시연",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "yuxinlu1-gemma-4-12b-coder-fable5-composer25-gguf",
+      "date": "2026-06-W03",
+      "year": "2026",
+      "month": "6",
+      "week": "3",
+      "type": "dev",
+      "org": "yuxinlu1",
+      "title": "Gemma-4-12B-Coder Fable5 Composer2.5 (GGUF)",
+      "url": "https://huggingface.co/yuxinlu1/gemma-4-12B-coder-fable5-composer2.5-v1-GGUF",
+      "bullets": [
+        {
+          "text": "Google gemma-4-12B-it 기반 코딩 특화 fine-tune, GGUF 양자화로 로컬 실행 지원",
+          "level": 1
+        },
+        {
+          "text": "유닛테스트 통과 Python 데이터로 학습, Composer 2.5 실제 추론 trace와 Fable 5 합성 보정 trace 결합",
+          "level": 1
+        },
+        {
+          "text": "Q2_K(4.5GB)~Q8_0(12.7GB) 양자화 제공·Q4_K_M 권장, 256K context, Apache 2.0 라이선스",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "zai-glm-52",
+      "date": "2026-06-W03",
+      "year": "2026",
+      "month": "6",
+      "week": "3",
+      "type": "dev",
+      "org": "Z.ai",
+      "title": "GLM-5.2",
+      "url": "https://huggingface.co/zai-org/GLM-5.2",
+      "bullets": [
+        {
+          "text": "753B 파라미터 flagship LLM, 1M 토큰 context 안정 지원, MIT 라이선스로 공개",
+          "level": 1
+        },
+        {
+          "text": "IndexShare 기술로 sparse attention layer 간 indexer 재사용 → 1M context에서 연산 약 2.9배 절감",
+          "level": 1
+        },
+        {
+          "text": "SWE-bench Pro 62.1(vs 58.4) 등 reasoning·coding·agentic 벤치에서 GLM-5.1 대비 향상, speculative decoding 토큰 수용률 최대 20% 개선",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "moonshot-ai-kimi-k27-code",
       "date": "2026-06-W03",
@@ -41652,9 +41782,9 @@
     }
   ],
   "stats": {
-    "total": 1825,
+    "total": 1830,
     "paper": 1082,
-    "dev": 699,
+    "dev": 704,
     "news": 44
   }
 }
