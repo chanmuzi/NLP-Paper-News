@@ -1,8 +1,68 @@
 {
   "version": 1,
-  "last_updated": "2026-06-18T01:25:07.904Z",
-  "total_items": 1830,
+  "last_updated": "2026-06-20T13:09:31.288Z",
+  "total_items": 1832,
   "items": [
+    {
+      "id": "uc-berkeley-do-as-i-do-dexterous-manipulation-data-from-everyday-human-videos",
+      "date": "2026-06-W03",
+      "year": "2026",
+      "month": "6",
+      "week": "3",
+      "type": "paper",
+      "org": "UC Berkeley",
+      "title": "Do as I Do: Dexterous Manipulation Data from Everyday Human Videos",
+      "url": "https://arxiv.org/abs/2606.19333",
+      "bullets": [
+        {
+          "text": "텔레오퍼레이션·시뮬레이션의 비용 한계를 넘어, 풍부한 일상 RGB 인간 영상에서 로봇 실행 가능한 dexterous manipulation 데이터 추출",
+          "level": 1
+        },
+        {
+          "text": "2단계 파이프라인 — SAM 3D·HaWoR 기반 3D 손-물체 상호작용 복원(guided diffusion으로 물체 pose 추적) 후 시뮬레이션 내 dynamics-aware 최적화로 retargeting",
+          "level": 1
+        },
+        {
+          "text": "in-the-wild 영상에서 71% 성공률 달성(베이스라인 25%), DexYCB·HOI4D 벤치마크에서 기존 연구 상회",
+          "level": 1
+        },
+        {
+          "text": "양손 UR3e/Sharpa Wave 로봇으로 10개 실제 조작 태스크 실증, 인터넷 영상 중 약 5%만 학습에 충분한 품질로 분석",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "midjourney-a-new-era-of-midjourney",
+      "date": "2026-06-W03",
+      "year": "2026",
+      "month": "6",
+      "week": "3",
+      "type": "dev",
+      "org": "Midjourney",
+      "title": "A New Era of Midjourney",
+      "url": "https://www.midjourney.com/medical/blogpost",
+      "bullets": [
+        {
+          "text": "AI 이미지 생성으로 알려진 Midjourney가 의료 사업부 Midjourney Medical 출범 및 첫 하드웨어 제품 공개",
+          "level": 1
+        },
+        {
+          "text": "Full Body Ultrasonic Computational Tomography 스캐너 — 8,960개 트랜스듀서, 방사선·자기장 없이 약 60초 만에 전신 영상 생성",
+          "level": 1
+        },
+        {
+          "text": "회당 수 달러 수준 비용, 2027년 말 샌프란시스코 Union Square의 'Midjourney Spa'에서 데뷔 예정",
+          "level": 1
+        },
+        {
+          "text": "2031년까지 전 세계 5만 대 스캐너·월 10억 건 스캔 목표, 단 FDA 진단 승인은 미취득 상태로 규제 불요한 체성분 맵부터 단계적 확대",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "alibaba-qwen-robot-suite",
       "date": "2026-06-W03",
@@ -41782,9 +41842,9 @@
     }
   ],
   "stats": {
-    "total": 1830,
-    "paper": 1082,
-    "dev": 704,
+    "total": 1832,
+    "paper": 1083,
+    "dev": 705,
     "news": 44
   }
 }
