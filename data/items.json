@@ -1,8 +1,38 @@
 {
   "version": 1,
-  "last_updated": "2026-06-20T13:09:31.288Z",
-  "total_items": 1832,
+  "last_updated": "2026-06-23T15:02:06.069Z",
+  "total_items": 1833,
   "items": [
+    {
+      "id": "sakana-ai-sakana-fugu",
+      "date": "2026-06-W04",
+      "year": "2026",
+      "month": "6",
+      "week": "4",
+      "type": "dev",
+      "org": "Sakana AI",
+      "title": "Sakana Fugu",
+      "url": "https://sakana.ai/fugu-release/",
+      "bullets": [
+        {
+          "text": "여러 모델을 내부에서 조율하는 멀티 에이전트 오케스트레이션 시스템을 단일 foundation model·통합 API 형태로 공개",
+          "level": 1
+        },
+        {
+          "text": "Fugu·Fugu Ultra 두 버전 제공, Fugu Ultra는 Anthropic Fable 5·Mythos Preview 등 frontier 모델과 엔지니어링·추론 벤치마크에서 대등한 성능 주장",
+          "level": 1
+        },
+        {
+          "text": "작업을 직접 처리할지 전문 모델에 위임할지 동적으로 판단, 위임 시점·에이전트 간 통신·결과 종합을 학습한 LLM이 코디네이터 역할 수행",
+          "level": 1
+        },
+        {
+          "text": "하부 모델 풀을 서비스 중단 없이 교체 가능, vendor lock-in·수출 통제 등 지정학 리스크에 대한 인프라 독립성 강조",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "uc-berkeley-do-as-i-do-dexterous-manipulation-data-from-everyday-human-videos",
       "date": "2026-06-W03",
@@ -41842,9 +41872,9 @@
     }
   ],
   "stats": {
-    "total": 1832,
+    "total": 1833,
     "paper": 1083,
-    "dev": 705,
+    "dev": 706,
     "news": 44
   }
 }
