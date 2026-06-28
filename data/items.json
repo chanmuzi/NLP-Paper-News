@@ -1,8 +1,98 @@
 {
   "version": 1,
-  "last_updated": "2026-06-23T15:02:06.069Z",
-  "total_items": 1833,
+  "last_updated": "2026-06-28T11:07:42.955Z",
+  "total_items": 1836,
   "items": [
+    {
+      "id": "anthropic-introducing-claude-tag",
+      "date": "2026-06-W04",
+      "year": "2026",
+      "month": "6",
+      "week": "4",
+      "type": "news",
+      "org": "Anthropic",
+      "title": "Introducing Claude Tag",
+      "url": "https://www.anthropic.com/news/introducing-claude-tag",
+      "bullets": [
+        {
+          "text": "Claude를 Slack 팀 멤버로 통합해 @Claude 멘션으로 누구나 호출 가능한 협업 AI 어시스턴트 Claude Tag 공개",
+          "level": 1
+        },
+        {
+          "text": "채널 단위로 하나의 Claude가 모두와 상호작용하며 공유 맥락 축적, 관리자가 채널·도구·데이터·코드베이스 접근을 세분화 제어",
+          "level": 1
+        },
+        {
+          "text": "작업 자율 스케줄링·장기 비동기 수행 및 정체 작업 후속 처리 등 ambient 동작 지원, use case별 분리된 메모리·권한 보유",
+          "level": 1
+        },
+        {
+          "text": "Opus 4.8 기반, 자사 제품팀 코드의 65%를 내부 버전이 생성 — Claude Enterprise·Team 베타 제공",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "alibaba-qwen-qwen-agentworld-language-world-models-for-general-agents",
+      "date": "2026-06-W04",
+      "year": "2026",
+      "month": "6",
+      "week": "4",
+      "type": "dev",
+      "org": "Alibaba Qwen",
+      "title": "Qwen-AgentWorld: Language World Models for General Agents",
+      "url": "https://qwen.ai/blog?id=qwen-agentworld",
+      "bullets": [
+        {
+          "text": "단일 모델로 7개 agent 환경(MCP·Search·Terminal·SWE·Web·OS·Android)을 시뮬레이션하는 native language world model 공개",
+          "level": 1
+        },
+        {
+          "text": "다음 행동이 아니라 다음 observation 예측을 학습 목표로 채택 — 환경 모델링을 처음부터 학습 대상으로 설정",
+          "level": 1
+        },
+        {
+          "text": "397B(A17B) MoE 모델이 AgentWorldBench에서 GPT-5.4·Claude Opus 4.8·Gemini 3.1 Pro 능가, 최고 시뮬레이션 품질 달성",
+          "level": 1
+        },
+        {
+          "text": "Apache 2.0로 가중치·AgentWorldBench 벤치마크를 Hugging Face·ModelScope에 공개",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "openai-previewing-gpt-56-sol-a-next-generation-model",
+      "date": "2026-06-W04",
+      "year": "2026",
+      "month": "6",
+      "week": "4",
+      "type": "news",
+      "org": "OpenAI",
+      "title": "Previewing GPT-5.6 Sol: a next-generation model",
+      "url": "https://openai.com/index/previewing-gpt-5-6-sol/",
+      "bullets": [
+        {
+          "text": "플래그십 GPT-5.6 Sol과 함께 저비용 옵션 Terra, 최고속·고효율 Luna로 구성된 GPT-5.6 시리즈 limited preview 공개",
+          "level": 1
+        },
+        {
+          "text": "소프트웨어 엔지니어링·computer use·과학 연구·cybersecurity에서 프런티어 향상, 특히 coding·biology·cyber agentic 능력 강화",
+          "level": 1
+        },
+        {
+          "text": "preview 기간엔 ChatGPT 미제공, API·Codex로 신뢰 파트너에 한정 제공 — 향후 수주 내 일반 제공 예정",
+          "level": 1
+        },
+        {
+          "text": "역대 최강 safety stack 적용, 미국 정부와 사전 협의 후 요청에 따라 소규모 한정 공개로 시작",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "sakana-ai-sakana-fugu",
       "date": "2026-06-W04",
@@ -41872,9 +41962,9 @@
     }
   ],
   "stats": {
-    "total": 1833,
+    "total": 1836,
     "paper": 1083,
-    "dev": 706,
-    "news": 44
+    "dev": 707,
+    "news": 46
   }
 }
