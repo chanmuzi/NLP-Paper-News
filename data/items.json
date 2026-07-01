@@ -1,8 +1,98 @@
 {
   "version": 1,
-  "last_updated": "2026-06-28T11:07:42.955Z",
-  "total_items": 1836,
+  "last_updated": "2026-07-01T01:57:37.333Z",
+  "total_items": 1839,
   "items": [
+    {
+      "id": "anthropic-claude-science-과학자를-위한-ai-워크벤치",
+      "date": "2026-07-W01",
+      "year": "2026",
+      "month": "7",
+      "week": "1",
+      "type": "dev",
+      "org": "Anthropic",
+      "title": "Claude Science: 과학자를 위한 AI 워크벤치",
+      "url": "https://www.anthropic.com/news/claude-science-ai-workbench",
+      "bullets": [
+        {
+          "text": "분산된 과학 연구 도구·데이터베이스를 단일 환경으로 통합한 AI 워크벤치 공개",
+          "level": 1
+        },
+        {
+          "text": "그림·논문·3D 단백질 구조를 코드·메시지 이력과 함께 생성해 재현 가능한 산출물 제공",
+          "level": 1
+        },
+        {
+          "text": "유전체학·단백질체학 등 60개 이상 큐레이션된 skill·커넥터와 UniProt·PDB 등 DB 네이티브 연동",
+          "level": 1
+        },
+        {
+          "text": "로컬(macOS/Linux) 또는 SSH 원격 실행 지원, Pro·Max·Team·Enterprise 대상 베타 출시",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "university-of-washington-allen-institute-for-ai-agentic-abstention-do-agents-know-when-to-stop-inste",
+      "date": "2026-07-W01",
+      "year": "2026",
+      "month": "7",
+      "week": "1",
+      "type": "paper",
+      "org": "University of Washington · Allen Institute for AI",
+      "title": "Agentic Abstention: Do Agents Know When to Stop Instead of Act?",
+      "url": "https://arxiv.org/abs/2606.28733",
+      "bullets": [
+        {
+          "text": "LLM 에이전트가 작업 불가능 상황을 인지하고 행동을 멈춰야 할 시점을 판단하는 능력 평가",
+          "level": 1
+        },
+        {
+          "text": "상호작용 궤적을 재사용 가능한 중단 규칙으로 증류하는 convolve(Context Evolution) 기법 제안, 모델 파라미터 수정 없음",
+          "level": 1
+        },
+        {
+          "text": "대부분 에이전트가 abstention recall 50% 미만, 적시 중단은 평균 40% 미만으로 지속적 난제 확인",
+          "level": 1
+        },
+        {
+          "text": "WebShop에서 Llama-3.3-70B의 적시 recall 26.7%→57.4%로 대폭 개선",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "meta-ai-brain2qwerty-v2-비수술-뇌-텍스트-커뮤니케이션",
+      "date": "2026-07-W01",
+      "year": "2026",
+      "month": "7",
+      "week": "1",
+      "type": "dev",
+      "org": "Meta AI",
+      "title": "Brain2Qwerty v2: 비수술 뇌-텍스트 커뮤니케이션",
+      "url": "https://ai.meta.com/blog/brain2qwerty-brain-ai-human-communication/",
+      "bullets": [
+        {
+          "text": "MEG로 뇌 신호를 기록해 수술 없이 타이핑 의도를 텍스트로 디코딩하는 비침습 방식 공개",
+          "level": 1
+        },
+        {
+          "text": "9명 자원자의 약 22,000개 문장으로 학습, 전체 단어 정확도 61%·최고 참가자 78% 달성",
+          "level": 1
+        },
+        {
+          "text": "원시 뇌 신호 처리와 파인튜닝된 LLM의 의미 맥락 결합, 학습 데이터 증가에 따라 성능 향상",
+          "level": 1
+        },
+        {
+          "text": "전체 학습 코드 공개 및 Basque Center 협력으로 데이터셋 공개",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "anthropic-introducing-claude-tag",
       "date": "2026-06-W04",
@@ -41962,9 +42052,9 @@
     }
   ],
   "stats": {
-    "total": 1836,
-    "paper": 1083,
-    "dev": 707,
+    "total": 1839,
+    "paper": 1084,
+    "dev": 709,
     "news": 46
   }
 }
