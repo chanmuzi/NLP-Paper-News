@@ -1,8 +1,98 @@
 {
   "version": 1,
-  "last_updated": "2026-07-01T01:57:37.333Z",
-  "total_items": 1839,
+  "last_updated": "2026-07-02T02:18:33.979Z",
+  "total_items": 1842,
   "items": [
+    {
+      "id": "baai-orca-the-world-is-in-your-mind",
+      "date": "2026-07-W01",
+      "year": "2026",
+      "month": "7",
+      "week": "1",
+      "type": "paper",
+      "org": "BAAI",
+      "title": "Orca: The World is in Your Mind",
+      "url": "https://huggingface.co/papers/2606.30534",
+      "bullets": [
+        {
+          "text": "언어·이미지·행동을 개별 최적화하는 대신 통합 world state 표현 학습을 지향하는 world foundation model 제안",
+          "level": 1
+        },
+        {
+          "text": "Next-State-Prediction 모델링 채택 — 연속 영상에서 dense 전이를 배우는 unconscious learning과 언어 서술 이벤트로 sparse 전이를 배우는 conscious learning 결합",
+          "level": 1
+        },
+        {
+          "text": "12.5만 시간 영상·1.6억 이벤트 주석으로 학습, frozen 백본 + modality별 디코더 구조",
+          "level": 2
+        },
+        {
+          "text": "텍스트 생성(MVBench 등)에서 동급 VLM 능가, 이미지 예측 PRICE-V0.1 최고, 실로봇 조작도 최소 도메인 데이터로 전문 모델급 성능",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "alibaba-qwen-erase-then-delta-attention-decoupling-erase-and-write-addresses-in-delta-rule-linear-at",
+      "date": "2026-07-W01",
+      "year": "2026",
+      "month": "7",
+      "week": "1",
+      "type": "paper",
+      "org": "Alibaba Qwen",
+      "title": "Erase-then-Delta Attention: Decoupling Erase and Write Addresses in Delta-Rule Linear Attention",
+      "url": "https://arxiv.org/abs/2606.26560",
+      "bullets": [
+        {
+          "text": "Delta-rule linear attention이 현재 write 주소만 교정할 수 있어 다른 위치의 오래된 정보를 능동적으로 제거하지 못하는 한계 지적",
+          "level": 1
+        },
+        {
+          "text": "학습된 erase 방향으로 targeted erase를 먼저 수행한 뒤 표준 delta corrective write를 적용, erase와 write 주소를 분리하는 EDA 제안",
+          "level": 1
+        },
+        {
+          "text": "Dense 2.5B·MoE 25B-A2.8B 모델군에서 우수, 80B 토큰 long-context 학습에서 일관된 향상, 4k~128k 컨텍스트 평가 전반 최고 성능",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "nvidia-nemotron-labs-twotower-30b-a3b-base-bf16",
+      "date": "2026-07-W01",
+      "year": "2026",
+      "month": "7",
+      "week": "1",
+      "type": "dev",
+      "org": "NVIDIA",
+      "title": "Nemotron-Labs-TwoTower-30B-A3B-Base-BF16",
+      "url": "https://huggingface.co/nvidia/Nemotron-Labs-TwoTower-30B-A3B-Base-BF16",
+      "bullets": [
+        {
+          "text": "Context Tower(고정) + Denoiser Tower(학습)를 병렬 배치한 TwoTower 구조 공개, Mamba-2/Transformer/MoE 하이브리드 백본 기반",
+          "level": 1
+        },
+        {
+          "text": "총 ~60B 파라미터, 토큰당 활성 ~3B(128 experts 중 6개 활성)",
+          "level": 2
+        },
+        {
+          "text": "Denoiser가 mask diffusion으로 토큰 블록을 병렬 생성 — 순차 디코딩 대신 block-wise 병렬 예측으로 추론 가속",
+          "level": 1
+        },
+        {
+          "text": "기본 설정(confidence 0.8, block 16)에서 AR 베이스라인 벤치마크 품질 98.7% 유지하면서 wall-clock 처리량 2.42배 달성",
+          "level": 1
+        },
+        {
+          "text": "약 2.1T 토큰 학습, mask diffusion·mock-AR·표준 AR 세 가지 생성 모드 지원, 상업적 이용 허용",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "anthropic-claude-science-과학자를-위한-ai-워크벤치",
       "date": "2026-07-W01",
@@ -42052,9 +42142,9 @@
     }
   ],
   "stats": {
-    "total": 1839,
-    "paper": 1084,
-    "dev": 709,
+    "total": 1842,
+    "paper": 1086,
+    "dev": 710,
     "news": 46
   }
 }
