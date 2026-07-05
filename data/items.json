@@ -1,8 +1,46 @@
 {
   "version": 1,
-  "last_updated": "2026-07-02T02:18:33.979Z",
-  "total_items": 1842,
+  "last_updated": "2026-07-05T11:50:29.878Z",
+  "total_items": 1843,
   "items": [
+    {
+      "id": "xai-introducing-the-voice-agent-builder",
+      "date": "2026-07-W01",
+      "year": "2026",
+      "month": "7",
+      "week": "1",
+      "type": "dev",
+      "org": "xAI",
+      "title": "Introducing the Voice Agent Builder",
+      "url": "https://x.ai/news/grok-voice-agent-builder",
+      "bullets": [
+        {
+          "text": "Grok Voice 기반 프로덕션 음성 에이전트를 2분 내 구축하는 노코드 플랫폼 베타 공개",
+          "level": 1
+        },
+        {
+          "text": "통화 흐름을 자연어로 기술하고 문서·툴·가드레일을 붙이는 방식",
+          "level": 2
+        },
+        {
+          "text": "80종 이상 내장 음성 또는 약 2분 오디오로 만든 브랜드 음성 클론 지원, 25개 이상 언어 대응",
+          "level": 1
+        },
+        {
+          "text": "계정마다 무료 전화번호 제공, 기존 번호는 major 통신사 SIP 직접 연동 가능",
+          "level": 1
+        },
+        {
+          "text": "telephony·knowledge retrieval·tools·guardrails·observability를 단일 인터페이스로 통합, sub-second 지연의 speech-to-speech 구현",
+          "level": 1
+        },
+        {
+          "text": "API 요금 $0.05/분에 음성 포함·별도 플랫폼 수수료 없음, 무료 번호 telephony는 분당 $0.01 추가",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "baai-orca-the-world-is-in-your-mind",
       "date": "2026-07-W01",
@@ -42142,9 +42180,9 @@
     }
   ],
   "stats": {
-    "total": 1842,
+    "total": 1843,
     "paper": 1086,
-    "dev": 710,
+    "dev": 711,
     "news": 46
   }
 }
