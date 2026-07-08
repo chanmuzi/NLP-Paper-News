@@ -1,8 +1,46 @@
 {
   "version": 1,
-  "last_updated": "2026-07-05T11:50:29.878Z",
-  "total_items": 1843,
+  "last_updated": "2026-07-08T12:17:25.697Z",
+  "total_items": 1844,
   "items": [
+    {
+      "id": "stanford-university-automem-automated-learning-of-memory-as-a-cognitive-skill",
+      "date": "2026-07-W02",
+      "year": "2026",
+      "month": "7",
+      "week": "2",
+      "type": "paper",
+      "org": "Stanford University",
+      "title": "AutoMem: Automated Learning of Memory as a Cognitive Skill",
+      "url": "https://arxiv.org/abs/2607.01224",
+      "bullets": [
+        {
+          "text": "LLM의 고정된 context window를 working memory 한계로 보고, 메모리 관리를 학습 가능한 인지 스킬(metamemory)로 정의한 프레임워크 제안",
+          "level": 1
+        },
+        {
+          "text": "read·write·search·append·create 등 메모리 연산을 파일시스템 인터페이스 기반의 1급 액션으로 취급, 두 개의 outer loop로 최적화",
+          "level": 1
+        },
+        {
+          "text": "Outer-loop 1(Structure): meta-LLM이 전체 에피소드 trace를 검토해 프롬프트·파일 스키마·액션 어휘 등 scaffold를 반복 수정",
+          "level": 2
+        },
+        {
+          "text": "Outer-loop 2(Proficiency): gameplay 모델은 동결한 채 에이전트의 우수한 메모리 결정으로 전용 memory specialist 모델을 지도학습",
+          "level": 2
+        },
+        {
+          "text": "Qwen2.5-32B-Instruct 기반, task-action 가중치 수정 없이 메모리 최적화만으로 3개 게임에서 2~4배 성능 향상 (Crafter 25%→51.36%, MiniHack 7.5%→30%, NetHack 0.42%→1.85%)",
+          "level": 1
+        },
+        {
+          "text": "최적화된 32B 모델이 Qwen2.5-72B를 능가하고 Claude Opus 4.5·Gemini 3.1 Pro Thinking 등 프런티어 시스템과 대등한 성능 도달",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "xai-introducing-the-voice-agent-builder",
       "date": "2026-07-W01",
@@ -42180,8 +42218,8 @@
     }
   ],
   "stats": {
-    "total": 1843,
-    "paper": 1086,
+    "total": 1844,
+    "paper": 1087,
     "dev": 711,
     "news": 46
   }
