@@ -1,8 +1,42 @@
 {
   "version": 1,
-  "last_updated": "2026-07-09T01:29:14.859Z",
-  "total_items": 1845,
+  "last_updated": "2026-07-09T01:38:52.217Z",
+  "total_items": 1846,
   "items": [
+    {
+      "id": "meta-superintelligence-labs-introducing-muse-image-and-muse-video",
+      "date": "2026-07-W02",
+      "year": "2026",
+      "month": "7",
+      "week": "2",
+      "type": "dev",
+      "org": "Meta Superintelligence Labs",
+      "title": "Introducing Muse Image and Muse Video",
+      "url": "https://ai.meta.com/blog/introducing-muse-image-muse-video-msl/",
+      "bullets": [
+        {
+          "text": "이미지 생성 모델 Muse Image 정식 출시 및 영상 생성 모델 Muse Video 프리뷰 공개, Meta AI 앱·meta.ai·Instagram Stories(US)·WhatsApp에서 이용 가능",
+          "level": 1
+        },
+        {
+          "text": "Muse Image는 검색·코딩 툴을 호출해 정확도를 높이고 스스로 생성물을 self-refine하는 agentic 시스템으로 동작, 다중 참조 이미지 합성과 반복적 정밀 편집 지원",
+          "level": 1
+        },
+        {
+          "text": "코딩 툴로 플롯·QR코드·애니메이션 생성, 웹 검색으로 최신 정보 grounding, 추론 토큰 증가에 따른 test-time compute scaling에서 log-linear 성능 향상",
+          "level": 2
+        },
+        {
+          "text": "Muse Video는 프롬프트 준수·시각 충실도·시간적 일관성에서 경쟁력 있는 성능과 native 오디오 지원, Muse Image와 동일한 pretraining 기반 사용",
+          "level": 1
+        },
+        {
+          "text": "Arena 리더보드에서 Muse Image가 text-to-image·단일/다중 이미지 편집 부문 2위, Muse Video가 text-to-video 3위 기록 (2026.7.5 기준), Content Seal 비가시 워터마크로 출처 검증",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "liquid-ai-antidoom",
       "date": "2026-07-W02",
@@ -42252,9 +42286,9 @@
     }
   ],
   "stats": {
-    "total": 1845,
+    "total": 1846,
     "paper": 1087,
-    "dev": 712,
+    "dev": 713,
     "news": 46
   }
 }
