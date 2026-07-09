@@ -1,8 +1,42 @@
 {
   "version": 1,
-  "last_updated": "2026-07-08T12:17:25.697Z",
-  "total_items": 1844,
+  "last_updated": "2026-07-09T01:29:14.859Z",
+  "total_items": 1845,
   "items": [
+    {
+      "id": "liquid-ai-antidoom",
+      "date": "2026-07-W02",
+      "year": "2026",
+      "month": "7",
+      "week": "2",
+      "type": "dev",
+      "org": "Liquid AI",
+      "title": "Antidoom",
+      "url": "https://github.com/Liquid4All/antidoom",
+      "bullets": [
+        {
+          "text": "언어 모델이 같은 토큰 시퀀스를 무한 반복하는 \"doom loop\"를 줄이기 위한 타깃 선호 데이터 생성·학습 툴 공개",
+          "level": 1
+        },
+        {
+          "text": "완성문에서 반복 시작 지점을 탐지해 해당 토큰을 rejected로, 자연스러운 대안을 chosen으로 표시한 뒤 FTPO(Final Token Preference Optimization)로 LoRA 어댑터 학습",
+          "level": 1
+        },
+        {
+          "text": "Antislop 기법을 응용, 전체 시퀀스가 아닌 단일 토큰 단위 선호에 집중",
+          "level": 2
+        },
+        {
+          "text": "과학습된 추론 토큰·자기강화 컨텍스트·저온도 샘플링을 doom loop 3대 원인으로 지목, gold answer 대신 국소 선호(반복 유발 토큰 회피)를 학습",
+          "level": 1
+        },
+        {
+          "text": "멀티 GPU 분산 생성 및 NVIDIA/CUDA·AMD/ROCm 모두 지원, 기본값으로 약 15K~20K 쌍의 antidoom-mix-v1.0 데이터셋 사용 (Apache 2.0)",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "stanford-university-automem-automated-learning-of-memory-as-a-cognitive-skill",
       "date": "2026-07-W02",
@@ -42218,9 +42252,9 @@
     }
   ],
   "stats": {
-    "total": 1844,
+    "total": 1845,
     "paper": 1087,
-    "dev": 711,
+    "dev": 712,
     "news": 46
   }
 }
