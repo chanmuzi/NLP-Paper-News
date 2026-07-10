@@ -1,8 +1,68 @@
 {
   "version": 1,
-  "last_updated": "2026-07-09T01:38:52.217Z",
-  "total_items": 1846,
+  "last_updated": "2026-07-10T07:58:04.018Z",
+  "total_items": 1848,
   "items": [
+    {
+      "id": "openai-introducing-gpt-56",
+      "date": "2026-07-W02",
+      "year": "2026",
+      "month": "7",
+      "week": "2",
+      "type": "dev",
+      "org": "OpenAI",
+      "title": "Introducing GPT-5.6",
+      "url": "https://openai.com/index/gpt-5-6/",
+      "bullets": [
+        {
+          "text": "Sol·Terra·Luna 3개 티어 신규 네이밍 도입, 숫자는 세대·이름은 지능/속도/비용 역량 티어를 구분",
+          "level": 1
+        },
+        {
+          "text": "깊은 추론용 max 모드와 subagent 활용 ultra 모드 추가, Terminal-Bench 2.1 코딩 워크플로우 SOTA 달성",
+          "level": 1
+        },
+        {
+          "text": "사이버보안·생물학 워크플로우 대폭 개선, ExploitBench에서 Mythos Preview 대비 약 1/3 토큰으로 경쟁력 확보",
+          "level": 1
+        },
+        {
+          "text": "가격: Sol $5/$30, Terra $2.50/$15, Luna $1/$6 per M 토큰",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "xai-introducing-grok-45",
+      "date": "2026-07-W02",
+      "year": "2026",
+      "month": "7",
+      "week": "2",
+      "type": "dev",
+      "org": "xAI",
+      "title": "Introducing Grok 4.5",
+      "url": "https://x.ai/news/grok-4-5",
+      "bullets": [
+        {
+          "text": "Cursor 실제 세션 데이터로 학습한 코딩·에이전트 특화 모델 공개, 1.5T 파라미터 V9 기반에 500k 토큰 컨텍스트 지원",
+          "level": 1
+        },
+        {
+          "text": "SWE Marathon 해결률 29.0%로 Opus 4.8(max, 26.0%) 상회, tau3-Banking 33%로 평가 모델 전체 1위 기록",
+          "level": 1
+        },
+        {
+          "text": "$2/$6 per M 토큰으로 Opus 4.8·GPT-5.5 대비 60%+ 저렴, SWE-Bench Pro에서 Opus 4.8 대비 약 4.2배 토큰 효율 달성",
+          "level": 1
+        },
+        {
+          "text": "Grok Build·Cursor 전 요금제·SpaceXAI 콘솔에서 당일 이용 가능",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "meta-superintelligence-labs-introducing-muse-image-and-muse-video",
       "date": "2026-07-W02",
@@ -42286,9 +42346,9 @@
     }
   ],
   "stats": {
-    "total": 1846,
+    "total": 1848,
     "paper": 1087,
-    "dev": 713,
+    "dev": 715,
     "news": 46
   }
 }
