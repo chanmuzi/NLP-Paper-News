@@ -1,8 +1,72 @@
 {
   "version": 1,
-  "last_updated": "2026-07-10T07:58:04.018Z",
-  "total_items": 1848,
+  "last_updated": "2026-07-16T15:14:10.678Z",
+  "total_items": 1850,
   "items": [
+    {
+      "id": "thinking-machines-lab-introducing-inkling",
+      "date": "2026-07-W03",
+      "year": "2026",
+      "month": "7",
+      "week": "3",
+      "type": "dev",
+      "org": "Thinking Machines Lab",
+      "title": "Introducing Inkling",
+      "url": "https://thinkingmachines.ai/news/introducing-inkling/",
+      "bullets": [
+        {
+          "text": "총 975B·활성 41B 규모의 open-weights MoE 트랜스포머 Inkling 공개, 1M 토큰 컨텍스트 지원",
+          "level": 1
+        },
+        {
+          "text": "텍스트·이미지·오디오·비디오 45조 토큰으로 사전학습, 네이티브 멀티모달 추론 구현",
+          "level": 2
+        },
+        {
+          "text": "3천만 회 이상 롤아웃 규모의 대규모 비동기 RL과 Muon·Adam 하이브리드 최적화로 후속학습 수행",
+          "level": 1
+        },
+        {
+          "text": "SWEBench Verified 77.6%·MMMU Pro 73.5% 기록, Terminal Bench 2.1에서 대형 모델 대비 약 1/3 토큰으로 동등 성능 달성",
+          "level": 1
+        },
+        {
+          "text": "순수 성능보다 커스터마이징에 초점, Tinker 플랫폼 기반 파인튜닝용 유연한 파운데이션으로 포지셔닝",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "openai-introducing-gpt-live",
+      "date": "2026-07-W03",
+      "year": "2026",
+      "month": "7",
+      "week": "3",
+      "type": "dev",
+      "org": "OpenAI",
+      "title": "Introducing GPT-Live",
+      "url": "https://openai.com/index/introducing-gpt-live/",
+      "bullets": [
+        {
+          "text": "실시간 음성 대화용 full-duplex 아키텍처 기반 신규 음성 모델 GPT-Live 공개, ChatGPT Voice에 적용",
+          "level": 1
+        },
+        {
+          "text": "듣기와 말하기를 동시에 수행해 \"mhmm\"·\"yeah\" 같은 맞장구, 빠른 주고받기, 침묵 대기까지 자연스러운 대화 구현",
+          "level": 2
+        },
+        {
+          "text": "GPT-Live-1·GPT-Live-1 mini 두 버전을 전 세계 ChatGPT 사용자에게 배포, 출시 시점 백그라운드 모델은 GPT-5.5",
+          "level": 1
+        },
+        {
+          "text": "웹 검색·심화 추론 등 복잡한 작업은 최신 frontier 모델에 위임 후 결과를 대화에 반영하는 구조 도입",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "openai-introducing-gpt-56",
       "date": "2026-07-W02",
@@ -42346,9 +42410,9 @@
     }
   ],
   "stats": {
-    "total": 1848,
+    "total": 1850,
     "paper": 1087,
-    "dev": 715,
+    "dev": 717,
     "news": 46
   }
 }
