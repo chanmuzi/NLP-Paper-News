@@ -1,8 +1,42 @@
 {
   "version": 1,
-  "last_updated": "2026-07-16T15:14:10.678Z",
-  "total_items": 1850,
+  "last_updated": "2026-07-19T07:39:19.530Z",
+  "total_items": 1851,
   "items": [
+    {
+      "id": "moonshot-ai-kimi-k3",
+      "date": "2026-07-W03",
+      "year": "2026",
+      "month": "7",
+      "week": "3",
+      "type": "dev",
+      "org": "Moonshot AI",
+      "title": "Kimi K3",
+      "url": "https://www.kimi.com/blog/kimi-k3",
+      "bullets": [
+        {
+          "text": "2.8T 파라미터·1M 컨텍스트·네이티브 vision을 갖춘 세계 최초 open 3T급 모델 공개",
+          "level": 1
+        },
+        {
+          "text": "Kimi Delta Attention(KDA)과 Attention Residuals(AttnRes) 기반 아키텍처에 Stable LatentMoE 적용, 896개 expert 중 16개만 활성화하는 고희소성 구조로 K2 대비 약 2.5배 스케일링 효율 확보",
+          "level": 1
+        },
+        {
+          "text": "MXFP4 weight·MXFP8 activation 양자화로 3T급 모델의 서빙 비용 절감",
+          "level": 2
+        },
+        {
+          "text": "DeepSWE 67.3, Terminal-Bench 2.1 선두권 등 코딩·에이전트 벤치마크에서 Opus 4.8·GPT-5.5 상회, 다만 Claude Fable 5·GPT-5.6 Sol에는 전반적으로 미달",
+          "level": 1
+        },
+        {
+          "text": "Kimi.com·Kimi Work·Kimi Code·API로 즉시 제공, API 가격은 cache-hit input $0.30/M·cache-miss $3.00/M·output $15.00/M이며 전체 가중치는 7월 27일 공개 예정",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "thinking-machines-lab-introducing-inkling",
       "date": "2026-07-W03",
@@ -42410,9 +42444,9 @@
     }
   ],
   "stats": {
-    "total": 1850,
+    "total": 1851,
     "paper": 1087,
-    "dev": 717,
+    "dev": 718,
     "news": 46
   }
 }
