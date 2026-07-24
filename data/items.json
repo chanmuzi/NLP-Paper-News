@@ -1,8 +1,38 @@
 {
   "version": 1,
-  "last_updated": "2026-07-19T07:39:19.530Z",
-  "total_items": 1851,
+  "last_updated": "2026-07-24T05:17:00.943Z",
+  "total_items": 1852,
   "items": [
+    {
+      "id": "baidu-unlimited-ocr",
+      "date": "2026-07-W04",
+      "year": "2026",
+      "month": "7",
+      "week": "4",
+      "type": "dev",
+      "org": "Baidu",
+      "title": "Unlimited-OCR",
+      "url": "https://huggingface.co/baidu/Unlimited-OCR",
+      "bullets": [
+        {
+          "text": "\"one-shot long-horizon parsing\"를 지향하는 3B 규모 vision-language OCR 모델 공개, 긴 문서 전체를 단일 inference로 파싱",
+          "level": 1
+        },
+        {
+          "text": "최대 32,768 토큰 컨텍스트 지원, gundam/base 두 가지 추론 모드와 no-repeat n-gram 제약으로 반복 억제",
+          "level": 1
+        },
+        {
+          "text": "단일 이미지·멀티페이지·300 DPI PDF 파싱, 다국어 및 복잡한 레이아웃 처리 지원",
+          "level": 1
+        },
+        {
+          "text": "Transformers·vLLM·SGLang·Docker 배포 옵션 제공, \"Deepseek-OCR을 한 단계 더\" 밀어붙인 것으로 포지셔닝",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "moonshot-ai-kimi-k3",
       "date": "2026-07-W03",
@@ -42444,9 +42474,9 @@
     }
   ],
   "stats": {
-    "total": 1851,
+    "total": 1852,
     "paper": 1087,
-    "dev": 718,
+    "dev": 719,
     "news": 46
   }
 }
