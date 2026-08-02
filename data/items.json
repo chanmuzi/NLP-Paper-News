@@ -1,8 +1,68 @@
 {
   "version": 1,
-  "last_updated": "2026-07-25T03:26:13.234Z",
-  "total_items": 1854,
+  "last_updated": "2026-08-02T15:38:04.490Z",
+  "total_items": 1856,
   "items": [
+    {
+      "id": "google-deepmind-introducing-gemini-robotics-er-2",
+      "date": "2026-08-W01",
+      "year": "2026",
+      "month": "8",
+      "week": "1",
+      "type": "dev",
+      "org": "Google DeepMind",
+      "title": "Introducing Gemini Robotics-ER 2",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/gemini-robotics-er-2/",
+      "bullets": [
+        {
+          "text": "로봇의 고수준 두뇌 역할을 하는 embodied reasoning 모델 신규 공개, Gemini API·AI Studio·Gemini Enterprise Agent Platform으로 제공",
+          "level": 1
+        },
+        {
+          "text": "실시간 공간 추론과 다단계 작업 계획, 연속 video feed 기반 진행 상황 추적, 다중 로봇 협업, Google Search 등 tool calling 지원",
+          "level": 1
+        },
+        {
+          "text": "progress classification 57.4%, moment finding 91.3% 정확도(평균 오차 0.96초) 기록, Safety Instruction Following·Human Proximity 벤치마크에서도 강세",
+          "level": 1
+        },
+        {
+          "text": "VLA 모델과 연동해 실패 상황에 적응하는 physical AI agent 개발을 가속",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "microsoft-graphrag",
+      "date": "2026-08-W01",
+      "year": "2026",
+      "month": "8",
+      "week": "1",
+      "type": "dev",
+      "org": "Microsoft",
+      "title": "GraphRAG",
+      "url": "https://github.com/microsoft/graphrag",
+      "bullets": [
+        {
+          "text": "LLM으로 비정형 텍스트에서 knowledge graph를 추출해 RAG 성능을 끌어올리는 모듈형 데이터 파이프라인, MIT 라이선스로 공개",
+          "level": 1
+        },
+        {
+          "text": "entity·relationship 추출 후 community 단위로 계층 요약을 생성해, 문서 전체를 아우르는 질문에도 응답 가능",
+          "level": 2
+        },
+        {
+          "text": "국소 질의용 local search와 코퍼스 전역 질의용 global search를 분리 제공해 기존 vector 기반 RAG의 한계를 보완",
+          "level": 1
+        },
+        {
+          "text": "GitHub 35.2k stars 규모로 활발히 유지보수 중이며, 인덱싱 비용이 큰 만큼 소규모 데이터부터 prompt tuning 후 확장 권장",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "upstage-solar-open-2-agentic-use-최적화-한국형-독자-파운데이션-모델",
       "date": "2026-07-W04",
@@ -42542,9 +42602,9 @@
     }
   ],
   "stats": {
-    "total": 1854,
+    "total": 1856,
     "paper": 1087,
-    "dev": 721,
+    "dev": 723,
     "news": 46
   }
 }
