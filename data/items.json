@@ -1,8 +1,42 @@
 {
   "version": 1,
-  "last_updated": "2026-08-02T15:38:04.490Z",
-  "total_items": 1856,
+  "last_updated": "2026-08-04T00:02:33.196Z",
+  "total_items": 1857,
   "items": [
+    {
+      "id": "alibaba-qwen-qwen38-max",
+      "date": "2026-08-W01",
+      "year": "2026",
+      "month": "8",
+      "week": "1",
+      "type": "dev",
+      "org": "Alibaba Qwen",
+      "title": "Qwen3.8-Max",
+      "url": "https://qwen.ai/blog?id=qwen3.8",
+      "bullets": [
+        {
+          "text": "총 2.4T 파라미터·토큰당 95B 활성화 MoE 구조에 1M 토큰 context window, 텍스트·이미지·비디오 입력을 지원하는 Qwen 계열 최상위 모델 공개",
+          "level": 1
+        },
+        {
+          "text": "Terminal-Bench 2.1 86.6, OSWorld-Verified 86.1, OmniDocBench 1.5 92.1 등 agentic·multimodal 벤치마크 우위 주장, 전작 대비 DeepSWE 21.6→56.6·FrontierSWE 40.7→73.5로 코딩 성능 대폭 상승",
+          "level": 1
+        },
+        {
+          "text": "단, HLE 43.6·SWE-bench Pro 67.7은 경쟁 flagship 대비 열세이며 공개 수치 전부 vendor-run 자체 측정",
+          "level": 2
+        },
+        {
+          "text": "API 가격 input $2 / output $6 / cached input $0.25 per 1M tokens로 책정, OpenAI·DashScope 호환 엔드포인트로 즉시 이용 가능",
+          "level": 1
+        },
+        {
+          "text": "Max 계열 최초로 open weights 공개 예고(다음 주 Hugging Face·ModelScope), 온프레미스용 Qwen3.8-27B도 함께 오픈 예정",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "google-deepmind-introducing-gemini-robotics-er-2",
       "date": "2026-08-W01",
@@ -42602,9 +42636,9 @@
     }
   ],
   "stats": {
-    "total": 1856,
+    "total": 1857,
     "paper": 1087,
-    "dev": 723,
+    "dev": 724,
     "news": 46
   }
 }
