@@ -1,8 +1,42 @@
 {
   "version": 1,
-  "last_updated": "2026-08-04T00:02:33.196Z",
-  "total_items": 1857,
+  "last_updated": "2026-08-05T12:11:18.411Z",
+  "total_items": 1858,
   "items": [
+    {
+      "id": "google-deepmind-gemini-robotics-2-brings-whole-body-intelligence-to-robots",
+      "date": "2026-08-W01",
+      "year": "2026",
+      "month": "8",
+      "week": "1",
+      "type": "dev",
+      "org": "Google DeepMind",
+      "title": "Gemini Robotics 2 brings whole-body intelligence to robots",
+      "url": "https://deepmind.google/blog/gemini-robotics-2-brings-whole-body-intelligence-to-robots/",
+      "bullets": [
+        {
+          "text": "휴머노이드·바이암 로봇의 전신(whole-body) 제어를 담당하는 VLA 모델 Gemini Robotics 2, 계획·추론 레이어인 Gemini Robotics ER 2, 로컬 실행용 On-Device 2로 구성된 모델 제품군 공개",
+          "level": 1
+        },
+        {
+          "text": "보행·웅크리기·조작을 아우르는 전신 동작과 22자유도 다관절 손 제어 지원, 수 분 단위 다단계 작업 계획 및 다중 로봇 협업 수행",
+          "level": 1
+        },
+        {
+          "text": "motion transfer 기법으로 200개 미만 예시·수 시간 적응만으로 신규 로봇 embodiment에 이식 가능",
+          "level": 2
+        },
+        {
+          "text": "벤치마크상 전신 조작 45.7~76.3%, 그리퍼 조작 74.2~89.6%, 멀티핑거 조작 32~92% 성공률 기록",
+          "level": 1
+        },
+        {
+          "text": "ER 2는 Google AI Studio 및 Gemini Enterprise Agent Platform 프리뷰로 제공, VLA·On-Device 모델은 신청 기반 얼리액세스 파트너 대상 제공",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "alibaba-qwen-qwen38-max",
       "date": "2026-08-W01",
@@ -42636,9 +42670,9 @@
     }
   ],
   "stats": {
-    "total": 1857,
+    "total": 1858,
     "paper": 1087,
-    "dev": 724,
+    "dev": 725,
     "news": 46
   }
 }
