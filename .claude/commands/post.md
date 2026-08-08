@@ -64,7 +64,7 @@ Reuse the full `/summarize` workflow for each URL. Highlights to preserve:
       - 핵심 요약 3
   ```
 - 2–5 bullets, level-2 only when needed. No filler. Papers: problem→method→result. Blogs/news: launch→features→significance.
-- **Bullet 톤은 개조식 명사형 종결** (예: "~공개", "~절감", "~도입"). `~합니다/~습니다/~됩니다/~입니다` 금지. (X reply 톤은 별개 — Step 2 참고. 상세 규칙·예시는 `.claude/commands/summarize.md`의 Rules / Anti-pattern 섹션)
+- **Bullet 톤은 개조식 명사형 종결** (예: "~공개", "~절감", "~도입"). `~합니다/~습니다/~됩니다/~입니다` 금지. (X는 별개 — 영어로 작성, Step 2 참고. 상세 규칙·예시는 `.claude/commands/summarize.md`의 Rules / Anti-pattern 섹션)
 - Title: 원문 그대로. 너무 길거나 직관적이지 않을 때만 축약.
 
 Save the combined markdown:
@@ -91,33 +91,36 @@ This check catches same-content cases where the input URL differs but the genera
 
 You generate this yourself from the markdown you just produced. The `build-digest.mjs` rules apply, but you don't call OpenAI — you ARE the LLM.
 
+**언어 정책 (한/영 분리)**: Step 1의 마크다운 요약은 **한국어**로 유지되어 GitHub(items.json)에 올라간다. X 스레드는 **영어**로 작성한다 — 메인 트윗의 헤더/라벨과 리플라이의 요약 문장 모두 English. 마크다운의 한국어 요약을 번역기처럼 직역하지 말고, 같은 내용을 자연스러운 영어 한 문장으로 다시 쓴다. 영어는 글자 가중치가 1이라 같은 내용도 한국어보다 여유가 있다.
+
 ### Format
 
 **Main tweet** (target ≤ 260 weighted chars, hard ≤ 280):
 ```
-📌 YYYY.MM.DD (요일) 업데이트 (N건)
+📌 YYYY.MM.DD (Day) Update (N items)
 
-• [기관명] 원문 제목
-• [기관명] 원문 제목
+• [Org] Original Title
+• [Org] Original Title
 ... (N개)
 
 👉 https://chanmuzi.github.io/NLP-Paper-News/
 ```
-- Date: today in KST. Day-of-week: 일/월/화/수/목/금/토.
-- Update label: `업데이트` by default, `추가 업데이트` only if multiple `Add ` commits hit `data/items.json` today (you can check with `git log --since="<today>T00:00:00+09:00" --oneline --grep="^Add " -- data/items.json`).
-- Titles in the bullet list: keep the original title (no forced translation). Compress only when length forces it.
-- Drop org bracket if needed for length, then truncate titles, last resort `외 N건`.
+- Date: today in KST. Day-of-week: Sun/Mon/Tue/Wed/Thu/Fri/Sat.
+- Update label: `Update` by default, `Additional Update` only if multiple `Add ` commits hit `data/items.json` today (you can check with `git log --since="<today>T00:00:00+09:00" --oneline --grep="^Add " -- data/items.json`).
+- `(N items)`: use `(1 item)` when N = 1.
+- Titles in the bullet list: keep the original title (most are already English; if a title is Korean, translate it to natural English). Compress only when length forces it.
+- Drop org bracket if needed for length, then truncate titles, last resort `+N more`.
 
 **Reply N (one per item, target ≤ 260 weighted chars):**
 ```
-[i/N] [기관명] 원문 제목
+[i/N] [Org] Original Title
 
-설명 한 문장(줄글, 합니다/습니다 체).
+One-sentence English summary in plain prose.
 
 {URL}
 ```
 - Title: original, lightly compressed if needed.
-- Summary: one prose sentence in 합니다/습니다 체. No bullets, no emojis, no `🔗` prefix on the URL. **(주의: markdown bullet의 개조식 톤과 다름 — 의도된 분리)**
+- Summary: one prose sentence in **English** — concise, factual, no hype, no hashtags. No bullets, no emojis, no `🔗` prefix on the URL. **(주의: markdown bullet의 한국어 개조식 톤과 다름 — X는 영어 줄글, 의도된 분리)**
 - URL on its own last line so X generates a card preview.
 
 ### Length validation
@@ -158,7 +161,7 @@ Output structure (in this order):
 
 ---
 
-## 🐦 X 스레드 변환본
+## 🐦 X 스레드 변환본 (영어)
 
 **[메인]** (xx/260 · 280)
 ```
