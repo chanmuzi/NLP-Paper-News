@@ -63,8 +63,9 @@ async function callOpenAI({ apiKey, model, payload }) {
         {
           role: 'system',
           content: [
-            'You are an editor for Korean X threads.',
+            'You are an editor for English X threads (the user instruction itself may be written in Korean).',
             'Apply the user instruction to main/replies.',
+            'Keep the thread text in English unless the instruction explicitly asks for another language.',
             `Every post must stay within ${X_HARD_LIMIT} weighted characters.`,
             'Do not invent facts. Keep links if present.',
             'Return JSON only.',

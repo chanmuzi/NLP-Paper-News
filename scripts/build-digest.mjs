@@ -72,7 +72,7 @@ function sanitizeReplySummary(text) {
 }
 
 function inferUpdateLabel() {
-  const dayNames = ['일', '월', '화', '수', '목', '금', '토'];
+  const dayNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
   const now = new Date(new Date().toLocaleString('en-US', { timeZone: 'Asia/Seoul' }));
   const yyyy = now.getFullYear();
   const mm = String(now.getMonth() + 1).padStart(2, '0');
@@ -90,7 +90,11 @@ function inferUpdateLabel() {
     if (log && log.split('\n').filter(Boolean).length >= 2) isAdditional = true;
   } catch {}
 
-  return { dateStr, updateLabel: isAdditional ? '추가 업데이트' : '업데이트' };
+  return { dateStr, updateLabel: isAdditional ? 'Additional Update' : 'Update' };
+}
+
+function formatItemCount(n) {
+  return n === 1 ? '1 item' : `${n} items`;
 }
 
 function parseJsonSafely(raw) {
@@ -183,7 +187,7 @@ function getIcon(type) {
 
 function renderMainText({ dateStr, updateLabel, totalCount, entries, siteBaseUrl, visibleCount, titleMaxLen = null, includeOrg = true }) {
   const lines = [];
-  lines.push(`📌 ${dateStr} ${updateLabel} (${totalCount}건)`);
+  lines.push(`📌 ${dateStr} ${updateLabel} (${formatItemCount(totalCount)})`);
   lines.push('');
 
   const picked = (entries || []).slice(0, visibleCount);
@@ -191,13 +195,13 @@ function renderMainText({ dateStr, updateLabel, totalCount, entries, siteBaseUrl
     const org = limitPlain(String(e?.org || ''), 26);
     const rawTitle = String(e?.titleShort || '');
     const title = titleMaxLen ? limitPlain(rawTitle, titleMaxLen) : rawTitle;
-    const safeTitle = title || '업데이트';
+    const safeTitle = title || 'Update';
     if (includeOrg && org) lines.push(`• [${org}] ${safeTitle}`);
     else lines.push(`• ${safeTitle}`);
   }
 
   const rest = Math.max(0, totalCount - picked.length);
-  if (rest > 0) lines.push(`외 ${rest}건`);
+  if (rest > 0) lines.push(`+${rest} more`);
   if (siteBaseUrl) {
     lines.push('');
     lines.push(`👉 ${siteBaseUrl}`);
@@ -271,8 +275,8 @@ function forceMainWithinLimit({ limit, dateStr, updateLabel, totalCount, entries
   }
 
   const minimal = siteBaseUrl
-    ? `📌 ${dateStr} ${updateLabel} (${totalCount}건)\n외 ${totalCount}건\n\n👉 ${siteBaseUrl}`
-    : `📌 ${dateStr} ${updateLabel} (${totalCount}건)\n외 ${totalCount}건`;
+    ? `📌 ${dateStr} ${updateLabel} (${formatItemCount(totalCount)})\n+${totalCount} more\n\n👉 ${siteBaseUrl}`
+    : `📌 ${dateStr} ${updateLabel} (${formatItemCount(totalCount)})\n+${totalCount} more`;
   return isWithinXLimit(minimal, limit) ? compactLines(minimal) : clipToXLimit(minimal, limit);
 }
 
@@ -282,8 +286,8 @@ function renderReplyText({ index, total, org = '', titleShort, summaryLine, url,
   const title = titleMaxLen ? limitPlain(rawTitle, titleMaxLen) : rawTitle;
   const summary = summaryMaxLen ? limitPlain(rawSummary, summaryMaxLen) : rawSummary;
   const orgLabel = limitPlain(String(org || ''), 24);
-  const safeTitle = title || '요약';
-  const safeSummary = summary || '핵심 업데이트입니다.';
+  const safeTitle = title || 'Summary';
+  const safeSummary = summary || 'Key update.';
   const line1 = includeOrg && orgLabel ? `[${index}/${total}] [${orgLabel}] ${safeTitle}` : `[${index}/${total}] ${safeTitle}`;
   // 카드 preview 유도를 위해 URL은 라벨 없이 마지막 줄에만 추가
   return url ? compactLines(`${line1}\n\n${safeSummary}\n\n${url}`) : compactLines(`${line1}\n\n${safeSummary}`);
@@ -292,7 +296,7 @@ function renderReplyText({ index, total, org = '', titleShort, summaryLine, url,
 function forceReplyWithinLimit({ limit, item, index, total, titleShort, summaryLine, baseReply }) {
   if (isWithinXLimit(baseReply, limit)) return baseReply;
 
-  const fallbackSummary = sanitizeReplySummary(summaryLine || item?.bullets?.[0]?.text || '핵심 업데이트');
+  const fallbackSummary = sanitizeReplySummary(summaryLine || item?.bullets?.[0]?.text || 'Key update');
   const titleCandidates = [titleShort, item.title, limitPlain(item.title, 34), limitPlain(item.title, 24)].filter(Boolean);
   const summaryLens = [90, 72, 56, 42, 30];
 
@@ -336,7 +340,9 @@ function buildDeterministicXThread(items, siteBaseUrl, safeLimit) {
   });
 
   const replies = items.map((item, idx) => {
-    const summaryLine = cleanInline(item?.bullets?.[0]?.text || '핵심 업데이트');
+    // 규칙 기반 fallback은 번역 능력이 없어 bullet 원문(한국어)을 그대로 쓴다.
+    // 영어 카피는 AI 경로(ENABLE_AI_X_COPY)가 담당하고, 여기는 degraded fallback.
+    const summaryLine = cleanInline(item?.bullets?.[0]?.text || 'Key update');
     const titleShort = item.title;
     const baseReply = renderReplyText({
       index: idx + 1,
@@ -362,26 +368,27 @@ function buildDeterministicXThread(items, siteBaseUrl, safeLimit) {
 
 function buildAiContext(items, generationLimit, siteBaseUrl) {
   return {
-    locale: 'ko-KR',
+    output_language: 'en',
     char_policy: {
       hard_limit: X_HARD_LIMIT,
       generation_limit: generationLimit,
       url_weight: 23,
-      note: '링크는 가중치 23으로 계산. 이모지/한글은 가중치 증가 가능.',
+      note: 'URLs count as 23 chars. Emoji/CJK chars have higher weight; plain English chars count as 1.',
     },
     style_policy: {
-      tone: ['간결', '사실 중심', '과장 금지', '광고 문구 금지', '합니다/습니다 체 통일', '설명하듯 자연스럽게'],
+      language: 'English only (input bullets may be Korean — rewrite their meaning in natural English, do not transliterate)',
+      tone: ['concise', 'factual', 'no hype', 'no ad copy', 'no hashtags', 'plain prose'],
       main_format: [
-        '📌 YYYY.MM.DD (요일) 업데이트 (N건)',
-        '• [기관명] 원문 제목',
-        '• [기관명] 원문 제목',
-        '외 N건',
+        '📌 YYYY.MM.DD (Day) Update (N items)',
+        '• [Org] Original Title',
+        '• [Org] Original Title',
+        '+N more',
         '👉 https://chanmuzi.github.io/NLP-Paper-News/',
       ],
       reply_format: [
-        '[i/N] [기관명] 원문 제목',
-        '설명 문장 1개(줄글)',
-        'URL(카드 preview용, 라벨/이모지 없이)',
+        '[i/N] [Org] Original Title',
+        'One-sentence English summary in plain prose',
+        'URL (for card preview, no label/emoji)',
       ],
       no_bullet_in_reply: true,
     },
@@ -431,29 +438,29 @@ async function buildAiXThread(items, siteBaseUrl, safeLimit, debug) {
   };
 
   const mainPrompt = [
-    '당신은 한국어 X 기술 뉴스 에디터입니다.',
-    '입력 항목은 사용자가 직접 큐레이션한 결과입니다. 의도를 임의로 바꾸지 마세요.',
-    '메인 포스트용 항목 나열을 JSON으로 생성하세요.',
-    '중요: 제목만 간결하게 나열하고 설명 문장은 넣지 마세요.',
-    '제목은 웬만하면 원문을 보존하고, 억지 한글 번역을 하지 마세요.',
-    '기관명은 기본 포함하고 길이 부족할 때만 생략하세요.',
-    '형식 기준:',
-    '📌 YYYY.MM.DD (요일) 업데이트 (N건)',
-    '• [기관명] 원문 제목',
-    '• [기관명] 원문 제목',
-    '외 N건',
+    'You are an English-language X (Twitter) tech news editor.',
+    'The input items were curated directly by the user. Do not alter their intent.',
+    'Generate the item list for the main post as JSON.',
+    'Important: list titles only, concisely — no description sentences.',
+    'All output must be in English. Keep original English titles as-is; if a title is in Korean, translate it into natural English.',
+    'Include the org name by default; drop it only when length requires.',
+    'Format reference:',
+    '📌 YYYY.MM.DD (Day) Update (N items)',
+    '• [Org] Original Title',
+    '• [Org] Original Title',
+    '+N more',
     '👉 https://chanmuzi.github.io/NLP-Paper-News/',
-    '제약:',
-    '- 제목은 원문 보존 우선(불필요한 번역/의역 금지)',
-    '- 기관명(org)은 가능하면 유지, 길이 부족 시에만 생략 허용',
-    '- 과장/광고/해시태그 금지',
-    '- 서로 다른 항목을 합치거나 재해석하지 말 것',
-    '- 애매하면 원문 제목의 핵심 단어를 그대로 유지할 것',
-    '- 실제 입력에 없는 사실/키워드 추가 금지',
-    `- 길이 목표: ${generationLimit}자 이내 (절대 ${X_HARD_LIMIT}자 초과 금지)`,
-    '- title_short는 매우 짧고 정보만 남길 것',
-    '- 가능한 많은 항목을 entries에 넣되, 각 title_short를 압축할 것',
-    '반드시 schema JSON만 출력합니다.',
+    'Constraints:',
+    '- Preserve original titles (no unnecessary paraphrasing)',
+    '- Keep org when possible; omit only when length requires',
+    '- No hype, no ad copy, no hashtags',
+    '- Do not merge or reinterpret separate items',
+    '- When in doubt, keep the key words of the original title',
+    '- Do not add facts/keywords not present in the input',
+    `- Length target: within ${generationLimit} weighted chars (never exceed ${X_HARD_LIMIT})`,
+    '- title_short must be very short and informative',
+    '- Include as many items as possible in entries, compressing each title_short',
+    'Output schema JSON only.',
   ].join('\n');
 
   let mainPlan = null;
@@ -543,32 +550,32 @@ async function buildAiXThread(items, siteBaseUrl, safeLimit, debug) {
   };
 
   const replyPrompt = [
-    '당신은 한국어 X 스레드 작성기입니다.',
-    '입력 항목은 사용자가 직접 큐레이션한 결과입니다. 항목 간 의미를 섞지 마세요.',
-    '각 아이템에 대해 reply용 텍스트를 JSON으로 생성하세요.',
-    '중요: bullet(•) 형식을 절대 사용하지 마세요.',
-    '제목은 웬만하면 원문을 보존하고, 억지 한글 번역을 하지 마세요.',
-    '기관명은 기본 포함하고 길이 부족할 때만 생략하세요.',
-    '형식 기준:',
-    '[i/N] [기관명] 원문 제목',
-    '설명 문장 1개(줄글)',
-    'URL(카드 preview용, 라벨/이모지 없이)',
-    '제약:',
-    '- 제목은 원문 보존 우선(불필요한 번역/의역 금지)',
-    '- 기관명(org)은 가능하면 유지, 길이 부족 시에만 생략 허용',
-    '- 과장/홍보/해시태그 금지',
-    '- 각 reply는 해당 index의 item 정보만 반영할 것',
-    '- 다른 item의 내용/키워드를 섞지 말 것',
-    '- 애매하면 원문 title/bullet의 핵심 표현을 우선 유지',
-    '- 입력에 없는 사실을 추가하지 말 것',
-    `- 길이 목표: ${generationLimit}자 이내 (절대 ${X_HARD_LIMIT}자 초과 금지)`,
-    '- title_short는 짧게',
-    '- summary_line은 간결한 1~2문장 줄글',
-    "- summary_line 어투: '합니다/습니다' 체로 통일 (예: ~입니다, ~합니다, ~공개했습니다, ~보고합니다)",
-    '- summary_line 톤: 구독자에게 설명하듯 자연스럽고 명확하게, 과장/감탄/수식어 없이',
-    '- summary_line에 번호/아이콘/기관/URL을 넣지 말 것(링크는 시스템이 별도 부착)',
-    '- 줄글 형식, bullet 금지',
-    '반드시 schema JSON만 출력합니다.',
+    'You are an English-language X (Twitter) thread writer.',
+    'The input items were curated directly by the user. Do not mix meaning across items.',
+    'Generate the reply text for each item as JSON.',
+    'Important: never use bullet (•) formatting.',
+    'All output must be in English. Input bullets may be in Korean — rewrite their meaning in natural English; do not transliterate.',
+    'Keep original English titles as-is; if a title is in Korean, translate it into natural English.',
+    'Include the org name by default; drop it only when length requires.',
+    'Format reference:',
+    '[i/N] [Org] Original Title',
+    'One-sentence summary in plain prose',
+    'URL (for card preview, no label/emoji)',
+    'Constraints:',
+    '- Preserve original titles (no unnecessary paraphrasing)',
+    '- Keep org when possible; omit only when length requires',
+    '- No hype, no promotion, no hashtags',
+    '- Each reply must reflect only the item at its index',
+    '- Do not mix content/keywords from other items',
+    '- When in doubt, keep the key expressions of the original title/bullets',
+    '- Do not add facts not present in the input',
+    `- Length target: within ${generationLimit} weighted chars (never exceed ${X_HARD_LIMIT})`,
+    '- Keep title_short short',
+    '- summary_line: 1–2 concise prose sentences in English',
+    '- summary_line tone: clear and natural, as if explaining to subscribers — no hype, no exclamations, no filler adjectives',
+    '- Do not put numbering/icons/org/URL inside summary_line (the link is attached separately by the system)',
+    '- Prose only, no bullets',
+    'Output schema JSON only.',
   ].join('\n');
 
   let replyPlan = null;
@@ -607,7 +614,7 @@ async function buildAiXThread(items, siteBaseUrl, safeLimit, debug) {
             total: items.length,
             org: src.org || item.org || '',
             titleShort: src.title_short || item.title,
-            summaryLine: src.summary_line || cleanInline(item?.bullets?.[0]?.text || '핵심 업데이트'),
+            summaryLine: src.summary_line || cleanInline(item?.bullets?.[0]?.text || 'Key update'),
             url: item.url || '',
           });
           const chars = countXChars(candidate);
@@ -644,7 +651,7 @@ async function buildAiXThread(items, siteBaseUrl, safeLimit, debug) {
     const idx = i + 1;
     const src = replyMap.get(idx) || {};
     const titleShort = src.title_short || item.title;
-    const summaryLine = src.summary_line || cleanInline(item?.bullets?.[0]?.text || '핵심 업데이트');
+    const summaryLine = src.summary_line || cleanInline(item?.bullets?.[0]?.text || 'Key update');
 
     const baseReply = renderReplyText({
       index: idx,
