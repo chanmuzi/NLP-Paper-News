@@ -67,10 +67,11 @@ Reuse the full `/summarize` workflow for each URL. Highlights to preserve:
 - **Bullet 톤은 개조식 명사형 종결** (예: "~공개", "~절감", "~도입"). `~합니다/~습니다/~됩니다/~입니다` 금지. (X는 별개 — 영어로 작성, Step 2 참고. 상세 규칙·예시는 `.claude/commands/summarize.md`의 Rules / Anti-pattern 섹션)
 - Title: 원문 그대로. 너무 길거나 직관적이지 않을 때만 축약.
 
-Save the combined markdown:
+Save the combined markdown (한국어 + 영어, 두 벌):
 1. Get timestamp: `date +"%Y-%m-%d_%H%M"` via Bash.
-2. Write all summaries to `~/claude-summarize/{timestamp}.md` (one blank line between items).
-3. Remember the path — you'll use it for `add-item.mjs --from-markdown` later.
+2. Write all summaries (Korean) to `~/claude-summarize/{timestamp}.md` (one blank line between items). **이 파일이 items.json에 들어가는 원본이다** — 나중에 `add-item.mjs --from-markdown`에 반드시 이 한국어 파일을 쓴다.
+3. Write an English version to `~/claude-summarize/{timestamp}.en.md` — 포맷은 동일하게 유지(emoji, `[{Org}]`, 원문 제목/링크, 4-space 들여쓰기, bullet 구조·개수 그대로), bullet 내용만 자연스러운 영어로 재서술. 한국어 bullet의 직역이 아니라 같은 정보를 영어 문장으로 다시 쓴다. 이 파일은 사용자가 copy해서 외부에 쓰는 용도이며 items.json에는 들어가지 않는다.
+4. Remember both paths — Korean for `add-item.mjs`, English for the Step 3 copy block.
 
 ## Step 1.5 — Duplicate check after summarize (before X thread)
 
@@ -91,7 +92,7 @@ This check catches same-content cases where the input URL differs but the genera
 
 You generate this yourself from the markdown you just produced. The `build-digest.mjs` rules apply, but you don't call OpenAI — you ARE the LLM.
 
-**언어 정책 (한/영 분리)**: Step 1의 마크다운 요약은 **한국어**로 유지되어 GitHub(items.json)에 올라간다. X 스레드는 **영어**로 작성한다 — 메인 트윗의 헤더/라벨과 리플라이의 요약 문장 모두 English. 마크다운의 한국어 요약을 번역기처럼 직역하지 말고, 같은 내용을 자연스러운 영어 한 문장으로 다시 쓴다. 영어는 글자 가중치가 1이라 같은 내용도 한국어보다 여유가 있다.
+**언어 정책 (한/영 분리)**: Step 1에서 마크다운 요약은 **한국어**(items.json/GitHub 반영용)와 **영어**(copy용) 두 벌이 이미 저장되어 있다. X 스레드는 **영어**로 작성한다 — 메인 트윗의 헤더/라벨과 리플라이의 요약 문장 모두 English. 리플라이 요약은 영어 마크다운(`{timestamp}.en.md`)의 bullet을 압축해 한 문장 줄글로 만들면 된다(직역 금지, 자연스러운 재서술). 영어는 글자 가중치가 1이라 같은 내용도 한국어보다 여유가 있다.
 
 ### Format
 
@@ -151,13 +152,23 @@ If anything exceeds 280, recompose internally (shorter title, shorter summary, d
 Output structure (in this order):
 
 ```markdown
-## 📄 원본 요약 (마크다운)
+## 📄 원본 요약 (마크다운 · 한국어)
 
 ```markdown
 {the exact markdown saved to ~/claude-summarize/{ts}.md}
 ```
 
 저장 경로: `/Users/chanmuzi/claude-summarize/{timestamp}.md`
+
+---
+
+## 📄 원본 요약 (마크다운 · 영어, copy용)
+
+```markdown
+{the exact markdown saved to ~/claude-summarize/{timestamp}.en.md}
+```
+
+저장 경로: `/Users/chanmuzi/claude-summarize/{timestamp}.en.md`
 
 ---
 
@@ -245,6 +256,7 @@ Read `artifacts/post-skill-result.json` for the outcome. Surface:
 ```
 node scripts/add-item.mjs --from-markdown ~/claude-summarize/{timestamp}.md
 ```
+(반드시 **한국어** 파일(`{timestamp}.md`)을 사용한다 — `{timestamp}.en.md`는 copy 전용으로 items.json에 넣지 않는다.)
 If the user chose `강제 진행` in Step 0 or Step 1.5, append `--allow-duplicates`. Otherwise keep the default duplicate guard. If the user chose `건너뛰기`, the markdown should already contain only the remaining non-duplicate items.
 
 Then commit + push. Use the `/commit` skill if available; otherwise:
@@ -296,4 +308,4 @@ If the instruction targets a specific reply ("리플라이 2 ..."), only regener
 - Always respond in Korean (technical terms in English).
 - Do not read `.envrc` or any secret file. Do not print `$X_*` env vars.
 - The original `/summarize` skill is unchanged — `/post` is the superset that adds X publishing.
-- Keep the original markdown fenced block intact and as the first thing the user sees, so the existing copy-to-admin workflow still works perfectly.
+- Keep the original (Korean) markdown fenced block intact and as the first thing the user sees, so the existing copy-to-admin workflow still works perfectly. The English markdown block comes second — it exists for the user's copy workflow and never feeds items.json.
