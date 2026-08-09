@@ -1,8 +1,42 @@
 {
   "version": 1,
-  "last_updated": "2026-08-09T02:52:28.465Z",
-  "total_items": 1860,
+  "last_updated": "2026-08-09T05:15:39.114Z",
+  "total_items": 1861,
   "items": [
+    {
+      "id": "meta-muse-code",
+      "date": "2026-08-W02",
+      "year": "2026",
+      "month": "8",
+      "week": "2",
+      "type": "dev",
+      "org": "Meta",
+      "title": "Muse Code",
+      "url": "https://developer.meta.com/ai/products/muse-code/",
+      "bullets": [
+        {
+          "text": "Meta Superintelligence Labs가 대규모 repo 전반에서 변경 계획·코드 작성·결과 검증까지 수행하는 터미널 기반 AI coding agent 'Muse Code' 공개 (public beta)",
+          "level": 1
+        },
+        {
+          "text": "큰 작업은 isolated worktree에서 병렬로 동작하는 sub-agent들로 자동 fan-out",
+          "level": 1
+        },
+        {
+          "text": "사용자의 working copy는 건드리지 않으며, 게임 기능 6개를 충돌 없이 동시 구현하는 테스트 데모 제시",
+          "level": 2
+        },
+        {
+          "text": "agent와 co-train된 Muse Spark 1.2 모델 기반, 단일 명령으로 설치 가능",
+          "level": 1
+        },
+        {
+          "text": "가격은 input $1.25/M·output $4.25/M tokens 종량제, 데이터 공유 조건의 contributor tier는 90% 이상 할인 — Claude Code·Codex 대비 비용 경쟁력 강조",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "autoark-ai-data-efficient-on-policy-distillation-for-automatic-speech-recognition",
       "date": "2026-08-W02",
@@ -42734,9 +42768,9 @@
     }
   ],
   "stats": {
-    "total": 1860,
+    "total": 1861,
     "paper": 1088,
-    "dev": 725,
+    "dev": 726,
     "news": 47
   }
 }
