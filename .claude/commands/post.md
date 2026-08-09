@@ -82,7 +82,7 @@ node scripts/check-duplicates.mjs --from-markdown ~/claude-summarize/{timestamp}
 ```
 
 If `duplicateCount > 0`, report the duplicates with the same tone as Step 0 and ask:
-- `건너뛰기` — remove those duplicate items from the saved markdown, then build the X thread only from the remaining items
+- `건너뛰기` — remove those duplicate items from **both saved markdown files** (`{timestamp}.md` and `{timestamp}.en.md`), then build the X thread only from the remaining items
 - `강제 진행` — keep them and remember that duplicates were explicitly allowed
 - `전체 취소` — stop before creating any X draft
 
