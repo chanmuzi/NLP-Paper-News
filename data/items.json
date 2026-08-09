@@ -1,8 +1,72 @@
 {
   "version": 1,
-  "last_updated": "2026-08-05T12:11:18.411Z",
-  "total_items": 1858,
+  "last_updated": "2026-08-09T02:52:28.465Z",
+  "total_items": 1860,
   "items": [
+    {
+      "id": "autoark-ai-data-efficient-on-policy-distillation-for-automatic-speech-recognition",
+      "date": "2026-08-W02",
+      "year": "2026",
+      "month": "8",
+      "week": "2",
+      "type": "paper",
+      "org": "AutoArk-AI",
+      "title": "Data-Efficient On-Policy Distillation for Automatic Speech Recognition",
+      "url": "https://arxiv.org/abs/2605.28139",
+      "bullets": [
+        {
+          "text": "대규모 오디오 데이터 없이 경쟁력 있는 ASR 모델을 만들기 위해 on-policy distillation을 음성 인식에 적용한 Ark-ASR OPD 제안",
+          "level": 1
+        },
+        {
+          "text": "student가 자체 audio-conditioned state에서 transcript를 생성하고 frozen Qwen-ASR teacher가 같은 오디오·텍스트를 채점, teacher/student top-k를 합집합으로 묶는 Union Top-k KL loss 사용",
+          "level": 1
+        },
+        {
+          "text": "OPD 이전에 teacher-data(TD) adaptation 단계를 두어 student-teacher 토큰 정렬 개선",
+          "level": 2
+        },
+        {
+          "text": "0.6B 모델이 100k 시간 데이터(Qwen3-Omni 대비 약 1/200)로 5개 벤치마크 중 4개에서 Qwen3-ASR-0.6B 상회 (AISHELL-1 CER 1.95%, LibriSpeech test-clean WER 2.45%)",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "mistral-ai-shieldstral",
+      "date": "2026-08-W02",
+      "year": "2026",
+      "month": "8",
+      "week": "2",
+      "type": "news",
+      "org": "Mistral AI",
+      "title": "Shieldstral",
+      "url": "https://mistral.ai/news/shieldstral/",
+      "bullets": [
+        {
+          "text": "3B 파라미터 open-weights 멀티모달 safety classifier Shieldstral 공개 (Apache 2.0, Hugging Face 배포)",
+          "level": 1
+        },
+        {
+          "text": "고정된 harm taxonomy를 가중치에 내장하는 대신, inference 시점에 plain-language policy를 받아 재학습 없이 적용하는 policy-adaptive 설계 도입",
+          "level": 1
+        },
+        {
+          "text": "moderation을 QA 태스크로 프레이밍 — \"safety definitions as prompts rather than parameters\"",
+          "level": 2
+        },
+        {
+          "text": "텍스트/이미지 통합 안전성 평가, single forward pass로 calibrated safety score 반환, 16GB GPU 한 장에서 구동",
+          "level": 1
+        },
+        {
+          "text": "text safety·refusal detection·policy adaptability·multimodal safety 4개 영역에서 최대 7배 큰 open guard 모델과 동급 이상 성능 기록",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "google-deepmind-gemini-robotics-2-brings-whole-body-intelligence-to-robots",
       "date": "2026-08-W01",
@@ -42670,9 +42734,9 @@
     }
   ],
   "stats": {
-    "total": 1858,
-    "paper": 1087,
+    "total": 1860,
+    "paper": 1088,
     "dev": 725,
-    "news": 46
+    "news": 47
   }
 }
