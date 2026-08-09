@@ -2,6 +2,8 @@ name: Test Actions Node24 Upgrade (temporary)
 
 on:
   workflow_dispatch:
+  push:
+    branches: [chore/actions-node24]
 
 permissions:
   contents: read
