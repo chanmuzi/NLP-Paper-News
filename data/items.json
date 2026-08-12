@@ -1,8 +1,72 @@
 {
   "version": 1,
-  "last_updated": "2026-08-09T05:15:39.114Z",
-  "total_items": 1861,
+  "last_updated": "2026-08-12T00:34:14.020Z",
+  "total_items": 1863,
   "items": [
+    {
+      "id": "meta-muse-glimmer-metas-open-local-ai-agent-model",
+      "date": "2026-08-W02",
+      "year": "2026",
+      "month": "8",
+      "week": "2",
+      "type": "dev",
+      "org": "Meta",
+      "title": "Muse Glimmer: Meta's Open Local AI Agent Model",
+      "url": "https://research.meta.ai/blog/introducing-muse-glimmer-open-agentic-model",
+      "bullets": [
+        {
+          "text": "Meta Superintelligence Labs가 local agent workflow용 30B 파라미터 open 모델 Muse Glimmer를 Apache 2.0 라이선스로 Hugging Face에 공개",
+          "level": 1
+        },
+        {
+          "text": "MacBook·단일 GPU PC 등 consumer 하드웨어에서 클라우드 없이 offline 동작, multimodal 입력과 100개+ 언어 지원",
+          "level": 2
+        },
+        {
+          "text": "대형 teacher 모델 Muse Spark의 logit distillation pre-training → 장문 context agent 데이터 mid-training → SFT+RL 혼합 post-training의 3단계 학습 구성",
+          "level": 1
+        },
+        {
+          "text": "multi-step reasoning, tool use, 실패 복구, end-to-end task 완수 등 자율 agent 능력에 특화, \"controllable effort\"로 품질·속도 트레이드오프 조절 가능",
+          "level": 1
+        },
+        {
+          "text": "K-Quant 양자화로 메모리를 55GB에서 20GB 미만으로 압축, DFlash speculative decoding으로 생성 속도 1.5~3.1배 가속 (Gemma4-31B·Qwen3.6-27B 대비 경쟁력 있는 벤치마크)",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "nvidia-nemotron-35-lightning-30b-a3b",
+      "date": "2026-08-W02",
+      "year": "2026",
+      "month": "8",
+      "week": "2",
+      "type": "dev",
+      "org": "NVIDIA",
+      "title": "Nemotron 3.5 Lightning 30B A3B",
+      "url": "https://build.nvidia.com/nvidia/nemotron-3.5-lightning-30b-a3b/modelcard",
+      "bullets": [
+        {
+          "text": "Nemotron 3.5 패밀리의 첫 모델로, 총 30B 파라미터 중 3B만 활성화되는 open MoE 모델을 OpenMDW-1.1 라이선스로 공개 (상업 이용 가능)",
+          "level": 1
+        },
+        {
+          "text": "Mamba-2와 MoE 레이어를 interleave하고 일부 Attention 레이어를 결합한 hybrid 아키텍처, 단일 H100 기준 최대 1M 토큰 context 지원",
+          "level": 2
+        },
+        {
+          "text": "always-on agent의 고볼륨·특화 작업(tool call, 데이터 처리, 결과 검증 등)을 겨냥해 동급 모델 대비 최대 4배 출력 속도, agentic task 배치 처리 최대 30% 단축 주장",
+          "level": 1
+        },
+        {
+          "text": "DSpark·DFlash·MTP 등 speculative decoding 기법을 함께 공개, 단일 H100/A100 80GB GPU로 배포 가능",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "meta-muse-code",
       "date": "2026-08-W02",
@@ -42768,9 +42832,9 @@
     }
   ],
   "stats": {
-    "total": 1861,
+    "total": 1863,
     "paper": 1088,
-    "dev": 726,
+    "dev": 728,
     "news": 47
   }
 }
