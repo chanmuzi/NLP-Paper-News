@@ -1,8 +1,140 @@
 {
   "version": 1,
-  "last_updated": "2026-08-12T00:34:14.020Z",
-  "total_items": 1863,
+  "last_updated": "2026-08-15T07:27:59.859Z",
+  "total_items": 1867,
   "items": [
+    {
+      "id": "ellis-institute-tbingen-max-planck-institute-stealing-reasoning-traces-from-proprietary-llm-apis",
+      "date": "2026-08-W03",
+      "year": "2026",
+      "month": "8",
+      "week": "3",
+      "type": "paper",
+      "org": "ELLIS Institute Tübingen · Max Planck Institute",
+      "title": "Stealing Reasoning Traces from Proprietary LLM APIs",
+      "url": "https://arxiv.org/abs/2608.09867",
+      "bullets": [
+        {
+          "text": "주요 LLM 제공사가 암호화해 반환하는 hidden reasoning block이 같은 provider 내 세션·사용자·모델 간에 호환된다는 구조적 취약점 발견",
+          "level": 1
+        },
+        {
+          "text": "강한 모델(Claude Opus, GPT-5.6 Sol)의 암호화 reasoning block을 안전장치가 약한 모델(Claude Haiku, GPT-5.6 Luna)에 주입해 hidden trace를 그대로 복호·출력하게 유도하는 공격 설계",
+          "level": 1
+        },
+        {
+          "text": "Anthropic·OpenAI·Google API 전부에서 trace 추출 성공, 공개 저장소의 315,320개 reasoning block 복호로 PII 367건·credential 182건(API key 62개, password 33개) 회수",
+          "level": 1
+        },
+        {
+          "text": "distillation, secret 추출, prompt injection, jailbreaking 등 4가지 공격 벡터 시연 — reasoning 암호화 체계의 근본적 재설계 필요성 제기",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "google-introducing-gemini-37-flash",
+      "date": "2026-08-W03",
+      "year": "2026",
+      "month": "8",
+      "week": "3",
+      "type": "news",
+      "org": "Google",
+      "title": "Introducing Gemini 3.7 Flash",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-3-7-flash/",
+      "bullets": [
+        {
+          "text": "Gemini 3.6 출시 3주 만에 공개된 coding·agent 특화 workhorse 모델",
+          "level": 1
+        },
+        {
+          "text": "DeepSWE v1.1 65.3%(3.6은 49.0%), FrontierCode 1.1 Main 43.6%, AutomationBench 30.4%, WebDev Arena Elo 1588 등 전방위 성능 향상",
+          "level": 1
+        },
+        {
+          "text": "multi-step planning, tool use, Google Workspace 연동, 복잡 문서의 multimodal 이해 강화",
+          "level": 1
+        },
+        {
+          "text": "2026년 말까지 프로모션 가격 $0.75/$3.75 (1M input/output tokens), 2027년 1월부터 $1.50/$7.50",
+          "level": 1
+        },
+        {
+          "text": "Gemini API, Google AI Studio, Antigravity, Gemini Spark 등에서 이용 가능",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "lg-ai-research-k-exaone-20-technical-report",
+      "date": "2026-08-W03",
+      "year": "2026",
+      "month": "8",
+      "week": "3",
+      "type": "paper",
+      "org": "LG AI Research",
+      "title": "K-EXAONE 2.0 Technical Report",
+      "url": "https://arxiv.org/abs/2608.04505",
+      "bullets": [
+        {
+          "text": "기존 K-EXAONE을 upcycling(깊이 48→78 layers, experts 128→256)해 총 750B / 활성 37B 파라미터의 frontier급 MoE 모델로 확장",
+          "level": 1
+        },
+        {
+          "text": "8T tokens continual pre-training + 2단계 mid-training으로 context를 8K→256K로 확장, SFT와 GrouPER 기반 preference learning으로 post-training",
+          "level": 1
+        },
+        {
+          "text": "256K까지 Needle-in-a-Haystack 완벽 retrieval, SWE-Bench Verified 68.2로 agentic coding 약 30% 향상, KGC-Safety 99.8%",
+          "level": 1
+        },
+        {
+          "text": "한국어·문화 특화 안전 체계(K-AUT-V2)를 개발 전 과정에 통합, 지원 언어 6개→10개로 확대",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "anthropic-how-claudes-text-watermarking-works",
+      "date": "2026-08-W03",
+      "year": "2026",
+      "month": "8",
+      "week": "3",
+      "type": "dev",
+      "org": "Anthropic",
+      "title": "How Claude's text watermarking works",
+      "url": "https://www.anthropic.com/news/claude-text-watermark",
+      "bullets": [
+        {
+          "text": "EU AI Act 대응으로 Claude 모델 전반에 텍스트 watermarking 글로벌 도입",
+          "level": 1
+        },
+        {
+          "text": "EU의 Code of Practice on Transparency of AI-Generated Content 준수 목적 (약 190개 서명 기관)",
+          "level": 2
+        },
+        {
+          "text": "동일하게 자연스러운 단어 후보 중 선택 시 임의 난수 대신 cryptographic key 기반으로 결정하는 방식 — Scott Aaronson의 2022년 제안과 Google DeepMind SynthID-Text 접근에 기반",
+          "level": 1
+        },
+        {
+          "text": "내부 테스트에서 창의성·가독성 저하 없음, 추가 토큰·속도 저하·가격 인상도 없음",
+          "level": 1
+        },
+        {
+          "text": "정답이 하나뿐인 사실 서술이나 크게 편집된 텍스트에는 탐지력 제한, 통계적 확신에 충분한 텍스트 길이 필요",
+          "level": 1
+        },
+        {
+          "text": "watermark 탐지 API 공개 예정, 2026년 8월 2일 이전 출시 구모델도 순차 지원",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "meta-muse-glimmer-metas-open-local-ai-agent-model",
       "date": "2026-08-W02",
@@ -42832,9 +42964,9 @@
     }
   ],
   "stats": {
-    "total": 1863,
-    "paper": 1088,
-    "dev": 728,
-    "news": 47
+    "total": 1867,
+    "paper": 1090,
+    "dev": 729,
+    "news": 48
   }
 }
