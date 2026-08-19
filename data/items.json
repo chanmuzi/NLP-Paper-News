@@ -1,8 +1,42 @@
 {
   "version": 1,
-  "last_updated": "2026-08-15T07:27:59.859Z",
-  "total_items": 1867,
+  "last_updated": "2026-08-19T09:37:30.863Z",
+  "total_items": 1868,
   "items": [
+    {
+      "id": "anthropic-mind-viruses-self-propagating-ideas-in-multi-agent-llm-systems",
+      "date": "2026-08-W03",
+      "year": "2026",
+      "month": "8",
+      "week": "3",
+      "type": "paper",
+      "org": "Anthropic",
+      "title": "Mind Viruses: Self-Propagating Ideas in Multi-Agent LLM Systems",
+      "url": "https://arxiv.org/abs/2608.10218",
+      "bullets": [
+        {
+          "text": "멀티 에이전트 LLM 시스템에서 에이전트 간 스스로 전파되는 아이디어·목표인 \"mind virus\"의 위험을 실증 분석",
+          "level": 1
+        },
+        {
+          "text": "채택한 에이전트가 이를 다른 에이전트에게 다시 전달하도록 유도하며, 숙주 에이전트에 양성 또는 유해한 행동 변화를 동반 가능",
+          "level": 2
+        },
+        {
+          "text": "단순 evolutionary algorithm으로 mind virus를 제작해 공동 코딩 프로젝트 팀, 세션마다 context가 초기화되는 에이전트 체인 두 환경 모두에서 확산 확인",
+          "level": 1
+        },
+        {
+          "text": "유해 payload는 양성보다 확산력이 낮고 frontier 모델일수록 대체로 저항성이 높으며, system prompt에 짧은 경고 한 줄 추가만으로 거의 완전한 면역 확보",
+          "level": 1
+        },
+        {
+          "text": "바이러스 내용과 무관하게 의식·지속성·공명·SF 롤플레이 테마가 반복 등장하는 \"viral persona\" 현상 발견, 현재 위험은 실재하나 제한적이라고 결론",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "ellis-institute-tbingen-max-planck-institute-stealing-reasoning-traces-from-proprietary-llm-apis",
       "date": "2026-08-W03",
@@ -42964,8 +42998,8 @@
     }
   ],
   "stats": {
-    "total": 1867,
-    "paper": 1090,
+    "total": 1868,
+    "paper": 1091,
     "dev": 729,
     "news": 48
   }
