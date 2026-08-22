@@ -1,8 +1,76 @@
 {
   "version": 1,
-  "last_updated": "2026-08-19T09:37:30.863Z",
-  "total_items": 1868,
+  "last_updated": "2026-08-22T06:48:35.453Z",
+  "total_items": 1870,
   "items": [
+    {
+      "id": "cerebras-cs-4",
+      "date": "2026-08-W04",
+      "year": "2026",
+      "month": "8",
+      "week": "4",
+      "type": "news",
+      "org": "Cerebras",
+      "title": "CS-4",
+      "url": "https://www.cerebras.ai/cs4",
+      "bullets": [
+        {
+          "text": "GPU 대비 최대 30배 빠른 inference를 내세운 rack-scale AI 시스템 CS-4 발표",
+          "level": 1
+        },
+        {
+          "text": "4조 transistor · 900,000 AI core의 WSE-3 Turbo 웨이퍼 3장을 하나의 rack으로 구성 (250 PFLOPS, memory bandwidth 43.2 PB/s)",
+          "level": 2
+        },
+        {
+          "text": "모듈형 Nexus Rack-Scale Platform 도입",
+          "level": 1
+        },
+        {
+          "text": "Wafer-Scale Backpack(부품 50% 감소), 프로세서 0.5mm 초근접 전력 공급, switch 없는 wafer 간 연결 (latency 2μs)",
+          "level": 2
+        },
+        {
+          "text": "CS-3 대비 watt당 throughput 최대 10배, 10조+ parameter 모델에서 1,000 tokens/s 이상 주장, 이번 분기 출하 시작",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "nvidia-nsight-ai",
+      "date": "2026-08-W04",
+      "year": "2026",
+      "month": "8",
+      "week": "4",
+      "type": "dev",
+      "org": "NVIDIA",
+      "title": "Nsight AI",
+      "url": "https://developer.nvidia.com/nsight-ai",
+      "bullets": [
+        {
+          "text": "기존 Nsight Copilot을 대체하는 AI 기반 CUDA 개발 지원 플랫폼 공개",
+          "level": 1
+        },
+        {
+          "text": "CUDA-aware chat, 코드 생성·변환, 인터랙티브 가이드 제공",
+          "level": 2
+        },
+        {
+          "text": "AI 코딩 에이전트를 최신 CUDA 문서·예제에 연결하는 hosted CUDA MCP Server 제공",
+          "level": 1
+        },
+        {
+          "text": "Claude Code, Codex, Cursor, Antigravity 지원, NVIDIA Developer 계정 인증으로 즉시 사용 가능",
+          "level": 2
+        },
+        {
+          "text": "오픈소스 self-hosted 백엔드 Nsight Copilot Blueprint, Nsight Compute 성능 분석 연동, VS Code extension 포함",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "anthropic-mind-viruses-self-propagating-ideas-in-multi-agent-llm-systems",
       "date": "2026-08-W03",
@@ -42998,9 +43066,9 @@
     }
   ],
   "stats": {
-    "total": 1868,
+    "total": 1870,
     "paper": 1091,
-    "dev": 729,
-    "news": 48
+    "dev": 730,
+    "news": 49
   }
 }
