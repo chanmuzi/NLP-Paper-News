@@ -1,8 +1,140 @@
 {
   "version": 1,
-  "last_updated": "2026-08-22T06:48:35.453Z",
-  "total_items": 1870,
+  "last_updated": "2026-08-25T07:28:40.540Z",
+  "total_items": 1874,
   "items": [
+    {
+      "id": "openai-pacing-model-development-in-an-era-of-cyber-critical-capabilities",
+      "date": "2026-08-W04",
+      "year": "2026",
+      "month": "8",
+      "week": "4",
+      "type": "dev",
+      "org": "OpenAI",
+      "title": "Pacing model development in an era of cyber-critical capabilities",
+      "url": "https://openai.com/index/pacing-model-development-cyber-capabilities/",
+      "bullets": [
+        {
+          "text": "차기 모델 Astra가 Preparedness Framework의 사이버보안 Critical 임계값에 근접했다는 예비 증거와 Hugging Face 보안 사고를 계기로 개발 속도 조절 방침 공개",
+          "level": 1
+        },
+        {
+          "text": "reinforcement learning을 2주간 중단했고 최대 규모 frontier RL 실행은 계속 보류, 신규 보안 요건을 충족하지 못한 workload도 정지",
+          "level": 1
+        },
+        {
+          "text": "연구 환경에 network isolation 강화·엄격한 sandbox 적용, 의심 행동을 30분 내 알리는 모니터링 시스템 도입(감독 추론 컴퓨트의 약 20% 소모)",
+          "level": 1
+        },
+        {
+          "text": "공격적 사이버보안 등 특정 capability 임계값 도달 시 출시 전 외부 평가를 의무화하자는 정책 방향 제안",
+          "level": 1
+        },
+        {
+          "text": "다만 해당 Preparedness Framework를 만든 팀은 최근 해체돼 업무가 타 부서로 분산된 상태여서 실행력에 대한 회의론도 존재",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "tsinghua-university-bytedance-seed-scaling-domain-data-repetition-in-llm-pretraining",
+      "date": "2026-08-W04",
+      "year": "2026",
+      "month": "8",
+      "week": "4",
+      "type": "paper",
+      "org": "Tsinghua University · ByteDance Seed",
+      "title": "Scaling Domain Data Repetition in LLM Pretraining",
+      "url": "https://arxiv.org/abs/2608.14071",
+      "bullets": [
+        {
+          "text": "모델 규모가 커질수록 TPP(tokens-per-parameter) 유지를 위해 학습 토큰 예산이 늘지만 고품질 domain 데이터는 web 데이터만큼 확장되지 않아 혼합 비율이 희석되는 문제를 다룸",
+          "level": 1
+        },
+        {
+          "text": "반복(repetition)으로 희석을 상쇄하되 과도한 반복은 overfitting을 유발하는 trade-off를, 학습 예산이 모델 크기에 비례해 증가하는 실제 scaling 조건에서 분석",
+          "level": 1
+        },
+        {
+          "text": "TPP를 고정하면 최적 반복 횟수가 모델 크기에 따라 완만하게 증가한다는 반직관적 결과 도출",
+          "level": 1
+        },
+        {
+          "text": "최적 반복 횟수는 해당 domain의 최종 validation loss와 강한 음의 상관 — loss가 낮은 domain일수록 더 많이 반복해도 이득, 반면 unique 데이터 양과의 상관은 약함",
+          "level": 1
+        },
+        {
+          "text": "동일 TPP의 작은 proxy 모델에서 튜닝한 반복 횟수를 대형 모델에 그대로 활용 가능하다는 실용적 처방 제시",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "associated-press-chinese-humanoid-robots-smash-human-records-in-100m-sprint-and-high-jump-at-beijing",
+      "date": "2026-08-W04",
+      "year": "2026",
+      "month": "8",
+      "week": "4",
+      "type": "news",
+      "org": "Associated Press",
+      "title": "Chinese humanoid robots smash human records in 100m sprint and high jump at Beijing robot games",
+      "url": "https://apnews.com/article/china-humanoid-robot-games-us-86cb8e310843151a77057e4cb764b4e2",
+      "bullets": [
+        {
+          "text": "8월 22~26일 베이징 국립 스피드스케이팅 경기장에서 제2회 World Humanoid Robot Games 개최, 2,000대 이상의 휴머노이드 참가",
+          "level": 1
+        },
+        {
+          "text": "Honor의 휴머노이드가 100m를 9.32초(최고속도 14.5m/s)에 주파해 Usain Bolt의 9.58초 기록을 상회, 제자리 높이뛰기는 2.88m로 인간 세계기록 2.45m 초과",
+          "level": 1
+        },
+        {
+          "text": "동시에 다수의 로봇이 넘어지거나 안전 펜스에 충돌·발화하는 등 현재 기술의 한계도 함께 노출",
+          "level": 1
+        },
+        {
+          "text": "미국 FCC는 지난달 국가안보를 이유로 신규 외국산 휴머노이드 로봇 수입 금지를 발표했고, 펜타곤은 Unitree를 중국군 연계 기업 목록에 추가 — 중국이 전 세계 휴머노이드 출하량의 약 82%를 차지하는 구도에서 미중 기술 경쟁 심화",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "princeton-university-uc-san-diego-demystifying-agent-skills-why-they-workuntil-they-dont",
+      "date": "2026-08-W04",
+      "year": "2026",
+      "month": "8",
+      "week": "4",
+      "type": "paper",
+      "org": "Princeton University · UC San Diego",
+      "title": "Demystifying Agent Skills: Why They Work—Until They Don't",
+      "url": "https://arxiv.org/abs/2608.14036",
+      "bullets": [
+        {
+          "text": "Agent skill이 총 성공률을 올린다는 사실만 알려져 있고 \"언제·왜 작동하며 어디서 실패하는가\"는 미해명이라는 문제의식에서 출발한 통제 실험 연구",
+          "level": 1
+        },
+        {
+          "text": "8,135건의 trial 기록을 정규화하고 240개 trajectory를 open coding해 238개 라벨을 12개 실패/성공 모드 taxonomy로 정리",
+          "level": 1
+        },
+        {
+          "text": "skill은 workflow memory 대비 +6.06%p 향상, 효과의 65.7%가 procedural anchoring에서 발생하고 knowledge injection 기여는 4.5%에 그침",
+          "level": 1
+        },
+        {
+          "text": "환경 인프라 실패율을 5.3% → 0.2%로 감소시키는 것이 주요 이득 경로",
+          "level": 1
+        },
+        {
+          "text": "skill pool이 5개에서 100개로 커지면 retrieval precision이 29.6% → 3.3%로 붕괴하지만 최종 성공률은 36~39%로 거의 평탄 — 정답 skill 호출은 성공의 충분조건도 필요조건도 아님",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "cerebras-cs-4",
       "date": "2026-08-W04",
@@ -43066,9 +43198,9 @@
     }
   ],
   "stats": {
-    "total": 1870,
-    "paper": 1091,
-    "dev": 730,
-    "news": 49
+    "total": 1874,
+    "paper": 1093,
+    "dev": 731,
+    "news": 50
   }
 }
