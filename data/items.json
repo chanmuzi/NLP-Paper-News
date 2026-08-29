@@ -1,8 +1,102 @@
 {
   "version": 1,
-  "last_updated": "2026-08-25T07:28:40.540Z",
-  "total_items": 1874,
+  "last_updated": "2026-08-29T13:18:22.346Z",
+  "total_items": 1877,
   "items": [
+    {
+      "id": "zai-glm-53-flash",
+      "date": "2026-08-W05",
+      "year": "2026",
+      "month": "8",
+      "week": "5",
+      "type": "dev",
+      "org": "Z.ai",
+      "title": "GLM-5.3-Flash",
+      "url": "https://docs.z.ai/guides/vlm/glm-5.3-flash",
+      "bullets": [
+        {
+          "text": "GLM-5 시리즈 최초의 native multimodal 모델, hybrid sparse + linear attention 구조로 총 320B / 활성 18B 파라미터",
+          "level": 1
+        },
+        {
+          "text": "1M context, 128K 최대 출력, 비디오·이미지·텍스트·파일 입력 지원, thinking mode·function calling·context caching·JSON 출력 제공",
+          "level": 1
+        },
+        {
+          "text": "Artificial Analysis Intelligence Index v4.1.1 57점(태스크당 $0.045), DeepSWE v1.1 63.4(GLM-5.2 46.2), AutomationBench 48.8(26.2)로 Claude Opus에 근접",
+          "level": 1
+        },
+        {
+          "text": "GLM Coding Plan에서 GLM-5.3 대비 3배 쿼터, 비수기·주말 50% 할인 포인트제 적용",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "the-information-nvidia-agrees-to-buy-open-source-ai-platform-hugging-face-for-129-billion",
+      "date": "2026-08-W05",
+      "year": "2026",
+      "month": "8",
+      "week": "5",
+      "type": "news",
+      "org": "The Information",
+      "title": "Nvidia Agrees to Buy Open Source AI Platform Hugging Face For $12.9 Billion",
+      "url": "https://www.theinformation.com/articles/nvidia-agrees-buy-open-source-model-repository-hugging-face-12-9-billion",
+      "bullets": [
+        {
+          "text": "Nvidia가 오픈소스 모델 허브 Hugging Face를 129억 달러에 인수하기로 합의했다는 보도",
+          "level": 1
+        },
+        {
+          "text": "2023년 Series D 기준 45억 달러 밸류에이션 대비 약 3배, 성사 시 Nvidia 역대 최대 인수",
+          "level": 2
+        },
+        {
+          "text": "오픈소스 AI 생태계 및 AI 스택 전반으로 Nvidia의 영향력 확대 의도로 해석",
+          "level": 1
+        },
+        {
+          "text": "최종 계약서 서명 전 단계로 무산 가능성 존재, 양사 모두 논평 거부",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "anthropic-hhmi-janelia-model-hardware-standard-mhs-research-preview",
+      "date": "2026-08-W05",
+      "year": "2026",
+      "month": "8",
+      "week": "5",
+      "type": "dev",
+      "org": "Anthropic · HHMI Janelia",
+      "title": "Model Hardware Standard (MHS) research preview",
+      "url": "https://www.anthropic.com/news/model-hardware-standard-research-preview",
+      "bullets": [
+        {
+          "text": "AI 에이전트가 실험실·제조 장비를 안전하게 제어할 수 있도록 하는 공통 하드웨어 스펙 MHS를 HHMI Janelia와 공동 개발해 research preview로 공개",
+          "level": 1
+        },
+        {
+          "text": "\"read\"/\"write\" 프리미티브 기반 범용 driver, 네트워크 device discovery, 자연어 태그 → capability·safety limit 레퍼런스 파일 자동 변환 구조",
+          "level": 1
+        },
+        {
+          "text": "MCP·CLI·code API 세 가지 제어 방식으로 multi-device orchestration 지원, 장비 단위 safety limit 강제",
+          "level": 2
+        },
+        {
+          "text": "Genentech·UW·CMU·QuEra 등 파트너 랩에서 통합 시간을 수주→수시간으로 단축, dose-response 실험 약 3배 가속, 레이저 lock 복구 99.3% 성공률 등 보고",
+          "level": 1
+        },
+        {
+          "text": "AWS·Danaher·Tecan·Universal Robots가 지원 준비 중, 안전성 평가 후 오픈소스 공개 예정",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "openai-pacing-model-development-in-an-era-of-cyber-critical-capabilities",
       "date": "2026-08-W04",
@@ -43198,9 +43292,9 @@
     }
   ],
   "stats": {
-    "total": 1874,
+    "total": 1877,
     "paper": 1093,
-    "dev": 731,
-    "news": 50
+    "dev": 733,
+    "news": 51
   }
 }
