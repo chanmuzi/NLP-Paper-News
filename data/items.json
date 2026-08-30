@@ -1,8 +1,42 @@
 {
   "version": 1,
-  "last_updated": "2026-08-29T13:18:22.346Z",
-  "total_items": 1877,
+  "last_updated": "2026-08-30T03:16:09.039Z",
+  "total_items": 1878,
   "items": [
+    {
+      "id": "exa-dynamic-highlights",
+      "date": "2026-08-W05",
+      "year": "2026",
+      "month": "8",
+      "week": "5",
+      "type": "dev",
+      "org": "Exa",
+      "title": "Dynamic Highlights",
+      "url": "https://exa.ai/blog/dynamic-highlights",
+      "bullets": [
+        {
+          "text": "AI 에이전트용 검색 API Exa, 검색 결과 발췌 기능 Highlights의 새 버전 Dynamic Highlights를 research preview로 공개",
+          "level": 1
+        },
+        {
+          "text": "문서마다 독립적으로 발췌를 뽑던 기존 방식 대신, 결과 집합 전체를 하나의 후보 풀로 보고 총 예산 안에서 가장 관련성 높은 토큰을 선택",
+          "level": 1
+        },
+        {
+          "text": "문서 간 중복 정보 제거, 관련성 높은 문서에 더 많은 컨텍스트 배분",
+          "level": 2
+        },
+        {
+          "text": "자체 벤치마크 기준 전체 페이지 대비 평균 95% 토큰 절감, 기존 highlights 대비 single-turn 토큰 효율 40% 개선(품질 +3.8%), agentic 검색 토큰 30% 절감(품질 +2.1%)",
+          "level": 1
+        },
+        {
+          "text": "`contents.highlights.dynamic: true`로 사용, `maxCharacters`와 병용 불가, beta 헤더(`Exa-Beta: dynamic-highlights-2026-08-28`) 필요",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "zai-glm-53-flash",
       "date": "2026-08-W05",
@@ -43292,9 +43326,9 @@
     }
   ],
   "stats": {
-    "total": 1877,
+    "total": 1878,
     "paper": 1093,
-    "dev": 733,
+    "dev": 734,
     "news": 51
   }
 }
