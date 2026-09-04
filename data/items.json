@@ -1,8 +1,98 @@
 {
   "version": 1,
-  "last_updated": "2026-08-30T03:16:09.039Z",
-  "total_items": 1878,
+  "last_updated": "2026-09-04T15:45:14.050Z",
+  "total_items": 1881,
   "items": [
+    {
+      "id": "world-labs-atlas-a-world-model-for-spatial-intelligence",
+      "date": "2026-09-W01",
+      "year": "2026",
+      "month": "9",
+      "week": "1",
+      "type": "dev",
+      "org": "World Labs",
+      "title": "Atlas: A World Model for Spatial Intelligence",
+      "url": "https://www.worldlabs.ai/blog/atlas",
+      "bullets": [
+        {
+          "text": "텍스트·이미지·비디오·3D를 네이티브로 다루도록 처음부터 pretraining한 omni model Atlas 공개",
+          "level": 1
+        },
+        {
+          "text": "카메라 제어 기반 최대 1분 1440p 영상 생성, 1~3장의 sparse 이미지로 point cloud·3D Gaussian splat 등 명시적 3D 재구성, 비디오 reframing·로보틱스 Real-to-Sim 시뮬레이션, 텍스트→이미지·360° 파노라마 생성 등 4가지 기능 지원",
+          "level": 1
+        },
+        {
+          "text": "입력을 3D 공간에 grounding해 spatial context를 구성하는 multimodal autoregressive diffusion transformer 구조, 학습 compute 증가에 따른 scaling 효과 확인",
+          "level": 1
+        },
+        {
+          "text": "카메라 제어 생성·3D 재구성에서 전용 모델 대비 우위, 선별 파트너 대상 early access 시작 후 Marble 등 자사 제품에 통합 예정",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "meta-introducing-muse-spark-13",
+      "date": "2026-09-W01",
+      "year": "2026",
+      "month": "9",
+      "week": "1",
+      "type": "dev",
+      "org": "Meta",
+      "title": "Introducing Muse Spark 1.3",
+      "url": "https://research.meta.ai/blog/introducing-muse-spark-1-3",
+      "bullets": [
+        {
+          "text": "agentic·coding 성능을 개선한 Muse Spark 1.3 공개, Muse Code와 Meta Model API로 즉시 사용 가능",
+          "level": 1
+        },
+        {
+          "text": "단일 스레드 내 multi-workflow 협업으로 long-horizon 작업 지속, 도구로 컨텍스트를 생성하며 계획 공백을 선제 보정, 결과가 큰 행동은 사용자 확인 후 수행",
+          "level": 1
+        },
+        {
+          "text": "coding에서 1.2 대비 tool call 약 20%·토큰 약 25% 절감, 더 적은 turn으로 깔끔한 코드 스타일 유지",
+          "level": 1
+        },
+        {
+          "text": "GPT 5.6 Sol·Opus 5(max)와 agent·coding·instruction-following·long-context 벤치마크 비교 공개, prompt injection 저항성과 비가역 행동 판단력도 강화",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "minimax-minimax-h3-an-open-model-breaking-the-boundaries-between-tasks-and-modalities",
+      "date": "2026-09-W01",
+      "year": "2026",
+      "month": "9",
+      "week": "1",
+      "type": "dev",
+      "org": "MiniMax",
+      "title": "MiniMax H3: An Open Model Breaking the Boundaries Between Tasks and Modalities",
+      "url": "https://www.minimax.io/blog/minimax-h3",
+      "bullets": [
+        {
+          "text": "텍스트·이미지·비디오·오디오 입력을 모두 이해하고 최대 15초 2K 영상을 네이티브 스테레오 사운드와 함께 생성하는 범용 multimodal generation model 공개",
+          "level": 1
+        },
+        {
+          "text": "언어를 매개로 태스크를 통합하는 Contextual Omni Representation, 유효 시퀀스 길이를 4배 늘린 H3-VAE, 이해·생성 워크로드를 분리해 학습 throughput을 약 30% 높인 Omni Transformer 도입",
+          "level": 1
+        },
+        {
+          "text": "저해상도 출력을 스스로 재생성해 2K 품질을 끌어올리는 In-Context Regeneration 적용",
+          "level": 2
+        },
+        {
+          "text": "2K 기준 초당 가격이 주류 모델의 1/3 미만, hailuoai.video에서 데모 제공, 모델 weight는 수일 내 오픈소스 공개 예정",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "exa-dynamic-highlights",
       "date": "2026-08-W05",
@@ -43326,9 +43416,9 @@
     }
   ],
   "stats": {
-    "total": 1878,
+    "total": 1881,
     "paper": 1093,
-    "dev": 734,
+    "dev": 737,
     "news": 51
   }
 }
