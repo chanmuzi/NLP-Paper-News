@@ -1,8 +1,132 @@
 {
   "version": 1,
-  "last_updated": "2026-09-04T15:45:14.050Z",
-  "total_items": 1881,
+  "last_updated": "2026-09-09T02:09:49.432Z",
+  "total_items": 1885,
   "items": [
+    {
+      "id": "ibm-stair-structure-aware-information-retriever",
+      "date": "2026-09-W02",
+      "year": "2026",
+      "month": "9",
+      "week": "2",
+      "type": "paper",
+      "org": "IBM",
+      "title": "STAIR: Structure Aware Information Retriever",
+      "url": "https://arxiv.org/abs/2609.03874",
+      "bullets": [
+        {
+          "text": "긴 문서 RAG에서 길이 기반 chunking이 문서의 의미 구조를 버리고, 긴 context는 lost-in-the-middle 문제로 정밀한 retrieval 필요",
+          "level": 1
+        },
+        {
+          "text": "임의 chunk 대신 목차(ToC)의 leaf section을 retrieval 단위로 삼고, query + 전체 ToC를 입력받아 관련 section을 생성하도록 Mistral Instruct v0.2를 LoRA fine-tuning",
+          "level": 1
+        },
+        {
+          "text": "Corpus 지식 ingestion과 계층 구조 기반 생성 두 task를 함께 학습",
+          "level": 2
+        },
+        {
+          "text": "6개 도메인 18권 책·70K+ synthetic query로 구성된 SearchTome benchmark 제안",
+          "level": 1
+        },
+        {
+          "text": "Recall@1 82.6%로 DSI(76.9%)·DPR(68.7%)·BM25(59.5%) 대비 우위, hallucination rate 0.05%로 거의 제거",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "meta-aira-wins-gold-in-nvidias-kaggle-fine-tuning-competition",
+      "date": "2026-09-W02",
+      "year": "2026",
+      "month": "9",
+      "week": "2",
+      "type": "news",
+      "org": "Meta",
+      "title": "AIRA₃ wins Gold in NVIDIA's Kaggle fine-tuning competition",
+      "url": "https://x.com/AIatMeta/status/2096271545589190927",
+      "bullets": [
+        {
+          "text": "차세대 자율 AI 연구 시스템 AIRA₃를 NVIDIA 주최 live Kaggle 대회(30B Nemotron 모델의 reasoning 능력 fine-tuning)에 참가시킨 결과 공개",
+          "level": 1
+        },
+        {
+          "text": "모든 참가자가 동일 정보를 받고 private test set으로 외부 평가받는 조건에서 약 4,000팀 중 8위로 Gold 획득",
+          "level": 1
+        },
+        {
+          "text": "동일한 frontier tool을 쓴 인간 참가자를 능가, AI 모델의 특정 능력을 인간 전문가 수준으로 개선할 수 있다는 신호로 해석",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "openai-gpt-6-astra-a-new-generation-of-intelligence",
+      "date": "2026-09-W02",
+      "year": "2026",
+      "month": "9",
+      "week": "2",
+      "type": "dev",
+      "org": "OpenAI",
+      "title": "GPT-6 Astra: A new generation of intelligence",
+      "url": "https://openai.com/index/gpt-6-astra/",
+      "bullets": [
+        {
+          "text": "Computer use·browsing·software engineering·cybersecurity·science·전문 업무 전반에서 SOTA를 주장하는 새 flagship 모델 공개",
+          "level": 1
+        },
+        {
+          "text": "Agents' Last Exam·AutomationBench·ScreenSpot Pro(computer use), FrontierMath Tier 4·ARC-AGI-3·TerminalBench-4.0(reasoning) 등에서 최고 성능 보고",
+          "level": 1
+        },
+        {
+          "text": "1.05M context, 128K max output, knowledge cutoff 2026-04-30, API 가격 input $10 / output $50 per 1M tokens",
+          "level": 1
+        },
+        {
+          "text": "Cybersecurity 프로그램 참여 기업 우선 접근 후 ChatGPT(Pro·Enterprise·Business)·Codex·API·AWS로 단계적 rollout",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "kaist-ai-google-deepmind-language-models-can-control-their-own-attention",
+      "date": "2026-09-W02",
+      "year": "2026",
+      "month": "9",
+      "week": "2",
+      "type": "paper",
+      "org": "KAIST AI · Google DeepMind",
+      "title": "Language Models Can Control Their Own Attention",
+      "url": "https://arxiv.org/abs/2609.02737",
+      "bullets": [
+        {
+          "text": "Decoding 시 attention이 context 일부에만 집중됨에도 전체 KV cache를 매 step 스캔해야 하고, 기존 sparse attention도 per-step scoring 때문에 O(N) 비용 유지",
+          "level": 1
+        },
+        {
+          "text": "모델이 reasoning trace 안에서 태그로 attention 의도를 선언하는 Declarative Attention(DA) 제안",
+          "level": 1
+        },
+        {
+          "text": "Global(전체 context) / Focus(지정 segment만) / Local(생성 토큰만) 세 모드를 inference-time state machine이 읽어 KV cache block 단위 sparse mask 구성",
+          "level": 2
+        },
+        {
+          "text": "수정 없는 모델에 zero-shot 적용해 15개 long-context task에서 Gemma-4-31B는 attended token 52.0% 감소(정확도 -1.27%p), Qwen-3.6-27B는 31.1% 감소(-2.75%p)",
+          "level": 1
+        },
+        {
+          "text": "모델 크기가 커질수록 정확도 손실 축소, decode wall-clock은 vanilla 대비 0.71×(Gemma)·0.77×(Qwen) 추정",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "world-labs-atlas-a-world-model-for-spatial-intelligence",
       "date": "2026-09-W01",
@@ -43416,9 +43540,9 @@
     }
   ],
   "stats": {
-    "total": 1881,
-    "paper": 1093,
-    "dev": 737,
-    "news": 51
+    "total": 1885,
+    "paper": 1095,
+    "dev": 738,
+    "news": 52
   }
 }
