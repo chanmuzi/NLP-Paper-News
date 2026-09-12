@@ -1,8 +1,38 @@
 {
   "version": 1,
-  "last_updated": "2026-09-09T02:09:49.432Z",
-  "total_items": 1885,
+  "last_updated": "2026-09-12T07:32:23.822Z",
+  "total_items": 1886,
   "items": [
+    {
+      "id": "openai-introducing-chatgpt-images-25",
+      "date": "2026-09-W02",
+      "year": "2026",
+      "month": "9",
+      "week": "2",
+      "type": "dev",
+      "org": "OpenAI",
+      "title": "Introducing ChatGPT Images 2.5",
+      "url": "https://openai.com/index/introducing-chatgpt-images-2-5/",
+      "bullets": [
+        {
+          "text": "디테일·조명·텍스처 품질을 끌어올린 신규 이미지 모델 공개. Images 2.0 대비 생성 지연 최대 50% 단축",
+          "level": 1
+        },
+        {
+          "text": "레퍼런스 사진의 피사체 보존력 강화, 멀티턴 편집 지시 준수율 개선으로 반복 편집 워크플로우 안정화",
+          "level": 1
+        },
+        {
+          "text": "ChatGPT 내에서 직접 스케치해 레퍼런스로 쓰는 Sketch, 포스터·굿즈 등 템플릿, 이미지 코멘트 기반 부분 편집, 프롬프트 공유 기능 추가",
+          "level": 1
+        },
+        {
+          "text": "ChatGPT·ChatGPT Work·Codex 전 사용자에게 데스크톱/모바일/웹으로 배포, API는 GPT-Image-2.5 Flare(품질·속도)와 Sunburst(정밀도 우선, 생성 시간 김) 2종 제공",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "ibm-stair-structure-aware-information-retriever",
       "date": "2026-09-W02",
@@ -43540,9 +43570,9 @@
     }
   ],
   "stats": {
-    "total": 1885,
+    "total": 1886,
     "paper": 1095,
-    "dev": 738,
+    "dev": 739,
     "news": 52
   }
 }
