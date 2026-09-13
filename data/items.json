@@ -1,8 +1,42 @@
 {
   "version": 1,
-  "last_updated": "2026-09-12T07:32:23.822Z",
-  "total_items": 1886,
+  "last_updated": "2026-09-13T12:39:25.408Z",
+  "total_items": 1887,
   "items": [
+    {
+      "id": "google-deepmind-alphagenome-atlas",
+      "date": "2026-09-W02",
+      "year": "2026",
+      "month": "9",
+      "week": "2",
+      "type": "dev",
+      "org": "Google DeepMind",
+      "title": "AlphaGenome Atlas",
+      "url": "https://deepmind.google/blog/alphagenome-atlas-a-predictive-map-of-every-possible-dna-letter-change-in-the-human-genome/",
+      "bullets": [
+        {
+          "text": "인간 게놈에서 가능한 모든 단일 염기 변이 90억 개의 분자적 영향을 예측해 정리한 대규모 리소스 공개",
+          "level": 1
+        },
+        {
+          "text": "AlphaGenome과 AlphaMissense 예측을 하나의 영향도 점수로 통합한 AVI Score 제공, 변이별로 다양한 세포·조직 타입에 걸친 수천 개 예측과 feature attribution, 2,500개 이상의 반복 DNA 모티프 카탈로그 수록",
+          "level": 1
+        },
+        {
+          "text": "총 1페타바이트 규모로 AlphaFold Database의 30배 이상, 코딩·논코딩 영역 모두 포함",
+          "level": 2
+        },
+        {
+          "text": "학술용 무료 웹 포털과 AlphaGenome API, Google Antigravity 연동으로 접근 가능하며 상용은 Google Cloud에서 제공",
+          "level": 1
+        },
+        {
+          "text": "초기 협력 기관에서 희귀질환 변이 규명, 인구집단 연구에서 논코딩 유전 연관성 22% 추가 발견 등 성과 확인",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "openai-introducing-chatgpt-images-25",
       "date": "2026-09-W02",
@@ -43570,9 +43604,9 @@
     }
   ],
   "stats": {
-    "total": 1886,
+    "total": 1887,
     "paper": 1095,
-    "dev": 739,
+    "dev": 740,
     "news": 52
   }
 }
