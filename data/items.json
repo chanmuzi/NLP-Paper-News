@@ -1,8 +1,76 @@
 {
   "version": 1,
-  "last_updated": "2026-09-13T12:39:25.408Z",
-  "total_items": 1887,
+  "last_updated": "2026-09-14T04:23:43.462Z",
+  "total_items": 1889,
   "items": [
+    {
+      "id": "openai-introducing-the-agents-api",
+      "date": "2026-09-W02",
+      "year": "2026",
+      "month": "9",
+      "week": "2",
+      "type": "dev",
+      "org": "OpenAI",
+      "title": "Introducing the Agents API",
+      "url": "https://openai.com/index/introducing-the-agents-api/",
+      "bullets": [
+        {
+          "text": "Codex harness를 OpenAI가 직접 운영하는 managed cloud agent용 **Agents API**를 public beta로 공개",
+          "level": 1
+        },
+        {
+          "text": "여러 task에 걸쳐 유지되는 durable session 기반 구조. automatic context compaction, tool search, subagent 위임, MCP server 연동 지원",
+          "level": 1
+        },
+        {
+          "text": "실행 환경은 OpenAI hosted sandbox, self-hosted, Vercel·DigitalOcean·Cloudflare·E2B·Modal 등 partner sandbox 중에서 선택",
+          "level": 1
+        },
+        {
+          "text": "별도 API 요금 없이 token·tool·container 사용량만 과금. orchestration·memory·sandbox를 직접 만들지 않아도 장기 실행 agent 구축 가능",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "google-procedural-graphs-self-evolving-execution-structures-for-llm-agents",
+      "date": "2026-09-W02",
+      "year": "2026",
+      "month": "9",
+      "week": "2",
+      "type": "paper",
+      "org": "Google",
+      "title": "Procedural Graphs: Self-Evolving Execution Structures for LLM Agents",
+      "url": "https://arxiv.org/abs/2609.09153",
+      "bullets": [
+        {
+          "text": "LLM agent가 long-horizon task에서 목표를 잃거나 tool 호출 순서를 틀리고, 같은 행동을 반복하는 문제 제기",
+          "level": 1
+        },
+        {
+          "text": "절차 지식을 (procedure, relation, procedure) triplet 기반 directed graph로 명시화한 **Procedural Graph** 제안",
+          "level": 1
+        },
+        {
+          "text": "추론 시 현재 위치를 찾아내고, 주변 graph neighborhood를 바탕으로 맥락에 맞는 guidance 생성",
+          "level": 2
+        },
+        {
+          "text": "offline self-evolution loop로 실행 trajectory를 분석해 구조 수정안을 만들고, held-out 성능으로 검증한 뒤 반영",
+          "level": 2
+        },
+        {
+          "text": "6개 benchmark × 4개 LLM, 총 24개 설정 중 21개에서 1위 또는 공동 1위 달성. EnterpriseArena survival은 0% → 85%로 향상",
+          "level": 1
+        },
+        {
+          "text": "처음부터 self-evolve한 graph가 사람이 설계한 prior와 비슷한 성능. 결함 있는 expert graph도 복구해 MultiChallenge success +33.93p",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "google-deepmind-alphagenome-atlas",
       "date": "2026-09-W02",
@@ -43604,9 +43672,9 @@
     }
   ],
   "stats": {
-    "total": 1887,
-    "paper": 1095,
-    "dev": 740,
+    "total": 1889,
+    "paper": 1096,
+    "dev": 741,
     "news": 52
   }
 }
