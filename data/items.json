@@ -1,8 +1,114 @@
 {
   "version": 1,
-  "last_updated": "2026-09-14T04:23:43.462Z",
-  "total_items": 1889,
+  "last_updated": "2026-09-19T07:43:41.441Z",
+  "total_items": 1892,
   "items": [
+    {
+      "id": "cohere-building-multilingual-bridges-data-mixing-as-the-pillar-of-generalization-for-in-language-rea",
+      "date": "2026-09-W03",
+      "year": "2026",
+      "month": "9",
+      "week": "3",
+      "type": "paper",
+      "org": "Cohere",
+      "title": "Building Multilingual Bridges: Data Mixing as the Pillar of Generalization for In-Language Reasoning",
+      "url": "https://arxiv.org/abs/2609.10445",
+      "bullets": [
+        {
+          "text": "reasoning 모델이 입력 언어와 무관하게 영어로 사고하는 English-centric 편향 문제 제기, 언어별 대규모 reasoning 데이터 없이 사용자 언어로 추론(L2 reasoning)하는 방법 탐구",
+          "level": 1
+        },
+        {
+          "text": "영어 reasoning 데이터(약 1.7M)·번역된 다국어 reasoning 데이터(언어당 약 5K, 44개 언어)·다국어 non-reasoning instruction 데이터(약 4.9M)를 sequential adaptation 대신 joint training으로 혼합, 3.35B 규모 Tiny Aya L2-Thinker를 45개 언어로 학습",
+          "level": 1
+        },
+        {
+          "text": "6개 벤치마크에서 비영어 L2 reasoning 비율 93.8~98.3% 달성하면서 정확도 손실은 대부분 2~3% 수준, 2배 크기 M-Thinker-7B를 5/6 벤치마크에서 상회",
+          "level": 1
+        },
+        {
+          "text": "ablation 결과 언어 수 확대는 간섭 없이 unseen language 일반화를 높이고, non-reasoning 데이터를 0→10%만 넣어도 L2 비율 46→89%로 급등하며, 최적 혼합비는 non-reasoning 20~30%",
+          "level": 1
+        },
+        {
+          "text": "joint mixing이 sequential adaptation·model merging보다 우수, reasoning은 데이터 구성만으로 언어 간 전이 가능한 language-agnostic 능력이라는 결론",
+          "level": 2
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "princeton-recurrent-looped-transformer",
+      "date": "2026-09-W03",
+      "year": "2026",
+      "month": "9",
+      "week": "3",
+      "type": "paper",
+      "org": "Princeton",
+      "title": "Recurrent Looped Transformer",
+      "url": "https://github.com/yifanzhang-pro/recurrent-looped-tranformer",
+      "bullets": [
+        {
+          "text": "decoder의 최종 hidden state를 다음 token의 causal encoder 표현과 함께 입력으로 되먹이는 recurrent 구조 제안, 토큰당 block 연산 수는 고정한 채 recurrent 경로가 시퀀스 길이만큼 자라는 설계",
+          "level": 1
+        },
+        {
+          "text": "encoder 유래 key-value memory에 대한 global cross-attention과 layer별 sliding-window attention cache 병행, prefill·decode·pretraining·SFT·RL을 하나의 state transition으로 통합",
+          "level": 2
+        },
+        {
+          "text": "feedback 방식에 따라 RLT-0(feedback 없음)·RLT-1(token 단위 full feedback)·RLT-2(chunk 단위 feedback) 세 변형 비교",
+          "level": 1
+        },
+        {
+          "text": "6개 algorithmic task에서 표준 Transformer 대비 우수한 length generalization 확인, 256-bit parity에서 RLT-1이 전 seed 100% 정확도(Transformer 50.07%), 길이 512 permutation tracking에서 55.7%(Transformer 0.85%) 기록",
+          "level": 1
+        },
+        {
+          "text": "단 addition 등 일부 task는 학습 범위 밖 길이에서 여전히 성능 저하, modular arithmetic은 초기화에 민감",
+          "level": 2
+        },
+        {
+          "text": "코드·논문·프로젝트 페이지 Apache 2.0으로 공개",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "typesafe-ai-introducing-system-one-models-jev",
+      "date": "2026-09-W03",
+      "year": "2026",
+      "month": "9",
+      "week": "3",
+      "type": "dev",
+      "org": "TypeSafe AI",
+      "title": "Introducing System One Models & Jev",
+      "url": "https://typesafe.ai/blog/introducing-system-one-models-and-jev",
+      "bullets": [
+        {
+          "text": "전 OpenAI 연구자 Diogo Almeida가 설립한 TypeSafe AI, 소프트웨어 내 자동화에 특화된 새로운 모델 계열 \"System One Model\"과 첫 모델 Jev를 early access로 공개",
+          "level": 1
+        },
+        {
+          "text": "자유 텍스트 대신 type-safe structured value를 출력해 hallucination·type error를 원천 차단하고, sequential token generation이 아닌 parallel output으로 동급 LLM 대비 40~200배 빠른 속도 달성",
+          "level": 1
+        },
+        {
+          "text": "모든 결정에 calibrated confidence score를 함께 제공",
+          "level": 2
+        },
+        {
+          "text": "RLHF 대신 \"Reinforcement Learning for Calibrated Decisions(RLCD)\" 학습법과 custom architecture·parallel sampler를 결합, production 유사 workflow 평가에서 최대 193.6배 빠르고 444.6배 저렴한 결과 제시",
+          "level": 1
+        },
+        {
+          "text": "대화형 AI에서 소프트웨어에 내장되는 decision-making infrastructure로의 전환을 지향",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "openai-introducing-the-agents-api",
       "date": "2026-09-W02",
@@ -43672,9 +43778,9 @@
     }
   ],
   "stats": {
-    "total": 1889,
-    "paper": 1096,
-    "dev": 741,
+    "total": 1892,
+    "paper": 1098,
+    "dev": 742,
     "news": 52
   }
 }
