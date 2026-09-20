@@ -1,8 +1,50 @@
 {
   "version": 1,
-  "last_updated": "2026-09-19T07:43:41.441Z",
-  "total_items": 1892,
+  "last_updated": "2026-09-20T08:43:35.348Z",
+  "total_items": 1893,
   "items": [
+    {
+      "id": "salesforce-salesforce-koa-an-enterprise-language-model-for-agentic-tool-use",
+      "date": "2026-09-W03",
+      "year": "2026",
+      "month": "9",
+      "week": "3",
+      "type": "paper",
+      "org": "Salesforce",
+      "title": "Salesforce Koa: An Enterprise Language Model for Agentic Tool Use",
+      "url": "https://arxiv.org/abs/2609.15066",
+      "bullets": [
+        {
+          "text": "open-weight Nemotron-3-Super-120B를 GRPO 기반 RL로 post-training한 enterprise용 agentic tool-use 모델 공개",
+          "level": 1
+        },
+        {
+          "text": "고객 데이터 없이 public 데이터와 synthetic 데이터만으로 학습, general-purpose 성능은 유지",
+          "level": 2
+        },
+        {
+          "text": "핵심은 simulation-to-reward 파이프라인: workflow specification을 persona-conditioned multi-turn task로 확장하고, data-dependent 요청의 tool call 성공 여부에 근거한 task-resolution reward 부여",
+          "level": 1
+        },
+        {
+          "text": "enterprise 도메인은 Agentforce 선언형 언어 Agent Script로 spec 작성, public tool-use 도메인은 workflow 구조를 직접 합성",
+          "level": 2
+        },
+        {
+          "text": "frozen helper model(Nano-30B)이 customer simulator·tool emulator·coverage judge 역할을 동시 수행",
+          "level": 2
+        },
+        {
+          "text": "Tau2Bench·BFCL·CRM Bench에서 base 대비 개선, 특히 multi-turn tool use에서 가장 큰 향상",
+          "level": 1
+        },
+        {
+          "text": "GPT-4.1 등 proprietary baseline은 상회하나 최상위 frontier 모델에는 미달, specification-driven RL이 open-weight 모델의 enterprise 특화 경로임을 시사",
+          "level": 2
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "cohere-building-multilingual-bridges-data-mixing-as-the-pillar-of-generalization-for-in-language-rea",
       "date": "2026-09-W03",
@@ -43778,8 +43820,8 @@
     }
   ],
   "stats": {
-    "total": 1892,
-    "paper": 1098,
+    "total": 1893,
+    "paper": 1099,
     "dev": 742,
     "news": 52
   }
