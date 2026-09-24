@@ -1,8 +1,114 @@
 {
   "version": 1,
-  "last_updated": "2026-09-20T08:43:35.348Z",
-  "total_items": 1893,
+  "last_updated": "2026-09-24T05:26:08.826Z",
+  "total_items": 1896,
   "items": [
+    {
+      "id": "openai-introducing-gpt-6-sol-and-luna",
+      "date": "2026-09-W04",
+      "year": "2026",
+      "month": "9",
+      "week": "4",
+      "type": "dev",
+      "org": "OpenAI",
+      "title": "Introducing GPT-6 Sol and Luna",
+      "url": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
+      "bullets": [
+        {
+          "text": "GPT-6 Astra 출시 19일 만에 소형·저가 라인 Sol·Luna 공개. Astra와 동일한 학습 방법론 적용",
+          "level": 1
+        },
+        {
+          "text": "API 가격 GPT-5.6 대비 50% 인하: Sol $2/$10, Luna $0.10/$0.50 (per 1M). cached input 90% 할인",
+          "level": 1
+        },
+        {
+          "text": "Sol은 Astra 실무 성능의 90~95%를 20% 비용으로, Luna는 high-frequency ambient loop·background monitoring 용도로 포지셔닝",
+          "level": 1
+        },
+        {
+          "text": "AutomationBench 33.2% (GPT-5.6 Sol 18.1%), Agents' Last Exam 56.4% (Astra 59.3%), OSWorld 2.0 60.5% (Astra 72.6%)",
+          "level": 2
+        },
+        {
+          "text": "ChatGPT Work·Codex(Plus 이상)·API(gpt-6-sol, gpt-6-luna) 즉시 제공, Free·Go는 desktop app에서 Luna 사용 가능. alignment 평가에서 코딩 작업 관련 misleading claim 감소",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "xiaomi-mimo-v26-scaling-up-reinforcement-learning-for-self-improvement",
+      "date": "2026-09-W04",
+      "year": "2026",
+      "month": "9",
+      "week": "4",
+      "type": "dev",
+      "org": "Xiaomi",
+      "title": "MiMo-V2.6: Scaling Up Reinforcement Learning for Self-Improvement",
+      "url": "https://mimo.mi.com/docs/en-US/news/latest/v2-6",
+      "bullets": [
+        {
+          "text": "Pro(1.02T total / 42B active MoE)·Flash·Distill-Qwen-9B 세 모델 공개. 모두 text·image·video·audio native multimodal, 1M context, MIT 라이센스",
+          "level": 1
+        },
+        {
+          "text": "Artificial Analysis Intelligence Index 46점으로 open-weights 모델 1위. DeepSWE v1.1 65.7(Pro) / 72.6(Flash), Terminal Bench 2.1 89.9, OSWorld-Verified 82.0 (Pro-RL 기준)",
+          "level": 1
+        },
+        {
+          "text": "핵심은 RL 비용 효율: Pro RL 단계 약 $2.62M, Flash 약 $0.85M. coding·agent·visual·cybersecurity 도메인 mixed RL로 self-improvement 지향",
+          "level": 1
+        },
+        {
+          "text": "가중치뿐 아니라 7k+ RL task 환경, end-to-end RL training framework, harness, 기술 보고서까지 전부 오픈소스",
+          "level": 1
+        },
+        {
+          "text": "API 가격은 V2.5와 동일 유지 (Pro 기준 $0.435/$0.87 per 1M)",
+          "level": 2
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "anthropic-introducing-claude-opus-55",
+      "date": "2026-09-W04",
+      "year": "2026",
+      "month": "9",
+      "week": "4",
+      "type": "dev",
+      "org": "Anthropic",
+      "title": "Introducing Claude Opus 5.5",
+      "url": "https://www.anthropic.com/claude-opus-5-5",
+      "bullets": [
+        {
+          "text": "Claude 5.5 패밀리 첫 모델. 대부분의 작업에서 Fable 5.1 수준 성능을 Opus 5 대비 40% 낮은 비용으로 제공",
+          "level": 1
+        },
+        {
+          "text": "가격 $4/$20 (input/output, per 1M), cache read $0.20으로 60% 인하. Fast mode는 $8/$40에 2.5배 속도",
+          "level": 2
+        },
+        {
+          "text": "agentic coding·computer use 중심 개선: Terminal-Bench 4.0 66.4% (Opus 5 52.3%), FrontierCode v1.1 54.4%, OSWorld 2.0 81.8%, GDPval-AA 1846 Elo",
+          "level": 1
+        },
+        {
+          "text": "Opus 5 대비 30% 빠른 출력, verbosity 약 40% 감소. low~max 5단계 adaptive thinking effort 지원",
+          "level": 1
+        },
+        {
+          "text": "약 2,000개 시나리오 behavioral audit에서 최고 alignment 점수, boundary 우회 시도 85% 감소. 사이버·바이오 safeguard와 distillation 방지용 preserved thinking 적용",
+          "level": 1
+        },
+        {
+          "text": "Anthropic CEO의 \"pace the frontier\" 선언 이후 첫 릴리스, METR 등 외부 기관 사전 평가 진행",
+          "level": 2
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "salesforce-salesforce-koa-an-enterprise-language-model-for-agentic-tool-use",
       "date": "2026-09-W03",
@@ -43820,9 +43926,9 @@
     }
   ],
   "stats": {
-    "total": 1893,
+    "total": 1896,
     "paper": 1099,
-    "dev": 742,
+    "dev": 745,
     "news": 52
   }
 }
