@@ -1,8 +1,54 @@
 {
   "version": 1,
-  "last_updated": "2026-09-24T05:26:08.826Z",
-  "total_items": 1896,
+  "last_updated": "2026-09-25T07:40:10.181Z",
+  "total_items": 1897,
   "items": [
+    {
+      "id": "odyssey-agora-2-advancing-multi-agent-world-simulation",
+      "date": "2026-09-W04",
+      "year": "2026",
+      "month": "9",
+      "week": "4",
+      "type": "dev",
+      "org": "Odyssey",
+      "title": "Agora-2: Advancing Multi-Agent World Simulation",
+      "url": "https://odyssey.systems/introducing-agora-2",
+      "bullets": [
+        {
+          "text": "최대 20명의 인간·에이전트가 하나의 공유 환경에 동시에 참여하는 실시간 multi-agent world model Agora-2 공개",
+          "level": 1
+        },
+        {
+          "text": "전작 Agora-1 대비 참여자 수 5배 확장, 다중 환경 동시 운영 지원",
+          "level": 2
+        },
+        {
+          "text": "공유 상태를 예측하는 Simulation Model과 각 참여자 시점의 화면을 생성하는 Rendering Model의 이중 구조 채택",
+          "level": 1
+        },
+        {
+          "text": "화면 밖 entity의 속성도 공유 상태에 보존되어 시점과 무관하게 지속성 유지",
+          "level": 2
+        },
+        {
+          "text": "Rendering Model은 flow matching으로 학습, 참여자별 시각 이력을 조건으로 개별 뷰 생성",
+          "level": 2
+        },
+        {
+          "text": "Diablo II 게임플레이 캡처(관측·행동·상태 쌍)로 학습, RL 에이전트는 상대 추격·장애물 회피·고립 시 복귀 행동 수행",
+          "level": 1
+        },
+        {
+          "text": "agora.odyssey.systems에서 research preview 플레이 가능, 기술 리포트 별도 공개",
+          "level": 1
+        },
+        {
+          "text": "AI safety·robotics·자율주행·사이버보안 등 다중 에이전트 상호작용 연구 인프라로 포지셔닝",
+          "level": 2
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "openai-introducing-gpt-6-sol-and-luna",
       "date": "2026-09-W04",
@@ -43926,9 +43972,9 @@
     }
   ],
   "stats": {
-    "total": 1896,
+    "total": 1897,
     "paper": 1099,
-    "dev": 745,
+    "dev": 746,
     "news": 52
   }
 }
