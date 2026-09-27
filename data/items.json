@@ -1,8 +1,72 @@
 {
   "version": 1,
-  "last_updated": "2026-09-25T07:40:10.181Z",
-  "total_items": 1897,
+  "last_updated": "2026-09-27T04:26:58.477Z",
+  "total_items": 1899,
   "items": [
+    {
+      "id": "openai-introducing-mentalhealthbench",
+      "date": "2026-09-W04",
+      "year": "2026",
+      "month": "9",
+      "week": "4",
+      "type": "news",
+      "org": "OpenAI",
+      "title": "Introducing MentalHealthBench",
+      "url": "https://openai.com/index/introducing-mentalhealthbench/",
+      "bullets": [
+        {
+          "text": "22개국 80명 이상의 licensed 정신건강 전문가와 공동 제작한 mental health 대화 AI 응답 평가 benchmark 오픈 공개",
+          "level": 1
+        },
+        {
+          "text": "일상적 비급성 대화(53.5%)·고위험 대화(18.2%)·즉각적 안전 우려 emergency(28.3%)까지 전 스펙트럼 커버, 성인·청소년·보호자·임상가 시나리오 및 다국어 포함",
+          "level": 1
+        },
+        {
+          "text": "안전성, context 파악, user agency 보존, 실행 가능한 가이드, 공감, 긴급도 판단 등 10개 행동 영역을 -10~+10 가중 rubric으로 채점, GPT-5.6 Sol을 automated grader로 사용",
+          "level": 1
+        },
+        {
+          "text": "GPT-6 Astra 57.3%, GPT-6 Sol 53.9%, Claude Opus 5.5 52.4%로 frontier 모델 상위권, GPT-4o(2025.03) 32.1% 대비 뚜렷한 개선 확인",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "nvidia-nemotron-3-diarization",
+      "date": "2026-09-W04",
+      "year": "2026",
+      "month": "9",
+      "week": "4",
+      "type": "dev",
+      "org": "NVIDIA",
+      "title": "Nemotron-3-Diarization",
+      "url": "https://huggingface.co/nvidia/Nemotron-3-Diarization",
+      "bullets": [
+        {
+          "text": "최대 8명 화자의 \"who spoke when\"을 식별하는 100M 파라미터 open-weight speaker diarization 모델 공개 (OpenMDW 1.1, 상업 이용 가능)",
+          "level": 1
+        },
+        {
+          "text": "31-layer Transformer encoder + RoPE, 10ms Mel-spectrogram을 8배 다운샘플한 80ms 프레임 단위 처리",
+          "level": 2
+        },
+        {
+          "text": "Arrival-Order Speaker Cache(AOSC)와 FIFO queue로 스트리밍 청크 간 화자 identity 유지, 0.32s~30.4s 범위의 configurable latency로 streaming·offline 모두 지원",
+          "level": 1
+        },
+        {
+          "text": "실제 대화 ~10K시간 + 시뮬레이션 혼합 음성 ~82.6K시간(총 ~92.6K시간) 학습, 영어·중국어·힌디어 등 다국어 포함",
+          "level": 1
+        },
+        {
+          "text": "DIHARD III에서 DER 12.73%(offline)·13.55%(0.32s 스트리밍)로 전작 19.09% 대비 큰 폭 개선, CALLHOME-Part2 DER 9.10%",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "odyssey-agora-2-advancing-multi-agent-world-simulation",
       "date": "2026-09-W04",
@@ -43972,9 +44036,9 @@
     }
   ],
   "stats": {
-    "total": 1897,
+    "total": 1899,
     "paper": 1099,
-    "dev": 746,
-    "news": 52
+    "dev": 747,
+    "news": 53
   }
 }
