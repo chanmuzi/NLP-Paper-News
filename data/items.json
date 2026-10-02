@@ -1,8 +1,106 @@
 {
   "version": 1,
-  "last_updated": "2026-09-27T04:26:58.477Z",
-  "total_items": 1899,
+  "last_updated": "2026-10-02T02:49:58.324Z",
+  "total_items": 1902,
   "items": [
+    {
+      "id": "openai-devday-2026-recap",
+      "date": "2026-10-W01",
+      "year": "2026",
+      "month": "10",
+      "week": "1",
+      "type": "dev",
+      "org": "OpenAI",
+      "title": "DevDay 2026 recap",
+      "url": "https://openai.com/index/devday-2026-recap/",
+      "bullets": [
+        {
+          "text": "DevDay 2026에서 ChatGPT·Codex·모델·API 전반에 걸쳐 25개 신규 기능 발표",
+          "level": 1
+        },
+        {
+          "text": "GPT-6.1 Sol 공개, Astra에 근접한 성능을 1/5 가격(input $2 / output $10 per 1M tokens)에 제공",
+          "level": 1
+        },
+        {
+          "text": "Astra 기반 always-on agent \"Dots\" 도입, 전용 cloud PC에서 4,000+ 앱과 연동해 작업 대행",
+          "level": 1
+        },
+        {
+          "text": "Ultrafast 모드(Codex 최대 8×, API 최대 6× 속도, 표준가 6배) 및 $500/월 Pro 500 요금제 신설",
+          "level": 1
+        },
+        {
+          "text": "Agents API public beta(hosted execution·memory·multi-agent·computer use), Codex Cloud, Decisions API·Private Intelligence preview 공개",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "world-labs-amd-world-labs-is-joining-amd",
+      "date": "2026-10-W01",
+      "year": "2026",
+      "month": "10",
+      "week": "1",
+      "type": "news",
+      "org": "World Labs · AMD",
+      "title": "World Labs is Joining AMD",
+      "url": "https://www.worldlabs.ai/blog/amd-announcement",
+      "bullets": [
+        {
+          "text": "World Labs가 AMD에 인수되는 최종 계약 체결, 2026년 말 규제 승인 후 거래 완료 예정",
+          "level": 1
+        },
+        {
+          "text": "Fei-Fei Li는 AMD EVP 겸 Chief Scientist로 합류해 Lisa Su CEO에게 직속 보고, Justin Johnson·Ben Mildenhall이 AMD 내 World Labs 팀 계속 리드",
+          "level": 1
+        },
+        {
+          "text": "기존 AMD GPU 기반 모델 학습·추론 최적화 협업을 바탕으로 hardware·software·open model을 잇는 end-to-end 개방형 AI 생태계 구축 목표",
+          "level": 1
+        },
+        {
+          "text": "spatial intelligence·world model 연구를 GPU 하드웨어 역량과 결합해 robotics·simulation 분야 경쟁력 강화 의도",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "google-gemini-4-argon-our-next-era-of-frontier-intelligence",
+      "date": "2026-10-W01",
+      "year": "2026",
+      "month": "10",
+      "week": "1",
+      "type": "dev",
+      "org": "Google",
+      "title": "Gemini 4 Argon: our next era of frontier intelligence",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/",
+      "bullets": [
+        {
+          "text": "복잡한 전문 워크플로우를 겨냥한 frontier 모델 Gemini 4 Argon 공개, 업계 최대 수준인 1M output token 한도로 장기 추론 지원",
+          "level": 1
+        },
+        {
+          "text": "DeepSWE v1.1 77.9%, Vals Index 1위, LVBench 91.7%, CWE-bench v1 68%(공동 1위) 등 코딩·지식 업무·보안 전반에서 강세",
+          "level": 1
+        },
+        {
+          "text": "내부적으로 양자 알고리즘 최적화(baseline 대비 40% 개선), 800K+ 라인 Rust 마이그레이션 등에 활용",
+          "level": 2
+        },
+        {
+          "text": "Fairwind Program을 통해 보안 전문가 대상 단계적 출시 후 유료 API 고객·Google AI Ultra 구독자로 확대",
+          "level": 1
+        },
+        {
+          "text": "출시 프로모션가 input $2 / output $10 (1M tokens 기준), cached input 95% 할인, 이후 정가 $4 / $20",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "openai-introducing-mentalhealthbench",
       "date": "2026-09-W04",
@@ -44036,9 +44134,9 @@
     }
   ],
   "stats": {
-    "total": 1899,
+    "total": 1902,
     "paper": 1099,
-    "dev": 747,
-    "news": 53
+    "dev": 749,
+    "news": 54
   }
 }
