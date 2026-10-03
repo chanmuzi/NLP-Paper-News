@@ -1,8 +1,58 @@
 {
   "version": 1,
-  "last_updated": "2026-10-02T02:49:58.324Z",
-  "total_items": 1902,
+  "last_updated": "2026-10-03T09:25:57.137Z",
+  "total_items": 1903,
   "items": [
+    {
+      "id": "microsoft-our-first-streaming-transcription-model-debuts-at-no-1-on-artificial-analysis",
+      "date": "2026-10-W01",
+      "year": "2026",
+      "month": "10",
+      "week": "1",
+      "type": "dev",
+      "org": "Microsoft",
+      "title": "Our first streaming transcription model debuts at no. 1 on Artificial Analysis",
+      "url": "https://microsoft.ai/news/our-first-streaming-transcription-model/",
+      "bullets": [
+        {
+          "text": "Microsoft AI 최초의 streaming transcription 모델 MAI-Transcribe-2-Streaming 공개",
+          "level": 1
+        },
+        {
+          "text": "60개 언어 실시간 전사, 연속적 automatic language detection 지원",
+          "level": 2
+        },
+        {
+          "text": "오디오 수신 후 100ms 남짓 만에 첫 partial 생성, 이후 오디오가 들어오는 대로 지속 보정",
+          "level": 2
+        },
+        {
+          "text": "Artificial Analysis에서 final·partial transcript 정확도 모두 1위, accuracy-latency Pareto frontier 위치",
+          "level": 1
+        },
+        {
+          "text": "내부 평가 기준 transcript에 단어가 나타나는 속도가 최근접 경쟁 모델 대비 2배",
+          "level": 2
+        },
+        {
+          "text": "연말까지 오디오 1시간당 $0.54 프로모션 가격, Microsoft Foundry · MAI Playground · Vercel · Azure Voice Live 제공 (LiveKit 지원 예정)",
+          "level": 1
+        },
+        {
+          "text": "TTS 모델 MAI-Voice-2.1 · MAI-Voice-2.1-Flash 동시 공개",
+          "level": 1
+        },
+        {
+          "text": "Voice-2.1: 23개 언어 · 26개 locale, 단일 voice의 cross-language 발화 지원, 1M characters당 $22",
+          "level": 2
+        },
+        {
+          "text": "Voice-2.1-Flash: end-to-end latency 150ms, 추론 55% 가속 · 동급 모델 대비 약 60% 저렴, 1M characters당 $15",
+          "level": 2
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "openai-devday-2026-recap",
       "date": "2026-10-W01",
@@ -44134,9 +44184,9 @@
     }
   ],
   "stats": {
-    "total": 1902,
+    "total": 1903,
     "paper": 1099,
-    "dev": 749,
+    "dev": 750,
     "news": 54
   }
 }
