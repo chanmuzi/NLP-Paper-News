@@ -1,8 +1,50 @@
 {
   "version": 1,
-  "last_updated": "2026-10-03T09:25:57.137Z",
-  "total_items": 1903,
+  "last_updated": "2026-10-05T03:42:35.251Z",
+  "total_items": 1904,
   "items": [
+    {
+      "id": "neuralink-pretraining-on-50000-hours-of-unlabeled-brain-data",
+      "date": "2026-10-W01",
+      "year": "2026",
+      "month": "10",
+      "week": "1",
+      "type": "dev",
+      "org": "Neuralink",
+      "title": "Pretraining on 50,000 Hours of Unlabeled Brain Data",
+      "url": "https://neuralink.com/updates/pretraining-on-50000-hours/",
+      "bullets": [
+        {
+          "text": "임상 참가자들이 2년간 스트리밍한 50,000시간 이상의 unlabeled neural data로 participant-specific neural encoder를 self-supervised pretraining",
+          "level": 1
+        },
+        {
+          "text": "노이즈·drift가 심한 spiking data를 안정적인 embedding으로 변환해 decoder 입력으로 사용",
+          "level": 2
+        },
+        {
+          "text": "Mamba backbone + Perceiver 기반 입력층으로 spike를 token처럼 처리, 채널 절반으로 나머지 절반의 활동을 예측하는 spatially masked auto-Poisson regression 채택",
+          "level": 1
+        },
+        {
+          "text": "6명이 개인 최고 기록 경신, 3명이 기존 기록 10.39 BPS 돌파, 1명은 11.32 BPS로 BCI 신기록 달성",
+          "level": 1
+        },
+        {
+          "text": "재보정 없이 1주 이상(일부 3주 이상) 성능 유지, calibration 부담이 하루 10분에서 주 10분으로 감소한 사례 보고",
+          "level": 1
+        },
+        {
+          "text": "labeled embedding 30초가 raw spike 약 3.5분과 동등한 data efficiency",
+          "level": 2
+        },
+        {
+          "text": "multi-participant pooling은 온라인 성능 향상 미확인, 다만 P9 모델을 weight 99% freeze한 채 P2로 전이해 기존 decoder 능가",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "microsoft-our-first-streaming-transcription-model-debuts-at-no-1-on-artificial-analysis",
       "date": "2026-10-W01",
@@ -44184,9 +44226,9 @@
     }
   ],
   "stats": {
-    "total": 1903,
+    "total": 1904,
     "paper": 1099,
-    "dev": 750,
+    "dev": 751,
     "news": 54
   }
 }
