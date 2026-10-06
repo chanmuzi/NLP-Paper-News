@@ -1,8 +1,104 @@
 {
   "version": 1,
-  "last_updated": "2026-10-05T03:42:35.251Z",
-  "total_items": 1904,
+  "last_updated": "2026-10-06T05:33:53.430Z",
+  "total_items": 1906,
   "items": [
+    {
+      "id": "ai2-open-sourcing-astabrief-the-fast-report-generation-model-in-asta",
+      "date": "2026-10-W01",
+      "year": "2026",
+      "month": "10",
+      "week": "1",
+      "type": "dev",
+      "org": "Ai2",
+      "title": "Open-sourcing AstaBrief, the fast report-generation model in Asta",
+      "url": "https://allenai.org/blog/astabrief",
+      "bullets": [
+        {
+          "text": "인용 포함 과학 연구 리포트 생성에 특화된 open-weight 모델 AstaBrief 8B 공개",
+          "level": 1
+        },
+        {
+          "text": "Qwen3-8B 기반 post-training, Asta의 \"Fast mode\"로 탑재",
+          "level": 2
+        },
+        {
+          "text": "질의와 문헌 발췌를 입력받아 section 단위가 아닌 single pass로 리포트 직접 생성",
+          "level": 1
+        },
+        {
+          "text": "복잡한 최적화보다 학습 데이터 품질에 집중",
+          "level": 1
+        },
+        {
+          "text": "사용자 질의 90K건을 필터링해 만든 SFT 47K건 + dual-judge 합의 기반 DPO 6K쌍",
+          "level": 2
+        },
+        {
+          "text": "Citation density 필터링으로 근거 없는 주장 제거",
+          "level": 2
+        },
+        {
+          "text": "리포트당 평균 51.1초로 Thinking mode(178.5초) 대비 약 3.5배 빠른 생성",
+          "level": 1
+        },
+        {
+          "text": "SQABench-CS2에서 Claude 기반 pipeline, DR Tulu와 경쟁력 있는 수준",
+          "level": 2
+        },
+        {
+          "text": "모델·학습 데이터(Hugging Face), 로컬 PDF 기반 리포트 생성 예제 코드(GitHub) 함께 공개",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "ai2-how-do-512-gpus-train-one-ai-model",
+      "date": "2026-10-W01",
+      "year": "2026",
+      "month": "10",
+      "week": "1",
+      "type": "dev",
+      "org": "Ai2",
+      "title": "How do 512 GPUs train one AI model?",
+      "url": "https://narrative.allen.ai/scaling-up-training",
+      "bullets": [
+        {
+          "text": "대규모 LLM 분산 학습 원리를 interactive 시각화로 풀어낸 explainer 공개",
+          "level": 1
+        },
+        {
+          "text": "예시 모델: 1.2 trillion weights, 32 layers, layer당 64 experts의 MoE (학습 시 weight당 약 18 bytes 필요)",
+          "level": 2
+        },
+        {
+          "text": "세 가지 병렬화 기법을 단계적으로 설명",
+          "level": 1
+        },
+        {
+          "text": "Data parallelism: 동일한 모델 복사본이 서로 다른 batch를 처리한 뒤 gradient 평균",
+          "level": 2
+        },
+        {
+          "text": "Expert parallelism: MoE layer의 expert를 GPU에 나눠 배치해 GPU당 메모리 요구량 축소",
+          "level": 2
+        },
+        {
+          "text": "Pipeline parallelism: layer를 stage 단위로 나눠 forward/backward pass 동시 진행",
+          "level": 2
+        },
+        {
+          "text": "64-way data parallelism × (8-way expert split, 8 stages) = 512 GPUs 구성으로 결합",
+          "level": 1
+        },
+        {
+          "text": "구현체인 OLMo-core 논문 및 GitHub 코드(allenai/OLMo-core)와 연결",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "neuralink-pretraining-on-50000-hours-of-unlabeled-brain-data",
       "date": "2026-10-W01",
@@ -44226,9 +44322,9 @@
     }
   ],
   "stats": {
-    "total": 1904,
+    "total": 1906,
     "paper": 1099,
-    "dev": 751,
+    "dev": 753,
     "news": 54
   }
 }
