@@ -1,8 +1,46 @@
 {
   "version": 1,
-  "last_updated": "2026-10-06T05:33:53.430Z",
-  "total_items": 1906,
+  "last_updated": "2026-10-07T01:31:01.178Z",
+  "total_items": 1907,
   "items": [
+    {
+      "id": "reflection-ai-introducing-beam-reflections-501b-open-weight-model",
+      "date": "2026-10-W01",
+      "year": "2026",
+      "month": "10",
+      "week": "1",
+      "type": "dev",
+      "org": "Reflection AI",
+      "title": "Introducing Beam: Reflection's 501B open-weight model",
+      "url": "https://reflection.ai/blog/introducing-beam",
+      "bullets": [
+        {
+          "text": "Reflection AI의 첫 open-weight 모델 Beam 발표, coding·reasoning·agentic workload 특화 sparse MoE 구조",
+          "level": 1
+        },
+        {
+          "text": "총 501B / active 23B 파라미터, 52 layers, local·global attention 교차 배치, midtraining으로 1M token context 확보",
+          "level": 2
+        },
+        {
+          "text": "23.8T token pretraining 이후 대규모 RL 수행: GB300 GPU 10.5K대로 4주간 1억 회 이상 rollout, 약 13억 개 sandbox 활용",
+          "level": 1
+        },
+        {
+          "text": "SWE-Bench Verified 80.9%, Terminal Bench v2.1 80.1%, AIME 2026 97.8%, GPQA Diamond 90.5% 기록",
+          "level": 1
+        },
+        {
+          "text": "GLM-5.2와 유사한 점수를 3~4배 적은 inference compute로 달성, Kimi K3 등 더 큰 모델 대비 raw capability는 열세",
+          "level": 2
+        },
+        {
+          "text": "최종 red-teaming·평가 진행 중, 이달 내 Apache 2.0으로 weights·technical report·model card 공개 예정 (현재 early access 신청 접수)",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "ai2-open-sourcing-astabrief-the-fast-report-generation-model-in-asta",
       "date": "2026-10-W01",
@@ -44322,9 +44360,9 @@
     }
   ],
   "stats": {
-    "total": 1906,
+    "total": 1907,
     "paper": 1099,
-    "dev": 753,
+    "dev": 754,
     "news": 54
   }
 }
