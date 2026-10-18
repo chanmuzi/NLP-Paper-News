@@ -1,8 +1,106 @@
 {
   "version": 1,
-  "last_updated": "2026-10-07T01:31:01.178Z",
-  "total_items": 1907,
+  "last_updated": "2026-10-18T06:24:59.340Z",
+  "total_items": 1910,
   "items": [
+    {
+      "id": "liquid-ai-lfm25-24b-a2b-built-for-fast-on-device-agents",
+      "date": "2026-10-W03",
+      "year": "2026",
+      "month": "10",
+      "week": "3",
+      "type": "dev",
+      "org": "Liquid AI",
+      "title": "LFM2.5-24B-A2B: Built for Fast On-Device Agents",
+      "url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+      "bullets": [
+        {
+          "text": "LFM2.5 패밀리의 최대·최종 모델: 24B total / 2B active MoE(40 layers, 64 experts top-4), gated short conv + GQA 하이브리드, 131K 컨텍스트, 128K vocab, 33T 토큰 사전학습, 항상 CoT를 생성하는 reasoning-only 설계",
+          "level": 1
+        },
+        {
+          "text": "post-training 5단계: SFT → teacher specialization → on-policy distillation 2회(non-agentic/agentic) → OpenClaw·Hermes Agent·OpenCode 등 harness 내 agentic RL",
+          "level": 1
+        },
+        {
+          "text": "teacher가 git history·공개 플랫폼에서 정답을 찾는 reward hacking 발견 → sandbox 강화 후 sealed 환경으로 재평가",
+          "level": 2
+        },
+        {
+          "text": "Qwen3.6-35B-A3B·Gemma-4-26B-A4B 등 더 큰 MoE 대비 AutomationBench(27.7 vs 8.7)·IFEval·IFBench 등 tool-use·instruction following 우위, GPQA·SWE-Bench 등 지식·코딩 과제는 열세",
+          "level": 1
+        },
+        {
+          "text": "M5 Max 184 tok/s, Ryzen AI Max+ 395 114 tok/s로 비교군 대비 최대 1.7x 빠르고 메모리 최소, base·post-trained 오픈 가중치와 llama.cpp·MLX·vLLM·SGLang·ONNX day-one 지원",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "morluto-rea-reverse-engineer-anything",
+      "date": "2026-10-W03",
+      "year": "2026",
+      "month": "10",
+      "week": "3",
+      "type": "dev",
+      "org": "morluto",
+      "title": "REA: Reverse Engineer Anything",
+      "url": "https://github.com/morluto/rea",
+      "bullets": [
+        {
+          "text": "네이티브 바이너리부터 앱 런타임 동작까지 AI 에이전트로 역공학하는 MCP 서버 겸 CLI 공개 (MIT)",
+          "level": 1
+        },
+        {
+          "text": "지원 대상: Hopper/Ghidra/IDA 연동 네이티브 바이너리, Go/Rust, WASM, EVM bytecode, Electron/JS 앱, .NET, Android APK, Flutter, 펌웨어, 패킷 캡처 등",
+          "level": 1
+        },
+        {
+          "text": "`npx rea-agents setup`으로 Claude Code·Codex·Cursor·Gemini CLI 등에 등록, 분석은 전부 로컬 머신에서 수행",
+          "level": 1
+        },
+        {
+          "text": "pseudocode·assembly·IPC 관계 등 결과를 근거와 미확인 사항과 함께 반환해 에이전트가 동작 설명 또는 재구현·테스트에 활용",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "meta-muse-spark-open",
+      "date": "2026-10-W03",
+      "year": "2026",
+      "month": "10",
+      "week": "3",
+      "type": "dev",
+      "org": "Meta",
+      "title": "Muse Spark Open",
+      "url": "https://research.meta.ai/blog/muse-spark-open",
+      "bullets": [
+        {
+          "text": "816B total / 42B active sparse MoE, 1M 토큰 컨텍스트, 텍스트·이미지·오디오·비디오 입력을 지원하는 네이티브 멀티모달 모델 가중치를 Muse Model License로 Hugging Face에 공개",
+          "level": 1
+        },
+        {
+          "text": "Muse Spark 1.3과 동일 base model, 8월 공개판 대비 guardrail 없는 standalone 사용을 대비한 safety post-training 추가",
+          "level": 2
+        },
+        {
+          "text": "agentic coding 특화: 멀티파일 리팩터·디버깅·장기 작업으로 학습, 웹 브라우징·subagent 조율·computer use 지원, 행동 전 의도를 밝히는 별도 commentary 생성",
+          "level": 1
+        },
+        {
+          "text": "SGLang·vLLM 최적화(NVIDIA/AMD/Intel), PyTorch Helion 커널로 RoPE·RMSNorm 등 1.03~3.95x 가속, TorchTitan으로 SFT/LoRA/RL 파인튜닝 지원",
+          "level": 1
+        },
+        {
+          "text": "Mac Studio M5 Ultra 2대에서 MLX로 로컬 실행 가능, 벤치마크 수치는 Meta 자체 보고치로 독립 재현 전",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "reflection-ai-introducing-beam-reflections-501b-open-weight-model",
       "date": "2026-10-W01",
@@ -44360,9 +44458,9 @@
     }
   ],
   "stats": {
-    "total": 1907,
+    "total": 1910,
     "paper": 1099,
-    "dev": 754,
+    "dev": 757,
     "news": 54
   }
 }
