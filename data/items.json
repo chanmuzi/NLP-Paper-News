@@ -1,8 +1,46 @@
 {
   "version": 1,
-  "last_updated": "2026-10-18T06:24:59.340Z",
-  "total_items": 1910,
+  "last_updated": "2026-10-25T04:50:03.646Z",
+  "total_items": 1911,
   "items": [
+    {
+      "id": "moonshot-ai-introducing-kimi-k31-pro",
+      "date": "2026-10-W04",
+      "year": "2026",
+      "month": "10",
+      "week": "4",
+      "type": "dev",
+      "org": "Moonshot AI",
+      "title": "Introducing Kimi K3.1 Pro",
+      "url": "https://kimi.ai/blog/kimi-k3-1-pro",
+      "bullets": [
+        {
+          "text": "K3.1 시리즈 첫 모델이자 Moonshot의 가장 강력한 3T-class open-weight 모델 공개, 1M 토큰 context window 지원",
+          "level": 1
+        },
+        {
+          "text": "Kimi K3에 post-training compute를 대폭 투입한 버전, 2~3배 빠른 Highspeed 변형 동시 출시",
+          "level": 2
+        },
+        {
+          "text": "coding·3D modeling·finance 워크플로우 강화, Terminal-Bench 4.0 65.7%·OfficeQA Pro v2 64.4(SOTA 주장) 달성",
+          "level": 1
+        },
+        {
+          "text": "Unity·Unreal·Godot·Blender·CAD용 스크립트 작성·실행 지원, \"3D Make\" 기능 kimi.ai에 적용",
+          "level": 2
+        },
+        {
+          "text": "내부 Kimi Hallu Bench(Hard, with tools) claim-level hallucination rate 23.4% → 8.3%로 감소",
+          "level": 1
+        },
+        {
+          "text": "open-weight 공개를 위해 mid-training·RL 단계에서 cyber 관련 데이터 제거, full weights는 11월 4일 공개 예정",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "liquid-ai-lfm25-24b-a2b-built-for-fast-on-device-agents",
       "date": "2026-10-W03",
@@ -44458,9 +44496,9 @@
     }
   ],
   "stats": {
-    "total": 1910,
+    "total": 1911,
     "paper": 1099,
-    "dev": 757,
+    "dev": 758,
     "news": 54
   }
 }
