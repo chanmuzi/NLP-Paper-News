@@ -1,8 +1,42 @@
 {
   "version": 1,
-  "last_updated": "2026-10-25T04:50:03.646Z",
-  "total_items": 1911,
+  "last_updated": "2026-10-27T06:25:59.898Z",
+  "total_items": 1912,
   "items": [
+    {
+      "id": "anthropic-anthropic-files-s-1-with-the-sec-for-proposed-initial-public-offering",
+      "date": "2026-10-W04",
+      "year": "2026",
+      "month": "10",
+      "week": "4",
+      "type": "news",
+      "org": "Anthropic",
+      "title": "Anthropic files S-1 with the SEC for proposed initial public offering",
+      "url": "https://www.anthropic.com/news/s1-sec",
+      "bullets": [
+        {
+          "text": "Anthropic, 미국 SEC에 Class A 보통주 IPO를 위한 Form S-1 등록신고서 공개 제출",
+          "level": 1
+        },
+        {
+          "text": "2026년 6월 비공개(confidential) 초안 제출 이후 공개 전환",
+          "level": 2
+        },
+        {
+          "text": "Nasdaq Global Select Market 상장 예정, 티커는 \"ANT\"",
+          "level": 1
+        },
+        {
+          "text": "공모 주식 수·공모가 범위 미정, 등록신고서는 아직 효력 발생 전",
+          "level": 1
+        },
+        {
+          "text": "주관사는 Goldman Sachs · Morgan Stanley",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "moonshot-ai-introducing-kimi-k31-pro",
       "date": "2026-10-W04",
@@ -44496,9 +44530,9 @@
     }
   ],
   "stats": {
-    "total": 1911,
+    "total": 1912,
     "paper": 1099,
     "dev": 758,
-    "news": 54
+    "news": 55
   }
 }
