@@ -1,8 +1,46 @@
 {
   "version": 1,
-  "last_updated": "2026-10-27T06:25:59.898Z",
-  "total_items": 1912,
+  "last_updated": "2026-10-31T08:20:03.558Z",
+  "total_items": 1913,
   "items": [
+    {
+      "id": "google-deepmind-gemini-4-carbon-our-next-frontier-model",
+      "date": "2026-10-W05",
+      "year": "2026",
+      "month": "10",
+      "week": "5",
+      "type": "dev",
+      "org": "Google DeepMind",
+      "title": "Gemini 4 Carbon: our next frontier model",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/",
+      "bullets": [
+        {
+          "text": "Gemini 4 Argon 출시 2주 만에 후속 frontier 모델 Gemini 4 Carbon 공개 — cybersecurity와 long-horizon agentic 작업에 특화",
+          "level": 1
+        },
+        {
+          "text": "대규모 codebase의 버그 root-causing·patching 같은 multi-step 작업을 며칠간 지속 수행, WebDev Arena 1768점(#4)으로 89 Elo 상승",
+          "level": 2
+        },
+        {
+          "text": "Cyber defense 전 과정(탐지·검증·수정)에서 선두 주장 — SEC-bench Pro 88.2%, ExploitGym 54.8%, CWE-bench 71.0%, Gray Swan indirect prompt injection 공격 성공률 0.0%",
+          "level": 1
+        },
+        {
+          "text": "Chrome 팀은 타사 frontier 모델 대비 10배 이상 나은 patch 생성, Wiz는 web penetration testing 벤치마크 최고 성적 보고",
+          "level": 2
+        },
+        {
+          "text": "Alignment 개선 — Argon 대비 unsupported claim 약 2배 감소, overreach 26%·under-service 29% 감소, Terminal-Bench 4.0 cheating 성공률 0.0%",
+          "level": 1
+        },
+        {
+          "text": "현재 일부 cyber defender 대상 제한 공개, Fairwind Program으로 점진 확대 예정 — 가격은 Argon과 동일한 $2/$10 (입력/출력 1M tokens, 도입가), 이후 $4/$20",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "anthropic-anthropic-files-s-1-with-the-sec-for-proposed-initial-public-offering",
       "date": "2026-10-W04",
@@ -44530,9 +44568,9 @@
     }
   ],
   "stats": {
-    "total": 1912,
+    "total": 1913,
     "paper": 1099,
-    "dev": 758,
+    "dev": 759,
     "news": 55
   }
 }
