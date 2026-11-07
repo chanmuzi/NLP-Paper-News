@@ -1,8 +1,114 @@
 {
   "version": 1,
-  "last_updated": "2026-10-31T08:20:03.558Z",
-  "total_items": 1913,
+  "last_updated": "2026-11-07T07:36:00.377Z",
+  "total_items": 1916,
   "items": [
+    {
+      "id": "ami-labs-nyu-proving-and-improving-the-platonic-representation-hypothesis-with-jepas",
+      "date": "2026-11-W01",
+      "year": "2026",
+      "month": "11",
+      "week": "1",
+      "type": "paper",
+      "org": "AMI Labs · NYU",
+      "title": "Proving and Improving the Platonic Representation Hypothesis with JEPAs",
+      "url": "https://arxiv.org/abs/2610.39302",
+      "bullets": [
+        {
+          "text": "서로 다른 modality 모델이 같은 representation으로 수렴한다는 Platonic Representation Hypothesis(PRH)를 JEPA 관점에서 이론적으로 증명",
+          "level": 1
+        },
+        {
+          "text": "positive-pair 분포를 공유하면 encoder가 단일 rotation 차이로 일치함을 보이고, 분포 차이에 따른 misalignment 상한 제시",
+          "level": 2
+        },
+        {
+          "text": "같은 장면의 다른 관측(\"good view\")이 next-token prediction(\"bad view\")보다 42배 적은 샘플로 동일 alignment 달성",
+          "level": 1
+        },
+        {
+          "text": "109M 텍스트 JEPA가 Qwen2.5-72B 등 모든 LLM과 CLIP text encoder보다 이미지 encoder와 높은 alignment 기록",
+          "level": 1
+        },
+        {
+          "text": "paired 데이터 없이 정렬하는 pair-free 방식으로 ImageNet-100 zero-shot top-5 64%(기존 최대 56%) 달성",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "thinking-machines-lab-introducing-inkling-2-small",
+      "date": "2026-11-W01",
+      "year": "2026",
+      "month": "11",
+      "week": "1",
+      "type": "news",
+      "org": "Thinking Machines Lab",
+      "title": "Introducing Inkling 2 Small",
+      "url": "https://thinkingmachines.ai/news/inkling-2-small/",
+      "bullets": [
+        {
+          "text": "2세대 모델 Inkling 2 Small 공개: 594B total / 17B active MoE, 이미지 입력·variable effort 지원",
+          "level": 1
+        },
+        {
+          "text": "Artificial Analysis Intelligence Index 31점으로 이전 모델 대비 큰 폭 향상",
+          "level": 2
+        },
+        {
+          "text": "8.4T 토큰 NVFP4 native pretraining 후 1M context mid-training, reasoning·agentic을 단일 joint RL run(2,048 GPU, 9일)으로 통합",
+          "level": 1
+        },
+        {
+          "text": "SWEBench Pro v2(Hard) 86.3%, DeepSWE 72.1%, MMMU Pro 81.6% 등 coding·vision·knowledge work 전반에서 경쟁력 확보",
+          "level": 1
+        },
+        {
+          "text": "현재 Tinker에서 closed weights로 제공, 외부 safety 테스트 후 Apache 2.0으로 weights 공개 예정",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "ai2-toyblocks-a-controlled-world-for-robot-learning-and-evaluation",
+      "date": "2026-11-W01",
+      "year": "2026",
+      "month": "11",
+      "week": "1",
+      "type": "dev",
+      "org": "Ai2",
+      "title": "ToyBlocks: A controlled world for robot learning and evaluation",
+      "url": "https://allenai.org/blog/toyblocks",
+      "bullets": [
+        {
+          "text": "로봇 팔 + 테이블 위 블록 기반의 오픈 시뮬레이션 프레임워크이자 첫 \"FoundationWorld\" 공개",
+          "level": 1
+        },
+        {
+          "text": "통제된 world + task/demo 생성 도구 + 장기 behavior 평가 metric을 한 패키지로 제공",
+          "level": 2
+        },
+        {
+          "text": "RL(Isaac Lab)·motion planning으로 skill 학습 후 TAMP로 장기 시연 생성, 단일 GPU에서 최대 24배 real-time 속도",
+          "level": 1
+        },
+        {
+          "text": "초기 데이터셋: 85,336개 long-horizon demonstration, 약 1,600시간·1.44억 frame",
+          "level": 2
+        },
+        {
+          "text": "고수준 VLM(Molmo 2) + 저수준 policy(ManiFlow) 계층 구조로 시뮬 55.5%, 실제 Franka 로봇 50.0% 성공 (zero-shot sim-to-real)",
+          "level": 1
+        },
+        {
+          "text": "시뮬레이터, 데이터, 학습·평가 코드, 학습된 모델을 Hugging Face로 공개, 수 주 내 확장 릴리스 예정",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "google-deepmind-gemini-4-carbon-our-next-frontier-model",
       "date": "2026-10-W05",
@@ -44568,9 +44674,9 @@
     }
   ],
   "stats": {
-    "total": 1913,
-    "paper": 1099,
-    "dev": 759,
-    "news": 55
+    "total": 1916,
+    "paper": 1100,
+    "dev": 760,
+    "news": 56
   }
 }
