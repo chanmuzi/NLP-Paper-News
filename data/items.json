@@ -1,8 +1,42 @@
 {
   "version": 1,
-  "last_updated": "2026-11-07T07:36:00.377Z",
-  "total_items": 1916,
+  "last_updated": "2026-11-09T03:37:31.340Z",
+  "total_items": 1917,
   "items": [
+    {
+      "id": "nvidia-you-dont-need-long-context",
+      "date": "2026-11-W02",
+      "year": "2026",
+      "month": "11",
+      "week": "2",
+      "type": "paper",
+      "org": "NVIDIA",
+      "title": "You don't need long context",
+      "url": "https://arxiv.org/abs/2611.05306",
+      "bullets": [
+        {
+          "text": "context 길이가 늘수록 토큰당 비용이 증가하는 문제(256K vs 16K 서빙 시 3.6–7배)에 대해, long-horizon·long-input task가 정말 긴 context를 필요로 하는지 검증",
+          "level": 1
+        },
+        {
+          "text": "임계치 도달 시 상태를 요약해 새 대화로 이어가는 End-of-Conversation Compaction(EoCC), 매 스텝을 task + compact semantic state만으로 실행하는 Single-Action Compaction(SAC) 제안",
+          "level": 1
+        },
+        {
+          "text": "긴 입력은 파일로 두고 Bash 도구(sed, awk, grep)로 선택적으로 읽는 방식 병행",
+          "level": 2
+        },
+        {
+          "text": "Claude Opus 4.5·GPT 5.6 Sol 기준 long-horizon task에서 정확도 변화 -3.7~+5.6pt 수준을 유지하면서 추정 비용 2.2–8.8배 절감, long-input task에서는 최대 +40pt 향상 및 최대 233배 비용 절감",
+          "level": 1
+        },
+        {
+          "text": "SAC만으로 SWE-bench Verified·Terminal-Bench 2.1에서 full-history baseline과 유사한 성능 달성",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "ami-labs-nyu-proving-and-improving-the-platonic-representation-hypothesis-with-jepas",
       "date": "2026-11-W01",
@@ -44674,8 +44708,8 @@
     }
   ],
   "stats": {
-    "total": 1916,
-    "paper": 1100,
+    "total": 1917,
+    "paper": 1101,
     "dev": 760,
     "news": 56
   }
