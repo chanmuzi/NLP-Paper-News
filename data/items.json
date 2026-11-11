@@ -1,8 +1,100 @@
 {
   "version": 1,
-  "last_updated": "2026-11-09T03:37:31.340Z",
-  "total_items": 1917,
+  "last_updated": "2026-11-11T07:59:05.620Z",
+  "total_items": 1919,
   "items": [
+    {
+      "id": "google-deepmind-gemini-4-carbon-is-now-available",
+      "date": "2026-11-W02",
+      "year": "2026",
+      "month": "11",
+      "week": "2",
+      "type": "dev",
+      "org": "Google DeepMind",
+      "title": "Gemini 4 Carbon is now available",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-carbon-now-available/",
+      "bullets": [
+        {
+          "text": "Fairwind Program으로 cyber defender에 선공개한 지 2주 만에 Gemini 4 Carbon 일반 공개 — cybersecurity·long-horizon agentic workflow 특화, Argon 상위 모델",
+          "level": 1
+        },
+        {
+          "text": "CursorBench 4.0·WANDR·AutomationBench 1위, 차순위 외부 모델 대비 task당 비용 2배 이상 저렴",
+          "level": 1
+        },
+        {
+          "text": "Artificial Analysis MKA 벤치마크 2위, 1위 모델 대비 평균 task 비용 6배 이상 저렴",
+          "level": 2
+        },
+        {
+          "text": "Cyber 영역에서 SEC-bench Pro(탐지)·ExploitGym(exploit)·CWE-bench v1(patch) 선두, 내부 Project Fortify 벤치마크 scanning recall 100%·triage precision 95%",
+          "level": 1
+        },
+        {
+          "text": "Adaptive red-teaming 공격 trajectory 99% 차단, Gray Swan IPI 벤치마크 prompt injection 성공률 0%, agentic honesty 벤치마크 통과율 92%(Argon 70%)",
+          "level": 1
+        },
+        {
+          "text": "Google AI Studio·Gemini for business API로 유료 개발자·기업에 제공, Google AI Ultra 구독자 대상 Antigravity·Gemini 앱·AI Mode 순차 적용",
+          "level": 1
+        },
+        {
+          "text": "도입가 $2/$10 (입력/출력 1M tokens), 2026년 11월 30일 이후 $4/$20",
+          "level": 2
+        },
+        {
+          "text": "Antigravity에 agent 팀을 조율하는 `/swarm` preview 추가",
+          "level": 2
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "anthropic-introducing-claude-fable-52-and-claude-mythos-52",
+      "date": "2026-11-W02",
+      "year": "2026",
+      "month": "11",
+      "week": "2",
+      "type": "dev",
+      "org": "Anthropic",
+      "title": "Introducing Claude Fable 5.2 and Claude Mythos 5.2",
+      "url": "https://www.anthropic.com/claude-fable-and-mythos-5-2",
+      "bullets": [
+        {
+          "text": "최고 난도 기술 작업용 Mythos-class 모델 Fable 5.2·Mythos 5.2 동시 공개 — 동일 underlying model, Fable은 cyber·bio safeguard 적용 일반 공개, Mythos는 Verification Program 통과 기관 한정",
+          "level": 1
+        },
+        {
+          "text": "5.1 대비 출력 최대 30% 가속, 가격 $8/$40 (입력/출력 1M tokens), 최대 2.5배 빠른 fast mode는 $16/$80",
+          "level": 1
+        },
+        {
+          "text": "FrontierCode 2.0 49.1%(Fable 5.1 32.4%, Opus 5.5 45.5%), FrontierSWE v2 69.9%, Humanity's Last Exam 74.2%, OSWorld 2.1 89.3% 등 주요 벤치마크 선두",
+          "level": 1
+        },
+        {
+          "text": "Fable 5.2 agent 1,000개가 Fermat's Last Theorem을 30시간 만에 Lean으로 formalize, 1,000+ subagent를 8일간 조율해 부팅 가능한 prototype OS 구현",
+          "level": 2
+        },
+        {
+          "text": "Mythos 5.2는 CVE Rediscovery 89.6%, CyScenarioBench 76.3%로 cybersecurity 최고 성능",
+          "level": 2
+        },
+        {
+          "text": "Safeguard 차단 건수 Fable 5.1 대비 약 55% 감소, sandbox escape 테스트에서 외부 credential·파일 사용 비율 3.1%(Mythos 5.1 21%)",
+          "level": 1
+        },
+        {
+          "text": "AI R&D 가속 역량(accelerator kernel optimization 등)은 학습 단계에서 의도적으로 Opus 5.5 수준으로 제한",
+          "level": 2
+        },
+        {
+          "text": "Fable 5.2는 Claude 전 플랫폼 및 AWS·Google Cloud·Microsoft Azure에서 즉시 제공 (API model ID: `claude-fable-5-2`)",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "nvidia-you-dont-need-long-context",
       "date": "2026-11-W02",
@@ -44708,9 +44800,9 @@
     }
   ],
   "stats": {
-    "total": 1917,
+    "total": 1919,
     "paper": 1101,
-    "dev": 760,
+    "dev": 762,
     "news": 56
   }
 }
