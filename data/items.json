@@ -1,8 +1,92 @@
 {
   "version": 1,
-  "last_updated": "2026-11-11T07:59:05.620Z",
-  "total_items": 1919,
+  "last_updated": "2026-11-13T06:44:57.033Z",
+  "total_items": 1921,
   "items": [
+    {
+      "id": "meta-e-means-outperforming-k-means-in-one-tenth-the-epochs",
+      "date": "2026-11-W02",
+      "year": "2026",
+      "month": "11",
+      "week": "2",
+      "type": "paper",
+      "org": "Meta",
+      "title": "e-means: outperforming k-means (in one-tenth the epochs)",
+      "url": "https://arxiv.org/abs/2611.09501",
+      "bullets": [
+        {
+          "text": "mini-batch k-means는 Lloyd k-means보다 approximation error가 크고 batch size·step size를 문제에 맞게 정하는 기준이 없다는 한계 지적",
+          "level": 1
+        },
+        {
+          "text": "VQ-VAE codebook learning에서 차용한 EMA 기반 centroid 업데이트의 mini-batch k-means인 e-means 제안",
+          "level": 1
+        },
+        {
+          "text": "cosine-annealed step size, dead-cluster revival, last-epoch-mean finalization 결합",
+          "level": 2
+        },
+        {
+          "text": "k, n, epoch 수로부터 batch size와 step size를 정하는 scaling law를 fitting하여 실험별 hyperparameter tuning 제거",
+          "level": 2
+        },
+        {
+          "text": "Lloyd k-means 25 epoch의 loss를 1.4~2.6 epoch 만에 달성, state-of-the-art 구현 대비 GPU wall-clock 10~45배 speedup",
+          "level": 1
+        },
+        {
+          "text": "100억 개 DINO embedding(DINO10B)을 1,600만 개 cluster로 2.5 epoch 만에 분할, Faiss `contrib/e_means`로 공개",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "google-gemini-decisions-api-fast-calibrated-multimodal-decisions",
+      "date": "2026-11-W02",
+      "year": "2026",
+      "month": "11",
+      "week": "2",
+      "type": "dev",
+      "org": "Google",
+      "title": "Gemini Decisions API: Fast, calibrated multimodal decisions",
+      "url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api/",
+      "bullets": [
+        {
+          "text": "closed-set 의사결정 전용 endpoint인 Gemini Decisions API 공개, 신규 모델 Gemini Decision 1(`gemini-decision-1`) 기반",
+          "level": 1
+        },
+        {
+          "text": "tool selection, policy check, model routing, context grading 등 선택지가 정해진 판단 작업 대상",
+          "level": 2
+        },
+        {
+          "text": "답변 텍스트를 token 단위로 생성하지 않고 single forward pass로 후보 옵션을 scoring하여 확률과 confidence score(0~1) 반환",
+          "level": 1
+        },
+        {
+          "text": "질문 유형은 Yes/No, `choice`(2~255개 선택지), `score`(ordered rubric) 세 가지",
+          "level": 2
+        },
+        {
+          "text": "텍스트·이미지·오디오·비디오·PDF를 포함한 최대 256K token 입력 하나에 독립 질문 최대 1,000개 처리, end-to-end latency 150~250ms",
+          "level": 1
+        },
+        {
+          "text": "가격은 input 1M token당 $0.10, output token 무료이며 shared input은 질문 수와 무관하게 요청당 1회 과금",
+          "level": 1
+        },
+        {
+          "text": "Gemini 3.5 Flash-Lite + Interactions API 대비 약 5배 저렴",
+          "level": 2
+        },
+        {
+          "text": "Gemini API와 Google AI Studio에서 사용 가능, Google Cloud 지원 예정",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "google-deepmind-gemini-4-carbon-is-now-available",
       "date": "2026-11-W02",
@@ -44800,9 +44884,9 @@
     }
   ],
   "stats": {
-    "total": 1919,
-    "paper": 1101,
-    "dev": 762,
+    "total": 1921,
+    "paper": 1102,
+    "dev": 763,
     "news": 56
   }
 }
