@@ -1,8 +1,46 @@
 {
   "version": 1,
-  "last_updated": "2026-11-13T06:44:57.033Z",
-  "total_items": 1921,
+  "last_updated": "2026-11-14T13:31:15.902Z",
+  "total_items": 1922,
   "items": [
+    {
+      "id": "google-introducing-gemini-4-hydrogen",
+      "date": "2026-11-W02",
+      "year": "2026",
+      "month": "11",
+      "week": "2",
+      "type": "dev",
+      "org": "Google",
+      "title": "Introducing Gemini 4 Hydrogen",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/",
+      "bullets": [
+        {
+          "text": "일상적인 coding·agentic workflow용 \"daily driver\" 모델 Gemini 4 Hydrogen 공개 — frontier 모델 Carbon·Argon이 long-horizon reasoning을 맡고 Hydrogen은 빠른 실행 담당",
+          "level": 1
+        },
+        {
+          "text": "Google Antigravity의 Orchestrator가 한 세션에서 Carbon(조율)과 Hydrogen(worker·verifier agent)을 전환, Terminal-Bench 4.0에서 Carbon에 근접한 성공률을 quota 24% 절감·19% 빠른 속도로 달성",
+          "level": 2
+        },
+        {
+          "text": "1M token input·최대 1M token output 지원, 전체 context 구간 단일 요금($1.50/1M input, $7.50/1M output), thinking level은 low·medium·high(기본)에 xhigh 신설",
+          "level": 1
+        },
+        {
+          "text": "Artificial Analysis Intelligence Index 51(xhigh 54)로 Argon(50) 상회, Terminal-Bench 4.1 57%로 Gemini 3.8 Flash(18.2%)의 3배 이상, 작업 완료 속도 2.5배",
+          "level": 1
+        },
+        {
+          "text": "안전성 지표 개선: 3.8 Flash 대비 허위 주장 5배 이상 감소, tool-use·coding eval에서 misaligned action·task shortcutting 12배 감소",
+          "level": 1
+        },
+        {
+          "text": "Gemini API(AI Studio·Android Studio), Google Antigravity, Gemini app, Google Search, Gemini in Google Sheets로 글로벌 순차 출시",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "meta-e-means-outperforming-k-means-in-one-tenth-the-epochs",
       "date": "2026-11-W02",
@@ -44884,9 +44922,9 @@
     }
   ],
   "stats": {
-    "total": 1921,
+    "total": 1922,
     "paper": 1102,
-    "dev": 763,
+    "dev": 764,
     "news": 56
   }
 }
