@@ -1,8 +1,50 @@
 {
   "version": 1,
-  "last_updated": "2026-11-14T13:31:15.902Z",
-  "total_items": 1922,
+  "last_updated": "2026-11-15T12:26:13.271Z",
+  "total_items": 1923,
   "items": [
+    {
+      "id": "perplexity-perplexity-decider-v13-training-eval-and-use-cases",
+      "date": "2026-11-W03",
+      "year": "2026",
+      "month": "11",
+      "week": "3",
+      "type": "dev",
+      "org": "Perplexity",
+      "title": "Perplexity Decider v1.3: Training, eval, and use cases",
+      "url": "https://www.perplexity.ai/hub/blog/perplexity-decider",
+      "bullets": [
+        {
+          "text": "범용 decision model인 Decider v1.3 및 경량 distilled 버전 Decider Flash v1.3 공개",
+          "level": 1
+        },
+        {
+          "text": "입력과 질문(Yes/No, Multiple choice, Score)을 주면 질문별 확률 분포 반환, 단일 forward pass로 여러 질문 동시 처리",
+          "level": 2
+        },
+        {
+          "text": "Hugging Face(Apache license), OpenRouter, Perplexity Decisions API로 제공",
+          "level": 2
+        },
+        {
+          "text": "Qwen3.8-27B backbone에 generalist full fine-tuning → domain LoRA → vision LoRA 3단계 학습 적용, Flash는 Qwen3.5-4B로 KL-divergence distillation",
+          "level": 1
+        },
+        {
+          "text": "NER, PII 식별, extractive QA를 위한 span highlight 기능 'locate' 신규 도입",
+          "level": 1
+        },
+        {
+          "text": "63개 query classification task 평균 정확도 91.6%, 72개 retrieval/reranking task 평균 nDCG@10 83.99로 Qwen3-Reranker-8B 및 Jev 1.14 상회",
+          "level": 1
+        },
+        {
+          "text": "내부적으로 agent log 기반 security rule 점검, RL rollout monitoring, crawled page 품질 필터링 등에 활용",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "google-introducing-gemini-4-hydrogen",
       "date": "2026-11-W02",
@@ -44922,9 +44964,9 @@
     }
   ],
   "stats": {
-    "total": 1922,
+    "total": 1923,
     "paper": 1102,
-    "dev": 764,
+    "dev": 765,
     "news": 56
   }
 }
