@@ -1,8 +1,174 @@
 {
   "version": 1,
-  "last_updated": "2026-11-15T12:26:13.271Z",
-  "total_items": 1923,
+  "last_updated": "2026-11-21T05:45:17.723Z",
+  "total_items": 1928,
   "items": [
+    {
+      "id": "shanghaitech-bytedance-the-resolution-hypothesis-agent-evolutions-key-is-identifying-improvements",
+      "date": "2026-11-W03",
+      "year": "2026",
+      "month": "11",
+      "week": "3",
+      "type": "paper",
+      "org": "ShanghaiTech, ByteDance",
+      "title": "The Resolution Hypothesis: Agent Evolution's Key Is Identifying Improvements",
+      "url": "https://arxiv.org/abs/2611.23068",
+      "bullets": [
+        {
+          "text": "agent evolution이 정체되는 원인이 개선안 제안이 아니라 노이즈 섞인 평가에서 실제 개선을 가려내는 데 있다는 가설 제시",
+          "level": 1
+        },
+        {
+          "text": "7개 evolution 방법, 6개 모델, 4개 agent 벤치마크로 1,030회 evolution run, 210만 개 이상의 test trajectory 분석",
+          "level": 1
+        },
+        {
+          "text": "설정 쌍의 60% 이상에서 평균 차이가 단일 run 표준편차보다 작고, Terminal-Bench에서 한 번의 run으로 최선의 방법을 고를 확률이 33%로 무작위(25%)와 비슷",
+          "level": 1
+        },
+        {
+          "text": "평가를 바로잡으면 보고된 gain의 중앙값이 17.6pp에서 0.8pp로 감소",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "uiuc-cmu-language-models-can-rewrite-their-own-weights",
+      "date": "2026-11-W03",
+      "year": "2026",
+      "month": "11",
+      "week": "3",
+      "type": "paper",
+      "org": "UIUC, CMU",
+      "title": "Language Models Can Rewrite Their Own Weights",
+      "url": "https://arxiv.org/abs/2611.21885",
+      "bullets": [
+        {
+          "text": "추가 학습이나 gradient 없이 LLM이 스스로 자신의 가중치를 수정해 성능을 높일 수 있는지 검증",
+          "level": 1
+        },
+        {
+          "text": "27B 모델에 자신의 가중치, 채점된 연습 답안, Python 도구를 주고 원본 대비 paired test로 효과가 확인된 수정만 제출하는 self-rewriting 방식 제안",
+          "level": 1
+        },
+        {
+          "text": "스스로 만든 수정으로 미공개 문제 490개에서 정확도 +6.6pt 향상(p<10⁻⁵)",
+          "level": 1
+        },
+        {
+          "text": "일부 MLP 행렬을 노이즈로 손상시킨 경우 스스로 복구해 ScreenSpot-v2 0%를 89%까지 회복(원본 93%)",
+          "level": 1
+        },
+        {
+          "text": "2B, 4B, 9B 모델은 개선에 실패해 이 능력은 27B 규모에서만 확인",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "alibaba-alibaba-unveils-qwen4-max-new-ai-teammate-for-work-creativity-and-discovery",
+      "date": "2026-11-W03",
+      "year": "2026",
+      "month": "11",
+      "week": "3",
+      "type": "news",
+      "org": "Alibaba",
+      "title": "Alibaba Unveils Qwen4-Max: New AI Teammate for Work, Creativity, and Discovery",
+      "url": "https://www.alibabacloud.com/en/press-room/alibaba-unveils-qwen4-max",
+      "bullets": [
+        {
+          "text": "지금까지 가장 강력한 Qwen 모델인 Qwen4-Max 공개, 소형 open-weight Qwen4 모델도 곧 공개 예정",
+          "level": 1
+        },
+        {
+          "text": "총 2.4T, 토큰당 71B 활성 파라미터의 sparse MoE 구조로 Qwen3.8-Max 대비 활성 파라미터 25% 축소",
+          "level": 1
+        },
+        {
+          "text": "native vision, 1M 토큰 context window 지원",
+          "level": 2
+        },
+        {
+          "text": "자체 벤치마크 Work360(721개 분야)에서 Qwen3.8-Max 대비 High effort 기준 토큰 35%, 작업당 평균 비용 약 60% 절감",
+          "level": 1
+        },
+        {
+          "text": "QwenCloud(Token Plan, API), QwenWork, QwenStudio로 제공",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "google-deepmind-introducing-gemini-4-neon",
+      "date": "2026-11-W03",
+      "year": "2026",
+      "month": "11",
+      "week": "3",
+      "type": "news",
+      "org": "Google DeepMind",
+      "title": "Introducing Gemini 4 Neon",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/",
+      "bullets": [
+        {
+          "text": "Gemini 4 Carbon(장기 고난도 작업)과 Hydrogen(빠른 일상 실행) 사이에 위치하는 Gemini 4 Neon 공개",
+          "level": 1
+        },
+        {
+          "text": "4단계 thinking level, 1M 토큰 context window 지원",
+          "level": 2
+        },
+        {
+          "text": "Artificial Analysis Coding Agent Index 58.6으로 1위, Intelligence Index 61(xhigh)로 전체 3위",
+          "level": 1
+        },
+        {
+          "text": "Agents' Last Exam v1.1 75.8%, Terminal-Bench 4.1 65.2%, SEC-bench Pro 90.5% 기록",
+          "level": 1
+        },
+        {
+          "text": "가격은 1M 토큰당 입력 $3, 출력 $15, Gemini API, Gemini 앱(Pro, Ultra), Antigravity로 제공",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
+    {
+      "id": "openai-introducing-gpt-62-astra-and-sol",
+      "date": "2026-11-W03",
+      "year": "2026",
+      "month": "11",
+      "week": "3",
+      "type": "news",
+      "org": "OpenAI",
+      "title": "Introducing GPT-6.2 Astra and Sol",
+      "url": "https://openai.com/index/introducing-gpt-6-2-astra-sol",
+      "bullets": [
+        {
+          "text": "고난도 작업용 frontier 모델 GPT-6.2 Astra와 일상 작업용 효율 모델 GPT-6.2 Sol 공개",
+          "level": 1
+        },
+        {
+          "text": "ChatGPT Work, Codex, API(`gpt-6.2-astra`, `gpt-6.2-sol`)로 제공, 두 모델 모두 출시 시점부터 Ultrafast 지원",
+          "level": 2
+        },
+        {
+          "text": "Astra는 Agents' Last Exam에서 GPT-6 Astra 대비 +5.2pt, Terminal-Bench-Science 0.1에서 +9pp, GDPval v2에서 +6.2pp 향상",
+          "level": 1
+        },
+        {
+          "text": "Sol은 FrontierCode 2.0에서 Astra와 0.5pt 이내 성능을 약 1/5 비용으로 달성",
+          "level": 1
+        },
+        {
+          "text": "가격은 Astra 입력 $8, 출력 $40(1M 토큰당), Sol은 GPT-6.1 Sol과 동일한 입력 $2, 출력 $10 유지",
+          "level": 1
+        }
+      ],
+      "tags": []
+    },
     {
       "id": "perplexity-perplexity-decider-v13-training-eval-and-use-cases",
       "date": "2026-11-W03",
@@ -44964,9 +45130,9 @@
     }
   ],
   "stats": {
-    "total": 1923,
-    "paper": 1102,
+    "total": 1928,
+    "paper": 1104,
     "dev": 765,
-    "news": 56
+    "news": 59
   }
 }
